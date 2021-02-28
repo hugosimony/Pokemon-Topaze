@@ -12,8 +12,8 @@ public class Hero extends JPanel {
 	private static final long serialVersionUID = 1L;
 
 	public Direction direction;
-	private int foot;
-	private int speed;
+	public int foot;
+	public int speed;
 	
 	public Hero(Direction direction, int foot, int speed) {
 		this.direction = direction;

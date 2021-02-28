@@ -199,8 +199,16 @@ public class Const {
 	//****************************************************************************************************
 	// Maps Towns
 	
+	private static final URL interville1URL = Main.class.getResource("maps/towns/intertowns/images/interville1.JPG");
+	public static final ImageIcon interville1Map = new ImageIcon(interville1URL);
 	private static final URL seleniaMapUrl = Main.class.getResource("maps/towns/images/Sélénia.jpg");
 	public static final ImageIcon seleniaMap = new ImageIcon(seleniaMapUrl);
+	
+	//****************************************************************************************************
+	// Maps Roads
+	
+	private static final URL road01MapURL = Main.class.getResource("maps/roads/images/Road01.jpg");
+	public static final ImageIcon road01Map = new ImageIcon(road01MapURL);
 	
 	//****************************************************************************************************
 	// Musics
@@ -208,6 +216,7 @@ public class Const {
 	public static final URL themeMainMenu = Main.class.getResource("musics/mainMenuTheme.wav");
 	public static final URL themeStarting = Main.class.getResource("musics/startingTheme.wav");
 	public static final URL themeSelenia = Main.class.getResource("musics/towns/seleniaTheme.wav");
+	public static final URL themeRoad01 = Main.class.getResource("musics/roads/road01Theme.wav");
 	
 	//****************************************************************************************************
 	// Sounds
@@ -217,6 +226,9 @@ public class Const {
 	public static final URL soundSave = Main.class.getResource("sounds/menus/soundSave.wav");
 	public static final URL soundEnterHouse = Main.class.getResource("sounds/maps/soundEnterHouse.wav");
 	public static final URL soundLeaveHouse = Main.class.getResource("sounds/maps/soundLeaveHouse.wav");
+	public static final URL soundPlayerStopped = Main.class.getResource("sounds/maps/soundPlayerStopped.wav");
+	public static final URL soundPlayerJump = Main.class.getResource("sounds/maps/soundPlayerJump.wav");
+	public static final URL soundOverHerbs = Main.class.getResource("sounds/maps/soundOverHerbs.wav");
 	public static final URL soundItemGet = Main.class.getResource("sounds/maps/soundItemGet.wav");
 	
 	//****************************************************************************************************

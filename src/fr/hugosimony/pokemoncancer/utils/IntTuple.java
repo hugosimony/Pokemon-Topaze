@@ -2,6 +2,7 @@ package fr.hugosimony.pokemoncancer.utils;
 
 import java.util.ArrayList;
 
+import fr.hugosimony.pokemoncancer.maps.Deplacement;
 import fr.hugosimony.pokemoncancer.maps.perso.Pnj;
 
 public class IntTuple {
@@ -28,14 +29,16 @@ public class IntTuple {
 		return contains;
 	}
 	
-	public static boolean containsPnj(ArrayList<Pnj> list, IntTuple tuple) {
+	public static Pnj containsPnj(ArrayList<Pnj> list, IntTuple tuple) {
 		int x = 0;
 		boolean contains = false;
 		while(!contains && x<list.size()) {
-			contains = (list.get(x).positionX == tuple.x && list.get(x).positionY == tuple.y);
+			contains = Math.abs(list.get(x).positionX - tuple.x) < Deplacement.pixelMoved && Math.abs(list.get(x).positionY - tuple.y) < Deplacement.pixelMoved;
 			x++;
 		}
-		return contains;
+		if(contains)
+			return list.get(x-1);
+		return null;
 	}
 	
 	public static int getPnjIndex(ArrayList<Pnj> list, IntTuple tuple) {

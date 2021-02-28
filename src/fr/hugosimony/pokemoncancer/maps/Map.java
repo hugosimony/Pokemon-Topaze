@@ -31,5 +31,9 @@ public class Map extends JPanel {
 		}
 		if(map == 2) // Sélénia
 			g.drawImage(Const.seleniaMap.getImage(), 0, 0, null);
+		if(map == 3)
+			g.drawImage(Const.interville1Map.getImage(), 0, 0, null);
+		if(map == 4)
+			g.drawImage(Const.road01Map.getImage(), 0, 0, null);
 	}
 }

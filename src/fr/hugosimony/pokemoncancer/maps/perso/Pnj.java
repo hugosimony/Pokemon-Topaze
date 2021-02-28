@@ -1,31 +1,182 @@
 package fr.hugosimony.pokemoncancer.maps.perso;
 
+import java.awt.Component;
 import java.awt.Graphics;
+import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import javax.swing.JPanel;
 
 import fr.hugosimony.pokemoncancer.Const;
-import fr.hugosimony.pokemoncancer.Variables;
+import fr.hugosimony.pokemoncancer.Game;
+import fr.hugosimony.pokemoncancer.maps.Deplacement;
 import fr.hugosimony.pokemoncancer.maps.Direction;
 
 public class Pnj extends JPanel {
 	private static final long serialVersionUID = 1L;
 
+	public Game game;
+	
+	private Pnj pnj;
+	public boolean IA;
+	public IAMoving IAMoving;
+	public boolean paraClick;
+	public boolean mooving;
+	
 	public String perso;
-	private Direction direction;
-	private int foot;
+	public Direction direction;
+	public ArrayList<Direction> directions;
+	public int foot;
 	public int positionX;
 	public int positionY;
+
+	private int walkDirection = 1;
 	
-	public Pnj(String perso, Direction direction, int foot, int positionX, int positionY) {
+	private boolean checkAnyoneNearDone;
+	
+	public Pnj(Game game, String perso, Direction direction, int foot, int positionX, int positionY, boolean IA, boolean firstIA, ArrayList<Direction> directions, IAMoving IAMoving, boolean paraClick, boolean mooving) {
+		this.game = game;
+		this.pnj = this;
 		this.perso = perso;
 		this.direction = direction;
+		this.directions = directions;
 		this.foot = foot;
 		this.positionX = positionX;
 		this.positionY = positionY;
+		this.IA = IA;
+		if(IA && firstIA) {
+			this.IAMoving = new IAMoving(pnj, 0, directions.size(), directions);
+			new Timer().schedule(this.IAMoving, 3000, 3000);
+		}
+		else
+			this.IAMoving = IAMoving;
+		this.paraClick = paraClick;
+		this.mooving = mooving;
+		checkAnyoneNearDone = false;
 		setOpaque(false);
 		setLayout(null);
 		setVisible(true);
+	}
+	
+	public class Move extends TimerTask {
+
+		private Direction dir;
+		private int x = 0;
+		
+		public Move(Direction direction) {
+			dir = direction;
+		}
+		
+		@Override
+		public void run() {
+			if(game.actualPanel.isVisible()) {
+				mooving = true;
+				if(!game.inXMenu && !game.inSaveMenu && !game.inTextMenu && !game.inYesNoMenu && !game.inBattle) {
+					
+					if(x<Deplacement.pixelMoved) {
+						
+						if(dir == Direction.UP)
+							positionY --;
+						else if(dir == Direction.DOWN)
+							positionY ++;
+						else if(dir == Direction.LEFT)
+							positionX --;
+						else if(dir == Direction.RIGHT)
+							positionX ++;
+						setLocation(positionX, positionY);
+						repaint();
+						if(x==0)
+							direction = dir;
+						else {
+							if(x < 10) {
+								foot = 0;
+								if(x==1)
+									repaint();
+							}else {
+								if(walkDirection == 1) 
+									foot = 1;
+								else if(walkDirection == -1) 
+									foot = 2;
+								if(x==9)
+									repaint();
+							}
+						}
+						setSprites(new Pnj(game, perso, dir, foot, positionX, positionY, IA, false, directions, IAMoving, paraClick, true));
+						
+						if(isAnyoneNear() && !checkAnyoneNearDone) {
+							checkAnyoneNearDone = true;
+							//setSprites(new Pnj(game, perso, dir, foot, positionX, positionY, IA, false, directions, IAMoving, paraClick, true));
+						}
+						x++;
+					}
+					else {
+						setSprites(new Pnj(game, perso, dir, 0, positionX, positionY, IA, false, directions, IAMoving, paraClick, false));
+						walkDirection *= -1;
+						mooving = false;
+						checkAnyoneNearDone = false;
+						this.cancel();
+					}
+				}
+			}
+			else 
+				this.cancel();
+		}
+	}
+	
+	public void setSprites(Pnj pnj_) {
+		
+		for(Component component : game.map.getComponents()) {
+			if(component instanceof Pnj) {
+				Pnj pnj__ = (Pnj) component;
+				if(pnj__.perso.equals(pnj.perso)) {
+					game.map.remove(component);
+				}
+			}
+		}
+		pnj = pnj_;
+		pnj.setLocation(positionX, positionY);
+		pnj.setSize(50,70);
+		pnj.setVisible(true);
+		game.map.add(pnj);
+	
+		
+		int i = 0;
+		boolean done = false;
+		while(!done && i < game.pnjs.size()) {
+			if(game.pnjs.get(i).perso.equals(pnj.perso)) {
+				game.pnjs.remove(i);
+				done = true;
+			}
+			i++;
+		}
+		game.pnjs.add(pnj);
+		
+		game.map.repaint();
+		
+		game.deplacement.setSprites(game.deplacement.direction, game.deplacement.hero, false);
+		
+	}
+	
+	public boolean isLookingTileFree(Direction direction) {
+		int x = positionX;
+		int y = positionY;
+		if(direction == Direction.UP)
+			y = positionY - Deplacement.pixelMoved;
+		else if(direction == Direction.DOWN)
+			y = positionY + Deplacement.pixelMoved;
+		else if(direction == Direction.LEFT)
+			x = positionX - Deplacement.pixelMoved;
+		else if(direction == Direction.RIGHT)
+			x = positionX + Deplacement.pixelMoved;
+		return !(game.deplacement.locationX > x - Deplacement.pixelMoved && game.deplacement.locationX < x + Deplacement.pixelMoved && game.deplacement.locationY > y - Deplacement.pixelMoved && game.deplacement.locationY < y + Deplacement.pixelMoved);
+	}
+	
+	public void clearIA() {
+		if(IA) {
+			IAMoving.cancel();
+			IA = false;
+		}
 	}
 	
 	@Override
@@ -50,8 +201,42 @@ public class Pnj extends JPanel {
 					g.drawImage(Const.momRight.getImage(), 0, 0, null);
 			}
 		}
-		
-		if(perso.contains("police")) {
+		else if(perso.contains("brownboy")) {
+			if(direction == Direction.UP) {
+				if(foot == 0)
+					g.drawImage(Const.boyBack.getImage(), 0, 0, null);
+				else if(foot == 1)
+					g.drawImage(Const.boyBackRight.getImage(), 0, 0, null);
+				else if(foot == 2)
+					g.drawImage(Const.boyBackLeft.getImage(), 0, 0, null);
+			}
+			else if(direction == Direction.DOWN) {
+				if(foot == 0)
+					g.drawImage(Const.boyFront.getImage(), 0, 0, null);
+				else if(foot == 1)
+					g.drawImage(Const.boyFrontRight.getImage(), 0, 0, null);
+				else if(foot == 2)
+					g.drawImage(Const.boyFrontLeft.getImage(), 0, 0, null);
+			}
+			else if(direction == Direction.LEFT) {
+				if(foot == 0)	
+					g.drawImage(Const.boyLeft.getImage(), 0, 0, null);
+				else if(foot == 1)	
+					g.drawImage(Const.boyLeftRight.getImage(), 0, 0, null);
+				else if(foot == 2)	
+					g.drawImage(Const.boyLeftLeft.getImage(), 0, 0, null);
+				
+			}
+			else if(direction == Direction.RIGHT) {
+				if(foot == 0)	
+					g.drawImage(Const.boyRight.getImage(), 0, 0, null);
+				else if(foot == 1)	
+					g.drawImage(Const.boyRightRight.getImage(), 0, 0, null);
+				else if(foot == 2)	
+					g.drawImage(Const.boyRightLeft.getImage(), 0, 0, null);
+			}
+		}
+		else if(perso.contains("police")) {
 			if(direction == Direction.RIGHT) {
 				if(foot == 0)	
 					g.drawImage(Const.policeRight.getImage(), 0, 0, null);
@@ -59,14 +244,14 @@ public class Pnj extends JPanel {
 		}
 	}
 	
-	public String getText() {
-		if(perso.equals("mom")) {
-			return "Ah t'es enfin réveillé" + Variables.LANG_Feminin + "...= Bon, t'as pas un truc à faire là ?";
+	private boolean isAnyoneNear() {
+		boolean yes = Math.abs(positionY - game.deplacement.locationY) < Deplacement.pixelMoved*2 &&  Math.abs(positionX - game.deplacement.locationX) < Deplacement.pixelMoved;
+		int i = 0;
+		while(!yes && i<game.pnjs.size()) {
+			yes = !game.pnjs.get(i).perso.equals(perso) && Math.abs(game.pnjs.get(i).positionY - positionY) < Deplacement.pixelMoved*2 && Math.abs(game.pnjs.get(i).positionX - positionX) < Deplacement.pixelMoved;
+			i++;
 		}
-		if(perso.equals("police001")) {
-			return "Désolé,= la forêt est encore trop dangereuse pour toi.";
-		}
-		return "";
+		return yes;
 	}
 	
 }

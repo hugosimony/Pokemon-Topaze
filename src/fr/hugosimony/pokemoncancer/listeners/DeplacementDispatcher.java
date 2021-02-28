@@ -23,7 +23,7 @@ public class DeplacementDispatcher implements KeyEventDispatcher {
      public boolean dispatchKeyEvent(KeyEvent event) {
 	
 		 if(originalPanel.isVisible()) {
-			 if(!Main.settingsOn && !game.inTransition && !game.inXMenu && !game.inSaveMenu && !game.inTextMenu && game.actualPanel.isVisible()) {
+			 if(!Main.settingsOn && !game.inTransition && !game.inXMenu && !game.inSaveMenu && !game.inTextMenu && !game.inBattle && game.actualPanel.isVisible()) {
 				 if(event.getID() == KeyEvent.KEY_PRESSED && game.deplacement.released) {
 					 int keyCode = event.getKeyCode();
 					 if(game.deplacement.getDirection(keyCode) != null && !game.inXMenu && !game.inSaveMenu) {
@@ -40,7 +40,9 @@ public class DeplacementDispatcher implements KeyEventDispatcher {
 		 				 }
 					 }
 					 else if(event.getKeyCode() == KeyEvent.VK_A) {
-						 //System.out.println("game.walls.add(new IntTuple(" + game.deplacement.locationX + ", " + game.deplacement.locationY + "));");
+						 // System.out.println("game.walls.add(new IntTuple(" + game.deplacement.locationX + ", " + game.deplacement.locationY + "));");
+						 // System.out.println("game.herbs.add(new IntTriple(" + game.deplacement.locationX + ", " + game.deplacement.locationY + ", 2));");
+						 // System.out.println(game.deplacement.mapLocationX  + " ; "  + game.deplacement.mapLocationY);
 					 }
 				 }
 				 else if(event.getID() == KeyEvent.KEY_RELEASED) {

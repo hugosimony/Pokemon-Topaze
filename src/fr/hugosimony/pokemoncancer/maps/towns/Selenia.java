@@ -23,8 +23,10 @@ import fr.hugosimony.pokemoncancer.listeners.TextMenuDispatcher;
 import fr.hugosimony.pokemoncancer.maps.Deplacement;
 import fr.hugosimony.pokemoncancer.maps.Direction;
 import fr.hugosimony.pokemoncancer.maps.Map;
+import fr.hugosimony.pokemoncancer.maps.Places;
 import fr.hugosimony.pokemoncancer.maps.houses.MyHouse;
 import fr.hugosimony.pokemoncancer.maps.perso.Pnj;
+import fr.hugosimony.pokemoncancer.maps.towns.intertowns.Intertown1;
 import fr.hugosimony.pokemoncancer.sounds.Sounds;
 import fr.hugosimony.pokemoncancer.transitions.TransitionSimple;
 import fr.hugosimony.pokemoncancer.utils.IntTuple;
@@ -40,6 +42,8 @@ public class Selenia extends JPanel {
 	private IntTuple toLeaveTown;
 
 	private Pnj police001;
+	
+	private Pnj seleniaPnj01;
 	
 	public Selenia(Game game, int locationX, int locationY, Direction direction, int mapLocationX, int mapLocationY) {
 		
@@ -86,6 +90,7 @@ public class Selenia extends JPanel {
 		//****************************************************************************************************
 	    // Map
 		
+		Variables.POSITION_Place = Places.SELENIA;
 		game.map = new Map(2, 0);
 		game.map.setLocation(mapLocationX, mapLocationY);
 		game.map.setSize(10000,10000);
@@ -94,7 +99,9 @@ public class Selenia extends JPanel {
 		
 		game.actualPanel = this;
 		game.firstMove = false;
-		game.deplacement = new Deplacement(game, locationX, locationY, direction);
+		game.deplacement = new Deplacement(game, locationX, locationY, direction, mapLocationX, mapLocationY);
+		
+		game.deplacement.setSprites(game.deplacement.direction, game.deplacement.hero, false);
 		
 	}
 	
@@ -307,20 +314,35 @@ public class Selenia extends JPanel {
 		
 		// TEMP
 		
-		game.walls.add(new IntTuple(1270, 678));
-		game.walls.add(new IntTuple(1238, 966));
-		game.walls.add(new IntTuple(982, 966));
+		game.walls.add(new IntTuple(1270, 678)); // PORTE MAISON 1
+		game.walls.add(new IntTuple(1238, 966)); // PORTE MAISON 2
+		game.walls.add(new IntTuple(982, 966));  // PORTE MAISON 3
 		
 	}
 	
 	private void setPnjs() {
+		for(Pnj pnj : game.pnjs)
+			pnj.clearIA();
 		game.pnjs = new ArrayList<Pnj>();
 		
-		police001 = new Pnj("police001", Direction.RIGHT, 0, 662, 1030);
+		police001 = new Pnj(game, "police001", Direction.RIGHT, 0, 662, 1030, false, false, null, null, false, false);
+		police001.setVisible(true);
+		police001.setSize(50, 70);
 		police001.setLocation(662, 1030);
-		police001.setSize(50,70);
 		game.pnjs.add(police001);
 		
+		ArrayList<Direction> directions = new ArrayList<Direction>();
+		directions.add(Direction.BLANK); directions.add(Direction.LEFT); directions.add(Direction.BLANK); directions.add(Direction.BLANK);  directions.add(Direction.NULL);
+		directions.add(Direction.BLANK); directions.add(Direction.UP); directions.add(Direction.RIGHT); directions.add(Direction.BLANK);  directions.add(Direction.NULL);
+		directions.add(Direction.BLANK); directions.add(Direction.UP); directions.add(Direction.DOWN); directions.add(Direction.BLANK);  directions.add(Direction.NULL);
+		directions.add(Direction.BLANK); directions.add(Direction.LEFT); directions.add(Direction.DOWN); directions.add(Direction.BLANK);  directions.add(Direction.NULL);
+		directions.add(Direction.BLANK); directions.add(Direction.BLANK); directions.add(Direction.RIGHT); directions.add(Direction.BLANK);  directions.add(Direction.NULL);
+		
+		seleniaPnj01 = new Pnj(game, "brownboy001", Direction.DOWN, 0, 1398, 870, true, true, directions, null, false, false);
+		seleniaPnj01.setVisible(true);
+		seleniaPnj01.setSize(50, 70);
+		seleniaPnj01.setLocation(1398, 870);
+		game.pnjs.add(seleniaPnj01);
 	}
 	
 	public String getInteractMessage(IntTuple tuple) {
@@ -369,7 +391,7 @@ public class Selenia extends JPanel {
 					 new TransitionSimple(game, game.gamePanel, new MyHouse(game, false, 343, 428, Direction.UP, -3, -138));
 				 }
 				 else if(game.deplacement.getLookingTile().equals(toLeaveTown)){
-					 new TransitionSimple(game, game.gamePanel, new MyHouse(game, true, 375, 300, Direction.DOWN, 0, 0));
+					 new TransitionSimple(game, game.gamePanel, new Intertown1(game, 662, 523, Direction.UP, -250, -200));
 				 }
 				 else {
 					 

@@ -21,12 +21,19 @@ import fr.hugosimony.pokemoncancer.maps.Map;
 import fr.hugosimony.pokemoncancer.maps.Places;
 import fr.hugosimony.pokemoncancer.maps.houses.MyHouse;
 import fr.hugosimony.pokemoncancer.maps.perso.Pnj;
+import fr.hugosimony.pokemoncancer.maps.roads.Road01;
 import fr.hugosimony.pokemoncancer.maps.towns.Selenia;
+import fr.hugosimony.pokemoncancer.maps.towns.intertowns.Intertown1;
 import fr.hugosimony.pokemoncancer.menus.SaveMenu;
 import fr.hugosimony.pokemoncancer.menus.TextZone;
 import fr.hugosimony.pokemoncancer.menus.XMenu;
 import fr.hugosimony.pokemoncancer.menus.YesNo;
+import fr.hugosimony.pokemoncancer.pokemon.Nature;
+import fr.hugosimony.pokemoncancer.pokemon.PKM;
+import fr.hugosimony.pokemoncancer.pokemon.Pokemon;
+import fr.hugosimony.pokemoncancer.pokemon.battle.BattleConst;
 import fr.hugosimony.pokemoncancer.timer.GlobalTimer;
+import fr.hugosimony.pokemoncancer.utils.IntTriple;
 import fr.hugosimony.pokemoncancer.utils.IntTuple;
 
 
@@ -46,8 +53,10 @@ public class Game extends JFrame {
 	public Deplacement deplacement;
 	public boolean firstMove;
 	public ArrayList<IntTuple> walls = new ArrayList<IntTuple>();
+	public ArrayList<IntTriple> jumpWalls = new ArrayList<IntTriple>();
 	public ArrayList<IntTuple> clickableTiles = new ArrayList<IntTuple>();
 	public ArrayList<Pnj> pnjs = new ArrayList<Pnj>();
+	public ArrayList<IntTriple> herbs = new ArrayList<IntTriple>();
 	
 	public boolean inXMenu;
 	
@@ -64,14 +73,20 @@ public class Game extends JFrame {
 	
 	public boolean inTransition;
 	
+	public boolean inBattle;
+	
 	public PresentationProf speachPanel;
 	
 	// Liste des maps
 	
 	public MyHouse myHouse;
 	public Selenia selenia;
+	public Intertown1 intertown1;
+	public Road01 road01;
 	
 	public Game(boolean newGame, int save) {
+		
+		BattleConst.getAnimatedSprite(new Pokemon(PKM.HERBIZARRE, "test", Nature.ADAMANT, 2, null, 5, 0, false, 20, 20, 10, 10, 10, 10, 10, null, null, null, null, null, null, "hugo", true), false);
 		
 		this.save = save;
 		this.newGame = newGame;
@@ -110,6 +125,8 @@ public class Game extends JFrame {
 		YesNo.game = this;
 		
 		inTransition = false;
+		
+		inBattle = false;
 		
 		//****************************************************************************************************
 		// Load Variables
@@ -155,6 +172,14 @@ public class Game extends JFrame {
 			else if(FileAdventureReaderWriter.getPrecisePositionPlace(save) == 2) {
 				selenia = new Selenia(this, FileAdventureReaderWriter.getLocationX(save), FileAdventureReaderWriter.getLocationY(save), FileAdventureReaderWriter.getDirection(save), FileAdventureReaderWriter.getMapLocationX(save), FileAdventureReaderWriter.getMapLocationY(save));
 				add(selenia);
+			}
+			else if(FileAdventureReaderWriter.getPrecisePositionPlace(save) == 3) {
+				intertown1 = new Intertown1(this, FileAdventureReaderWriter.getLocationX(save), FileAdventureReaderWriter.getLocationY(save), FileAdventureReaderWriter.getDirection(save), FileAdventureReaderWriter.getMapLocationX(save), FileAdventureReaderWriter.getMapLocationY(save));
+				add(intertown1);
+			}
+			else if(FileAdventureReaderWriter.getPrecisePositionPlace(save) == 4) {
+				road01 = new Road01(this, FileAdventureReaderWriter.getLocationX(save), FileAdventureReaderWriter.getLocationY(save), FileAdventureReaderWriter.getDirection(save), FileAdventureReaderWriter.getMapLocationX(save), FileAdventureReaderWriter.getMapLocationY(save));
+				add(road01);
 			}
 		}
 		

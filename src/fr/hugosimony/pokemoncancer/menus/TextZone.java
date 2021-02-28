@@ -29,12 +29,14 @@ public class TextZone extends JPanel {
 	
 	private ArrayList<JLabel> texts;
 	private String[] textLines;
+	private String waitingText;
 	
 	public TextZone(JPanel panel, String text) {
 		
 		setOpaque(true);
 		setLayout(null);
 		setVisible(true);
+		game.repaint();
 		labelIndex = 0;
 		labelIndex2 = 0;
 		texts = new ArrayList<JLabel>();
@@ -53,6 +55,9 @@ public class TextZone extends JPanel {
 		add(label2);
 		texts.add(label2);
 		textLines = text.split("\n");
+		waitingText = "";
+		if(textLines.length > 2)
+			waitingText = text.replaceFirst(getTwoFirstLines(textLines), "");
 		resetSpeachsLabel(textLines.length);
 		Timer timer = new Timer();
 		timer.schedule(new PrintText(panel), 0, (long) Variables.SPEED_TEXT);
@@ -141,8 +146,14 @@ public class TextZone extends JPanel {
 	 						new Timer().schedule(new PrintText(panel), 1000, (long) Variables.SPEED_TEXT);
 	 				}
 	 				else {
-	 					game.textWaiting = true;
-	 					game.textDone = true;
+	 					if(waitingText.equals("")){
+		 					game.textWaiting = true;
+		 					game.textDone = true;
+	 					}
+	 					else {
+		 					textZone.setText(waitingText);
+							TextZone.printTextZone(textZone, game);
+	 					}
 	 				}
 	 			}
 	 			else {
@@ -176,9 +187,16 @@ public class TextZone extends JPanel {
 		game.textWaiting = false;
 		game.textDone = false;
 		textLines = text.split("\n");
+		waitingText = "";
+		if(textLines.length > 2)
+			waitingText = text.replaceFirst(getTwoFirstLines(textLines), "");
 		resetSpeachsLabel(textLines.length);
 		Timer timer = new Timer();
 		timer.schedule(new PrintText(game.gamePanel), 0, (long) Variables.SPEED_TEXT);
+	}
+	
+	public String getTwoFirstLines(String[] textLines) {
+		return textLines[0] + "\n" + textLines[1] + "\n";
 	}
 	
 }

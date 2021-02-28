@@ -23,6 +23,7 @@ import fr.hugosimony.pokemoncancer.listeners.TextMenuDispatcher;
 import fr.hugosimony.pokemoncancer.maps.Deplacement;
 import fr.hugosimony.pokemoncancer.maps.Direction;
 import fr.hugosimony.pokemoncancer.maps.Map;
+import fr.hugosimony.pokemoncancer.maps.Places;
 import fr.hugosimony.pokemoncancer.maps.perso.Pnj;
 import fr.hugosimony.pokemoncancer.maps.towns.Selenia;
 import fr.hugosimony.pokemoncancer.sounds.Sounds;
@@ -90,6 +91,7 @@ public class MyHouse extends JPanel {
 		//****************************************************************************************************
 	    // Map
 		
+		Variables.POSITION_Place = Places.SELENIA;
 		if(up) {
 			game.map = new Map(1, 1);
 			game.map.setLocation(mapLocationX, mapLocationY);
@@ -105,7 +107,7 @@ public class MyHouse extends JPanel {
 		
 		game.actualPanel = this;
 		game.firstMove = false;
-		game.deplacement = new Deplacement(game, locationX, locationY, direction);
+		game.deplacement = new Deplacement(game, locationX, locationY, direction, mapLocationX, mapLocationY);
 	}
 	
 	private void setClickableTiles() {
@@ -247,10 +249,13 @@ public class MyHouse extends JPanel {
 	}
 	
 	private void setPnjs() {
+		for(Pnj pnj : game.pnjs)
+			pnj.clearIA();
 		game.pnjs = new ArrayList<Pnj>();
 		
+		
 		if(!up) {
-			mom = new Pnj("mom", Direction.DOWN, 0, 535, 204);
+			mom = new Pnj(game, "mom", Direction.DOWN, 0, 535, 204, false, false, null, null, false, false);
 			mom.setLocation(535, 204);
 			mom.setSize(50,70);
 			game.pnjs.add(mom);

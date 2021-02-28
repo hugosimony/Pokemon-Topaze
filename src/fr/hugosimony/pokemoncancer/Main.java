@@ -15,7 +15,7 @@ public class Main {
 	public static void main(String[] args) {
 		
 		//*****************************************************************
-		// Players
+		// Game
 		System.out.println("Searching game folder ...");
 		if(!new File(Const.gameFolderPath).exists()) {
 			System.out.println("Game folder not found, creating new one. /!\\ Clear all old files if they have existed.");
