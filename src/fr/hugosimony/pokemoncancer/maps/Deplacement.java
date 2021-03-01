@@ -249,7 +249,7 @@ public class Deplacement {
 		
 		hero = hero_;
 		hero.setLocation(locationX, locationY);
-		hero.setSize(50,70);
+		hero.setSize(32,50);
 		hero.setVisible(true);
 		game.map.add(hero);
 		

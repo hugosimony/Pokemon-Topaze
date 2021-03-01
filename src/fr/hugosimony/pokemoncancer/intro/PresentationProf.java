@@ -645,7 +645,7 @@ public class PresentationProf extends JPanel {
                 				cancel = true;
                 				clipStartingTheme.close();
                 				game.speachPanel.setVisible(false);
-                				game.myHouse = new MyHouse(game, true, 375, 300, Direction.DOWN, 0, 0);
+                				game.myHouse = new MyHouse(game, true, 375, 300, Direction.DOWN, -700, -3000);
                 		        game.add(game.myHouse);
                 			}
                 			else if(introProf && introProfWaiting) {

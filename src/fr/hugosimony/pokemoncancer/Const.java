@@ -189,6 +189,12 @@ public class Const {
 	public static final ImageIcon badge8 = new ImageIcon(badge8Url);
 	
 	//****************************************************************************************************
+	// Main Map
+	
+	private static final URL mainMapURL = Main.class.getResource("maps/MainMap.png");
+	public static final ImageIcon mainMap = new ImageIcon(mainMapURL);
+	
+	//****************************************************************************************************
 	// Maps Houses
 	
 	private static final URL myHouseBackGround1Url = Main.class.getResource("maps/houses/images/startingHouse.JPG");
