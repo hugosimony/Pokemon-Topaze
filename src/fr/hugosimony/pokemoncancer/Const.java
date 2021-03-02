@@ -195,28 +195,6 @@ public class Const {
 	public static final ImageIcon mainMap = new ImageIcon(mainMapURL);
 	
 	//****************************************************************************************************
-	// Maps Houses
-	
-	private static final URL myHouseBackGround1Url = Main.class.getResource("maps/houses/images/startingHouse.JPG");
-	public static final ImageIcon myHouseBackGround1 = new ImageIcon(myHouseBackGround1Url);
-	private static final URL myHouseBackGround2Url = Main.class.getResource("maps/houses/images/startingHouseBis.jpg");
-	public static final ImageIcon myHouseBackGround2 = new ImageIcon(myHouseBackGround2Url);
-	
-	//****************************************************************************************************
-	// Maps Towns
-	
-	private static final URL interville1URL = Main.class.getResource("maps/towns/intertowns/images/interville1.JPG");
-	public static final ImageIcon interville1Map = new ImageIcon(interville1URL);
-	private static final URL seleniaMapUrl = Main.class.getResource("maps/towns/images/Sélénia.jpg");
-	public static final ImageIcon seleniaMap = new ImageIcon(seleniaMapUrl);
-	
-	//****************************************************************************************************
-	// Maps Roads
-	
-	private static final URL road01MapURL = Main.class.getResource("maps/roads/images/Road01.jpg");
-	public static final ImageIcon road01Map = new ImageIcon(road01MapURL);
-	
-	//****************************************************************************************************
 	// Musics
 	
 	public static final URL themeMainMenu = Main.class.getResource("musics/mainMenuTheme.wav");

@@ -2,6 +2,7 @@ package fr.hugosimony.pokemoncancer.maps.houses;
 
 import java.awt.Color;
 import java.awt.KeyboardFocusManager;
+import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.util.ArrayList;
 
@@ -53,9 +54,9 @@ public class MyHouse extends JPanel {
 		setClickableTiles();
 		setWalls();
 		setPnjs();
-		toDownStairs = new IntTuple(535, 172);
-		toUpStairs = new IntTuple(151, 140);
-		toExit = new IntTuple(343, 492);
+		toDownStairs = new IntTuple(1184, 2922);
+		toUpStairs = new IntTuple(1984, 2865);
+		toExit = new IntTuple(2176, 3217);
 		
 		setLayout(null);
 		setBackground(new Color(0, 0, 0));
@@ -266,7 +267,7 @@ public class MyHouse extends JPanel {
 		 String text = "";
 		 if(up) {
 			 if(IntTuple.getPosition(game.clickableTiles, tuple) == 1) {
-				 text = "Note : Appuyer sur X pour ouvrir le menu.";
+				 text = "Note : Appuyer sur " + KeyEvent.getKeyText(Variables.CONTROLS_MenuX) + " pour ouvrir le menu.";
 			 }
 			 else if(IntTuple.getPosition(game.clickableTiles, tuple) == 2) {
 				 text = "C'est la console qui appartenait à Papa.= Elle est plus vielle que moi...=\n"
@@ -315,13 +316,13 @@ public class MyHouse extends JPanel {
 					 Sounds.playSound(Const.soundLeaveHouse);
 				 Main.actualClip.close();
 				 if(game.deplacement.getLookingTile().equals(toDownStairs)){
-					 new TransitionSimple(game, game.gamePanel, new MyHouse(game, false, 215, 140, Direction.RIGHT, 170, 150));
+					 new TransitionSimple(game, game.gamePanel, new MyHouse(game, false, 2048, 2865, Direction.RIGHT, -1646, -2611));
 				 }
 				 else if(game.deplacement.getLookingTile().equals(toUpStairs)){
-					 new TransitionSimple(game, game.gamePanel, new MyHouse(game, true, 471, 172, Direction.LEFT, -100, 100));
+					 new TransitionSimple(game, game.gamePanel, new MyHouse(game, true, 1120, 2922, Direction.LEFT, -747, -2664));
 				 }
 				 else {
-					 new TransitionSimple(game, game.gamePanel, new Selenia(game, 982, 710, Direction.DOWN, -600, -400));
+					 new TransitionSimple(game, game.gamePanel, new Selenia(game, 1248, 1226, Direction.DOWN, -875, -968));
 				 }
 				 return true;
 			}

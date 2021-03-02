@@ -53,8 +53,8 @@ public class Selenia extends JPanel {
 		setClickableTiles();
 		setWalls();
 		setPnjs();
-		toMyHouse = new IntTuple(982, 646);
-		toLeaveTown = new IntTuple(1750, 742);
+		toMyHouse = new IntTuple(1248, 1162);
+		toLeaveTown = new IntTuple(2016, 1258);
 		
 		setLayout(null);
 		setBackground(new Color(0, 0, 0));
@@ -388,10 +388,10 @@ public class Selenia extends JPanel {
 					 Sounds.playSound(Const.soundEnterHouse);
 				 Main.actualClip.close();
 				 if(game.deplacement.getLookingTile().equals(toMyHouse)){
-					 new TransitionSimple(game, game.gamePanel, new MyHouse(game, false, 343, 428, Direction.UP, -3, -138));
+					 new TransitionSimple(game, game.gamePanel, new MyHouse(game, false, 2176, 3153, Direction.UP, -1774, -2899));
 				 }
 				 else if(game.deplacement.getLookingTile().equals(toLeaveTown)){
-					 new TransitionSimple(game, game.gamePanel, new Intertown1(game, 662, 523, Direction.UP, -250, -200));
+					 new TransitionSimple(game, game.gamePanel, new Intertown1(game, 3264, 3114, Direction.UP, -2891, -2856));
 				 }
 				 else {
 					 

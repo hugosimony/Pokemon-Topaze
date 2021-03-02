@@ -24,20 +24,5 @@ public class Map extends JPanel {
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		g.drawImage(Const.mainMap.getImage(), 0, 0, null);
-		/*
-		 
-		if(map == 1) { // MyHouse
-			if(floor == 1)
-				g.drawImage(Const.myHouseBackGround1.getImage(), -224, -160, null);
-			else 
-				g.drawImage(Const.myHouseBackGround2.getImage(), -3, -8, null);
-		}
-		if(map == 2) // Sélénia
-			g.drawImage(Const.seleniaMap.getImage(), 0, 0, null);
-		if(map == 3)
-			g.drawImage(Const.interville1Map.getImage(), 0, 0, null);
-		if(map == 4)
-			g.drawImage(Const.road01Map.getImage(), 0, 0, null);
-		 */
 	}
 }

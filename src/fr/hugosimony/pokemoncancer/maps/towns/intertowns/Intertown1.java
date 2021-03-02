@@ -48,8 +48,8 @@ public class Intertown1 extends JPanel {
 		setClickableTiles();
 		setWalls();
 		setPnjs();
-		toRoad1 = new IntTuple(662, 203);
-		toSelenia = new IntTuple(662, 587);
+		toRoad1 = new IntTuple(3264, 2794);
+		toSelenia = new IntTuple(3264, 3178);
 		
 		setLayout(null);
 		setBackground(new Color(0, 0, 0));
@@ -164,10 +164,10 @@ public class Intertown1 extends JPanel {
 					 Sounds.playSound(Const.soundLeaveHouse);
 				 Main.actualClip.close();
 				 if(game.deplacement.getLookingTile().equals(toRoad1)){
-					 new TransitionSimple(game, game.gamePanel, new Road01(game, 1693, 1644, Direction.UP, -1305, -1316));
+					 new TransitionSimple(game, game.gamePanel, new Road01(game, 4064, 1802, Direction.UP, -3691, -1544));
 				 }
 				 else if(game.deplacement.getLookingTile().equals(toSelenia)){
-					 new TransitionSimple(game, game.gamePanel, new Selenia(game, 1750, 806, Direction.DOWN, -1344, -493));//-1344, -493
+					 new TransitionSimple(game, game.gamePanel, new Selenia(game, 2016, 1322, Direction.DOWN, -1643, -1064));
 				 }
 				 else {
 					 

@@ -125,20 +125,28 @@ public class Deplacement {
 				if(!justChangeDirection) {
 					if(x<pixelMoved) {
 						if(dir == Direction.UP) {
-							mapLocationY ++;
 							locationY --;
+							mapLocationY ++;
+							if(x == 15)
+								mapLocationY ++;
 						}
 						else if(dir == Direction.DOWN) {
-							mapLocationY --;
 							locationY ++;
+							mapLocationY --;
+							if(x == 15)
+								mapLocationY --;
 						}
 						else if(dir == Direction.LEFT) {
-							mapLocationX ++;
 							locationX --;
+							mapLocationX ++;
+							if(x == 15)
+								mapLocationX ++;
 						}
 						else if(dir == Direction.RIGHT) {
-							mapLocationX --;
 							locationX ++;
+							mapLocationX --;
+							if(x == 15)
+								mapLocationX --;
 						}
 						hero.setLocation(locationX, locationY);
 						if(x==0) {

@@ -52,8 +52,8 @@ public class Road01 extends JPanel {
 		setWallJumps();
 		setPnjs();
 		setHerbs();
-		toIntertown1 = new IntTuple(1693, 1708);
-		toTown2 = new IntTuple(861, 588);
+		toIntertown1 = new IntTuple(4064, 1866);
+		toTown2 = new IntTuple(3232, 746);
 		
 		setLayout(null);
 		setBackground(new Color(0, 0, 0));
@@ -566,10 +566,10 @@ public class Road01 extends JPanel {
 					 Sounds.playSound(Const.soundEnterHouse);
 				 Main.actualClip.close();
 				 if(game.deplacement.getLookingTile().equals(toIntertown1)){
-					 new TransitionSimple(game, game.gamePanel, new Intertown1(game, 662, 267, Direction.DOWN, -250, 48));
+					 new TransitionSimple(game, game.gamePanel, new Intertown1(game, 3264, 2858, Direction.DOWN, -2891, -2600));
 				 }
 				 else if(game.deplacement.getLookingTile().equals(toTown2)){
-					 new TransitionSimple(game, game.gamePanel, new MyHouse(game, false, 343, 428, Direction.UP, -3, -138));
+					 new TransitionSimple(game, game.gamePanel, new MyHouse(game, true, 1024, 3050, Direction.DOWN, -654, -2788));
 				 }
 				 return true;
 			}
