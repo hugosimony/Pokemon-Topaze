@@ -122,9 +122,17 @@ public class Const {
 	// Sprites Brown Boy
 	
 	public static final ImageIcon brownboyFront = new ImageIcon(Main.class.getResource("sprites/perso/brownboy/brownboyFront.gif"));
+	public static final ImageIcon brownboyFrontRight = new ImageIcon(Main.class.getResource("sprites/perso/brownboy/brownboyFrontRight.gif"));
+	public static final ImageIcon brownboyFrontLeft = new ImageIcon(Main.class.getResource("sprites/perso/brownboy/brownboyFrontLeft.gif"));
 	public static final ImageIcon brownboyBack = new ImageIcon(Main.class.getResource("sprites/perso/brownboy/brownboyBack.gif"));
+	public static final ImageIcon brownboyBackRight = new ImageIcon(Main.class.getResource("sprites/perso/brownboy/brownboyBackRight.gif"));
+	public static final ImageIcon brownboyBackLeft = new ImageIcon(Main.class.getResource("sprites/perso/brownboy/brownboyBackLeft.gif"));
 	public static final ImageIcon brownboyLeft = new ImageIcon(Main.class.getResource("sprites/perso/brownboy/brownboyLeft.gif"));
+	public static final ImageIcon brownboyLeftRight = new ImageIcon(Main.class.getResource("sprites/perso/brownboy/brownboyLeftRight.gif"));
+	public static final ImageIcon brownboyLeftLeft = new ImageIcon(Main.class.getResource("sprites/perso/brownboy/brownboyLeftLeft.gif"));
 	public static final ImageIcon brownboyRight = new ImageIcon(Main.class.getResource("sprites/perso/brownboy/brownboyRight.gif"));
+	public static final ImageIcon brownboyRightRight = new ImageIcon(Main.class.getResource("sprites/perso/brownboy/brownboyRightRight.gif"));
+	public static final ImageIcon brownboyRightLeft = new ImageIcon(Main.class.getResource("sprites/perso/brownboy/brownboyRightLeft.gif"));
 	
 	//****************************************************************************************************
 	// Sprites Police

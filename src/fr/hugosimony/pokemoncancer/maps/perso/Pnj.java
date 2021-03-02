@@ -206,34 +206,34 @@ public class Pnj extends JPanel {
 				if(foot == 0)
 					g.drawImage(Const.brownboyBack.getImage(), 0, 0, null);
 				else if(foot == 1)
-					g.drawImage(Const.boyBackRight.getImage(), 0, 0, null);
+					g.drawImage(Const.brownboyBackRight.getImage(), 0, 0, null);
 				else if(foot == 2)
-					g.drawImage(Const.boyBackLeft.getImage(), 0, 0, null);
+					g.drawImage(Const.brownboyBackLeft.getImage(), 0, 0, null);
 			}
 			else if(direction == Direction.DOWN) {
 				if(foot == 0)
 					g.drawImage(Const.brownboyFront.getImage(), 0, 0, null);
 				else if(foot == 1)
-					g.drawImage(Const.boyFrontRight.getImage(), 0, 0, null);
+					g.drawImage(Const.brownboyFrontRight.getImage(), 0, 0, null);
 				else if(foot == 2)
-					g.drawImage(Const.boyFrontLeft.getImage(), 0, 0, null);
+					g.drawImage(Const.brownboyFrontLeft.getImage(), 0, 0, null);
 			}
 			else if(direction == Direction.LEFT) {
 				if(foot == 0)	
 					g.drawImage(Const.brownboyLeft.getImage(), 0, 0, null);
 				else if(foot == 1)	
-					g.drawImage(Const.boyLeftRight.getImage(), 0, 0, null);
+					g.drawImage(Const.brownboyLeftRight.getImage(), 0, 0, null);
 				else if(foot == 2)	
-					g.drawImage(Const.boyLeftLeft.getImage(), 0, 0, null);
+					g.drawImage(Const.brownboyLeftLeft.getImage(), 0, 0, null);
 				
 			}
 			else if(direction == Direction.RIGHT) {
 				if(foot == 0)	
 					g.drawImage(Const.brownboyRight.getImage(), 0, 0, null);
 				else if(foot == 1)	
-					g.drawImage(Const.boyRightRight.getImage(), 0, 0, null);
+					g.drawImage(Const.brownboyRightRight.getImage(), 0, 0, null);
 				else if(foot == 2)	
-					g.drawImage(Const.boyRightLeft.getImage(), 0, 0, null);
+					g.drawImage(Const.brownboyRightLeft.getImage(), 0, 0, null);
 			}
 		}
 		else if(perso.contains("police")) {
