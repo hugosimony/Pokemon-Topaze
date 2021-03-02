@@ -32,7 +32,7 @@ public class TextMenuDispatcher implements KeyEventDispatcher {
 				 
 				 if(game.inTextMenu) {
 	 				 if(game.inYesNoMenu) {
-	 					 if(keyCode == Variables.CONTROLS_UP || keyCode == Variables.CONTROLS_DOWN || keyCode == KeyEvent.VK_UP || keyCode == KeyEvent.VK_DOWN) {
+	 					 if(keyCode == Variables.CONTROLS_UP || keyCode == Variables.CONTROLS_DOWN) {
 	 						 YesNo.changeYesNoMenu();
 	 					 }
 	 					 else if(keyCode == Variables.CONTROLS_B || keyCode == KeyEvent.VK_ESCAPE || keyCode == Variables.CONTROLS_A || keyCode == KeyEvent.VK_ENTER) {

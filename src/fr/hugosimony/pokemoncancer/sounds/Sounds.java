@@ -30,8 +30,11 @@ public class Sounds {
 				clip.open(audioInput);
 				if (Variables.VOLUME_Main < 0f || Variables.VOLUME_Main > 1f)
 			        throw new IllegalArgumentException("Volume not valid: " + Variables.VOLUME_Main);
-				FloatControl gainControl = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);        
-			    gainControl.setValue(20f * (float) Math.log10(Variables.VOLUME_Main+0.15));
+				FloatControl gainControl = (FloatControl) clip.getControl(FloatControl.Type.MASTER_GAIN);  
+				if(sound == Const.soundOpenMenu)
+				    gainControl.setValue(50f * (float) Math.log10(Variables.VOLUME_Main));
+				else
+					gainControl.setValue(50f * (float) Math.log10(Variables.VOLUME_Main+0.10));
 			    clip.start();
 			    new Timer().schedule(new TimerTask() {@Override public void run() {clip.close(); this.cancel();}}, 20000, 1);
 	        } catch (UnsupportedAudioFileException e) {

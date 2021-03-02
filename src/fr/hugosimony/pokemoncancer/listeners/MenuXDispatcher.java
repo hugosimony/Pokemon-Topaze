@@ -36,8 +36,8 @@ public class MenuXDispatcher implements KeyEventDispatcher {
 	 				else if(keyCode == Variables.CONTROLS_MenuX) 
 	     				XMenu.printXMenu();
 	 			}
-	 			else if((keyCode == KeyEvent.VK_UP || keyCode == KeyEvent.VK_DOWN) && game.inXMenu)
-	 				XMenu.changePosition(keyCode == KeyEvent.VK_UP);
+	 			else if((keyCode == Variables.CONTROLS_UP || keyCode == Variables.CONTROLS_DOWN) && game.inXMenu)
+	 				XMenu.changePosition(keyCode == Variables.CONTROLS_UP);
 	 			else if((keyCode == Variables.CONTROLS_A || keyCode == KeyEvent.VK_ENTER) && game.inXMenu) {
 	 				if(XMenu.position == 1) {
 	 					XMenu.unprintXMenu();

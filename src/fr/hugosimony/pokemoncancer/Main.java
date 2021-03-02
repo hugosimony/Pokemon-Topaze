@@ -49,7 +49,7 @@ public class Main {
 	    if (volume < 0f || volume > 1f)
 	        throw new IllegalArgumentException("Volume not valid: " + volume);
 	    FloatControl gainControl = (FloatControl) actualClip.getControl(FloatControl.Type.MASTER_GAIN);        
-	    gainControl.setValue(20f * (float) Math.log10(volume));
+	    gainControl.setValue(50f * (float) Math.log10(volume-0.05));
 	}
 	
 	public static void refreshVolume() {
