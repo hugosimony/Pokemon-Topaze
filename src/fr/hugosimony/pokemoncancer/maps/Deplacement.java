@@ -247,7 +247,7 @@ public class Deplacement {
 						game.map.remove(pnj);
 						pnj = new Pnj(game, pnj.perso, pnj.direction, pnj.foot, pnj.positionX, pnj.positionY, pnj.IA, false, pnj.directions, pnj.IAMoving, pnj.paraClick, pnj.mooving);
 						pnj.setLocation(pnj.positionX, pnj.positionY);
-						pnj.setSize(50,70);
+						pnj.setSize(35,50);
 						pnj.setVisible(true);
 						game.map.add(pnj);
 					}
@@ -257,7 +257,7 @@ public class Deplacement {
 		
 		hero = hero_;
 		hero.setLocation(locationX, locationY);
-		hero.setSize(32,50);
+		hero.setSize(35,50);
 		hero.setVisible(true);
 		game.map.add(hero);
 		
@@ -275,7 +275,7 @@ public class Deplacement {
 						game.map.remove(pnj);
 						pnj = new Pnj(game, pnj.perso, pnj.direction, pnj.foot, pnj.positionX, pnj.positionY, pnj.IA, false, pnj.directions, pnj.IAMoving, pnj.paraClick, pnj.mooving);
 						pnj.setLocation(pnj.positionX, pnj.positionY);
-						pnj.setSize(50,70);
+						pnj.setSize(35,50);
 						pnj.setVisible(true);
 						game.map.add(pnj);
 					}

@@ -8,7 +8,9 @@ import javax.swing.JPanel;
 import fr.hugosimony.pokemoncancer.Game;
 import fr.hugosimony.pokemoncancer.Main;
 import fr.hugosimony.pokemoncancer.Variables;
+import fr.hugosimony.pokemoncancer.maps.Direction;
 import fr.hugosimony.pokemoncancer.maps.perso.Pnj;
+import fr.hugosimony.pokemoncancer.maps.perso.PnjText;
 import fr.hugosimony.pokemoncancer.menus.TextZone;
 import fr.hugosimony.pokemoncancer.pokemon.battle.Battle;
 import fr.hugosimony.pokemoncancer.transitions.TransitionSimple;
@@ -48,14 +50,14 @@ public class InteractDispatcher implements KeyEventDispatcher {
 					 else {
 						 Pnj pnj = IntTuple.containsPnj(game.pnjs, game.deplacement.getLookingTile());
 						 if(pnj != null && !pnj.mooving) {
-							 /*
+							 
 							 text = PnjText.getText(pnj.perso);
 							 game.pnjs.remove(pnj);
 							 if(pnj.paraClick)
 								 pnj.clearIA();
 							 pnj.setSprites(new Pnj(game, pnj.perso, Direction.getOpositeDirection(game.deplacement.direction), 0, pnj.positionX, pnj.positionY, false, false, null, null, pnj.paraClick, pnj.mooving));
-							 */
-							 new TransitionSimple(game, game.gamePanel, new Battle(game, "test", "Water1", "good", game.actualPanel));
+							 
+							 //new TransitionSimple(game, game.gamePanel, new Battle(game, "test", "Water1", "good", game.actualPanel));
 						 }
 					 }
 					
