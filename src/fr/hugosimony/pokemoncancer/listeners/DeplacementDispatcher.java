@@ -2,6 +2,7 @@ package fr.hugosimony.pokemoncancer.listeners;
 
 import java.awt.KeyEventDispatcher;
 import java.awt.event.KeyEvent;
+import java.util.Arrays;
 
 import javax.swing.JPanel;
 
@@ -24,19 +25,21 @@ public class DeplacementDispatcher implements KeyEventDispatcher {
 	
 		 if(originalPanel.isVisible()) {
 			 if(!Main.settingsOn && !game.inTransition && !game.inXMenu && !game.inSaveMenu && !game.inTextMenu && !game.inBattle && game.actualPanel.isVisible()) {
-				 if(event.getID() == KeyEvent.KEY_PRESSED && game.deplacement.released) {
+				 if(event.getID() == KeyEvent.KEY_PRESSED) {
 					 int keyCode = event.getKeyCode();
-					 if(game.deplacement.getDirection(keyCode) != null && !game.inXMenu && !game.inSaveMenu) {
-						 Direction dir = game.deplacement.getDirection(keyCode);
-		 				 if(game.deplacement.released) {
-			 				 if(!game.deplacement.coolDown) {
-			 					 game.deplacement.released = false;
-			 					 game.deplacement.direction = dir;
-			 					 game.deplacement.newDirection = dir;
-			 					 game.deplacement.startMove(dir, false);
-			 				 }
-			 				 else if(dir != game.deplacement.direction)
-			 					 game.deplacement.newDirection = dir;
+					 Direction dir = game.deplacement.getDirection(keyCode);
+					 if(dir != Direction.NULL) {
+						 if(!game.deplacement.pressed.contains(keyCode + ""))
+							 game.deplacement.pressed.add(keyCode + "");
+						 if(dir != game.deplacement.direction) {
+							 game.deplacement.newDirection = dir;
+		 					 game.deplacement.released = false;
+						 }
+						 if(!game.deplacement.coolDown) {
+		 					 game.deplacement.released = false;
+		 					 game.deplacement.direction = dir;
+		 					 game.deplacement.newDirection = dir;
+		 					 game.deplacement.startMove(dir, false);
 		 				 }
 					 }
 					 else if(event.getKeyCode() == KeyEvent.VK_A) {
@@ -47,8 +50,17 @@ public class DeplacementDispatcher implements KeyEventDispatcher {
 					 }
 				 }
 				 else if(event.getID() == KeyEvent.KEY_RELEASED) {
-	     			if(game.deplacement.getDirection(event.getKeyCode()) == game.deplacement.direction)
-	     				game.deplacement.released = true;
+					 int keyCode = event.getKeyCode();
+					 if(game.deplacement.getDirection(keyCode) == game.deplacement.direction)
+						 game.deplacement.released = true;
+					 if(game.deplacement.pressed.contains(keyCode + ""))
+						 game.deplacement.pressed.remove(keyCode + "");
+					 if(!game.deplacement.coolDown && game.deplacement.pressed.size() == 1) {
+							game.deplacement.released = false;
+							game.deplacement.direction = game.deplacement.getDirection(Integer.parseInt(game.deplacement.pressed.get(0)));
+							game.deplacement.newDirection = game.deplacement.direction;
+							game.deplacement.startMove(game.deplacement.direction, true);
+					 }
 	     		}
 			 }
 		 }
