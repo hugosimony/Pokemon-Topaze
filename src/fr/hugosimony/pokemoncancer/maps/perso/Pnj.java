@@ -204,7 +204,7 @@ public class Pnj extends JPanel {
 		else if(perso.contains("brownboy")) {
 			if(direction == Direction.UP) {
 				if(foot == 0)
-					g.drawImage(Const.boyBack.getImage(), 0, 0, null);
+					g.drawImage(Const.brownboyBack.getImage(), 0, 0, null);
 				else if(foot == 1)
 					g.drawImage(Const.boyBackRight.getImage(), 0, 0, null);
 				else if(foot == 2)
@@ -212,7 +212,7 @@ public class Pnj extends JPanel {
 			}
 			else if(direction == Direction.DOWN) {
 				if(foot == 0)
-					g.drawImage(Const.boyFront.getImage(), 0, 0, null);
+					g.drawImage(Const.brownboyFront.getImage(), 0, 0, null);
 				else if(foot == 1)
 					g.drawImage(Const.boyFrontRight.getImage(), 0, 0, null);
 				else if(foot == 2)
@@ -220,7 +220,7 @@ public class Pnj extends JPanel {
 			}
 			else if(direction == Direction.LEFT) {
 				if(foot == 0)	
-					g.drawImage(Const.boyLeft.getImage(), 0, 0, null);
+					g.drawImage(Const.brownboyLeft.getImage(), 0, 0, null);
 				else if(foot == 1)	
 					g.drawImage(Const.boyLeftRight.getImage(), 0, 0, null);
 				else if(foot == 2)	
@@ -229,7 +229,7 @@ public class Pnj extends JPanel {
 			}
 			else if(direction == Direction.RIGHT) {
 				if(foot == 0)	
-					g.drawImage(Const.boyRight.getImage(), 0, 0, null);
+					g.drawImage(Const.brownboyRight.getImage(), 0, 0, null);
 				else if(foot == 1)	
 					g.drawImage(Const.boyRightRight.getImage(), 0, 0, null);
 				else if(foot == 2)	

@@ -41,7 +41,7 @@ public class FileGroundItemsReaderWriter {
 		
 		//****************************************************
 		// Selenia
-		String items = "";
+		String items = " ";
 		if(Variables.GROUND_ITEMS_Selenia.contains("0"))
 			items += "a";
 		if(Variables.GROUND_ITEMS_Selenia.contains("1"))
@@ -50,14 +50,14 @@ public class FileGroundItemsReaderWriter {
 		
 		//****************************************************
 		// Road 1
-		items = "";
+		items = " ";
 		if(Variables.GROUND_ITEMS_Road1.contains("0"))
 			items += "a";
 		lines.set(1, items);
 		
 		//****************************************************
 		// xxx
-		items = "";
+		items = " ";
 		
 		FileCreator.createGroundItemsFile(false, save);
 		FileReaderWriter.writeAllLine(lines, Const.getGroundItemsPath(save));
