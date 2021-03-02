@@ -65,7 +65,8 @@ public class FileCreator {
 			PrintWriter writer = new PrintWriter(Const.getGroundItemsPath(save), "UTF-8");
 			if(first)
 				writer.print("Ground Items :\n"
-						+ "ab");
+						+ "ab\n"
+						+ "a");
 			else
 				writer.print("Settings :");
 			writer.close();

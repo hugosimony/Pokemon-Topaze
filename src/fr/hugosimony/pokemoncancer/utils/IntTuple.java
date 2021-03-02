@@ -63,4 +63,13 @@ public class IntTuple {
 		return x;
 	}
 	
+	public static void removeTuple(ArrayList<IntTuple> list, IntTuple tuple) {
+		for(int i = 0; i < list.size(); i++) {
+			if(list.get(i).equals(tuple)) {
+				list.remove(i);
+				break;
+			}
+		}
+	}
+	
 }

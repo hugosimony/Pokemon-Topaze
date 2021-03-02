@@ -103,35 +103,36 @@ public class Intertown1 extends JPanel {
 	private void setClickableTiles() {
 		game.clickableTiles = new ArrayList<IntTuple>();
 		
-		game.clickableTiles.add(new IntTuple(598, 331)); // HOST
-		game.clickableTiles.add(new IntTuple(726, 267)); // SIGN
+		game.clickableTiles.add(new IntTuple(3200, 2922)); // HOST
+		game.clickableTiles.add(new IntTuple(3328, 2858)); // SIGN
 	}
 
 	private void setWalls() {
 		game.walls = new ArrayList<IntTuple>();
 		
-		game.walls.add(new IntTuple(630, 555));
-		game.walls.add(new IntTuple(598, 523));
-		game.walls.add(new IntTuple(598, 491));
-		game.walls.add(new IntTuple(598, 459));
-		game.walls.add(new IntTuple(598, 427));
-		game.walls.add(new IntTuple(598, 395));
-		game.walls.add(new IntTuple(598, 363));
-		game.walls.add(new IntTuple(598, 331));
-		game.walls.add(new IntTuple(598, 299));
-		game.walls.add(new IntTuple(598, 267));
-		game.walls.add(new IntTuple(630, 235));
-		game.walls.add(new IntTuple(694, 235));
-		game.walls.add(new IntTuple(726, 267));
-		game.walls.add(new IntTuple(758, 299));
-		game.walls.add(new IntTuple(758, 331));
-		game.walls.add(new IntTuple(758, 363));
-		game.walls.add(new IntTuple(758, 395));
-		game.walls.add(new IntTuple(726, 427));
-		game.walls.add(new IntTuple(726, 459));
-		game.walls.add(new IntTuple(726, 491));
-		game.walls.add(new IntTuple(726, 523));
-		game.walls.add(new IntTuple(694, 555));
+		game.walls.add(new IntTuple(3232, 3146));
+		game.walls.add(new IntTuple(3200, 3114));
+		game.walls.add(new IntTuple(3200, 3082));
+		game.walls.add(new IntTuple(3200, 3050));
+		game.walls.add(new IntTuple(3200, 3018));
+		game.walls.add(new IntTuple(3200, 2986));
+		game.walls.add(new IntTuple(3200, 2954));
+		game.walls.add(new IntTuple(3200, 2922));
+		game.walls.add(new IntTuple(3200, 2890));
+		game.walls.add(new IntTuple(3200, 2858));
+		game.walls.add(new IntTuple(3232, 2826));
+		game.walls.add(new IntTuple(3296, 2826));
+		game.walls.add(new IntTuple(3328, 2858));
+		game.walls.add(new IntTuple(3360, 2890));
+		game.walls.add(new IntTuple(3360, 2922));
+		game.walls.add(new IntTuple(3360, 2954));
+		game.walls.add(new IntTuple(3360, 2986));
+		game.walls.add(new IntTuple(3360, 3018));
+		game.walls.add(new IntTuple(3328, 3018));
+		game.walls.add(new IntTuple(3328, 3050));
+		game.walls.add(new IntTuple(3328, 3082));
+		game.walls.add(new IntTuple(3328, 3114));
+		game.walls.add(new IntTuple(3296, 3146));
 
 	}
 	

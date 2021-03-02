@@ -112,7 +112,7 @@ public class Selenia extends JPanel {
 		game.clickableTiles.add(new IntTuple(1440, 1194)); // LETTER BOX 2 (friend)
 		game.clickableTiles.add(new IntTuple(1408, 1290)); // SIGN
 		game.clickableTiles.add(new IntTuple(1344, 1162)); // POT
-		game.clickableTiles.add(new IntTuple(1024, 1290)); // GROUND ITEM
+		game.clickableTiles.add(new IntTuple(1024, 1290)); // GROUND ITEM 1
 		game.clickableTiles.add(new IntTuple(1536, 1194)); // HOUSE LOCKED 1 
 		game.clickableTiles.add(new IntTuple(1248, 1482)); // HOUSE LOCKED 2
 		game.clickableTiles.add(new IntTuple(1504, 1482)); // HOUSE LOCKED 3
@@ -122,6 +122,8 @@ public class Selenia extends JPanel {
 	private void setWalls() {
 		game.walls = new ArrayList<IntTuple>();
 		
+		if(Variables.GROUND_ITEMS_Selenia.contains("1"))
+			game.clickableTiles.add(new IntTuple(1024, 1290));
 		game.walls.add(new IntTuple(1216, 1194));
 		game.walls.add(new IntTuple(1184, 1194));
 		game.walls.add(new IntTuple(1184, 1162));
@@ -334,6 +336,7 @@ public class Selenia extends JPanel {
 		 else if(IntTuple.getPosition(game.clickableTiles, tuple) == 5 && Variables.GROUND_ITEMS_Selenia.contains("1")) {
 			 Sounds.playSound(Const.soundItemGet);
 			 Variables.GROUND_ITEMS_Selenia.remove("1");
+			 IntTuple.removeTuple(game.walls, new IntTuple(1024, 1290));
 			 // Ajouter une Hyper Ball au sac.
 			 text = "Vous avez ramassé une Hyper Ball !";
 		 }

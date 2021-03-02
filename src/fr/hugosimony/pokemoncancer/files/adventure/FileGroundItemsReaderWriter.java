@@ -25,6 +25,13 @@ public class FileGroundItemsReaderWriter {
 		Variables.GROUND_ITEMS_Selenia = items;
 		
 		//****************************************************
+		// Road 1
+		items = new ArrayList<String>();
+		if(lines.get(1).contains("a"))
+			items.add("0");
+		Variables.GROUND_ITEMS_Road1 = items;
+		
+		//****************************************************
 		// xxx
 		items = new ArrayList<String>();
 	}
@@ -42,6 +49,13 @@ public class FileGroundItemsReaderWriter {
 		lines.set(0, items);
 		
 		//****************************************************
+		// Road 1
+		items = "";
+		if(Variables.GROUND_ITEMS_Road1.contains("0"))
+			items += "a";
+		lines.set(1, items);
+		
+		//****************************************************
 		// xxx
 		items = "";
 		
@@ -56,6 +70,13 @@ public class FileGroundItemsReaderWriter {
 		items.add("0");
 		items.add("1");
 		Variables.GROUND_ITEMS_Selenia = items;
+		
+		//****************************************************
+		// Road 1
+		items = new ArrayList<String>();
+		items.add("0");
+		Variables.GROUND_ITEMS_Road1 = items;
+		
 		//****************************************************
 		// xxx
 		items = new ArrayList<String>();
