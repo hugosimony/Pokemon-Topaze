@@ -41,6 +41,6 @@ public class Variables {
 	
 	// Ground Items
 	
-	public static ArrayList<Integer> GROUND_ITEMS_Selenia;
+	public static ArrayList<String> GROUND_ITEMS_Selenia;
 	
 }

@@ -108,215 +108,184 @@ public class Selenia extends JPanel {
 	private void setClickableTiles() {
 		game.clickableTiles = new ArrayList<IntTuple>();
 		
-		game.clickableTiles.add(new IntTuple(1078, 678)); // LETTER BOX 1
-		game.clickableTiles.add(new IntTuple(1174, 678)); // LETTER BOX 2
-		game.clickableTiles.add(new IntTuple(1142, 774)); // SIGN
-		game.clickableTiles.add(new IntTuple(1078, 646)); // POT
-		game.clickableTiles.add(new IntTuple(758, 742)); // ROCK HIDDEN OBJECT
-		game.clickableTiles.add(new IntTuple(1270, 678)); // HOUSE LOCKED 1 
-		game.clickableTiles.add(new IntTuple(1238, 966)); // HOUSE LOCKED 2
-		game.clickableTiles.add(new IntTuple(982, 966)); // HOUSE LOCKED 3
+		game.clickableTiles.add(new IntTuple(1344, 1194)); // LETTER BOX 1 (hero)
+		game.clickableTiles.add(new IntTuple(1440, 1194)); // LETTER BOX 2 (friend)
+		game.clickableTiles.add(new IntTuple(1408, 1290)); // SIGN
+		game.clickableTiles.add(new IntTuple(1344, 1162)); // POT
+		game.clickableTiles.add(new IntTuple(1024, 1290)); // GROUND ITEM
+		game.clickableTiles.add(new IntTuple(1536, 1194)); // HOUSE LOCKED 1 
+		game.clickableTiles.add(new IntTuple(1248, 1482)); // HOUSE LOCKED 2
+		game.clickableTiles.add(new IntTuple(1504, 1482)); // HOUSE LOCKED 3
 		
 	}
 	
 	private void setWalls() {
 		game.walls = new ArrayList<IntTuple>();
 		
-		game.walls.add(new IntTuple(982, 550));
-		game.walls.add(new IntTuple(950, 550));
-		game.walls.add(new IntTuple(918, 550));
-		game.walls.add(new IntTuple(886, 550));
-		game.walls.add(new IntTuple(854, 550));
-		game.walls.add(new IntTuple(822, 550));
-		game.walls.add(new IntTuple(790, 582));
-		game.walls.add(new IntTuple(790, 614));
-		game.walls.add(new IntTuple(758, 614));
-		game.walls.add(new IntTuple(726, 646));
-		game.walls.add(new IntTuple(726, 678));
-		game.walls.add(new IntTuple(726, 710));
-		game.walls.add(new IntTuple(726, 742));
-		game.walls.add(new IntTuple(726, 774));
-		game.walls.add(new IntTuple(726, 806));
-		game.walls.add(new IntTuple(726, 838));
-		game.walls.add(new IntTuple(726, 870));
-		game.walls.add(new IntTuple(726, 902));
-		game.walls.add(new IntTuple(726, 934));
-		game.walls.add(new IntTuple(694, 934));
-		game.walls.add(new IntTuple(662, 966));
-		game.walls.add(new IntTuple(662, 998));
-		game.walls.add(new IntTuple(630, 998));
-		game.walls.add(new IntTuple(630, 966));
-		game.walls.add(new IntTuple(630, 934));
-		game.walls.add(new IntTuple(598, 934));
-		game.walls.add(new IntTuple(566, 934));
-		game.walls.add(new IntTuple(534, 934));
-		game.walls.add(new IntTuple(534, 966));
-		game.walls.add(new IntTuple(534, 998));
-		game.walls.add(new IntTuple(534, 1030));
-		game.walls.add(new IntTuple(534, 1062));
-		game.walls.add(new IntTuple(566, 1062));
-		game.walls.add(new IntTuple(598, 1062));
-		game.walls.add(new IntTuple(630, 1062));
-		game.walls.add(new IntTuple(662, 1062));
-		game.walls.add(new IntTuple(694, 1062));
-		game.walls.add(new IntTuple(726, 1062));
-		game.walls.add(new IntTuple(758, 1062));
-		game.walls.add(new IntTuple(790, 1062));
-		game.walls.add(new IntTuple(822, 1062));
-		game.walls.add(new IntTuple(854, 1062));
-		game.walls.add(new IntTuple(886, 1062));
-		game.walls.add(new IntTuple(918, 1062));
-		game.walls.add(new IntTuple(950, 1062));
-		game.walls.add(new IntTuple(982, 1062));
-		game.walls.add(new IntTuple(1014, 1062));
-		game.walls.add(new IntTuple(1046, 1062));
-		game.walls.add(new IntTuple(1078, 1062));
-		game.walls.add(new IntTuple(1110, 1062));
-		game.walls.add(new IntTuple(1142, 1062));
-		game.walls.add(new IntTuple(1174, 1062));
-		game.walls.add(new IntTuple(1206, 1062));
-		game.walls.add(new IntTuple(1238, 1062));
-		game.walls.add(new IntTuple(1270, 1062));
-		game.walls.add(new IntTuple(1302, 1062));
-		game.walls.add(new IntTuple(1334, 1062));
-		game.walls.add(new IntTuple(1366, 1062));
-		game.walls.add(new IntTuple(1398, 1062));
-		game.walls.add(new IntTuple(1430, 1062));
-		game.walls.add(new IntTuple(1462, 1062));
-		game.walls.add(new IntTuple(1494, 1062));
-		game.walls.add(new IntTuple(1526, 1062));
-		game.walls.add(new IntTuple(1526, 1030));
-		game.walls.add(new IntTuple(1526, 998));
-		game.walls.add(new IntTuple(1558, 998));
-		game.walls.add(new IntTuple(1558, 966));
-		game.walls.add(new IntTuple(1590, 966));
-		game.walls.add(new IntTuple(1590, 934));
-		game.walls.add(new IntTuple(1590, 902));
-		game.walls.add(new IntTuple(1590, 870));
-		game.walls.add(new IntTuple(1622, 870));
-		game.walls.add(new IntTuple(1654, 870));
-		game.walls.add(new IntTuple(1686, 870));
-		game.walls.add(new IntTuple(1718, 870));
-		game.walls.add(new IntTuple(1750, 870));
-		game.walls.add(new IntTuple(1782, 870));
-		game.walls.add(new IntTuple(1814, 870));
-		game.walls.add(new IntTuple(1846, 870));
-		game.walls.add(new IntTuple(1846, 838));
-		game.walls.add(new IntTuple(1846, 806));
-		game.walls.add(new IntTuple(1846, 774));
-		game.walls.add(new IntTuple(1814, 774));
-		game.walls.add(new IntTuple(1782, 774));
-		game.walls.add(new IntTuple(1718, 774));
-		game.walls.add(new IntTuple(1686, 774));
-		game.walls.add(new IntTuple(1654, 774));
-		game.walls.add(new IntTuple(1622, 774));
-		game.walls.add(new IntTuple(1590, 774));
-		game.walls.add(new IntTuple(1558, 774));
-		game.walls.add(new IntTuple(1526, 774));
-		game.walls.add(new IntTuple(1494, 774));
-		game.walls.add(new IntTuple(1462, 774));
-		game.walls.add(new IntTuple(1462, 742));
-		game.walls.add(new IntTuple(1462, 710));
-		game.walls.add(new IntTuple(1462, 678));
-		game.walls.add(new IntTuple(1462, 646));
-		game.walls.add(new IntTuple(1430, 614));
-		game.walls.add(new IntTuple(1398, 614));
-		game.walls.add(new IntTuple(1398, 582));
-		game.walls.add(new IntTuple(1366, 550));
-		game.walls.add(new IntTuple(1334, 550));
-		game.walls.add(new IntTuple(1302, 550));
-		game.walls.add(new IntTuple(1270, 550));
-		game.walls.add(new IntTuple(1238, 550));
-		game.walls.add(new IntTuple(1206, 550));
-		game.walls.add(new IntTuple(1174, 550));
-		game.walls.add(new IntTuple(1174, 582));
-		game.walls.add(new IntTuple(1142, 550));
-		game.walls.add(new IntTuple(1110, 582));
-		game.walls.add(new IntTuple(1078, 582));
-		game.walls.add(new IntTuple(1078, 550));
-		game.walls.add(new IntTuple(1046, 550));
-		game.walls.add(new IntTuple(1014, 550));
-		game.walls.add(new IntTuple(694, 966));
-		game.walls.add(new IntTuple(694, 998));
-		game.walls.add(new IntTuple(822, 934));
-		game.walls.add(new IntTuple(854, 934));
-		game.walls.add(new IntTuple(950, 966));
-		game.walls.add(new IntTuple(950, 934));
-		game.walls.add(new IntTuple(950, 902));
-		game.walls.add(new IntTuple(982, 902));
-		game.walls.add(new IntTuple(1014, 902));
-		game.walls.add(new IntTuple(1046, 902));
-		game.walls.add(new IntTuple(1046, 934));
-		game.walls.add(new IntTuple(1046, 966));
-		game.walls.add(new IntTuple(1014, 966));
-		game.walls.add(new IntTuple(1206, 966));
-		game.walls.add(new IntTuple(1206, 934));
-		game.walls.add(new IntTuple(1206, 902));
-		game.walls.add(new IntTuple(1238, 902));
-		game.walls.add(new IntTuple(1270, 902));
-		game.walls.add(new IntTuple(1302, 902));
-		game.walls.add(new IntTuple(1302, 934));
-		game.walls.add(new IntTuple(1302, 966));
-		game.walls.add(new IntTuple(1270, 966));
-		game.walls.add(new IntTuple(1462, 966));
-		game.walls.add(new IntTuple(1462, 934));
-		game.walls.add(new IntTuple(1494, 934));
-		game.walls.add(new IntTuple(1526, 934));
-		game.walls.add(new IntTuple(1526, 966));
-		game.walls.add(new IntTuple(1558, 966));
-		game.walls.add(new IntTuple(1494, 998));
-		game.walls.add(new IntTuple(1398, 742));
-		game.walls.add(new IntTuple(1366, 742));
-		game.walls.add(new IntTuple(1142, 774));
-		game.walls.add(new IntTuple(758, 742));
-		game.walls.add(new IntTuple(758, 838));
-		game.walls.add(new IntTuple(950, 678));
-		game.walls.add(new IntTuple(918, 678));
-		game.walls.add(new IntTuple(918, 646));
-		game.walls.add(new IntTuple(918, 614));
-		game.walls.add(new IntTuple(918, 582));
-		game.walls.add(new IntTuple(1046, 582));
-		game.walls.add(new IntTuple(1046, 614));
-		game.walls.add(new IntTuple(1046, 646));
-		game.walls.add(new IntTuple(1046, 678));
-		game.walls.add(new IntTuple(1014, 678));
-		game.walls.add(new IntTuple(1078, 678));
-		game.walls.add(new IntTuple(1078, 646));
-		game.walls.add(new IntTuple(1078, 614));
-		game.walls.add(new IntTuple(1174, 614));
-		game.walls.add(new IntTuple(1174, 646));
-		game.walls.add(new IntTuple(1174, 678));
-		game.walls.add(new IntTuple(1206, 678));
-		game.walls.add(new IntTuple(1238, 678));
-		game.walls.add(new IntTuple(1302, 678));
-		game.walls.add(new IntTuple(1334, 678));
-		game.walls.add(new IntTuple(1334, 646));
-		game.walls.add(new IntTuple(1334, 614));
-		game.walls.add(new IntTuple(1334, 582));
+		game.walls.add(new IntTuple(1216, 1194));
+		game.walls.add(new IntTuple(1184, 1194));
+		game.walls.add(new IntTuple(1184, 1162));
+		game.walls.add(new IntTuple(1184, 1130));
+		game.walls.add(new IntTuple(1184, 1098));
+		game.walls.add(new IntTuple(1152, 1066));
+		game.walls.add(new IntTuple(1120, 1066));
+		game.walls.add(new IntTuple(1088, 1066));
+		game.walls.add(new IntTuple(1056, 1098));
+		game.walls.add(new IntTuple(1056, 1130));
+		game.walls.add(new IntTuple(1024, 1130));
+		game.walls.add(new IntTuple(992, 1162));
+		game.walls.add(new IntTuple(992, 1194));
+		game.walls.add(new IntTuple(992, 1226));
+		game.walls.add(new IntTuple(1024, 1258));
+		game.walls.add(new IntTuple(992, 1290));
+		game.walls.add(new IntTuple(992, 1322));
+		game.walls.add(new IntTuple(1024, 1354));
+		game.walls.add(new IntTuple(992, 1386));
+		game.walls.add(new IntTuple(992, 1418));
+		game.walls.add(new IntTuple(992, 1450));
+		game.walls.add(new IntTuple(960, 1482));
+		game.walls.add(new IntTuple(960, 1514));
+		game.walls.add(new IntTuple(928, 1514));
+		game.walls.add(new IntTuple(896, 1514));
+		game.walls.add(new IntTuple(896, 1482));
+		game.walls.add(new IntTuple(800, 1482));
+		game.walls.add(new IntTuple(800, 1514));
+		game.walls.add(new IntTuple(800, 1546));
+		game.walls.add(new IntTuple(832, 1578));
+		game.walls.add(new IntTuple(864, 1578));
+		game.walls.add(new IntTuple(896, 1578));
+		game.walls.add(new IntTuple(928, 1578));
+		game.walls.add(new IntTuple(960, 1578));
+		game.walls.add(new IntTuple(992, 1578));
+		game.walls.add(new IntTuple(1024, 1578));
+		game.walls.add(new IntTuple(1056, 1578));
+		game.walls.add(new IntTuple(1088, 1578));
+		game.walls.add(new IntTuple(1120, 1578));
+		game.walls.add(new IntTuple(1152, 1578));
+		game.walls.add(new IntTuple(1184, 1578));
+		game.walls.add(new IntTuple(1216, 1578));
+		game.walls.add(new IntTuple(1248, 1578));
+		game.walls.add(new IntTuple(1280, 1578));
+		game.walls.add(new IntTuple(1312, 1578));
+		game.walls.add(new IntTuple(1344, 1578));
+		game.walls.add(new IntTuple(1376, 1578));
+		game.walls.add(new IntTuple(1408, 1578));
+		game.walls.add(new IntTuple(1440, 1578));
+		game.walls.add(new IntTuple(1472, 1578));
+		game.walls.add(new IntTuple(1504, 1578));
+		game.walls.add(new IntTuple(1536, 1578));
+		game.walls.add(new IntTuple(1568, 1578));
+		game.walls.add(new IntTuple(1600, 1578));
+		game.walls.add(new IntTuple(1632, 1578));
+		game.walls.add(new IntTuple(1664, 1578));
+		game.walls.add(new IntTuple(1696, 1578));
+		game.walls.add(new IntTuple(1728, 1578));
+		game.walls.add(new IntTuple(1760, 1578));
+		game.walls.add(new IntTuple(1792, 1546));
+		game.walls.add(new IntTuple(1760, 1514));
+		game.walls.add(new IntTuple(1728, 1514));
+		game.walls.add(new IntTuple(1728, 1482));
+		game.walls.add(new IntTuple(1728, 1450));
+		game.walls.add(new IntTuple(1760, 1450));
+		game.walls.add(new IntTuple(1792, 1450));
+		game.walls.add(new IntTuple(1824, 1482));
+		game.walls.add(new IntTuple(1856, 1450));
+		game.walls.add(new IntTuple(1856, 1418));
+		game.walls.add(new IntTuple(1856, 1386));
+		game.walls.add(new IntTuple(1888, 1386));
+		game.walls.add(new IntTuple(1920, 1386));
+		game.walls.add(new IntTuple(1952, 1386));
+		game.walls.add(new IntTuple(1984, 1386));
+		game.walls.add(new IntTuple(2016, 1386));
+		game.walls.add(new IntTuple(2048, 1386));
+		game.walls.add(new IntTuple(2080, 1386));
+		game.walls.add(new IntTuple(2112, 1354));
+		game.walls.add(new IntTuple(2112, 1322));
+		game.walls.add(new IntTuple(2080, 1290));
+		game.walls.add(new IntTuple(2048, 1290));
+		game.walls.add(new IntTuple(1984, 1290));
+		game.walls.add(new IntTuple(1952, 1290));
+		game.walls.add(new IntTuple(1920, 1290));
+		game.walls.add(new IntTuple(1888, 1290));
+		game.walls.add(new IntTuple(1856, 1290));
+		game.walls.add(new IntTuple(1824, 1290));
+		game.walls.add(new IntTuple(1792, 1290));
+		game.walls.add(new IntTuple(1760, 1290));
+		game.walls.add(new IntTuple(1728, 1290));
+		game.walls.add(new IntTuple(1728, 1258));
+		game.walls.add(new IntTuple(1728, 1226));
+		game.walls.add(new IntTuple(1728, 1194));
+		game.walls.add(new IntTuple(1728, 1162));
+		game.walls.add(new IntTuple(1696, 1130));
+		game.walls.add(new IntTuple(1664, 1130));
+		game.walls.add(new IntTuple(1664, 1098));
+		game.walls.add(new IntTuple(1632, 1066));
+		game.walls.add(new IntTuple(1600, 1098));
+		game.walls.add(new IntTuple(1600, 1130));
+		game.walls.add(new IntTuple(1600, 1162));
+		game.walls.add(new IntTuple(1600, 1194));
+		game.walls.add(new IntTuple(1568, 1194));
+		game.walls.add(new IntTuple(1504, 1194));
+		game.walls.add(new IntTuple(1472, 1194));
+		game.walls.add(new IntTuple(1440, 1194));
+		game.walls.add(new IntTuple(1440, 1162));
+		game.walls.add(new IntTuple(1440, 1130));
+		game.walls.add(new IntTuple(1440, 1098));
+		game.walls.add(new IntTuple(1408, 1066));
+		game.walls.add(new IntTuple(1376, 1098));
+		game.walls.add(new IntTuple(1344, 1130));
+		game.walls.add(new IntTuple(1344, 1162));
+		game.walls.add(new IntTuple(1344, 1194));
+		game.walls.add(new IntTuple(1312, 1194));
+		game.walls.add(new IntTuple(1280, 1194));
+		game.walls.add(new IntTuple(1408, 1290));
+		game.walls.add(new IntTuple(1632, 1258));
+		game.walls.add(new IntTuple(1664, 1258));
+		game.walls.add(new IntTuple(1120, 1450));
+		game.walls.add(new IntTuple(1088, 1450));
+		game.walls.add(new IntTuple(1216, 1418));
+		game.walls.add(new IntTuple(1248, 1418));
+		game.walls.add(new IntTuple(1280, 1418));
+		game.walls.add(new IntTuple(1312, 1418));
+		game.walls.add(new IntTuple(1312, 1450));
+		game.walls.add(new IntTuple(1312, 1482));
+		game.walls.add(new IntTuple(1280, 1482));
+		game.walls.add(new IntTuple(1216, 1482));
+		game.walls.add(new IntTuple(1216, 1450));
+		game.walls.add(new IntTuple(1472, 1418));
+		game.walls.add(new IntTuple(1504, 1418));
+		game.walls.add(new IntTuple(1536, 1418));
+		game.walls.add(new IntTuple(1568, 1418));
+		game.walls.add(new IntTuple(1568, 1450));
+		game.walls.add(new IntTuple(1568, 1482));
+		game.walls.add(new IntTuple(1536, 1482));
+		game.walls.add(new IntTuple(1472, 1482));
+		game.walls.add(new IntTuple(1472, 1450));
+
 		
 		// Water :
 		
-		game.walls.add(new IntTuple(854, 742));
-		game.walls.add(new IntTuple(822, 742));
-		game.walls.add(new IntTuple(790, 742));
-		game.walls.add(new IntTuple(790, 774));
-		game.walls.add(new IntTuple(822, 774));
-		game.walls.add(new IntTuple(854, 774));
-		game.walls.add(new IntTuple(886, 774));
-		game.walls.add(new IntTuple(886, 806));
-		game.walls.add(new IntTuple(854, 806));
-		game.walls.add(new IntTuple(822, 806));
-		game.walls.add(new IntTuple(790, 806));
-		game.walls.add(new IntTuple(790, 838));
-		game.walls.add(new IntTuple(822, 838));
-		game.walls.add(new IntTuple(854, 838));
-		game.walls.add(new IntTuple(886, 838));
+		game.walls.add(new IntTuple(1120, 1258));
+		game.walls.add(new IntTuple(1088, 1258));
+		game.walls.add(new IntTuple(1056, 1258));
+		game.walls.add(new IntTuple(1056, 1290));
+		game.walls.add(new IntTuple(1088, 1290));
+		game.walls.add(new IntTuple(1120, 1290));
+		game.walls.add(new IntTuple(1152, 1290));
+		game.walls.add(new IntTuple(1152, 1322));
+		game.walls.add(new IntTuple(1120, 1322));
+		game.walls.add(new IntTuple(1088, 1322));
+		game.walls.add(new IntTuple(1056, 1322));
+		game.walls.add(new IntTuple(1056, 1354));
+		game.walls.add(new IntTuple(1088, 1354));
+		game.walls.add(new IntTuple(1120, 1354));
+		game.walls.add(new IntTuple(1152, 1354));
 		
 		// TEMP
-		
-		game.walls.add(new IntTuple(1270, 678)); // PORTE MAISON 1
-		game.walls.add(new IntTuple(1238, 966)); // PORTE MAISON 2
-		game.walls.add(new IntTuple(982, 966));  // PORTE MAISON 3
+
+		game.walls.add(new IntTuple(1536, 1194)); // DOOR HOUSE 1
+		game.walls.add(new IntTuple(1248, 1482)); // DOOR HOUSE 2
+		game.walls.add(new IntTuple(1504, 1482)); // DOOR HOUSE 3
 		
 	}
 	
@@ -356,15 +325,15 @@ public class Selenia extends JPanel {
 		 else if(IntTuple.getPosition(game.clickableTiles, tuple) == 3) {
 			 text = "Sélénia.= Une ville calme et symbole de sérénité.";
 		 }
-		 else if(IntTuple.getPosition(game.clickableTiles, tuple) == 4 && Variables.GROUND_ITEMS_Selenia.contains(0)) {
+		 else if(IntTuple.getPosition(game.clickableTiles, tuple) == 4 && Variables.GROUND_ITEMS_Selenia.contains("0")) {
 			 Sounds.playSound(Const.soundItemGet);
-			 Variables.GROUND_ITEMS_Selenia.remove(0);
+			 Variables.GROUND_ITEMS_Selenia.remove("0");
 			 // Ajouter une potion au sac.
 			 text = "Vous avez ramassé une Potion !";
 		 }
-		 else if(IntTuple.getPosition(game.clickableTiles, tuple) == 5 && game.deplacement.direction == Direction.UP && Variables.GROUND_ITEMS_Selenia.contains(1)) {
+		 else if(IntTuple.getPosition(game.clickableTiles, tuple) == 5 && Variables.GROUND_ITEMS_Selenia.contains("1")) {
 			 Sounds.playSound(Const.soundItemGet);
-			 Variables.GROUND_ITEMS_Selenia.remove(1);
+			 Variables.GROUND_ITEMS_Selenia.remove("1");
 			 // Ajouter une Hyper Ball au sac.
 			 text = "Vous avez ramassé une Hyper Ball !";
 		 }

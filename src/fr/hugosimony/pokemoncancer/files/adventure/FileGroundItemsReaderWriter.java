@@ -17,16 +17,16 @@ public class FileGroundItemsReaderWriter {
 		
 		//****************************************************
 		// Selenia
-		ArrayList<Integer> items = new ArrayList<Integer>();
+		ArrayList<String> items = new ArrayList<String>();
 		if (lines.get(0).contains("a"))
-			items.add(0);
+			items.add("0");
 		if (lines.get(0).contains("b"))
-			items.add(1);
+			items.add("1");
 		Variables.GROUND_ITEMS_Selenia = items;
 		
 		//****************************************************
 		// xxx
-		items = new ArrayList<Integer>();
+		items = new ArrayList<String>();
 	}
 	
 	public static void saveGroundItems(int save) {
@@ -35,9 +35,9 @@ public class FileGroundItemsReaderWriter {
 		//****************************************************
 		// Selenia
 		String items = "";
-		if(Variables.GROUND_ITEMS_Selenia.contains(0))
+		if(Variables.GROUND_ITEMS_Selenia.contains("0"))
 			items += "a";
-		if(Variables.GROUND_ITEMS_Selenia.contains(1))
+		if(Variables.GROUND_ITEMS_Selenia.contains("1"))
 			items += "b";
 		lines.set(0, items);
 		
@@ -52,13 +52,13 @@ public class FileGroundItemsReaderWriter {
 	public static void initializeGroundItems() {
 		//****************************************************
 		// Selenia
-		ArrayList<Integer> items = new ArrayList<Integer>();
-		items.add(0);
-		items.add(1);
+		ArrayList<String> items = new ArrayList<String>();
+		items.add("0");
+		items.add("1");
 		Variables.GROUND_ITEMS_Selenia = items;
 		//****************************************************
 		// xxx
-		items = new ArrayList<Integer>();
+		items = new ArrayList<String>();
 	}
 	
 }
