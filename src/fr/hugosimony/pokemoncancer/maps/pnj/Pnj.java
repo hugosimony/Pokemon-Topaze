@@ -1,4 +1,4 @@
-package fr.hugosimony.pokemoncancer.maps.perso;
+package fr.hugosimony.pokemoncancer.maps.pnj;
 
 import java.awt.Component;
 import java.awt.Graphics;
@@ -240,6 +240,24 @@ public class Pnj extends JPanel {
 			if(direction == Direction.RIGHT) {
 				if(foot == 0)	
 					g.drawImage(Const.policeRight.getImage(), 0, 0, null);
+			}
+		}
+		else if(perso.contains("sellerboy")) {
+			if(direction == Direction.UP) {
+				if(foot == 0)	
+					g.drawImage(Const.sellerboyFront.getImage(), 0, 0, null);
+			}
+			else if(direction == Direction.DOWN) {
+				if(foot == 0)	
+					g.drawImage(Const.sellerboyBack.getImage(), 0, 0, null);
+			}
+			else if(direction == Direction.LEFT) {
+				if(foot == 0)	
+					g.drawImage(Const.sellerboyLeft.getImage(), 0, 0, null);
+			}
+			else if(direction == Direction.RIGHT) {
+				if(foot == 0)	
+					g.drawImage(Const.sellerboyRight.getImage(), 0, 0, null);
 			}
 		}
 	}

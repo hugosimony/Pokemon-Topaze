@@ -20,7 +20,7 @@ import fr.hugosimony.pokemoncancer.maps.Deplacement;
 import fr.hugosimony.pokemoncancer.maps.Map;
 import fr.hugosimony.pokemoncancer.maps.Places;
 import fr.hugosimony.pokemoncancer.maps.houses.MyHouse;
-import fr.hugosimony.pokemoncancer.maps.perso.Pnj;
+import fr.hugosimony.pokemoncancer.maps.pnj.Pnj;
 import fr.hugosimony.pokemoncancer.maps.roads.Road01;
 import fr.hugosimony.pokemoncancer.maps.towns.Selenia;
 import fr.hugosimony.pokemoncancer.maps.towns.intertowns.Intertown1;

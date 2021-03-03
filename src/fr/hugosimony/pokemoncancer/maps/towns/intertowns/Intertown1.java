@@ -24,7 +24,7 @@ import fr.hugosimony.pokemoncancer.maps.Deplacement;
 import fr.hugosimony.pokemoncancer.maps.Direction;
 import fr.hugosimony.pokemoncancer.maps.Map;
 import fr.hugosimony.pokemoncancer.maps.Places;
-import fr.hugosimony.pokemoncancer.maps.perso.Pnj;
+import fr.hugosimony.pokemoncancer.maps.pnj.Pnj;
 import fr.hugosimony.pokemoncancer.maps.roads.Road01;
 import fr.hugosimony.pokemoncancer.maps.towns.Selenia;
 import fr.hugosimony.pokemoncancer.sounds.Sounds;
@@ -40,6 +40,8 @@ public class Intertown1 extends JPanel {
 	
 	private IntTuple toRoad1;
 	private IntTuple toSelenia;
+	
+	private Pnj intertownPnj01;
 	
 	public Intertown1(Game game, int locationX, int locationY, Direction direction, int mapLocationX, int mapLocationY) {
 		this.game = game;
@@ -140,6 +142,12 @@ public class Intertown1 extends JPanel {
 		for(Pnj pnj : game.pnjs)
 			pnj.clearIA();
 		game.pnjs = new ArrayList<Pnj>();
+		
+		intertownPnj01 = new Pnj(game, "sellerboy", Direction.RIGHT, 0, 3168, 2922, false, false, null, null, false, false);
+		intertownPnj01.setVisible(true);
+		intertownPnj01.setSize(35, 50);
+		intertownPnj01.setLocation(3168, 2922);
+		game.pnjs.add(intertownPnj01);
 	}
 	
 	public String getInteractMessage(IntTuple tuple) {

@@ -1,4 +1,4 @@
-package fr.hugosimony.pokemoncancer.maps.perso;
+package fr.hugosimony.pokemoncancer.maps.pnj;
 
 import java.util.ArrayList;
 import java.util.Timer;
@@ -29,7 +29,7 @@ public class IAMoving extends TimerTask{
 		if(!pnj.game.inXMenu && !pnj.game.inSaveMenu && !pnj.game.inTextMenu && !pnj.game.inYesNoMenu && !pnj.mooving && !pnj.game.inBattle) {
 			
 			ArrayList<Direction> possibleDirections = getPossibleDirections();
-			int random = Utils.randomNumber(possibleDirections.size());
+			int random = Utils.randomNumber(possibleDirections.size()-1);
 			
 			if(pnj.isLookingTileFree(possibleDirections.get(random))) {
 				new Timer().schedule(pnj.new Move(possibleDirections.get(random)), 0, 5);

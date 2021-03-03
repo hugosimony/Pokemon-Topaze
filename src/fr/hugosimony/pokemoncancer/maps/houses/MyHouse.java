@@ -25,7 +25,7 @@ import fr.hugosimony.pokemoncancer.maps.Deplacement;
 import fr.hugosimony.pokemoncancer.maps.Direction;
 import fr.hugosimony.pokemoncancer.maps.Map;
 import fr.hugosimony.pokemoncancer.maps.Places;
-import fr.hugosimony.pokemoncancer.maps.perso.Pnj;
+import fr.hugosimony.pokemoncancer.maps.pnj.Pnj;
 import fr.hugosimony.pokemoncancer.maps.towns.Selenia;
 import fr.hugosimony.pokemoncancer.sounds.Sounds;
 import fr.hugosimony.pokemoncancer.transitions.TransitionSimple;

@@ -3,7 +3,7 @@ package fr.hugosimony.pokemoncancer.utils;
 import java.util.ArrayList;
 
 import fr.hugosimony.pokemoncancer.maps.Deplacement;
-import fr.hugosimony.pokemoncancer.maps.perso.Pnj;
+import fr.hugosimony.pokemoncancer.maps.pnj.Pnj;
 
 public class IntTuple {
 

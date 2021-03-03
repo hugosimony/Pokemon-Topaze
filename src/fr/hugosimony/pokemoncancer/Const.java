@@ -140,6 +140,14 @@ public class Const {
 	public static final ImageIcon policeRight = new ImageIcon(Main.class.getResource("sprites/perso/police/policeRight.gif"));
 	
 	//****************************************************************************************************
+	// Sprites Seller Boy
+	
+	public static final ImageIcon sellerboyFront = new ImageIcon(Main.class.getResource("sprites/perso/sellerboy/sellerboyFront.gif"));
+	public static final ImageIcon sellerboyBack = new ImageIcon(Main.class.getResource("sprites/perso/sellerboy/sellerboyBack.gif"));
+	public static final ImageIcon sellerboyLeft = new ImageIcon(Main.class.getResource("sprites/perso/sellerboy/sellerboyLeft.gif"));
+	public static final ImageIcon sellerboyRight = new ImageIcon(Main.class.getResource("sprites/perso/sellerboy/sellerboyRight.gif"));
+	
+	//****************************************************************************************************
 	// Badges
 	
 	public static final ImageIcon badge1 = new ImageIcon(Main.class.getResource("menus/images/badges/badge1.jpg"));

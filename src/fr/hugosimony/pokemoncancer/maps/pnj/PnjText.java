@@ -1,4 +1,4 @@
-package fr.hugosimony.pokemoncancer.maps.perso;
+package fr.hugosimony.pokemoncancer.maps.pnj;
 
 import fr.hugosimony.pokemoncancer.Variables;
 
@@ -11,6 +11,10 @@ public class PnjText {
 		else if(perso.equals("brownboy001")) {
 			return "Coucou " + Variables.PERSO_Name + ",= tu vas enfin choper ton premier Pokémon !=\n"
 					+ "T'en as de la chance...\n";
+		}
+		else if(perso.equals("brownboy002")) {
+			return "Tu connais le Prof Chen ?= C'est un vieux monsieur qui aime bien\n"
+					+ "les femmes.= J'ai entendu dire qu'il avait des Pokémons rares !";
 		}
 		else if(perso.equals("police001")) {
 			return "Désolé,= la forêt est encore trop dangereuse pour toi.";

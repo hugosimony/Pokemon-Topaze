@@ -9,7 +9,7 @@ import fr.hugosimony.pokemoncancer.Const;
 import fr.hugosimony.pokemoncancer.Game;
 import fr.hugosimony.pokemoncancer.Variables;
 import fr.hugosimony.pokemoncancer.maps.perso.Hero;
-import fr.hugosimony.pokemoncancer.maps.perso.Pnj;
+import fr.hugosimony.pokemoncancer.maps.pnj.Pnj;
 import fr.hugosimony.pokemoncancer.menus.XMenu;
 import fr.hugosimony.pokemoncancer.sounds.Sounds;
 import fr.hugosimony.pokemoncancer.utils.IntTriple;

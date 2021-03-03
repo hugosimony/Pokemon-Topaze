@@ -21,7 +21,7 @@ public class Sounds {
 	public static boolean canPlayBumpSound = true;
 	
 	public static void playSound(URL sound) {
-		if(canPlaySound) {
+		if(canPlaySound && Variables.VOLUME_Main != 0) {
 			if(sound == Const.soundPlayerStopped && !canPlayBumpSound)
 				return;
 			try {
