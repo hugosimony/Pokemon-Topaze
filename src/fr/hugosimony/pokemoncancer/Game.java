@@ -58,6 +58,8 @@ public class Game extends JFrame {
 	public ArrayList<Pnj> pnjs = new ArrayList<Pnj>();
 	public ArrayList<IntTriple> herbs = new ArrayList<IntTriple>();
 	
+	private Settings settings;
+	
 	public boolean inXMenu;
 	
 	public boolean inSaveMenu;
@@ -242,10 +244,14 @@ public class Game extends JFrame {
         			int keyCode = event.getKeyCode();
         			if((keyCode == KeyEvent.VK_ESCAPE || keyCode == Variables.CONTROLS_Options)) {
                 		Main.settingsOn = true;
-                		Settings settings = new Settings();
+                		settings = new Settings();
                 		settings.setVisible(true);
         			}
         		}
+        	}
+        	else if(isVisible() && Main.settingsOn && event.getID() == KeyEvent.KEY_PRESSED && event.getKeyCode() == KeyEvent.VK_ESCAPE) {
+				Main.settingsOn = false;
+				game.settings.dispose();
         	}
         	return false;
         }
