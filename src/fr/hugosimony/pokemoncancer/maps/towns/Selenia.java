@@ -44,6 +44,7 @@ public class Selenia extends JPanel {
 	private Pnj police001;
 	
 	private Pnj seleniaPnj01;
+	private Pnj seleniaPnj02;
 	
 	public Selenia(Game game, int locationX, int locationY, Direction direction, int mapLocationX, int mapLocationY) {
 		
@@ -124,6 +125,7 @@ public class Selenia extends JPanel {
 		
 		if(Variables.GROUND_ITEMS_Selenia.contains("1"))
 			game.clickableTiles.add(new IntTuple(1024, 1290));
+		
 		game.walls.add(new IntTuple(1216, 1194));
 		game.walls.add(new IntTuple(1184, 1194));
 		game.walls.add(new IntTuple(1184, 1162));
@@ -302,18 +304,27 @@ public class Selenia extends JPanel {
 		police001.setLocation(896, 1546);
 		game.pnjs.add(police001);
 		
-		ArrayList<Direction> directions = new ArrayList<Direction>();
-		directions.add(Direction.BLANK); directions.add(Direction.LEFT); directions.add(Direction.BLANK); directions.add(Direction.BLANK);  directions.add(Direction.NULL);
-		directions.add(Direction.BLANK); directions.add(Direction.UP); directions.add(Direction.RIGHT); directions.add(Direction.BLANK);  directions.add(Direction.NULL);
-		directions.add(Direction.BLANK); directions.add(Direction.UP); directions.add(Direction.DOWN); directions.add(Direction.BLANK);  directions.add(Direction.NULL);
-		directions.add(Direction.BLANK); directions.add(Direction.LEFT); directions.add(Direction.DOWN); directions.add(Direction.BLANK);  directions.add(Direction.NULL);
-		directions.add(Direction.BLANK); directions.add(Direction.BLANK); directions.add(Direction.RIGHT); directions.add(Direction.BLANK);  directions.add(Direction.NULL);
-		
-		seleniaPnj01 = new Pnj(game, "brownboy001", Direction.DOWN, 0, 1664, 1386, true, true, directions, null, false, false);
+		int[][] directionsPnj01 = {
+				{1, 1, 0},
+				{0, 2, 0},
+				{0, 1, 1}
+		};
+		seleniaPnj01 = new Pnj(game, "brownboy001", Direction.DOWN, 0, 1664, 1386, true, true, directionsPnj01, null, false, false);
 		seleniaPnj01.setVisible(true);
 		seleniaPnj01.setSize(35, 50);
 		seleniaPnj01.setLocation(1664, 1386);
 		game.pnjs.add(seleniaPnj01);
+		
+		int[][] directionsPnj02 = {
+				{0, 0, 1, 1, 0},
+				{0, 0, 1, 0, 0},
+				{1, 1, 2, 1, 1}
+		};
+		seleniaPnj02 = new Pnj(game, "brownboy002", Direction.UP, 0, 1376, 1546, true, true, directionsPnj02, null, false, false);
+		seleniaPnj02.setVisible(true);
+		seleniaPnj02.setSize(35, 50);
+		seleniaPnj02.setLocation(1376, 1546);
+		game.pnjs.add(seleniaPnj02);
 	}
 	
 	public String getInteractMessage(IntTuple tuple) {

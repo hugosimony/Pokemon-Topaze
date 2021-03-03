@@ -2,7 +2,6 @@ package fr.hugosimony.pokemoncancer.maps.perso;
 
 import java.awt.Component;
 import java.awt.Graphics;
-import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -12,6 +11,7 @@ import fr.hugosimony.pokemoncancer.Const;
 import fr.hugosimony.pokemoncancer.Game;
 import fr.hugosimony.pokemoncancer.maps.Deplacement;
 import fr.hugosimony.pokemoncancer.maps.Direction;
+import fr.hugosimony.pokemoncancer.utils.Utils;
 
 public class Pnj extends JPanel {
 	private static final long serialVersionUID = 1L;
@@ -26,7 +26,7 @@ public class Pnj extends JPanel {
 	
 	public String perso;
 	public Direction direction;
-	public ArrayList<Direction> directions;
+	public int[][] directions;
 	public int foot;
 	public int positionX;
 	public int positionY;
@@ -35,7 +35,7 @@ public class Pnj extends JPanel {
 	
 	private boolean checkAnyoneNearDone;
 	
-	public Pnj(Game game, String perso, Direction direction, int foot, int positionX, int positionY, boolean IA, boolean firstIA, ArrayList<Direction> directions, IAMoving IAMoving, boolean paraClick, boolean mooving) {
+	public Pnj(Game game, String perso, Direction direction, int foot, int positionX, int positionY, boolean IA, boolean firstIA, int[][] directions, IAMoving IAMoving, boolean paraClick, boolean mooving) {
 		this.game = game;
 		this.pnj = this;
 		this.perso = perso;
@@ -46,8 +46,8 @@ public class Pnj extends JPanel {
 		this.positionY = positionY;
 		this.IA = IA;
 		if(IA && firstIA) {
-			this.IAMoving = new IAMoving(pnj, 0, directions.size(), directions);
-			new Timer().schedule(this.IAMoving, 3000, 3000);
+			this.IAMoving = new IAMoving(pnj, directions);
+			new Timer().schedule(this.IAMoving, Utils.randomNumber(2500, 3500), Utils.randomNumber(2500, 3500));
 		}
 		else
 			this.IAMoving = IAMoving;
