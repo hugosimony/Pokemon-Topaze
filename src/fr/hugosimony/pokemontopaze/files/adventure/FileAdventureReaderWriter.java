@@ -210,4 +210,16 @@ public class FileAdventureReaderWriter {
 	
 	//****************************************************************************************************
 	
+	public static int getAdventureStep(int save) {
+		ArrayList<String> lines = FileReaderWriter.readFile(Const.getAdventureInfosPath(save));
+		return Integer.parseInt(lines.get(14));
+	}
+
+	public static void setAdventureStep(int save) {
+		ArrayList<String> lines = FileReaderWriter.readFile(Const.getAdventureInfosPath(save));
+		lines.set(14, Variables.ADVENTURE_Step + "");
+		FileCreator.createAdventureInfosFile(false, save);
+		FileReaderWriter.writeAllLine(lines, Const.getAdventureInfosPath(save));
+	}
+	
 }

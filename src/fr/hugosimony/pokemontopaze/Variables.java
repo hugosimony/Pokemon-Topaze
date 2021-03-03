@@ -34,6 +34,7 @@ public class Variables {
 	
 	// Posision
 	public static Places POSITION_Place;
+	public static int ADVENTURE_Step;
 	
 	// Pokémon
 	public static int POKEDEX_NumberOfSeen;

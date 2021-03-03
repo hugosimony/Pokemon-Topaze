@@ -204,6 +204,7 @@ public class Game extends JFrame {
 		Variables.POSITION_Place = Places.SELENIA;
 		Variables.BADGES_NumberOfBadges = 0;
 		Variables.POKEDEX_NumberOfSeen = 0;
+		Variables.ADVENTURE_Step = 0;
 		FileGroundItemsReaderWriter.initializeGroundItems();
 	}
 	
@@ -215,7 +216,8 @@ public class Game extends JFrame {
 		Variables.POKEDEX_NumberOfSeen = FileAdventureReaderWriter.getPokedexNumberOfSeen(save);
 		Variables.PERSO_Name = FileAdventureReaderWriter.getName(save);
 		Variables.PERSO_Sex = FileAdventureReaderWriter.getSex(save);
-		if(Variables.PERSO_Sex.equals("boy")) Variables.LANG_Feminin = ""; else Variables.LANG_Feminin = "e";
+		Variables.LANG_Feminin = Variables.PERSO_Sex.equals("boy") ? "" : "e";
+		Variables.ADVENTURE_Step = FileAdventureReaderWriter.getAdventureStep(save);
 		FileGroundItemsReaderWriter.loadGroundItems(save);
 	}
 	
@@ -236,6 +238,7 @@ public class Game extends JFrame {
 		FileAdventureReaderWriter.setPokedexNumberOfSeen(save);
 		FileAdventureReaderWriter.setName(save);
 		FileAdventureReaderWriter.setSex(save);
+		FileAdventureReaderWriter.setAdventureStep(save);
 		FileGroundItemsReaderWriter.saveGroundItems(save);
 		waitingSaveDone = true;
 	}
