@@ -47,7 +47,7 @@ public class DeplacementDispatcher implements KeyEventDispatcher {
 						 //System.out.println("game.walls.add(new IntTuple(" + game.deplacement.locationX + ", " + game.deplacement.locationY + "));");
 						 //System.out.println("game.herbs.add(new IntTriple(" + game.deplacement.locationX + ", " + game.deplacement.locationY + ", 2));");
 						 System.out.println("perso : " + game.deplacement.locationX  + " ; "  + game.deplacement.locationY);
-						 //System.out.println("map : " + game.deplacement.mapLocationX  + " ; "  + game.deplacement.mapLocationY);
+						 System.out.println("map : " + game.deplacement.mapLocationX  + " ; "  + game.deplacement.mapLocationY);
 					 }
 					 // ****************************************************************************************
 				 }

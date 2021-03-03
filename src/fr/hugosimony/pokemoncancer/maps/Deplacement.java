@@ -340,13 +340,15 @@ public class Deplacement {
 	
 	private boolean checkMapChange() {
 		boolean change = false;
-		change = game.myHouse != null && game.myHouse.checkMapChange();
+		change = game.myHouse != null && game.myHouse.isVisible() && game.myHouse.checkMapChange();
 		if(!change)
-			change = game.selenia != null && game.selenia.checkMapChange();
+			change = game.selenia != null && game.selenia.isVisible() && game.selenia.checkMapChange();
 		if(!change)
-			change = game.intertown1 != null && game.intertown1.checkMapChange();
+			change = game.intertown1 != null && game.intertown1.isVisible() &&  game.intertown1.checkMapChange();
 		if(!change)
-			change = game.road01 != null && game.road01.checkMapChange();
+			change = game.road01 != null && game.road01.isVisible() &&  game.road01.checkMapChange();
+		if(!change)
+			change = game.intertown2 != null && game.intertown2.isVisible() &&  game.intertown2.checkMapChange();
 		return change;
 	}
 		

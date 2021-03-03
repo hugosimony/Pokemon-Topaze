@@ -46,6 +46,8 @@ public class InteractDispatcher implements KeyEventDispatcher {
 							 text = game.intertown1.getInteractMessage(tuple);
 						 else if(game.road01 != null && game.road01.isVisible())
 							 text = game.road01.getInteractMessage(tuple);
+						 else if(game.intertown2 != null && game.intertown2.isVisible())
+							 text = game.intertown2.getInteractMessage(tuple);
 					 }
 					 else {
 						 Pnj pnj = IntTuple.containsPnj(game.pnjs, game.deplacement.getLookingTile());

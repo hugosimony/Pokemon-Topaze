@@ -1,4 +1,4 @@
-package fr.hugosimony.pokemoncancer.maps.houses;
+package fr.hugosimony.pokemoncancer.maps.houses.selenia;
 
 import java.awt.Color;
 import java.awt.KeyboardFocusManager;

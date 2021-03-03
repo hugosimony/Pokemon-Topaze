@@ -19,11 +19,12 @@ import fr.hugosimony.pokemoncancer.intro.PresentationProf;
 import fr.hugosimony.pokemoncancer.maps.Deplacement;
 import fr.hugosimony.pokemoncancer.maps.Map;
 import fr.hugosimony.pokemoncancer.maps.Places;
-import fr.hugosimony.pokemoncancer.maps.houses.MyHouse;
+import fr.hugosimony.pokemoncancer.maps.houses.selenia.MyHouse;
 import fr.hugosimony.pokemoncancer.maps.pnj.Pnj;
 import fr.hugosimony.pokemoncancer.maps.roads.Road01;
 import fr.hugosimony.pokemoncancer.maps.towns.Selenia;
 import fr.hugosimony.pokemoncancer.maps.towns.intertowns.Intertown1;
+import fr.hugosimony.pokemoncancer.maps.towns.intertowns.Intertown2;
 import fr.hugosimony.pokemoncancer.menus.SaveMenu;
 import fr.hugosimony.pokemoncancer.menus.TextZone;
 import fr.hugosimony.pokemoncancer.menus.XMenu;
@@ -85,6 +86,7 @@ public class Game extends JFrame {
 	public Selenia selenia;
 	public Intertown1 intertown1;
 	public Road01 road01;
+	public Intertown2 intertown2;
 	
 	public Game(boolean newGame, int save) {
 		
@@ -182,6 +184,10 @@ public class Game extends JFrame {
 			else if(FileAdventureReaderWriter.getPrecisePositionPlace(save) == 4) {
 				road01 = new Road01(this, FileAdventureReaderWriter.getLocationX(save), FileAdventureReaderWriter.getLocationY(save), FileAdventureReaderWriter.getDirection(save), FileAdventureReaderWriter.getMapLocationX(save), FileAdventureReaderWriter.getMapLocationY(save));
 				add(road01);
+			}
+			else if(FileAdventureReaderWriter.getPrecisePositionPlace(save) == 5) {
+				intertown2 = new Intertown2(this, FileAdventureReaderWriter.getLocationX(save), FileAdventureReaderWriter.getLocationY(save), FileAdventureReaderWriter.getDirection(save), FileAdventureReaderWriter.getMapLocationX(save), FileAdventureReaderWriter.getMapLocationY(save));
+				add(intertown2);
 			}
 		}
 		

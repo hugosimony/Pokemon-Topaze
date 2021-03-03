@@ -29,7 +29,7 @@ import fr.hugosimony.pokemoncancer.Main;
 import fr.hugosimony.pokemoncancer.Settings;
 import fr.hugosimony.pokemoncancer.Variables;
 import fr.hugosimony.pokemoncancer.maps.Direction;
-import fr.hugosimony.pokemoncancer.maps.houses.MyHouse;
+import fr.hugosimony.pokemoncancer.maps.houses.selenia.MyHouse;
 import fr.hugosimony.pokemoncancer.sounds.Sounds;
 
 public class PresentationProf extends JPanel {

@@ -24,9 +24,9 @@ import fr.hugosimony.pokemoncancer.maps.Deplacement;
 import fr.hugosimony.pokemoncancer.maps.Direction;
 import fr.hugosimony.pokemoncancer.maps.Map;
 import fr.hugosimony.pokemoncancer.maps.Places;
-import fr.hugosimony.pokemoncancer.maps.houses.MyHouse;
 import fr.hugosimony.pokemoncancer.maps.pnj.Pnj;
 import fr.hugosimony.pokemoncancer.maps.towns.intertowns.Intertown1;
+import fr.hugosimony.pokemoncancer.maps.towns.intertowns.Intertown2;
 import fr.hugosimony.pokemoncancer.sounds.Sounds;
 import fr.hugosimony.pokemoncancer.transitions.TransitionSimple;
 import fr.hugosimony.pokemoncancer.utils.IntTriple;
@@ -40,7 +40,7 @@ public class Road01 extends JPanel {
 	private Clip clipRoad01Theme;
 	
 	private IntTuple toIntertown1;
-	private IntTuple toTown2;
+	private IntTuple toIntertown2;
 	
 	public Road01(Game game, int locationX, int locationY, Direction direction, int mapLocationX, int mapLocationY) {
 		
@@ -53,7 +53,7 @@ public class Road01 extends JPanel {
 		setPnjs();
 		setHerbs();
 		toIntertown1 = new IntTuple(4064, 1866);
-		toTown2 = new IntTuple(3232, 746);
+		toIntertown2 = new IntTuple(3232, 746);
 		
 		setLayout(null);
 		setBackground(new Color(0, 0, 0));
@@ -121,6 +121,7 @@ public class Road01 extends JPanel {
 
 		if(Variables.GROUND_ITEMS_Road1.contains("0"))
 			game.walls.add(new IntTuple(4128, 1546));
+		
 		game.walls.add(new IntTuple(3744, 1642));
 		game.walls.add(new IntTuple(4000, 1514));
 		game.walls.add(new IntTuple(3872, 906));
@@ -571,17 +572,17 @@ public class Road01 extends JPanel {
 		
 		if(isVisible()){
 			
-			if(game.deplacement.getLookingTile().equals(toIntertown1) || game.deplacement.getLookingTile().equals(toTown2)) {
+			if(game.deplacement.getLookingTile().equals(toIntertown1) || game.deplacement.getLookingTile().equals(toIntertown2)) {
 				 game.deplacement.hero.setVisible(false);
 				 setVisible(false);
-				 if(game.deplacement.getLookingTile().equals(toIntertown1) || game.deplacement.getLookingTile().equals(toTown2))
+				 if(game.deplacement.getLookingTile().equals(toIntertown1) || game.deplacement.getLookingTile().equals(toIntertown2))
 					 Sounds.playSound(Const.soundEnterHouse);
 				 Main.actualClip.close();
 				 if(game.deplacement.getLookingTile().equals(toIntertown1)){
 					 new TransitionSimple(game, game.gamePanel, new Intertown1(game, 3264, 2858, Direction.DOWN, -2891, -2600));
 				 }
-				 else if(game.deplacement.getLookingTile().equals(toTown2)){
-					 new TransitionSimple(game, game.gamePanel, new MyHouse(game, true, 1024, 3050, Direction.DOWN, -654, -2788));
+				 else if(game.deplacement.getLookingTile().equals(toIntertown2)){
+					 new TransitionSimple(game, game.gamePanel, new Intertown2(game, 3264, 3114, Direction.UP, -2891, -2856));
 				 }
 				 return true;
 			}
