@@ -90,7 +90,7 @@ public class Game extends JFrame {
 	
 	public Game(boolean newGame, int save) {
 		
-		BattleConst.getAnimatedSprite(new Pokemon(PKM.HERBIZARRE, "test", Nature.ADAMANT, 2, null, 5, 0, false, 20, 20, 10, 10, 10, 10, 10, null, null, null, null, null, null, "hugo", true), false);
+		BattleConst.getAnimatedSprite(new Pokemon(PKM.HERBIZARRE, "test1", Nature.ADAMANT, 2, null, 5, 0, false, 20, 20, 10, 10, 10, 10, 10, null, null, null, null, null, null, "hugo", true), false);
 		
 		this.save = save;
 		this.newGame = newGame;
