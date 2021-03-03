@@ -11,7 +11,6 @@ import fr.hugosimony.pokemontopaze.Const;
 import fr.hugosimony.pokemontopaze.Game;
 import fr.hugosimony.pokemontopaze.maps.Deplacement;
 import fr.hugosimony.pokemontopaze.maps.Direction;
-import fr.hugosimony.pokemontopaze.utils.Utils;
 
 public class Pnj extends JPanel {
 	private static final long serialVersionUID = 1L;
@@ -47,7 +46,7 @@ public class Pnj extends JPanel {
 		this.IA = IA;
 		if(IA && firstIA) {
 			this.IAMoving = new IAMoving(pnj, directions);
-			new Timer().schedule(this.IAMoving, Utils.randomNumber(2500, 3500), Utils.randomNumber(2500, 3500));
+			new Timer().schedule(this.IAMoving, 1, 1);
 		}
 		else
 			this.IAMoving = IAMoving;

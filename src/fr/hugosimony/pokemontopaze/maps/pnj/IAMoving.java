@@ -26,6 +26,11 @@ public class IAMoving extends TimerTask{
 	@Override
 	public void run() {
 		
+		try {
+			Thread.sleep(Utils.randomNumber(2500, 4000));
+		} catch (Exception e) {
+		}
+		
 		if(!pnj.game.inXMenu && !pnj.game.inSaveMenu && !pnj.game.inTextMenu && !pnj.game.inYesNoMenu && !pnj.mooving && !pnj.game.inBattle) {
 			
 			ArrayList<Direction> possibleDirections = getPossibleDirections();

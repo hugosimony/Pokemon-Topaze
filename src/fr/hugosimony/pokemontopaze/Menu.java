@@ -73,7 +73,7 @@ public class Menu extends JFrame {
 		gameSelectorMenu = false;
 		selectedGame = 1;
 		
-		setTitle("Pokémon Cancer");
+		setTitle("Pokémon Topaze");
 		setSize(800, 600);
 		setResizable(false);
 		setLocationRelativeTo(null);
