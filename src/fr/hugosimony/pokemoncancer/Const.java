@@ -148,6 +148,11 @@ public class Const {
 	public static final ImageIcon sellerboyRight = new ImageIcon(Main.class.getResource("sprites/perso/sellerboy/sellerboyRight.gif"));
 	
 	//****************************************************************************************************
+	// Sprites Ground Items
+
+	public static final ImageIcon groundPokeBall = new ImageIcon(Main.class.getResource("sprites/grounditems/pokeball.gif"));
+	
+	//****************************************************************************************************
 	// Badges
 	
 	public static final ImageIcon badge1 = new ImageIcon(Main.class.getResource("menus/images/badges/badge1.jpg"));

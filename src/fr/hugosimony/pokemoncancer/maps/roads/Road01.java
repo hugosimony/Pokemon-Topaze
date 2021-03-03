@@ -24,6 +24,7 @@ import fr.hugosimony.pokemoncancer.maps.Deplacement;
 import fr.hugosimony.pokemoncancer.maps.Direction;
 import fr.hugosimony.pokemoncancer.maps.Map;
 import fr.hugosimony.pokemoncancer.maps.Places;
+import fr.hugosimony.pokemoncancer.maps.items.GroundItem;
 import fr.hugosimony.pokemoncancer.maps.pnj.Pnj;
 import fr.hugosimony.pokemoncancer.maps.towns.intertowns.Intertown1;
 import fr.hugosimony.pokemoncancer.maps.towns.intertowns.Intertown2;
@@ -41,6 +42,8 @@ public class Road01 extends JPanel {
 	
 	private IntTuple toIntertown1;
 	private IntTuple toIntertown2;
+	
+	private GroundItem groundPokeBall1;
 	
 	public Road01(Game game, int locationX, int locationY, Direction direction, int mapLocationX, int mapLocationY) {
 		
@@ -96,6 +99,8 @@ public class Road01 extends JPanel {
 		
 		add(game.map);
 		
+		addGroundItems();
+		
 		game.actualPanel = this;
 		game.firstMove = false;
 		game.deplacement = new Deplacement(game, locationX, locationY, direction, mapLocationX, mapLocationY);
@@ -112,8 +117,15 @@ public class Road01 extends JPanel {
 		game.clickableTiles.add(new IntTuple(4000, 1514)); // SIGN 2
 		game.clickableTiles.add(new IntTuple(3872, 906)); // SIGN 3
 		game.clickableTiles.add(new IntTuple(3296, 810)); // SIGN 4
+		
 		game.clickableTiles.add(new IntTuple(4128, 1546)); // GROUND ITEM 1
-
+		groundPokeBall1 = new GroundItem("pokeball");
+		groundPokeBall1.setVisible(Variables.GROUND_ITEMS_Road1.contains("0"));
+		groundPokeBall1.setLocation(4128, 1546);
+	}
+	
+	private void addGroundItems() {
+		game.map.add(groundPokeBall1);
 	}
 	
 	private void setWalls() {
@@ -561,6 +573,7 @@ public class Road01 extends JPanel {
 		 } else if(IntTuple.getPosition(game.clickableTiles, tuple) == 5 && Variables.GROUND_ITEMS_Road1.contains("0")) {
 			 Sounds.playSound(Const.soundItemGet);
 			 Variables.GROUND_ITEMS_Road1.remove("0");
+			 groundPokeBall1.setVisible(false);
 			 IntTuple.removeTuple(game.walls, new IntTuple(4128, 1546));
 			 // Ajouter une potion au sac.
 			 text = "Vous avez ramassé une Potion !";

@@ -25,6 +25,7 @@ import fr.hugosimony.pokemoncancer.maps.Direction;
 import fr.hugosimony.pokemoncancer.maps.Map;
 import fr.hugosimony.pokemoncancer.maps.Places;
 import fr.hugosimony.pokemoncancer.maps.houses.selenia.MyHouse;
+import fr.hugosimony.pokemoncancer.maps.items.GroundItem;
 import fr.hugosimony.pokemoncancer.maps.pnj.Pnj;
 import fr.hugosimony.pokemoncancer.maps.towns.intertowns.Intertown1;
 import fr.hugosimony.pokemoncancer.sounds.Sounds;
@@ -45,6 +46,8 @@ public class Selenia extends JPanel {
 	
 	private Pnj seleniaPnj01;
 	private Pnj seleniaPnj02;
+	
+	private GroundItem groundPokeBall1;
 	
 	public Selenia(Game game, int locationX, int locationY, Direction direction, int mapLocationX, int mapLocationY) {
 		
@@ -98,6 +101,8 @@ public class Selenia extends JPanel {
 		
 		add(game.map);
 		
+		addGroundItems();
+		
 		game.actualPanel = this;
 		game.firstMove = false;
 		game.deplacement = new Deplacement(game, locationX, locationY, direction, mapLocationX, mapLocationY);
@@ -113,11 +118,22 @@ public class Selenia extends JPanel {
 		game.clickableTiles.add(new IntTuple(1440, 1194)); // LETTER BOX 2 (friend)
 		game.clickableTiles.add(new IntTuple(1408, 1290)); // SIGN
 		game.clickableTiles.add(new IntTuple(1344, 1162)); // POT
+
 		game.clickableTiles.add(new IntTuple(1024, 1290)); // GROUND ITEM 1
+		groundPokeBall1 = new GroundItem("pokeball");
+		groundPokeBall1.setVisible(Variables.GROUND_ITEMS_Selenia.contains("1"));
+		groundPokeBall1.setLocation(1024, 1290);
+		
+		// TEMP 
+		
 		game.clickableTiles.add(new IntTuple(1536, 1194)); // HOUSE LOCKED 1 
 		game.clickableTiles.add(new IntTuple(1248, 1482)); // HOUSE LOCKED 2
 		game.clickableTiles.add(new IntTuple(1504, 1482)); // HOUSE LOCKED 3
 		
+	}
+	
+	private void addGroundItems() {
+		game.map.add(groundPokeBall1);
 	}
 	
 	private void setWalls() {
@@ -347,6 +363,7 @@ public class Selenia extends JPanel {
 		 else if(IntTuple.getPosition(game.clickableTiles, tuple) == 5 && Variables.GROUND_ITEMS_Selenia.contains("1")) {
 			 Sounds.playSound(Const.soundItemGet);
 			 Variables.GROUND_ITEMS_Selenia.remove("1");
+			 groundPokeBall1.setVisible(false);
 			 IntTuple.removeTuple(game.walls, new IntTuple(1024, 1290));
 			 // Ajouter une Hyper Ball au sac.
 			 text = "Vous avez ramassé une Hyper Ball !";
