@@ -581,2173 +581,2152 @@ public enum PKM {
 	// **********************************************************************
 	
 	public static int[] getBaseStats(PKM pkm) {
-		int[] stats = new int[] {0, 0, 0, 0, 0, 0};
-		stats = new int[] {45, 49, 49, 65, 65, 45};
 		switch (pkm) {
+		
 		case BULBIZARRE:
-			
-			break;
+			return (new int[] {45, 49, 49, 65, 65, 45});
 		case HERBIZARRE:
-			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FLORIZARRE:
-			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SALAMECHE:
-			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case REPTINCEL:
-			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DRACAUFEU:
-			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CARAPUCE:
-			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CARABAFFE:
-			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TORTANK:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CHENIPAN:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CHRYSACIER:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PAPILUSION:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ASPICOT:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case COCONFORT:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DARDARGNAN:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ROUCOOL:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ROUCOUPS:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ROUCARNAGE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case RATTATA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case RATTATAK:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PIAFABEC:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case RAPASDEPIC:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ABO:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ARBOK:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PIKACHU:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case RAICHU:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SABELETTE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SABLAIREAU:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case NIDORANF:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case NIDORINA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case NIDOQUEEN:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case NIDORANM:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case NIDORINO:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case NIDOKING:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MELOFEE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MELODELFE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GOUPIX:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FEUNARD:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case RONDOUDOU:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GRODOUDOU:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case NOSFERAPTI:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case NOSFERALTO:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MYSTHERBE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ORTIDE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case RAFFLESIA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PARAS:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PARASECT:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MIMITOSS:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case AEROMITE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TAUPIQUEUR:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TRIOPIQUEUR:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MIAOUSS:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PERSIAN:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PSYKOKWAK:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case AKWAKWAK:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FEROSINGE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case COLOSSINGE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CANINOS:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ARCANIN:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PTITARD:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TETARTE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TARTARD:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ABRA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case KADABRA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ALAKAZAM:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MACHOC:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MACHOPEUR:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MACKOGNEUR:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CHETIFLOR:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BOUSTIFLOR:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case EMPIFLOR:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TENTACOOL:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TENTACRUEL:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case RACAILLOU:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GRAVALANCH:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GROLEM:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PONYTA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GALOPA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case RAMOLOSS:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FLAGADOSS:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MAGNETI:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MAGNETON:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CANARTICHO:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DODUO:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DODRIO:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case OTARIA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LAMANTINE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TADMORV:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GROTADMORV:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case KOKIYAS:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CRUSTABRI:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FANTOMINUS:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SPECTRUM:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ECTOPLASMA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ONIX:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SOPORIFIK:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case HYPNOMADE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case KRABBY:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case KRABBOS:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case VOLTORBE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ELECTRODE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case NOEUNOEUF:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case NOADKOKO:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case OSSELAIT:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case OSSATUEUR:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case KICKLEE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TYGNON:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case EXCELANGUE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SMOGO:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SMOGOGO:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case RHINOCORNE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case RHINOFEROS:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LEVEINARD:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SAQUEDENEU:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case KANGOUREX:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case HYPOTREMPE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case HYPOCEAN:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case POISSIRENE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case POISSOROY:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case STARI:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case STAROSS:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MMIME:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case INSECATEUR:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LIPPOUTOU:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ELEKTEK:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MAGMAR:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SCARABRUTE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TAUROS:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MAGICARPE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LEVIATOR:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LOKHLASS:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case METAMORPH:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case EVOLI:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case AQUALI:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case VOLTALI:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PYROLI:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PORYGON:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case AMONITA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case AMONISTAR:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case KABUTO:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case KABUTOPS:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PTERA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case RONFLEX:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ARTIKODIN:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ELECTHOR:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SULFURA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MINIDRACO:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DRACO:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DRACOLOSSE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MEWTWO:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MEW:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GERMIGNON:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MACRONIUM:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MEGANIUM:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case HERICENDRE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FEURISSON:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TYPHLOSION:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case KAIMINUS:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CROCRODIL:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ALIGATUEUR:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FOUINETTE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FOUINAR:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case HOOTHOOT:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case NOARFANG:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case COXY:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case COXYCLAQUE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MIMIGAL:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MIGALOS:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case NOSTENFER:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LOUPIO:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LANTURN:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PICHU:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MELO:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TOUDOUDOU:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TOGEPI:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TOGETIC:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case NATU:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case XATU:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case WATTOUAT:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LAINERGIE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PHARAMP:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case JOLIFLOR:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MARILL:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case AZUMARILL:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SIMULARBRE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TARPAUD:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GRANIVOL:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FLORAVOL:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case COTOVOL:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CAPUMAIN:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TOURNEGRIN:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case HELIATRONC:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case YANMA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case AXOLOTO:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MARAISTE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MENTALI:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case NOCTALI:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CORNEBRE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ROIGADA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FEUFOREVE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ZARBI:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case QULBUTOKE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GIRAFARIG:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case POMDEPIK:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FORETRESS:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case INSOLOURDO:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SCORPLANE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case STEELIX:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SNUBBULL:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GRANDBULL:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case QWILFISH:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CIZAYOX:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CARATROC:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SCARHINO:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FARFURET:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TEDDIURSA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case URSARING:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LIMAGMA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case VOLCAROPOD:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MARCACRIN:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case COCHIGNON:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CORAYON:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case REMORAID:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case OCTILLERY:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CADOIZO:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DEMANTA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case AIRMURE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MALOSSE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DEMOLOSSE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case HYPOROI:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PHANPY:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DONPHAN:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PORYGON2:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CERFROUSSE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case QUEULORIOR:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DEBUGANT:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case KAPOERA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LIPPOUTI:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ELEKID:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MAGBY:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ECREMEUH:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LEUPHORIE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case RAIKOU:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ENTEI:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SUICUNE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case EMBRYLEX:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case YMPHECT:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TYRANOCIF:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LUGIA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case HOOH:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CELEBI:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ARCKO:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MASSKO:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case JUNGKO:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case POUSSIFEU:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GALIFEU:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BRASEGALI:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GOBOU:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FLOBIO:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LAGGRON:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MEDHYENA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GRAHYENA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ZIGZATION:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LINEON:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CHENIPOTTE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ARMULYS:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CHARMILLON:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BLINDALYS:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PAPINOX:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case NENUPIOT:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LOMBRE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LUDICOLO:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GRAINIPIOT:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PIFEUIL:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TENGALICE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case NIRONDELLE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case HELEDELLE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GOELISE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BEKIPAN:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TARSAL:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case KIRLIA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GARDEVOIR:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ARAKDO:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MASKADRA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BALIGNON:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CHAPIGNON:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PARECOOL:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case VIGOROTH:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MONAFLEMIT:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case NINGALE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case NINJASK:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MUNJA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CHUCHMUR:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case RAMBOUM:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BROUHABAM:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MAKUHITA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case HARIYAMA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case AZURILL:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TARINOR:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SKITTY:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DELCATTY:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TENEFIX:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MYSDIBULE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GALEKID:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GALEGON:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GALEKING:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MEDITIKKA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CHARMINA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DYNAVOLT:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ELECSPRINT:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case POSIPI:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case NEGAPI:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MUCIOLE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LUMIVOLE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ROSELIA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GLOUPTI:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case AVALTOUT:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CARVANHA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SHARPEDO:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case WAILMER:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case WAILORD:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CHAMALLOT:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CAMERUPT:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CHARTOR:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SPOINK:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GRORET:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SPINDA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case KRAKNOIX:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case VIBRANINF:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LIBEGON:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CACNEA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CACTURNE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TYLTON:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ALTARIA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MANGRIFF:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SEVIPER:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SELEROC:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SOLAROC:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BARLOCHE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BARBICHA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ECRAPINCE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case COLHOMARD:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BALBUTO:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case KAORINE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LILIA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case VACILYS:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ANORITH:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ARMALDO:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BARPAU:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MILOBELLUS:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MORPHEO:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case KECLEON:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case POLICHOMBR:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BRANETTE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SKELENOX:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TERACLOPE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TROPIUS:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case EOKO:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ABSOL:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case OKEOKE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case STALGAMIN:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ONIGLALI:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case OBALIE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PHOGLEUR:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case KAIMORSE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case COQUIPERL:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SERPANG:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ROSABYSS:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case RELICANTH:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LOVDISC:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DRABY:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DRACKHAUS:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DRATTAK:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TERHAL:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case METANG:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case METALOSSE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case REGIROCK:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case REGICE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case REGISTEEL:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LATIAS:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LATIOS:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case KYOGRE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GROUDON:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case RAYQUAZA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case JIRACHI:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DEOXYS:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TORTIPOUSS:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BOSKARA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TORTERRA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case OUISTICRAM:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CHIMPENFEU:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SIMIABRAZ:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TIPLOUF:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PRINPLOUF:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PINGOLEON:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ETOURMI:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ETOURVOL:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ETOURAPTOR:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case KEUNOTOR:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CASTORNO:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CRIKZIK:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MELOKRIK:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LIXI:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LUXIO:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LUXRAY:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ROZBOUTON:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ROSERADE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case KRANIDOS:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CHARKOS:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DINOCLIER:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BASTIODON:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CHENITI:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CHENISELLE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PAPILORD:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case APITRINI:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case APIREINE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PACHIRISU:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MUSTEBOUEE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MUSTEFLOTT:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CERIBOU:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CERIFLOR:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SANCOKI:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TRITOSOR:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CAPIDEXTRE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BAUDRIVE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GRODRIVE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LAPOREILLE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LOCKPIN:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MAGIREVE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CORBOSS:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CHAGLAM:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CHAFFREUX:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case KORILLON:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MOUFOUETTE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MOUFFLAIR:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ARCHEOMIRE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ARCHEODONG:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MANZAI:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MIMEJR:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PTIRAVI:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PIJAKO:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SPIRITOMB:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GRIKNOT:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CARMACHE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CARCHACROK:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GOINFREX:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case RIOLU:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LUCARIO:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case HIPPOPOTAS:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case HIPPODOCUS:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case RAPION:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DRASCORE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CRADOPAUD:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case COATOX:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case VORTENTE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ECAYON:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LUMINEON:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BABIMANTA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BLIZZI:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BLIZZAROI:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DIMORET:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MAGNEZONE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case COUDLANGUE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case RHINASTOC:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BOULDENEU:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ELEKABLE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MAGANON:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TOGEKISS:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case YANMEGA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PHYLLALI:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GIVRALI:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SCORVOL:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MAMMOCHON:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PORYGONZ:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GALLAME:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TARINORME:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case NOCTUNOIR:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MOMARTIK:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MOTISMA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CREHELF:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CREFOLLET:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CREFADET:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DIALGA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PALKIA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GIRATINA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CRESSELIA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PHIONE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MANAPHY:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DARKRAI:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SHAYMIN:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ARCEUS:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case VICTINI:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case VIPELIERRE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LIANAJA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MAJASPIC:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GRUIKUI:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GROTICHON:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ROITIFLAM:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MOUSTILLON:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MATELOUTRE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CLAMIRAL:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case RATENTIF:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MIRADAR:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PONCHIOT:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PONCHIEN:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MASTOUFFE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CHACRIPAN:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LEOPARDUS:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FEUILLAJOU:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FEUILOUTAN:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FLAMAJOU:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FLAMOUTAN:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FLOTAJOU:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FLOTOUTAN:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MUNNA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MUSHANA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case POICHIGEON:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case COLOMBEAU:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DEFLAISAN:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ZEBIBRON:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ZEBLITZ:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case NODULITHE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GEOLITHE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GIGALITHE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CHOVSOURIR:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case RHINOLOVE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ROTOTAUPE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MINOTAUPE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case NANMEOUIE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CHARPENTI:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case OUVRIFIER:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BETOCHEF:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TRITONDE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BATRACNE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CRAPUSTULE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case JUDOKRAK:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case KARACLEE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LARVEYETTE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case COUVERDURE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MANTERNEL:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case VENIPATTE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SCOBOLIDE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BRUTAPODE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DOUDOUVET:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FARFADUVET:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CHLOROBULE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FRAGILADY:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BARGANTUA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MASCAIMAN:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ESCROCO:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CROCORIBLE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DARUMAROND:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DARUMACHO:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MARACACHI:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CRABICOQUE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CRABARAQUE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BAGGIGUANE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BAGGAID:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CRYPTERO:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TUTAFEH:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TUTANKAFER:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CARAPAGOS:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MEGAPAGOS:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ARKEAPTI:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case AEROPTERYX:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MIAMIASME:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MIASMAX:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ZORUA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ZOROARK:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CHINCHIDOU:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PASHMILLA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SCRUTELLA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MESMERELLA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SIDERELLA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case NUCLEOS:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MEIOS:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SYMBIOS:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case COUANETON:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LAKMECYGNE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SORBEBE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SORBOUL:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SORBOUBOUL:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case VIVALDAIM:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case HAYDAIM:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case EMOLGA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CARABING:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LANCARGOT:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TROMPIGNON:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GAULET:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case VISKUSE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MOYADE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MAMANBO:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case STATITIK:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MYGAVOLT:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GRINDUR:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case NOACIER:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TIC:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CLIC:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CLITICLIC:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ANCHWATT:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LAMPEROIE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case OHMASSACRE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LEWSOR:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case NEITRAM:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FUNECIRE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MELANCOLUX:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LUGULABRE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case COUPENOTTE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case INCISACHE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TRANCHODON:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case POLARHUME:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case POLAGRIFFE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case HEXAGEL:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ESCARGAUME:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LIMASPEED:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LIMONDE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case KUNGFOUINE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SHAOFOUINE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DRAKKARMIN:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GRINGOLEM:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GOLEMASTOC:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SCALPION:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SCALPROIE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FRISON:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FURAIGLON:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GUERIAIGLE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case VOSTOURNO:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case VAUTUTRICE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case AFLAMANOIR:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FERMITE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SOLOCHI:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DIAMAT:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TRIOXHYDRE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PYRONILLE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PYRAX:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case COBALTIUM:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TERRAKIUM:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case VIRIDIUM:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BOREAS:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FULGURIS:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case RESHIRAM:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ZEKROM:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DEMETEROS:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case KYUREM:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case KELDEO:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MELOETTA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GENESECT:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MARISSON:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BOGUERISSE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BLINDEPIQUE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FEUNNEC:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ROUSSIL:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GOUPELIN:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GRENOUSSE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CROAPORAL:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case AMPHINOBI:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SAPEREAU:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case EXCAVARENNE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PASSEROUGE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BRAISILLON:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FLAMBUSARD:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LEPIDONILLE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PEREGRAIN:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PRISMILLON:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case HELIONCEAU:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case NEMELIOS:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FLABEBE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FLOETTE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FLORGES:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CABRIOLAINE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CHEVROUM:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PANDESPIEGLE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PANDARBARE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case COUAFAREL:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PSYSTIGRI:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MISTIGRIX:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MONORPALE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DIMOCLES:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case EXAGIDE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FLUVETIN:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case COCOTINE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SUCROQUIN:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CUPCANAILLE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SEPIATOP:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SEPIATROCE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case OPERMINE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GOLGOPATHE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case VENALGUE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case KRAVARECH:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FLINGOUSTE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GAMBLAST:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GALVARAN:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case IGUOLTA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PTYRANIDUR:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case REXILIUS:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case AMAGARA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DRAGMARA:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case NYMPHALI:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BRUTALIBRE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DEDENNE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case STRASSIE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MUCUSCULE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case COLIMUCUS:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MUPLODOCUS:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TROUSSELIN:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BROCELOME:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DESSELIANDE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PITROUILLE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BANSHITROUYE:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GRELACON:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SERACRAWL:
 			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SONISTRELLE:
-			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BRUYVERNE:
-			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case XERNEAS:
-			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case YVELTAL:
-			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ZYGARDE:
-			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DIANCIE:
-			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case HOOPA:
-			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		case VOLCANION:
-			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		default:
-			
-			break;
+			return (new int[] {0, 0, 0, 0, 0, 0});
 		}
-		
-
-		return stats;
 	}
 	
 	/*
