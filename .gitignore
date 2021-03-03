@@ -2,4 +2,5 @@ bin/
 .settings/
 .classpath
 .project
-Files/
+Files/options.txt
+Files/Saves
