@@ -40,7 +40,7 @@ public class PnjText {
 						+ "Ils sont encore jeunes.=\n"
 						+ "Le Pokémon que tu choisiras explorera la région avec toi.\n="
 						+ "Tu t'amélioreras avec lui.=+";
-			if(Variables.ADVENTURE_Step == 6)
+			if(Variables.ADVENTURE_Step == 6 || Variables.ADVENTURE_Step == 7)
 				return "C'est le moment.= Choisis bien,= tu ne pourras pas revenir\n"
 						+ "en arrière.";
 		}

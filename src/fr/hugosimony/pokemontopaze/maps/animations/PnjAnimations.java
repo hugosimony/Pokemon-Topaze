@@ -134,15 +134,37 @@ public class PnjAnimations {
 			return;
 		}
 		else if(Variables.ADVENTURE_Step == 8) {
-			if(finalAnimation.y == 1738)
+			if(finalAnimation.y == 1738) {
 				new Timer().schedule(game.road01.profChen.new Move(Direction.UP, true, new IntTuple(finalAnimation.x, 1706), "rrrr", Direction.DOWN, 
 						PnjText.getText("profChen")), 1000, 5);
-			else if(finalAnimation.y == 1706)
+				new Timer().schedule(new TimerTask() {
+					@Override
+					public void run() {
+						game.deplacement.hero.direction = Direction.UP;
+					}
+				}, 1200);
+			}
+			else if(finalAnimation.y == 1706) {
 				new Timer().schedule(game.road01.profChen.new Move(Direction.UP, true, new IntTuple(finalAnimation.x - 32, 1706), "rrrr", Direction.RIGHT, 
 						PnjText.getText("profChen")), 1000, 5);
-			else
+				new Timer().schedule(new TimerTask() {
+					@Override
+					public void run() {
+						game.deplacement.hero.direction = Direction.LEFT;
+					}
+				}, 1200);
+			}
+			else {
 				new Timer().schedule(game.road01.profChen.new Move(Direction.DOWN, true, new IntTuple(finalAnimation.x - 32, 1770), "rrrr", Direction.RIGHT, 
 						PnjText.getText("profChen")), 1000, 5);
+				new Timer().schedule(new TimerTask() {
+					@Override
+					public void run() {
+						game.deplacement.hero.direction = Direction.LEFT;
+					}
+				}, 1200);
+			}
+			game.deplacement.hero.repaint();
 			Variables.ADVENTURE_Step = 9;
 			game.road01.setAnimations();
 			return;

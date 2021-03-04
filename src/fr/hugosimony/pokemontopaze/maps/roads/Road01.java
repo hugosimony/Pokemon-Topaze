@@ -411,7 +411,7 @@ public class Road01 extends JPanel {
 		game.pnjs = new ArrayList<Pnj>();
 		
 		if(Variables.ADVENTURE_Step == 1) {
-			profChen = new Pnj(game, "brownboy001", Direction.RIGHT, 0, 3456, 1738, false, false, null, null, false, false);
+			profChen = new Pnj(game, "profChen", Direction.RIGHT, 0, 3456, 1738, false, false, null, null, false, false);
 			profChen.setLocation(3456, 1738);
 			profChen.setSize(35, 50);
 			game.pnjs.add(profChen);
