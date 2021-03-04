@@ -61,6 +61,8 @@ public class Game extends JFrame {
 	
 	private Settings settings;
 	
+	public Timer timer;
+	
 	public boolean inXMenu;
 	
 	public boolean inSaveMenu;
@@ -74,6 +76,7 @@ public class Game extends JFrame {
 	
 	public boolean inYesNoMenu;
 	
+	public boolean inAnimation;
 	public boolean inTransition;
 	
 	public boolean inBattle;
@@ -128,6 +131,7 @@ public class Game extends JFrame {
 		inYesNoMenu = false;
 		YesNo.game = this;
 		
+		inAnimation = false;
 		inTransition = false;
 		
 		inBattle = false;
@@ -141,7 +145,7 @@ public class Game extends JFrame {
 
 		//****************************************************************************************************
 		// Start Global Timer
-		Timer timer = new Timer();
+		timer = new Timer();
 		timer.schedule(new GlobalTimer(), 60000, 60000);
 		
 		//****************************************************************************************************

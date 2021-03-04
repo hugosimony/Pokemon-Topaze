@@ -2,6 +2,7 @@ package fr.hugosimony.pokemontopaze.maps.pnj;
 
 import java.awt.Component;
 import java.awt.Graphics;
+import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -11,6 +12,8 @@ import fr.hugosimony.pokemontopaze.Const;
 import fr.hugosimony.pokemontopaze.Game;
 import fr.hugosimony.pokemontopaze.maps.Deplacement;
 import fr.hugosimony.pokemontopaze.maps.Direction;
+import fr.hugosimony.pokemontopaze.menus.TextZone;
+import fr.hugosimony.pokemontopaze.utils.IntTuple;
 
 public class Pnj extends JPanel {
 	private static final long serialVersionUID = 1L;
@@ -61,10 +64,20 @@ public class Pnj extends JPanel {
 	public class Move extends TimerTask {
 
 		private Direction dir;
+		private boolean animation;
+		private IntTuple animationEnd;
+		private ArrayList<Direction> animationMoves;
+		private Direction finalLookingDirection;
+		private String finalText;
 		private int x = 0;
 		
-		public Move(Direction direction) {
+		public Move(Direction direction, boolean animation, IntTuple animationEnd, ArrayList<Direction> animationMoves, Direction finalLookingDirection, String finalText) {
 			dir = direction;
+			this.animation = animation;
+			this.animationEnd = animationEnd;
+			this.animationMoves = animationMoves;
+			this.finalLookingDirection = finalLookingDirection;
+			this.finalText = finalText;
 		}
 		
 		@Override
@@ -114,7 +127,30 @@ public class Pnj extends JPanel {
 						walkDirection *= -1;
 						mooving = false;
 						checkAnyoneNearDone = false;
-						this.cancel();
+						if(animation) {
+							if(pnj.getLocation().x == animationEnd.x && pnj.getLocation().y == animationEnd.y) {
+								game.inAnimation = false;
+								setSprites(new Pnj(game, perso, finalLookingDirection, 0, positionX, positionY, IA, false, directions, IAMoving, paraClick, false));
+								if(!finalText.equals("")) {
+									game.textZone = new TextZone(game.actualPanel, finalText);
+									TextZone.printTextZone(game.textZone, game);
+								}
+								this.cancel();
+							}
+							else {
+								if(animationMoves.size() > 0) {
+									x = 0;
+									dir = animationMoves.get(0);
+									animationMoves.remove(0);
+								}
+								else {
+									System.out.println("The moves are wrong.");
+									this.cancel();
+								}
+							}
+						}
+						else 
+							this.cancel();
 					}
 				}
 			}
@@ -185,19 +221,35 @@ public class Pnj extends JPanel {
 			if(direction == Direction.UP) {
 				if(foot == 0)
 					g.drawImage(Const.momBack.getImage(), 0, 0, null);
+				else if(foot == 1)
+					g.drawImage(Const.momBackRight.getImage(), 0, 0, null);
+				else if(foot == 2)
+					g.drawImage(Const.momBackLeft.getImage(), 0, 0, null);
 			}
-				else if(direction == Direction.DOWN) {
+			else if(direction == Direction.DOWN) {
 				if(foot == 0)
 					g.drawImage(Const.momFront.getImage(), 0, 0, null);
+				else if(foot == 1)
+					g.drawImage(Const.momFrontRight.getImage(), 0, 0, null);
+				else if(foot == 2)
+					g.drawImage(Const.momFrontLeft.getImage(), 0, 0, null);
 			}
 			else if(direction == Direction.LEFT) {
 				if(foot == 0)	
 					g.drawImage(Const.momLeft.getImage(), 0, 0, null);
+				else if(foot == 1)	
+					g.drawImage(Const.momLeftRight.getImage(), 0, 0, null);
+				else if(foot == 2)	
+					g.drawImage(Const.momLeftLeft.getImage(), 0, 0, null);
 				
 			}
 			else if(direction == Direction.RIGHT) {
 				if(foot == 0)	
 					g.drawImage(Const.momRight.getImage(), 0, 0, null);
+				else if(foot == 1)	
+					g.drawImage(Const.momRightRight.getImage(), 0, 0, null);
+				else if(foot == 2)	
+					g.drawImage(Const.momRightLeft.getImage(), 0, 0, null);
 			}
 		}
 		else if(perso.contains("brownboy")) {

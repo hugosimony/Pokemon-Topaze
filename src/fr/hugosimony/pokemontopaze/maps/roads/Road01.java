@@ -569,7 +569,7 @@ public class Road01 extends JPanel {
 			 text = "Conseil aux dresseurs := Les PVs de vos pokémons doivent rester\nhauts si vous voulez avoir plus de chance de gagner un combat.=\nN'oubliez pas d'avoir toujours des potions sur vous.";
 		 }
 		 else if(IntTuple.getPosition(game.clickableTiles, tuple) == 4) {
-			 text = "Vers Ville 2.";
+			 text = "Vers Villaube.";
 		 } else if(IntTuple.getPosition(game.clickableTiles, tuple) == 5 && Variables.GROUND_ITEMS_Road1.contains("0")) {
 			 Sounds.playSound(Const.soundItemGet);
 			 Variables.GROUND_ITEMS_Road1.remove("0");

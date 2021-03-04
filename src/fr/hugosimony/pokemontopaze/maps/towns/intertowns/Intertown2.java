@@ -160,10 +160,11 @@ public class Intertown2 extends JPanel {
 	public String getInteractMessage(IntTuple tuple) {
 		 String text = "";
 		 if(IntTuple.getPosition(game.clickableTiles, tuple) == 1) {
-			 text = "Bonjour != En allant au nord, vous arriverez à .= Bonne journée !";
+			 text = "Bonjour != En allant au nord, vous arriverez à Villaube.\n="
+			 		+ "Bonne journée !";
 		 }
 		 else if(IntTuple.getPosition(game.clickableTiles, tuple) == 2) {
-			 text = "Haut : Ville 2.=\nBas : Route 01.";
+			 text = "Nord : Villaube.=\nSud : Route 01.";
 		 }
 		 return text;
 	}

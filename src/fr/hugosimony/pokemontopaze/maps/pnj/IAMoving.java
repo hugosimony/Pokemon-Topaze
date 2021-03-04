@@ -31,13 +31,13 @@ public class IAMoving extends TimerTask{
 		} catch (Exception e) {
 		}
 		
-		if(!pnj.game.inXMenu && !pnj.game.inSaveMenu && !pnj.game.inTextMenu && !pnj.game.inYesNoMenu && !pnj.mooving && !pnj.game.inBattle) {
+		if(!pnj.game.inAnimation && !pnj.game.inXMenu && !pnj.game.inSaveMenu && !pnj.game.inTextMenu && !pnj.game.inYesNoMenu && !pnj.mooving && !pnj.game.inBattle) {
 			
 			ArrayList<Direction> possibleDirections = getPossibleDirections();
 			int random = Utils.randomNumber(possibleDirections.size()-1);
 			
 			if(pnj.isLookingTileFree(possibleDirections.get(random))) {
-				new Timer().schedule(pnj.new Move(possibleDirections.get(random)), 0, 5);
+				new Timer().schedule(pnj.new Move(possibleDirections.get(random), false, null, null, null, null), 0, 5);
 				setPosition(possibleDirections, random);
 			}
 		}

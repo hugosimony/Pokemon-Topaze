@@ -76,51 +76,53 @@ public class Deplacement {
 	}
 	
 	public void startMove(Direction direction, boolean auto) {
-		coolDown = true;
-		boolean move = false;
-		if(direction == Direction.UP && !IntTuple.contains(game.walls, getLookingTile()) && (!IntTriple.containsTuple(game.jumpWalls, getLookingTile()) 
-				|| (IntTriple.containsTuple(game.jumpWalls, getLookingTile()) && !IntTriple.contains(game.jumpWalls, new IntTriple(locationX, locationY - pixelMoved, 1)))) 
-				&& IntTuple.containsPnj(game.pnjs, getLookingTile()) == null)
-			move = true;
-		else if(direction == Direction.DOWN && !IntTuple.contains(game.walls, getLookingTile()) && (!IntTriple.containsTuple(game.jumpWalls, getLookingTile()) 
-				|| (IntTriple.containsTuple(game.jumpWalls, getLookingTile()) && !IntTriple.contains(game.jumpWalls, new IntTriple(locationX, locationY + pixelMoved, 2)))) 
-				&& IntTuple.containsPnj(game.pnjs, getLookingTile()) == null)
-			move = true;
-		else if(direction == Direction.LEFT && !IntTuple.contains(game.walls, getLookingTile()) && (!IntTriple.containsTuple(game.jumpWalls, getLookingTile()) 
-				|| (IntTriple.containsTuple(game.jumpWalls, getLookingTile()) && !IntTriple.contains(game.jumpWalls, new IntTriple(locationX - pixelMoved, locationY, 3)))) 
-				&& IntTuple.containsPnj(game.pnjs, getLookingTile()) == null)
-			move = true;
-		else if(direction == Direction.RIGHT && !IntTuple.contains(game.walls, getLookingTile()) && (!IntTriple.containsTuple(game.jumpWalls, getLookingTile()) 
-				|| (IntTriple.containsTuple(game.jumpWalls, getLookingTile()) && !IntTriple.contains(game.jumpWalls, new IntTriple(locationX + pixelMoved, locationY, 4)))) 
-				&& IntTuple.containsPnj(game.pnjs, getLookingTile()) == null)
-			move = true;
-		if(move) {
-			//**********************************************************
-			// Check Sounds / Herbs Check
-			
-			if(IntTriple.containsTuple(game.herbs, getLookingTile())) {
-				Sounds.playSound(Const.soundOverHerbs);
-				// Check Encounter
+		if(!game.inAnimation) {
+			coolDown = true;
+			boolean move = false;
+			if(direction == Direction.UP && !IntTuple.contains(game.walls, getLookingTile()) && (!IntTriple.containsTuple(game.jumpWalls, getLookingTile()) 
+					|| (IntTriple.containsTuple(game.jumpWalls, getLookingTile()) && !IntTriple.contains(game.jumpWalls, new IntTriple(locationX, locationY - pixelMoved, 1)))) 
+					&& IntTuple.containsPnj(game.pnjs, getLookingTile()) == null)
+				move = true;
+			else if(direction == Direction.DOWN && !IntTuple.contains(game.walls, getLookingTile()) && (!IntTriple.containsTuple(game.jumpWalls, getLookingTile()) 
+					|| (IntTriple.containsTuple(game.jumpWalls, getLookingTile()) && !IntTriple.contains(game.jumpWalls, new IntTriple(locationX, locationY + pixelMoved, 2)))) 
+					&& IntTuple.containsPnj(game.pnjs, getLookingTile()) == null)
+				move = true;
+			else if(direction == Direction.LEFT && !IntTuple.contains(game.walls, getLookingTile()) && (!IntTriple.containsTuple(game.jumpWalls, getLookingTile()) 
+					|| (IntTriple.containsTuple(game.jumpWalls, getLookingTile()) && !IntTriple.contains(game.jumpWalls, new IntTriple(locationX - pixelMoved, locationY, 3)))) 
+					&& IntTuple.containsPnj(game.pnjs, getLookingTile()) == null)
+				move = true;
+			else if(direction == Direction.RIGHT && !IntTuple.contains(game.walls, getLookingTile()) && (!IntTriple.containsTuple(game.jumpWalls, getLookingTile()) 
+					|| (IntTriple.containsTuple(game.jumpWalls, getLookingTile()) && !IntTriple.contains(game.jumpWalls, new IntTriple(locationX + pixelMoved, locationY, 4)))) 
+					&& IntTuple.containsPnj(game.pnjs, getLookingTile()) == null)
+				move = true;
+			if(move) {
+				//**********************************************************
+				// Check Sounds / Herbs Check
+				
+				if(IntTriple.containsTuple(game.herbs, getLookingTile())) {
+					Sounds.playSound(Const.soundOverHerbs);
+					// Check Encounter
+				}
+				if(IntTriple.containsTuple(game.jumpWalls, new IntTuple(locationX, locationY)) && Direction.getOpositeDirection(Direction.getGoodDirectionFromInt(IntTriple.getTripleFromTuple(game.jumpWalls, new IntTuple(locationX, locationY)).z)) == direction)
+					Sounds.playSound(Const.soundPlayerJump);
+				
+				//**********************************************************
+				timer.schedule(new MoveDirection(direction, false, auto), 0, Variables.SPEED_PERSO);
 			}
-			if(IntTriple.containsTuple(game.jumpWalls, new IntTuple(locationX, locationY)) && Direction.getOpositeDirection(Direction.getGoodDirectionFromInt(IntTriple.getTripleFromTuple(game.jumpWalls, new IntTuple(locationX, locationY)).z)) == direction)
-				Sounds.playSound(Const.soundPlayerJump);
-			
-			//**********************************************************
-			timer.schedule(new MoveDirection(direction, false, auto), 0, Variables.SPEED_PERSO);
-		}
-		else {
-			Sounds.playSound(Const.soundPlayerStopped);
-			timer.schedule(new MoveDirection(direction, true, auto), 0, Variables.SPEED_PERSO);
-			if(Sounds.canPlayBumpSound) {
-				timer.schedule(new TimerTask() {
-					@Override
-					public void run() {
-						Sounds.canPlayBumpSound = true;
-						this.cancel();
-					}
-				}, 1000);
+			else {
+				Sounds.playSound(Const.soundPlayerStopped);
+				timer.schedule(new MoveDirection(direction, true, auto), 0, Variables.SPEED_PERSO);
+				if(Sounds.canPlayBumpSound) {
+					timer.schedule(new TimerTask() {
+						@Override
+						public void run() {
+							Sounds.canPlayBumpSound = true;
+							this.cancel();
+						}
+					}, 1000);
+				}
+				Sounds.canPlayBumpSound = false;
 			}
-			Sounds.canPlayBumpSound = false;
 		}
 	}
 	
@@ -218,7 +220,7 @@ public class Deplacement {
 						setSprites(dir, new Hero(dir, 0, 1), false);
 						runDirection *= -1;
 						this.cancel();
-						if(!checkMapChange() && game.inXMenu) {
+						if(!checkAnimations() && !checkMapChange() && game.inXMenu) {
 							XMenu.unprintXMenu();
 							XMenu.printXMenu();
 						}
@@ -336,6 +338,30 @@ public class Deplacement {
 		else if(newDirection == Direction.RIGHT)
 			x += pixelMoved; 
 		return new IntTuple(locationX + x, locationY + y);
+	}
+	
+	public IntTuple getActualLookingTile() {
+		int x = 0;
+		int y = 0;
+		if(direction == Direction.UP)
+			y -= pixelMoved; 
+		else if(direction == Direction.DOWN)
+			y += pixelMoved; 
+		else if(direction == Direction.LEFT)
+			x -= pixelMoved; 
+		else if(direction == Direction.RIGHT)
+			x += pixelMoved; 
+		return new IntTuple(locationX + x, locationY + y);
+	}
+	
+	private boolean checkAnimations() {
+		boolean animation = false;
+		animation = game.myHouse != null && game.myHouse.isVisible() && game.myHouse.checkAnimations();
+		/*if(!animation)
+			animation = game.selenia != null && game.selenia.isVisible() && game.selenia.checkAnimations();
+		if(!animation)
+			animation = game.road01 != null && game.road01.isVisible() &&  game.road01.checkAnimations();*/
+		return animation;
 	}
 	
 	private boolean checkMapChange() {

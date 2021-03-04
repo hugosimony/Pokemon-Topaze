@@ -33,7 +33,7 @@ public class InteractDispatcher implements KeyEventDispatcher {
 			 if(event.getID() == KeyEvent.KEY_PRESSED && game.deplacement.released && !Main.settingsOn && !game.inTransition && !game.inBattle) {
 				 int keyCode = event.getKeyCode();
 				 
-				 if(!game.inTextMenu && !game.inXMenu && !game.inSaveMenu && (keyCode == Variables.CONTROLS_A)){
+				 if(!game.inTextMenu && !game.inAnimation && !game.inXMenu && !game.inSaveMenu && (keyCode == Variables.CONTROLS_A)){
 					 IntTuple tuple = game.deplacement.getLookingTile();
 					 String text = "";
 					 

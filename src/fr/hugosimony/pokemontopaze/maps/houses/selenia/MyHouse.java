@@ -5,6 +5,8 @@ import java.awt.KeyboardFocusManager;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
@@ -26,9 +28,11 @@ import fr.hugosimony.pokemontopaze.maps.Direction;
 import fr.hugosimony.pokemontopaze.maps.Map;
 import fr.hugosimony.pokemontopaze.maps.Places;
 import fr.hugosimony.pokemontopaze.maps.pnj.Pnj;
+import fr.hugosimony.pokemontopaze.maps.pnj.PnjText;
 import fr.hugosimony.pokemontopaze.maps.towns.Selenia;
 import fr.hugosimony.pokemontopaze.sounds.Sounds;
 import fr.hugosimony.pokemontopaze.transitions.TransitionSimple;
+import fr.hugosimony.pokemontopaze.utils.IntTriple;
 import fr.hugosimony.pokemontopaze.utils.IntTuple;
 
 public class MyHouse extends JPanel {
@@ -43,6 +47,8 @@ public class MyHouse extends JPanel {
 	private IntTuple toUpStairs;
 	private IntTuple toExit;
 	
+	private ArrayList<IntTriple> animationTiles;
+	
 	private Pnj mom;
 	
 	public MyHouse(Game game, boolean up, int locationX, int locationY, Direction direction, int mapLocationX, int mapLocationY) {
@@ -54,10 +60,10 @@ public class MyHouse extends JPanel {
 		setClickableTiles();
 		setWalls();
 		setPnjs();
+		setAnimations();
 		toDownStairs = new IntTuple(1184, 2922);
 		toUpStairs = new IntTuple(1984, 2865);
 		toExit = new IntTuple(2176, 3217);
-		
 		setLayout(null);
 		setBackground(new Color(0, 0, 0));
 		
@@ -261,10 +267,29 @@ public class MyHouse extends JPanel {
 		
 		
 		if(!up) {
-			mom = new Pnj(game, "mom", Direction.DOWN, 0, 2368, 2897, false, false, null, null, false, false);
-			mom.setLocation(2368, 2897);
+			if(Variables.ADVENTURE_Step == 0) {
+				mom = new Pnj(game, "mom", Direction.DOWN, 0, 2368, 3025, false, false, null, null, false, false);
+				mom.setLocation(2368, 3025);
+			}
+			else {
+				mom = new Pnj(game, "mom", Direction.DOWN, 0, 2368, 2897, false, false, null, null, false, false);
+				mom.setLocation(2368, 2897);
+			}
 			mom.setSize(35, 50);
 			game.pnjs.add(mom);
+		}
+	}
+	
+	private void setAnimations() {
+		animationTiles = new ArrayList<IntTriple>();
+		
+		if(Variables.ADVENTURE_Step == 0) {
+			animationTiles.add(new IntTriple(2112, 3057, 0));
+			animationTiles.add(new IntTriple(2144, 3057, 0));
+			animationTiles.add(new IntTriple(2176, 3057, 0));
+			animationTiles.add(new IntTriple(2208, 3057, 0));
+			animationTiles.add(new IntTriple(2240, 3057, 0));
+			animationTiles.add(new IntTriple(2272, 3057, 0));
 		}
 	}
 	
@@ -306,6 +331,35 @@ public class MyHouse extends JPanel {
 			 }
 		 }
 		 return text;
+	}
+	
+	public boolean checkAnimations() {
+		
+		if(isVisible()){
+			
+			if(IntTriple.containsTuple(animationTiles, game.deplacement.getLookingTile())) {
+				game.inAnimation = true;
+				int animation = IntTriple.getTripleFromTuple(animationTiles, game.deplacement.getLookingTile()).z;
+				if(animation == 0) {
+					Sounds.playSound(Const.soundExclamation);
+					new Timer().schedule(new TimerTask() {
+						@Override
+						public void run() {
+							ArrayList<Direction> moves = new ArrayList<Direction>();
+							moves.add(Direction.LEFT); moves.add(Direction.LEFT); moves.add(Direction.LEFT);
+							moves.add(Direction.LEFT); moves.add(Direction.LEFT); moves.add(Direction.LEFT);
+							moves.add(Direction.LEFT); moves.add(Direction.LEFT);
+							new Timer().schedule(mom.new Move(Direction.DOWN, true, game.deplacement.getLookingTile(), moves, Direction.UP, PnjText.getText("mom")), 0, 5);
+							Variables.ADVENTURE_Step = 1;
+							setAnimations();
+							this.cancel();
+						}
+					}, 1000);
+				}
+				return true;
+			}
+		}
+		return false;
 	}
 	
 	public boolean checkMapChange() {

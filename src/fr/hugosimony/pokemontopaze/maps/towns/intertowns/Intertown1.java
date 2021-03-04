@@ -157,7 +157,7 @@ public class Intertown1 extends JPanel {
 			 		+ "sur la Route 01.= Bonne journée !";
 		 }
 		 else if(IntTuple.getPosition(game.clickableTiles, tuple) == 2) {
-			 text = "Haut : Route 01.=\nBas : Sélénia.";
+			 text = "Nord : Route 01.=\nSud : Sélénia.";
 		 }
 		 return text;
 	}

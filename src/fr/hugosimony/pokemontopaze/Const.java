@@ -114,9 +114,17 @@ public class Const {
 	// Sprites Mom
 	
 	public static final ImageIcon momFront = new ImageIcon(Main.class.getResource("sprites/perso/mom/momFront.gif"));
+	public static final ImageIcon momFrontRight = new ImageIcon(Main.class.getResource("sprites/perso/mom/momFrontRight.gif"));
+	public static final ImageIcon momFrontLeft = new ImageIcon(Main.class.getResource("sprites/perso/mom/momFrontLeft.gif"));
 	public static final ImageIcon momBack = new ImageIcon(Main.class.getResource("sprites/perso/mom/momBack.gif"));
+	public static final ImageIcon momBackRight = new ImageIcon(Main.class.getResource("sprites/perso/mom/momBackRight.gif"));
+	public static final ImageIcon momBackLeft = new ImageIcon(Main.class.getResource("sprites/perso/mom/momBackLeft.gif"));
 	public static final ImageIcon momLeft = new ImageIcon(Main.class.getResource("sprites/perso/mom/momLeft.gif"));
+	public static final ImageIcon momLeftRight = new ImageIcon(Main.class.getResource("sprites/perso/mom/momLeftRight.gif"));
+	public static final ImageIcon momLeftLeft = new ImageIcon(Main.class.getResource("sprites/perso/mom/momLeftLeft.gif"));
 	public static final ImageIcon momRight = new ImageIcon(Main.class.getResource("sprites/perso/mom/momRight.gif"));
+	public static final ImageIcon momRightRight = new ImageIcon(Main.class.getResource("sprites/perso/mom/momRightRight.gif"));
+	public static final ImageIcon momRightLeft = new ImageIcon(Main.class.getResource("sprites/perso/mom/momRightLeft.gif"));
 	
 	//****************************************************************************************************
 	// Sprites Brown Boy
@@ -189,6 +197,7 @@ public class Const {
 	public static final URL soundPlayerJump = Main.class.getResource("sounds/maps/soundPlayerJump.wav");
 	public static final URL soundOverHerbs = Main.class.getResource("sounds/maps/soundOverHerbs.wav");
 	public static final URL soundItemGet = Main.class.getResource("sounds/maps/soundItemGet.wav");
+	public static final URL soundExclamation = Main.class.getResource("sounds/maps/soundExclamation.wav");
 	
 	//****************************************************************************************************
 	// Colors

@@ -24,7 +24,7 @@ public class DeplacementDispatcher implements KeyEventDispatcher {
 	
 		 if(originalPanel.isVisible()) {
 			 if(!Main.settingsOn && !game.inTransition && !game.inXMenu && !game.inSaveMenu && !game.inTextMenu && !game.inBattle && game.actualPanel.isVisible()) {
-				 if(event.getID() == KeyEvent.KEY_PRESSED) {
+				 if(event.getID() == KeyEvent.KEY_PRESSED && !game.inAnimation) {
 					 int keyCode = event.getKeyCode();
 					 Direction dir = game.deplacement.getDirection(keyCode);
 					 if(dir != Direction.NULL) {
@@ -57,7 +57,7 @@ public class DeplacementDispatcher implements KeyEventDispatcher {
 						 game.deplacement.released = true;
 					 if(game.deplacement.pressed.contains(keyCode + ""))
 						 game.deplacement.pressed.remove(keyCode + "");
-					 if(!game.deplacement.coolDown && game.deplacement.pressed.size() == 1) {
+					 if(!game.inAnimation && !game.deplacement.coolDown && game.deplacement.pressed.size() == 1) {
 							game.deplacement.released = false;
 							game.deplacement.direction = game.deplacement.getDirection(Integer.parseInt(game.deplacement.pressed.get(0)));
 							game.deplacement.newDirection = game.deplacement.direction;

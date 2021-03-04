@@ -27,7 +27,7 @@ public class MenuXDispatcher implements KeyEventDispatcher {
 	public boolean dispatchKeyEvent(KeyEvent event) {
 		
 		if(originalPanel.isVisible()) {
-			 if(event.getID() == KeyEvent.KEY_PRESSED && game.deplacement.released && !game.inTextMenu && !Main.settingsOn && !game.inTransition && !game.inBattle) {
+			 if(event.getID() == KeyEvent.KEY_PRESSED && !game.inAnimation && game.deplacement.released && !game.inTextMenu && !Main.settingsOn && !game.inTransition && !game.inBattle) {
 				 int keyCode = event.getKeyCode();
 				 
 				 if((keyCode == Variables.CONTROLS_MenuX || keyCode == Variables.CONTROLS_B || keyCode == KeyEvent.VK_ESCAPE)) {

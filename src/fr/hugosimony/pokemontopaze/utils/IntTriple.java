@@ -72,4 +72,13 @@ public class IntTriple {
 		return triple;
 	}
 	
+	public static void removeTriple(ArrayList<IntTriple> list, IntTriple triple) {
+		for(int i = 0; i < list.size(); i++) {
+			if(list.get(i).equals(triple)) {
+				list.remove(i);
+				break;
+			}
+		}
+	}
+	
 }
