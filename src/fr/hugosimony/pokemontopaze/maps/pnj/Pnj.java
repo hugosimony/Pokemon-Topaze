@@ -21,6 +21,7 @@ public class Pnj extends JPanel {
 	
 	private Pnj pnj;
 	public boolean IA;
+	public boolean firstIA;
 	public IAMoving IAMoving;
 	public boolean paraClick;
 	public boolean mooving;
@@ -46,6 +47,7 @@ public class Pnj extends JPanel {
 		this.positionX = positionX;
 		this.positionY = positionY;
 		this.IA = IA;
+		this.firstIA = firstIA;
 		if(IA && firstIA) {
 			this.IAMoving = new IAMoving(pnj, directions);
 			new Timer().schedule(this.IAMoving, 1, 1);
@@ -128,11 +130,23 @@ public class Pnj extends JPanel {
 						checkAnyoneNearDone = false;
 						if(animation) {
 							if(pnj.getLocation().x == animationEnd.x && pnj.getLocation().y == animationEnd.y) {
-								game.inAnimation = false;
 								setSprites(new Pnj(game, perso, finalLookingDirection, 0, positionX, positionY, IA, false, directions, IAMoving, paraClick, false));
 								if(!finalText.equals("")) {
-									game.textZone = new TextZone(game.actualPanel, finalText);
-									TextZone.printTextZone(game.textZone, game);
+									if(finalText.equals("+")) {
+										PnjAnimations.checkMapChange(game);
+										new Timer().schedule(new TimerTask() {
+											@Override
+											public void run() {
+												PnjAnimations.startGoodAnimation(game, null);
+												this.cancel();
+											}
+										}, 1000);
+									}
+									else {
+										game.inAnimation = false;
+										game.textZone = new TextZone(game.actualPanel, finalText);
+										TextZone.printTextZone(game.textZone, game);
+									}
 								}
 								this.cancel();
 							}
@@ -140,7 +154,7 @@ public class Pnj extends JPanel {
 								if(animationMoves.length() > 0) {
 									x = 0;
 									dir = Deplacement.getDirection(animationMoves.charAt(0));
-									animationMoves.replaceFirst(animationMoves.charAt(0)+"", "");
+									animationMoves = animationMoves.replaceFirst(animationMoves.charAt(0)+"", "");
 								}
 								else {
 									System.out.println("The moves are wrong.");
@@ -158,35 +172,51 @@ public class Pnj extends JPanel {
 		}
 	}
 	
+	public void copyParameters(Pnj pnj_) {
+		this.game = pnj_.game;
+		this.perso = pnj_.perso;
+		this.direction = pnj_.direction;
+		this.directions = pnj_.directions;
+		this.foot = pnj_.foot;
+		this.positionX = pnj_.positionX;
+		this.positionY = pnj_.positionY;
+		this.IA = pnj_.IA;
+		this.paraClick = pnj_.paraClick;
+		this.mooving = pnj_.mooving;
+		if(pnj_.IA && pnj_.firstIA) {
+			this.IAMoving = new IAMoving(pnj, pnj_.directions);
+			new Timer().schedule(this.IAMoving, 1, 1);
+		}
+		else
+			this.IAMoving = pnj_.IAMoving;
+	}
+	
 	public void setSprites(Pnj pnj_) {
-		
+
+		boolean toAdd = true;
 		for(Component component : game.map.getComponents()) {
 			if(component instanceof Pnj) {
-				Pnj pnj__ = (Pnj) component;
-				if(pnj__.perso.equals(pnj.perso)) {
-					game.map.remove(component);
-				}
+				Pnj pnj1 = (Pnj) component;
+				if(pnj1.perso.equals(pnj_.perso))
+					toAdd = false;
 			}
 		}
-		pnj = pnj_;
-		pnj.setLocation(positionX, positionY);
-		pnj.setSize(50,70);
-		pnj.setVisible(true);
-		game.map.add(pnj);
-	
+		
+		if(toAdd)
+			game.map.add(pnj);
+		
+		pnj.copyParameters(pnj_);
+		pnj.repaint();
 		
 		int i = 0;
 		boolean done = false;
 		while(!done && i < game.pnjs.size()) {
 			if(game.pnjs.get(i).perso.equals(pnj.perso)) {
-				game.pnjs.remove(i);
+				game.pnjs.get(i).copyParameters(pnj_);;
 				done = true;
 			}
 			i++;
 		}
-		game.pnjs.add(pnj);
-		
-		game.map.repaint();
 		
 		game.deplacement.setSprites(game.deplacement.direction, game.deplacement.hero, false);
 		
@@ -308,6 +338,41 @@ public class Pnj extends JPanel {
 			else if(direction == Direction.RIGHT) {
 				if(foot == 0)	
 					g.drawImage(Const.sellerboyRight.getImage(), 0, 0, null);
+			}
+		}
+		else if(perso.equals("profChen")) {
+			if(direction == Direction.UP) {
+				if(foot == 0)
+					g.drawImage(Const.brownboyBack.getImage(), 0, 0, null);
+				else if(foot == 1)
+					g.drawImage(Const.brownboyBackRight.getImage(), 0, 0, null);
+				else if(foot == 2)
+					g.drawImage(Const.brownboyBackLeft.getImage(), 0, 0, null);
+			}
+			else if(direction == Direction.DOWN) {
+				if(foot == 0)
+					g.drawImage(Const.brownboyFront.getImage(), 0, 0, null);
+				else if(foot == 1)
+					g.drawImage(Const.brownboyFrontRight.getImage(), 0, 0, null);
+				else if(foot == 2)
+					g.drawImage(Const.brownboyFrontLeft.getImage(), 0, 0, null);
+			}
+			else if(direction == Direction.LEFT) {
+				if(foot == 0)	
+					g.drawImage(Const.brownboyLeft.getImage(), 0, 0, null);
+				else if(foot == 1)	
+					g.drawImage(Const.brownboyLeftRight.getImage(), 0, 0, null);
+				else if(foot == 2)	
+					g.drawImage(Const.brownboyLeftLeft.getImage(), 0, 0, null);
+				
+			}
+			else if(direction == Direction.RIGHT) {
+				if(foot == 0)	
+					g.drawImage(Const.brownboyRight.getImage(), 0, 0, null);
+				else if(foot == 1)	
+					g.drawImage(Const.brownboyRightRight.getImage(), 0, 0, null);
+				else if(foot == 2)	
+					g.drawImage(Const.brownboyRightLeft.getImage(), 0, 0, null);
 			}
 		}
 	}

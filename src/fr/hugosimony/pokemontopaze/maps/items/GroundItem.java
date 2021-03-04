@@ -9,7 +9,7 @@ import fr.hugosimony.pokemontopaze.Const;
 public class GroundItem extends JPanel {
 	private static final long serialVersionUID = 1L;
 
-	private String type;
+	public String type;
 	
 	public GroundItem(String type) {
 		this.type = type;

@@ -5,8 +5,6 @@ import java.awt.KeyboardFocusManager;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.Timer;
-import java.util.TimerTask;
 
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
@@ -28,7 +26,7 @@ import fr.hugosimony.pokemontopaze.maps.Direction;
 import fr.hugosimony.pokemontopaze.maps.Map;
 import fr.hugosimony.pokemontopaze.maps.Places;
 import fr.hugosimony.pokemontopaze.maps.pnj.Pnj;
-import fr.hugosimony.pokemontopaze.maps.pnj.PnjText;
+import fr.hugosimony.pokemontopaze.maps.pnj.PnjAnimations;
 import fr.hugosimony.pokemontopaze.maps.towns.Selenia;
 import fr.hugosimony.pokemontopaze.sounds.Sounds;
 import fr.hugosimony.pokemontopaze.transitions.TransitionSimple;
@@ -49,7 +47,7 @@ public class MyHouse extends JPanel {
 	
 	private ArrayList<IntTriple> animationTiles;
 	
-	private Pnj mom;
+	public Pnj mom;
 	
 	public MyHouse(Game game, boolean up, int locationX, int locationY, Direction direction, int mapLocationX, int mapLocationY) {
 		
@@ -280,7 +278,7 @@ public class MyHouse extends JPanel {
 		}
 	}
 	
-	private void setAnimations() {
+	public void setAnimations() {
 		animationTiles = new ArrayList<IntTriple>();
 		
 		if(Variables.ADVENTURE_Step == 0) {
@@ -341,18 +339,8 @@ public class MyHouse extends JPanel {
 			if(IntTriple.containsTuple(animationTiles, finalAnimation)) {
 				game.inAnimation = true;
 				int animation = IntTriple.getTripleFromTuple(animationTiles, finalAnimation).z;
-				if(animation == 0) {
-					Sounds.playSound(Const.soundExclamation);
-					new Timer().schedule(new TimerTask() {
-						@Override
-						public void run() {
-							new Timer().schedule(mom.new Move(Direction.DOWN, true, finalAnimation, "llllllll", Direction.UP, PnjText.getText("mom")), 0, 5);
-							Variables.ADVENTURE_Step = 1;
-							setAnimations();
-							this.cancel();
-						}
-					}, 1000);
-				}
+				if(animation == 0)
+					PnjAnimations.startGoodAnimation(game, finalAnimation);
 				return true;
 			}
 		}

@@ -7,6 +7,7 @@ import javax.swing.JPanel;
 
 import fr.hugosimony.pokemontopaze.Game;
 import fr.hugosimony.pokemontopaze.Main;
+import fr.hugosimony.pokemontopaze.maps.Deplacement;
 import fr.hugosimony.pokemontopaze.maps.Direction;
 
 public class DeplacementDispatcher implements KeyEventDispatcher {
@@ -26,7 +27,7 @@ public class DeplacementDispatcher implements KeyEventDispatcher {
 			 if(!Main.settingsOn && !game.inTransition && !game.inXMenu && !game.inSaveMenu && !game.inTextMenu && !game.inBattle && game.actualPanel.isVisible()) {
 				 if(event.getID() == KeyEvent.KEY_PRESSED && !game.inAnimation) {
 					 int keyCode = event.getKeyCode();
-					 Direction dir = game.deplacement.getDirection(keyCode);
+					 Direction dir = Deplacement.getDirection(keyCode);
 					 if(dir != Direction.NULL) {
 						 if(!game.deplacement.pressed.contains(keyCode + ""))
 							 game.deplacement.pressed.add(keyCode + "");
@@ -53,13 +54,13 @@ public class DeplacementDispatcher implements KeyEventDispatcher {
 				 }
 				 else if(event.getID() == KeyEvent.KEY_RELEASED) {
 					 int keyCode = event.getKeyCode();
-					 if(game.deplacement.getDirection(keyCode) == game.deplacement.direction)
+					 if(Deplacement.getDirection(keyCode) == game.deplacement.direction)
 						 game.deplacement.released = true;
 					 if(game.deplacement.pressed.contains(keyCode + ""))
 						 game.deplacement.pressed.remove(keyCode + "");
 					 if(!game.inAnimation && !game.deplacement.coolDown && game.deplacement.pressed.size() == 1) {
 							game.deplacement.released = false;
-							game.deplacement.direction = game.deplacement.getDirection(Integer.parseInt(game.deplacement.pressed.get(0)));
+							game.deplacement.direction = Deplacement.getDirection(Integer.parseInt(game.deplacement.pressed.get(0)));
 							game.deplacement.newDirection = game.deplacement.direction;
 							game.deplacement.startMove(game.deplacement.direction, true);
 					 }

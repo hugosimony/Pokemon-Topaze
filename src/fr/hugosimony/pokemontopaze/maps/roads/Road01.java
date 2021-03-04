@@ -26,6 +26,7 @@ import fr.hugosimony.pokemontopaze.maps.Map;
 import fr.hugosimony.pokemontopaze.maps.Places;
 import fr.hugosimony.pokemontopaze.maps.items.GroundItem;
 import fr.hugosimony.pokemontopaze.maps.pnj.Pnj;
+import fr.hugosimony.pokemontopaze.maps.pnj.PnjAnimations;
 import fr.hugosimony.pokemontopaze.maps.towns.intertowns.Intertown1;
 import fr.hugosimony.pokemontopaze.maps.towns.intertowns.Intertown2;
 import fr.hugosimony.pokemontopaze.sounds.Sounds;
@@ -44,6 +45,13 @@ public class Road01 extends JPanel {
 	private IntTuple toIntertown2;
 	
 	private GroundItem groundPokeBall1;
+	public GroundItem starter1;
+	public GroundItem starter2;
+	public GroundItem starter3;
+	
+	private ArrayList<IntTriple> animationTiles;
+	
+	public Pnj profChen;
 	
 	public Road01(Game game, int locationX, int locationY, Direction direction, int mapLocationX, int mapLocationY) {
 		
@@ -55,6 +63,7 @@ public class Road01 extends JPanel {
 		setWallJumps();
 		setPnjs();
 		setHerbs();
+		setAnimations();
 		toIntertown1 = new IntTuple(4064, 1866);
 		toIntertown2 = new IntTuple(3232, 746);
 		
@@ -122,6 +131,12 @@ public class Road01 extends JPanel {
 		groundPokeBall1 = new GroundItem("pokeball");
 		groundPokeBall1.setVisible(Variables.GROUND_ITEMS_Road1.contains("0"));
 		groundPokeBall1.setLocation(4128, 1546);
+		
+		if(Variables.ADVENTURE_Step == 7) {
+			game.clickableTiles.add(new IntTuple(3744, 1738)); // STARTER 1
+			game.clickableTiles.add(new IntTuple(3776, 1738)); // STARTER 2
+			game.clickableTiles.add(new IntTuple(3808, 1738)); // STARTER 3
+		}
 	}
 	
 	private void addGroundItems() {
@@ -133,6 +148,12 @@ public class Road01 extends JPanel {
 
 		if(Variables.GROUND_ITEMS_Road1.contains("0"))
 			game.walls.add(new IntTuple(4128, 1546));
+		
+		if(Variables.ADVENTURE_Step == 7) {
+			game.walls.add(new IntTuple(3744, 1738));
+			game.walls.add(new IntTuple(3776, 1738));
+			game.walls.add(new IntTuple(3808, 1738));
+		}
 		
 		game.walls.add(new IntTuple(3744, 1642));
 		game.walls.add(new IntTuple(4000, 1514));
@@ -382,6 +403,13 @@ public class Road01 extends JPanel {
 		for(Pnj pnj : game.pnjs)
 			pnj.clearIA();
 		game.pnjs = new ArrayList<Pnj>();
+		
+		if(Variables.ADVENTURE_Step == 1) {
+			profChen = new Pnj(game, "brownboy001", Direction.RIGHT, 0, 3456, 1738, false, false, null, null, false, false);
+			profChen.setLocation(3456, 1738);
+			profChen.setSize(35, 50);
+			game.pnjs.add(profChen);
+		}
 	}
 	
 	private void setHerbs() {
@@ -556,6 +584,18 @@ public class Road01 extends JPanel {
 		
 	}
 	
+	public void setAnimations() {
+		animationTiles = new ArrayList<IntTriple>();
+		
+		if(Variables.ADVENTURE_Step == 1) {
+			animationTiles.add(new IntTriple(3872, 1642, 0));
+			animationTiles.add(new IntTriple(3872, 1674, 0));
+			animationTiles.add(new IntTriple(3872, 1706, 0));
+			animationTiles.add(new IntTriple(3872, 1738, 0));
+			animationTiles.add(new IntTriple(3872, 1770, 0));
+			animationTiles.add(new IntTriple(3872, 1802, 0));
+		}
+	}
 	
 	public String getInteractMessage(IntTuple tuple) {
 		 String text = "";
@@ -570,7 +610,8 @@ public class Road01 extends JPanel {
 		 }
 		 else if(IntTuple.getPosition(game.clickableTiles, tuple) == 4) {
 			 text = "Vers Villaube.";
-		 } else if(IntTuple.getPosition(game.clickableTiles, tuple) == 5 && Variables.GROUND_ITEMS_Road1.contains("0")) {
+		 }
+		 else if(IntTuple.getPosition(game.clickableTiles, tuple) == 5 && Variables.GROUND_ITEMS_Road1.contains("0")) {
 			 Sounds.playSound(Const.soundItemGet);
 			 Variables.GROUND_ITEMS_Road1.remove("0");
 			 groundPokeBall1.setVisible(false);
@@ -578,7 +619,35 @@ public class Road01 extends JPanel {
 			 // Ajouter une potion au sac.
 			 text = "Vous avez ramassé une Potion !";
 		 }
+		 else if(IntTuple.getPosition(game.clickableTiles, tuple) == 6) {
+			 text = "Cette Poké Ball contient Tortipouss=, le Pokémon Minifeuille.=\n"
+			 		+ "Voulez vous prendre Tortipouss ?£";
+		 }
+		 else if(IntTuple.getPosition(game.clickableTiles, tuple) == 7) {
+			 text = "Cette Poké Ball contient Ouisticram,= le Pokémon Chimpanzé.=\n"
+			 		+ "Voulez vous prendre Ouisticram ?£";
+		 }
+		 else if(IntTuple.getPosition(game.clickableTiles, tuple) == 8) {
+			 text = "Cette Poké Ball contient Tiplouf,= le Pokémon Pingouin.=\n"
+			 		+ "Voulez vous prendre Tiplouf ?£";
+		 }
 		 return text;
+	}
+	
+	public boolean checkAnimations() {
+		
+		if(isVisible()){
+
+			IntTuple finalAnimation = game.deplacement.getLookingTile();
+			if(IntTriple.containsTuple(animationTiles, finalAnimation)) {
+				game.inAnimation = true;
+				int animation = IntTriple.getTripleFromTuple(animationTiles, finalAnimation).z;
+				if(animation == 0)
+					PnjAnimations.startGoodAnimation(game, null);
+				return true;
+			}
+		}
+		return false;
 	}
 	
 	public boolean checkMapChange() {

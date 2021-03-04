@@ -12,6 +12,7 @@ import javax.swing.JPanel;
 import fr.hugosimony.pokemontopaze.Const;
 import fr.hugosimony.pokemontopaze.Game;
 import fr.hugosimony.pokemontopaze.Variables;
+import fr.hugosimony.pokemontopaze.maps.pnj.PnjAnimations;
 import fr.hugosimony.pokemontopaze.sounds.Sounds;
 
 public class TextZone extends JPanel {
@@ -111,6 +112,15 @@ public class TextZone extends JPanel {
 	 			if(labelIndex2 < textLines[labelIndex].length() && (""+textLines[labelIndex].charAt(labelIndex2)).equals("=")){
 	 				labelIndex2++;
 	 				game.textWaiting = true;
+	 				this.cancel();
+	 			}
+	 			else if(labelIndex2 < textLines[labelIndex].length() && (""+textLines[labelIndex].charAt(labelIndex2)).equals("+")){
+	 				game.inTextMenu = false;
+	 				game.textWaiting = false;
+	 				game.textDone = false;
+					game.inAnimation = true;
+	 				textZone.setVisible(false);
+	 				PnjAnimations.startGoodAnimation(game, null);
 	 				this.cancel();
 	 			}
 	 			else if(labelIndex2 < textLines[labelIndex].length() && (""+textLines[labelIndex].charAt(labelIndex2)).equals("£")){

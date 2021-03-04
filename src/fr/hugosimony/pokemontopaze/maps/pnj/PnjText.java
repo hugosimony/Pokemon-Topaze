@@ -27,6 +27,23 @@ public class PnjText {
 		else if(perso.equals("police001")) {
 			return "Désolé,= la forêt est encore trop dangereuse pour toi.";
 		}
+		else if(perso.equals("profChen")) {
+			if(Variables.ADVENTURE_Step == 1)
+				return "Bonjour " + Variables.PERSO_Name + " != J'ai failli oublier que tu ne pouvais\n"
+						+ "pas venir à mon labo sans Pokémon.=\n"
+						+ "Mais cela va vite changer.= Tu es sur le point d'obtenir\n"
+						+ "ton premier Pokémon !=+";
+			if(Variables.ADVENTURE_Step >= 2 && Variables.ADVENTURE_Step <=4)
+				return "+";
+			if(Variables.ADVENTURE_Step == 5)
+				return "Dans chacune de ces Poké Balls se trouve un Pokémon.\n="
+						+ "Ils sont encore jeunes.=\n"
+						+ "Le Pokémon que tu choisiras explorera la région avec toi.\n="
+						+ "Tu t'améliorera avec lui.=+";
+			if(Variables.ADVENTURE_Step == 6)
+				return "C'est le moment.= Choisis bien,= tu ne pourras pas revenir\n"
+						+ "en arrière.";
+		}
 		return "";
 	}
 	

@@ -8,6 +8,7 @@ import java.util.TimerTask;
 import fr.hugosimony.pokemontopaze.Const;
 import fr.hugosimony.pokemontopaze.Game;
 import fr.hugosimony.pokemontopaze.Variables;
+import fr.hugosimony.pokemontopaze.maps.items.GroundItem;
 import fr.hugosimony.pokemontopaze.maps.perso.Hero;
 import fr.hugosimony.pokemontopaze.maps.pnj.Pnj;
 import fr.hugosimony.pokemontopaze.menus.XMenu;
@@ -76,8 +77,9 @@ public class Deplacement {
 	}
 	
 	public static Direction getDirection(char c) {
-		if(c == 'u')
+		if(c == 'u') {
 			return Direction.UP;
+		}
 		if(c == 'd')
 			return Direction.DOWN;
 		if(c == 'l')
@@ -119,11 +121,11 @@ public class Deplacement {
 					Sounds.playSound(Const.soundPlayerJump);
 				
 				//**********************************************************
-				timer.schedule(new MoveDirection(direction, false, auto), 0, Variables.SPEED_PERSO);
+				timer.schedule(new MoveDirection(direction, false, auto, false, null, null, null), 0, Variables.SPEED_PERSO);
 			}
 			else {
 				Sounds.playSound(Const.soundPlayerStopped);
-				timer.schedule(new MoveDirection(direction, true, auto), 0, Variables.SPEED_PERSO);
+				timer.schedule(new MoveDirection(direction, true, auto, false, null, null, null), 0, Variables.SPEED_PERSO);
 				if(Sounds.canPlayBumpSound) {
 					timer.schedule(new TimerTask() {
 						@Override
@@ -138,17 +140,25 @@ public class Deplacement {
 		}
 	}
 	
-	private class MoveDirection extends TimerTask {
+	public class MoveDirection extends TimerTask {
 
 		private Direction dir;
 		private boolean justChangeDirection;
 		private boolean auto;
+		private boolean inAnimation;
+		private IntTuple animationEnd;
+		private String animationMoves;
+		private Direction finalLookingDirection;
 		private int x = 0;
 		
-		public MoveDirection(Direction direction, boolean justChangeDirection, boolean auto) {
+		public MoveDirection(Direction direction, boolean justChangeDirection, boolean auto, boolean inAnimation, IntTuple animationEnd, String animationMoves, Direction finalLookingDirection) {
 			dir = direction;
 			this.justChangeDirection = justChangeDirection;
 			this.auto = auto;
+			this.inAnimation = inAnimation;
+			this.animationEnd = animationEnd;
+			this.animationMoves = animationMoves;
+			this.finalLookingDirection = finalLookingDirection;
 		}
 		
 		@Override
@@ -228,39 +238,60 @@ public class Deplacement {
 						x++;
 					}
 					else {
-						checkIANearDone = false;
-						setSprites(dir, new Hero(dir, 0, 1), false);
-						runDirection *= -1;
-						this.cancel();
-						if(!checkAnimations() && !checkMapChange() && game.inXMenu) {
-							XMenu.unprintXMenu();
-							XMenu.printXMenu();
-						}
-						coolDown = false;
-						checkIANearDone = false;
-						if(!released) {
-							if(pressed.size() == 1) {
-								released = false;
-								direction = getDirection(Integer.parseInt(pressed.get(0)));
-								newDirection = direction;
-								startMove(direction, true);
+						if(inAnimation) {
+							if(locationX == animationEnd.x && locationY == animationEnd.y) {
+								setSprites(finalLookingDirection, new Hero(finalLookingDirection, 0, 1), false);
+								setSprites(finalLookingDirection, new Hero(finalLookingDirection, 0, 1), false);
+								this.cancel();
 							}
 							else {
-								startMove(newDirection, true);
-								direction = newDirection;
+								if(animationMoves.length() > 0) {
+									x = 0;
+									dir = Deplacement.getDirection(animationMoves.charAt(0));
+									animationMoves.replaceFirst(animationMoves.charAt(0)+"", "");
+									startMove(dir, true);
+								}
+								else {
+									System.out.println("The moves are wrong.");
+									this.cancel();
+								}
 							}
 						}
-						else if(newDirection != dir) {
-							released = false;
-							direction = newDirection;
-							startMove(newDirection, true);
-						}
 						else {
-							if(pressed.size() == 1) {
+							checkIANearDone = false;
+							setSprites(dir, new Hero(dir, 0, 1), false);
+							runDirection *= -1;
+							this.cancel();
+							if(!checkAnimations() && !checkMapChange() && game.inXMenu) {
+								XMenu.unprintXMenu();
+								XMenu.printXMenu();
+							}
+							coolDown = false;
+							checkIANearDone = false;
+							if(!released) {
+								if(pressed.size() == 1) {
+									released = false;
+									direction = getDirection(Integer.parseInt(pressed.get(0)));
+									newDirection = direction;
+									startMove(direction, true);
+								}
+								else {
+									startMove(newDirection, true);
+									direction = newDirection;
+								}
+							}
+							else if(newDirection != dir) {
 								released = false;
-								direction = getDirection(Integer.parseInt(pressed.get(0)));
-								newDirection = direction;
-								startMove(direction, true);
+								direction = newDirection;
+								startMove(newDirection, true);
+							}
+							else {
+								if(pressed.size() == 1) {
+									released = false;
+									direction = getDirection(Integer.parseInt(pressed.get(0)));
+									newDirection = direction;
+									startMove(direction, true);
+								}
 							}
 						}
 					}
@@ -279,31 +310,41 @@ public class Deplacement {
 	
 	public void setSprites(Direction persoDir, Hero hero_, boolean first) {
 		
+		ArrayList<Pnj> pnjToRedrawUp = new ArrayList<Pnj>();
+		ArrayList<Pnj> pnjToRedrawDown = new ArrayList<Pnj>();
+		
+		if(!first) {
+			for(Pnj pnj : game.pnjs) {
+				if(Math.abs(pnj.positionY - locationY) < pixelMoved*2 && Math.abs(pnj.positionX - locationX) < pixelMoved) {
+					if(pnj.positionY > locationY)
+						pnjToRedrawUp.add(pnj);
+					else
+						pnjToRedrawDown.add(pnj);
+				}
+			}
+		}
+		
 		if(first) {
 			for(Pnj pnj : game.pnjs) {
 				if(pnj.positionY > locationY)
 					game.map.add(pnj);
 			}
 		}
-		else {
-			for(Component component : game.map.getComponents()) {
-				if(component instanceof Hero)
-					game.map.remove(component);
-			}
-			
+		else if(pnjToRedrawUp.size() != 0){
 			for(Component component : game.map.getComponents()) {
 				if(component instanceof Pnj) {
 					Pnj pnj = (Pnj) component;
 					if(!pnj.mooving && pnj.positionY > locationY && Math.abs(pnj.positionY - locationY) < pixelMoved*2 && Math.abs(pnj.positionX - locationX) < pixelMoved) {
-						game.map.remove(pnj);
-						pnj = new Pnj(game, pnj.perso, pnj.direction, pnj.foot, pnj.positionX, pnj.positionY, pnj.IA, false, pnj.directions, pnj.IAMoving, pnj.paraClick, pnj.mooving);
-						pnj.setLocation(pnj.positionX, pnj.positionY);
-						pnj.setSize(35,50);
-						pnj.setVisible(true);
-						game.map.add(pnj);
+						pnj.copyParameters(new Pnj(game, pnj.perso, pnj.direction, pnj.foot, pnj.positionX, pnj.positionY, pnj.IA, false, pnj.directions, pnj.IAMoving, pnj.paraClick, pnj.mooving));
+						pnj.repaint();
 					}
 				}
 			}
+		}
+		
+		for(Component component : game.map.getComponents()) {
+			if(component instanceof Hero)
+				game.map.remove(component);
 		}
 		
 		hero = hero_;
@@ -311,6 +352,16 @@ public class Deplacement {
 		hero.setSize(35,50);
 		hero.setVisible(true);
 		game.map.add(hero);
+		hero.repaint();
+		
+		for(Component component : game.map.getComponents()) {
+			if(component instanceof GroundItem) {
+				GroundItem gi = (GroundItem) component;
+				game.map.remove(gi);
+				game.map.add(gi);
+				gi.repaint();
+			}
+		}
 		
 		if(first) {
 			for(Pnj pnj : game.pnjs) {
@@ -318,23 +369,18 @@ public class Deplacement {
 					game.map.add(pnj);
 			}
 		}
-		else {
+		else if(pnjToRedrawDown.size() != 0){
 			for(Component component : game.map.getComponents()) {
 				if(component instanceof Pnj) {
 					Pnj pnj = (Pnj) component;
 					if(!pnj.mooving && pnj.positionY <= locationY && Math.abs(pnj.positionY - locationY) < pixelMoved*2 && Math.abs(pnj.positionX - locationX) < pixelMoved) {
+						pnj.copyParameters(new Pnj(game, pnj.perso, pnj.direction, pnj.foot, pnj.positionX, pnj.positionY, pnj.IA, false, pnj.directions, pnj.IAMoving, pnj.paraClick, pnj.mooving));
 						game.map.remove(pnj);
-						pnj = new Pnj(game, pnj.perso, pnj.direction, pnj.foot, pnj.positionX, pnj.positionY, pnj.IA, false, pnj.directions, pnj.IAMoving, pnj.paraClick, pnj.mooving);
-						pnj.setLocation(pnj.positionX, pnj.positionY);
-						pnj.setSize(35,50);
-						pnj.setVisible(true);
 						game.map.add(pnj);
 					}
 				}
 			}
 		}
-		
-		
 		game.map.repaint();
 	}
 	
@@ -369,10 +415,8 @@ public class Deplacement {
 	private boolean checkAnimations() {
 		boolean animation = false;
 		animation = game.myHouse != null && game.myHouse.isVisible() && game.myHouse.checkAnimations();
-		/*if(!animation)
-			animation = game.selenia != null && game.selenia.isVisible() && game.selenia.checkAnimations();
 		if(!animation)
-			animation = game.road01 != null && game.road01.isVisible() &&  game.road01.checkAnimations();*/
+			animation = game.road01 != null && game.road01.isVisible() && game.road01.checkAnimations();
 		return animation;
 	}
 	

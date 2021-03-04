@@ -54,7 +54,6 @@ public class InteractDispatcher implements KeyEventDispatcher {
 						 if(pnj != null && !pnj.mooving) {
 							 
 							 text = PnjText.getText(pnj.perso);
-							 game.pnjs.remove(pnj);
 							 if(pnj.paraClick)
 								 pnj.clearIA();
 							 pnj.setSprites(new Pnj(game, pnj.perso, Direction.getOpositeDirection(game.deplacement.direction), 0, pnj.positionX, pnj.positionY, false, false, null, null, pnj.paraClick, pnj.mooving));
