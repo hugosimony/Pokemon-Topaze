@@ -39,7 +39,7 @@ public class PnjText {
 				return "Dans chacune de ces Poké Balls se trouve un Pokémon.\n="
 						+ "Ils sont encore jeunes.=\n"
 						+ "Le Pokémon que tu choisiras explorera la région avec toi.\n="
-						+ "Tu t'améliorera avec lui.=+";
+						+ "Tu t'amélioreras avec lui.=+";
 			if(Variables.ADVENTURE_Step == 6)
 				return "C'est le moment.= Choisis bien,= tu ne pourras pas revenir\n"
 						+ "en arrière.";

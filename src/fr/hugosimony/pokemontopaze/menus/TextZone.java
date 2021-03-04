@@ -12,7 +12,7 @@ import javax.swing.JPanel;
 import fr.hugosimony.pokemontopaze.Const;
 import fr.hugosimony.pokemontopaze.Game;
 import fr.hugosimony.pokemontopaze.Variables;
-import fr.hugosimony.pokemontopaze.maps.pnj.PnjAnimations;
+import fr.hugosimony.pokemontopaze.maps.animations.PnjAnimations;
 import fr.hugosimony.pokemontopaze.sounds.Sounds;
 
 public class TextZone extends JPanel {
@@ -120,7 +120,7 @@ public class TextZone extends JPanel {
 	 				game.textDone = false;
 					game.inAnimation = true;
 	 				textZone.setVisible(false);
-	 				PnjAnimations.startGoodAnimation(game, null);
+	 				PnjAnimations.startGoodAnimation(game, game.deplacement.getPosition());
 	 				this.cancel();
 	 			}
 	 			else if(labelIndex2 < textLines[labelIndex].length() && (""+textLines[labelIndex].charAt(labelIndex2)).equals("£")){

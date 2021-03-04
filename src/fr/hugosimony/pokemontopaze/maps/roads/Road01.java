@@ -24,9 +24,9 @@ import fr.hugosimony.pokemontopaze.maps.Deplacement;
 import fr.hugosimony.pokemontopaze.maps.Direction;
 import fr.hugosimony.pokemontopaze.maps.Map;
 import fr.hugosimony.pokemontopaze.maps.Places;
+import fr.hugosimony.pokemontopaze.maps.animations.PnjAnimations;
 import fr.hugosimony.pokemontopaze.maps.items.GroundItem;
 import fr.hugosimony.pokemontopaze.maps.pnj.Pnj;
-import fr.hugosimony.pokemontopaze.maps.pnj.PnjAnimations;
 import fr.hugosimony.pokemontopaze.maps.towns.intertowns.Intertown1;
 import fr.hugosimony.pokemontopaze.maps.towns.intertowns.Intertown2;
 import fr.hugosimony.pokemontopaze.sounds.Sounds;
@@ -141,6 +141,12 @@ public class Road01 extends JPanel {
 	
 	private void addGroundItems() {
 		game.map.add(groundPokeBall1);
+		
+		if(Variables.ADVENTURE_Step == 7) {
+			game.map.add(starter1);
+			game.map.add(starter2);
+			game.map.add(starter3);
+		}
 	}
 	
 	private void setWalls() {
@@ -588,12 +594,12 @@ public class Road01 extends JPanel {
 		animationTiles = new ArrayList<IntTriple>();
 		
 		if(Variables.ADVENTURE_Step == 1) {
-			animationTiles.add(new IntTriple(3872, 1642, 0));
-			animationTiles.add(new IntTriple(3872, 1674, 0));
-			animationTiles.add(new IntTriple(3872, 1706, 0));
-			animationTiles.add(new IntTriple(3872, 1738, 0));
-			animationTiles.add(new IntTriple(3872, 1770, 0));
-			animationTiles.add(new IntTriple(3872, 1802, 0));
+			animationTiles.add(new IntTriple(3904, 1642, 0));
+			animationTiles.add(new IntTriple(3904, 1674, 0));
+			animationTiles.add(new IntTriple(3904, 1706, 0));
+			animationTiles.add(new IntTriple(3904, 1738, 0));
+			animationTiles.add(new IntTriple(3904, 1770, 0));
+			animationTiles.add(new IntTriple(3904, 1802, 0));
 		}
 	}
 	
@@ -619,18 +625,35 @@ public class Road01 extends JPanel {
 			 // Ajouter une potion au sac.
 			 text = "Vous avez ramassé une Potion !";
 		 }
-		 else if(IntTuple.getPosition(game.clickableTiles, tuple) == 6) {
-			 text = "Cette Poké Ball contient Tortipouss=, le Pokémon Minifeuille.=\n"
-			 		+ "Voulez vous prendre Tortipouss ?£";
+		 else if(Variables.ADVENTURE_Step == 7) {
+			 if(tuple.equals(new IntTuple(3744, 1738)) && IntTuple.getPosition(game.clickableTiles, tuple) != -1) {
+				 text = "Cette Poké Ball contient Tortipouss=, le Pokémon Minifeuille.=\n"
+				 		+ "Voulez vous prendre Tortipouss ?£";
+			 }
+			 else if(tuple.equals(new IntTuple(3776, 1738)) && IntTuple.getPosition(game.clickableTiles, tuple) != -1) {
+				 text = "Cette Poké Ball contient Ouisticram,= le Pokémon Chimpanzé.=\n"
+				 		+ "Voulez vous prendre Ouisticram ?£";
+			 }
+			 else if(tuple.equals(new IntTuple(3808, 1738)) && IntTuple.getPosition(game.clickableTiles, tuple) != -1) {
+				 text = "Cette Poké Ball contient Tiplouf,= le Pokémon Pingouin.=\n"
+				 		+ "Voulez vous prendre Tiplouf ?£";
+			 }
 		 }
-		 else if(IntTuple.getPosition(game.clickableTiles, tuple) == 7) {
-			 text = "Cette Poké Ball contient Ouisticram,= le Pokémon Chimpanzé.=\n"
-			 		+ "Voulez vous prendre Ouisticram ?£";
+		 else if(Variables.ADVENTURE_Step == 8) {
+			 if(tuple.equals(new IntTuple(3744, 1738)) && IntTuple.getPosition(game.clickableTiles, tuple) != -1) {
+				 text = "Cette Poké Ball contient Tortipouss.= Le Professeur Chen\n"
+				 		+ "en prendra grand soin.";
+			 }
+			 else if(tuple.equals(new IntTuple(3776, 1738)) && IntTuple.getPosition(game.clickableTiles, tuple) != -1) {
+				 text = "Cette Poké Ball contient Ouisticram.= Le Professeur Chen\n"
+					 		+ "en prendra grand soin.";
+			 }
+			 else if(tuple.equals(new IntTuple(3808, 1738)) && IntTuple.getPosition(game.clickableTiles, tuple) != -1) {
+				 text = "Cette Poké Ball contient Tiplouf.= Le Professeur Chen\n"
+					 		+ "en prendra grand soin.";
+			 }
 		 }
-		 else if(IntTuple.getPosition(game.clickableTiles, tuple) == 8) {
-			 text = "Cette Poké Ball contient Tiplouf,= le Pokémon Pingouin.=\n"
-			 		+ "Voulez vous prendre Tiplouf ?£";
-		 }
+		 
 		 return text;
 	}
 	
@@ -638,7 +661,7 @@ public class Road01 extends JPanel {
 		
 		if(isVisible()){
 
-			IntTuple finalAnimation = game.deplacement.getLookingTile();
+			IntTuple finalAnimation = game.deplacement.getPosition();
 			if(IntTriple.containsTuple(animationTiles, finalAnimation)) {
 				game.inAnimation = true;
 				int animation = IntTriple.getTripleFromTuple(animationTiles, finalAnimation).z;

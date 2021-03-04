@@ -25,8 +25,8 @@ import fr.hugosimony.pokemontopaze.maps.Deplacement;
 import fr.hugosimony.pokemontopaze.maps.Direction;
 import fr.hugosimony.pokemontopaze.maps.Map;
 import fr.hugosimony.pokemontopaze.maps.Places;
+import fr.hugosimony.pokemontopaze.maps.animations.PnjAnimations;
 import fr.hugosimony.pokemontopaze.maps.pnj.Pnj;
-import fr.hugosimony.pokemontopaze.maps.pnj.PnjAnimations;
 import fr.hugosimony.pokemontopaze.maps.towns.Selenia;
 import fr.hugosimony.pokemontopaze.sounds.Sounds;
 import fr.hugosimony.pokemontopaze.transitions.TransitionSimple;
@@ -282,12 +282,12 @@ public class MyHouse extends JPanel {
 		animationTiles = new ArrayList<IntTriple>();
 		
 		if(Variables.ADVENTURE_Step == 0) {
-			animationTiles.add(new IntTriple(2112, 3057, 0));
-			animationTiles.add(new IntTriple(2144, 3057, 0));
-			animationTiles.add(new IntTriple(2176, 3057, 0));
-			animationTiles.add(new IntTriple(2208, 3057, 0));
-			animationTiles.add(new IntTriple(2240, 3057, 0));
-			animationTiles.add(new IntTriple(2272, 3057, 0));
+			animationTiles.add(new IntTriple(2112, 3025, 0));
+			animationTiles.add(new IntTriple(2144, 3025, 0));
+			animationTiles.add(new IntTriple(2176, 3025, 0));
+			animationTiles.add(new IntTriple(2208, 3025, 0));
+			animationTiles.add(new IntTriple(2240, 3025, 0));
+			animationTiles.add(new IntTriple(2272, 3025, 0));
 		}
 	}
 	
@@ -335,12 +335,12 @@ public class MyHouse extends JPanel {
 		
 		if(isVisible()){
 
-			IntTuple finalAnimation = game.deplacement.getLookingTile();
+			IntTuple finalAnimation = game.deplacement.getPosition();
 			if(IntTriple.containsTuple(animationTiles, finalAnimation)) {
 				game.inAnimation = true;
 				int animation = IntTriple.getTripleFromTuple(animationTiles, finalAnimation).z;
 				if(animation == 0)
-					PnjAnimations.startGoodAnimation(game, finalAnimation);
+					PnjAnimations.startGoodAnimation(game, new IntTuple(finalAnimation.x, 3057));
 				return true;
 			}
 		}

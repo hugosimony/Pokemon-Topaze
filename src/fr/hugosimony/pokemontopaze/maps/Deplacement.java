@@ -384,6 +384,10 @@ public class Deplacement {
 		game.map.repaint();
 	}
 	
+	public IntTuple getPosition() {
+		return new IntTuple(locationX, locationY);
+	}
+	
 	public IntTuple getLookingTile() {
 		int x = 0;
 		int y = 0;

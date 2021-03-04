@@ -11,6 +11,7 @@ import fr.hugosimony.pokemontopaze.Const;
 import fr.hugosimony.pokemontopaze.Game;
 import fr.hugosimony.pokemontopaze.maps.Deplacement;
 import fr.hugosimony.pokemontopaze.maps.Direction;
+import fr.hugosimony.pokemontopaze.maps.animations.PnjAnimations;
 import fr.hugosimony.pokemontopaze.menus.TextZone;
 import fr.hugosimony.pokemontopaze.utils.IntTuple;
 
@@ -137,10 +138,10 @@ public class Pnj extends JPanel {
 										new Timer().schedule(new TimerTask() {
 											@Override
 											public void run() {
-												PnjAnimations.startGoodAnimation(game, null);
+												PnjAnimations.startGoodAnimation(game, new IntTuple(game.deplacement.locationX, game.deplacement.locationY));
 												this.cancel();
 											}
-										}, 1000);
+										}, 1);
 									}
 									else {
 										game.inAnimation = false;
