@@ -336,20 +336,17 @@ public class MyHouse extends JPanel {
 	public boolean checkAnimations() {
 		
 		if(isVisible()){
-			
-			if(IntTriple.containsTuple(animationTiles, game.deplacement.getLookingTile())) {
+
+			IntTuple finalAnimation = game.deplacement.getLookingTile();
+			if(IntTriple.containsTuple(animationTiles, finalAnimation)) {
 				game.inAnimation = true;
-				int animation = IntTriple.getTripleFromTuple(animationTiles, game.deplacement.getLookingTile()).z;
+				int animation = IntTriple.getTripleFromTuple(animationTiles, finalAnimation).z;
 				if(animation == 0) {
 					Sounds.playSound(Const.soundExclamation);
 					new Timer().schedule(new TimerTask() {
 						@Override
 						public void run() {
-							ArrayList<Direction> moves = new ArrayList<Direction>();
-							moves.add(Direction.LEFT); moves.add(Direction.LEFT); moves.add(Direction.LEFT);
-							moves.add(Direction.LEFT); moves.add(Direction.LEFT); moves.add(Direction.LEFT);
-							moves.add(Direction.LEFT); moves.add(Direction.LEFT);
-							new Timer().schedule(mom.new Move(Direction.DOWN, true, game.deplacement.getLookingTile(), moves, Direction.UP, PnjText.getText("mom")), 0, 5);
+							new Timer().schedule(mom.new Move(Direction.DOWN, true, finalAnimation, "llllllll", Direction.UP, PnjText.getText("mom")), 0, 5);
 							Variables.ADVENTURE_Step = 1;
 							setAnimations();
 							this.cancel();

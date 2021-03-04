@@ -63,7 +63,7 @@ public class Deplacement {
 		checkIANearDone = false;
 	}
 	
-	public Direction getDirection(int key) {
+	public static Direction getDirection(int key) {
 		if(key == Variables.CONTROLS_LEFT)
 			return Direction.LEFT;
 		if(key == Variables.CONTROLS_RIGHT)
@@ -72,6 +72,18 @@ public class Deplacement {
 			return Direction.UP;
 		if(key == Variables.CONTROLS_DOWN)
 			return Direction.DOWN;
+		return Direction.NULL;
+	}
+	
+	public static Direction getDirection(char c) {
+		if(c == 'u')
+			return Direction.UP;
+		if(c == 'd')
+			return Direction.DOWN;
+		if(c == 'l')
+			return Direction.LEFT;
+		if(c == 'r')
+			return Direction.RIGHT;
 		return Direction.NULL;
 	}
 	

@@ -2,7 +2,6 @@ package fr.hugosimony.pokemontopaze.maps.pnj;
 
 import java.awt.Component;
 import java.awt.Graphics;
-import java.util.ArrayList;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -66,12 +65,12 @@ public class Pnj extends JPanel {
 		private Direction dir;
 		private boolean animation;
 		private IntTuple animationEnd;
-		private ArrayList<Direction> animationMoves;
+		private String animationMoves;
 		private Direction finalLookingDirection;
 		private String finalText;
 		private int x = 0;
 		
-		public Move(Direction direction, boolean animation, IntTuple animationEnd, ArrayList<Direction> animationMoves, Direction finalLookingDirection, String finalText) {
+		public Move(Direction direction, boolean animation, IntTuple animationEnd, String animationMoves, Direction finalLookingDirection, String finalText) {
 			dir = direction;
 			this.animation = animation;
 			this.animationEnd = animationEnd;
@@ -138,10 +137,10 @@ public class Pnj extends JPanel {
 								this.cancel();
 							}
 							else {
-								if(animationMoves.size() > 0) {
+								if(animationMoves.length() > 0) {
 									x = 0;
-									dir = animationMoves.get(0);
-									animationMoves.remove(0);
+									dir = Deplacement.getDirection(animationMoves.charAt(0));
+									animationMoves.replaceFirst(animationMoves.charAt(0)+"", "");
 								}
 								else {
 									System.out.println("The moves are wrong.");
