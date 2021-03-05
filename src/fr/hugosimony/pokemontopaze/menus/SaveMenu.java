@@ -46,13 +46,13 @@ public class SaveMenu extends JPanel {
 		add(placeLabel);
 		
 		namePanel = new NamePanel();
-		namePanel.setLocation(15,40);
+		namePanel.setLocation(30,50);
 		namePanel.setSize(600,600);
 		add(namePanel);
 		
 		timeLabel = new JLabel();
 		timeLabel.setText(GlobalTimer.getGoodPrintedTimer());
-		timeLabel.setLocation(120,88);
+		timeLabel.setLocation(120,93);
 		timeLabel.setSize(600,40);
 		timeLabel.setFont(textFont);
 		add(timeLabel);
@@ -116,7 +116,7 @@ public class SaveMenu extends JPanel {
 			setOpaque(false);
 			nameLabel = new JLabel();
 			nameLabel.setText(Variables.PERSO_Name);
-			nameLabel.setLocation(55,5);
+			nameLabel.setLocation(55,0);
 			nameLabel.setSize(400,50);
 			nameLabel.setFont(textFont);
 			add(nameLabel);
@@ -128,7 +128,7 @@ public class SaveMenu extends JPanel {
 			if(Variables.PERSO_Sex.equals("boy"))
 				g.drawImage(Const.boyFront.getImage(), 0, 0, null);
 			else 
-				g.drawImage(Const.boyFront.getImage(), 0, 0, null);
+				g.drawImage(Const.girlFront.getImage(), 0, 0, null);
 		}
 	}
 	
