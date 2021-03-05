@@ -11,6 +11,7 @@ import fr.hugosimony.pokemontopaze.Variables;
 import fr.hugosimony.pokemontopaze.maps.items.GroundItem;
 import fr.hugosimony.pokemontopaze.maps.perso.Hero;
 import fr.hugosimony.pokemontopaze.maps.pnj.Pnj;
+import fr.hugosimony.pokemontopaze.menus.TextZone;
 import fr.hugosimony.pokemontopaze.menus.XMenu;
 import fr.hugosimony.pokemontopaze.sounds.Sounds;
 import fr.hugosimony.pokemontopaze.utils.IntTriple;
@@ -121,11 +122,11 @@ public class Deplacement {
 					Sounds.playSound(Const.soundPlayerJump);
 				
 				//**********************************************************
-				timer.schedule(new MoveDirection(direction, false, auto, false, null, null, null), 0, Variables.SPEED_PERSO);
+				timer.schedule(new MoveDirection(direction, false, auto, false, null, null, null, null, false), 0, Variables.SPEED_PERSO);
 			}
 			else {
 				Sounds.playSound(Const.soundPlayerStopped);
-				timer.schedule(new MoveDirection(direction, true, auto, false, null, null, null), 0, Variables.SPEED_PERSO);
+				timer.schedule(new MoveDirection(direction, true, auto, false, null, null, null, null, false), 0, Variables.SPEED_PERSO);
 				if(Sounds.canPlayBumpSound) {
 					timer.schedule(new TimerTask() {
 						@Override
@@ -149,9 +150,12 @@ public class Deplacement {
 		private IntTuple animationEnd;
 		private String animationMoves;
 		private Direction finalLookingDirection;
+		private String finalText;
+		private boolean endAnimation;
 		private int x = 0;
 		
-		public MoveDirection(Direction direction, boolean justChangeDirection, boolean auto, boolean inAnimation, IntTuple animationEnd, String animationMoves, Direction finalLookingDirection) {
+		public MoveDirection(Direction direction, boolean justChangeDirection, boolean auto, boolean inAnimation, 
+				IntTuple animationEnd, String animationMoves, Direction finalLookingDirection, String finalText, boolean endAnimation) {
 			dir = direction;
 			this.justChangeDirection = justChangeDirection;
 			this.auto = auto;
@@ -159,6 +163,8 @@ public class Deplacement {
 			this.animationEnd = animationEnd;
 			this.animationMoves = animationMoves;
 			this.finalLookingDirection = finalLookingDirection;
+			this.finalText = finalText;
+			this.endAnimation = endAnimation;
 		}
 		
 		@Override
@@ -240,8 +246,16 @@ public class Deplacement {
 					else {
 						if(inAnimation) {
 							if(locationX == animationEnd.x && locationY == animationEnd.y) {
+								game.deplacement.released = true;
+								game.deplacement.pressed.clear();
 								setSprites(finalLookingDirection, new Hero(finalLookingDirection, 0, 1), false);
 								setSprites(finalLookingDirection, new Hero(finalLookingDirection, 0, 1), false);
+								if(endAnimation)
+									game.inAnimation = false;
+								if(!finalText.equals("")) {
+									game.textZone = new TextZone(game.actualPanel, finalText);
+									TextZone.printTextZone(game.textZone, game);
+								}
 								this.cancel();
 							}
 							else {

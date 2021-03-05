@@ -43,6 +43,10 @@ public class PnjText {
 			if(Variables.ADVENTURE_Step == 6 || Variables.ADVENTURE_Step == 7)
 				return "C'est le moment.= Choisis bien,= tu ne pourras pas revenir\n"
 						+ "en arrière.";
+			if(Variables.ADVENTURE_Step == 8) {
+				return "Tu as donc choisi ... != Très bon choix.\n"
+						+ "";
+			}
 		}
 		return "";
 	}

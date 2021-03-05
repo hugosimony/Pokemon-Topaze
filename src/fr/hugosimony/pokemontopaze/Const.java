@@ -127,6 +127,22 @@ public class Const {
 	public static final ImageIcon momRightLeft = new ImageIcon(Main.class.getResource("sprites/perso/mom/momRightLeft.gif"));
 	
 	//****************************************************************************************************
+	// Sprites Prof Chen
+	
+	public static final ImageIcon profChenFront = new ImageIcon(Main.class.getResource("sprites/perso/profchen/profchenFront.gif"));
+	public static final ImageIcon profChenFrontRight = new ImageIcon(Main.class.getResource("sprites/perso/profchen/profchenFrontRight.gif"));
+	public static final ImageIcon profChenFrontLeft = new ImageIcon(Main.class.getResource("sprites/perso/profchen/profchenFrontLeft.gif"));
+	public static final ImageIcon profChenBack = new ImageIcon(Main.class.getResource("sprites/perso/profchen/profchenBack.gif"));
+	public static final ImageIcon profChenBackRight = new ImageIcon(Main.class.getResource("sprites/perso/profchen/profchenBackRight.gif"));
+	public static final ImageIcon profChenBackLeft = new ImageIcon(Main.class.getResource("sprites/perso/profchen/profchenBackLeft.gif"));
+	public static final ImageIcon profChenLeft = new ImageIcon(Main.class.getResource("sprites/perso/profchen/profchenLeft.gif"));
+	public static final ImageIcon profChenLeftRight = new ImageIcon(Main.class.getResource("sprites/perso/profchen/profchenLeftRight.gif"));
+	public static final ImageIcon profChenLeftLeft = new ImageIcon(Main.class.getResource("sprites/perso/profchen/profchenLeftLeft.gif"));
+	public static final ImageIcon profChenRight = new ImageIcon(Main.class.getResource("sprites/perso/profchen/profchenRight.gif"));
+	public static final ImageIcon profChenRightRight = new ImageIcon(Main.class.getResource("sprites/perso/profchen/profchenRightRight.gif"));
+	public static final ImageIcon profChenRightLeft = new ImageIcon(Main.class.getResource("sprites/perso/profchen/profchenRightLeft.gif"));
+	
+	//****************************************************************************************************
 	// Sprites Brown Boy
 	
 	public static final ImageIcon brownboyFront = new ImageIcon(Main.class.getResource("sprites/perso/brownboy/brownboyFront.gif"));
@@ -198,6 +214,8 @@ public class Const {
 	public static final URL soundOverHerbs = Main.class.getResource("sounds/maps/soundOverHerbs.wav");
 	public static final URL soundItemGet = Main.class.getResource("sounds/maps/soundItemGet.wav");
 	public static final URL soundExclamation = Main.class.getResource("sounds/maps/soundExclamation.wav");
+	
+	public static final URL soundEvolutionDone = Main.class.getResource("sounds/pokemon/soundEvolutionDone.wav");
 	
 	//****************************************************************************************************
 	// Colors

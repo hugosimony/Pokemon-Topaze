@@ -28,9 +28,9 @@ public class TextMenuDispatcher implements KeyEventDispatcher {
 	public boolean dispatchKeyEvent(KeyEvent event) {
 		
 		 if(originalPanel.isVisible()) {
+			 
 			 if(event.getID() == KeyEvent.KEY_PRESSED && game.deplacement.released && !Main.settingsOn && !game.inTransition) {
 				 int keyCode = event.getKeyCode();
-				 
 				 if(game.inTextMenu) {
 	 				 if(game.inYesNoMenu) {
 	 					 if(keyCode == Variables.CONTROLS_UP || keyCode == Variables.CONTROLS_DOWN) {

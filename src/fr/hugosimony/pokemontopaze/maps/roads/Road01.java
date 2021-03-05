@@ -4,6 +4,7 @@ import java.awt.Color;
 import java.awt.KeyboardFocusManager;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Timer;
 
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
@@ -128,9 +129,6 @@ public class Road01 extends JPanel {
 		game.clickableTiles.add(new IntTuple(3296, 810)); // SIGN 4
 		
 		game.clickableTiles.add(new IntTuple(4128, 1546)); // GROUND ITEM 1
-		groundPokeBall1 = new GroundItem("pokeball");
-		groundPokeBall1.setVisible(Variables.GROUND_ITEMS_Road1.contains("0"));
-		groundPokeBall1.setLocation(4128, 1546);
 		
 		if(Variables.ADVENTURE_Step == 7) {
 			game.clickableTiles.add(new IntTuple(3744, 1738)); // STARTER 1
@@ -140,11 +138,23 @@ public class Road01 extends JPanel {
 	}
 	
 	private void addGroundItems() {
+		groundPokeBall1 = new GroundItem("pokeball");
+		groundPokeBall1.setVisible(Variables.GROUND_ITEMS_Road1.contains("0"));
+		groundPokeBall1.setLocation(4128, 1546);
 		game.map.add(groundPokeBall1);
 		
 		if(Variables.ADVENTURE_Step == 7) {
+			starter1 = new GroundItem("pokeball");
+			starter1.setVisible(true);
+			starter1.setLocation(3744, 1738);
 			game.map.add(starter1);
+			starter2 = new GroundItem("pokeball");
+			starter2.setVisible(true);
+			starter2.setLocation(3776, 1738);
 			game.map.add(starter2);
+			starter3 = new GroundItem("pokeball");
+			starter3.setVisible(true);
+			starter3.setLocation(3808, 1738);
 			game.map.add(starter3);
 		}
 	}
@@ -416,6 +426,13 @@ public class Road01 extends JPanel {
 			profChen.setSize(35, 50);
 			game.pnjs.add(profChen);
 		}
+		
+		if(Variables.ADVENTURE_Step == 7) {
+			profChen = new Pnj(game, "profChen", Direction.RIGHT, 0, 3712, 1738, false, false, null, null, false, false);
+			profChen.setLocation(3712, 1738);
+			profChen.setSize(35, 50);
+			game.pnjs.add(profChen);
+		}
 	}
 	
 	private void setHerbs() {
@@ -601,6 +618,17 @@ public class Road01 extends JPanel {
 			animationTiles.add(new IntTriple(3904, 1770, 0));
 			animationTiles.add(new IntTriple(3904, 1802, 0));
 		}
+		
+		if(Variables.ADVENTURE_Step == 7) {
+			animationTiles.add(new IntTriple(3648, 1610, 1));
+			animationTiles.add(new IntTriple(3648, 1642, 1));
+			animationTiles.add(new IntTriple(3648, 1674, 1));
+			animationTiles.add(new IntTriple(3648, 1706, 1));
+			animationTiles.add(new IntTriple(3648, 1738, 1));
+			animationTiles.add(new IntTriple(3648, 1770, 1));
+			animationTiles.add(new IntTriple(3648, 1802, 1));
+			animationTiles.add(new IntTriple(4064, 1802, 1));
+		}
 	}
 	
 	public String getInteractMessage(IntTuple tuple) {
@@ -667,6 +695,16 @@ public class Road01 extends JPanel {
 				int animation = IntTriple.getTripleFromTuple(animationTiles, finalAnimation).z;
 				if(animation == 0)
 					PnjAnimations.startGoodAnimation(game, null);
+				if(animation == 1) {
+					game.inAnimation = true;
+					game.deplacement.released = true;
+					if(game.deplacement.getPosition().x == 3648)
+						new Timer().schedule(game.deplacement.new MoveDirection(Direction.RIGHT, false, false, true, new IntTuple(3680, game.deplacement.getPosition().y), 
+								"r", Direction.RIGHT, "Je devrais aller récupérer un Pokémon.", true), 0, 5);
+					else 
+						new Timer().schedule(game.deplacement.new MoveDirection(Direction.UP, false, false, true, new IntTuple(game.deplacement.getPosition().x, 1770), 
+							"u", Direction.UP, "Je devrais aller récupérer un Pokémon.", true), 0, 5);
+				}
 				return true;
 			}
 		}

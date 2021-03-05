@@ -9,6 +9,7 @@ import javax.swing.JPanel;
 
 import fr.hugosimony.pokemontopaze.Const;
 import fr.hugosimony.pokemontopaze.Game;
+import fr.hugosimony.pokemontopaze.Variables;
 import fr.hugosimony.pokemontopaze.maps.Deplacement;
 import fr.hugosimony.pokemontopaze.maps.Direction;
 import fr.hugosimony.pokemontopaze.maps.animations.PnjAnimations;
@@ -132,6 +133,10 @@ public class Pnj extends JPanel {
 						if(animation) {
 							if(pnj.getLocation().x == animationEnd.x && pnj.getLocation().y == animationEnd.y) {
 								setSprites(new Pnj(game, perso, finalLookingDirection, 0, positionX, positionY, IA, false, directions, IAMoving, paraClick, false));
+								if(Variables.ADVENTURE_Step == 9) {
+									game.deplacement.hero.direction = Direction.getOpositeDirection(finalLookingDirection);
+									game.deplacement.hero.repaint();
+								}
 								if(!finalText.equals("")) {
 									if(finalText.equals("+")) {
 										PnjAnimations.checkMapChange(game);
@@ -344,36 +349,36 @@ public class Pnj extends JPanel {
 		else if(perso.equals("profChen")) {
 			if(direction == Direction.UP) {
 				if(foot == 0)
-					g.drawImage(Const.brownboyBack.getImage(), 0, 0, null);
+					g.drawImage(Const.profChenBack.getImage(), 0, 0, null);
 				else if(foot == 1)
-					g.drawImage(Const.brownboyBackRight.getImage(), 0, 0, null);
+					g.drawImage(Const.profChenBackRight.getImage(), 0, 0, null);
 				else if(foot == 2)
-					g.drawImage(Const.brownboyBackLeft.getImage(), 0, 0, null);
+					g.drawImage(Const.profChenBackLeft.getImage(), 0, 0, null);
 			}
 			else if(direction == Direction.DOWN) {
 				if(foot == 0)
-					g.drawImage(Const.brownboyFront.getImage(), 0, 0, null);
+					g.drawImage(Const.profChenFront.getImage(), 0, 0, null);
 				else if(foot == 1)
-					g.drawImage(Const.brownboyFrontRight.getImage(), 0, 0, null);
+					g.drawImage(Const.profChenFrontRight.getImage(), 0, 0, null);
 				else if(foot == 2)
-					g.drawImage(Const.brownboyFrontLeft.getImage(), 0, 0, null);
+					g.drawImage(Const.profChenFrontLeft.getImage(), 0, 0, null);
 			}
 			else if(direction == Direction.LEFT) {
 				if(foot == 0)	
-					g.drawImage(Const.brownboyLeft.getImage(), 0, 0, null);
+					g.drawImage(Const.profChenLeft.getImage(), 0, 0, null);
 				else if(foot == 1)	
-					g.drawImage(Const.brownboyLeftRight.getImage(), 0, 0, null);
+					g.drawImage(Const.profChenLeftRight.getImage(), 0, 0, null);
 				else if(foot == 2)	
-					g.drawImage(Const.brownboyLeftLeft.getImage(), 0, 0, null);
+					g.drawImage(Const.profChenLeftLeft.getImage(), 0, 0, null);
 				
 			}
 			else if(direction == Direction.RIGHT) {
 				if(foot == 0)	
-					g.drawImage(Const.brownboyRight.getImage(), 0, 0, null);
+					g.drawImage(Const.profChenRight.getImage(), 0, 0, null);
 				else if(foot == 1)	
-					g.drawImage(Const.brownboyRightRight.getImage(), 0, 0, null);
+					g.drawImage(Const.profChenRightRight.getImage(), 0, 0, null);
 				else if(foot == 2)	
-					g.drawImage(Const.brownboyRightLeft.getImage(), 0, 0, null);
+					g.drawImage(Const.profChenRightLeft.getImage(), 0, 0, null);
 			}
 		}
 	}
