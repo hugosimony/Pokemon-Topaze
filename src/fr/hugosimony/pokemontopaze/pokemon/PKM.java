@@ -413,6 +413,22 @@ public enum PKM {
 	
 	// **********************************************************************
 	
+	public static String getStarterName(int starter) {
+		if(starter == 1)
+			return "Tortipouss";
+		if(starter == 2)
+			return "Ouisticram";
+		if(starter == 3)
+			return "Tiplouf";
+		return "";
+	}
+	
+	public static int getOppositeStarter(int starter) {
+		return (starter)%3 + 1;
+	}
+	
+	// **********************************************************************
+	
 	public static String getGoodName(PKM pkm) {
 		String pokemon = "";
 		switch (pkm) {

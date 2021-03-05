@@ -222,4 +222,18 @@ public class FileAdventureReaderWriter {
 		FileReaderWriter.writeAllLine(lines, Const.getAdventureInfosPath(save));
 	}
 	
+	//****************************************************************************************************
+	
+	public static int getStarter(int save) {
+		ArrayList<String> lines = FileReaderWriter.readFile(Const.getAdventureInfosPath(save));
+		return Integer.parseInt(lines.get(15));
+	}
+	
+	public static void setStarter(int save) {
+		ArrayList<String> lines = FileReaderWriter.readFile(Const.getAdventureInfosPath(save));
+		lines.set(15, Variables.STARTER + "");
+		FileCreator.createAdventureInfosFile(false, save);
+		FileReaderWriter.writeAllLine(lines, Const.getAdventureInfosPath(save));
+	}
+	
 }

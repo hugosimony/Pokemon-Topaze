@@ -209,6 +209,8 @@ public class Game extends JFrame {
 		Variables.BADGES_NumberOfBadges = 0;
 		Variables.POKEDEX_NumberOfSeen = 0;
 		Variables.ADVENTURE_Step = 0;
+		Variables.STARTER = 0;
+		
 		FileGroundItemsReaderWriter.initializeGroundItems();
 	}
 	
@@ -222,12 +224,15 @@ public class Game extends JFrame {
 		Variables.PERSO_Sex = FileAdventureReaderWriter.getSex(save);
 		Variables.LANG_Feminin = Variables.PERSO_Sex.equals("boy") ? "" : "e";
 		Variables.ADVENTURE_Step = FileAdventureReaderWriter.getAdventureStep(save);
+		Variables.STARTER = FileAdventureReaderWriter.getStarter(save);
+		
 		FileGroundItemsReaderWriter.loadGroundItems(save);
 	}
 	
 	public void save() {
 		if(newGame) 
 			FileReaderWriter.createSave(save);
+		
 		FileAdventureReaderWriter.setAdventureTime(save);
 		FileAdventureReaderWriter.setPersoSpeed(save);
 		FileAdventureReaderWriter.setPositionPlace(save);
@@ -243,7 +248,10 @@ public class Game extends JFrame {
 		FileAdventureReaderWriter.setName(save);
 		FileAdventureReaderWriter.setSex(save);
 		FileAdventureReaderWriter.setAdventureStep(save);
+		FileAdventureReaderWriter.setStarter(save);
+		
 		FileGroundItemsReaderWriter.saveGroundItems(save);
+		
 		waitingSaveDone = true;
 	}
 	

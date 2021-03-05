@@ -1,6 +1,7 @@
 package fr.hugosimony.pokemontopaze.maps.pnj;
 
 import fr.hugosimony.pokemontopaze.Variables;
+import fr.hugosimony.pokemontopaze.pokemon.PKM;
 
 public class PnjText {
 
@@ -44,8 +45,8 @@ public class PnjText {
 				return "C'est le moment.= Choisis bien,= tu ne pourras pas revenir\n"
 						+ "en arrière.";
 			if(Variables.ADVENTURE_Step == 8) {
-				return "Tu as donc choisi ... != Très bon choix.\n"
-						+ "";
+				return "Tu as donc choisi " + PKM.getStarterName(Variables.STARTER) + " != Très bon choix.\n="
+						+ "Prends en grand soin.";
 			}
 		}
 		return "";

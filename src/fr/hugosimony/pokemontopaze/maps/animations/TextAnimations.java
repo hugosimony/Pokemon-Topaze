@@ -28,14 +28,17 @@ public class TextAnimations {
 				Variables.ADVENTURE_Step = 8;
 				if(tuple.equals(new IntTuple(3744, 1738))) {
 					game.road01.starter1.setVisible(false);
+					Variables.STARTER = 1;
 					return "Vous avez choisi Tortipouss !=+";
 				}
 				if(tuple.equals(new IntTuple(3776, 1738))) {
 					game.road01.starter2.setVisible(false);
+					Variables.STARTER = 2;
 					return "Vous avez choisi Ouisticram !=+";
 				}
 				if(tuple.equals(new IntTuple(3808, 1738))) {
 					game.road01.starter3.setVisible(false);
+					Variables.STARTER = 3;
 					return "Vous avez choisi Tiplouf !=+";
 				}
 			}

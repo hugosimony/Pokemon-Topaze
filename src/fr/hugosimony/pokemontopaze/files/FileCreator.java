@@ -51,6 +51,7 @@ public class FileCreator {
 						+ "0\n"
 						+ "Bob\n"
 						+ "boy\n"
+						+ "0\n"
 						+ "0");
 			else
 				writer.print("Settings :");

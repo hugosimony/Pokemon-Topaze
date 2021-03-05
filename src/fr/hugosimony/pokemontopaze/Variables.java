@@ -39,6 +39,7 @@ public class Variables {
 	// Pokémon
 	public static int POKEDEX_NumberOfSeen;
 	public static int BADGES_NumberOfBadges;
+	public static int STARTER;
 	
 	// Ground Items
 	
