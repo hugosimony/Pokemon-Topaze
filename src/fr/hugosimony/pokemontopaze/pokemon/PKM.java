@@ -616,2113 +616,1410 @@ public enum PKM {
 		case CARABAFFE:
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TORTANK:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CHENIPAN:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CHRYSACIER:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PAPILUSION:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ASPICOT:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case COCONFORT:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DARDARGNAN:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ROUCOOL:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ROUCOUPS:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ROUCARNAGE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case RATTATA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case RATTATAK:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PIAFABEC:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case RAPASDEPIC:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ABO:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ARBOK:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PIKACHU:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case RAICHU:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SABELETTE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SABLAIREAU:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case NIDORANF:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case NIDORINA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case NIDOQUEEN:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case NIDORANM:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case NIDORINO:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case NIDOKING:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MELOFEE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MELODELFE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GOUPIX:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FEUNARD:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case RONDOUDOU:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GRODOUDOU:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case NOSFERAPTI:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case NOSFERALTO:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MYSTHERBE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ORTIDE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case RAFFLESIA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PARAS:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PARASECT:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MIMITOSS:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case AEROMITE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TAUPIQUEUR:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TRIOPIQUEUR:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MIAOUSS:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PERSIAN:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PSYKOKWAK:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case AKWAKWAK:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FEROSINGE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case COLOSSINGE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CANINOS:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ARCANIN:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PTITARD:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TETARTE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TARTARD:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ABRA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case KADABRA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ALAKAZAM:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MACHOC:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MACHOPEUR:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MACKOGNEUR:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CHETIFLOR:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BOUSTIFLOR:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case EMPIFLOR:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TENTACOOL:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TENTACRUEL:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case RACAILLOU:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GRAVALANCH:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GROLEM:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PONYTA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GALOPA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case RAMOLOSS:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FLAGADOSS:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MAGNETI:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MAGNETON:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CANARTICHO:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DODUO:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DODRIO:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case OTARIA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LAMANTINE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TADMORV:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GROTADMORV:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case KOKIYAS:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CRUSTABRI:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FANTOMINUS:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SPECTRUM:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ECTOPLASMA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ONIX:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SOPORIFIK:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case HYPNOMADE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case KRABBY:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case KRABBOS:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case VOLTORBE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ELECTRODE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case NOEUNOEUF:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case NOADKOKO:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case OSSELAIT:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case OSSATUEUR:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case KICKLEE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TYGNON:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case EXCELANGUE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SMOGO:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SMOGOGO:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case RHINOCORNE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case RHINOFEROS:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LEVEINARD:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SAQUEDENEU:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case KANGOUREX:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case HYPOTREMPE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case HYPOCEAN:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case POISSIRENE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case POISSOROY:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case STARI:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case STAROSS:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MMIME:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case INSECATEUR:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LIPPOUTOU:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ELEKTEK:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MAGMAR:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SCARABRUTE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TAUROS:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MAGICARPE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LEVIATOR:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LOKHLASS:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case METAMORPH:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case EVOLI:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case AQUALI:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case VOLTALI:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PYROLI:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PORYGON:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case AMONITA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case AMONISTAR:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case KABUTO:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case KABUTOPS:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PTERA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case RONFLEX:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ARTIKODIN:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ELECTHOR:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SULFURA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MINIDRACO:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DRACO:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DRACOLOSSE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MEWTWO:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MEW:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GERMIGNON:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MACRONIUM:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MEGANIUM:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case HERICENDRE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FEURISSON:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TYPHLOSION:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case KAIMINUS:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CROCRODIL:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ALIGATUEUR:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FOUINETTE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FOUINAR:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case HOOTHOOT:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case NOARFANG:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case COXY:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case COXYCLAQUE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MIMIGAL:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MIGALOS:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case NOSTENFER:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LOUPIO:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LANTURN:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PICHU:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MELO:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TOUDOUDOU:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TOGEPI:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TOGETIC:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case NATU:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case XATU:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case WATTOUAT:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LAINERGIE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PHARAMP:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case JOLIFLOR:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MARILL:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case AZUMARILL:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SIMULARBRE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TARPAUD:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GRANIVOL:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FLORAVOL:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case COTOVOL:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CAPUMAIN:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TOURNEGRIN:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case HELIATRONC:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case YANMA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case AXOLOTO:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MARAISTE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MENTALI:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case NOCTALI:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CORNEBRE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ROIGADA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FEUFOREVE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ZARBI:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case QULBUTOKE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GIRAFARIG:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case POMDEPIK:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FORETRESS:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case INSOLOURDO:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SCORPLANE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case STEELIX:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SNUBBULL:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GRANDBULL:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case QWILFISH:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CIZAYOX:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CARATROC:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SCARHINO:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FARFURET:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TEDDIURSA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case URSARING:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LIMAGMA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case VOLCAROPOD:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MARCACRIN:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case COCHIGNON:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CORAYON:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case REMORAID:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case OCTILLERY:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CADOIZO:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DEMANTA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case AIRMURE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MALOSSE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DEMOLOSSE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case HYPOROI:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PHANPY:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DONPHAN:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PORYGON2:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CERFROUSSE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case QUEULORIOR:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DEBUGANT:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case KAPOERA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LIPPOUTI:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ELEKID:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MAGBY:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ECREMEUH:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LEUPHORIE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case RAIKOU:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ENTEI:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SUICUNE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case EMBRYLEX:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case YMPHECT:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TYRANOCIF:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LUGIA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case HOOH:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CELEBI:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ARCKO:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MASSKO:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case JUNGKO:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case POUSSIFEU:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GALIFEU:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BRASEGALI:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GOBOU:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FLOBIO:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LAGGRON:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MEDHYENA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GRAHYENA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ZIGZATION:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LINEON:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CHENIPOTTE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ARMULYS:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CHARMILLON:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BLINDALYS:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PAPINOX:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case NENUPIOT:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LOMBRE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LUDICOLO:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GRAINIPIOT:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PIFEUIL:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TENGALICE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case NIRONDELLE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case HELEDELLE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GOELISE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BEKIPAN:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TARSAL:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case KIRLIA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GARDEVOIR:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ARAKDO:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MASKADRA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BALIGNON:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CHAPIGNON:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PARECOOL:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case VIGOROTH:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MONAFLEMIT:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case NINGALE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case NINJASK:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MUNJA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CHUCHMUR:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case RAMBOUM:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BROUHABAM:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MAKUHITA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case HARIYAMA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case AZURILL:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TARINOR:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SKITTY:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DELCATTY:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TENEFIX:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MYSDIBULE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GALEKID:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GALEGON:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GALEKING:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MEDITIKKA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CHARMINA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DYNAVOLT:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ELECSPRINT:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case POSIPI:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case NEGAPI:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MUCIOLE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LUMIVOLE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ROSELIA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GLOUPTI:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case AVALTOUT:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CARVANHA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SHARPEDO:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case WAILMER:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case WAILORD:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CHAMALLOT:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CAMERUPT:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CHARTOR:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SPOINK:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GRORET:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SPINDA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case KRAKNOIX:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case VIBRANINF:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LIBEGON:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CACNEA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CACTURNE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TYLTON:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ALTARIA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MANGRIFF:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SEVIPER:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SELEROC:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SOLAROC:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BARLOCHE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BARBICHA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ECRAPINCE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case COLHOMARD:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BALBUTO:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case KAORINE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LILIA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case VACILYS:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ANORITH:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ARMALDO:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BARPAU:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MILOBELLUS:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MORPHEO:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case KECLEON:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case POLICHOMBR:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BRANETTE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SKELENOX:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TERACLOPE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TROPIUS:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case EOKO:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ABSOL:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case OKEOKE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case STALGAMIN:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ONIGLALI:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case OBALIE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PHOGLEUR:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case KAIMORSE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case COQUIPERL:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SERPANG:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ROSABYSS:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case RELICANTH:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LOVDISC:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DRABY:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DRACKHAUS:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DRATTAK:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TERHAL:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case METANG:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case METALOSSE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case REGIROCK:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case REGICE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case REGISTEEL:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LATIAS:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LATIOS:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case KYOGRE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GROUDON:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case RAYQUAZA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case JIRACHI:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DEOXYS:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TORTIPOUSS:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BOSKARA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TORTERRA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case OUISTICRAM:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CHIMPENFEU:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SIMIABRAZ:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TIPLOUF:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PRINPLOUF:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PINGOLEON:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ETOURMI:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ETOURVOL:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ETOURAPTOR:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case KEUNOTOR:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CASTORNO:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CRIKZIK:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MELOKRIK:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LIXI:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LUXIO:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LUXRAY:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ROZBOUTON:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ROSERADE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case KRANIDOS:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CHARKOS:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DINOCLIER:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BASTIODON:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CHENITI:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CHENISELLE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PAPILORD:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case APITRINI:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case APIREINE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PACHIRISU:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MUSTEBOUEE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MUSTEFLOTT:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CERIBOU:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CERIFLOR:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SANCOKI:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TRITOSOR:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CAPIDEXTRE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BAUDRIVE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GRODRIVE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LAPOREILLE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LOCKPIN:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MAGIREVE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CORBOSS:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CHAGLAM:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CHAFFREUX:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case KORILLON:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MOUFOUETTE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MOUFFLAIR:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ARCHEOMIRE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ARCHEODONG:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MANZAI:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MIMEJR:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PTIRAVI:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PIJAKO:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SPIRITOMB:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GRIKNOT:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CARMACHE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CARCHACROK:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GOINFREX:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case RIOLU:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LUCARIO:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case HIPPOPOTAS:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case HIPPODOCUS:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case RAPION:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DRASCORE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CRADOPAUD:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case COATOX:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case VORTENTE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ECAYON:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LUMINEON:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BABIMANTA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BLIZZI:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BLIZZAROI:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DIMORET:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MAGNEZONE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case COUDLANGUE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case RHINASTOC:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BOULDENEU:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ELEKABLE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MAGANON:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TOGEKISS:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case YANMEGA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PHYLLALI:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GIVRALI:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SCORVOL:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MAMMOCHON:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PORYGONZ:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GALLAME:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TARINORME:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case NOCTUNOIR:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MOMARTIK:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MOTISMA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CREHELF:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CREFOLLET:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CREFADET:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DIALGA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PALKIA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GIRATINA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CRESSELIA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PHIONE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MANAPHY:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DARKRAI:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SHAYMIN:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ARCEUS:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case VICTINI:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case VIPELIERRE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LIANAJA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MAJASPIC:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GRUIKUI:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GROTICHON:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ROITIFLAM:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MOUSTILLON:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MATELOUTRE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CLAMIRAL:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case RATENTIF:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MIRADAR:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PONCHIOT:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PONCHIEN:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MASTOUFFE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CHACRIPAN:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LEOPARDUS:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FEUILLAJOU:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FEUILOUTAN:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FLAMAJOU:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FLAMOUTAN:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FLOTAJOU:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FLOTOUTAN:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MUNNA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MUSHANA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case POICHIGEON:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case COLOMBEAU:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DEFLAISAN:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ZEBIBRON:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ZEBLITZ:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case NODULITHE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GEOLITHE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GIGALITHE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CHOVSOURIR:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case RHINOLOVE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ROTOTAUPE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MINOTAUPE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case NANMEOUIE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CHARPENTI:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case OUVRIFIER:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BETOCHEF:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TRITONDE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BATRACNE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CRAPUSTULE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case JUDOKRAK:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case KARACLEE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LARVEYETTE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case COUVERDURE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MANTERNEL:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case VENIPATTE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SCOBOLIDE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BRUTAPODE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DOUDOUVET:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FARFADUVET:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CHLOROBULE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FRAGILADY:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BARGANTUA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MASCAIMAN:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ESCROCO:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CROCORIBLE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DARUMAROND:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DARUMACHO:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MARACACHI:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CRABICOQUE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CRABARAQUE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BAGGIGUANE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BAGGAID:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CRYPTERO:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TUTAFEH:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TUTANKAFER:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CARAPAGOS:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MEGAPAGOS:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ARKEAPTI:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case AEROPTERYX:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MIAMIASME:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MIASMAX:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ZORUA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ZOROARK:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CHINCHIDOU:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PASHMILLA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SCRUTELLA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MESMERELLA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SIDERELLA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case NUCLEOS:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MEIOS:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SYMBIOS:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case COUANETON:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LAKMECYGNE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SORBEBE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SORBOUL:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SORBOUBOUL:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case VIVALDAIM:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case HAYDAIM:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case EMOLGA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CARABING:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LANCARGOT:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TROMPIGNON:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GAULET:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case VISKUSE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MOYADE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MAMANBO:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case STATITIK:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MYGAVOLT:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GRINDUR:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case NOACIER:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TIC:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CLIC:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CLITICLIC:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ANCHWATT:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LAMPEROIE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case OHMASSACRE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LEWSOR:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case NEITRAM:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FUNECIRE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MELANCOLUX:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LUGULABRE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case COUPENOTTE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case INCISACHE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TRANCHODON:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case POLARHUME:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case POLAGRIFFE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case HEXAGEL:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ESCARGAUME:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LIMASPEED:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LIMONDE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case KUNGFOUINE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SHAOFOUINE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DRAKKARMIN:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GRINGOLEM:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GOLEMASTOC:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SCALPION:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SCALPROIE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FRISON:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FURAIGLON:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GUERIAIGLE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case VOSTOURNO:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case VAUTUTRICE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case AFLAMANOIR:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FERMITE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SOLOCHI:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DIAMAT:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TRIOXHYDRE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PYRONILLE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PYRAX:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case COBALTIUM:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TERRAKIUM:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case VIRIDIUM:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BOREAS:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FULGURIS:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case RESHIRAM:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ZEKROM:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DEMETEROS:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case KYUREM:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case KELDEO:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MELOETTA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GENESECT:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MARISSON:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BOGUERISSE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BLINDEPIQUE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FEUNNEC:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case ROUSSIL:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GOUPELIN:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GRENOUSSE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CROAPORAL:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case AMPHINOBI:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SAPEREAU:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case EXCAVARENNE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PASSEROUGE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BRAISILLON:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FLAMBUSARD:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case LEPIDONILLE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PEREGRAIN:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PRISMILLON:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case HELIONCEAU:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case NEMELIOS:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FLABEBE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FLOETTE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FLORGES:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CABRIOLAINE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CHEVROUM:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PANDESPIEGLE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PANDARBARE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case COUAFAREL:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PSYSTIGRI:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MISTIGRIX:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MONORPALE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DIMOCLES:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case EXAGIDE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FLUVETIN:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case COCOTINE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SUCROQUIN:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case CUPCANAILLE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SEPIATOP:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SEPIATROCE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case OPERMINE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GOLGOPATHE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case VENALGUE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case KRAVARECH:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case FLINGOUSTE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GAMBLAST:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GALVARAN:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case IGUOLTA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PTYRANIDUR:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case REXILIUS:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case AMAGARA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DRAGMARA:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case NYMPHALI:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BRUTALIBRE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DEDENNE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case STRASSIE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MUCUSCULE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case COLIMUCUS:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case MUPLODOCUS:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case TROUSSELIN:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BROCELOME:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case DESSELIANDE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case PITROUILLE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case BANSHITROUYE:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case GRELACON:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SERACRAWL:
-			
 			return (new int[] {0, 0, 0, 0, 0, 0});
 		case SONISTRELLE:
 			return (new int[] {0, 0, 0, 0, 0, 0});
@@ -2748,2165 +2045,1445 @@ public enum PKM {
 	/*
 	switch (pkm) {
 		case BULBIZARRE:
-			
-			break;
+			return;
 		case HERBIZARRE:
-			
-			break;
+			return;
 		case FLORIZARRE:
-			
-			break;
+			return;
 		case SALAMECHE:
-			
-			break;
+			return;
 		case REPTINCEL:
-			
-			break;
+			return;
 		case DRACAUFEU:
-			
-			break;
+			return;
 		case CARAPUCE:
-			
-			break;
+			return;
 		case CARABAFFE:
-			
-			break;
+			return;
 		case TORTANK:
-			
-			break;
+			return;
 		case CHENIPAN:
-			
-			break;
+			return;
 		case CHRYSACIER:
-			
-			break;
+			return;
 		case PAPILUSION:
-			
-			break;
+			return;
 		case ASPICOT:
-			
-			break;
+			return;
 		case COCONFORT:
-			
-			break;
+			return;
 		case DARDARGNAN:
-			
-			break;
+			return;
 		case ROUCOOL:
-			
-			break;
+			return;
 		case ROUCOUPS:
-			
-			break;
+			return;
 		case ROUCARNAGE:
-			
-			break;
+			return;
 		case RATTATA:
-			
-			break;
+			return;
 		case RATTATAK:
-			
-			break;
+			return;
 		case PIAFABEC:
-			
-			break;
+			return;
 		case RAPASDEPIC:
-			
-			break;
+			return;
 		case ABO:
-			
-			break;
+			return;
 		case ARBOK:
-			
-			break;
+			return;
 		case PIKACHU:
-			
-			break;
+			return;
 		case RAICHU:
-			
-			break;
+			return;
 		case SABELETTE:
-			
-			break;
+			return;
 		case SABLAIREAU:
-			
-			break;
+			return;
 		case NIDORANF:
-			
-			break;
+			return;
 		case NIDORINA:
-			
-			break;
+			return;
 		case NIDOQUEEN:
-			
-			break;
+			return;
 		case NIDORANM:
-			
-			break;
+			return;
 		case NIDORINO:
-			
-			break;
+			return;
 		case NIDOKING:
-			
-			break;
+			return;
 		case MELOFEE:
-			
-			break;
+			return;
 		case MELODELFE:
-			
-			break;
+			return;
 		case GOUPIX:
-			
-			break;
+			return;
 		case FEUNARD:
-			
-			break;
+			return;
 		case RONDOUDOU:
-			
-			break;
+			return;
 		case GRODOUDOU:
-			
-			break;
+			return;
 		case NOSFERAPTI:
-			
-			break;
+			return;
 		case NOSFERALTO:
-			
-			break;
+			return;
 		case MYSTHERBE:
-			
-			break;
+			return;
 		case ORTIDE:
-			
-			break;
+			return;
 		case RAFFLESIA:
-			
-			break;
+			return;
 		case PARAS:
-			
-			break;
+			return;
 		case PARASECT:
-			
-			break;
+			return;
 		case MIMITOSS:
-			
-			break;
+			return;
 		case AEROMITE:
-			
-			break;
+			return;
 		case TAUPIQUEUR:
-			
-			break;
+			return;
 		case TRIOPIQUEUR:
-			
-			break;
+			return;
 		case MIAOUSS:
-			
-			break;
+			return;
 		case PERSIAN:
-			
-			break;
+			return;
 		case PSYKOKWAK:
-			
-			break;
+			return;
 		case AKWAKWAK:
-			
-			break;
+			return;
 		case FEROSINGE:
-			
-			break;
+			return;
 		case COLOSSINGE:
-			
-			break;
+			return;
 		case CANINOS:
-			
-			break;
+			return;
 		case ARCANIN:
-			
-			break;
+			return;
 		case PTITARD:
-			
-			break;
+			return;
 		case TETARTE:
-			
-			break;
+			return;
 		case TARTARD:
-			
-			break;
+			return;
 		case ABRA:
-			
-			break;
+			return;
 		case KADABRA:
-			
-			break;
+			return;
 		case ALAKAZAM:
-			
-			break;
+			return;
 		case MACHOC:
-			
-			break;
+			return;
 		case MACHOPEUR:
-			
-			break;
+			return;
 		case MACKOGNEUR:
-			
-			break;
+			return;
 		case CHETIFLOR:
-			
-			break;
+			return;
 		case BOUSTIFLOR:
-			
-			break;
+			return;
 		case EMPIFLOR:
-			
-			break;
+			return;
 		case TENTACOOL:
-			
-			break;
+			return;
 		case TENTACRUEL:
-			
-			break;
+			return;
 		case RACAILLOU:
-			
-			break;
+			return;
 		case GRAVALANCH:
-			
-			break;
+			return;
 		case GROLEM:
-			
-			break;
+			return;
 		case PONYTA:
-			
-			break;
+			return;
 		case GALOPA:
-			
-			break;
+			return;
 		case RAMOLOSS:
-			
-			break;
+			return;
 		case FLAGADOSS:
-			
-			break;
+			return;
 		case MAGNETI:
-			
-			break;
+			return;
 		case MAGNETON:
-			
-			break;
+			return;
 		case CANARTICHO:
-			
-			break;
+			return;
 		case DODUO:
-			
-			break;
+			return;
 		case DODRIO:
-			
-			break;
+			return;
 		case OTARIA:
-			
-			break;
+			return;
 		case LAMANTINE:
-			
-			break;
+			return;
 		case TADMORV:
-			
-			break;
+			return;
 		case GROTADMORV:
-			
-			break;
+			return;
 		case KOKIYAS:
-			
-			break;
+			return;
 		case CRUSTABRI:
-			
-			break;
+			return;
 		case FANTOMINUS:
-			
-			break;
+			return;
 		case SPECTRUM:
-			
-			break;
+			return;
 		case ECTOPLASMA:
-			
-			break;
+			return;
 		case ONIX:
-			
-			break;
+			return;
 		case SOPORIFIK:
-			
-			break;
+			return;
 		case HYPNOMADE:
-			
-			break;
+			return;
 		case KRABBY:
-			
-			break;
+			return;
 		case KRABBOS:
-			
-			break;
+			return;
 		case VOLTORBE:
-			
-			break;
+			return;
 		case ELECTRODE:
-			
-			break;
+			return;
 		case NOEUNOEUF:
-			
-			break;
+			return;
 		case NOADKOKO:
-			
-			break;
+			return;
 		case OSSELAIT:
-			
-			break;
+			return;
 		case OSSATUEUR:
-			
-			break;
+			return;
 		case KICKLEE:
-			
-			break;
+			return;
 		case TYGNON:
-			
-			break;
+			return;
 		case EXCELANGUE:
-			
-			break;
+			return;
 		case SMOGO:
-			
-			break;
+			return;
 		case SMOGOGO:
-			
-			break;
+			return;
 		case RHINOCORNE:
-			
-			break;
+			return;
 		case RHINOFEROS:
-			
-			break;
+			return;
 		case LEVEINARD:
-			
-			break;
+			return;
 		case SAQUEDENEU:
-			
-			break;
+			return;
 		case KANGOUREX:
-			
-			break;
+			return;
 		case HYPOTREMPE:
-			
-			break;
+			return;
 		case HYPOCEAN:
-			
-			break;
+			return;
 		case POISSIRENE:
-			
-			break;
+			return;
 		case POISSOROY:
-			
-			break;
+			return;
 		case STARI:
-			
-			break;
+			return;
 		case STAROSS:
-			
-			break;
+			return;
 		case MMIME:
-			
-			break;
+			return;
 		case INSECATEUR:
-			
-			break;
+			return;
 		case LIPPOUTOU:
-			
-			break;
+			return;
 		case ELEKTEK:
-			
-			break;
+			return;
 		case MAGMAR:
-			
-			break;
+			return;
 		case SCARABRUTE:
-			
-			break;
+			return;
 		case TAUROS:
-			
-			break;
+			return;
 		case MAGICARPE:
-			
-			break;
+			return;
 		case LEVIATOR:
-			
-			break;
+			return;
 		case LOKHLASS:
-			
-			break;
+			return;
 		case METAMORPH:
-			
-			break;
+			return;
 		case EVOLI:
-			
-			break;
+			return;
 		case AQUALI:
-			
-			break;
+			return;
 		case VOLTALI:
-			
-			break;
+			return;
 		case PYROLI:
-			
-			break;
+			return;
 		case PORYGON:
-			
-			break;
+			return;
 		case AMONITA:
-			
-			break;
+			return;
 		case AMONISTAR:
-			
-			break;
+			return;
 		case KABUTO:
-			
-			break;
+			return;
 		case KABUTOPS:
-			
-			break;
+			return;
 		case PTERA:
-			
-			break;
+			return;
 		case RONFLEX:
-			
-			break;
+			return;
 		case ARTIKODIN:
-			
-			break;
+			return;
 		case ELECTHOR:
-			
-			break;
+			return;
 		case SULFURA:
-			
-			break;
+			return;
 		case MINIDRACO:
-			
-			break;
+			return;
 		case DRACO:
-			
-			break;
+			return;
 		case DRACOLOSSE:
-			
-			break;
+			return;
 		case MEWTWO:
-			
-			break;
+			return;
 		case MEW:
-			
-			break;
+			return;
 		case GERMIGNON:
-			
-			break;
+			return;
 		case MACRONIUM:
-			
-			break;
+			return;
 		case MEGANIUM:
-			
-			break;
+			return;
 		case HERICENDRE:
-			
-			break;
+			return;
 		case FEURISSON:
-			
-			break;
+			return;
 		case TYPHLOSION:
-			
-			break;
+			return;
 		case KAIMINUS:
-			
-			break;
+			return;
 		case CROCRODIL:
-			
-			break;
+			return;
 		case ALIGATUEUR:
-			
-			break;
+			return;
 		case FOUINETTE:
-			
-			break;
+			return;
 		case FOUINAR:
-			
-			break;
+			return;
 		case HOOTHOOT:
-			
-			break;
+			return;
 		case NOARFANG:
-			
-			break;
+			return;
 		case COXY:
-			
-			break;
+			return;
 		case COXYCLAQUE:
-			
-			break;
+			return;
 		case MIMIGAL:
-			
-			break;
+			return;
 		case MIGALOS:
-			
-			break;
+			return;
 		case NOSTENFER:
-			
-			break;
+			return;
 		case LOUPIO:
-			
-			break;
+			return;
 		case LANTURN:
-			
-			break;
+			return;
 		case PICHU:
-			
-			break;
+			return;
 		case MELO:
-			
-			break;
+			return;
 		case TOUDOUDOU:
-			
-			break;
+			return;
 		case TOGEPI:
-			
-			break;
+			return;
 		case TOGETIC:
-			
-			break;
+			return;
 		case NATU:
-			
-			break;
+			return;
 		case XATU:
-			
-			break;
+			return;
 		case WATTOUAT:
-			
-			break;
+			return;
 		case LAINERGIE:
-			
-			break;
+			return;
 		case PHARAMP:
-			
-			break;
+			return;
 		case JOLIFLOR:
-			
-			break;
+			return;
 		case MARILL:
-			
-			break;
+			return;
 		case AZUMARILL:
-			
-			break;
+			return;
 		case SIMULARBRE:
-			
-			break;
+			return;
 		case TARPAUD:
-			
-			break;
+			return;
 		case GRANIVOL:
-			
-			break;
+			return;
 		case FLORAVOL:
-			
-			break;
+			return;
 		case COTOVOL:
-			
-			break;
+			return;
 		case CAPUMAIN:
-			
-			break;
+			return;
 		case TOURNEGRIN:
-			
-			break;
+			return;
 		case HELIATRONC:
-			
-			break;
+			return;
 		case YANMA:
-			
-			break;
+			return;
 		case AXOLOTO:
-			
-			break;
+			return;
 		case MARAISTE:
-			
-			break;
+			return;
 		case MENTALI:
-			
-			break;
+			return;
 		case NOCTALI:
-			
-			break;
+			return;
 		case CORNEBRE:
-			
-			break;
+			return;
 		case ROIGADA:
-			
-			break;
+			return;
 		case FEUFOREVE:
-			
-			break;
+			return;
 		case ZARBI:
-			
-			break;
+			return;
 		case QULBUTOKE:
-			
-			break;
+			return;
 		case GIRAFARIG:
-			
-			break;
+			return;
 		case POMDEPIK:
-			
-			break;
+			return;
 		case FORETRESS:
-			
-			break;
+			return;
 		case INSOLOURDO:
-			
-			break;
+			return;
 		case SCORPLANE:
-			
-			break;
+			return;
 		case STEELIX:
-			
-			break;
+			return;
 		case SNUBBULL:
-			
-			break;
+			return;
 		case GRANDBULL:
-			
-			break;
+			return;
 		case QWILFISH:
-			
-			break;
+			return;
 		case CIZAYOX:
-			
-			break;
+			return;
 		case CARATROC:
-			
-			break;
+			return;
 		case SCARHINO:
-			
-			break;
+			return;
 		case FARFURET:
-			
-			break;
+			return;
 		case TEDDIURSA:
-			
-			break;
+			return;
 		case URSARING:
-			
-			break;
+			return;
 		case LIMAGMA:
-			
-			break;
+			return;
 		case VOLCAROPOD:
-			
-			break;
+			return;
 		case MARCACRIN:
-			
-			break;
+			return;
 		case COCHIGNON:
-			
-			break;
+			return;
 		case CORAYON:
-			
-			break;
+			return;
 		case REMORAID:
-			
-			break;
+			return;
 		case OCTILLERY:
-			
-			break;
+			return;
 		case CADOIZO:
-			
-			break;
+			return;
 		case DEMANTA:
-			
-			break;
+			return;
 		case AIRMURE:
-			
-			break;
+			return;
 		case MALOSSE:
-			
-			break;
+			return;
 		case DEMOLOSSE:
-			
-			break;
+			return;
 		case HYPOROI:
-			
-			break;
+			return;
 		case PHANPY:
-			
-			break;
+			return;
 		case DONPHAN:
-			
-			break;
+			return;
 		case PORYGON2:
-			
-			break;
+			return;
 		case CERFROUSSE:
-			
-			break;
+			return;
 		case QUEULORIOR:
-			
-			break;
+			return;
 		case DEBUGANT:
-			
-			break;
+			return;
 		case KAPOERA:
-			
-			break;
+			return;
 		case LIPPOUTI:
-			
-			break;
+			return;
 		case ELEKID:
-			
-			break;
+			return;
 		case MAGBY:
-			
-			break;
+			return;
 		case ECREMEUH:
-			
-			break;
+			return;
 		case LEUPHORIE:
-			
-			break;
+			return;
 		case RAIKOU:
-			
-			break;
+			return;
 		case ENTEI:
-			
-			break;
+			return;
 		case SUICUNE:
-			
-			break;
+			return;
 		case EMBRYLEX:
-			
-			break;
+			return;
 		case YMPHECT:
-			
-			break;
+			return;
 		case TYRANOCIF:
-			
-			break;
+			return;
 		case LUGIA:
-			
-			break;
+			return;
 		case HOOH:
-			
-			break;
+			return;
 		case CELEBI:
-			
-			break;
+			return;
 		case ARCKO:
-			
-			break;
+			return;
 		case MASSKO:
-			
-			break;
+			return;
 		case JUNGKO:
-			
-			break;
+			return;
 		case POUSSIFEU:
-			
-			break;
+			return;
 		case GALIFEU:
-			
-			break;
+			return;
 		case BRASEGALI:
-			
-			break;
+			return;
 		case GOBOU:
-			
-			break;
+			return;
 		case FLOBIO:
-			
-			break;
+			return;
 		case LAGGRON:
-			
-			break;
+			return;
 		case MEDHYENA:
-			
-			break;
+			return;
 		case GRAHYENA:
-			
-			break;
+			return;
 		case ZIGZATION:
-			
-			break;
+			return;
 		case LINEON:
-			
-			break;
+			return;
 		case CHENIPOTTE:
-			
-			break;
+			return;
 		case ARMULYS:
-			
-			break;
+			return;
 		case CHARMILLON:
-			
-			break;
+			return;
 		case BLINDALYS:
-			
-			break;
+			return;
 		case PAPINOX:
-			
-			break;
+			return;
 		case NENUPIOT:
-			
-			break;
+			return;
 		case LOMBRE:
-			
-			break;
+			return;
 		case LUDICOLO:
-			
-			break;
+			return;
 		case GRAINIPIOT:
-			
-			break;
+			return;
 		case PIFEUIL:
-			
-			break;
+			return;
 		case TENGALICE:
-			
-			break;
+			return;
 		case NIRONDELLE:
-			
-			break;
+			return;
 		case HELEDELLE:
-			
-			break;
+			return;
 		case GOELISE:
-			
-			break;
+			return;
 		case BEKIPAN:
-			
-			break;
+			return;
 		case TARSAL:
-			
-			break;
+			return;
 		case KIRLIA:
-			
-			break;
+			return;
 		case GARDEVOIR:
-			
-			break;
+			return;
 		case ARAKDO:
-			
-			break;
+			return;
 		case MASKADRA:
-			
-			break;
+			return;
 		case BALIGNON:
-			
-			break;
+			return;
 		case CHAPIGNON:
-			
-			break;
+			return;
 		case PARECOOL:
-			
-			break;
+			return;
 		case VIGOROTH:
-			
-			break;
+			return;
 		case MONAFLEMIT:
-			
-			break;
+			return;
 		case NINGALE:
-			
-			break;
+			return;
 		case NINJASK:
-			
-			break;
+			return;
 		case MUNJA:
-			
-			break;
+			return;
 		case CHUCHMUR:
-			
-			break;
+			return;
 		case RAMBOUM:
-			
-			break;
+			return;
 		case BROUHABAM:
-			
-			break;
+			return;
 		case MAKUHITA:
-			
-			break;
+			return;
 		case HARIYAMA:
-			
-			break;
+			return;
 		case AZURILL:
-			
-			break;
+			return;
 		case TARINOR:
-			
-			break;
+			return;
 		case SKITTY:
-			
-			break;
+			return;
 		case DELCATTY:
-			
-			break;
+			return;
 		case TENEFIX:
-			
-			break;
+			return;
 		case MYSDIBULE:
-			
-			break;
+			return;
 		case GALEKID:
-			
-			break;
+			return;
 		case GALEGON:
-			
-			break;
+			return;
 		case GALEKING:
-			
-			break;
+			return;
 		case MEDITIKKA:
-			
-			break;
+			return;
 		case CHARMINA:
-			
-			break;
+			return;
 		case DYNAVOLT:
-			
-			break;
+			return;
 		case ELECSPRINT:
-			
-			break;
+			return;
 		case POSIPI:
-			
-			break;
+			return;
 		case NEGAPI:
-			
-			break;
+			return;
 		case MUCIOLE:
-			
-			break;
+			return;
 		case LUMIVOLE:
-			
-			break;
+			return;
 		case ROSELIA:
-			
-			break;
+			return;
 		case GLOUPTI:
-			
-			break;
+			return;
 		case AVALTOUT:
-			
-			break;
+			return;
 		case CARVANHA:
-			
-			break;
+			return;
 		case SHARPEDO:
-			
-			break;
+			return;
 		case WAILMER:
-			
-			break;
+			return;
 		case WAILORD:
-			
-			break;
+			return;
 		case CHAMALLOT:
-			
-			break;
+			return;
 		case CAMERUPT:
-			
-			break;
+			return;
 		case CHARTOR:
-			
-			break;
+			return;
 		case SPOINK:
-			
-			break;
+			return;
 		case GRORET:
-			
-			break;
+			return;
 		case SPINDA:
-			
-			break;
+			return;
 		case KRAKNOIX:
-			
-			break;
+			return;
 		case VIBRANINF:
-			
-			break;
+			return;
 		case LIBEGON:
-			
-			break;
+			return;
 		case CACNEA:
-			
-			break;
+			return;
 		case CACTURNE:
-			
-			break;
+			return;
 		case TYLTON:
-			
-			break;
+			return;
 		case ALTARIA:
-			
-			break;
+			return;
 		case MANGRIFF:
-			
-			break;
+			return;
 		case SEVIPER:
-			
-			break;
+			return;
 		case SELEROC:
-			
-			break;
+			return;
 		case SOLAROC:
-			
-			break;
+			return;
 		case BARLOCHE:
-			
-			break;
+			return;
 		case BARBICHA:
-			
-			break;
+			return;
 		case ECRAPINCE:
-			
-			break;
+			return;
 		case COLHOMARD:
-			
-			break;
+			return;
 		case BALBUTO:
-			
-			break;
+			return;
 		case KAORINE:
-			
-			break;
+			return;
 		case LILIA:
-			
-			break;
+			return;
 		case VACILYS:
-			
-			break;
+			return;
 		case ANORITH:
-			
-			break;
+			return;
 		case ARMALDO:
-			
-			break;
+			return;
 		case BARPAU:
-			
-			break;
+			return;
 		case MILOBELLUS:
-			
-			break;
+			return;
 		case MORPHEO:
-			
-			break;
+			return;
 		case KECLEON:
-			
-			break;
+			return;
 		case POLICHOMBR:
-			
-			break;
+			return;
 		case BRANETTE:
-			
-			break;
+			return;
 		case SKELENOX:
-			
-			break;
+			return;
 		case TERACLOPE:
-			
-			break;
+			return;
 		case TROPIUS:
-			
-			break;
+			return;
 		case EOKO:
-			
-			break;
+			return;
 		case ABSOL:
-			
-			break;
+			return;
 		case OKEOKE:
-			
-			break;
+			return;
 		case STALGAMIN:
-			
-			break;
+			return;
 		case ONIGLALI:
-			
-			break;
+			return;
 		case OBALIE:
-			
-			break;
+			return;
 		case PHOGLEUR:
-			
-			break;
+			return;
 		case KAIMORSE:
-			
-			break;
+			return;
 		case COQUIPERL:
-			
-			break;
+			return;
 		case SERPANG:
-			
-			break;
+			return;
 		case ROSABYSS:
-			
-			break;
+			return;
 		case RELICANTH:
-			
-			break;
+			return;
 		case LOVDISC:
-			
-			break;
+			return;
 		case DRABY:
-			
-			break;
+			return;
 		case DRACKHAUS:
-			
-			break;
+			return;
 		case DRATTAK:
-			
-			break;
+			return;
 		case TERHAL:
-			
-			break;
+			return;
 		case METANG:
-			
-			break;
+			return;
 		case METALOSSE:
-			
-			break;
+			return;
 		case REGIROCK:
-			
-			break;
+			return;
 		case REGICE:
-			
-			break;
+			return;
 		case REGISTEEL:
-			
-			break;
+			return;
 		case LATIAS:
-			
-			break;
+			return;
 		case LATIOS:
-			
-			break;
+			return;
 		case KYOGRE:
-			
-			break;
+			return;
 		case GROUDON:
-			
-			break;
+			return;
 		case RAYQUAZA:
-			
-			break;
+			return;
 		case JIRACHI:
-			
-			break;
+			return;
 		case DEOXYS:
-			
-			break;
+			return;
 		case TORTIPOUSS:
-			
-			break;
+			return;
 		case BOSKARA:
-			
-			break;
+			return;
 		case TORTERRA:
-			
-			break;
+			return;
 		case OUISTICRAM:
-			
-			break;
+			return;
 		case CHIMPENFEU:
-			
-			break;
+			return;
 		case SIMIABRAZ:
-			
-			break;
+			return;
 		case TIPLOUF:
-			
-			break;
+			return;
 		case PRINPLOUF:
-			
-			break;
+			return;
 		case PINGOLEON:
-			
-			break;
+			return;
 		case ETOURMI:
-			
-			break;
+			return;
 		case ETOURVOL:
-			
-			break;
+			return;
 		case ETOURAPTOR:
-			
-			break;
+			return;
 		case KEUNOTOR:
-			
-			break;
+			return;
 		case CASTORNO:
-			
-			break;
+			return;
 		case CRIKZIK:
-			
-			break;
+			return;
 		case MELOKRIK:
-			
-			break;
+			return;
 		case LIXI:
-			
-			break;
+			return;
 		case LUXIO:
-			
-			break;
+			return;
 		case LUXRAY:
-			
-			break;
+			return;
 		case ROZBOUTON:
-			
-			break;
+			return;
 		case ROSERADE:
-			
-			break;
+			return;
 		case KRANIDOS:
-			
-			break;
+			return;
 		case CHARKOS:
-			
-			break;
+			return;
 		case DINOCLIER:
-			
-			break;
+			return;
 		case BASTIODON:
-			
-			break;
+			return;
 		case CHENITI:
-			
-			break;
+			return;
 		case CHENISELLE:
-			
-			break;
+			return;
 		case PAPILORD:
-			
-			break;
+			return;
 		case APITRINI:
-			
-			break;
+			return;
 		case APIREINE:
-			
-			break;
+			return;
 		case PACHIRISU:
-			
-			break;
+			return;
 		case MUSTEBOUEE:
-			
-			break;
+			return;
 		case MUSTEFLOTT:
-			
-			break;
+			return;
 		case CERIBOU:
-			
-			break;
+			return;
 		case CERIFLOR:
-			
-			break;
+			return;
 		case SANCOKI:
-			
-			break;
+			return;
 		case TRITOSOR:
-			
-			break;
+			return;
 		case CAPIDEXTRE:
-			
-			break;
+			return;
 		case BAUDRIVE:
-			
-			break;
+			return;
 		case GRODRIVE:
-			
-			break;
+			return;
 		case LAPOREILLE:
-			
-			break;
+			return;
 		case LOCKPIN:
-			
-			break;
+			return;
 		case MAGIREVE:
-			
-			break;
+			return;
 		case CORBOSS:
-			
-			break;
+			return;
 		case CHAGLAM:
-			
-			break;
+			return;
 		case CHAFFREUX:
-			
-			break;
+			return;
 		case KORILLON:
-			
-			break;
+			return;
 		case MOUFOUETTE:
-			
-			break;
+			return;
 		case MOUFFLAIR:
-			
-			break;
+			return;
 		case ARCHEOMIRE:
-			
-			break;
+			return;
 		case ARCHEODONG:
-			
-			break;
+			return;
 		case MANZAI:
-			
-			break;
+			return;
 		case MIMEJR:
-			
-			break;
+			return;
 		case PTIRAVI:
-			
-			break;
+			return;
 		case PIJAKO:
-			
-			break;
+			return;
 		case SPIRITOMB:
-			
-			break;
+			return;
 		case GRIKNOT:
-			
-			break;
+			return;
 		case CARMACHE:
-			
-			break;
+			return;
 		case CARCHACROK:
-			
-			break;
+			return;
 		case GOINFREX:
-			
-			break;
+			return;
 		case RIOLU:
-			
-			break;
+			return;
 		case LUCARIO:
-			
-			break;
+			return;
 		case HIPPOPOTAS:
-			
-			break;
+			return;
 		case HIPPODOCUS:
-			
-			break;
+			return;
 		case RAPION:
-			
-			break;
+			return;
 		case DRASCORE:
-			
-			break;
+			return;
 		case CRADOPAUD:
-			
-			break;
+			return;
 		case COATOX:
-			
-			break;
+			return;
 		case VORTENTE:
-			
-			break;
+			return;
 		case ECAYON:
-			
-			break;
+			return;
 		case LUMINEON:
-			
-			break;
+			return;
 		case BABIMANTA:
-			
-			break;
+			return;
 		case BLIZZI:
-			
-			break;
+			return;
 		case BLIZZAROI:
-			
-			break;
+			return;
 		case DIMORET:
-			
-			break;
+			return;
 		case MAGNEZONE:
-			
-			break;
+			return;
 		case COUDLANGUE:
-			
-			break;
+			return;
 		case RHINASTOC:
-			
-			break;
+			return;
 		case BOULDENEU:
-			
-			break;
+			return;
 		case ELEKABLE:
-			
-			break;
+			return;
 		case MAGANON:
-			
-			break;
+			return;
 		case TOGEKISS:
-			
-			break;
+			return;
 		case YANMEGA:
-			
-			break;
+			return;
 		case PHYLLALI:
-			
-			break;
+			return;
 		case GIVRALI:
-			
-			break;
+			return;
 		case SCORVOL:
-			
-			break;
+			return;
 		case MAMMOCHON:
-			
-			break;
+			return;
 		case PORYGONZ:
-			
-			break;
+			return;
 		case GALLAME:
-			
-			break;
+			return;
 		case TARINORME:
-			
-			break;
+			return;
 		case NOCTUNOIR:
-			
-			break;
+			return;
 		case MOMARTIK:
-			
-			break;
+			return;
 		case MOTISMA:
-			
-			break;
+			return;
 		case CREHELF:
-			
-			break;
+			return;
 		case CREFOLLET:
-			
-			break;
+			return;
 		case CREFADET:
-			
-			break;
+			return;
 		case DIALGA:
-			
-			break;
+			return;
 		case PALKIA:
-			
-			break;
+			return;
 		case GIRATINA:
-			
-			break;
+			return;
 		case CRESSELIA:
-			
-			break;
+			return;
 		case PHIONE:
-			
-			break;
+			return;
 		case MANAPHY:
-			
-			break;
+			return;
 		case DARKRAI:
-			
-			break;
+			return;
 		case SHAYMIN:
-			
-			break;
+			return;
 		case ARCEUS:
-			
-			break;
+			return;
 		case VICTINI:
-			
-			break;
+			return;
 		case VIPELIERRE:
-			
-			break;
+			return;
 		case LIANAJA:
-			
-			break;
+			return;
 		case MAJASPIC:
-			
-			break;
+			return;
 		case GRUIKUI:
-			
-			break;
+			return;
 		case GROTICHON:
-			
-			break;
+			return;
 		case ROITIFLAM:
-			
-			break;
+			return;
 		case MOUSTILLON:
-			
-			break;
+			return;
 		case MATELOUTRE:
-			
-			break;
+			return;
 		case CLAMIRAL:
-			
-			break;
+			return;
 		case RATENTIF:
-			
-			break;
+			return;
 		case MIRADAR:
-			
-			break;
+			return;
 		case PONCHIOT:
-			
-			break;
+			return;
 		case PONCHIEN:
-			
-			break;
+			return;
 		case MASTOUFFE:
-			
-			break;
+			return;
 		case CHACRIPAN:
-			
-			break;
+			return;
 		case LEOPARDUS:
-			
-			break;
+			return;
 		case FEUILLAJOU:
-			
-			break;
+			return;
 		case FEUILOUTAN:
-			
-			break;
+			return;
 		case FLAMAJOU:
-			
-			break;
+			return;
 		case FLAMOUTAN:
-			
-			break;
+			return;
 		case FLOTAJOU:
-			
-			break;
+			return;
 		case FLOTOUTAN:
-			
-			break;
+			return;
 		case MUNNA:
-			
-			break;
+			return;
 		case MUSHANA:
-			
-			break;
+			return;
 		case POICHIGEON:
-			
-			break;
+			return;
 		case COLOMBEAU:
-			
-			break;
+			return;
 		case DEFLAISAN:
-			
-			break;
+			return;
 		case ZEBIBRON:
-			
-			break;
+			return;
 		case ZEBLITZ:
-			
-			break;
+			return;
 		case NODULITHE:
-			
-			break;
+			return;
 		case GEOLITHE:
-			
-			break;
+			return;
 		case GIGALITHE:
-			
-			break;
+			return;
 		case CHOVSOURIR:
-			
-			break;
+			return;
 		case RHINOLOVE:
-			
-			break;
+			return;
 		case ROTOTAUPE:
-			
-			break;
+			return;
 		case MINOTAUPE:
-			
-			break;
+			return;
 		case NANMEOUIE:
-			
-			break;
+			return;
 		case CHARPENTI:
-			
-			break;
+			return;
 		case OUVRIFIER:
-			
-			break;
+			return;
 		case BETOCHEF:
-			
-			break;
+			return;
 		case TRITONDE:
-			
-			break;
+			return;
 		case BATRACNE:
-			
-			break;
+			return;
 		case CRAPUSTULE:
-			
-			break;
+			return;
 		case JUDOKRAK:
-			
-			break;
+			return;
 		case KARACLEE:
-			
-			break;
+			return;
 		case LARVEYETTE:
-			
-			break;
+			return;
 		case COUVERDURE:
-			
-			break;
+			return;
 		case MANTERNEL:
-			
-			break;
+			return;
 		case VENIPATTE:
-			
-			break;
+			return;
 		case SCOBOLIDE:
-			
-			break;
+			return;
 		case BRUTAPODE:
-			
-			break;
+			return;
 		case DOUDOUVET:
-			
-			break;
+			return;
 		case FARFADUVET:
-			
-			break;
+			return;
 		case CHLOROBULE:
-			
-			break;
+			return;
 		case FRAGILADY:
-			
-			break;
+			return;
 		case BARGANTUA:
-			
-			break;
+			return;
 		case MASCAIMAN:
-			
-			break;
+			return;
 		case ESCROCO:
-			
-			break;
+			return;
 		case CROCORIBLE:
-			
-			break;
+			return;
 		case DARUMAROND:
-			
-			break;
+			return;
 		case DARUMACHO:
-			
-			break;
+			return;
 		case MARACACHI:
-			
-			break;
+			return;
 		case CRABICOQUE:
-			
-			break;
+			return;
 		case CRABARAQUE:
-			
-			break;
+			return;
 		case BAGGIGUANE:
-			
-			break;
+			return;
 		case BAGGAID:
-			
-			break;
+			return;
 		case CRYPTERO:
-			
-			break;
+			return;
 		case TUTAFEH:
-			
-			break;
+			return;
 		case TUTANKAFER:
-			
-			break;
+			return;
 		case CARAPAGOS:
-			
-			break;
+			return;
 		case MEGAPAGOS:
-			
-			break;
+			return;
 		case ARKEAPTI:
-			
-			break;
+			return;
 		case AEROPTERYX:
-			
-			break;
+			return;
 		case MIAMIASME:
-			
-			break;
+			return;
 		case MIASMAX:
-			
-			break;
+			return;
 		case ZORUA:
-			
-			break;
+			return;
 		case ZOROARK:
-			
-			break;
+			return;
 		case CHINCHIDOU:
-			
-			break;
+			return;
 		case PASHMILLA:
-			
-			break;
+			return;
 		case SCRUTELLA:
-			
-			break;
+			return;
 		case MESMERELLA:
-			
-			break;
+			return;
 		case SIDERELLA:
-			
-			break;
+			return;
 		case NUCLEOS:
-			
-			break;
+			return;
 		case MEIOS:
-			
-			break;
+			return;
 		case SYMBIOS:
-			
-			break;
+			return;
 		case COUANETON:
-			
-			break;
+			return;
 		case LAKMECYGNE:
-			
-			break;
+			return;
 		case SORBEBE:
-			
-			break;
+			return;
 		case SORBOUL:
-			
-			break;
+			return;
 		case SORBOUBOUL:
-			
-			break;
+			return;
 		case VIVALDAIM:
-			
-			break;
+			return;
 		case HAYDAIM:
-			
-			break;
+			return;
 		case EMOLGA:
-			
-			break;
+			return;
 		case CARABING:
-			
-			break;
+			return;
 		case LANCARGOT:
-			
-			break;
+			return;
 		case TROMPIGNON:
-			
-			break;
+			return;
 		case GAULET:
-			
-			break;
+			return;
 		case VISKUSE:
-			
-			break;
+			return;
 		case MOYADE:
-			
-			break;
+			return;
 		case MAMANBO:
-			
-			break;
+			return;
 		case STATITIK:
-			
-			break;
+			return;
 		case MYGAVOLT:
-			
-			break;
+			return;
 		case GRINDUR:
-			
-			break;
+			return;
 		case NOACIER:
-			
-			break;
+			return;
 		case TIC:
-			
-			break;
+			return;
 		case CLIC:
-			
-			break;
+			return;
 		case CLITICLIC:
-			
-			break;
+			return;
 		case ANCHWATT:
-			
-			break;
+			return;
 		case LAMPEROIE:
-			
-			break;
+			return;
 		case OHMASSACRE:
-			
-			break;
+			return;
 		case LEWSOR:
-			
-			break;
+			return;
 		case NEITRAM:
-			
-			break;
+			return;
 		case FUNECIRE:
-			
-			break;
+			return;
 		case MELANCOLUX:
-			
-			break;
+			return;
 		case LUGULABRE:
-			
-			break;
+			return;
 		case COUPENOTTE:
-			
-			break;
+			return;
 		case INCISACHE:
-			
-			break;
+			return;
 		case TRANCHODON:
-			
-			break;
+			return;
 		case POLARHUME:
-			
-			break;
+			return;
 		case POLAGRIFFE:
-			
-			break;
+			return;
 		case HEXAGEL:
-			
-			break;
+			return;
 		case ESCARGAUME:
-			
-			break;
+			return;
 		case LIMASPEED:
-			
-			break;
+			return;
 		case LIMONDE:
-			
-			break;
+			return;
 		case KUNGFOUINE:
-			
-			break;
+			return;
 		case SHAOFOUINE:
-			
-			break;
+			return;
 		case DRAKKARMIN:
-			
-			break;
+			return;
 		case GRINGOLEM:
-			
-			break;
+			return;
 		case GOLEMASTOC:
-			
-			break;
+			return;
 		case SCALPION:
-			
-			break;
+			return;
 		case SCALPROIE:
-			
-			break;
+			return;
 		case FRISON:
-			
-			break;
+			return;
 		case FURAIGLON:
-			
-			break;
+			return;
 		case GUERIAIGLE:
-			
-			break;
+			return;
 		case VOSTOURNO:
-			
-			break;
+			return;
 		case VAUTUTRICE:
-			
-			break;
+			return;
 		case AFLAMANOIR:
-			
-			break;
+			return;
 		case FERMITE:
-			
-			break;
+			return;
 		case SOLOCHI:
-			
-			break;
+			return;
 		case DIAMAT:
-			
-			break;
+			return;
 		case TRIOXHYDRE:
-			
-			break;
+			return;
 		case PYRONILLE:
-			
-			break;
+			return;
 		case PYRAX:
-			
-			break;
+			return;
 		case COBALTIUM:
-			
-			break;
+			return;
 		case TERRAKIUM:
-			
-			break;
+			return;
 		case VIRIDIUM:
-			
-			break;
+			return;
 		case BOREAS:
-			
-			break;
+			return;
 		case FULGURIS:
-			
-			break;
+			return;
 		case RESHIRAM:
-			
-			break;
+			return;
 		case ZEKROM:
-			
-			break;
+			return;
 		case DEMETEROS:
-			
-			break;
+			return;
 		case KYUREM:
-			
-			break;
+			return;
 		case KELDEO:
-			
-			break;
+			return;
 		case MELOETTA:
-			
-			break;
+			return;
 		case GENESECT:
-			
-			break;
+			return;
 		case MARISSON:
-			
-			break;
+			return;
 		case BOGUERISSE:
-			
-			break;
+			return;
 		case BLINDEPIQUE:
-			
-			break;
+			return;
 		case FEUNNEC:
-			
-			break;
+			return;
 		case ROUSSIL:
-			
-			break;
+			return;
 		case GOUPELIN:
-			
-			break;
+			return;
 		case GRENOUSSE:
-			
-			break;
+			return;
 		case CROAPORAL:
-			
-			break;
+			return;
 		case AMPHINOBI:
-			
-			break;
+			return;
 		case SAPEREAU:
-			
-			break;
+			return;
 		case EXCAVARENNE:
-			
-			break;
+			return;
 		case PASSEROUGE:
-			
-			break;
+			return;
 		case BRAISILLON:
-			
-			break;
+			return;
 		case FLAMBUSARD:
-			
-			break;
+			return;
 		case LEPIDONILLE:
-			
-			break;
+			return;
 		case PEREGRAIN:
-			
-			break;
+			return;
 		case PRISMILLON:
-			
-			break;
+			return;
 		case HELIONCEAU:
-			
-			break;
+			return;
 		case NEMELIOS:
-			
-			break;
+			return;
 		case FLABEBE:
-			
-			break;
+			return;
 		case FLOETTE:
-			
-			break;
+			return;
 		case FLORGES:
-			
-			break;
+			return;
 		case CABRIOLAINE:
-			
-			break;
+			return;
 		case CHEVROUM:
-			
-			break;
+			return;
 		case PANDESPIEGLE:
-			
-			break;
+			return;
 		case PANDARBARE:
-			
-			break;
+			return;
 		case COUAFAREL:
-			
-			break;
+			return;
 		case PSYSTIGRI:
-			
-			break;
+			return;
 		case MISTIGRIX:
-			
-			break;
+			return;
 		case MONORPALE:
-			
-			break;
+			return;
 		case DIMOCLES:
-			
-			break;
+			return;
 		case EXAGIDE:
-			
-			break;
+			return;
 		case FLUVETIN:
-			
-			break;
+			return;
 		case COCOTINE:
-			
-			break;
+			return;
 		case SUCROQUIN:
-			
-			break;
+			return;
 		case CUPCANAILLE:
-			
-			break;
+			return;
 		case SEPIATOP:
-			
-			break;
+			return;
 		case SEPIATROCE:
-			
-			break;
+			return;
 		case OPERMINE:
-			
-			break;
+			return;
 		case GOLGOPATHE:
-			
-			break;
+			return;
 		case VENALGUE:
-			
-			break;
+			return;
 		case KRAVARECH:
-			
-			break;
+			return;
 		case FLINGOUSTE:
-			
-			break;
+			return;
 		case GAMBLAST:
-			
-			break;
+			return;
 		case GALVARAN:
-			
-			break;
+			return;
 		case IGUOLTA:
-			
-			break;
+			return;
 		case PTYRANIDUR:
-			
-			break;
+			return;
 		case REXILIUS:
-			
-			break;
+			return;
 		case AMAGARA:
-			
-			break;
+			return;
 		case DRAGMARA:
-			
-			break;
+			return;
 		case NYMPHALI:
-			
-			break;
+			return;
 		case BRUTALIBRE:
-			
-			break;
+			return;
 		case DEDENNE:
-			
-			break;
+			return;
 		case STRASSIE:
-			
-			break;
+			return;
 		case MUCUSCULE:
-			
-			break;
+			return;
 		case COLIMUCUS:
-			
-			break;
+			return;
 		case MUPLODOCUS:
-			
-			break;
+			return;
 		case TROUSSELIN:
-			
-			break;
+			return;
 		case BROCELOME:
-			
-			break;
+			return;
 		case DESSELIANDE:
-			
-			break;
+			return;
 		case PITROUILLE:
-			
-			break;
+			return;
 		case BANSHITROUYE:
-			
-			break;
+			return;
 		case GRELACON:
-			
-			break;
+			return;
 		case SERACRAWL:
-			
-			break;
+			return;
 		case SONISTRELLE:
-			
-			break;
+			return;
 		case BRUYVERNE:
-			
-			break;
+			return;
 		case XERNEAS:
-			
-			break;
+			return;
 		case YVELTAL:
-			
-			break;
+			return;
 		case ZYGARDE:
-			
-			break;
+			return;
 		case DIANCIE:
-			
-			break;
+			return;
 		case HOOPA:
-			
-			break;
+			return;
 		case VOLCANION:
-			
-			break;
+			return;
 		default:
-			
-			break;
+			return;
 		}
 	*/
 	

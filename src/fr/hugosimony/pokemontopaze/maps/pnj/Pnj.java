@@ -7,7 +7,6 @@ import java.util.TimerTask;
 
 import javax.swing.JPanel;
 
-import fr.hugosimony.pokemontopaze.Const;
 import fr.hugosimony.pokemontopaze.Game;
 import fr.hugosimony.pokemontopaze.Variables;
 import fr.hugosimony.pokemontopaze.maps.Deplacement;
@@ -252,135 +251,7 @@ public class Pnj extends JPanel {
 	@Override
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
-		if(perso.equals("mom")) {
-			if(direction == Direction.UP) {
-				if(foot == 0)
-					g.drawImage(Const.momBack.getImage(), 0, 0, null);
-				else if(foot == 1)
-					g.drawImage(Const.momBackRight.getImage(), 0, 0, null);
-				else if(foot == 2)
-					g.drawImage(Const.momBackLeft.getImage(), 0, 0, null);
-			}
-			else if(direction == Direction.DOWN) {
-				if(foot == 0)
-					g.drawImage(Const.momFront.getImage(), 0, 0, null);
-				else if(foot == 1)
-					g.drawImage(Const.momFrontRight.getImage(), 0, 0, null);
-				else if(foot == 2)
-					g.drawImage(Const.momFrontLeft.getImage(), 0, 0, null);
-			}
-			else if(direction == Direction.LEFT) {
-				if(foot == 0)	
-					g.drawImage(Const.momLeft.getImage(), 0, 0, null);
-				else if(foot == 1)	
-					g.drawImage(Const.momLeftRight.getImage(), 0, 0, null);
-				else if(foot == 2)	
-					g.drawImage(Const.momLeftLeft.getImage(), 0, 0, null);
-				
-			}
-			else if(direction == Direction.RIGHT) {
-				if(foot == 0)	
-					g.drawImage(Const.momRight.getImage(), 0, 0, null);
-				else if(foot == 1)	
-					g.drawImage(Const.momRightRight.getImage(), 0, 0, null);
-				else if(foot == 2)	
-					g.drawImage(Const.momRightLeft.getImage(), 0, 0, null);
-			}
-		}
-		else if(perso.contains("brownboy")) {
-			if(direction == Direction.UP) {
-				if(foot == 0)
-					g.drawImage(Const.brownboyBack.getImage(), 0, 0, null);
-				else if(foot == 1)
-					g.drawImage(Const.brownboyBackRight.getImage(), 0, 0, null);
-				else if(foot == 2)
-					g.drawImage(Const.brownboyBackLeft.getImage(), 0, 0, null);
-			}
-			else if(direction == Direction.DOWN) {
-				if(foot == 0)
-					g.drawImage(Const.brownboyFront.getImage(), 0, 0, null);
-				else if(foot == 1)
-					g.drawImage(Const.brownboyFrontRight.getImage(), 0, 0, null);
-				else if(foot == 2)
-					g.drawImage(Const.brownboyFrontLeft.getImage(), 0, 0, null);
-			}
-			else if(direction == Direction.LEFT) {
-				if(foot == 0)	
-					g.drawImage(Const.brownboyLeft.getImage(), 0, 0, null);
-				else if(foot == 1)	
-					g.drawImage(Const.brownboyLeftRight.getImage(), 0, 0, null);
-				else if(foot == 2)	
-					g.drawImage(Const.brownboyLeftLeft.getImage(), 0, 0, null);
-				
-			}
-			else if(direction == Direction.RIGHT) {
-				if(foot == 0)	
-					g.drawImage(Const.brownboyRight.getImage(), 0, 0, null);
-				else if(foot == 1)	
-					g.drawImage(Const.brownboyRightRight.getImage(), 0, 0, null);
-				else if(foot == 2)	
-					g.drawImage(Const.brownboyRightLeft.getImage(), 0, 0, null);
-			}
-		}
-		else if(perso.contains("police")) {
-			if(direction == Direction.RIGHT) {
-				if(foot == 0)	
-					g.drawImage(Const.policeRight.getImage(), 0, 0, null);
-			}
-		}
-		else if(perso.contains("sellerboy")) {
-			if(direction == Direction.UP) {
-				if(foot == 0)	
-					g.drawImage(Const.sellerboyFront.getImage(), 0, 0, null);
-			}
-			else if(direction == Direction.DOWN) {
-				if(foot == 0)	
-					g.drawImage(Const.sellerboyBack.getImage(), 0, 0, null);
-			}
-			else if(direction == Direction.LEFT) {
-				if(foot == 0)	
-					g.drawImage(Const.sellerboyLeft.getImage(), 0, 0, null);
-			}
-			else if(direction == Direction.RIGHT) {
-				if(foot == 0)	
-					g.drawImage(Const.sellerboyRight.getImage(), 0, 0, null);
-			}
-		}
-		else if(perso.equals("profChen")) {
-			if(direction == Direction.UP) {
-				if(foot == 0)
-					g.drawImage(Const.profChenBack.getImage(), 0, 0, null);
-				else if(foot == 1)
-					g.drawImage(Const.profChenBackRight.getImage(), 0, 0, null);
-				else if(foot == 2)
-					g.drawImage(Const.profChenBackLeft.getImage(), 0, 0, null);
-			}
-			else if(direction == Direction.DOWN) {
-				if(foot == 0)
-					g.drawImage(Const.profChenFront.getImage(), 0, 0, null);
-				else if(foot == 1)
-					g.drawImage(Const.profChenFrontRight.getImage(), 0, 0, null);
-				else if(foot == 2)
-					g.drawImage(Const.profChenFrontLeft.getImage(), 0, 0, null);
-			}
-			else if(direction == Direction.LEFT) {
-				if(foot == 0)	
-					g.drawImage(Const.profChenLeft.getImage(), 0, 0, null);
-				else if(foot == 1)	
-					g.drawImage(Const.profChenLeftRight.getImage(), 0, 0, null);
-				else if(foot == 2)	
-					g.drawImage(Const.profChenLeftLeft.getImage(), 0, 0, null);
-				
-			}
-			else if(direction == Direction.RIGHT) {
-				if(foot == 0)	
-					g.drawImage(Const.profChenRight.getImage(), 0, 0, null);
-				else if(foot == 1)	
-					g.drawImage(Const.profChenRightRight.getImage(), 0, 0, null);
-				else if(foot == 2)	
-					g.drawImage(Const.profChenRightLeft.getImage(), 0, 0, null);
-			}
-		}
+		g.drawImage(PnjSprites.getGoodPnjSprite(perso, direction, foot), 0, 0, null);
 	}
 	
 	private boolean isAnyoneNear() {
