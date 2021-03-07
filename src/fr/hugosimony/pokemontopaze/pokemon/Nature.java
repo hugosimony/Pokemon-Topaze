@@ -2,7 +2,9 @@ package fr.hugosimony.pokemontopaze.pokemon;
 
 public enum Nature {
 	
-	BOLD, QUIRKY, BRAVE, CALM, QUIET, DOCILE, MILD, RASH, GENTLE, HARDY, JOLLY, LAX, IMPISH, SASSY, NAUGHTY, MODEST, NAIVE, HASTY, CAREFUL, BASHFUL, RELAXED, ADAMANT, SERIOUS, LONELY, TIMID;
+	BOLD, QUIRKY, BRAVE, CALM, QUIET, DOCILE, MILD, RASH, GENTLE, HARDY, JOLLY, LAX,
+	IMPISH, SASSY, NAUGHTY, MODEST, NAIVE, HASTY, CAREFUL, BASHFUL, RELAXED, ADAMANT,
+	SERIOUS, LONELY, TIMID;
 	
 	public static double getModifier(Nature nature, String stat) {
 		if(stat.equalsIgnoreCase("ATT")) {
