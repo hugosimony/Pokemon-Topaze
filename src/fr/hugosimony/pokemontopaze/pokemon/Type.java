@@ -25,7 +25,9 @@ public enum Type {
 	SPECIALE,
 	STATUT,
 	
-	AUCUN;
+	AUCUN,
+	
+	NULL;
 	
 	public static Type getTypeFromString(String type) {
 		if(type.equalsIgnoreCase("ACIER"))

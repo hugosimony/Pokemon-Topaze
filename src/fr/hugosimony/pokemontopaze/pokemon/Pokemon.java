@@ -95,6 +95,11 @@ public class Pokemon {
 	}
 	
 	private void levelUp() {
+		level++;
+		setStats();
+	}
+	
+	private void setStats() {
 		if(pokemon == PKM.MUNJA)
 			HP = 1;
 		else
