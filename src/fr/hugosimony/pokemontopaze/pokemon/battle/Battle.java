@@ -53,7 +53,7 @@ public class Battle extends JPanel {
 		add(pokemonButton);
 		add(runButton);
 		
-		Pokemon pokemon = new Pokemon(PKM.DRACAUFEU, "yes", null, 1, null, 10, 10, false, 10, 10, 10, 10, 10, 10, 10, null, null, null, null, null, null, "test", false);
+		Pokemon pokemon = new Pokemon(PKM.DRACAUFEU, "yes", null, 1, null, 10, 10, false, 10, 10, 10, 10, 10, 10, 10, null, null, null, null, null, null, "test", false, 1);
 		PokemonSprite sprite = new PokemonSprite(pokemon, false);
 		add(sprite);
 		sprite.setLocation(50, 50);

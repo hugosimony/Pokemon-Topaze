@@ -1,7 +1,11 @@
 package fr.hugosimony.pokemontopaze.pokemon;
 
+import java.util.ArrayList;
+import java.util.HashMap;
+
 import fr.hugosimony.pokemontopaze.pokemon.items.Item;
 import fr.hugosimony.pokemontopaze.pokemon.items.PokeBalls;
+import fr.hugosimony.pokemontopaze.utils.Utils;
 
 public class Pokemon {
 	
@@ -45,9 +49,28 @@ public class Pokemon {
 	private String catchDressorName;
 	public boolean shiny;
 	
+	private HashMap<Integer, ArrayList<Moves>> moveSetLvl;
+	private ArrayList<Moves> moveSetCT;
+	
 	private long ID;
 	
-	public Pokemon(PKM pokemon, String name, Nature nature, int gender, Ability ability, int level, int xp, boolean isKo, int HP, int currentHP, int ATK, int ATK_SPE, int DEF, int DEF_SPE, int SPEED, Move move1, Move move2, Move move3, Move move4, Item item, PokeBalls ball, String catchDressorName, boolean shiny) {
+	public Pokemon(PKM pokemon, int level, String item) {
+		// Generate a random pokemon
+		this.pokemon = pokemon;
+		this.name = PKM.getGoodName(pokemon);
+		this.level = level;
+		initEVs();
+		initIVs();
+		initNature();
+		setStats();
+		currentHP = HP;
+		
+		initMoves();
+		
+		ID = Utils.randomLongNumber(0, Long.MAX_VALUE);
+	}
+	
+	public Pokemon(PKM pokemon, String name, Nature nature, int gender, Ability ability, int level, int xp, boolean isKo, int HP, int currentHP, int ATK, int ATK_SPE, int DEF, int DEF_SPE, int SPEED, Move move1, Move move2, Move move3, Move move4, Item item, PokeBalls ball, String catchDressorName, boolean shiny, long ID) {
 		this.pokemon = pokemon;
 		this.name = name;
 		this.nature = nature;
@@ -71,6 +94,8 @@ public class Pokemon {
 		this.ball = ball;
 		this.catchDressorName = catchDressorName;
 		this.shiny = shiny;
+		
+		this.ID = ID;
 	}
 	
 	public void removeHP(int HP) {
@@ -99,6 +124,48 @@ public class Pokemon {
 	private void levelUp() {
 		level++;
 		setStats();
+	}
+	
+	private void initEVs() {
+		EV_PV = 0;
+		EV_ATK = 0;
+		EV_DEF = 0;
+		EV_ATK_SPE = 0;
+		EV_DEF_SPE = 0;
+		EV_SPEED = 0;
+	}
+	
+	private void initIVs() {
+		IV_PV = Utils.randomNumber(0, 31);
+		IV_ATK = Utils.randomNumber(0, 31);
+		IV_DEF = Utils.randomNumber(0, 31);
+		IV_ATK_SPE = Utils.randomNumber(0, 31);
+		IV_DEF_SPE = Utils.randomNumber(0, 31);
+		IV_SPEED = Utils.randomNumber(0, 31);
+	}
+	
+	private void initNature() {
+		int randomNature = Utils.randomNumber(0, 24);
+		nature = Nature.values()[randomNature];
+	}
+	
+	private void initMoves() {
+		String[] moves = PKM.getMoveSet(pokemon);
+		moveSetLvl = new HashMap<Integer, ArrayList<Moves>>();
+		moveSetCT = new ArrayList<Moves>();
+		String[] lvls = moves[0].split(",");
+		String[] cts = moves[1].split(",");
+		for(String lvl : lvls) {
+			String[] data = lvl.split(":");
+			int lvl_ = Integer.parseInt(data[0]);
+			ArrayList<Moves> a = new ArrayList<Moves>();
+			if(moveSetLvl.containsKey(lvl_))
+				a = moveSetLvl.get(lvl_);
+			a.add(Moves.valueOf(data[1]));
+			moveSetLvl.put(lvl_, a);
+		}
+		for(String ct : cts)
+			moveSetCT.add(Moves.valueOf(ct));
 	}
 	
 	private void setStats() {

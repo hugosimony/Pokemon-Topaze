@@ -1596,11 +1596,11 @@ public enum PKM {
 		case ARCEUS:
 			return new String[] {"493", "Normal", "NULL", "Alpha", "3.2", "320.0", "MULTI_TYPE", "NULL", "NULL", "INCONNU", "NULL", "30720", "255", "1 250 000", "0", "0", "3", "Dans la mythologie, ce Pokémon existait déjà avant la formation de l’univers."};
 		default:
-			return getPokemonData(pkm);
+			return getPokemonData2(pkm);
 		}
 	}
 	
-	public static String[] getPokemonData2(PKM pkm) {
+	private static String[] getPokemonData2(PKM pkm) {
 		
 		switch(pkm) {
 		
@@ -5962,7 +5962,7 @@ public enum PKM {
 		}
 	}
 	
-	public static String[] getMoveSet2(PKM pkm) {
+	private static String[] getMoveSet2(PKM pkm) {
 		
 		switch(pkm) {
 		

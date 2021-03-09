@@ -4,6 +4,11 @@ import java.awt.Image;
 
 public class Utils {
 
+	public static long randomLongNumber(long min, long max) {
+		// Return a random number between min and max (both included)
+		return (long) (Math.random() * (max-min+1)) + min;
+	}
+	
 	public static int randomNumber(int min, int max) {
 		// Return a random number between min and max (both included)
 		return (int) (Math.random() * (max-min+1)) + min;
