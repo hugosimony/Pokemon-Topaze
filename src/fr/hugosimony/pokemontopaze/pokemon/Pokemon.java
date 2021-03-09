@@ -45,6 +45,8 @@ public class Pokemon {
 	private String catchDressorName;
 	public boolean shiny;
 	
+	private long ID;
+	
 	public Pokemon(PKM pokemon, String name, Nature nature, int gender, Ability ability, int level, int xp, boolean isKo, int HP, int currentHP, int ATK, int ATK_SPE, int DEF, int DEF_SPE, int SPEED, Move move1, Move move2, Move move3, Move move4, Item item, PokeBalls ball, String catchDressorName, boolean shiny) {
 		this.pokemon = pokemon;
 		this.name = name;

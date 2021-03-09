@@ -46,7 +46,7 @@ public class PnjText {
 						+ "en arrière.";
 			if(Variables.ADVENTURE_Step == 8) {
 				return "Tu as donc choisi " + PKM.getStarterName(Variables.STARTER) + " != Très bon choix.\n="
-						+ "Prends en grand soin.+";
+						+ "Prends en grand soin.=+";
 			}
 		}
 		return "";
