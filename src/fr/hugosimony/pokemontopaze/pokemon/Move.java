@@ -2,6 +2,7 @@ package fr.hugosimony.pokemontopaze.pokemon;
 
 public class Move {
 
+	public Moves move;
 	public String name;
 	public String description;
 	public Type type;
@@ -12,6 +13,7 @@ public class Move {
 	
 	public Move(Moves move) {
 		
+		this.move = move;
 		String[] data = Moves.getMoveData(move);
 		name = data[0];
 		description = data[2];
