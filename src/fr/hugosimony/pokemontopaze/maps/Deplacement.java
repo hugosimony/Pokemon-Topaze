@@ -50,12 +50,11 @@ public class Deplacement {
 		this.mapLocationX = mapLocationX;
 		this.mapLocationY = mapLocationY;
 		this.direction = direction;
+		this.newDirection = direction;
 		
 		hero = new Hero(direction, 0, 1);
 		setSprites(direction, hero, true);
 		
-		direction = Direction.DOWN;
-		newDirection = Direction.DOWN;
 		pressed = new ArrayList<String>();
 		runDirection = 1;
 		
@@ -78,9 +77,8 @@ public class Deplacement {
 	}
 	
 	public static Direction getDirection(char c) {
-		if(c == 'u') {
+		if(c == 'u')
 			return Direction.UP;
-		}
 		if(c == 'd')
 			return Direction.DOWN;
 		if(c == 'l')

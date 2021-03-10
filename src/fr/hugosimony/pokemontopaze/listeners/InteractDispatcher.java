@@ -32,7 +32,6 @@ public class InteractDispatcher implements KeyEventDispatcher {
 		 if(originalPanel.isVisible()) {
 			 if(event.getID() == KeyEvent.KEY_PRESSED && game.deplacement.released && !Main.settingsOn && !game.inTransition && !game.inBattle) {
 				 int keyCode = event.getKeyCode();
-				 
 				 if(!game.inTextMenu && !game.inAnimation && !game.inXMenu && !game.inSaveMenu && (keyCode == Variables.CONTROLS_A)){
 					 IntTuple tuple = game.deplacement.getLookingTile();
 					 String text = "";
@@ -58,7 +57,7 @@ public class InteractDispatcher implements KeyEventDispatcher {
 								 pnj.clearIA();
 							 pnj.setSprites(new Pnj(game, pnj.perso, Direction.getOpositeDirection(game.deplacement.direction), 0, pnj.positionX, pnj.positionY, false, false, null, null, pnj.paraClick, pnj.mooving));
 							 
-							 //new TransitionSimple(game, game.gamePanel, new Battle(game, "test", "Water1", "good", game.actualPanel));
+							 new TransitionSimple(game, game.gamePanel, new Battle(game, "test", "Water1", "good", game.actualPanel));
 						 }
 					 }
 					

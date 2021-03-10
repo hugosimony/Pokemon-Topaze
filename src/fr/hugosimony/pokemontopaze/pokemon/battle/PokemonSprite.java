@@ -20,22 +20,26 @@ import javax.swing.JPanel;
 
 import fr.hugosimony.pokemontopaze.Main;
 
-class PokemonPanel extends JPanel {
+class PokemonSprite extends JPanel {
 	private static final long serialVersionUID = 1L;
 
-	private BufferedImage[] test;
+	private BufferedImage[] images;
 	private int x = 0;
 	
-	public PokemonPanel(String gif) throws IOException {
+	public PokemonSprite(String gif) throws IOException {
 		
+		images = readGifImages(Main.class.getResourceAsStream(gif));
+        int delay = getDelay(Main.class.getResourceAsStream(gif));
 		
-        test = readGifImages(Main.class.getResourceAsStream(gif + ".gif"));
-        int delay = getDelay(Main.class.getResourceAsStream(gif + ".gif"));
+		setOpaque(false);
+		setVisible(true);
+		setSize(300, 300);
+		
 		new Timer().schedule(new TimerTask() {
 			@Override
 			public void run() {
 				x++;
-				if(x < test.length)
+				if(x < images.length)
 					repaint();
 				else {
 					x = 0;
@@ -48,7 +52,7 @@ class PokemonPanel extends JPanel {
 	@Override
 	public void paint(Graphics g) {
 	    super.paint(g);
-	    g.drawImage(test[x], 0, 0, 300, 300, this);
+	    g.drawImage(images[x], 0, 0, 100, 100, this);
 	}
 	
 	public static BufferedImage[] readGifImages(InputStream is) throws IOException{

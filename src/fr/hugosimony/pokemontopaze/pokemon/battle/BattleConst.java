@@ -39,12 +39,12 @@ public class BattleConst {
 		return new ImageIcon(Main.class.getResource(spritePath + pokemon.toString() + ".gif"));
 	}
 	
-	public static ImageIcon getAnimatedSprite(Pokemon pokemon, boolean back) {
+	public static String getAnimatedSprite(Pokemon pokemon, boolean back) {
 		String side = back ? "2" : "1";
 		String shiny = pokemon.shiny ? "S" : "";
 		if(pokemon.gender == 2 && Main.class.getResource(spritePath + pokemon.pokemon.toString() + side + "F.gif") != null)
-			return new ImageIcon(Main.class.getResource(spritePath + pokemon.pokemon.toString() + side + "F" + shiny + ".gif"));
-		return new ImageIcon(Main.class.getResource(spritePath + pokemon.pokemon.toString() + side + "M" + shiny + ".gif"));
+			return spritePath + pokemon.pokemon.toString() + side + "F" + shiny + ".gif";
+		return spritePath + pokemon.pokemon.toString() + side + "M" + shiny + ".gif";
 	}
 	
 }

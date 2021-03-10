@@ -1378,7 +1378,7 @@ public enum Moves {
 		case ZONE_MAGIQUE:
 			return new String[] {"Zone Magique", "PSY", "Le lanceur crée une zone mystérieuse où les objets tenus par tous les Pokémon n'ont plus aucun effet pendant 5 tours.", "-", "-", "10", "STATUT"};
 		default:
-			return null;
+			return new String[] {"NULL", "NULL", "NULL", "-1", "-1", "-1", "NULL"};
 		}
 	}
 	

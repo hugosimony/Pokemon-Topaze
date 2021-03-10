@@ -2061,7 +2061,7 @@ public enum PKM {
 		case VOLCANION:
 			return new String[] {"721", "Feu", "Eau", "Vapeur", "1.7", "195.0", "ABSORB_EAU", "NULL", "NULL", "INCONNU", "NULL", "30720", "300", "1 250 000", "0", "0", "3", "Il évacue la vapeur qui s’accumule à l’intérieur de son corps par les bras situés sur son dos. Ce jet est assez puissant pour raser des montagnes."};
 		default:
-			return null;
+			return new String[] {"-1", "NULL", "NULL", "NULL", "-1", "-1", "NULL", "NULL", "NULL", "NULL", "NULL", "-1", "-1", "-1", "-1", "-1", "-1", "NULL"};
 		}
 	}
 	
@@ -3512,7 +3512,7 @@ public enum PKM {
 		case VOLCANION:
 			return new int[] {80, 110, 120, 130, 90, 70};
 		default:
-			return null;
+			return new int[] {-1, -1, -1, -1, -1, -1};
 		}
 	}
 	
@@ -4963,7 +4963,7 @@ public enum PKM {
 		case VOLCANION:
 			return new int[] {0, 0, 0, 3, 0, 0};
 		default:
-			return null;
+			return new int[] {-1, -1, -1, -1, -1, -1};
 		}
 	}
 	
@@ -6423,7 +6423,7 @@ public enum PKM {
 		case VOLCANION:
 			return new String[] {"1:BELIER,8:BRUME,11:BUEE_NOIRE,15:NITROCHARGE,21:VIBRAQUA,28:ECRASEMENT,32:EBULLITION,40:BALL_METEO,46:PLAQUAGE,50:HYDROCANON,58:BOUTEFEU,65:SURCHAUFFE,76:EXPLOSION,85:JET_DE_VAPEUR", "ABRI,ANTI_AIR,BLABLA_DODO,BOMBE_BEURK,CASSE_BRIQUE,CHANT_CANON,CLONAGE,CONFIDENCE,CRADOVAGUE,DEFLAGRATION,DEGOMMAGE,EBOULEMENT,EBULLITION,EXPLOFORCE,EXPLOSION,FACADE,FEU_FOLLET,FRUSTRATION,GIGA_IMPACT,GYROBALLE,HURLEMENT,LAME_DE_ROC,LANCE_FLAMME,LANCE_SOLEIL,LUMINOCANON,NITROCHARGE,PIETISOL,PUIS_CACHEE,REFLET,REPOS,RETOUR,SEISME,SURCHAUFFE,TEMPETE_DE_SABLE,TOXIK,ULTRALASER,VANTARDISE,ZENITH"};
 		default:
-			return null;
+			return new String[] {"-1:NULL", "NULL"};
 		}
 	}
 	

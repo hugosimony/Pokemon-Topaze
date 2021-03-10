@@ -163,14 +163,14 @@ public class Pokemon {
 		}
 		// Gender
 		gender = 0;
-		int probaBoy = Integer.parseInt(datas[14]);
-		int probaGirl = Integer.parseInt(datas[15]);
+		double probaBoy = Double.parseDouble(datas[14]);
+		double probaGirl = Double.parseDouble(datas[15]);
 		if(probaBoy != 0 || probaGirl != 0) {
 			if(probaBoy == 0)
 				gender = 2;
 			else {
-				random = Utils.randomNumber(1, 100);
-				if(random <= probaBoy)
+				random = Utils.randomNumber(1, 1000);
+				if(random <= probaBoy*10)
 					gender = 1;
 				else
 					gender = 2;

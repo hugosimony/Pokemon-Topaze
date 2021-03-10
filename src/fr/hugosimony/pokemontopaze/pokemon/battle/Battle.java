@@ -1,6 +1,7 @@
 package fr.hugosimony.pokemontopaze.pokemon.battle;
 
 import java.awt.Graphics;
+import java.io.IOException;
 import java.util.Timer;
 import java.util.TimerTask;
 
@@ -11,6 +12,7 @@ import javax.swing.JPanel;
 import fr.hugosimony.pokemontopaze.Game;
 import fr.hugosimony.pokemontopaze.pokemon.PKM;
 import fr.hugosimony.pokemontopaze.pokemon.Pokemon;
+import fr.hugosimony.pokemontopaze.utils.Utils;
 
 public class Battle extends JPanel {
 	private static final long serialVersionUID = 1L;
@@ -53,10 +55,21 @@ public class Battle extends JPanel {
 		add(pokemonButton);
 		add(runButton);
 		
-		Pokemon pokemon = new Pokemon(PKM.DRACAUFEU, "yes", null, 1, null, 10, 10, false, 10, 10, 10, 10, 10, 10, 10, null, null, null, null, null, null, "test", false, 1);
-		PokemonSprite sprite = new PokemonSprite(pokemon, false);
-		add(sprite);
-		sprite.setLocation(50, 50);
+		Pokemon pokemon1 = new Pokemon(PKM.values()[Utils.randomNumber(150)], 50, "");
+		Pokemon pokemon2= new Pokemon(PKM.values()[Utils.randomNumber(150)], 50, "");
+		try {
+			PokemonSprite sprite1 = new PokemonSprite(BattleConst.getAnimatedSprite(pokemon1, false));
+			sprite1.setLocation(575, 75);
+			sprite1.setSize(100, 100);
+			add(sprite1);
+			PokemonSprite sprite2 = new PokemonSprite(BattleConst.getAnimatedSprite(pokemon2, true));
+			sprite2.setLocation(75, 275);
+			sprite2.setSize(100, 100);
+			add(sprite2);
+		} catch (IOException e) {System.out.println("coucou");}
+		
+
+		repaint();
 	}
 	
 	@Override
@@ -64,30 +77,4 @@ public class Battle extends JPanel {
 		super.paintComponent(g);
 		g.drawImage(BattleConst.getBackground(background).getImage(), 0, 0, null);
 	}
-	
-	private class PokemonSprite extends JLabel {
-		private static final long serialVersionUID = 1L;
-		
-		PokemonSprite pkm;
-		Pokemon pokemon;
-		boolean back;
-		
-		public PokemonSprite(Pokemon pokemon, boolean back) {
-			pkm = this;
-			this.pokemon = pokemon;
-			this.back = back;
-			//setSize(1000, 1000);
-			//setOpaque(false);
-			//setVisible(true);
-			setIcon(BattleConst.getAnimatedSprite(pokemon, back));
-		}
-		
-		/*@Override
-		public void paintComponent(Graphics g) {
-			super.paintComponent(g);
-			g.drawImage(BattleConst.getAnimatedSprite(pokemon, back).getImage(), 0, 0, this);
-		}*/
-		
-	}
-	
 }

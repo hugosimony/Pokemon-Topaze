@@ -425,7 +425,7 @@ public enum Abilities {
 		case TOISON_HERBUE:
 			return new String[] {"Toison Herbue", "Augmente la Défense lorsque Champ Herbu est en vigueur.", "-"};
 		default:
-			return null;
+			return new String[] {"NULL", "NULL", "NULL"};
 		}
 	}
 	

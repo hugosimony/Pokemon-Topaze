@@ -11,6 +11,7 @@ public class BattleButtons {
 			setSize(195, 118);
 			setIcon(BattleConst.bagButton);
 			setBorderPainted(false);
+			setFocusable(false);
 		}
 		
 	}
@@ -22,6 +23,7 @@ public class BattleButtons {
 			setSize(190, 118);
 			setIcon(BattleConst.fightButton);
 			setBorderPainted(false);
+			setFocusable(false);
 		}
 		
 	}
@@ -33,6 +35,7 @@ public class BattleButtons {
 			setSize(195, 118);
 			setIcon(BattleConst.pokemonButton);
 			setBorderPainted(false);
+			setFocusable(false);
 		}
 		
 	}
@@ -44,6 +47,7 @@ public class BattleButtons {
 			setSize(190, 118);
 			setIcon(BattleConst.runButton);
 			setBorderPainted(false);
+			setFocusable(false);
 		}
 	}
 	
