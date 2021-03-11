@@ -60,7 +60,7 @@ public class Game extends JFrame {
 	public ArrayList<Pnj> pnjs = new ArrayList<Pnj>();
 	public ArrayList<IntTriple> herbs = new ArrayList<IntTriple>();
 	
-	private Settings settings;
+	public Settings settings;
 	
 	public Timer timer;
 	
@@ -113,6 +113,10 @@ public class Game extends JFrame {
 		gamePanel.setBackground(new Color(0, 0, 0));
 		setBackground(new Color(0, 0, 0));
 		add(gamePanel);
+		
+		settings = new Settings();
+		settings.setVisible(false);
+		settings.dispose();
 		
 		actualPanel = gamePanel;
 		
@@ -263,7 +267,7 @@ public class Game extends JFrame {
         @Override
         public boolean dispatchKeyEvent(KeyEvent event) {
         	
-        	if(isVisible() && actualPanel.isVisible() && !Main.settingsOn && !inTextMenu && actualPanel != gamePanel) {
+        	if(!Main.settingsOn && isVisible() && actualPanel.isVisible() && !inTextMenu && actualPanel != gamePanel) {
         		if(event.getID() == KeyEvent.KEY_PRESSED && game.deplacement.released) {
         			int keyCode = event.getKeyCode();
         			if((keyCode == KeyEvent.VK_ESCAPE || keyCode == Variables.CONTROLS_Options)) {
@@ -273,7 +277,18 @@ public class Game extends JFrame {
         			}
         		}
         	}
-        	else if(isVisible() && Main.settingsOn && event.getID() == KeyEvent.KEY_PRESSED && event.getKeyCode() == KeyEvent.VK_ESCAPE) {
+        	else if(!Main.settingsOn && isVisible() && actualPanel.isVisible() && actualPanel == gamePanel) {
+        		if(event.getID() == KeyEvent.KEY_PRESSED) {
+        			int keyCode = event.getKeyCode();
+        			if((keyCode == KeyEvent.VK_ESCAPE || keyCode == Variables.CONTROLS_Options)) {
+                		Main.settingsOn = true;
+                		settings = new Settings();
+                		settings.setVisible(true);
+        			}
+        		}
+        	}
+        	else if(isVisible() && Main.settingsOn && event.getID() == KeyEvent.KEY_PRESSED && 
+        			(event.getKeyCode() == KeyEvent.VK_ESCAPE || event.getKeyCode() == Variables.CONTROLS_Options)) {
 				Main.settingsOn = false;
 				game.settings.dispose();
         	}

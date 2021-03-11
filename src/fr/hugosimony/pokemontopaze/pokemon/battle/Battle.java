@@ -1,5 +1,6 @@
 package fr.hugosimony.pokemontopaze.pokemon.battle;
 
+import java.awt.Color;
 import java.awt.Graphics;
 import java.io.IOException;
 import java.util.Timer;
@@ -33,6 +34,7 @@ public class Battle extends JPanel {
 		
 		this.game = game;
 		game.battle = this;
+		setBackground(Color.black);
 		
 		this.opponent = opponent;
 		this.background = background;

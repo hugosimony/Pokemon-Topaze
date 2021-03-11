@@ -26,7 +26,6 @@ import javax.swing.JTextField;
 import fr.hugosimony.pokemontopaze.Const;
 import fr.hugosimony.pokemontopaze.Game;
 import fr.hugosimony.pokemontopaze.Main;
-import fr.hugosimony.pokemontopaze.Settings;
 import fr.hugosimony.pokemontopaze.Variables;
 import fr.hugosimony.pokemontopaze.maps.Direction;
 import fr.hugosimony.pokemontopaze.maps.houses.selenia.MyHouse;
@@ -653,11 +652,6 @@ public class PresentationProf extends JPanel {
                 				Timer timer = new Timer();
                 				timer.schedule(new SpeechProf(), 0, (long) Variables.SPEED_TEXT);
                 			}
-                    	}
-                    	else if(keyCode == KeyEvent.VK_ESCAPE || keyCode == Variables.CONTROLS_Options) {
-                    		Main.settingsOn = true;
-                    		Settings settings = new Settings();
-                    		settings.setVisible(true);
                     	}
         			}
         		}

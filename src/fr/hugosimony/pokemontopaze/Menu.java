@@ -42,6 +42,8 @@ public class Menu extends JFrame {
 	private JButton game2;
 	private JButton game3;
 	
+	private Settings settings;
+	
 	private final Font newGameFont = new Font("Comic Sans MS", Font.ITALIC, 60);
 	private final Font loadGameFont = new Font("Comic Sans MS", Font.ITALIC, 20);
 	
@@ -281,12 +283,18 @@ public class Menu extends JFrame {
                 		if(selectedGame < 1)
                 			selectedGame = 3;
                 	}
-                	else if(keyCode == KeyEvent.VK_ESCAPE || keyCode == Variables.CONTROLS_Options) {
+                	else if(!Main.settingsOn && (keyCode == KeyEvent.VK_ESCAPE || keyCode == Variables.CONTROLS_Options)) {
                 		Main.settingsOn = true;
-                		Settings settings = new Settings();
+                		settings = new Settings();
                 		settings.setVisible(true);
+                		System.out.println("oucouc");
                 	}
                 }
+        	}
+        	else if(menu.isVisible() && Main.settingsOn && event.getID() == KeyEvent.KEY_PRESSED && 
+        			(event.getKeyCode() == KeyEvent.VK_ESCAPE || event.getKeyCode() == Variables.CONTROLS_Options)) {
+        		Main.settingsOn = false;
+        		settings.dispose();
         	}
             return false;
         }
