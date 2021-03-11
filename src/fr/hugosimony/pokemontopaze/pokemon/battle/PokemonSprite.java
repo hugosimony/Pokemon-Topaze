@@ -16,35 +16,52 @@ import javax.imageio.ImageReader;
 import javax.imageio.metadata.IIOMetadata;
 import javax.imageio.metadata.IIOMetadataNode;
 import javax.imageio.stream.ImageInputStream;
+import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
 import fr.hugosimony.pokemontopaze.Main;
+import fr.hugosimony.pokemontopaze.pokemon.Pokemon;
 
-class PokemonSprite extends JPanel {
+public class PokemonSprite extends JPanel {
 	private static final long serialVersionUID = 1L;
 
 	private BufferedImage[] images;
 	private int x = 0;
+	private ImageIcon img;
+	private boolean back;
 	
-	public PokemonSprite(String gif) throws IOException {
+	public PokemonSprite(Pokemon pokemon, boolean back) throws IOException {
 		
-		images = readGifImages(Main.class.getResourceAsStream(gif));
-        int delay = getDelay(Main.class.getResourceAsStream(gif));
+		String path = BattleConst.getAnimatedSprite(pokemon, back);
+		images = readGifImages(Main.class.getResourceAsStream(path));
+        int delay = getDelay(Main.class.getResourceAsStream(path));
 		
+        img = new ImageIcon(Main.class.getResource(path));
+        this.back = back;
+        
 		setOpaque(false);
 		setVisible(true);
-		setSize(300, 300);
+		setSize((int) (img.getIconWidth()*1.5), (int) (img.getIconHeight()*1.5));
+		setLocation(620 - (int) ((img.getIconWidth()*1.5) / 2), 210 - (int) (img.getIconHeight()*1.5));
+		if(back) {
+			setSize((int) (img.getIconWidth()*1.8), (int) (img.getIconHeight()*1.8));
+			setLocation(160 - (int) ((img.getIconWidth()*1.8) / 2), 390 - (int) (img.getIconHeight()*1.8));
+		}
 		
 		new Timer().schedule(new TimerTask() {
 			@Override
 			public void run() {
-				x++;
-				if(x < images.length)
-					repaint();
-				else {
-					x = 0;
-					repaint();
+				if(isVisible()) {
+					x++;
+					if(x < images.length)
+						repaint();
+					else {
+						x = 0;
+						repaint();
+					}
 				}
+				else
+					this.cancel();
 			}
 		}, 0, delay * 10);
 	}
@@ -52,7 +69,10 @@ class PokemonSprite extends JPanel {
 	@Override
 	public void paint(Graphics g) {
 	    super.paint(g);
-	    g.drawImage(images[x], 0, 0, 100, 100, this);
+	    if(back)
+	    	g.drawImage(images[x], 0, 0, (int) (img.getIconWidth()*1.8), (int) (img.getIconHeight()*1.8), this);
+	    else
+	    	g.drawImage(images[x], 0, 0, (int) (img.getIconWidth()*1.5), (int) (img.getIconHeight()*1.5), this);
 	}
 	
 	public static BufferedImage[] readGifImages(InputStream is) throws IOException{

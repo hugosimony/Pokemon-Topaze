@@ -2,6 +2,7 @@ package fr.hugosimony.pokemontopaze.listeners;
 
 import java.awt.KeyEventDispatcher;
 import java.awt.event.KeyEvent;
+import java.io.IOException;
 
 import javax.swing.JPanel;
 
@@ -12,7 +13,10 @@ import fr.hugosimony.pokemontopaze.maps.Direction;
 import fr.hugosimony.pokemontopaze.maps.pnj.Pnj;
 import fr.hugosimony.pokemontopaze.maps.pnj.PnjText;
 import fr.hugosimony.pokemontopaze.menus.TextZone;
+import fr.hugosimony.pokemontopaze.pokemon.PKM;
+import fr.hugosimony.pokemontopaze.pokemon.Pokemon;
 import fr.hugosimony.pokemontopaze.pokemon.battle.Battle;
+import fr.hugosimony.pokemontopaze.pokemon.battle.PokemonSprite;
 import fr.hugosimony.pokemontopaze.transitions.TransitionSimple;
 import fr.hugosimony.pokemontopaze.utils.IntTuple;
 
@@ -57,7 +61,7 @@ public class InteractDispatcher implements KeyEventDispatcher {
 								 pnj.clearIA();
 							 pnj.setSprites(new Pnj(game, pnj.perso, Direction.getOpositeDirection(game.deplacement.direction), 0, pnj.positionX, pnj.positionY, false, false, null, null, pnj.paraClick, pnj.mooving));
 							 
-							 new TransitionSimple(game, game.gamePanel, new Battle(game, "test", "Water1", "good", game.actualPanel));
+							 new TransitionSimple(game, game.gamePanel, new Battle(game, "test", "Water2", "good", game.actualPanel));
 						 }
 					 }
 					
@@ -65,6 +69,26 @@ public class InteractDispatcher implements KeyEventDispatcher {
 						 game.textZone = new TextZone(game.actualPanel, text);
 						 TextZone.printTextZone(game.textZone, game);
 					 }
+				 }
+			 }
+			 // DEBUG
+			 if(event.getID() == KeyEvent.KEY_PRESSED && game.inBattle) {
+				 int keyCode = event.getKeyCode();
+				 if(keyCode == KeyEvent.VK_A) {
+					 game.battle.x++;
+					 game.battle.remove(game.battle.sprite1);
+					 game.battle.remove(game.battle.sprite2);
+					 game.battle.repaint();
+					 game.battle.sprite1.setVisible(false);
+					 game.battle.sprite2.setVisible(false);
+					 Pokemon pokemon1 = new Pokemon(PKM.values()[game.battle.x], 50, "");
+					 Pokemon pokemon2 = new Pokemon(PKM.values()[game.battle.x], 50, "");
+					 try {
+						 game.battle.sprite1 = new PokemonSprite(pokemon1, false);
+						 game.battle.add(game.battle.sprite1);
+						 game.battle.sprite2 = new PokemonSprite(pokemon2, true);
+						 game.battle.add(game.battle.sprite2);
+					 } catch (IOException e) {}
 				 }
 			 }
 		 }

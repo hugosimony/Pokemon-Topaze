@@ -207,19 +207,23 @@ public class Pokemon {
 		String[] moves = PKM.getMoveSet(pokemon);
 		moveSetLvl = new HashMap<Integer, ArrayList<Moves>>();
 		moveSetCT = new ArrayList<Moves>();
-		String[] lvls = moves[0].split(",");
-		String[] cts = moves[1].split(",");
-		for(String lvl : lvls) {
-			String[] data = lvl.split(":");
-			int lvl_ = Integer.parseInt(data[0]);
-			ArrayList<Moves> a = new ArrayList<Moves>();
-			if(moveSetLvl.containsKey(lvl_))
-				a = moveSetLvl.get(lvl_);
-			a.add(Moves.valueOf(data[1]));
-			moveSetLvl.put(lvl_, a);
+		if(!moves[0].equals("")) {
+			String[] lvls = moves[0].split(",");
+			for(String lvl : lvls) {
+				String[] data = lvl.split(":");
+				int lvl_ = Integer.parseInt(data[0]);
+				ArrayList<Moves> a = new ArrayList<Moves>();
+				if(moveSetLvl.containsKey(lvl_))
+					a = moveSetLvl.get(lvl_);
+				a.add(Moves.valueOf(data[1]));
+				moveSetLvl.put(lvl_, a);
+			}
 		}
-		for(String ct : cts)
-			moveSetCT.add(Moves.valueOf(ct));
+		if(!moves[1].equals("")) {
+			String[] cts = moves[1].split(",");
+			for(String ct : cts)
+				moveSetCT.add(Moves.valueOf(ct));
+		}
 	}
 	
 	private void initMoves() {

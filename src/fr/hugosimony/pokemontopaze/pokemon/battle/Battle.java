@@ -25,9 +25,14 @@ public class Battle extends JPanel {
 	
 	private JPanel savedMap;
 	
+	public PokemonSprite sprite1;
+	public PokemonSprite sprite2;
+	public int x = 0;
+	
 	public Battle(Game game, String opponent, String background, String weather, JPanel savedMap) {
 		
 		this.game = game;
+		game.battle = this;
 		
 		this.opponent = opponent;
 		this.background = background;
@@ -55,20 +60,17 @@ public class Battle extends JPanel {
 		add(pokemonButton);
 		add(runButton);
 		
-		Pokemon pokemon1 = new Pokemon(PKM.values()[Utils.randomNumber(150)], 50, "");
-		Pokemon pokemon2= new Pokemon(PKM.values()[Utils.randomNumber(150)], 50, "");
+		//Pokemon pokemon1 = new Pokemon(PKM.values()[Utils.randomNumber(150)], 50, "");
+		//Pokemon pokemon2= new Pokemon(PKM.values()[Utils.randomNumber(150)], 50, "");
+		Pokemon pokemon1 = new Pokemon(PKM.values()[x], 50, "");
+		Pokemon pokemon2 = new Pokemon(PKM.values()[x], 50, "");
 		try {
-			PokemonSprite sprite1 = new PokemonSprite(BattleConst.getAnimatedSprite(pokemon1, false));
-			sprite1.setLocation(575, 75);
-			sprite1.setSize(100, 100);
+			sprite1 = new PokemonSprite(pokemon1, false);
 			add(sprite1);
-			PokemonSprite sprite2 = new PokemonSprite(BattleConst.getAnimatedSprite(pokemon2, true));
-			sprite2.setLocation(75, 275);
-			sprite2.setSize(100, 100);
+			sprite2 = new PokemonSprite(pokemon2, true);
 			add(sprite2);
-		} catch (IOException e) {System.out.println("coucou");}
+		} catch (IOException e) {}
 		
-
 		repaint();
 	}
 	
