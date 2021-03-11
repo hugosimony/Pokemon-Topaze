@@ -61,7 +61,7 @@ public class InteractDispatcher implements KeyEventDispatcher {
 								 pnj.clearIA();
 							 pnj.setSprites(new Pnj(game, pnj.perso, Direction.getOpositeDirection(game.deplacement.direction), 0, pnj.positionX, pnj.positionY, false, false, null, null, pnj.paraClick, pnj.mooving));
 							 
-							 new TransitionSimple(game, game.gamePanel, new Battle(game, "test", "Water2", "good", game.actualPanel));
+							 new TransitionSimple(game, game.gamePanel, new Battle(game, "test", "CaveWater3", "good", game.actualPanel));
 						 }
 					 }
 					

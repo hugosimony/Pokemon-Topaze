@@ -3,17 +3,13 @@ package fr.hugosimony.pokemontopaze.pokemon.battle;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.io.IOException;
-import java.util.Timer;
-import java.util.TimerTask;
 
 import javax.swing.JButton;
-import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import fr.hugosimony.pokemontopaze.Game;
 import fr.hugosimony.pokemontopaze.pokemon.PKM;
 import fr.hugosimony.pokemontopaze.pokemon.Pokemon;
-import fr.hugosimony.pokemontopaze.utils.Utils;
 
 public class Battle extends JPanel {
 	private static final long serialVersionUID = 1L;
@@ -34,7 +30,7 @@ public class Battle extends JPanel {
 		
 		this.game = game;
 		game.battle = this;
-		setBackground(Color.black);
+		setBackground(new Color(0, 0, 0));
 		
 		this.opponent = opponent;
 		this.background = background;
