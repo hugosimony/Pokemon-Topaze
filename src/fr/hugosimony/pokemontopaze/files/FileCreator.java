@@ -68,7 +68,8 @@ public class FileCreator {
 			if(first)
 				writer.print("Ground Items :\n"
 						+ "ab\n"
-						+ "a");
+						+ "a"
+						+ "ab");
 			else
 				writer.print("Settings :");
 			writer.close();

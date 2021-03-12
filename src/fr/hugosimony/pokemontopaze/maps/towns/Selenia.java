@@ -27,7 +27,7 @@ import fr.hugosimony.pokemontopaze.maps.Places;
 import fr.hugosimony.pokemontopaze.maps.houses.selenia.MyHouse;
 import fr.hugosimony.pokemontopaze.maps.items.GroundItem;
 import fr.hugosimony.pokemontopaze.maps.pnj.Pnj;
-import fr.hugosimony.pokemontopaze.maps.towns.intertowns.Intertown1;
+import fr.hugosimony.pokemontopaze.maps.towns.intertowns.Intertown01;
 import fr.hugosimony.pokemontopaze.sounds.Sounds;
 import fr.hugosimony.pokemontopaze.transitions.TransitionSimple;
 import fr.hugosimony.pokemontopaze.utils.IntTuple;
@@ -40,7 +40,7 @@ public class Selenia extends JPanel {
 	private Clip clipSeleniaTheme;
 	
 	private IntTuple toMyHouse;
-	private IntTuple toLeaveTown;
+	private IntTuple toIntertown01;
 
 	private Pnj police001;
 	
@@ -58,7 +58,7 @@ public class Selenia extends JPanel {
 		setWalls();
 		setPnjs();
 		toMyHouse = new IntTuple(1248, 1162);
-		toLeaveTown = new IntTuple(2016, 1258);
+		toIntertown01 = new IntTuple(2016, 1258);
 		
 		setLayout(null);
 		setBackground(new Color(0, 0, 0));
@@ -140,7 +140,7 @@ public class Selenia extends JPanel {
 		game.walls = new ArrayList<IntTuple>();
 		
 		if(Variables.GROUND_ITEMS_Selenia.contains("1"))
-			game.clickableTiles.add(new IntTuple(1024, 1290));
+			game.walls.add(new IntTuple(1024, 1290));
 		
 		game.walls.add(new IntTuple(1216, 1194));
 		game.walls.add(new IntTuple(1184, 1194));
@@ -381,17 +381,17 @@ public class Selenia extends JPanel {
 		
 		if(isVisible()){
 			
-			if(game.deplacement.getLookingTile().equals(toMyHouse) || game.deplacement.getLookingTile().equals(toLeaveTown)) {
+			if(game.deplacement.getLookingTile().equals(toMyHouse) || game.deplacement.getLookingTile().equals(toIntertown01)) {
 				 game.deplacement.hero.setVisible(false);
 				 setVisible(false);
-				 if(game.deplacement.getLookingTile().equals(toMyHouse) || game.deplacement.getLookingTile().equals(toLeaveTown))
+				 if(game.deplacement.getLookingTile().equals(toMyHouse) || game.deplacement.getLookingTile().equals(toIntertown01))
 					 Sounds.playSound(Const.soundEnterHouse);
 				 Main.actualClip.close();
 				 if(game.deplacement.getLookingTile().equals(toMyHouse)){
 					 new TransitionSimple(game, game.gamePanel, new MyHouse(game, false, 2176, 3153, Direction.UP, -1774, -2899));
 				 }
-				 else if(game.deplacement.getLookingTile().equals(toLeaveTown)){
-					 new TransitionSimple(game, game.gamePanel, new Intertown1(game, 3264, 3114, Direction.UP, -2891, -2856));
+				 else if(game.deplacement.getLookingTile().equals(toIntertown01)){
+					 new TransitionSimple(game, game.gamePanel, new Intertown01(game, 3264, 3114, Direction.UP, -2891, -2856));
 				 }
 				 else {
 					 

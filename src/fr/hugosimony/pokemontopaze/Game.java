@@ -23,8 +23,9 @@ import fr.hugosimony.pokemontopaze.maps.houses.selenia.MyHouse;
 import fr.hugosimony.pokemontopaze.maps.pnj.Pnj;
 import fr.hugosimony.pokemontopaze.maps.roads.Road01;
 import fr.hugosimony.pokemontopaze.maps.towns.Selenia;
-import fr.hugosimony.pokemontopaze.maps.towns.intertowns.Intertown1;
-import fr.hugosimony.pokemontopaze.maps.towns.intertowns.Intertown2;
+import fr.hugosimony.pokemontopaze.maps.towns.Villaube;
+import fr.hugosimony.pokemontopaze.maps.towns.intertowns.Intertown01;
+import fr.hugosimony.pokemontopaze.maps.towns.intertowns.Intertown02;
 import fr.hugosimony.pokemontopaze.menus.SaveMenu;
 import fr.hugosimony.pokemontopaze.menus.TextZone;
 import fr.hugosimony.pokemontopaze.menus.XMenu;
@@ -90,9 +91,10 @@ public class Game extends JFrame {
 	
 	public MyHouse myHouse;
 	public Selenia selenia;
-	public Intertown1 intertown1;
+	public Intertown01 intertown01;
 	public Road01 road01;
-	public Intertown2 intertown2;
+	public Intertown02 intertown02;
+	public Villaube villaube;
 	
 	public Game(boolean newGame, int save) {
 		
@@ -189,16 +191,20 @@ public class Game extends JFrame {
 				add(selenia);
 			}
 			else if(FileAdventureReaderWriter.getPrecisePositionPlace(save) == 3) {
-				intertown1 = new Intertown1(this, FileAdventureReaderWriter.getLocationX(save), FileAdventureReaderWriter.getLocationY(save), FileAdventureReaderWriter.getDirection(save), FileAdventureReaderWriter.getMapLocationX(save), FileAdventureReaderWriter.getMapLocationY(save));
-				add(intertown1);
+				intertown01 = new Intertown01(this, FileAdventureReaderWriter.getLocationX(save), FileAdventureReaderWriter.getLocationY(save), FileAdventureReaderWriter.getDirection(save), FileAdventureReaderWriter.getMapLocationX(save), FileAdventureReaderWriter.getMapLocationY(save));
+				add(intertown01);
 			}
 			else if(FileAdventureReaderWriter.getPrecisePositionPlace(save) == 4) {
 				road01 = new Road01(this, FileAdventureReaderWriter.getLocationX(save), FileAdventureReaderWriter.getLocationY(save), FileAdventureReaderWriter.getDirection(save), FileAdventureReaderWriter.getMapLocationX(save), FileAdventureReaderWriter.getMapLocationY(save));
 				add(road01);
 			}
 			else if(FileAdventureReaderWriter.getPrecisePositionPlace(save) == 5) {
-				intertown2 = new Intertown2(this, FileAdventureReaderWriter.getLocationX(save), FileAdventureReaderWriter.getLocationY(save), FileAdventureReaderWriter.getDirection(save), FileAdventureReaderWriter.getMapLocationX(save), FileAdventureReaderWriter.getMapLocationY(save));
-				add(intertown2);
+				intertown02 = new Intertown02(this, FileAdventureReaderWriter.getLocationX(save), FileAdventureReaderWriter.getLocationY(save), FileAdventureReaderWriter.getDirection(save), FileAdventureReaderWriter.getMapLocationX(save), FileAdventureReaderWriter.getMapLocationY(save));
+				add(intertown02);
+			}
+			else if(FileAdventureReaderWriter.getPrecisePositionPlace(save) == 6) {
+				villaube = new Villaube(this, FileAdventureReaderWriter.getLocationX(save), FileAdventureReaderWriter.getLocationY(save), FileAdventureReaderWriter.getDirection(save), FileAdventureReaderWriter.getMapLocationX(save), FileAdventureReaderWriter.getMapLocationY(save));
+				add(villaube);
 			}
 		}
 		

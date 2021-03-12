@@ -25,4 +25,16 @@ public class Map extends JPanel {
 		super.paintComponent(g);
 		g.drawImage(Const.mainMap.getImage(), 0, 0, null);
 	}
+	
+	/*
+	 * To do when creating a new map
+	 * Ville.java
+	 * Game (create the global variable)
+	 * InteractDispatcher (check)
+	 * Deplacement (checkMapChange)
+	 * Places
+	 * Variables (GroundItems)
+	 * Change map and place in the .java
+	 * Game (change the spawn location)
+	 */
 }

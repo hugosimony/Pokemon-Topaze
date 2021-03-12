@@ -45,12 +45,14 @@ public class InteractDispatcher implements KeyEventDispatcher {
 							 text = game.myHouse.getInteractMessage(tuple);
 						 else if(game.selenia != null && game.selenia.isVisible())
 							 text = game.selenia.getInteractMessage(tuple);
-						 else if(game.intertown1 != null && game.intertown1.isVisible())
-							 text = game.intertown1.getInteractMessage(tuple);
+						 else if(game.intertown01 != null && game.intertown01.isVisible())
+							 text = game.intertown01.getInteractMessage(tuple);
 						 else if(game.road01 != null && game.road01.isVisible())
 							 text = game.road01.getInteractMessage(tuple);
-						 else if(game.intertown2 != null && game.intertown2.isVisible())
-							 text = game.intertown2.getInteractMessage(tuple);
+						 else if(game.intertown02 != null && game.intertown02.isVisible())
+							 text = game.intertown02.getInteractMessage(tuple);
+						 else if(game.villaube != null && game.villaube.isVisible())
+							 text = game.villaube.getInteractMessage(tuple);
 					 }
 					 else {
 						 Pnj pnj = IntTuple.containsPnj(game.pnjs, game.deplacement.getLookingTile());

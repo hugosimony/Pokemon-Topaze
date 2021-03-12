@@ -45,4 +45,5 @@ public class Variables {
 	
 	public static ArrayList<String> GROUND_ITEMS_Selenia;
 	public static ArrayList<String> GROUND_ITEMS_Road1;
+	public static ArrayList<String> GROUND_ITEMS_Villaube;
 }

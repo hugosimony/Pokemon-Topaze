@@ -28,8 +28,8 @@ import fr.hugosimony.pokemontopaze.maps.Places;
 import fr.hugosimony.pokemontopaze.maps.animations.PnjAnimations;
 import fr.hugosimony.pokemontopaze.maps.items.GroundItem;
 import fr.hugosimony.pokemontopaze.maps.pnj.Pnj;
-import fr.hugosimony.pokemontopaze.maps.towns.intertowns.Intertown1;
-import fr.hugosimony.pokemontopaze.maps.towns.intertowns.Intertown2;
+import fr.hugosimony.pokemontopaze.maps.towns.intertowns.Intertown01;
+import fr.hugosimony.pokemontopaze.maps.towns.intertowns.Intertown02;
 import fr.hugosimony.pokemontopaze.sounds.Sounds;
 import fr.hugosimony.pokemontopaze.transitions.TransitionSimple;
 import fr.hugosimony.pokemontopaze.utils.IntTriple;
@@ -42,8 +42,8 @@ public class Road01 extends JPanel {
 	
 	private Clip clipRoad01Theme;
 	
-	private IntTuple toIntertown1;
-	private IntTuple toIntertown2;
+	private IntTuple toIntertown01;
+	private IntTuple toIntertown02;
 	
 	private GroundItem groundPokeBall1;
 	public GroundItem starter1;
@@ -65,8 +65,8 @@ public class Road01 extends JPanel {
 		setPnjs();
 		setHerbs();
 		setAnimations();
-		toIntertown1 = new IntTuple(4064, 1866);
-		toIntertown2 = new IntTuple(3232, 746);
+		toIntertown01 = new IntTuple(4064, 1866);
+		toIntertown02 = new IntTuple(3232, 746);
 		
 		setLayout(null);
 		setBackground(new Color(0, 0, 0));
@@ -715,17 +715,17 @@ public class Road01 extends JPanel {
 		
 		if(isVisible()){
 			
-			if(game.deplacement.getLookingTile().equals(toIntertown1) || game.deplacement.getLookingTile().equals(toIntertown2)) {
+			if(game.deplacement.getLookingTile().equals(toIntertown01) || game.deplacement.getLookingTile().equals(toIntertown02)) {
 				 game.deplacement.hero.setVisible(false);
 				 setVisible(false);
-				 if(game.deplacement.getLookingTile().equals(toIntertown1) || game.deplacement.getLookingTile().equals(toIntertown2))
+				 if(game.deplacement.getLookingTile().equals(toIntertown01) || game.deplacement.getLookingTile().equals(toIntertown02))
 					 Sounds.playSound(Const.soundEnterHouse);
 				 Main.actualClip.close();
-				 if(game.deplacement.getLookingTile().equals(toIntertown1)){
-					 new TransitionSimple(game, game.gamePanel, new Intertown1(game, 3264, 2858, Direction.DOWN, -2891, -2600));
+				 if(game.deplacement.getLookingTile().equals(toIntertown01)){
+					 new TransitionSimple(game, game.gamePanel, new Intertown01(game, 3264, 2858, Direction.DOWN, -2891, -2600));
 				 }
-				 else if(game.deplacement.getLookingTile().equals(toIntertown2)){
-					 new TransitionSimple(game, game.gamePanel, new Intertown2(game, 3264, 3114, Direction.UP, -2891, -2856));
+				 else if(game.deplacement.getLookingTile().equals(toIntertown02)){
+					 new TransitionSimple(game, game.gamePanel, new Intertown02(game, 3264, 3114, Direction.UP, -2891, -2856));
 				 }
 				 return true;
 			}

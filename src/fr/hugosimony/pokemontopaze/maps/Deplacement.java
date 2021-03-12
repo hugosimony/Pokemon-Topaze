@@ -442,11 +442,13 @@ public class Deplacement {
 		if(!change)
 			change = game.selenia != null && game.selenia.isVisible() && game.selenia.checkMapChange();
 		if(!change)
-			change = game.intertown1 != null && game.intertown1.isVisible() &&  game.intertown1.checkMapChange();
+			change = game.intertown01 != null && game.intertown01.isVisible() &&  game.intertown01.checkMapChange();
 		if(!change)
 			change = game.road01 != null && game.road01.isVisible() &&  game.road01.checkMapChange();
 		if(!change)
-			change = game.intertown2 != null && game.intertown2.isVisible() &&  game.intertown2.checkMapChange();
+			change = game.intertown02 != null && game.intertown02.isVisible() &&  game.intertown02.checkMapChange();
+		if(!change)
+			change = game.villaube != null && game.villaube.isVisible() &&  game.villaube.checkMapChange();
 		return change;
 	}
 		

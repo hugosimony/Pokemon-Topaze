@@ -26,32 +26,33 @@ import fr.hugosimony.pokemontopaze.maps.Map;
 import fr.hugosimony.pokemontopaze.maps.Places;
 import fr.hugosimony.pokemontopaze.maps.pnj.Pnj;
 import fr.hugosimony.pokemontopaze.maps.roads.Road01;
-import fr.hugosimony.pokemontopaze.maps.towns.Selenia;
+import fr.hugosimony.pokemontopaze.maps.towns.Villaube;
 import fr.hugosimony.pokemontopaze.sounds.Sounds;
 import fr.hugosimony.pokemontopaze.transitions.TransitionSimple;
 import fr.hugosimony.pokemontopaze.utils.IntTuple;
 
-public class Intertown1 extends JPanel {
+public class Intertown02 extends JPanel {
 	private static final long serialVersionUID = 1L;
 	
 	private Game game;
 	
 	private Clip clipSeleniaTheme;
-	
-	private IntTuple toRoad1;
-	private IntTuple toSelenia;
-	
+
+	private IntTuple toVillaube;
+	private IntTuple toRoad01;
+
 	private Pnj intertownPnj01;
+	private Pnj intertownPnj02;
 	
-	public Intertown1(Game game, int locationX, int locationY, Direction direction, int mapLocationX, int mapLocationY) {
+	public Intertown02(Game game, int locationX, int locationY, Direction direction, int mapLocationX, int mapLocationY) {
 		this.game = game;
-		game.intertown1 = this;
+		game.intertown02 = this;
 		
 		setClickableTiles();
 		setWalls();
 		setPnjs();
-		toRoad1 = new IntTuple(3264, 2794);
-		toSelenia = new IntTuple(3264, 3178);
+		toVillaube = new IntTuple(3264, 2794);
+		toRoad01 = new IntTuple(3264, 3178);
 		
 		setLayout(null);
 		setBackground(new Color(0, 0, 0));
@@ -87,8 +88,8 @@ public class Intertown1 extends JPanel {
 		//****************************************************************************************************
 	    // Map
 		
-		Variables.POSITION_Place = Places.SELENIA;
-		game.map = new Map(3, 0);
+		Variables.POSITION_Place = Places.VILLAUBE;
+		game.map = new Map(5, 0);
 		game.map.setLocation(mapLocationX, mapLocationY);
 		game.map.setSize(10000,10000);
 		
@@ -143,21 +144,27 @@ public class Intertown1 extends JPanel {
 			pnj.clearIA();
 		game.pnjs = new ArrayList<Pnj>();
 		
-		intertownPnj01 = new Pnj(game, "sellerboy", Direction.RIGHT, 0, 3168, 2922, false, false, null, null, false, false);
+		intertownPnj01 = new Pnj(game, "police", Direction.RIGHT, 0, 3168, 2922, false, false, null, null, false, false);
 		intertownPnj01.setVisible(true);
 		intertownPnj01.setSize(35, 50);
 		intertownPnj01.setLocation(3168, 2922);
 		game.pnjs.add(intertownPnj01);
+		
+		intertownPnj02 = new Pnj(game, "sellerboy", Direction.RIGHT, 0, 3136, 3018, false, false, null, null, false, false);
+		intertownPnj02.setVisible(true);
+		intertownPnj02.setSize(35, 50);
+		intertownPnj02.setLocation(3136, 3018);
+		game.pnjs.add(intertownPnj02);
 	}
 	
 	public String getInteractMessage(IntTuple tuple) {
 		 String text = "";
 		 if(IntTuple.getPosition(game.clickableTiles, tuple) == 1) {
-			 text = "Bonjour != Faites attention car des Pokémons peuvent vous attaquer\n"
-			 		+ "sur la Route 01.= Bonne journée !";
+			 text = "Bonjour != En allant au nord, vous arriverez à Villaube.\n="
+			 		+ "Bonne journée !";
 		 }
 		 else if(IntTuple.getPosition(game.clickableTiles, tuple) == 2) {
-			 text = "Nord : Route 01.=\nSud : Sélénia.";
+			 text = "Nord : Villaube.=\nSud : Route 01.";
 		 }
 		 return text;
 	}
@@ -166,17 +173,17 @@ public class Intertown1 extends JPanel {
 		
 		if(isVisible()){
 			
-			if(game.deplacement.getLookingTile().equals(toRoad1) || game.deplacement.getLookingTile().equals(toSelenia)) {
+			if(game.deplacement.getLookingTile().equals(toRoad01) || game.deplacement.getLookingTile().equals(toVillaube)) {
 				 game.deplacement.hero.setVisible(false);
 				 setVisible(false);
-				 if(game.deplacement.getLookingTile().equals(toRoad1) || game.deplacement.getLookingTile().equals(toSelenia))
+				 if(game.deplacement.getLookingTile().equals(toRoad01) || game.deplacement.getLookingTile().equals(toVillaube))
 					 Sounds.playSound(Const.soundLeaveHouse);
 				 Main.actualClip.close();
-				 if(game.deplacement.getLookingTile().equals(toRoad1)){
-					 new TransitionSimple(game, game.gamePanel, new Road01(game, 4064, 1802, Direction.UP, -3691, -1544));
+				 if(game.deplacement.getLookingTile().equals(toVillaube)){
+					 new TransitionSimple(game, game.gamePanel, new Villaube(game, 1280, 5521, Direction.UP, -878, -5267));
 				 }
-				 else if(game.deplacement.getLookingTile().equals(toSelenia)){
-					 new TransitionSimple(game, game.gamePanel, new Selenia(game, 2016, 1322, Direction.DOWN, -1643, -1064));
+				 else if(game.deplacement.getLookingTile().equals(toRoad01)){
+					 new TransitionSimple(game, game.gamePanel, new Road01(game, 3232, 810, Direction.DOWN, -2859, -552));
 				 }
 				 else {
 					 
