@@ -209,14 +209,14 @@ public class Const {
 	//****************************************************************************************************
 	// Badges
 	
-	public static final ImageIcon badge1 = new ImageIcon(Main.class.getResource("menus/images/badges/badge1.jpg"));
-	public static final ImageIcon badge2 = new ImageIcon(Main.class.getResource("menus/images/badges/badge2.jpg"));
-	public static final ImageIcon badge3 = new ImageIcon(Main.class.getResource("menus/images/badges/badge3.jpg"));
-	public static final ImageIcon badge4 = new ImageIcon(Main.class.getResource("menus/images/badges/badge4.jpg"));
-	public static final ImageIcon badge5 = new ImageIcon(Main.class.getResource("menus/images/badges/badge5.jpg"));
-	public static final ImageIcon badge6 = new ImageIcon(Main.class.getResource("menus/images/badges/badge6.jpg"));
-	public static final ImageIcon badge7 = new ImageIcon(Main.class.getResource("menus/images/badges/badge7.jpg"));
-	public static final ImageIcon badge8 = new ImageIcon(Main.class.getResource("menus/images/badges/badge8.jpg"));
+	public static final ImageIcon badge1 = new ImageIcon(Main.class.getResource("menus/images/badges/badge1.gif"));
+	public static final ImageIcon badge2 = new ImageIcon(Main.class.getResource("menus/images/badges/badge2.gif"));
+	public static final ImageIcon badge3 = new ImageIcon(Main.class.getResource("menus/images/badges/badge3.gif"));
+	public static final ImageIcon badge4 = new ImageIcon(Main.class.getResource("menus/images/badges/badge4.gif"));
+	public static final ImageIcon badge5 = new ImageIcon(Main.class.getResource("menus/images/badges/badge5.gif"));
+	public static final ImageIcon badge6 = new ImageIcon(Main.class.getResource("menus/images/badges/badge6.gif"));
+	public static final ImageIcon badge7 = new ImageIcon(Main.class.getResource("menus/images/badges/badge7.gif"));
+	public static final ImageIcon badge8 = new ImageIcon(Main.class.getResource("menus/images/badges/badge8.gif"));
 	
 	//****************************************************************************************************
 	// Main Map
