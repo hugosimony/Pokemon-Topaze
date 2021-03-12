@@ -119,6 +119,7 @@ public class Villaube extends JPanel {
 		game.clickableTiles.add(new IntTuple(1344, 4433)); // ROAD SIGN
 		game.clickableTiles.add(new IntTuple(2752, 4273)); // ROAD SIGN 2
 		game.clickableTiles.add(new IntTuple(2784, 4273)); // ROAD SIGN 2
+		game.clickableTiles.add(new IntTuple(1792, 5297)); // MARTIN'S BOX
 
 		game.clickableTiles.add(new IntTuple(864, 4657)); // GROUND ITEM 1
 		groundPokeBall1 = new GroundItem("pokeball");
@@ -563,26 +564,35 @@ public class Villaube extends JPanel {
 		 String text = "";
 		 int position = IntTuple.getPosition(game.clickableTiles, tuple);
 		 if(position == 1)
-			 text = "Chez " + Variables.PERSO_Name + ".";
+			 text = "Tour Radio.";
 		 else if(position == 2)
-			 text = "Chez " + Variables.PERSO_Name + ".";
+			 text = "Villaube.= Une ville fière, à l'aube de la recherche.";
 		 else if(position == 3)
-			 text = "Chez " + Variables.PERSO_Name + ".";
+			 text = "Laboratoire du Professeur Chen.";
 		 else if(position == 4)
-			 text = "Chez " + Variables.PERSO_Name + ".";
+			 text = "Territoire de Martin.= Ne pas déranger !";
 		 else if(position == 5)
-			 text = "Chez " + Variables.PERSO_Name + ".";
+			 text = "Statue de Villaube.= On dit qu'un Pokemon a autrefois créé cette\n"
+			 		+ "ville.= Des Pokemon rares viennent souvent ici pour se ressourcer.";
 		 else if(position == 6)
-			 text = "Chez " + Variables.PERSO_Name + ".";
+			 text = "Route commerciale de Villaube.= Faites attention avant de traverser.";
 		 else if(position == 7 || position == 8)
-			 text = "Chez " + Variables.PERSO_Name + ".";
-		 else if(IntTuple.getPosition(game.clickableTiles, tuple) == 9 && Variables.GROUND_ITEMS_Road1.contains("0")) {
+			 text = "Route fermée aux piétons.";
+		 else if(position == 9 && Variables.GROUND_ITEMS_Villaube.contains("1")) {
+			 Sounds.playSound(Const.soundItemGet);
+			 Variables.GROUND_ITEMS_Villaube.remove("1");
+			 groundPokeBall1.setVisible(false);
+			 IntTuple.removeTuple(game.walls, new IntTuple(864, 4657));
+			 // Ajouter un mouchoir soie au sac.
+			 text = "Vous avez ramassé un Mouchoir Soie !";
+		 }
+		 else if(IntTuple.getPosition(game.clickableTiles, tuple) == 10 && Variables.GROUND_ITEMS_Road1.contains("0")) {
 			 Sounds.playSound(Const.soundItemGet);
 			 Variables.GROUND_ITEMS_Villaube.remove("0");
 			 groundPokeBall1.setVisible(false);
 			 IntTuple.removeTuple(game.walls, new IntTuple(864, 4657));
-			 // Ajouter une potion au sac.
-			 text = "Vous avez ramassé une Potion !";
+			 // Ajouter une poké ball au sac.
+			 text = "Vous avez ramassé une Poké Ball !";
 		 }
 		 return text;
 	}
