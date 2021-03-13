@@ -1,7 +1,6 @@
 package fr.hugosimony.pokemontopaze.pokemon.battle;
 
 import java.net.URL;
-import java.nio.file.Paths;
 
 import javax.swing.ImageIcon;
 
@@ -15,7 +14,7 @@ public class BattleConst {
 	// Backgrounds
 	
 	public static ImageIcon getBackground(String background) {
-		return new ImageIcon(Main.class.getResource(Paths.get("pokemon/battle/backgrounds/background" + background + ".jpg").toString()));
+		return new ImageIcon(Main.class.getResource("pokemon/battle/backgrounds/background" + background + ".jpg"));
 	}
 	
 	//****************************************************************************************************
