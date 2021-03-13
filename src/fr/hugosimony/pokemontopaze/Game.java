@@ -283,7 +283,7 @@ public class Game extends JFrame {
         			}
         		}
         	}
-        	else if(!Main.settingsOn && isVisible() && actualPanel.isVisible() && actualPanel == gamePanel) {
+        	else if(!Main.settingsOn && isVisible() && actualPanel.isVisible() && actualPanel == gamePanel && !speachPanel.validateName.isVisible()) {
         		if(event.getID() == KeyEvent.KEY_PRESSED) {
         			int keyCode = event.getKeyCode();
         			if((keyCode == KeyEvent.VK_ESCAPE || keyCode == Variables.CONTROLS_Options)) {
@@ -293,7 +293,7 @@ public class Game extends JFrame {
         			}
         		}
         	}
-        	else if(isVisible() && Main.settingsOn && event.getID() == KeyEvent.KEY_PRESSED && 
+        	else if(isVisible() && Main.settingsOn && event.getID() == KeyEvent.KEY_PRESSED && !speachPanel.validateName.isVisible() &&
         			(event.getKeyCode() == KeyEvent.VK_ESCAPE || event.getKeyCode() == Variables.CONTROLS_Options)) {
 				Main.settingsOn = false;
 				game.settings.dispose();

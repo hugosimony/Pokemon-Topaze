@@ -97,7 +97,7 @@ public class PresentationProf extends JPanel {
 	private int introLabelIndex2;
 	
 	private JTextField nameArea;
-	private JButton validateName;
+	public JButton validateName;
 	private String waitingName;
 
 	private Boy boy;
