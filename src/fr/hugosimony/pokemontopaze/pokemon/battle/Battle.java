@@ -20,28 +20,26 @@ public class Battle extends JPanel {
 	private String background;
 	private String weather;
 	
-	private JPanel savedMap;
-	
 	public PokemonSprite sprite1;
 	public PokemonSprite sprite2;
 	public int x = 0;
 	
-	public Battle(Game game, String opponent, String background, String weather, JPanel savedMap) {
+	public Battle(Game game, String opponent, String background, String weather) {
 		
 		this.game = game;
 		game.battle = this;
-		setBackground(new Color(0, 0, 0));
 		
 		this.opponent = opponent;
 		this.background = background;
 		this.weather = weather;
-		
-		this.savedMap = savedMap;
-		
-		setLayout(null);
-		
+
 		game.inBattle = true;
-		game.actualPanel = this;
+	
+		setLayout(null);
+		setBackground(new Color(0, 0, 0));
+		game.actualPanel.setVisible(false);
+		setSize(1000, 1000);
+		
 		
 		JButton fightButton = new BattleButtons.Fight();
 		JButton bagButton = new BattleButtons.Bag();
@@ -69,7 +67,6 @@ public class Battle extends JPanel {
 			add(sprite2);
 		} catch (IOException e) {}
 		
-		repaint();
 	}
 	
 	@Override
