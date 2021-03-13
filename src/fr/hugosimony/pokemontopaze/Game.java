@@ -30,15 +30,10 @@ import fr.hugosimony.pokemontopaze.menus.SaveMenu;
 import fr.hugosimony.pokemontopaze.menus.TextZone;
 import fr.hugosimony.pokemontopaze.menus.XMenu;
 import fr.hugosimony.pokemontopaze.menus.YesNo;
-import fr.hugosimony.pokemontopaze.pokemon.Nature;
-import fr.hugosimony.pokemontopaze.pokemon.PKM;
-import fr.hugosimony.pokemontopaze.pokemon.Pokemon;
 import fr.hugosimony.pokemontopaze.pokemon.battle.Battle;
-import fr.hugosimony.pokemontopaze.pokemon.battle.BattleConst;
 import fr.hugosimony.pokemontopaze.timer.GlobalTimer;
 import fr.hugosimony.pokemontopaze.utils.IntTriple;
 import fr.hugosimony.pokemontopaze.utils.IntTuple;
-
 
 public class Game extends JFrame {
 	private static final long serialVersionUID = 1L;
@@ -97,9 +92,7 @@ public class Game extends JFrame {
 	public Villaube villaube;
 	
 	public Game(boolean newGame, int save) {
-		
-		BattleConst.getAnimatedSprite(new Pokemon(PKM.HERBIZARRE, "test1", Nature.ADAMANT, 2, null, 5, 0, 0, false, 20, 20, 10, 10, 10, 10, 10, null, null, null, null, null, null, "hugo", true, 0), false);
-		
+	
 		this.save = save;
 		this.newGame = newGame;
 		
@@ -293,7 +286,7 @@ public class Game extends JFrame {
         			}
         		}
         	}
-        	else if(isVisible() && Main.settingsOn && event.getID() == KeyEvent.KEY_PRESSED && !speachPanel.validateName.isVisible() &&
+        	else if(isVisible() && Main.settingsOn && event.getID() == KeyEvent.KEY_PRESSED && !(speachPanel != null && speachPanel.validateName.isVisible()) &&
         			(event.getKeyCode() == KeyEvent.VK_ESCAPE || event.getKeyCode() == Variables.CONTROLS_Options)) {
 				Main.settingsOn = false;
 				game.settings.dispose();

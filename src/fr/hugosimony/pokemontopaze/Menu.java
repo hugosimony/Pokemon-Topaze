@@ -247,7 +247,7 @@ public class Menu extends JFrame {
      			   		Menu menu = new Menu();
      			   		menu.setVisible(true);
      			   	}
-                	else if(keyCode == KeyEvent.VK_DOWN && gameSelectorMenu) {
+                	else if(keyCode == Variables.CONTROLS_DOWN && gameSelectorMenu) {
                 		Sounds.playSound(Const.soundSelectionMenu);
                 		if(selectedGame == 1) {
                 			game1.setBackground(Const.gameSelectorMenuGameColor);
@@ -265,7 +265,7 @@ public class Menu extends JFrame {
                 		if(selectedGame > 3)
                 			selectedGame = 1;
                 	}
-                	else if(keyCode == KeyEvent.VK_UP && gameSelectorMenu) {
+                	else if(keyCode == Variables.CONTROLS_UP && gameSelectorMenu) {
                 		Sounds.playSound(Const.soundSelectionMenu);
                 		if(selectedGame == 1) {
                 			game1.setBackground(Const.gameSelectorMenuGameColor);
@@ -287,7 +287,6 @@ public class Menu extends JFrame {
                 		Main.settingsOn = true;
                 		settings = new Settings();
                 		settings.setVisible(true);
-                		System.out.println("oucouc");
                 	}
                 }
         	}

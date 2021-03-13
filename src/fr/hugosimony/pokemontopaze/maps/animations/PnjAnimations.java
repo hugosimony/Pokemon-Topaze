@@ -8,6 +8,7 @@ import fr.hugosimony.pokemontopaze.Game;
 import fr.hugosimony.pokemontopaze.Variables;
 import fr.hugosimony.pokemontopaze.maps.Direction;
 import fr.hugosimony.pokemontopaze.maps.items.GroundItem;
+import fr.hugosimony.pokemontopaze.maps.pnj.ExclamationMark;
 import fr.hugosimony.pokemontopaze.maps.pnj.PnjText;
 import fr.hugosimony.pokemontopaze.sounds.Sounds;
 import fr.hugosimony.pokemontopaze.utils.IntTuple;
@@ -69,6 +70,7 @@ public class PnjAnimations {
 	public static void startGoodAnimation(Game game, IntTuple finalAnimation) {
 		if(Variables.ADVENTURE_Step == 0) {
 			Sounds.playSound(Const.soundExclamation);
+			new ExclamationMark(game, game.myHouse.mom.getLocation());
 			new Timer().schedule(new TimerTask() {
 				@Override
 				public void run() {
@@ -83,6 +85,7 @@ public class PnjAnimations {
 		}
 		else if(Variables.ADVENTURE_Step == 1) {
 			Sounds.playSound(Const.soundExclamation);
+			new ExclamationMark(game, game.road01.profChen.getLocation());
 			new Timer().schedule(new TimerTask() {
 				@Override
 				public void run() {
@@ -134,6 +137,7 @@ public class PnjAnimations {
 			return;
 		}
 		else if(Variables.ADVENTURE_Step == 8) {
+			new ExclamationMark(game, game.road01.profChen.getLocation());
 			if(finalAnimation.y == 1738)
 				new Timer().schedule(game.road01.profChen.new Move(Direction.UP, true, new IntTuple(finalAnimation.x, 1706), "rrrr", Direction.DOWN, 
 							PnjText.getText("profChen")), 1000, 7);

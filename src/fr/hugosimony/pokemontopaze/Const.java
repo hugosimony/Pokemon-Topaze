@@ -207,6 +207,11 @@ public class Const {
 	public static final ImageIcon groundPokeBall = new ImageIcon(Main.class.getResource("sprites/grounditems/pokeball.gif"));
 	
 	//****************************************************************************************************
+	// Sprites Perso Reactions
+	
+	public static final ImageIcon exclamationMark = new ImageIcon(Main.class.getResource("sprites/perso/react/exclamationMark.gif"));
+	
+	//****************************************************************************************************
 	// Badges
 	
 	public static final ImageIcon badge1 = new ImageIcon(Main.class.getResource("menus/images/badges/badge1.gif"));
