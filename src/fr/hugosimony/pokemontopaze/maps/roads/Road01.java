@@ -53,6 +53,7 @@ public class Road01 extends JPanel {
 	private ArrayList<IntTriple> animationTiles;
 	
 	public Pnj profChen;
+	public Pnj rival;
 	
 	public Road01(Game game, int locationX, int locationY, Direction direction, int mapLocationX, int mapLocationY) {
 		

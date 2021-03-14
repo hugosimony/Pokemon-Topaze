@@ -6,6 +6,7 @@ import fr.hugosimony.pokemontopaze.pokemon.PKM;
 public class PnjText {
 
 	public static String getText(String perso) {
+		//***********************************************************************************************
 		if(perso.equals("mom")) {
 			if(Variables.ADVENTURE_Step == 0)
 				return "Ah t'es enfin réveillé" + Variables.LANG_Feminin + "...= Bon, t'as pas un truc à faire là ?\n="
@@ -14,6 +15,7 @@ public class PnjText {
 				return "Bon, t'as pas un truc à faire là ?= Le Prof Chen t'attend\n"
 						+ "à Villaube, au nord.";
 		}
+		//***********************************************************************************************
 		else if(perso.equals("brownboy001")) {
 			if(Variables.ADVENTURE_Step < 2)
 				return "Coucou " + Variables.PERSO_Name + ",= tu vas enfin choper ton premier Pokémon !=\n"
@@ -21,13 +23,16 @@ public class PnjText {
 			return "Coucou " + Variables.PERSO_Name + ",= il est cool ton Pokémon !=\n"
 			+ "T'en as de la chance...\n";
 		}
+		//***********************************************************************************************
 		else if(perso.equals("brownboy002")) {
 			return "Tu connais le Prof Chen ?= C'est un vieux monsieur qui aime bien\n"
 					+ "les femmes.= J'ai entendu dire qu'il avait des Pokémons rares !";
 		}
+		//***********************************************************************************************
 		else if(perso.equals("police001")) {
 			return "Désolé,= la forêt est encore trop dangereuse pour toi.";
 		}
+		//***********************************************************************************************
 		else if(perso.equals("profChen")) {
 			if(Variables.ADVENTURE_Step == 1)
 				return "Bonjour " + Variables.PERSO_Name + " != J'ai failli oublier que tu ne pouvais\n"
@@ -44,10 +49,21 @@ public class PnjText {
 			if(Variables.ADVENTURE_Step == 6 || Variables.ADVENTURE_Step == 7)
 				return "C'est le moment.= Choisis bien,= tu ne pourras pas revenir\n"
 						+ "en arrière.";
-			if(Variables.ADVENTURE_Step == 8) {
+			if(Variables.ADVENTURE_Step == 8)
 				return "Tu as donc choisi " + PKM.getStarterName(Variables.STARTER) + " != Très bon choix.\n="
 						+ "Prends en grand soin.=+";
-			}
+			if(Variables.ADVENTURE_Step == 11)
+				return "Prof. Chen := Eh bah " + Variables.RIVAL_Name + ",= toujours aussi poli" + Variables.RIVAL_Feminin + "...=\n"
+						+ "Hum hum bon,= je vais récupérer le petit dernier.";
+		}
+		//***********************************************************************************************
+		else if(perso.equals("rival")) {
+			if(Variables.ADVENTURE_Step == 9)
+				return "Coucou " + Variables.PERSO_Name + " != Coucou Eliot != Je vois que vous m'avez pas attendu" + 
+						(Variables.LANG_Feminin.equals("") ? "e" : "") + "\n"
+						+ "pour le don de Pokémon...= Je vais choisir le mien=, c'est parti !=+";
+			if(Variables.ADVENTURE_Step == 10)
+				return "Je te choisis toi,= " + PKM.getStarterName(PKM.getOppositeStarter(Variables.STARTER)) + " !=+";
 		}
 		return "";
 	}

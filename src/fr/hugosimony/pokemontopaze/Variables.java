@@ -29,6 +29,8 @@ public class Variables {
 	public static String PERSO_Name;
 	public static String PERSO_Sex;
 	public static String LANG_Feminin;
+	public static String RIVAL_Name;
+	public static String RIVAL_Feminin;
 	
 	public static long TIMER_Global;
 	

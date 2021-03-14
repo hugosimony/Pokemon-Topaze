@@ -233,7 +233,9 @@ public class Game extends JFrame {
 		Variables.POKEDEX_NumberOfSeen = FileAdventureReaderWriter.getPokedexNumberOfSeen(save);
 		Variables.PERSO_Name = FileAdventureReaderWriter.getName(save);
 		Variables.PERSO_Sex = FileAdventureReaderWriter.getSex(save);
+		Variables.RIVAL_Name = Variables.PERSO_Sex.equals("boy") ? "Ella" : "Louis";
 		Variables.LANG_Feminin = Variables.PERSO_Sex.equals("boy") ? "" : "e";
+		Variables.RIVAL_Feminin = Variables.PERSO_Sex.equals("boy") ? "e" : "";
 		Variables.ADVENTURE_Step = FileAdventureReaderWriter.getAdventureStep(save);
 		Variables.STARTER = FileAdventureReaderWriter.getStarter(save);
 		

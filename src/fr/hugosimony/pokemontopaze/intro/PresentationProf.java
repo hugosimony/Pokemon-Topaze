@@ -324,7 +324,9 @@ public class PresentationProf extends JPanel {
 					resetSpeachsLabel(13);
 					presentationLabel13.setHorizontalAlignment(JLabel.CENTER);
 					speach = speach2.replace("changenamehere", Variables.PERSO_Name);
-					if(Variables.PERSO_Sex.equals("boy")) Variables.LANG_Feminin = ""; else Variables.LANG_Feminin = "e";
+					Variables.RIVAL_Name = Variables.PERSO_Sex.equals("boy") ? "Ella" : "Louis";
+					Variables.LANG_Feminin = Variables.PERSO_Sex.equals("boy") ? "" : "e";
+					Variables.RIVAL_Feminin = Variables.PERSO_Sex.equals("boy") ? "e" : "";
     				speach = speach.replace("replacelangfemininhere", Variables.LANG_Feminin);
 					speachLines = speach.split("\n");
 					lastSpech = true;
