@@ -26,7 +26,7 @@ public class Battle extends JPanel {
 	public PokemonSprite sprite2;
 	public int x = 0;
 	
-	public Battle(Game game, String opponent, String background, String weather, JPanel savedMap) {
+	public Battle(Game game, boolean savage, String opponent, String background, String weather, JPanel savedMap) {
 		
 		this.game = game;
 		game.battle = this;
@@ -48,15 +48,16 @@ public class Battle extends JPanel {
 		JButton pokemonButton = new BattleButtons.Pokemon();
 		JButton runButton = new BattleButtons.Run();
 		
-		fightButton.setLocation(5, 450);
-		bagButton.setLocation(200, 450);
-		pokemonButton.setLocation(400, 450);
-		runButton.setLocation(600, 450);
+		fightButton.setLocation(2, 447);
+		bagButton.setLocation(195, 447);
+		pokemonButton.setLocation(394, 447);
+		runButton.setLocation(592, 447);
 		
 		add(fightButton);
 		add(bagButton);
 		add(pokemonButton);
 		add(runButton);
+		
 		
 		//Pokemon pokemon1 = new Pokemon(PKM.values()[Utils.randomNumber(150)], 50, "");
 		//Pokemon pokemon2= new Pokemon(PKM.values()[Utils.randomNumber(150)], 50, "");

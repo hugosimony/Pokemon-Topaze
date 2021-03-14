@@ -30,6 +30,7 @@ import fr.hugosimony.pokemontopaze.menus.SaveMenu;
 import fr.hugosimony.pokemontopaze.menus.TextZone;
 import fr.hugosimony.pokemontopaze.menus.XMenu;
 import fr.hugosimony.pokemontopaze.menus.YesNo;
+import fr.hugosimony.pokemontopaze.pokemon.Pokemon;
 import fr.hugosimony.pokemontopaze.pokemon.battle.Battle;
 import fr.hugosimony.pokemontopaze.timer.GlobalTimer;
 import fr.hugosimony.pokemontopaze.utils.IntTriple;
@@ -90,6 +91,10 @@ public class Game extends JFrame {
 	public Road01 road01;
 	public Intertown02 intertown02;
 	public Villaube villaube;
+	
+	// Pokemon
+	
+	public ArrayList<Pokemon> pokemonTeam;
 	
 	public Game(boolean newGame, int save) {
 	

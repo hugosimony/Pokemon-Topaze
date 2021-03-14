@@ -1,5 +1,7 @@
 package fr.hugosimony.pokemontopaze.pokemon.battle;
 
+import java.awt.Color;
+
 import javax.swing.JButton;
 
 public class BattleButtons {
@@ -9,8 +11,10 @@ public class BattleButtons {
 		
 		public Bag() {
 			setSize(195, 118);
+			setBackground(Color.black);
 			setIcon(BattleConst.bagButton);
 			setBorderPainted(false);
+			setOpaque(false);
 			setFocusable(false);
 		}
 		
@@ -21,8 +25,10 @@ public class BattleButtons {
 		
 		public Fight() {
 			setSize(190, 118);
+			setBackground(Color.black);
 			setIcon(BattleConst.fightButton);
 			setBorderPainted(false);
+			setOpaque(false);
 			setFocusable(false);
 		}
 		
@@ -33,8 +39,10 @@ public class BattleButtons {
 		
 		public Pokemon() {
 			setSize(195, 118);
+			setBackground(Color.black);
 			setIcon(BattleConst.pokemonButton);
 			setBorderPainted(false);
+			setOpaque(false);
 			setFocusable(false);
 		}
 		
@@ -45,8 +53,10 @@ public class BattleButtons {
 		
 		public Run() {
 			setSize(190, 118);
+			setBackground(Color.black);
 			setIcon(BattleConst.runButton);
 			setBorderPainted(false);
+			setOpaque(false);
 			setFocusable(false);
 		}
 	}
