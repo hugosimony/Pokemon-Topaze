@@ -191,6 +191,7 @@ public class PnjAnimations {
 							this.cancel();
 						}
 					}, 1000);
+					this.cancel();
 				}
 			}, 750);
 			return;
@@ -256,6 +257,7 @@ public class PnjAnimations {
 	}
 	
 	public static void startGoodAnimation11_20(Game game, IntTuple finalAnimation) {
+		
 		if(Variables.ADVENTURE_Step == 11) {
 			IntTuple.removeTuple(game.walls, new IntTuple(game.road01.rival.positionX, 1738));
 			IntTuple.removeTuple(game.clickableTiles, new IntTuple(game.road01.rival.positionX, 1738));
@@ -266,10 +268,79 @@ public class PnjAnimations {
 				game.road01.starter2.setVisible(false);
 			else
 				game.road01.starter3.setVisible(false);
-			game.textZone = new TextZone(game.actualPanel, PnjText.getText("profChen"));
-			TextZone.printTextZone(game.textZone, game);
+			String text = PnjText.getText("profChen");
+			new Timer().schedule(new TimerTask() {
+				@Override
+				public void run() {
+					game.textZone = new TextZone(game.actualPanel, text);
+					TextZone.printTextZone(game.textZone, game);
+					this.cancel();
+				}
+			}, 1000);
 			Variables.ADVENTURE_Step = 12;
 			game.road01.setAnimations();
+			return;
+		}
+		else if(Variables.ADVENTURE_Step == 12) {
+			if(Variables.STARTER == 1) {
+				if(finalAnimation.y == 1770) {
+					new Timer().schedule(game.road01.profChen.new Move(Direction.DOWN, true, new IntTuple(0, 1738), "rrrr", Direction.RIGHT, 
+							PnjText.getText("rival")), 1000, 7);
+				}
+				else {
+					
+				}
+			}
+			else {
+				new Timer().schedule(new TimerTask() {
+					@Override
+					public void run() {
+						PnjAnimations.startGoodAnimation(game, new IntTuple(game.deplacement.locationX, game.deplacement.locationY));
+						this.cancel();
+					}
+				}, 100);
+			}
+			Variables.ADVENTURE_Step = 13;
+			return;
+		}
+		else if(Variables.ADVENTURE_Step == 13) {
+			String text = PnjText.getText("profChen");
+			new Timer().schedule(new TimerTask() {
+				@Override
+				public void run() {
+					game.road01.starter1.setVisible(false);
+					game.road01.starter2.setVisible(false);
+					game.road01.starter3.setVisible(false);
+					if(game.deplacement.locationY == 1738) {
+						IntTuple.removeTuple(game.walls, new IntTuple(game.road01.profChen.positionX - 32, 1738));
+						IntTuple.removeTuple(game.clickableTiles, new IntTuple(game.road01.rival.positionX - 32, 1738));
+					}
+					else {
+						IntTuple.removeTuple(game.walls, new IntTuple(game.road01.profChen.positionX, 1738));
+						IntTuple.removeTuple(game.clickableTiles, new IntTuple(game.road01.rival.positionX, 1738));
+					}
+					new Timer().schedule(new TimerTask() {
+						@Override
+						public void run() {
+							game.textZone = new TextZone(game.actualPanel, text);
+							TextZone.printTextZone(game.textZone, game);
+							this.cancel();
+						}
+					}, 1000);
+					this.cancel();
+				}
+			}, 1000);
+			Variables.ADVENTURE_Step = 14;
+			return;
+		}
+		else if(Variables.ADVENTURE_Step == 14) {
+			if(Variables.STARTER == 1) {
+				
+			}
+			else
+				new Timer().schedule(game.road01.profChen.new Move(Direction.LEFT, true, new IntTuple(3360, game.road01.profChen.positionY), 
+						"llllllllllllll", Direction.LEFT, PnjText.getText("profChen")), 1000, 7);
+			Variables.ADVENTURE_Step = 15;
 			return;
 		}
 	}

@@ -147,6 +147,25 @@ public class Pnj extends JPanel {
 											}
 										}, 1);
 									}
+									else if(finalText.equals("[]")) {
+										for(Pnj pnj_ : game.pnjs) {
+											if(pnj_.perso.equals(pnj.perso)) {
+												game.pnjs.remove(pnj_);
+												break;
+											}
+										}
+										pnj.setVisible(false);
+										game.inAnimation = false;
+									}
+									else if(finalText.contains("[]")) {
+										for(Pnj pnj_ : game.pnjs) {
+											if(pnj_.perso.equals(pnj.perso)) {
+												game.pnjs.remove(pnj_);
+												break;
+											}
+										}
+										pnj.setVisible(false);
+									}
 									else {
 										game.inAnimation = false;
 										game.textZone = new TextZone(game.actualPanel, finalText);
@@ -161,10 +180,8 @@ public class Pnj extends JPanel {
 									dir = Deplacement.getDirection(animationMoves.charAt(0));
 									animationMoves = animationMoves.replaceFirst(animationMoves.charAt(0)+"", "");
 								}
-								else {
-									System.out.println("The moves are wrong.");
+								else
 									this.cancel();
-								}
 							}
 						}
 						else 
