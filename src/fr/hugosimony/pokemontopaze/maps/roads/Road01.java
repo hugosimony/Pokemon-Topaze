@@ -657,15 +657,15 @@ public class Road01 extends JPanel {
 		 else if(Variables.ADVENTURE_Step == 7) {
 			 if(tuple.equals(new IntTuple(3744, 1738)) && IntTuple.getPosition(game.clickableTiles, tuple) != -1) {
 				 text = "Cette Poké Ball contient Tortipouss=, le Pokémon Minifeuille.=\n"
-				 		+ "Voulez vous prendre Tortipouss ?£";
+				 		+ "Voulez vous prendre Tortipouss ¤£";
 			 }
 			 else if(tuple.equals(new IntTuple(3776, 1738)) && IntTuple.getPosition(game.clickableTiles, tuple) != -1) {
 				 text = "Cette Poké Ball contient Ouisticram,= le Pokémon Chimpanzé.=\n"
-				 		+ "Voulez vous prendre Ouisticram ?£";
+				 		+ "Voulez vous prendre Ouisticram ¤£";
 			 }
 			 else if(tuple.equals(new IntTuple(3808, 1738)) && IntTuple.getPosition(game.clickableTiles, tuple) != -1) {
 				 text = "Cette Poké Ball contient Tiplouf,= le Pokémon Pingouin.=\n"
-				 		+ "Voulez vous prendre Tiplouf ?£";
+				 		+ "Voulez vous prendre Tiplouf ¤£";
 			 }
 		 }
 		 else if(Variables.ADVENTURE_Step == 8) {

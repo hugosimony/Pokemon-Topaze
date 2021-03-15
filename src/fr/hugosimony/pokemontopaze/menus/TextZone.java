@@ -132,7 +132,10 @@ public class TextZone extends JPanel {
 	 			}
 	 			else {
 	 				if(labelIndex2 < textLines[labelIndex].length()) {
-	 					texts.get(labelIndex).setText(texts.get(labelIndex).getText() + textLines[labelIndex].charAt(labelIndex2));
+	 					if(textLines[labelIndex].charAt(labelIndex2) == '¤')
+	 						texts.get(labelIndex).setText(texts.get(labelIndex).getText() + "?");
+	 					else
+	 						texts.get(labelIndex).setText(texts.get(labelIndex).getText() + textLines[labelIndex].charAt(labelIndex2));
 	 					labelIndex2++;
 	    	 		}
 	    	 		else {

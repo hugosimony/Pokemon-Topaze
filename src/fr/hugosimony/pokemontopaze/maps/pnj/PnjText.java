@@ -11,10 +11,10 @@ public class PnjText {
 		
 		if(perso.equals("mom")) {
 			if(Variables.ADVENTURE_Step == 0)
-				return "Ah t'es enfin réveillé" + Variables.LANG_Feminin + "...= Bon, t'as pas un truc à faire là ?\n="
+				return "Ah t'es enfin réveillé" + Variables.LANG_Feminin + "...= Bon, t'as pas un truc à faire là ¤\n="
 						+ "Le Prof Chen t'attend à Villaube, au nord.";
 			if(Variables.ADVENTURE_Step == 1)
-				return "Bon, t'as pas un truc à faire là ?= Le Prof Chen t'attend\n"
+				return "Bon, t'as pas un truc à faire là ¤= Le Prof Chen t'attend\n"
 						+ "à Villaube, au nord.";
 		}
 		
@@ -31,7 +31,7 @@ public class PnjText {
 		//***********************************************************************************************
 		
 		else if(perso.equals("brownboy002")) {
-			return "Tu connais le Prof Chen ?= C'est un vieux monsieur qui aime bien\n"
+			return "Tu connais le Prof Chen ¤= C'est un vieux monsieur qui aime bien\n"
 					+ "les femmes.= J'ai entendu dire qu'il avait des Pokémons rares !";
 		}
 		
@@ -73,7 +73,7 @@ public class PnjText {
 				+ "Passez me voir à mon labo au nord,= j'ai un autre truc pour vous.=\n"
 				+ "Bougez vous,= j'ai pas de temps à perdre.=+";
 			if(Variables.ADVENTURE_Step == 14)
-				return "[]";
+				return "[]+";
 		}
 		
 		//***********************************************************************************************
@@ -85,6 +85,11 @@ public class PnjText {
 						+ "pour le don de Pokémon...= Je vais choisir le mien=, c'est parti !=+";
 			if(Variables.ADVENTURE_Step == 10)
 				return "Je te choisis toi,= " + PKM.getStarterName(PKM.getOppositeStarter(Variables.STARTER)) + " !=+";
+			if(Variables.ADVENTURE_Step == 15) {
+				return Variables.RIVAL_Name + " := Bon " + Variables.PERSO_Name + ",= c'est le moment non ¤= On va enfin\n"
+						+ "pouvoir faire un combat de Pokémon !=\n"
+						+ "Je vais te mettre une raclée != T'es prêt" + Variables.LANG_Feminin + " ¤= C'est parti !=+";
+			}
 		}
 		return "";
 	}

@@ -145,7 +145,7 @@ public class Pnj extends JPanel {
 												PnjAnimations.startGoodAnimation(game, new IntTuple(game.deplacement.locationX, game.deplacement.locationY));
 												this.cancel();
 											}
-										}, 1);
+										}, 10);
 									}
 									else if(finalText.equals("[]")) {
 										for(Pnj pnj_ : game.pnjs) {
@@ -157,7 +157,7 @@ public class Pnj extends JPanel {
 										pnj.setVisible(false);
 										game.inAnimation = false;
 									}
-									else if(finalText.contains("[]")) {
+									else if(finalText.equals("[]+")) {
 										for(Pnj pnj_ : game.pnjs) {
 											if(pnj_.perso.equals(pnj.perso)) {
 												game.pnjs.remove(pnj_);
@@ -165,6 +165,13 @@ public class Pnj extends JPanel {
 											}
 										}
 										pnj.setVisible(false);
+										new Timer().schedule(new TimerTask() {
+											@Override
+											public void run() {
+												PnjAnimations.startGoodAnimation(game, new IntTuple(game.deplacement.locationX, game.deplacement.locationY));
+												this.cancel();
+											}
+										}, 10);
 									}
 									else {
 										game.inAnimation = false;

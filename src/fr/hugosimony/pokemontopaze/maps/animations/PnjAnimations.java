@@ -297,7 +297,7 @@ public class PnjAnimations {
 						PnjAnimations.startGoodAnimation(game, new IntTuple(game.deplacement.locationX, game.deplacement.locationY));
 						this.cancel();
 					}
-				}, 100);
+				}, 10);
 			}
 			Variables.ADVENTURE_Step = 13;
 			return;
@@ -348,6 +348,28 @@ public class PnjAnimations {
 			Variables.ADVENTURE_Step = 15;
 			return;
 		}
+		else if(Variables.ADVENTURE_Step == 15) {
+			if(game.deplacement.locationY == 1770) {
+				new Timer().schedule(game.road01.rival.new Move(Direction.LEFT, true, new IntTuple(3712, 1738), "dlll", Direction.RIGHT, 
+						PnjText.getText("rival")), 1200, 7);
+				new Timer().schedule(game.deplacement.new MoveDirection(Direction.RIGHT, false, false, true, new IntTuple(3872, 1738), 
+						"urrr", Direction.LEFT, "", false), 500, 7);
+			}
+			else if(game.deplacement.locationY == 1738) {
+				new Timer().schedule(game.road01.rival.new Move(Direction.LEFT, true, new IntTuple(3712, 1738), "ulll", Direction.RIGHT, 
+						PnjText.getText("rival")), 1200, 7);
+				new Timer().schedule(game.deplacement.new MoveDirection(Direction.RIGHT, false, false, true, new IntTuple(3872, 1738), 
+						"rr", Direction.LEFT, "", false), 500, 7);
+			}
+			else {
+				new Timer().schedule(game.road01.rival.new Move(Direction.LEFT, true, new IntTuple(3712, 1738), "ulll", Direction.RIGHT, 
+						PnjText.getText("rival")), 1200, 7);
+				new Timer().schedule(game.deplacement.new MoveDirection(Direction.RIGHT, false, false, true, new IntTuple(3872, 1738), 
+						"drrr", Direction.LEFT, "", false), 500, 7);
+			}
+		}
+		Variables.ADVENTURE_Step = 16;
+		return;
 	}
 	
 }

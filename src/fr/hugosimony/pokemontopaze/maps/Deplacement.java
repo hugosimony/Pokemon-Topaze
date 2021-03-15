@@ -260,13 +260,11 @@ public class Deplacement {
 								if(animationMoves.length() > 0) {
 									x = 0;
 									dir = Deplacement.getDirection(animationMoves.charAt(0));
-									animationMoves.replaceFirst(animationMoves.charAt(0)+"", "");
+									animationMoves = animationMoves.replaceFirst(animationMoves.charAt(0)+"", "");
 									startMove(dir, true);
 								}
-								else {
-									System.out.println("The moves are wrong.");
+								else
 									this.cancel();
-								}
 							}
 						}
 						else {
