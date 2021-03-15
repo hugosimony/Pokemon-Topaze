@@ -444,7 +444,7 @@ public class Settings extends JFrame {
         					controls[3] = keyCode;
         				}
         			}
-        			else if(keyCode < 37 || keyCode > 40){
+        			else {
         				if(selectedControl.equals("A")) {
         					AButton.setText(key);
         					controls[4] = keyCode;
