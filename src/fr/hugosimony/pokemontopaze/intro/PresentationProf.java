@@ -97,6 +97,7 @@ public class PresentationProf extends JPanel {
 	private int introLabelIndex2;
 	
 	private JTextField nameArea;
+	private String preName;
 	public JButton validateName;
 	private String waitingName;
 
@@ -239,15 +240,27 @@ public class PresentationProf extends JPanel {
 		nameArea.addKeyListener(new KeyListener() {
 			@Override
 			public void keyTyped(KeyEvent e) {
-				if(nameArea.getText().length() > 10) {
+				if((e.isControlDown() && e.getKeyCode() == KeyEvent.VK_V) || nameArea.getText().length() >= 11) {
 					e.consume();
+					nameArea.setText(preName);
 				}
-				else if(isNameValid(nameArea.getText())) {
-					validateName.setText("Valider");
-				}
-				else {
-					validateName.setText("Trop Court");
-				}
+				new Timer().schedule(new TimerTask() {
+					@Override
+					public void run() {
+						preName = nameArea.getText()
+								.replace("?", "").replace("¤", "").replace("=", "")
+								.replace("+", "").replace("£", "").replace("\\", "")
+								.replace("%", "").replace("[]", "").replace("\"", "")
+								.replace("^", "");
+	        			nameArea.setText(preName);
+	        			nameArea.setCaretPosition(nameArea.getText().length());
+	        			preName = nameArea.getText();
+	        			if(isNameValid(nameArea.getText()))
+	     					validateName.setText("Valider");
+	     				else
+	     					validateName.setText("Trop Court");
+					}
+				}, 1);
 			}
 			@Override
 			public void keyReleased(KeyEvent e) {
@@ -489,7 +502,7 @@ public class PresentationProf extends JPanel {
 	
 	private boolean isNameValid(String name) {
 		boolean valid = true;
-		valid = name.length() >= 1 && name.length() <= 10;
+		valid = name.length() >= 1 && name.length() <= 11;
 		boolean no = true;
 		int i = 0;
 		while(no && i < name.length()) {
