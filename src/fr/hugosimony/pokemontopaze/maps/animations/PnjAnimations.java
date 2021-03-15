@@ -283,13 +283,12 @@ public class PnjAnimations {
 		}
 		else if(Variables.ADVENTURE_Step == 12) {
 			if(Variables.STARTER == 1) {
-				if(finalAnimation.y == 1770) {
-					new Timer().schedule(game.road01.profChen.new Move(Direction.DOWN, true, new IntTuple(0, 1738), "rrrr", Direction.RIGHT, 
-							PnjText.getText("rival")), 1000, 7);
-				}
-				else {
-					
-				}
+				if(finalAnimation.y == 1770)
+					new Timer().schedule(game.road01.profChen.new Move(Direction.DOWN, true, new IntTuple(3808, 1770), "rrru", Direction.UP, 
+							PnjText.getText("profChen")), 1000, 7);
+				else
+					new Timer().schedule(game.road01.profChen.new Move(Direction.DOWN, true, new IntTuple(3808, 1770), "ddrrru", Direction.UP, 
+							PnjText.getText("profChen")), 1000, 7);
 			}
 			else {
 				new Timer().schedule(new TimerTask() {
@@ -335,11 +334,17 @@ public class PnjAnimations {
 		}
 		else if(Variables.ADVENTURE_Step == 14) {
 			if(Variables.STARTER == 1) {
-				
+				new Timer().schedule(game.road01.profChen.new Move(Direction.DOWN, true, new IntTuple(3328, game.road01.profChen.positionY + 32), 
+						"lllllllllllllll", Direction.LEFT, PnjText.getText("profChen")), 1000, 7);
 			}
-			else
-				new Timer().schedule(game.road01.profChen.new Move(Direction.LEFT, true, new IntTuple(3360, game.road01.profChen.positionY), 
-						"llllllllllllll", Direction.LEFT, PnjText.getText("profChen")), 1000, 7);
+			else {
+				if(game.road01.profChen.positionY == 1738)
+					new Timer().schedule(game.road01.profChen.new Move(Direction.UP, true, new IntTuple(3360, game.road01.profChen.positionY - 32), 
+							"llllllllllllll", Direction.LEFT, PnjText.getText("profChen")), 1000, 7);
+				else
+					new Timer().schedule(game.road01.profChen.new Move(Direction.LEFT, true, new IntTuple(3360, game.road01.profChen.positionY), 
+							"llllllllllllll", Direction.LEFT, PnjText.getText("profChen")), 1000, 7);
+			}
 			Variables.ADVENTURE_Step = 15;
 			return;
 		}
