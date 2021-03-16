@@ -22,7 +22,7 @@ import fr.hugosimony.pokemontopaze.maps.Places;
 import fr.hugosimony.pokemontopaze.maps.animations.PnjAnimations;
 import fr.hugosimony.pokemontopaze.maps.pnj.Pnj;
 import fr.hugosimony.pokemontopaze.maps.towns.Selenia;
-import fr.hugosimony.pokemontopaze.sounds.Music;
+import fr.hugosimony.pokemontopaze.musics.Musics;
 import fr.hugosimony.pokemontopaze.sounds.Sounds;
 import fr.hugosimony.pokemontopaze.transitions.TransitionSimple;
 import fr.hugosimony.pokemontopaze.utils.IntTriple;
@@ -61,7 +61,7 @@ public class MyHouse extends JPanel {
 		//****************************************************************************************************
 		// Music
 		
-		Music.startMusic(Const.themeSelenia);
+		Musics.startMusic(Const.themeSelenia);
 		
 		//****************************************************************************************************
 	    // Listener

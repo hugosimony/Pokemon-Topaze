@@ -1,4 +1,4 @@
-package fr.hugosimony.pokemontopaze.sounds;
+package fr.hugosimony.pokemontopaze.musics;
 
 import java.net.URL;
 
@@ -8,10 +8,11 @@ import javax.sound.sampled.Clip;
 
 import fr.hugosimony.pokemontopaze.Main;
 
-public class Music {
+public class Musics {
 
 	public static void startMusic(URL music) {
 		try {
+			Main.actualClipURL = music;
 			AudioInputStream audioInput = AudioSystem.getAudioInputStream(music);
 			Main.actualClip = AudioSystem.getClip();
 			Main.actualClip.open(audioInput);

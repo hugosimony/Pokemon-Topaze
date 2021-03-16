@@ -1,6 +1,7 @@
 package fr.hugosimony.pokemontopaze;
 
 import java.io.File;
+import java.net.URL;
 
 import javax.sound.sampled.Clip;
 import javax.sound.sampled.FloatControl;
@@ -10,6 +11,7 @@ import fr.hugosimony.pokemontopaze.files.FileCreator;
 public class Main {
 
 	public static boolean settingsOn;
+	public static URL actualClipURL;
 	public static Clip actualClip;
 	
 	public static void main(String[] args) {
@@ -48,8 +50,11 @@ public class Main {
 	public static void setVolume(float volume) {
 	    if (volume < 0f || volume > 1f)
 	        throw new IllegalArgumentException("Volume not valid: " + volume);
-	    FloatControl gainControl = (FloatControl) actualClip.getControl(FloatControl.Type.MASTER_GAIN);        
-	    gainControl.setValue(50f * (float) Math.log10(volume-0.05));
+	    FloatControl gainControl = (FloatControl) actualClip.getControl(FloatControl.Type.MASTER_GAIN);
+	    if(actualClipURL == Const.themeVillaube)
+	    	gainControl.setValue(30f * (float) Math.log10(volume-0.05));
+	    else
+	    	gainControl.setValue(50f * (float) Math.log10(volume-0.05));
 	}
 	
 	public static void refreshVolume() {

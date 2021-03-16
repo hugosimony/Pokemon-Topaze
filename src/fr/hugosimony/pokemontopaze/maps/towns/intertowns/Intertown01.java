@@ -21,7 +21,7 @@ import fr.hugosimony.pokemontopaze.maps.Places;
 import fr.hugosimony.pokemontopaze.maps.pnj.Pnj;
 import fr.hugosimony.pokemontopaze.maps.roads.Road01;
 import fr.hugosimony.pokemontopaze.maps.towns.Selenia;
-import fr.hugosimony.pokemontopaze.sounds.Music;
+import fr.hugosimony.pokemontopaze.musics.Musics;
 import fr.hugosimony.pokemontopaze.sounds.Sounds;
 import fr.hugosimony.pokemontopaze.transitions.TransitionSimple;
 import fr.hugosimony.pokemontopaze.utils.IntTuple;
@@ -52,7 +52,7 @@ public class Intertown01 extends JPanel {
 		//****************************************************************************************************
 		// Music
 		
-		Music.startMusic(Const.themeSelenia);
+		Musics.startMusic(Const.themeSelenia);
 		
 		//****************************************************************************************************
 	    // Listener

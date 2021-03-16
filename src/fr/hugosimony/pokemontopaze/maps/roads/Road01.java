@@ -24,7 +24,7 @@ import fr.hugosimony.pokemontopaze.maps.items.GroundItem;
 import fr.hugosimony.pokemontopaze.maps.pnj.Pnj;
 import fr.hugosimony.pokemontopaze.maps.towns.intertowns.Intertown01;
 import fr.hugosimony.pokemontopaze.maps.towns.intertowns.Intertown02;
-import fr.hugosimony.pokemontopaze.sounds.Music;
+import fr.hugosimony.pokemontopaze.musics.Musics;
 import fr.hugosimony.pokemontopaze.sounds.Sounds;
 import fr.hugosimony.pokemontopaze.transitions.TransitionSimple;
 import fr.hugosimony.pokemontopaze.utils.IntTriple;
@@ -68,7 +68,7 @@ public class Road01 extends JPanel {
 		//****************************************************************************************************
 		// Music
 		
-		Music.startMusic(Const.themeRoad01);
+		Musics.startMusic(Const.themeRoad01);
 		
 		//****************************************************************************************************
 	    // Listener
