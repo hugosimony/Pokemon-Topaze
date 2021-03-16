@@ -10,7 +10,9 @@ import javax.swing.JPanel;
 import fr.hugosimony.pokemontopaze.Game;
 import fr.hugosimony.pokemontopaze.pokemon.PKM;
 import fr.hugosimony.pokemontopaze.pokemon.Pokemon;
+import fr.hugosimony.pokemontopaze.transitions.TransitionSimple;
 
+@SuppressWarnings("unused")
 public class Battle extends JPanel {
 	private static final long serialVersionUID = 1L;
 
@@ -43,10 +45,10 @@ public class Battle extends JPanel {
 		game.inBattle = true;
 		game.actualPanel = this;
 		
-		JButton fightButton = new BattleButtons.Fight();
-		JButton bagButton = new BattleButtons.Bag();
-		JButton pokemonButton = new BattleButtons.Pokemon();
-		JButton runButton = new BattleButtons.Run();
+		JButton fightButton = new BattleButtons.Fight(this);
+		JButton bagButton = new BattleButtons.Bag(this);
+		JButton pokemonButton = new BattleButtons.Pokemon(this);
+		JButton runButton = new BattleButtons.Run(this);
 		
 		fightButton.setLocation(2, 447);
 		bagButton.setLocation(195, 447);
@@ -77,5 +79,13 @@ public class Battle extends JPanel {
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		g.drawImage(BattleConst.getBackground(background).getImage(), 0, 0, null);
+	}
+	
+	public void endBattle(boolean savage, boolean run) {
+		setVisible(false);
+		game.remove(this);
+		game.inBattle = false;
+		game.actualPanel = savedMap;
+		new TransitionSimple(game, game.gamePanel, savedMap);
 	}
 }

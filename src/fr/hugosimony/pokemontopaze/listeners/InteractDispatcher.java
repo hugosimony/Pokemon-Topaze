@@ -15,9 +15,7 @@ import fr.hugosimony.pokemontopaze.maps.pnj.PnjText;
 import fr.hugosimony.pokemontopaze.menus.TextZone;
 import fr.hugosimony.pokemontopaze.pokemon.PKM;
 import fr.hugosimony.pokemontopaze.pokemon.Pokemon;
-import fr.hugosimony.pokemontopaze.pokemon.battle.Battle;
 import fr.hugosimony.pokemontopaze.pokemon.battle.PokemonSprite;
-import fr.hugosimony.pokemontopaze.transitions.TransitionSimple;
 import fr.hugosimony.pokemontopaze.utils.IntTuple;
 
 public class InteractDispatcher implements KeyEventDispatcher {
@@ -62,8 +60,6 @@ public class InteractDispatcher implements KeyEventDispatcher {
 							 if(pnj.paraClick)
 								 pnj.clearIA();
 							 pnj.setSprites(new Pnj(game, pnj.perso, Direction.getOpositeDirection(game.deplacement.direction), 0, pnj.positionX, pnj.positionY, false, false, null, null, pnj.paraClick, pnj.mooving));
-							 
-							 new TransitionSimple(game, game.gamePanel, new Battle(game, true, "test", "Champion", "good", game.actualPanel));
 						 }
 					 }
 					

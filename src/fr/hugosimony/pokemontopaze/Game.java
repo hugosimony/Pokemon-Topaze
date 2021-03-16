@@ -82,6 +82,9 @@ public class Game extends JFrame {
 	public PresentationProf speachPanel;
 	
 	public Battle battle;
+	public static String waitingBattle;
+	public static String waitingBattlefield;
+	public static String waitingWeather;
 	
 	// List of the maps
 	

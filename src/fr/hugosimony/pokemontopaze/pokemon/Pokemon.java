@@ -7,6 +7,7 @@ import fr.hugosimony.pokemontopaze.pokemon.items.Item;
 import fr.hugosimony.pokemontopaze.pokemon.items.PokeBalls;
 import fr.hugosimony.pokemontopaze.utils.Utils;
 
+@SuppressWarnings("unused")
 public class Pokemon {
 	
 	public PKM pokemon;

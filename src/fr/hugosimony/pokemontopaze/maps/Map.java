@@ -36,5 +36,7 @@ public class Map extends JPanel {
 	 * Variables (GroundItems)
 	 * Change map and place in the .java
 	 * Game (change the spawn location)
+	 * Add the trainers if needed
+	 * Music
 	 */
 }

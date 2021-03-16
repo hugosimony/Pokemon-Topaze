@@ -1,5 +1,6 @@
 package fr.hugosimony.pokemontopaze.maps.pnj;
 
+import fr.hugosimony.pokemontopaze.Game;
 import fr.hugosimony.pokemontopaze.Variables;
 import fr.hugosimony.pokemontopaze.pokemon.PKM;
 
@@ -16,6 +17,9 @@ public class PnjText {
 			if(Variables.ADVENTURE_Step == 1)
 				return "Bon, t'as pas un truc à faire là ¤= Le Prof Chen t'attend\n"
 						+ "à Villaube, au nord.";
+			if(Variables.ADVENTURE_Step > 1)
+				return "Ah t'as eu ton Pokémon...= Tant mieux,= tu vas pouvoir partir\n"
+						+ "explorer la région.= Repose toi quand même.";
 		}
 		
 		//***********************************************************************************************
@@ -86,9 +90,12 @@ public class PnjText {
 			if(Variables.ADVENTURE_Step == 10)
 				return "Je te choisis toi,= " + PKM.getStarterName(PKM.getOppositeStarter(Variables.STARTER)) + " !=+";
 			if(Variables.ADVENTURE_Step == 15) {
+				Game.waitingBattle = "rival01";
+				Game.waitingBattlefield = "Champion";
+				Game.waitingWeather = "Good";
 				return Variables.RIVAL_Name + " := Bon " + Variables.PERSO_Name + ",= c'est le moment non ¤= On va enfin\n"
 						+ "pouvoir faire un combat de Pokémon !=\n"
-						+ "Je vais te mettre une raclée != T'es prêt" + Variables.LANG_Feminin + " ¤= C'est parti !=+";
+						+ "Je vais te mettre une raclée != T'es prêt" + Variables.LANG_Feminin + " ¤= C'est parti !=^";
 			}
 		}
 		return "";
