@@ -53,7 +53,7 @@ public class Intertown02 extends JPanel {
 		//****************************************************************************************************
 		// Music
 		
-		Music.startMusic(Const.themeSelenia);
+		Music.startMusic(Const.themeVillaube);
 		
 		//****************************************************************************************************
 	    // Listener
