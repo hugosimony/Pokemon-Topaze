@@ -9,7 +9,6 @@ import javax.swing.JPanel;
 
 import fr.hugosimony.pokemontopaze.Const;
 import fr.hugosimony.pokemontopaze.Game;
-import fr.hugosimony.pokemontopaze.Main;
 import fr.hugosimony.pokemontopaze.Variables;
 import fr.hugosimony.pokemontopaze.listeners.DeplacementDispatcher;
 import fr.hugosimony.pokemontopaze.listeners.InteractDispatcher;
@@ -337,7 +336,6 @@ public class MyHouse extends JPanel {
 					 Sounds.playSound(Const.soundEnterHouse);
 				 else
 					 Sounds.playSound(Const.soundLeaveHouse);
-				 Main.actualClip.close();
 				 if(game.deplacement.getLookingTile().equals(toDownStairs)){
 					 new TransitionSimple(game, game.gamePanel, new MyHouse(game, false, 2048, 2865, Direction.RIGHT, -1646, -2611));
 				 }

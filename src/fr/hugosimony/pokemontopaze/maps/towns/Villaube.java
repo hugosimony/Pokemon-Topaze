@@ -585,7 +585,6 @@ public class Villaube extends JPanel {
 				 setVisible(false);
 				 if(game.deplacement.getLookingTile().equals(toIntertown02))
 					 Sounds.playSound(Const.soundEnterHouse);
-				 Main.actualClip.close();
 				 if(game.deplacement.getLookingTile().equals(toIntertown02)){
 					 new TransitionSimple(game, game.gamePanel, new Intertown02(game, 3264, 2858, Direction.DOWN, -2891, -2600));
 				 }

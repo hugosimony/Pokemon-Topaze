@@ -9,7 +9,6 @@ import javax.swing.JPanel;
 
 import fr.hugosimony.pokemontopaze.Const;
 import fr.hugosimony.pokemontopaze.Game;
-import fr.hugosimony.pokemontopaze.Main;
 import fr.hugosimony.pokemontopaze.Variables;
 import fr.hugosimony.pokemontopaze.listeners.DeplacementDispatcher;
 import fr.hugosimony.pokemontopaze.listeners.InteractDispatcher;
@@ -700,7 +699,6 @@ public class Road01 extends JPanel {
 				 setVisible(false);
 				 if(game.deplacement.getLookingTile().equals(toIntertown01) || game.deplacement.getLookingTile().equals(toIntertown02))
 					 Sounds.playSound(Const.soundEnterHouse);
-				 Main.actualClip.close();
 				 if(game.deplacement.getLookingTile().equals(toIntertown01)){
 					 new TransitionSimple(game, game.gamePanel, new Intertown01(game, 3264, 2858, Direction.DOWN, -2891, -2600));
 				 }

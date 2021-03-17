@@ -8,7 +8,6 @@ import javax.swing.JPanel;
 
 import fr.hugosimony.pokemontopaze.Const;
 import fr.hugosimony.pokemontopaze.Game;
-import fr.hugosimony.pokemontopaze.Main;
 import fr.hugosimony.pokemontopaze.Variables;
 import fr.hugosimony.pokemontopaze.listeners.DeplacementDispatcher;
 import fr.hugosimony.pokemontopaze.listeners.InteractDispatcher;
@@ -365,7 +364,6 @@ public class Selenia extends JPanel {
 				 setVisible(false);
 				 if(game.deplacement.getLookingTile().equals(toMyHouse) || game.deplacement.getLookingTile().equals(toIntertown01))
 					 Sounds.playSound(Const.soundEnterHouse);
-				 Main.actualClip.close();
 				 if(game.deplacement.getLookingTile().equals(toMyHouse)){
 					 new TransitionSimple(game, game.gamePanel, new MyHouse(game, false, 2176, 3153, Direction.UP, -1774, -2899));
 				 }

@@ -12,6 +12,7 @@ public class Musics {
 
 	public static void startMusic(URL music) {
 		try {
+			Main.actualClip.close();
 			Main.actualClipURL = music;
 			AudioInputStream audioInput = AudioSystem.getAudioInputStream(music);
 			Main.actualClip = AudioSystem.getClip();

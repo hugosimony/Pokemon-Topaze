@@ -3,11 +3,14 @@ package fr.hugosimony.pokemontopaze.pokemon.battle;
 import java.awt.Color;
 import java.awt.Graphics;
 import java.io.IOException;
+import java.net.URL;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
 import fr.hugosimony.pokemontopaze.Game;
+import fr.hugosimony.pokemontopaze.Main;
+import fr.hugosimony.pokemontopaze.musics.Musics;
 import fr.hugosimony.pokemontopaze.pokemon.PKM;
 import fr.hugosimony.pokemontopaze.pokemon.Pokemon;
 import fr.hugosimony.pokemontopaze.transitions.TransitionSimple;
@@ -23,6 +26,7 @@ public class Battle extends JPanel {
 	private String weather;
 	
 	private JPanel savedMap;
+	private URL savedMusic;
 	
 	public PokemonSprite sprite1;
 	public PokemonSprite sprite2;
@@ -39,6 +43,7 @@ public class Battle extends JPanel {
 		this.weather = weather;
 		
 		this.savedMap = savedMap;
+		this.savedMusic = Main.actualClipURL;
 		
 		setLayout(null);
 		
@@ -87,5 +92,7 @@ public class Battle extends JPanel {
 		game.inBattle = false;
 		game.actualPanel = savedMap;
 		new TransitionSimple(game, game.gamePanel, savedMap);
+		Main.actualClip.close();
+		Musics.startMusic(savedMusic);
 	}
 }
