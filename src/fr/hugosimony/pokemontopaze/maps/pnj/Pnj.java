@@ -21,6 +21,7 @@ public class Pnj extends JPanel {
 	public Game game;
 	
 	private Pnj pnj;
+	private Move move;
 	public boolean IA;
 	public boolean firstIA;
 	public IAMoving IAMoving;
@@ -74,6 +75,7 @@ public class Pnj extends JPanel {
 		private int x = 0;
 		
 		public Move(Direction direction, boolean animation, IntTuple animationEnd, String animationMoves, Direction finalLookingDirection, String finalText) {
+			move = this;
 			dir = direction;
 			this.animation = animation;
 			this.animationEnd = animationEnd;
@@ -116,7 +118,8 @@ public class Pnj extends JPanel {
 									repaint();
 							}
 						}
-						setSprites(new Pnj(game, perso, dir, foot, positionX, positionY, IA, false, directions, IAMoving, paraClick, true));
+						if(IA)
+							setSprites(new Pnj(game, perso, dir, foot, positionX, positionY, IA, false, directions, IAMoving, paraClick, true));
 						
 						if(isAnyoneNear() && !checkAnyoneNearDone) {
 							checkAnyoneNearDone = true;
@@ -125,7 +128,8 @@ public class Pnj extends JPanel {
 						x++;
 					}
 					else {
-						setSprites(new Pnj(game, perso, dir, 0, positionX, positionY, IA, false, directions, IAMoving, paraClick, false));
+						if(IA)
+							setSprites(new Pnj(game, perso, dir, 0, positionX, positionY, IA, false, directions, IAMoving, paraClick, false));
 						walkDirection *= -1;
 						mooving = false;
 						checkAnyoneNearDone = false;
@@ -267,6 +271,8 @@ public class Pnj extends JPanel {
 	
 	public void clearIA() {
 		if(IA) {
+			if(move != null)
+				move.cancel();
 			IAMoving.cancel();
 			IA = false;
 		}

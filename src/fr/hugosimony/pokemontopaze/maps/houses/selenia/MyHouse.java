@@ -75,6 +75,8 @@ public class MyHouse extends JPanel {
 	    // Map
 		
 		Variables.POSITION_Place = Places.SELENIA;
+		if(game.map != null)
+			game.map.removeAll();
 		if(up) {
 			game.map = new Map(1, 1);
 			game.map.setLocation(mapLocationX, mapLocationY);

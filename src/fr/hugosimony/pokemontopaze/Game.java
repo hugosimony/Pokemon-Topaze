@@ -277,7 +277,7 @@ public class Game extends JFrame {
         @Override
         public boolean dispatchKeyEvent(KeyEvent event) {
         	
-        	if(!Main.settingsOn && isVisible() && actualPanel.isVisible() && !inTextMenu && actualPanel != gamePanel) {
+        	if(!Main.settingsOn && isVisible() && actualPanel.isVisible() && !inYesNoMenu && !inTextMenu && actualPanel != gamePanel) {
         		if(event.getID() == KeyEvent.KEY_PRESSED && game.deplacement.released) {
         			int keyCode = event.getKeyCode();
         			if((keyCode == KeyEvent.VK_ESCAPE || keyCode == Variables.CONTROLS_Options)) {

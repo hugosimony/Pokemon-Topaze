@@ -39,6 +39,7 @@ public class YesNo extends JPanel {
 	public static void unprintYesNoMenu() {
 		yesNo.setVisible(false);
 		game.inYesNoMenu = false;
+		yesNo.repaint();
 	}
 	
 	public static void changeYesNoMenu() {

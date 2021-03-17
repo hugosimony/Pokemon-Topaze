@@ -26,23 +26,26 @@ public class IAMoving extends TimerTask{
 	@Override
 	public void run() {
 		
-		try {
-			Thread.sleep(Utils.randomNumber(2500, 4000));
-		} catch (Exception e) {
-		}
-		
-		if(!pnj.game.inAnimation && !pnj.game.inXMenu && !pnj.game.inSaveMenu && !pnj.game.inTextMenu && !pnj.game.inYesNoMenu && !pnj.mooving && !pnj.game.inBattle) {
+		if(pnj.IA) {
+			try {
+				Thread.sleep(Utils.randomNumber(2500, 4000));
+			} catch (Exception e) {}
 			
-			ArrayList<Direction> possibleDirections = getPossibleDirections();
-			if(possibleDirections.size() > 0) {
-				int random = Utils.randomNumber(possibleDirections.size()-1);
+			if(!pnj.game.inAnimation && !pnj.game.inXMenu && !pnj.game.inSaveMenu && !pnj.game.inTextMenu && !pnj.game.inYesNoMenu && !pnj.mooving && !pnj.game.inBattle) {
 				
-				if(pnj.isLookingTileFree(possibleDirections.get(random))) {
-					new Timer().schedule(pnj.new Move(possibleDirections.get(random), false, null, null, null, null), 0, 5);
-					setPosition(possibleDirections, random);
+				ArrayList<Direction> possibleDirections = getPossibleDirections();
+				if(possibleDirections.size() > 0) {
+					int random = Utils.randomNumber(possibleDirections.size()-1);
+					
+					if(pnj.isLookingTileFree(possibleDirections.get(random))) {
+						new Timer().schedule(pnj.new Move(possibleDirections.get(random), false, null, null, null, null), 0, 5);
+						setPosition(possibleDirections, random);
+					}
 				}
 			}
 		}
+		else
+			this.cancel();
 	}
 	
 	private IntTuple findPosition() {

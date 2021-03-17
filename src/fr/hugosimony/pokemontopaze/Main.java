@@ -52,7 +52,7 @@ public class Main {
 	        throw new IllegalArgumentException("Volume not valid: " + volume);
 	    FloatControl gainControl = (FloatControl) actualClip.getControl(FloatControl.Type.MASTER_GAIN);
 	    if(actualClipURL == Const.themeVillaube)
-	    	gainControl.setValue(30f * (float) Math.log10(volume-0.05));
+	    	gainControl.setValue(25f * (float) Math.log10(volume-0.05));
 	    else if(actualClipURL == Const.themeRivalEncounter)
 	    	gainControl.setValue(40f * (float) Math.log10(volume-0.05));
 	    else

@@ -6,6 +6,7 @@ import java.util.Timer;
 
 import javax.swing.JPanel;
 
+import fr.hugosimony.pokemontopaze.Const;
 import fr.hugosimony.pokemontopaze.Game;
 import fr.hugosimony.pokemontopaze.Main;
 import fr.hugosimony.pokemontopaze.Variables;
@@ -13,6 +14,7 @@ import fr.hugosimony.pokemontopaze.maps.animations.TextAnimations;
 import fr.hugosimony.pokemontopaze.menus.SaveMenu;
 import fr.hugosimony.pokemontopaze.menus.TextZone;
 import fr.hugosimony.pokemontopaze.menus.YesNo;
+import fr.hugosimony.pokemontopaze.sounds.Sounds;
 
 public class TextMenuDispatcher implements KeyEventDispatcher {
 
@@ -36,7 +38,7 @@ public class TextMenuDispatcher implements KeyEventDispatcher {
 	 					 if(keyCode == Variables.CONTROLS_UP || keyCode == Variables.CONTROLS_DOWN) {
 	 						 YesNo.changeYesNoMenu();
 	 					 }
-	 					 else if(keyCode == Variables.CONTROLS_B || keyCode == KeyEvent.VK_ESCAPE || keyCode == Variables.CONTROLS_A || keyCode == KeyEvent.VK_ENTER) {
+	 					 else if(keyCode == Variables.CONTROLS_B || keyCode == Variables.CONTROLS_A || keyCode == KeyEvent.VK_ENTER) {
 	 						 YesNo.unprintYesNoMenu();
 	 						 if((keyCode == Variables.CONTROLS_A || keyCode == KeyEvent.VK_ENTER) && YesNo.yes) {
 	 							 if(game.inSaveMenu) {
@@ -54,6 +56,7 @@ public class TextMenuDispatcher implements KeyEventDispatcher {
 	 							 }
 	 						 }
 	 						 else {
+	 							 Sounds.playSound(Const.soundPlayerStopped);
 	 							 if(game.inSaveMenu) {
 		 							 TextZone.unprintTextZone();
 	 								 SaveMenu.unprintSaveMenu();

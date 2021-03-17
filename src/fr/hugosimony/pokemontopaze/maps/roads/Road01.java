@@ -82,6 +82,8 @@ public class Road01 extends JPanel {
 	    // Map
 		
 		Variables.POSITION_Place = Places.ROAD01;
+		if(game.map != null)
+			game.map.removeAll();
 		game.map = new Map(4, 0);
 		game.map.setLocation(mapLocationX, mapLocationY);
 		game.map.setSize(10000,10000);

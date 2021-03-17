@@ -38,5 +38,6 @@ public class Map extends JPanel {
 	 * Game (change the spawn location)
 	 * Add the trainers if needed
 	 * Music
+	 * Remove pnj IA
 	 */
 }
