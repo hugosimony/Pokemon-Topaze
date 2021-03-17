@@ -12,6 +12,7 @@ import fr.hugosimony.pokemontopaze.maps.pnj.ExclamationMark;
 import fr.hugosimony.pokemontopaze.maps.pnj.Pnj;
 import fr.hugosimony.pokemontopaze.maps.pnj.PnjText;
 import fr.hugosimony.pokemontopaze.menus.TextZone;
+import fr.hugosimony.pokemontopaze.musics.Musics;
 import fr.hugosimony.pokemontopaze.pokemon.PKM;
 import fr.hugosimony.pokemontopaze.sounds.Sounds;
 import fr.hugosimony.pokemontopaze.utils.IntTuple;
@@ -79,8 +80,7 @@ public class PnjAnimations {
 	
 	public static void startGoodAnimation0_10(Game game, IntTuple finalAnimation) {
 		if(Variables.ADVENTURE_Step == 0) {
-			Sounds.playSound(Const.soundExclamation);
-			new ExclamationMark(game, game.myHouse.mom.getLocation());
+			new ExclamationMark(game, game.myHouse.mom.getLocation(), true);
 			new Timer().schedule(new TimerTask() {
 				@Override
 				public void run() {
@@ -94,8 +94,7 @@ public class PnjAnimations {
 			return;
 		}
 		else if(Variables.ADVENTURE_Step == 1) {
-			Sounds.playSound(Const.soundExclamation);
-			new ExclamationMark(game, game.road01.profChen.getLocation());
+			new ExclamationMark(game, game.road01.profChen.getLocation(), true);
 			new Timer().schedule(new TimerTask() {
 				@Override
 				public void run() {
@@ -147,7 +146,7 @@ public class PnjAnimations {
 			return;
 		}
 		else if(Variables.ADVENTURE_Step == 8) {
-			new ExclamationMark(game, game.road01.profChen.getLocation());
+			new ExclamationMark(game, game.road01.profChen.getLocation(), false);
 			if(finalAnimation.y == 1738)
 				new Timer().schedule(game.road01.profChen.new Move(Direction.UP, true, new IntTuple(finalAnimation.x - 32, 1738), "rrrd", Direction.RIGHT, 
 							PnjText.getText("profChen")), 1000, 7);
@@ -165,13 +164,13 @@ public class PnjAnimations {
 			new Timer().schedule(new TimerTask() {
 				@Override
 				public void run() {
+					Musics.startMusic(Const.themeRivalEncounter);
 					game.road01.rival = new Pnj(game, "rival", Direction.UP, 0, 4064, 1802, false, false, null, null, false, false);
 					game.road01.rival.setLocation(4064, 1802);
 					game.road01.rival.setSize(35, 50);
 					game.pnjs.add(game.road01.rival);
-					Sounds.playSound(Const.soundLeaveHouse);
-					new ExclamationMark(game, game.road01.profChen.getLocation());
-					new ExclamationMark(game, game.deplacement.hero.getLocation());
+					new ExclamationMark(game, game.road01.profChen.getLocation(), true);
+					new ExclamationMark(game, game.deplacement.hero.getLocation(), false);
 					game.road01.rival.setSprites(game.road01.rival);
 					new Timer().schedule(new TimerTask() {
 						@Override
@@ -262,6 +261,7 @@ public class PnjAnimations {
 			IntTuple.removeTuple(game.walls, new IntTuple(game.road01.rival.positionX, 1738));
 			IntTuple.removeTuple(game.clickableTiles, new IntTuple(game.road01.rival.positionX, 1738));
 			int oppositeStarter = PKM.getOppositeStarter(Variables.STARTER);
+			Sounds.playSound(Const.soundSelectionMenu);
 			if(oppositeStarter == 1)
 				game.road01.starter1.setVisible(false);
 			else if(oppositeStarter == 2)
@@ -307,6 +307,7 @@ public class PnjAnimations {
 			new Timer().schedule(new TimerTask() {
 				@Override
 				public void run() {
+					Sounds.playSound(Const.soundSelectionMenu);
 					game.road01.starter1.setVisible(false);
 					game.road01.starter2.setVisible(false);
 					game.road01.starter3.setVisible(false);
@@ -367,9 +368,35 @@ public class PnjAnimations {
 				new Timer().schedule(game.deplacement.new MoveDirection(Direction.RIGHT, false, false, true, new IntTuple(3872, 1738), 
 						"drrr", Direction.LEFT, "", false), 500, 7);
 			}
+			Variables.ADVENTURE_Step = 16;
+			return;
 		}
-		Variables.ADVENTURE_Step = 16;
-		return;
+		else if(Variables.ADVENTURE_Step == 16) {
+			String text = PnjText.getText("rival");
+			new Timer().schedule(new TimerTask() {
+				@Override
+				public void run() {
+					game.textZone = new TextZone(game.actualPanel, text);
+					TextZone.printTextZone(game.textZone, game);
+					this.cancel();
+				}
+			}, 1000);
+			Variables.ADVENTURE_Step = 17;
+			return;
+		}
+		else if(Variables.ADVENTURE_Step == 17) {
+			new Timer().schedule(game.road01.rival.new Move(Direction.LEFT, true, new IntTuple(3456, 1738), 
+					"lllllll", Direction.LEFT, PnjText.getText("rival")), 1000, 7);
+			new Timer().schedule(new TimerTask() {
+				@Override
+				public void run() {
+					Musics.startMusic(Const.themeRoad01);
+					this.cancel();
+				}
+			}, 2500);
+			Variables.ADVENTURE_Step = 18;
+			return;
+		}
 	}
 	
 }

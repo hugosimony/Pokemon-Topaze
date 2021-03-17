@@ -4,12 +4,15 @@ import java.awt.Color;
 import java.awt.Graphics;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import javax.swing.JButton;
 import javax.swing.JPanel;
 
 import fr.hugosimony.pokemontopaze.Game;
 import fr.hugosimony.pokemontopaze.Main;
+import fr.hugosimony.pokemontopaze.menus.TextZone;
 import fr.hugosimony.pokemontopaze.musics.Musics;
 import fr.hugosimony.pokemontopaze.pokemon.PKM;
 import fr.hugosimony.pokemontopaze.pokemon.Pokemon;
@@ -49,6 +52,7 @@ public class Battle extends JPanel {
 		
 		game.inBattle = true;
 		game.actualPanel = this;
+		Musics.startMusic(BattleMusics.getGoodMusic(opponent));
 		
 		JButton fightButton = new BattleButtons.Fight(this);
 		JButton bagButton = new BattleButtons.Bag(this);
@@ -90,9 +94,19 @@ public class Battle extends JPanel {
 		setVisible(false);
 		game.remove(this);
 		game.inBattle = false;
+		Game.battleWin = true; // TODO
 		game.actualPanel = savedMap;
 		new TransitionSimple(game, game.gamePanel, savedMap);
-		Main.actualClip.close();
 		Musics.startMusic(savedMusic);
+		new Timer().schedule(new TimerTask() {
+			@Override
+			public void run() {
+				String text = BattlerText.getText(opponent, -1);
+				if(!text.equals("")) {
+					game.textZone = new TextZone(game.actualPanel, text);
+					TextZone.printTextZone(game.textZone, game);	
+				}
+			}
+		}, 1500);
 	}
 }

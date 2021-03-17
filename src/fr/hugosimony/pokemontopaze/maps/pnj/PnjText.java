@@ -97,6 +97,11 @@ public class PnjText {
 						+ "pouvoir faire un combat de Pokémon !=\n"
 						+ "Je vais te mettre une raclée != T'es prêt" + Variables.LANG_Feminin + " ¤= C'est parti !=^";
 			}
+			if(Variables.ADVENTURE_Step == 16)
+				return "J'ai soigné ton Pokémon.= Tu peux aller le montrer à ta mère si tu\n"
+						+ "veux.= Bon je vais voir le vieux.= Il nous attend à Villaube.= A plus !=+";
+			if(Variables.ADVENTURE_Step == 17)
+				return "[]";
 		}
 		return "";
 	}

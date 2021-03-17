@@ -9,13 +9,17 @@ import javax.swing.JPanel;
 
 import fr.hugosimony.pokemontopaze.Const;
 import fr.hugosimony.pokemontopaze.Game;
+import fr.hugosimony.pokemontopaze.sounds.Sounds;
 
 public class ExclamationMark extends JPanel{
 	private static final long serialVersionUID = 1L;
 	
 	ExclamationMark em;
 
-	public ExclamationMark(Game game, Point location) {
+	public ExclamationMark(Game game, Point location, boolean sound) {
+		
+		if(sound)
+			Sounds.playSound(Const.soundExclamation);
 		
 		em = this;
 		em.setLocation(location.x + 2, location.y - Const.exclamationMark.getIconHeight());

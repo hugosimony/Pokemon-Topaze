@@ -8,7 +8,6 @@ import javax.swing.JPanel;
 
 import fr.hugosimony.pokemontopaze.Const;
 import fr.hugosimony.pokemontopaze.Game;
-import fr.hugosimony.pokemontopaze.Main;
 import fr.hugosimony.pokemontopaze.Variables;
 import fr.hugosimony.pokemontopaze.listeners.DeplacementDispatcher;
 import fr.hugosimony.pokemontopaze.listeners.InteractDispatcher;

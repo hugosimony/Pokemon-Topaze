@@ -77,14 +77,15 @@ public class Game extends JFrame {
 	public boolean inAnimation;
 	public boolean inTransition;
 	
-	public boolean inBattle;
-	
 	public PresentationProf speachPanel;
+	
+	public boolean inBattle;
 	
 	public Battle battle;
 	public static String waitingBattle;
 	public static String waitingBattlefield;
 	public static String waitingWeather;
+	public static boolean battleWin;
 	
 	// List of the maps
 	
