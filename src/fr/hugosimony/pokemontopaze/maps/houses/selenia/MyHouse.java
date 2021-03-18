@@ -283,7 +283,7 @@ public class MyHouse extends JPanel {
 			 }
 			 else if(IntTuple.getPosition(game.clickableTiles, tuple) == 3) {
 				 text = "Trop bien ! Touche pas à mon Pokémon != Mais bon... =le Prof Chen\n"
-						 + " m'attends.";
+						 + " m'attend.";
 			 }
 			 else if(IntTuple.getPosition(game.clickableTiles, tuple) == 4) {
 				 text = "Merde j'ai oublié de vider ma poubelle.= Faudra vraiment que je le\n"

@@ -566,7 +566,7 @@ public class Villaube extends JPanel {
 			 // Ajouter un mouchoir soie au sac.
 			 text = "Vous avez ramassé un Mouchoir Soie !";
 		 }
-		 else if(IntTuple.getPosition(game.clickableTiles, tuple) == 10 && Variables.GROUND_ITEMS_Road1.contains("0")) {
+		 else if(IntTuple.getPosition(game.clickableTiles, tuple) == 10 && Variables.GROUND_ITEMS_Villaube.contains("0")) {
 			 Sounds.playSound(Const.soundItemGet);
 			 Variables.GROUND_ITEMS_Villaube.remove("0");
 			 groundPokeBall1.setVisible(false);
