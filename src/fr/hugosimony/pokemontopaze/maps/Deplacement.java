@@ -446,6 +446,10 @@ public class Deplacement {
 		if(!change)
 			change = game.rivalHouse != null && game.rivalHouse.isVisible() &&  game.rivalHouse.checkMapChange();
 		if(!change)
+			change = game.house01 != null && game.house01.isVisible() && game.house01.checkMapChange();
+		if(!change)
+			change = game.house02 != null && game.house02.isVisible() && game.house02.checkMapChange();
+		if(!change)
 			change = game.intertown01 != null && game.intertown01.isVisible() &&  game.intertown01.checkMapChange();
 		if(!change)
 			change = game.road01 != null && game.road01.isVisible() &&  game.road01.checkMapChange();
@@ -453,6 +457,8 @@ public class Deplacement {
 			change = game.intertown02 != null && game.intertown02.isVisible() &&  game.intertown02.checkMapChange();
 		if(!change)
 			change = game.villaube != null && game.villaube.isVisible() &&  game.villaube.checkMapChange();
+		if(!change)
+			change = game.house03 != null && game.house03.isVisible() && game.house03.checkMapChange();
 		return change;
 	}
 		

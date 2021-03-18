@@ -19,6 +19,7 @@ import fr.hugosimony.pokemontopaze.maps.Map;
 import fr.hugosimony.pokemontopaze.maps.Places;
 import fr.hugosimony.pokemontopaze.maps.houses.selenia.MyHouse;
 import fr.hugosimony.pokemontopaze.maps.houses.selenia.RivalHouse;
+import fr.hugosimony.pokemontopaze.maps.houses.selenia.SeleniaHouses;
 import fr.hugosimony.pokemontopaze.maps.items.GroundItem;
 import fr.hugosimony.pokemontopaze.maps.pnj.Pnj;
 import fr.hugosimony.pokemontopaze.maps.towns.intertowns.Intertown01;
@@ -34,6 +35,8 @@ public class Selenia extends JPanel {
 	
 	private IntTuple toMyHouse;
 	private IntTuple toRivalHouse;
+	private IntTuple toHouse01;
+	private IntTuple toHouse02;
 	private IntTuple toIntertown01;
 
 	private Pnj police001;
@@ -53,6 +56,8 @@ public class Selenia extends JPanel {
 		setPnjs();
 		toMyHouse = new IntTuple(1248, 1162);
 		toRivalHouse = new IntTuple(1536, 1162);
+		toHouse01 = new IntTuple(1248, 1450);
+		toHouse02 = new IntTuple(1504, 1450);
 		toIntertown01 = new IntTuple(2016, 1258);
 		
 		setLayout(null);
@@ -346,11 +351,13 @@ public class Selenia extends JPanel {
 		if(isVisible()){
 			
 			if(game.deplacement.getLookingTile().equals(toMyHouse) || game.deplacement.getLookingTile().equals(toRivalHouse)
+					|| game.deplacement.getLookingTile().equals(toHouse01) || game.deplacement.getLookingTile().equals(toHouse02)
 					|| game.deplacement.getLookingTile().equals(toIntertown01)) {
 				 game.deplacement.hero.setVisible(false);
 				 setVisible(false);
 				 if(game.deplacement.getLookingTile().equals(toMyHouse) || game.deplacement.getLookingTile().equals(toRivalHouse)
-					 || game.deplacement.getLookingTile().equals(toIntertown01))
+						 || game.deplacement.getLookingTile().equals(toHouse01) || game.deplacement.getLookingTile().equals(toHouse02)
+						 || game.deplacement.getLookingTile().equals(toIntertown01))
 					 Sounds.playSound(Const.soundEnterHouse);
 				 if(game.deplacement.getLookingTile().equals(toMyHouse)){
 					 new TransitionSimple(game, game.gamePanel, new MyHouse(game, false, 2176, 3153, Direction.UP, -1774, -2899));
@@ -358,11 +365,14 @@ public class Selenia extends JPanel {
 				 else if(game.deplacement.getLookingTile().equals(toRivalHouse)){
 					 new TransitionSimple(game, game.gamePanel, new RivalHouse(game, false, 4256, 3153, Direction.UP, -3854, -2899));
 				 }
+				 else if(game.deplacement.getLookingTile().equals(toHouse01)){
+					 new TransitionSimple(game, game.gamePanel, SeleniaHouses.seleniaHouse01(game, 5504, 1322, Direction.UP, -5131, -1064));
+				 }
+				 else if(game.deplacement.getLookingTile().equals(toHouse02)){
+					 new TransitionSimple(game, game.gamePanel, SeleniaHouses.seleniaHouse02(game, 6464, 3114, Direction.UP, -6091, -2856));
+				 }
 				 else if(game.deplacement.getLookingTile().equals(toIntertown01)){
 					 new TransitionSimple(game, game.gamePanel, new Intertown01(game, 3264, 3114, Direction.UP, -2891, -2856));
-				 }
-				 else {
-					 
 				 }
 				 return true;
 			}

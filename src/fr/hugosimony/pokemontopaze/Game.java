@@ -24,8 +24,7 @@ import fr.hugosimony.pokemontopaze.maps.houses.House02;
 import fr.hugosimony.pokemontopaze.maps.houses.House03;
 import fr.hugosimony.pokemontopaze.maps.houses.selenia.MyHouse;
 import fr.hugosimony.pokemontopaze.maps.houses.selenia.RivalHouse;
-import fr.hugosimony.pokemontopaze.maps.houses.selenia.SeleniaHouse01;
-import fr.hugosimony.pokemontopaze.maps.houses.selenia.SeleniaHouse02;
+import fr.hugosimony.pokemontopaze.maps.houses.selenia.SeleniaHouses;
 import fr.hugosimony.pokemontopaze.maps.pnj.Pnj;
 import fr.hugosimony.pokemontopaze.maps.roads.Road01;
 import fr.hugosimony.pokemontopaze.maps.towns.Selenia;
@@ -207,11 +206,11 @@ public class Game extends JFrame {
 				add(rivalHouse);
 			}
 			else if(FileAdventureReaderWriter.getPrecisePositionPlace(save) == 4) {
-				house01 = SeleniaHouse01.seleniaHouse01(this, FileAdventureReaderWriter.getLocationX(save), FileAdventureReaderWriter.getLocationY(save), FileAdventureReaderWriter.getDirection(save), FileAdventureReaderWriter.getMapLocationX(save), FileAdventureReaderWriter.getMapLocationY(save));
+				house01 = SeleniaHouses.seleniaHouse01(this, FileAdventureReaderWriter.getLocationX(save), FileAdventureReaderWriter.getLocationY(save), FileAdventureReaderWriter.getDirection(save), FileAdventureReaderWriter.getMapLocationX(save), FileAdventureReaderWriter.getMapLocationY(save));
 				add(house01);
 			}
 			else if(FileAdventureReaderWriter.getPrecisePositionPlace(save) == 5) {
-				house02 = SeleniaHouse02.seleniaHouse02(this, FileAdventureReaderWriter.getLocationX(save), FileAdventureReaderWriter.getLocationY(save), FileAdventureReaderWriter.getDirection(save), FileAdventureReaderWriter.getMapLocationX(save), FileAdventureReaderWriter.getMapLocationY(save));
+				house02 = SeleniaHouses.seleniaHouse02(this, FileAdventureReaderWriter.getLocationX(save), FileAdventureReaderWriter.getLocationY(save), FileAdventureReaderWriter.getDirection(save), FileAdventureReaderWriter.getMapLocationX(save), FileAdventureReaderWriter.getMapLocationY(save));
 				add(house02);
 			}
 			else if(FileAdventureReaderWriter.getPrecisePositionPlace(save) == 6) {

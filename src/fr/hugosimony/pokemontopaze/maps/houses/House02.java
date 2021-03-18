@@ -6,7 +6,6 @@ import java.util.ArrayList;
 
 import javax.swing.JPanel;
 
-import fr.hugosimony.pokemontopaze.Const;
 import fr.hugosimony.pokemontopaze.Game;
 import fr.hugosimony.pokemontopaze.listeners.DeplacementDispatcher;
 import fr.hugosimony.pokemontopaze.listeners.InteractDispatcher;
@@ -14,9 +13,7 @@ import fr.hugosimony.pokemontopaze.listeners.MenuXDispatcher;
 import fr.hugosimony.pokemontopaze.listeners.TextMenuDispatcher;
 import fr.hugosimony.pokemontopaze.maps.Deplacement;
 import fr.hugosimony.pokemontopaze.maps.Direction;
-import fr.hugosimony.pokemontopaze.maps.towns.Villaube;
-import fr.hugosimony.pokemontopaze.sounds.Sounds;
-import fr.hugosimony.pokemontopaze.transitions.TransitionSimple;
+import fr.hugosimony.pokemontopaze.maps.houses.selenia.SeleniaHouses;
 import fr.hugosimony.pokemontopaze.utils.IntTuple;
 
 public class House02 extends JPanel {
@@ -31,6 +28,7 @@ public class House02 extends JPanel {
 		game.house02 = this;
 		
 		setWalls();
+		toExit = new IntTuple(6464, 3178);
 		
 		setLayout(null);
 		setBackground(new Color(0, 0, 0));
@@ -86,21 +84,9 @@ public class House02 extends JPanel {
 	
 	public boolean checkMapChange() {
 		
-		if(!isVisible()){
-			
-			if(game.deplacement.getLookingTile().equals(toExit)) {
-				 game.deplacement.hero.setVisible(false);
-				 setVisible(false);
-				 if(game.deplacement.getLookingTile().equals(toExit))
-					 Sounds.playSound(Const.soundLeaveHouse);
-				 if(game.deplacement.getLookingTile().equals(toExit)){
-					 new TransitionSimple(game, game.gamePanel, new Villaube(game, 1280, 5521, Direction.UP, -878, -5267));
-				 }
-				 else {
-					 
-				 }
-				 return true;
-			}
+		if(isVisible()){
+			if(game.map.map == 5)
+				return SeleniaHouses.checkMapChangeHouse02();
 		}
 		return false;
 	}
