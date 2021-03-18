@@ -19,8 +19,13 @@ import fr.hugosimony.pokemontopaze.intro.PresentationProf;
 import fr.hugosimony.pokemontopaze.maps.Deplacement;
 import fr.hugosimony.pokemontopaze.maps.Map;
 import fr.hugosimony.pokemontopaze.maps.Places;
+import fr.hugosimony.pokemontopaze.maps.houses.House01;
+import fr.hugosimony.pokemontopaze.maps.houses.House02;
+import fr.hugosimony.pokemontopaze.maps.houses.House03;
 import fr.hugosimony.pokemontopaze.maps.houses.selenia.MyHouse;
 import fr.hugosimony.pokemontopaze.maps.houses.selenia.RivalHouse;
+import fr.hugosimony.pokemontopaze.maps.houses.selenia.SeleniaHouse01;
+import fr.hugosimony.pokemontopaze.maps.houses.selenia.SeleniaHouse02;
 import fr.hugosimony.pokemontopaze.maps.pnj.Pnj;
 import fr.hugosimony.pokemontopaze.maps.roads.Road01;
 import fr.hugosimony.pokemontopaze.maps.towns.Selenia;
@@ -93,10 +98,13 @@ public class Game extends JFrame {
 	public MyHouse myHouse;
 	public Selenia selenia;
 	public RivalHouse rivalHouse;
+	public House01 house01;
+	public House02 house02;
 	public Intertown01 intertown01;
 	public Road01 road01;
 	public Intertown02 intertown02;
 	public Villaube villaube;
+	public House03 house03;
 	
 	// Pokemon
 	
@@ -199,12 +207,12 @@ public class Game extends JFrame {
 				add(rivalHouse);
 			}
 			else if(FileAdventureReaderWriter.getPrecisePositionPlace(save) == 4) {
-				//road01 = new Road01(this, FileAdventureReaderWriter.getLocationX(save), FileAdventureReaderWriter.getLocationY(save), FileAdventureReaderWriter.getDirection(save), FileAdventureReaderWriter.getMapLocationX(save), FileAdventureReaderWriter.getMapLocationY(save));
-				//add(road01);
+				house01 = SeleniaHouse01.seleniaHouse01(this, FileAdventureReaderWriter.getLocationX(save), FileAdventureReaderWriter.getLocationY(save), FileAdventureReaderWriter.getDirection(save), FileAdventureReaderWriter.getMapLocationX(save), FileAdventureReaderWriter.getMapLocationY(save));
+				add(house01);
 			}
 			else if(FileAdventureReaderWriter.getPrecisePositionPlace(save) == 5) {
-				//intertown02 = new Intertown02(this, FileAdventureReaderWriter.getLocationX(save), FileAdventureReaderWriter.getLocationY(save), FileAdventureReaderWriter.getDirection(save), FileAdventureReaderWriter.getMapLocationX(save), FileAdventureReaderWriter.getMapLocationY(save));
-				//add(intertown02);
+				house02 = SeleniaHouse02.seleniaHouse02(this, FileAdventureReaderWriter.getLocationX(save), FileAdventureReaderWriter.getLocationY(save), FileAdventureReaderWriter.getDirection(save), FileAdventureReaderWriter.getMapLocationX(save), FileAdventureReaderWriter.getMapLocationY(save));
+				add(house02);
 			}
 			else if(FileAdventureReaderWriter.getPrecisePositionPlace(save) == 6) {
 				intertown01 = new Intertown01(this, FileAdventureReaderWriter.getLocationX(save), FileAdventureReaderWriter.getLocationY(save), FileAdventureReaderWriter.getDirection(save), FileAdventureReaderWriter.getMapLocationX(save), FileAdventureReaderWriter.getMapLocationY(save));
