@@ -27,7 +27,7 @@ import fr.hugosimony.pokemontopaze.transitions.TransitionSimple;
 import fr.hugosimony.pokemontopaze.utils.IntTriple;
 import fr.hugosimony.pokemontopaze.utils.IntTuple;
 
-public class MyHouse extends JPanel {
+public class RivalHouse extends JPanel {
 	private static final long serialVersionUID = 1L;
 
 	private Game game;
@@ -41,19 +41,19 @@ public class MyHouse extends JPanel {
 	
 	public Pnj mom;
 	
-	public MyHouse(Game game, boolean up, int locationX, int locationY, Direction direction, int mapLocationX, int mapLocationY) {
+	public RivalHouse(Game game, boolean up, int locationX, int locationY, Direction direction, int mapLocationX, int mapLocationY) {
 		
 		this.game = game;
-		game.myHouse = this;
+		game.rivalHouse = this;
 		this.up = up;
 		
 		setClickableTiles();
 		setWalls();
 		setPnjs();
 		setAnimations();
-		toDownStairs = new IntTuple(1184, 2922);
-		toUpStairs = new IntTuple(1984, 2865);
-		toExit = new IntTuple(2176, 3217);
+		toDownStairs = new IntTuple(5216, 2865);
+		toUpStairs = new IntTuple(4480, 2865);
+		toExit = new IntTuple(4256, 3217);
 		setLayout(null);
 		setBackground(new Color(0, 0, 0));
 		
@@ -78,12 +78,12 @@ public class MyHouse extends JPanel {
 		if(game.map != null)
 			game.map.removeAll();
 		if(up) {
-			game.map = new Map(1, 1);
+			game.map = new Map(3, 1);
 			game.map.setLocation(mapLocationX, mapLocationY);
 			game.map.setSize(1000000, 1000000);
 		}
 		else {
-			game.map = new Map(1, 0);
+			game.map = new Map(3, 0);
 			game.map.setLocation(mapLocationX, mapLocationY);
 			game.map.setSize(1000000, 1000000);
 			game.map.add(mom);
@@ -243,7 +243,6 @@ public class MyHouse extends JPanel {
 			pnj.clearIA();
 		game.pnjs = new ArrayList<Pnj>();
 		
-		
 		if(!up) {
 			if(Variables.ADVENTURE_Step == 0) {
 				mom = new Pnj(game, "mom", Direction.DOWN, 0, 2368, 3025, false, false, null, null, false, false);
@@ -260,15 +259,6 @@ public class MyHouse extends JPanel {
 	
 	public void setAnimations() {
 		animationTiles = new ArrayList<IntTriple>();
-		
-		if(Variables.ADVENTURE_Step == 0) {
-			animationTiles.add(new IntTriple(2112, 3025, 0));
-			animationTiles.add(new IntTriple(2144, 3025, 0));
-			animationTiles.add(new IntTriple(2176, 3025, 0));
-			animationTiles.add(new IntTriple(2208, 3025, 0));
-			animationTiles.add(new IntTriple(2240, 3025, 0));
-			animationTiles.add(new IntTriple(2272, 3025, 0));
-		}
 	}
 	
 	public String getInteractMessage(IntTuple tuple) {
@@ -339,13 +329,13 @@ public class MyHouse extends JPanel {
 				 else
 					 Sounds.playSound(Const.soundLeaveHouse);
 				 if(game.deplacement.getLookingTile().equals(toDownStairs)){
-					 new TransitionSimple(game, game.gamePanel, new MyHouse(game, false, 2048, 2865, Direction.RIGHT, -1646, -2611));
+					 new TransitionSimple(game, game.gamePanel, new RivalHouse(game, false, 4416, 2865, Direction.LEFT, -4014, -2611));
 				 }
 				 else if(game.deplacement.getLookingTile().equals(toUpStairs)){
-					 new TransitionSimple(game, game.gamePanel, new MyHouse(game, true, 1120, 2922, Direction.LEFT, -747, -2664));
+					 new TransitionSimple(game, game.gamePanel, new RivalHouse(game, true, 5280, 2865, Direction.RIGHT, -4878, -2611));
 				 }
 				 else {
-					 new TransitionSimple(game, game.gamePanel, new Selenia(game, 1248, 1226, Direction.DOWN, -875, -968));
+					 new TransitionSimple(game, game.gamePanel, new Selenia(game, 1536, 1226, Direction.DOWN, -1163, -968));
 				 }
 				 return true;
 			}

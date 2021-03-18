@@ -18,6 +18,7 @@ import fr.hugosimony.pokemontopaze.maps.Direction;
 import fr.hugosimony.pokemontopaze.maps.Map;
 import fr.hugosimony.pokemontopaze.maps.Places;
 import fr.hugosimony.pokemontopaze.maps.houses.selenia.MyHouse;
+import fr.hugosimony.pokemontopaze.maps.houses.selenia.RivalHouse;
 import fr.hugosimony.pokemontopaze.maps.items.GroundItem;
 import fr.hugosimony.pokemontopaze.maps.pnj.Pnj;
 import fr.hugosimony.pokemontopaze.maps.towns.intertowns.Intertown01;
@@ -32,6 +33,7 @@ public class Selenia extends JPanel {
 	private Game game;
 	
 	private IntTuple toMyHouse;
+	private IntTuple toRivalHouse;
 	private IntTuple toIntertown01;
 
 	private Pnj police001;
@@ -50,6 +52,7 @@ public class Selenia extends JPanel {
 		setWalls();
 		setPnjs();
 		toMyHouse = new IntTuple(1248, 1162);
+		toRivalHouse = new IntTuple(1536, 1162);
 		toIntertown01 = new IntTuple(2016, 1258);
 		
 		setLayout(null);
@@ -103,13 +106,6 @@ public class Selenia extends JPanel {
 		groundPokeBall1 = new GroundItem("pokeball");
 		groundPokeBall1.setVisible(Variables.GROUND_ITEMS_Selenia.contains("1"));
 		groundPokeBall1.setLocation(1024, 1290);
-		
-		// TEMP 
-		
-		game.clickableTiles.add(new IntTuple(1536, 1194)); // HOUSE LOCKED 1 
-		game.clickableTiles.add(new IntTuple(1248, 1482)); // HOUSE LOCKED 2
-		game.clickableTiles.add(new IntTuple(1504, 1482)); // HOUSE LOCKED 3
-		
 	}
 	
 	private void addGroundItems() {
@@ -280,13 +276,6 @@ public class Selenia extends JPanel {
 		game.walls.add(new IntTuple(1088, 1354));
 		game.walls.add(new IntTuple(1120, 1354));
 		game.walls.add(new IntTuple(1152, 1354));
-		
-		// TEMP
-
-		game.walls.add(new IntTuple(1536, 1194)); // DOOR HOUSE 1
-		game.walls.add(new IntTuple(1248, 1482)); // DOOR HOUSE 2
-		game.walls.add(new IntTuple(1504, 1482)); // DOOR HOUSE 3
-		
 	}
 	
 	private void setPnjs() {
@@ -329,7 +318,7 @@ public class Selenia extends JPanel {
 			 text = "Chez " + Variables.PERSO_Name + ".";
 		 }
 		 else if(IntTuple.getPosition(game.clickableTiles, tuple) == 2) {
-			 text = "Chez Martin.";
+			 text = "Chez " + Variables.RIVAL_Name + ".";
 		 }
 		 else if(IntTuple.getPosition(game.clickableTiles, tuple) == 3) {
 			 text = "Sélénia.= Une ville calme et symbole de sérénité.";
@@ -349,11 +338,6 @@ public class Selenia extends JPanel {
 			 text = "Vous avez ramassé une Hyper Ball !";
 		 }
 		 //****************************
-		 // TEMP
-		 else if(IntTuple.getPosition(game.clickableTiles, tuple) == 6 || IntTuple.getPosition(game.clickableTiles, tuple) == 7 || IntTuple.getPosition(game.clickableTiles, tuple) == 8) {
-			 text = "C'est fermé.";
-		 }
-		 //****************************
 		 return text;
 	}
 	
@@ -361,13 +345,18 @@ public class Selenia extends JPanel {
 		
 		if(isVisible()){
 			
-			if(game.deplacement.getLookingTile().equals(toMyHouse) || game.deplacement.getLookingTile().equals(toIntertown01)) {
+			if(game.deplacement.getLookingTile().equals(toMyHouse) || game.deplacement.getLookingTile().equals(toRivalHouse)
+					|| game.deplacement.getLookingTile().equals(toIntertown01)) {
 				 game.deplacement.hero.setVisible(false);
 				 setVisible(false);
-				 if(game.deplacement.getLookingTile().equals(toMyHouse) || game.deplacement.getLookingTile().equals(toIntertown01))
+				 if(game.deplacement.getLookingTile().equals(toMyHouse) || game.deplacement.getLookingTile().equals(toRivalHouse)
+					 || game.deplacement.getLookingTile().equals(toIntertown01))
 					 Sounds.playSound(Const.soundEnterHouse);
 				 if(game.deplacement.getLookingTile().equals(toMyHouse)){
 					 new TransitionSimple(game, game.gamePanel, new MyHouse(game, false, 2176, 3153, Direction.UP, -1774, -2899));
+				 }
+				 else if(game.deplacement.getLookingTile().equals(toRivalHouse)){
+					 new TransitionSimple(game, game.gamePanel, new RivalHouse(game, false, 4256, 3153, Direction.UP, -3854, -2899));
 				 }
 				 else if(game.deplacement.getLookingTile().equals(toIntertown01)){
 					 new TransitionSimple(game, game.gamePanel, new Intertown01(game, 3264, 3114, Direction.UP, -2891, -2856));

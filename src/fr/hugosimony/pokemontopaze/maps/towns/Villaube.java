@@ -72,7 +72,7 @@ public class Villaube extends JPanel {
 		Variables.POSITION_Place = Places.VILLAUBE;
 		if(game.map != null)
 			game.map.removeAll();
-		game.map = new Map(6, 0);
+		game.map = new Map(9, 0);
 		game.map.setLocation(mapLocationX, mapLocationY);
 		game.map.setSize(10000,10000);
 		

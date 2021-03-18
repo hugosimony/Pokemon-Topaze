@@ -444,6 +444,8 @@ public class Deplacement {
 		if(!change)
 			change = game.selenia != null && game.selenia.isVisible() && game.selenia.checkMapChange();
 		if(!change)
+			change = game.rivalHouse != null && game.rivalHouse.isVisible() &&  game.rivalHouse.checkMapChange();
+		if(!change)
 			change = game.intertown01 != null && game.intertown01.isVisible() &&  game.intertown01.checkMapChange();
 		if(!change)
 			change = game.road01 != null && game.road01.isVisible() &&  game.road01.checkMapChange();
