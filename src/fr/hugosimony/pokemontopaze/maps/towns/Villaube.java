@@ -32,8 +32,6 @@ public class Villaube extends JPanel {
 
 	private IntTuple toIntertown02;
 	
-	private Pnj police001;
-	
 	private Pnj villaubePnj01;
 	private Pnj villaubePnj02;
 	
@@ -511,33 +509,7 @@ public class Villaube extends JPanel {
 			pnj.clearIA();
 		game.pnjs = new ArrayList<Pnj>();
 		
-		police001 = new Pnj(game, "police001", Direction.RIGHT, 0, 896, 1546, false, false, null, null, false, false);
-		police001.setVisible(true);
-		police001.setSize(35, 50);
-		police001.setLocation(896, 1546);
-		game.pnjs.add(police001);
 		
-		int[][] directionsPnj01 = {
-				{1, 1, 0},
-				{0, 2, 0},
-				{0, 1, 1}
-		};
-		villaubePnj01 = new Pnj(game, "brownboy001", Direction.DOWN, 0, 1664, 1386, true, true, directionsPnj01, null, false, false);
-		villaubePnj01.setVisible(true);
-		villaubePnj01.setSize(35, 50);
-		villaubePnj01.setLocation(1664, 1386);
-		game.pnjs.add(villaubePnj01);
-		
-		int[][] directionsPnj02 = {
-				{0, 0, 1, 1, 0},
-				{0, 0, 1, 0, 0},
-				{1, 1, 2, 1, 1}
-		};
-		villaubePnj02 = new Pnj(game, "brownboy002", Direction.UP, 0, 1376, 1546, true, true, directionsPnj02, null, false, false);
-		villaubePnj02.setVisible(true);
-		villaubePnj02.setSize(35, 50);
-		villaubePnj02.setLocation(1376, 1546);
-		game.pnjs.add(villaubePnj02);
 	}
 	
 	public String getInteractMessage(IntTuple tuple) {

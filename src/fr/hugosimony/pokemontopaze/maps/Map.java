@@ -32,6 +32,7 @@ public class Map extends JPanel {
 	 * Game (create the global variable)
 	 * InteractDispatcher (check)
 	 * Deplacement (checkMapChange)
+	 * Deplacement (checkAnimations)
 	 * Places
 	 * Variables (GroundItems)
 	 * Change map and place in the .java

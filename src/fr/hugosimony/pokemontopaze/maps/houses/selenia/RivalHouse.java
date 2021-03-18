@@ -2,7 +2,6 @@ package fr.hugosimony.pokemontopaze.maps.houses.selenia;
 
 import java.awt.Color;
 import java.awt.KeyboardFocusManager;
-import java.awt.event.KeyEvent;
 import java.util.ArrayList;
 
 import javax.swing.JPanel;
@@ -18,13 +17,11 @@ import fr.hugosimony.pokemontopaze.maps.Deplacement;
 import fr.hugosimony.pokemontopaze.maps.Direction;
 import fr.hugosimony.pokemontopaze.maps.Map;
 import fr.hugosimony.pokemontopaze.maps.Places;
-import fr.hugosimony.pokemontopaze.maps.animations.PnjAnimations;
 import fr.hugosimony.pokemontopaze.maps.pnj.Pnj;
 import fr.hugosimony.pokemontopaze.maps.towns.Selenia;
 import fr.hugosimony.pokemontopaze.musics.Musics;
 import fr.hugosimony.pokemontopaze.sounds.Sounds;
 import fr.hugosimony.pokemontopaze.transitions.TransitionSimple;
-import fr.hugosimony.pokemontopaze.utils.IntTriple;
 import fr.hugosimony.pokemontopaze.utils.IntTuple;
 
 public class RivalHouse extends JPanel {
@@ -37,8 +34,6 @@ public class RivalHouse extends JPanel {
 	private IntTuple toUpStairs;
 	private IntTuple toExit;
 	
-	private ArrayList<IntTriple> animationTiles;
-	
 	public Pnj mom;
 	
 	public RivalHouse(Game game, boolean up, int locationX, int locationY, Direction direction, int mapLocationX, int mapLocationY) {
@@ -50,7 +45,6 @@ public class RivalHouse extends JPanel {
 		setClickableTiles();
 		setWalls();
 		setPnjs();
-		setAnimations();
 		toDownStairs = new IntTuple(5216, 2865);
 		toUpStairs = new IntTuple(4480, 2865);
 		toExit = new IntTuple(4256, 3217);
@@ -99,17 +93,11 @@ public class RivalHouse extends JPanel {
 		game.clickableTiles = new ArrayList<IntTuple>();
 		
 		if(up) {
-			game.clickableTiles.add(new IntTuple(1088, 2890)); // SIGN
-			game.clickableTiles.add(new IntTuple(992, 2922)); // CONSOLE
-			game.clickableTiles.add(new IntTuple(960, 2922)); // TV
-			game.clickableTiles.add(new IntTuple(928, 2922)); // TRASH
-			game.clickableTiles.add(new IntTuple(864, 2922)); // BOOK
-			game.clickableTiles.add(new IntTuple(1184, 3082)); // COMPUTER
+			game.clickableTiles.add(new IntTuple(5312, 2833)); // SIGN
+			game.clickableTiles.add(new IntTuple(5536, 2865)); // TRASH
 		}
 		else {
-			game.clickableTiles.add(new IntTuple(2272, 2961)); // TV
-			game.clickableTiles.add(new IntTuple(2432, 2865)); // TRASH
-			game.clickableTiles.add(new IntTuple(2432, 2961)); // FOOD
+			game.clickableTiles.add(new IntTuple(4480, 3153)); // TRASH
 		}
 		
 	}
@@ -119,122 +107,100 @@ public class RivalHouse extends JPanel {
 		game.walls = new ArrayList<IntTuple>();
 		
 		if(up) {
-			game.walls.add(new IntTuple(1184, 2890));
-			game.walls.add(new IntTuple(1152, 2890));
-			game.walls.add(new IntTuple(1120, 2890));
-			game.walls.add(new IntTuple(1088, 2890));
-			game.walls.add(new IntTuple(1056, 2890));
-			game.walls.add(new IntTuple(1024, 2890));
-			game.walls.add(new IntTuple(992, 2922));
-			game.walls.add(new IntTuple(960, 2922));
-			game.walls.add(new IntTuple(928, 2922));
-			game.walls.add(new IntTuple(896, 2922));
-			game.walls.add(new IntTuple(864, 2922));
-			game.walls.add(new IntTuple(832, 2954));
-			game.walls.add(new IntTuple(832, 2986));
-			game.walls.add(new IntTuple(864, 3018));
-			game.walls.add(new IntTuple(896, 3018));
-			game.walls.add(new IntTuple(928, 3018));
-			game.walls.add(new IntTuple(928, 3050));
-			game.walls.add(new IntTuple(896, 3050));
-			game.walls.add(new IntTuple(864, 3050));
-			game.walls.add(new IntTuple(832, 3050));
-			game.walls.add(new IntTuple(832, 3082));
-			game.walls.add(new IntTuple(864, 3114));
-			game.walls.add(new IntTuple(864, 3146));
-			game.walls.add(new IntTuple(896, 3178));
-			game.walls.add(new IntTuple(928, 3178));
-			game.walls.add(new IntTuple(960, 3178));
-			game.walls.add(new IntTuple(992, 3178));
-			game.walls.add(new IntTuple(1024, 3178));
-			game.walls.add(new IntTuple(1056, 3178));
-			game.walls.add(new IntTuple(1088, 3178));
-			game.walls.add(new IntTuple(1120, 3178));
-			game.walls.add(new IntTuple(1152, 3146));
-			game.walls.add(new IntTuple(1152, 3114));
-			game.walls.add(new IntTuple(1152, 3082));
-			game.walls.add(new IntTuple(1184, 3082));
-			game.walls.add(new IntTuple(1216, 3050));
-			game.walls.add(new IntTuple(1216, 3018));
-			game.walls.add(new IntTuple(1184, 2986));
-			game.walls.add(new IntTuple(1152, 2954));
+			game.walls.add(new IntTuple(5280, 2833));
+			game.walls.add(new IntTuple(5312, 2833));
+			game.walls.add(new IntTuple(5344, 2833));
+			game.walls.add(new IntTuple(5376, 2833));
+			game.walls.add(new IntTuple(5408, 2833));
+			game.walls.add(new IntTuple(5440, 2833));
+			game.walls.add(new IntTuple(5472, 2833));
+			game.walls.add(new IntTuple(5504, 2833));
+			game.walls.add(new IntTuple(5536, 2833));
+			game.walls.add(new IntTuple(5536, 2865));
+			game.walls.add(new IntTuple(5568, 2897));
+			game.walls.add(new IntTuple(5536, 2929));
+			game.walls.add(new IntTuple(5504, 2929));
+			game.walls.add(new IntTuple(5472, 2929));
+			game.walls.add(new IntTuple(5472, 2961));
+			game.walls.add(new IntTuple(5568, 2993));
+			game.walls.add(new IntTuple(5536, 3025));
+			game.walls.add(new IntTuple(5536, 3057));
+			game.walls.add(new IntTuple(5536, 3089));
+			game.walls.add(new IntTuple(5504, 3121));
+			game.walls.add(new IntTuple(5472, 3121));
+			game.walls.add(new IntTuple(5440, 3121));
+			game.walls.add(new IntTuple(5408, 3121));
+			game.walls.add(new IntTuple(5376, 3121));
+			game.walls.add(new IntTuple(5344, 3121));
+			game.walls.add(new IntTuple(5312, 3121));
+			game.walls.add(new IntTuple(5280, 3121));
+			game.walls.add(new IntTuple(5248, 3089));
+			game.walls.add(new IntTuple(5248, 3057));
+			game.walls.add(new IntTuple(5216, 3089));
+			game.walls.add(new IntTuple(5184, 3057));
+			game.walls.add(new IntTuple(5184, 3025));
+			game.walls.add(new IntTuple(5216, 2993));
+			game.walls.add(new IntTuple(5184, 2961));
+			game.walls.add(new IntTuple(5216, 2929));
+			game.walls.add(new IntTuple(5248, 2929));
+			game.walls.add(new IntTuple(5248, 2897));
+			game.walls.add(new IntTuple(5504, 2961));
+			game.walls.add(new IntTuple(5536, 2961));
 		}
 		else {
-			game.walls.add(new IntTuple(2272, 2961));
-			game.walls.add(new IntTuple(2432, 2865));
-			game.walls.add(new IntTuple(2432, 2961));
-			game.walls.add(new IntTuple(2048, 2833));
-			game.walls.add(new IntTuple(2080, 2833));
-			game.walls.add(new IntTuple(2112, 2833));
-			game.walls.add(new IntTuple(2144, 2833));
-			game.walls.add(new IntTuple(2176, 2833));
-			game.walls.add(new IntTuple(2208, 2833));
-			game.walls.add(new IntTuple(2240, 2833));
-			game.walls.add(new IntTuple(2272, 2833));
-			game.walls.add(new IntTuple(2304, 2865));
-			game.walls.add(new IntTuple(2304, 2897));
-			game.walls.add(new IntTuple(2304, 2929));
-			game.walls.add(new IntTuple(2304, 2961));
-			game.walls.add(new IntTuple(2304, 2993));
-			game.walls.add(new IntTuple(2304, 3025));
-			game.walls.add(new IntTuple(2208, 2897));
-			game.walls.add(new IntTuple(2208, 2929));
-			game.walls.add(new IntTuple(2208, 2961));
-			game.walls.add(new IntTuple(2208, 2993));
-			game.walls.add(new IntTuple(2272, 2929));
-			game.walls.add(new IntTuple(2016, 2897));
-			game.walls.add(new IntTuple(1984, 2897));
-			game.walls.add(new IntTuple(1952, 2929));
-			game.walls.add(new IntTuple(1952, 2961));
-			game.walls.add(new IntTuple(1984, 2993));
-			game.walls.add(new IntTuple(2016, 2993));
-			game.walls.add(new IntTuple(2048, 2993));
-			game.walls.add(new IntTuple(2080, 2993));
-			game.walls.add(new IntTuple(2080, 3025));
-			game.walls.add(new IntTuple(2048, 3025));
-			game.walls.add(new IntTuple(2016, 3025));
-			game.walls.add(new IntTuple(1984, 3025));
-			game.walls.add(new IntTuple(1952, 3057));
-			game.walls.add(new IntTuple(1952, 3089));
-			game.walls.add(new IntTuple(1952, 3121));
-			game.walls.add(new IntTuple(1952, 3153));
-			game.walls.add(new IntTuple(1984, 3185));
-			game.walls.add(new IntTuple(2048, 3185));
-			game.walls.add(new IntTuple(2080, 3153));
-			game.walls.add(new IntTuple(2080, 3121));
-			game.walls.add(new IntTuple(2080, 3089));
-			game.walls.add(new IntTuple(2016, 3121));
-			game.walls.add(new IntTuple(2016, 3153));
-			game.walls.add(new IntTuple(2112, 3185));
-			game.walls.add(new IntTuple(2144, 3185));
-			game.walls.add(new IntTuple(2208, 3185));
-			game.walls.add(new IntTuple(2240, 3185));
-			game.walls.add(new IntTuple(2272, 3185));
-			game.walls.add(new IntTuple(2304, 3185));
-			game.walls.add(new IntTuple(2336, 3185));
-			game.walls.add(new IntTuple(2368, 3185));
-			game.walls.add(new IntTuple(2400, 3185));
-			game.walls.add(new IntTuple(2432, 3185));
-			game.walls.add(new IntTuple(2464, 3153));
-			game.walls.add(new IntTuple(2464, 3121));
-			game.walls.add(new IntTuple(2464, 3089));
-			game.walls.add(new IntTuple(2464, 3057));
-			game.walls.add(new IntTuple(2464, 3025));
-			game.walls.add(new IntTuple(2432, 2993));
-			game.walls.add(new IntTuple(2432, 2929));
-			game.walls.add(new IntTuple(2432, 2897));
-			game.walls.add(new IntTuple(2400, 2833));
-			game.walls.add(new IntTuple(2368, 2833));
-			game.walls.add(new IntTuple(2336, 2833));
-			game.walls.add(new IntTuple(2272, 3121));
-			game.walls.add(new IntTuple(2304, 3121));
-			game.walls.add(new IntTuple(2336, 3121));
-			game.walls.add(new IntTuple(2368, 3121));
-			game.walls.add(new IntTuple(2400, 3121));
-			game.walls.add(new IntTuple(2368, 3089));
-			game.walls.add(new IntTuple(2336, 3089));
-			game.walls.add(new IntTuple(2304, 3089));
-
+			game.walls.add(new IntTuple(4224, 3185));
+			game.walls.add(new IntTuple(4192, 3185));
+			game.walls.add(new IntTuple(4160, 3185));
+			game.walls.add(new IntTuple(4128, 3185));
+			game.walls.add(new IntTuple(4096, 3185));
+			game.walls.add(new IntTuple(4064, 3185));
+			game.walls.add(new IntTuple(4032, 3185));
+			game.walls.add(new IntTuple(4000, 3153));
+			game.walls.add(new IntTuple(4000, 3121));
+			game.walls.add(new IntTuple(4032, 3089));
+			game.walls.add(new IntTuple(4064, 3121));
+			game.walls.add(new IntTuple(4096, 3121));
+			game.walls.add(new IntTuple(4096, 3089));
+			game.walls.add(new IntTuple(4128, 3057));
+			game.walls.add(new IntTuple(4128, 3025));
+			game.walls.add(new IntTuple(4128, 2993));
+			game.walls.add(new IntTuple(4096, 2993));
+			game.walls.add(new IntTuple(4064, 2993));
+			game.walls.add(new IntTuple(4032, 2961));
+			game.walls.add(new IntTuple(4064, 2929));
+			game.walls.add(new IntTuple(4096, 2929));
+			game.walls.add(new IntTuple(4128, 2929));
+			game.walls.add(new IntTuple(4160, 2929));
+			game.walls.add(new IntTuple(4192, 2929));
+			game.walls.add(new IntTuple(4192, 2897));
+			game.walls.add(new IntTuple(4224, 2865));
+			game.walls.add(new IntTuple(4256, 2865));
+			game.walls.add(new IntTuple(4288, 2865));
+			game.walls.add(new IntTuple(4320, 2865));
+			game.walls.add(new IntTuple(4352, 2833));
+			game.walls.add(new IntTuple(4384, 2833));
+			game.walls.add(new IntTuple(4416, 2833));
+			game.walls.add(new IntTuple(4448, 2897));
+			game.walls.add(new IntTuple(4480, 2929));
+			game.walls.add(new IntTuple(4480, 2961));
+			game.walls.add(new IntTuple(4448, 2961));
+			game.walls.add(new IntTuple(4416, 2961));
+			game.walls.add(new IntTuple(4384, 2961));
+			game.walls.add(new IntTuple(4384, 2993));
+			game.walls.add(new IntTuple(4384, 3025));
+			game.walls.add(new IntTuple(4416, 3025));
+			game.walls.add(new IntTuple(4448, 3025));
+			game.walls.add(new IntTuple(4480, 3025));
+			game.walls.add(new IntTuple(4512, 3057));
+			game.walls.add(new IntTuple(4480, 3089));
+			game.walls.add(new IntTuple(4480, 3121));
+			game.walls.add(new IntTuple(4480, 3153));
+			game.walls.add(new IntTuple(4448, 3185));
+			game.walls.add(new IntTuple(4416, 3185));
+			game.walls.add(new IntTuple(4384, 3185));
+			game.walls.add(new IntTuple(4352, 3185));
+			game.walls.add(new IntTuple(4320, 3185));
+			game.walls.add(new IntTuple(4288, 3185));
 		}
 	}
 	
@@ -257,63 +223,25 @@ public class RivalHouse extends JPanel {
 		}
 	}
 	
-	public void setAnimations() {
-		animationTiles = new ArrayList<IntTriple>();
-	}
-	
 	public String getInteractMessage(IntTuple tuple) {
 		 String text = "";
 		 if(up) {
 			 if(IntTuple.getPosition(game.clickableTiles, tuple) == 1) {
-				 text = "Note : Appuyer sur " + KeyEvent.getKeyText(Variables.CONTROLS_MenuX) + " pour ouvrir le menu.";
-			 }
-			 else if(IntTuple.getPosition(game.clickableTiles, tuple) == 2) {
-				 text = "C'est la console qui appartenait à Papa.= Elle est plus vielle que moi...=\n"
-						+ "Pfff, il y a que des jeux nuls.";
-			 }
-			 else if(IntTuple.getPosition(game.clickableTiles, tuple) == 3) {
-				 text = "Trop bien ! Touche pas à mon Pokémon != Mais bon... =le Prof Chen\n"
-						 + " m'attend.";
-			 }
-			 else if(IntTuple.getPosition(game.clickableTiles, tuple) == 4) {
-				 text = "Merde j'ai oublié de vider ma poubelle.= Faudra vraiment que je le\n"
-						 + "fasse...= J'ai pas envie d'être puni" + Variables.LANG_Feminin + " pendant un mois.";
-			 }
-			 else if(IntTuple.getPosition(game.clickableTiles, tuple) == 5) {
-				 text = "J'ai pas trop compris pourquoi, mais...= je vais avoir mon premier\n"
-						 + "Pokémon != Par contre, le Prof est un peu bizarre avec ma mère...";
-			 }
-			 else if(IntTuple.getPosition(game.clickableTiles, tuple) == 6) {
-				 text = "Le film d'hier soir était vraiment nul.";
-			 }
-		 }
-		 else {
-			 if(IntTuple.getPosition(game.clickableTiles, tuple) == 1) {
-				 text = "Poké-Achat...= Maman c'est vraiment nul sérieux.";
+				 text = "Note := Pour capturer des Pokémons,= il faut des Poké Balls.";
 			 }
 			 else if(IntTuple.getPosition(game.clickableTiles, tuple) == 2) {
 				 text = "C'est vide.";
 			 }
-			 else if(IntTuple.getPosition(game.clickableTiles, tuple) == 3) {
-				 text = "Sah quel plaisir != Un bon Katsu Curry.";
+		 }
+		 else {
+			 if(IntTuple.getPosition(game.clickableTiles, tuple) == 1) {
+				 text = "C'est vide.";
 			 }
 		 }
 		 return text;
 	}
 	
 	public boolean checkAnimations() {
-		
-		if(isVisible()){
-
-			IntTuple finalAnimation = game.deplacement.getPosition();
-			if(IntTriple.containsTuple(animationTiles, finalAnimation)) {
-				game.inAnimation = true;
-				int animation = IntTriple.getTripleFromTuple(animationTiles, finalAnimation).z;
-				if(animation == 0)
-					PnjAnimations.startGoodAnimation(game, new IntTuple(finalAnimation.x, 3057));
-				return true;
-			}
-		}
 		return false;
 	}
 	

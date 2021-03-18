@@ -275,7 +275,7 @@ public class MyHouse extends JPanel {
 		 String text = "";
 		 if(up) {
 			 if(IntTuple.getPosition(game.clickableTiles, tuple) == 1) {
-				 text = "Note : Appuyer sur " + KeyEvent.getKeyText(Variables.CONTROLS_MenuX) + " pour ouvrir le menu.";
+				 text = "Note := Appuyer sur " + KeyEvent.getKeyText(Variables.CONTROLS_MenuX) + " pour ouvrir le menu.";
 			 }
 			 else if(IntTuple.getPosition(game.clickableTiles, tuple) == 2) {
 				 text = "C'est la console qui appartenait à Papa.= Elle est plus vielle que moi...=\n"

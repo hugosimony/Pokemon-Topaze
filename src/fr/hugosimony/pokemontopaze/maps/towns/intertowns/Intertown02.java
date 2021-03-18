@@ -151,7 +151,7 @@ public class Intertown02 extends JPanel {
 	
 	public boolean checkMapChange() {
 		
-		if(isVisible()){
+		if(!isVisible()){
 			
 			if(game.deplacement.getLookingTile().equals(toRoad01) || game.deplacement.getLookingTile().equals(toVillaube)) {
 				 game.deplacement.hero.setVisible(false);
