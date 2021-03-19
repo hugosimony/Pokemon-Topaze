@@ -14,6 +14,7 @@ import fr.hugosimony.pokemontopaze.listeners.TextMenuDispatcher;
 import fr.hugosimony.pokemontopaze.maps.Deplacement;
 import fr.hugosimony.pokemontopaze.maps.Direction;
 import fr.hugosimony.pokemontopaze.maps.houses.selenia.SeleniaHouses;
+import fr.hugosimony.pokemontopaze.maps.houses.villaube.VillaubeHouses;
 import fr.hugosimony.pokemontopaze.utils.IntTuple;
 
 public class House02 extends JPanel {
@@ -121,6 +122,8 @@ public class House02 extends JPanel {
 		if(isVisible()){
 			if(game.map.map == 5)
 				return SeleniaHouses.checkMapChangeHouse02();
+			if(game.map.map == 14)
+				return VillaubeHouses.checkMapChangeHouse02();
 		}
 		return false;
 	}

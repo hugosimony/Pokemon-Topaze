@@ -17,6 +17,7 @@ import fr.hugosimony.pokemontopaze.maps.Deplacement;
 import fr.hugosimony.pokemontopaze.maps.Direction;
 import fr.hugosimony.pokemontopaze.maps.Map;
 import fr.hugosimony.pokemontopaze.maps.Places;
+import fr.hugosimony.pokemontopaze.maps.houses.villaube.VillaubeHouses;
 import fr.hugosimony.pokemontopaze.maps.items.GroundItem;
 import fr.hugosimony.pokemontopaze.maps.pnj.Pnj;
 import fr.hugosimony.pokemontopaze.maps.towns.intertowns.Intertown02;
@@ -31,9 +32,16 @@ public class Villaube extends JPanel {
 	private Game game;
 
 	private IntTuple toIntertown02;
+	//private IntTuple toLabo;
+	//private IntTuple toPokemonCenter;
+	//private IntTuple toMart;
+	private IntTuple toHouse01;
+	private IntTuple toHouse02;
+	//private IntTuple toHouse03;
+	private IntTuple toHouse04;
 	
-	private Pnj villaubePnj01;
-	private Pnj villaubePnj02;
+	//private Pnj villaubePnj01;
+	//private Pnj villaubePnj02;
 	
 	private GroundItem groundPokeBall1;
 	
@@ -46,6 +54,9 @@ public class Villaube extends JPanel {
 		setWalls();
 		setPnjs();
 		toIntertown02 = new IntTuple(1280, 5553);
+		toHouse01 = new IntTuple(1024, 5393);
+		toHouse02 = new IntTuple(960, 5169);
+		toHouse04 = new IntTuple(1376, 4241);
 		
 		setLayout(null);
 		setBackground(new Color(0, 0, 0));
@@ -553,16 +564,26 @@ public class Villaube extends JPanel {
 		
 		if(isVisible()){
 			
-			if(game.deplacement.getPosition().equals(toIntertown02)) {
+			if(game.deplacement.getPosition().equals(toIntertown02) 
+					|| game.deplacement.getPosition().equals(toHouse01) || game.deplacement.getPosition().equals(toHouse02)
+					|| game.deplacement.getPosition().equals(toHouse04)) {
 				 game.deplacement.hero.setVisible(false);
 				 setVisible(false);
-				 if(game.deplacement.getPosition().equals(toIntertown02))
+				 if(game.deplacement.getPosition().equals(toIntertown02)
+						 || game.deplacement.getPosition().equals(toHouse01) || game.deplacement.getPosition().equals(toHouse02)
+						 || game.deplacement.getPosition().equals(toHouse04))
 					 Sounds.playSound(Const.soundEnterHouse);
 				 if(game.deplacement.getPosition().equals(toIntertown02)){
 					 new TransitionSimple(game, game.gamePanel, new Intertown02(game, 3264, 2858, Direction.DOWN, -2891, -2600));
 				 }
-				 else {
-					 
+				 else if(game.deplacement.getPosition().equals(toHouse01)){
+					 new TransitionSimple(game, game.gamePanel, VillaubeHouses.villaubeHouse01(game, 5504, 1322, Direction.UP, -5131, -1064));
+				 }
+				 else if(game.deplacement.getPosition().equals(toHouse02)){
+					 new TransitionSimple(game, game.gamePanel, VillaubeHouses.villaubeHouse02(game, 6464, 3114, Direction.UP, -6091, -2856));
+				 }
+				 else if(game.deplacement.getPosition().equals(toHouse04)){
+					 new TransitionSimple(game, game.gamePanel, VillaubeHouses.villaubeHouse04(game, 5504, 1322, Direction.UP, -5131, -1064));
 				 }
 				 return true;
 			}

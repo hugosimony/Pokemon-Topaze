@@ -24,7 +24,6 @@ import fr.hugosimony.pokemontopaze.maps.houses.House02;
 import fr.hugosimony.pokemontopaze.maps.houses.House03;
 import fr.hugosimony.pokemontopaze.maps.houses.selenia.MyHouse;
 import fr.hugosimony.pokemontopaze.maps.houses.selenia.RivalHouse;
-import fr.hugosimony.pokemontopaze.maps.houses.selenia.SeleniaHouses;
 import fr.hugosimony.pokemontopaze.maps.pnj.Pnj;
 import fr.hugosimony.pokemontopaze.maps.roads.Road01;
 import fr.hugosimony.pokemontopaze.maps.towns.Selenia;
@@ -192,44 +191,8 @@ public class Game extends JFrame {
 			speachPanel = new PresentationProf(this);
 			add(speachPanel);
 		}
-		else {
-			if(FileAdventureReaderWriter.getPrecisePositionPlace(save) == 1) {
-				myHouse = new MyHouse(this, (FileAdventureReaderWriter.getMapFloor(save) == 1), FileAdventureReaderWriter.getLocationX(save), FileAdventureReaderWriter.getLocationY(save), FileAdventureReaderWriter.getDirection(save), FileAdventureReaderWriter.getMapLocationX(save), FileAdventureReaderWriter.getMapLocationY(save));
-				add(myHouse);
-			}
-			else if(FileAdventureReaderWriter.getPrecisePositionPlace(save) == 2) {
-				selenia = new Selenia(this, FileAdventureReaderWriter.getLocationX(save), FileAdventureReaderWriter.getLocationY(save), FileAdventureReaderWriter.getDirection(save), FileAdventureReaderWriter.getMapLocationX(save), FileAdventureReaderWriter.getMapLocationY(save));
-				add(selenia);
-			}
-			else if(FileAdventureReaderWriter.getPrecisePositionPlace(save) == 3) {
-				rivalHouse = new RivalHouse(this, (FileAdventureReaderWriter.getMapFloor(save) == 1), FileAdventureReaderWriter.getLocationX(save), FileAdventureReaderWriter.getLocationY(save), FileAdventureReaderWriter.getDirection(save), FileAdventureReaderWriter.getMapLocationX(save), FileAdventureReaderWriter.getMapLocationY(save));
-				add(rivalHouse);
-			}
-			else if(FileAdventureReaderWriter.getPrecisePositionPlace(save) == 4) {
-				house01 = SeleniaHouses.seleniaHouse01(this, FileAdventureReaderWriter.getLocationX(save), FileAdventureReaderWriter.getLocationY(save), FileAdventureReaderWriter.getDirection(save), FileAdventureReaderWriter.getMapLocationX(save), FileAdventureReaderWriter.getMapLocationY(save));
-				add(house01);
-			}
-			else if(FileAdventureReaderWriter.getPrecisePositionPlace(save) == 5) {
-				house02 = SeleniaHouses.seleniaHouse02(this, FileAdventureReaderWriter.getLocationX(save), FileAdventureReaderWriter.getLocationY(save), FileAdventureReaderWriter.getDirection(save), FileAdventureReaderWriter.getMapLocationX(save), FileAdventureReaderWriter.getMapLocationY(save));
-				add(house02);
-			}
-			else if(FileAdventureReaderWriter.getPrecisePositionPlace(save) == 6) {
-				intertown01 = new Intertown01(this, FileAdventureReaderWriter.getLocationX(save), FileAdventureReaderWriter.getLocationY(save), FileAdventureReaderWriter.getDirection(save), FileAdventureReaderWriter.getMapLocationX(save), FileAdventureReaderWriter.getMapLocationY(save));
-				add(intertown01);
-			}
-			else if(FileAdventureReaderWriter.getPrecisePositionPlace(save) == 7) {
-				road01 = new Road01(this, FileAdventureReaderWriter.getLocationX(save), FileAdventureReaderWriter.getLocationY(save), FileAdventureReaderWriter.getDirection(save), FileAdventureReaderWriter.getMapLocationX(save), FileAdventureReaderWriter.getMapLocationY(save));
-				add(road01);
-			}
-			else if(FileAdventureReaderWriter.getPrecisePositionPlace(save) == 8) {
-				intertown02 = new Intertown02(this, FileAdventureReaderWriter.getLocationX(save), FileAdventureReaderWriter.getLocationY(save), FileAdventureReaderWriter.getDirection(save), FileAdventureReaderWriter.getMapLocationX(save), FileAdventureReaderWriter.getMapLocationY(save));
-				add(intertown02);
-			}
-			else if(FileAdventureReaderWriter.getPrecisePositionPlace(save) == 9) {
-				villaube = new Villaube(this, FileAdventureReaderWriter.getLocationX(save), FileAdventureReaderWriter.getLocationY(save), FileAdventureReaderWriter.getDirection(save), FileAdventureReaderWriter.getMapLocationX(save), FileAdventureReaderWriter.getMapLocationY(save));
-				add(villaube);
-			}
-		}
+		else
+			Map.setMap(this, save);
 		
 		//****************************************************************************************************
 	    // Listener
