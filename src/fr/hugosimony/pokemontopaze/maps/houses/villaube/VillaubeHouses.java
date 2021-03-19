@@ -23,16 +23,18 @@ public class VillaubeHouses {
 	
 	public static House01 villaubeHouse01(Game game, int locationX, int locationY, Direction direction, int mapLocationX, int mapLocationY) {
 		VillaubeHouses.game = game;
+		
+		House01 house01 = new House01(game, locationX, locationY, direction, mapLocationX, mapLocationY);
+		setPnjsHouse01();
+		
+		Musics.startMusic(Const.themeVillaube);
+		Variables.POSITION_Place = Places.VILLAUBE;
+		
 		if(game.map != null)
 			game.map.removeAll();
 		game.map = new Map(13, 0);
-		game.map.setLocation(mapLocationX, mapLocationY);
-		game.map.setSize(10000,10000);
-		House01 house01 = new House01(game, locationX, locationY, direction, mapLocationX, mapLocationY);
-		house01.add(game.map);
-		Variables.POSITION_Place = Places.VILLAUBE;
-		setPnjsHouse01();
-		Musics.startMusic(Const.themeVillaube);
+		House01.setMap(game, house01, locationX, locationY, direction, mapLocationX, mapLocationY);
+		
 		return house01;
 	}
 	
@@ -58,16 +60,18 @@ public class VillaubeHouses {
 	
 	public static House02 villaubeHouse02(Game game, int locationX, int locationY, Direction direction, int mapLocationX, int mapLocationY) {
 		VillaubeHouses.game = game;
+		
+		House02 house02 = new House02(game, locationX, locationY, direction, mapLocationX, mapLocationY);
+		setPnjsHouse02();
+		
+		Musics.startMusic(Const.themeVillaube);
+		Variables.POSITION_Place = Places.VILLAUBE;
+		
 		if(game.map != null)
 			game.map.removeAll();
 		game.map = new Map(14, 0);
-		game.map.setLocation(mapLocationX, mapLocationY);
-		game.map.setSize(10000,10000);
-		House02 house02 = new House02(game, locationX, locationY, direction, mapLocationX, mapLocationY);
-		house02.add(game.map);
-		Variables.POSITION_Place = Places.VILLAUBE;
-		setPnjsHouse02();
-		Musics.startMusic(Const.themeVillaube);
+		House02.setMap(game, house02, locationX, locationY, direction, mapLocationX, mapLocationY);
+		
 		return house02;
 	}
 	
@@ -93,16 +97,18 @@ public class VillaubeHouses {
 	
 	public static House03 villaubeHouse03(Game game, int locationX, int locationY, Direction direction, int mapLocationX, int mapLocationY) {
 		VillaubeHouses.game = game;
+		
+		House03 house03 = new House03(game, locationX, locationY, direction, mapLocationX, mapLocationY);
+		setPnjsHouse03();
+		
+		Musics.startMusic(Const.themeVillaube);
+		Variables.POSITION_Place = Places.VILLAUBE;
+		
 		if(game.map != null)
 			game.map.removeAll();
 		game.map = new Map(15, 0);
-		game.map.setLocation(mapLocationX, mapLocationY);
-		game.map.setSize(10000,10000);
-		House03 house03 = new House03(game, locationX, locationY, direction, mapLocationX, mapLocationY);
-		house03.add(game.map);
-		Variables.POSITION_Place = Places.VILLAUBE;
-		setPnjsHouse03();
-		Musics.startMusic(Const.themeVillaube);
+		House03.setMap(game, house03, locationX, locationY, direction, mapLocationX, mapLocationY);
+		
 		return house03;
 	}
 	
@@ -128,16 +134,18 @@ public class VillaubeHouses {
 	
 	public static House01 villaubeHouse04(Game game, int locationX, int locationY, Direction direction, int mapLocationX, int mapLocationY) {
 		VillaubeHouses.game = game;
+		
+		House01 house04 = new House01(game, locationX, locationY, direction, mapLocationX, mapLocationY);
+		setPnjsHouse04();
+		
+		Musics.startMusic(Const.themeVillaube);
+		Variables.POSITION_Place = Places.VILLAUBE;
+		
 		if(game.map != null)
 			game.map.removeAll();
 		game.map = new Map(16, 0);
-		game.map.setLocation(mapLocationX, mapLocationY);
-		game.map.setSize(10000,10000);
-		House01 house04 = new House01(game, locationX, locationY, direction, mapLocationX, mapLocationY);
-		house04.add(game.map);
-		Variables.POSITION_Place = Places.VILLAUBE;
-		setPnjsHouse04();
-		Musics.startMusic(Const.themeVillaube);
+		House01.setMap(game, house04, locationX, locationY, direction, mapLocationX, mapLocationY);
+		
 		return house04;
 	}
 	

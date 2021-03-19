@@ -56,8 +56,7 @@ public class DeplacementDispatcher implements KeyEventDispatcher {
 					 int keyCode = event.getKeyCode();
 					 if(Deplacement.getDirection(keyCode) == game.deplacement.direction)
 						 game.deplacement.released = true;
-					 if(game.deplacement.pressed.contains(keyCode + ""))
-						 game.deplacement.pressed.remove(keyCode + "");
+					 game.deplacement.pressed.remove(keyCode + "");
 					 if(!game.inAnimation && !game.deplacement.coolDown && game.deplacement.pressed.size() == 1) {
 							game.deplacement.released = false;
 							game.deplacement.direction = Deplacement.getDirection(Integer.parseInt(game.deplacement.pressed.get(0)));

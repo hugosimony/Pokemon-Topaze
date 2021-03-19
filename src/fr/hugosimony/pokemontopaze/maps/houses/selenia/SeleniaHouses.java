@@ -22,16 +22,18 @@ public class SeleniaHouses {
 	
 	public static House01 seleniaHouse01(Game game, int locationX, int locationY, Direction direction, int mapLocationX, int mapLocationY) {
 		SeleniaHouses.game = game;
+		
+		House01 house01 = new House01(game, locationX, locationY, direction, mapLocationX, mapLocationY);
+		setPnjsHouse01();
+		
+		Musics.startMusic(Const.themeSelenia);
+		Variables.POSITION_Place = Places.SELENIA;
+		
 		if(game.map != null)
 			game.map.removeAll();
 		game.map = new Map(4, 0);
-		game.map.setLocation(mapLocationX, mapLocationY);
-		game.map.setSize(10000,10000);
-		House01 house01 = new House01(game, locationX, locationY, direction, mapLocationX, mapLocationY);
-		house01.add(game.map);
-		Variables.POSITION_Place = Places.SELENIA;
-		setPnjsHouse01();
-		Musics.startMusic(Const.themeSelenia);
+		House01.setMap(game, house01, locationX, locationY, direction, mapLocationX, mapLocationY);
+		
 		return house01;
 	}
 	
@@ -57,16 +59,18 @@ public class SeleniaHouses {
 	
 	public static House02 seleniaHouse02(Game game, int locationX, int locationY, Direction direction, int mapLocationX, int mapLocationY) {
 		SeleniaHouses.game = game;
+		
+		House02 house02 = new House02(game, locationX, locationY, direction, mapLocationX, mapLocationY);
+		setPnjsHouse02();
+		
+		Musics.startMusic(Const.themeSelenia);
+		Variables.POSITION_Place = Places.SELENIA;
+		
 		if(game.map != null)
 			game.map.removeAll();
 		game.map = new Map(5, 0);
-		game.map.setLocation(mapLocationX, mapLocationY);
-		game.map.setSize(10000,10000);
-		House02 house02 = new House02(game, locationX, locationY, direction, mapLocationX, mapLocationY);
-		house02.add(game.map);
-		Variables.POSITION_Place = Places.SELENIA;
-		setPnjsHouse02();
-		Musics.startMusic(Const.themeSelenia);
+		House02.setMap(game, house02, locationX, locationY, direction, mapLocationX, mapLocationY);
+		
 		return house02;
 	}
 	

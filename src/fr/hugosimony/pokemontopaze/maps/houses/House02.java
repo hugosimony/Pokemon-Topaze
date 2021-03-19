@@ -43,15 +43,6 @@ public class House02 extends JPanel {
 		manager.addKeyEventDispatcher(new MenuXDispatcher(game, this));
 		manager.addKeyEventDispatcher(new TextMenuDispatcher(game, this));
 		
-		//****************************************************************************************************
-	    // Map
-		
-		game.actualPanel = this;
-		game.firstMove = false;
-		game.deplacement = new Deplacement(game, locationX, locationY, direction, mapLocationX, mapLocationY);
-		
-		game.deplacement.setSprites(game.deplacement.direction, game.deplacement.hero, false);
-		
 	}
 
 	private void setWalls() {
@@ -128,4 +119,16 @@ public class House02 extends JPanel {
 		return false;
 	}
 
+	public static void setMap(Game game, House02 house02, int locationX, int locationY, Direction direction, int mapLocationX, int mapLocationY) {
+		game.map.setLocation(mapLocationX, mapLocationY);
+		game.map.setSize(10000,10000);
+		house02.add(game.map);
+		
+		game.actualPanel = house02;
+		game.firstMove = false;
+		game.deplacement = new Deplacement(game, locationX, locationY, direction, mapLocationX, mapLocationY);
+		
+		game.deplacement.setSprites(game.deplacement.direction, game.deplacement.hero, false);
+	}
+	
 }

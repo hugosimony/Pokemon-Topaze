@@ -43,15 +43,6 @@ public class House01 extends JPanel {
 		manager.addKeyEventDispatcher(new MenuXDispatcher(game, this));
 		manager.addKeyEventDispatcher(new TextMenuDispatcher(game, this));
 		
-		//****************************************************************************************************
-	    // Map
-		
-		game.actualPanel = this;
-		game.firstMove = false;
-		game.deplacement = new Deplacement(game, locationX, locationY, direction, mapLocationX, mapLocationY);
-		
-		game.deplacement.setSprites(game.deplacement.direction, game.deplacement.hero, false);
-		
 	}
 
 	private void setWalls() {
@@ -120,14 +111,26 @@ public class House01 extends JPanel {
 	public boolean checkMapChange() {
 		
 		if(isVisible()){
-			//if(game.map.map == 4)
-				//return SeleniaHouses.checkMapChangeHouse01();
+			if(game.map.map == 4)
+				return SeleniaHouses.checkMapChangeHouse01();
 			if(game.map.map == 13)
 				return VillaubeHouses.checkMapChangeHouse01();
-			//if(game.map.map == 16)
-				//return VillaubeHouses.checkMapChangeHouse04();
+			if(game.map.map == 16)
+				return VillaubeHouses.checkMapChangeHouse04();
 		}
 		return false;
+	}
+	
+	public static void setMap(Game game, House01 house01, int locationX, int locationY, Direction direction, int mapLocationX, int mapLocationY) {
+		game.map.setLocation(mapLocationX, mapLocationY);
+		game.map.setSize(10000,10000);
+		house01.add(game.map);
+		
+		game.actualPanel = house01;
+		game.firstMove = false;
+		game.deplacement = new Deplacement(game, locationX, locationY, direction, mapLocationX, mapLocationY);
+		
+		game.deplacement.setSprites(game.deplacement.direction, game.deplacement.hero, false);
 	}
 
 }
