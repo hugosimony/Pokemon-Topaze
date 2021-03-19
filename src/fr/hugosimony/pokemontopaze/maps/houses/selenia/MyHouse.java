@@ -51,9 +51,9 @@ public class MyHouse extends JPanel {
 		setWalls();
 		setPnjs();
 		setAnimations();
-		toDownStairs = new IntTuple(1184, 2922);
-		toUpStairs = new IntTuple(1984, 2865);
-		toExit = new IntTuple(2176, 3217);
+		toDownStairs = new IntTuple(1152, 2922);
+		toUpStairs = new IntTuple(2016, 2865);
+		toExit = new IntTuple(2176, 3185);
 		setLayout(null);
 		setBackground(new Color(0, 0, 0));
 		
@@ -86,7 +86,6 @@ public class MyHouse extends JPanel {
 			game.map = new Map(1, 0);
 			game.map.setLocation(mapLocationX, mapLocationY);
 			game.map.setSize(1000000, 1000000);
-			game.map.add(mom);
 		}
 		add(game.map);
 		
@@ -331,17 +330,17 @@ public class MyHouse extends JPanel {
 		
 		if(isVisible()){
 			
-			if((game.deplacement.getLookingTile().equals(toDownStairs) && up) || (game.deplacement.getLookingTile().equals(toUpStairs) && !up) || (game.deplacement.getLookingTile().equals(toExit) && !up)) {
+			if((game.deplacement.getPosition().equals(toDownStairs) && up) || (game.deplacement.getPosition().equals(toUpStairs) && !up) || (game.deplacement.getPosition().equals(toExit) && !up)) {
 				 game.deplacement.hero.setVisible(false);
 				 setVisible(false);
-				 if(game.deplacement.getLookingTile().equals(toDownStairs) || game.deplacement.getLookingTile().equals(toUpStairs))
+				 if(game.deplacement.getPosition().equals(toDownStairs) || game.deplacement.getPosition().equals(toUpStairs))
 					 Sounds.playSound(Const.soundEnterHouse);
 				 else
 					 Sounds.playSound(Const.soundLeaveHouse);
-				 if(game.deplacement.getLookingTile().equals(toDownStairs)){
+				 if(game.deplacement.getPosition().equals(toDownStairs)){
 					 new TransitionSimple(game, game.gamePanel, new MyHouse(game, false, 2048, 2865, Direction.RIGHT, -1646, -2611));
 				 }
-				 else if(game.deplacement.getLookingTile().equals(toUpStairs)){
+				 else if(game.deplacement.getPosition().equals(toUpStairs)){
 					 new TransitionSimple(game, game.gamePanel, new MyHouse(game, true, 1120, 2922, Direction.LEFT, -747, -2664));
 				 }
 				 else {

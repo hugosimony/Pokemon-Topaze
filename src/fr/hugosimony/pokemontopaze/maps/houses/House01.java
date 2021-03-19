@@ -28,7 +28,7 @@ public class House01 extends JPanel {
 		game.house01 = this;
 		
 		setWalls();
-		toExit = new IntTuple(5504, 1386);
+		toExit = new IntTuple(5504, 1354);
 		
 		setLayout(null);
 		setBackground(new Color(0, 0, 0));

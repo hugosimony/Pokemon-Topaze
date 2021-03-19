@@ -19,6 +19,10 @@ public class IntTuple {
 		return this.x == tuple.x && this.y == tuple.y;
 	}
 	
+	public boolean almostEquals(IntTuple tuple) {
+		return Math.abs(this.x - tuple.x) < 5 && Math.abs(this.y - tuple.y) < 5;
+	}
+	
 	public static boolean contains(ArrayList<IntTuple> list, IntTuple tuple) {
 		int x = 0;
 		boolean contains = false;

@@ -54,11 +54,11 @@ public class Selenia extends JPanel {
 		setClickableTiles();
 		setWalls();
 		setPnjs();
-		toMyHouse = new IntTuple(1248, 1162);
-		toRivalHouse = new IntTuple(1536, 1162);
-		toHouse01 = new IntTuple(1248, 1450);
-		toHouse02 = new IntTuple(1504, 1450);
-		toIntertown01 = new IntTuple(2016, 1258);
+		toMyHouse = new IntTuple(1248, 1194);
+		toRivalHouse = new IntTuple(1536, 1194);
+		toHouse01 = new IntTuple(1248, 1482);
+		toHouse02 = new IntTuple(1504, 1482);
+		toIntertown01 = new IntTuple(2016, 1290);
 		
 		setLayout(null);
 		setBackground(new Color(0, 0, 0));
@@ -262,7 +262,6 @@ public class Selenia extends JPanel {
 		game.walls.add(new IntTuple(1536, 1482));
 		game.walls.add(new IntTuple(1472, 1482));
 		game.walls.add(new IntTuple(1472, 1450));
-
 		
 		// Water :
 		
@@ -350,28 +349,28 @@ public class Selenia extends JPanel {
 		
 		if(isVisible()){
 			
-			if(game.deplacement.getLookingTile().equals(toMyHouse) || game.deplacement.getLookingTile().equals(toRivalHouse)
-					|| game.deplacement.getLookingTile().equals(toHouse01) || game.deplacement.getLookingTile().equals(toHouse02)
-					|| game.deplacement.getLookingTile().equals(toIntertown01)) {
+			if(game.deplacement.getPosition().equals(toMyHouse) || game.deplacement.getPosition().equals(toRivalHouse)
+					|| game.deplacement.getPosition().equals(toHouse01) || game.deplacement.getPosition().equals(toHouse02)
+					|| game.deplacement.getPosition().equals(toIntertown01)) {
 				 game.deplacement.hero.setVisible(false);
 				 setVisible(false);
-				 if(game.deplacement.getLookingTile().equals(toMyHouse) || game.deplacement.getLookingTile().equals(toRivalHouse)
-						 || game.deplacement.getLookingTile().equals(toHouse01) || game.deplacement.getLookingTile().equals(toHouse02)
-						 || game.deplacement.getLookingTile().equals(toIntertown01))
+				 if(game.deplacement.getPosition().equals(toMyHouse) || game.deplacement.getPosition().equals(toRivalHouse)
+						 || game.deplacement.getPosition().equals(toHouse01) || game.deplacement.getPosition().equals(toHouse02)
+						 || game.deplacement.getPosition().equals(toIntertown01))
 					 Sounds.playSound(Const.soundEnterHouse);
-				 if(game.deplacement.getLookingTile().equals(toMyHouse)){
+				 if(game.deplacement.getPosition().equals(toMyHouse)){
 					 new TransitionSimple(game, game.gamePanel, new MyHouse(game, false, 2176, 3153, Direction.UP, -1774, -2899));
 				 }
-				 else if(game.deplacement.getLookingTile().equals(toRivalHouse)){
+				 else if(game.deplacement.getPosition().equals(toRivalHouse)){
 					 new TransitionSimple(game, game.gamePanel, new RivalHouse(game, false, 4256, 3153, Direction.UP, -3854, -2899));
 				 }
-				 else if(game.deplacement.getLookingTile().equals(toHouse01)){
+				 else if(game.deplacement.getPosition().equals(toHouse01)){
 					 new TransitionSimple(game, game.gamePanel, SeleniaHouses.seleniaHouse01(game, 5504, 1322, Direction.UP, -5131, -1064));
 				 }
-				 else if(game.deplacement.getLookingTile().equals(toHouse02)){
+				 else if(game.deplacement.getPosition().equals(toHouse02)){
 					 new TransitionSimple(game, game.gamePanel, SeleniaHouses.seleniaHouse02(game, 6464, 3114, Direction.UP, -6091, -2856));
 				 }
-				 else if(game.deplacement.getLookingTile().equals(toIntertown01)){
+				 else if(game.deplacement.getPosition().equals(toIntertown01)){
 					 new TransitionSimple(game, game.gamePanel, new Intertown01(game, 3264, 3114, Direction.UP, -2891, -2856));
 				 }
 				 return true;

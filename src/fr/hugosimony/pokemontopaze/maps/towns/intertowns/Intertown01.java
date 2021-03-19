@@ -42,8 +42,8 @@ public class Intertown01 extends JPanel {
 		setClickableTiles();
 		setWalls();
 		setPnjs();
-		toRoad1 = new IntTuple(3264, 2794);
-		toSelenia = new IntTuple(3264, 3178);
+		toRoad1 = new IntTuple(3264, 2826);
+		toSelenia = new IntTuple(3264, 3146);
 		
 		setLayout(null);
 		setBackground(new Color(0, 0, 0));
@@ -146,15 +146,15 @@ public class Intertown01 extends JPanel {
 		
 		if(isVisible()){
 			
-			if(game.deplacement.getLookingTile().equals(toRoad1) || game.deplacement.getLookingTile().equals(toSelenia)) {
+			if(game.deplacement.getPosition().equals(toRoad1) || game.deplacement.getPosition().equals(toSelenia)) {
 				 game.deplacement.hero.setVisible(false);
 				 setVisible(false);
-				 if(game.deplacement.getLookingTile().equals(toRoad1) || game.deplacement.getLookingTile().equals(toSelenia))
+				 if(game.deplacement.getPosition().equals(toRoad1) || game.deplacement.getPosition().equals(toSelenia))
 					 Sounds.playSound(Const.soundLeaveHouse);
-				 if(game.deplacement.getLookingTile().equals(toRoad1)){
+				 if(game.deplacement.getPosition().equals(toRoad1)){
 					 new TransitionSimple(game, game.gamePanel, new Road01(game, 4064, 1802, Direction.UP, -3691, -1544));
 				 }
-				 else if(game.deplacement.getLookingTile().equals(toSelenia)){
+				 else if(game.deplacement.getPosition().equals(toSelenia)){
 					 new TransitionSimple(game, game.gamePanel, new Selenia(game, 2016, 1322, Direction.DOWN, -1643, -1064));
 				 }
 				 else {

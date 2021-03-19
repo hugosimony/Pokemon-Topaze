@@ -34,7 +34,8 @@ public class RivalHouse extends JPanel {
 	private IntTuple toUpStairs;
 	private IntTuple toExit;
 	
-	public Pnj mom;
+	public Pnj rival;
+	public Pnj rivalMom;
 	
 	public RivalHouse(Game game, boolean up, int locationX, int locationY, Direction direction, int mapLocationX, int mapLocationY) {
 		
@@ -45,9 +46,9 @@ public class RivalHouse extends JPanel {
 		setClickableTiles();
 		setWalls();
 		setPnjs();
-		toDownStairs = new IntTuple(5216, 2865);
-		toUpStairs = new IntTuple(4480, 2865);
-		toExit = new IntTuple(4256, 3217);
+		toDownStairs = new IntTuple(5248, 2865);
+		toUpStairs = new IntTuple(4448, 2865);
+		toExit = new IntTuple(4256, 3185);
 		setLayout(null);
 		setBackground(new Color(0, 0, 0));
 		
@@ -80,7 +81,6 @@ public class RivalHouse extends JPanel {
 			game.map = new Map(3, 0);
 			game.map.setLocation(mapLocationX, mapLocationY);
 			game.map.setSize(1000000, 1000000);
-			game.map.add(mom);
 		}
 		add(game.map);
 		
@@ -209,17 +209,20 @@ public class RivalHouse extends JPanel {
 			pnj.clearIA();
 		game.pnjs = new ArrayList<Pnj>();
 		
-		if(!up) {
-			if(Variables.ADVENTURE_Step == 0) {
-				mom = new Pnj(game, "mom", Direction.DOWN, 0, 2368, 3025, false, false, null, null, false, false);
-				mom.setLocation(2368, 3025);
+		if(up) {
+			if(Variables.ADVENTURE_Step == 1) {
+				rival = new Pnj(game, "rival", Direction.DOWN, 0, 2368, 3025, false, false, null, null, false, false);
+				rival.setLocation(2368, 3025);
 			}
 			else {
-				mom = new Pnj(game, "mom", Direction.DOWN, 0, 2368, 2897, false, false, null, null, false, false);
-				mom.setLocation(2368, 2897);
+				rival = new Pnj(game, "mom", Direction.DOWN, 0, 2368, 2897, false, false, null, null, false, false);
+				rival.setLocation(2368, 2897);
 			}
-			mom.setSize(35, 50);
-			game.pnjs.add(mom);
+			rival.setSize(35, 50);
+			game.pnjs.add(rival);
+		}
+		else {
+			
 		}
 	}
 	
@@ -249,17 +252,17 @@ public class RivalHouse extends JPanel {
 		
 		if(isVisible()){
 			
-			if((game.deplacement.getLookingTile().equals(toDownStairs) && up) || (game.deplacement.getLookingTile().equals(toUpStairs) && !up) || (game.deplacement.getLookingTile().equals(toExit) && !up)) {
+			if((game.deplacement.getPosition().equals(toDownStairs) && up) || (game.deplacement.getPosition().equals(toUpStairs) && !up) || (game.deplacement.getPosition().equals(toExit) && !up)) {
 				 game.deplacement.hero.setVisible(false);
 				 setVisible(false);
-				 if(game.deplacement.getLookingTile().equals(toDownStairs) || game.deplacement.getLookingTile().equals(toUpStairs))
+				 if(game.deplacement.getPosition().equals(toDownStairs) || game.deplacement.getPosition().equals(toUpStairs))
 					 Sounds.playSound(Const.soundEnterHouse);
 				 else
 					 Sounds.playSound(Const.soundLeaveHouse);
-				 if(game.deplacement.getLookingTile().equals(toDownStairs)){
+				 if(game.deplacement.getPosition().equals(toDownStairs)){
 					 new TransitionSimple(game, game.gamePanel, new RivalHouse(game, false, 4416, 2865, Direction.LEFT, -4014, -2611));
 				 }
-				 else if(game.deplacement.getLookingTile().equals(toUpStairs)){
+				 else if(game.deplacement.getPosition().equals(toUpStairs)){
 					 new TransitionSimple(game, game.gamePanel, new RivalHouse(game, true, 5280, 2865, Direction.RIGHT, -4878, -2611));
 				 }
 				 else {

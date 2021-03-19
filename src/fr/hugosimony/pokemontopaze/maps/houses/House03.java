@@ -20,11 +20,14 @@ public class House03 extends JPanel {
 	
 	private Game game;
 	
+	public IntTuple toExit;
+	
 	public House03(Game game, int locationX, int locationY, Direction direction, int mapLocationX, int mapLocationY) {
 		this.game = game;
 		game.house03 = this;
 		
 		setWalls();
+		toExit = new IntTuple(6464, 3178);
 		
 		setLayout(null);
 		setBackground(new Color(0, 0, 0));

@@ -42,12 +42,12 @@ public class SeleniaHouses {
 	}
 	
 	public static boolean checkMapChangeHouse01() {
-		if(game.deplacement.getLookingTile().equals(game.house01.toExit)) {
+		if(game.deplacement.getPosition().equals(game.house01.toExit)) {
 			 game.deplacement.hero.setVisible(false);
 			 game.house01.setVisible(false);
-			 if(game.deplacement.getLookingTile().equals(game.house01.toExit))
+			 if(game.deplacement.getPosition().equals(game.house01.toExit))
 				 Sounds.playSound(Const.soundLeaveHouse);
-			 if(game.deplacement.getLookingTile().equals(game.house01.toExit)){
+			 if(game.deplacement.getPosition().equals(game.house01.toExit)){
 				 new TransitionSimple(game, game.gamePanel, new Selenia(game, 1248, 1514, Direction.DOWN, -875, -1256));
 			 }
 			 return true;
@@ -77,12 +77,12 @@ public class SeleniaHouses {
 	}
 	
 	public static boolean checkMapChangeHouse02() {
-		if(game.deplacement.getLookingTile().equals(game.house02.toExit)) {
+		if(game.deplacement.getPosition().equals(game.house02.toExit)) {
 			 game.deplacement.hero.setVisible(false);
 			 game.house02.setVisible(false);
-			 if(game.deplacement.getLookingTile().equals(game.house02.toExit))
+			 if(game.deplacement.getPosition().equals(game.house02.toExit))
 				 Sounds.playSound(Const.soundLeaveHouse);
-			 if(game.deplacement.getLookingTile().equals(game.house02.toExit)){
+			 if(game.deplacement.getPosition().equals(game.house02.toExit)){
 				 new TransitionSimple(game, game.gamePanel, new Selenia(game, 1504, 1514, Direction.DOWN, -1131, -1256));
 			 }
 			 return true;

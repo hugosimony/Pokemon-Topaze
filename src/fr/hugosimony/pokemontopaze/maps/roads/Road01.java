@@ -58,8 +58,8 @@ public class Road01 extends JPanel {
 		setPnjs();
 		setHerbs();
 		setAnimations();
-		toIntertown01 = new IntTuple(4064, 1866);
-		toIntertown02 = new IntTuple(3232, 746);
+		toIntertown01 = new IntTuple(4064, 1834);
+		toIntertown02 = new IntTuple(3232, 778);
 		
 		setLayout(null);
 		setBackground(new Color(0, 0, 0));
@@ -696,15 +696,15 @@ public class Road01 extends JPanel {
 		
 		if(isVisible()){
 			
-			if(game.deplacement.getLookingTile().equals(toIntertown01) || game.deplacement.getLookingTile().equals(toIntertown02)) {
+			if(game.deplacement.getPosition().equals(toIntertown01) || game.deplacement.getPosition().equals(toIntertown02)) {
 				 game.deplacement.hero.setVisible(false);
 				 setVisible(false);
-				 if(game.deplacement.getLookingTile().equals(toIntertown01) || game.deplacement.getLookingTile().equals(toIntertown02))
+				 if(game.deplacement.getPosition().equals(toIntertown01) || game.deplacement.getPosition().equals(toIntertown02))
 					 Sounds.playSound(Const.soundEnterHouse);
-				 if(game.deplacement.getLookingTile().equals(toIntertown01)){
+				 if(game.deplacement.getPosition().equals(toIntertown01)){
 					 new TransitionSimple(game, game.gamePanel, new Intertown01(game, 3264, 2858, Direction.DOWN, -2891, -2600));
 				 }
-				 else if(game.deplacement.getLookingTile().equals(toIntertown02)){
+				 else if(game.deplacement.getPosition().equals(toIntertown02)){
 					 new TransitionSimple(game, game.gamePanel, new Intertown02(game, 3264, 3114, Direction.UP, -2891, -2856));
 				 }
 				 return true;
