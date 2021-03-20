@@ -37,7 +37,7 @@ public class Villaube extends JPanel {
 	//private IntTuple toMart;
 	private IntTuple toHouse01;
 	private IntTuple toHouse02;
-	//private IntTuple toHouse03;
+	private IntTuple toHouse03;
 	private IntTuple toHouse04;
 	
 	//private Pnj villaubePnj01;
@@ -56,6 +56,7 @@ public class Villaube extends JPanel {
 		toIntertown02 = new IntTuple(1280, 5553);
 		toHouse01 = new IntTuple(1024, 5393);
 		toHouse02 = new IntTuple(960, 5169);
+		toHouse03 = new IntTuple(1792, 4689);
 		toHouse04 = new IntTuple(1376, 4241);
 		
 		setLayout(null);
@@ -108,6 +109,8 @@ public class Villaube extends JPanel {
 		game.clickableTiles.add(new IntTuple(1344, 4433)); // ROAD SIGN
 		game.clickableTiles.add(new IntTuple(2752, 4273)); // ROAD SIGN 2
 		game.clickableTiles.add(new IntTuple(2784, 4273)); // ROAD SIGN 2
+		game.clickableTiles.add(new IntTuple(1632, 4241)); // CLOSED HOUSE 1
+		game.clickableTiles.add(new IntTuple(960, 4369));  // CLOSED HOUSE 2
 		game.clickableTiles.add(new IntTuple(1792, 5297)); // MARTIN'S BOX
 
 		game.clickableTiles.add(new IntTuple(864, 4657)); // GROUND ITEM 1
@@ -126,6 +129,10 @@ public class Villaube extends JPanel {
 		
 		if(Variables.GROUND_ITEMS_Villaube.contains("0"))
 			game.walls.add(new IntTuple(864, 4657));
+		
+		// Closed Houses
+		game.walls.add(new IntTuple(1632, 4241));
+		game.walls.add(new IntTuple(960, 4369));
 		
 		game.walls.add(new IntTuple(2752, 4273));
 		game.walls.add(new IntTuple(2784, 4273));
@@ -541,7 +548,9 @@ public class Villaube extends JPanel {
 			 text = "Route commerciale de Villaube.= Faites attention avant de traverser.";
 		 else if(position == 7 || position == 8)
 			 text = "Route fermée aux piétons.";
-		 else if(position == 9 && Variables.GROUND_ITEMS_Villaube.contains("1")) {
+		 else if(position == 9 || position == 10)
+			 text = "C'est fermé.";
+		 else if(position == 11 && Variables.GROUND_ITEMS_Villaube.contains("1")) {
 			 Sounds.playSound(Const.soundItemGet);
 			 Variables.GROUND_ITEMS_Villaube.remove("1");
 			 groundPokeBall1.setVisible(false);
@@ -549,7 +558,7 @@ public class Villaube extends JPanel {
 			 // Ajouter un mouchoir soie au sac.
 			 text = "Vous avez ramassé un Mouchoir Soie !";
 		 }
-		 else if(IntTuple.getPosition(game.clickableTiles, tuple) == 10 && Variables.GROUND_ITEMS_Villaube.contains("0")) {
+		 else if(position == 12 && Variables.GROUND_ITEMS_Villaube.contains("0")) {
 			 Sounds.playSound(Const.soundItemGet);
 			 Variables.GROUND_ITEMS_Villaube.remove("0");
 			 groundPokeBall1.setVisible(false);
@@ -566,12 +575,12 @@ public class Villaube extends JPanel {
 			
 			if(game.deplacement.getPosition().equals(toIntertown02) 
 					|| game.deplacement.getPosition().equals(toHouse01) || game.deplacement.getPosition().equals(toHouse02)
-					|| game.deplacement.getPosition().equals(toHouse04)) {
+					|| game.deplacement.getPosition().equals(toHouse03) || game.deplacement.getPosition().equals(toHouse04)) {
 				 game.deplacement.hero.setVisible(false);
 				 setVisible(false);
 				 if(game.deplacement.getPosition().equals(toIntertown02)
 						 || game.deplacement.getPosition().equals(toHouse01) || game.deplacement.getPosition().equals(toHouse02)
-						 || game.deplacement.getPosition().equals(toHouse04))
+						 || game.deplacement.getPosition().equals(toHouse03) || game.deplacement.getPosition().equals(toHouse04))
 					 Sounds.playSound(Const.soundEnterHouse);
 				 if(game.deplacement.getPosition().equals(toIntertown02)){
 					 new TransitionSimple(game, game.gamePanel, new Intertown02(game, 3264, 2858, Direction.DOWN, -2891, -2600));
@@ -581,6 +590,9 @@ public class Villaube extends JPanel {
 				 }
 				 else if(game.deplacement.getPosition().equals(toHouse02)){
 					 new TransitionSimple(game, game.gamePanel, VillaubeHouses.villaubeHouse02(game, 6464, 3114, Direction.UP, -6091, -2856));
+				 }
+				 else if(game.deplacement.getPosition().equals(toHouse03)){
+					 new TransitionSimple(game, game.gamePanel, VillaubeHouses.villaubeHouse03(game, 5472, 2218, Direction.UP, -5099, -1960));
 				 }
 				 else if(game.deplacement.getPosition().equals(toHouse04)){
 					 new TransitionSimple(game, game.gamePanel, VillaubeHouses.villaubeHouse04(game, 5504, 1322, Direction.UP, -5131, -1064));
