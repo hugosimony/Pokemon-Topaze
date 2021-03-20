@@ -50,10 +50,10 @@ public class DeplacementDispatcher implements KeyEventDispatcher {
 					//****************************************************************************************
 					// Debug
 					else if(event.getKeyCode() == KeyEvent.VK_A) {
-						//System.out.println("game.walls.add(new IntTuple(" + game.deplacement.locationX + ", " + game.deplacement.locationY + "));");
+						System.out.println("game.walls.add(new IntTuple(" + game.deplacement.locationX + ", " + game.deplacement.locationY + "));");
 						//System.out.println("game.herbs.add(new IntTriple(" + game.deplacement.locationX + ", " + game.deplacement.locationY + ", 2));");
-						System.out.println("perso : " + game.deplacement.locationX  + " ; "  + game.deplacement.locationY);
-						System.out.println("map : " + game.deplacement.mapLocationX  + " ; "  + game.deplacement.mapLocationY);
+						//System.out.println("perso : " + game.deplacement.locationX  + " ; "  + game.deplacement.locationY);
+						//System.out.println("map : " + game.deplacement.mapLocationX  + " ; "  + game.deplacement.mapLocationY);
 					}
 					//****************************************************************************************
 				}
@@ -71,10 +71,11 @@ public class DeplacementDispatcher implements KeyEventDispatcher {
 							game.deplacement.startMove(game.deplacement.direction, true);
 						}
 					}
-					else if(event.getKeyCode() == Variables.CONTROLS_B)
-						if(Variables.SPEED_PERSO == 4)
-							Variables.SPEED_PERSO = 7;
 				}
+			}
+			if(event.getID() == KeyEvent.KEY_RELEASED && event.getKeyCode() == Variables.CONTROLS_B) {
+				if(Variables.SPEED_PERSO == 4)
+					Variables.SPEED_PERSO = 7;
 			}
 		}
 		return false;
