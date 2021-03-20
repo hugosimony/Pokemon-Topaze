@@ -204,7 +204,7 @@ public class Deplacement {
 						else {
 							game.map.setLocation(mapLocationX, mapLocationY);
 							
-							if(Variables.SPEED_PERSO == 5) {
+							if(Variables.SPEED_PERSO == 7) {
 								hero.speed = 1;
 								if(x < 10) {
 									hero.foot = 0;
@@ -219,7 +219,7 @@ public class Deplacement {
 										hero.repaint();
 								}
 							}
-							else if(Variables.SPEED_PERSO == 3){
+							else if(Variables.SPEED_PERSO == 4){
 								hero.speed = 2;
 								if(x < 10) {
 									hero.foot = 0;

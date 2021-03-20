@@ -203,7 +203,7 @@ public class Game extends JFrame {
 	
 	private void initializeNewVariables() {
 		Variables.TIMER_Global = 0;
-		Variables.SPEED_PERSO = 5;
+		Variables.SPEED_PERSO = 7;
 		Variables.POSITION_Place = Places.SELENIA;
 		Variables.BADGES_NumberOfBadges = 0;
 		Variables.POKEDEX_NumberOfSeen = 0;
