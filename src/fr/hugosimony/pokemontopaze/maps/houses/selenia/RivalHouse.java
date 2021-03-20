@@ -228,18 +228,16 @@ public class RivalHouse extends JPanel {
 	
 	public String getInteractMessage(IntTuple tuple) {
 		 String text = "";
+		 int position = IntTuple.getPosition(game.clickableTiles, tuple);
 		 if(up) {
-			 if(IntTuple.getPosition(game.clickableTiles, tuple) == 1) {
+			 if(position == 1)
 				 text = "Note := Pour capturer des Pokémons,= il faut des Poké Balls.";
-			 }
-			 else if(IntTuple.getPosition(game.clickableTiles, tuple) == 2) {
+			 else if(position == 2)
 				 text = "C'est vide.";
-			 }
 		 }
 		 else {
-			 if(IntTuple.getPosition(game.clickableTiles, tuple) == 1) {
+			 if(position == 1)
 				 text = "C'est vide.";
-			 }
 		 }
 		 return text;
 	}

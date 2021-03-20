@@ -318,22 +318,20 @@ public class Selenia extends JPanel {
 	
 	public String getInteractMessage(IntTuple tuple) {
 		 String text = "";
-		 if(IntTuple.getPosition(game.clickableTiles, tuple) == 1) {
+		 int position = IntTuple.getPosition(game.clickableTiles, tuple);
+		 if(position == 1)
 			 text = "Chez " + Variables.PERSO_Name + ".";
-		 }
-		 else if(IntTuple.getPosition(game.clickableTiles, tuple) == 2) {
+		 else if(position == 2)
 			 text = "Chez " + Variables.RIVAL_Name + ".";
-		 }
-		 else if(IntTuple.getPosition(game.clickableTiles, tuple) == 3) {
+		 else if(position == 3)
 			 text = "Sélénia.= Une ville calme et symbole de sérénité.";
-		 }
-		 else if(IntTuple.getPosition(game.clickableTiles, tuple) == 4 && Variables.GROUND_ITEMS_Selenia.contains("0")) {
+		 else if(position == 4 && Variables.GROUND_ITEMS_Selenia.contains("0")) {
 			 Sounds.playSound(Const.soundItemGet);
 			 Variables.GROUND_ITEMS_Selenia.remove("0");
 			 // Ajouter une potion au sac.
 			 text = "Vous avez ramassé une Potion !";
 		 }
-		 else if(IntTuple.getPosition(game.clickableTiles, tuple) == 5 && Variables.GROUND_ITEMS_Selenia.contains("1")) {
+		 else if(position == 5 && Variables.GROUND_ITEMS_Selenia.contains("1")) {
 			 Sounds.playSound(Const.soundItemGet);
 			 Variables.GROUND_ITEMS_Selenia.remove("1");
 			 groundPokeBall1.setVisible(false);

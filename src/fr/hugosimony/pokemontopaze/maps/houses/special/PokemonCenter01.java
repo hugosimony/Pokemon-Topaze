@@ -27,6 +27,7 @@ public class PokemonCenter01 extends JPanel {
 		this.game = game;
 		game.pokemonCenter01 = this;
 		
+		setClickableTiles();
 		setWalls();
 		toExit = new IntTuple(6496, 2250);
 		
@@ -42,6 +43,13 @@ public class PokemonCenter01 extends JPanel {
 		manager.addKeyEventDispatcher(new MenuXDispatcher(game, this));
 		manager.addKeyEventDispatcher(new TextMenuDispatcher(game, this));
 		
+	}
+	
+	private void setClickableTiles() {
+		game.clickableTiles = new ArrayList<IntTuple>();
+
+		game.clickableTiles.add(new IntTuple(6496, 1962)); // HEAL
+		game.clickableTiles.add(new IntTuple(6720, 1962)); // PC
 	}
 
 	private void setWalls() {
@@ -110,8 +118,14 @@ public class PokemonCenter01 extends JPanel {
 	}
 	
 	public String getInteractMessage(IntTuple tuple) {
-		 String text = "";
-		 return text;
+		String text = "";
+		int position = IntTuple.getPosition(game.clickableTiles, tuple);
+		if(position == 1)
+			text = "Bonjour,= bienvenue au Centre Pokémon.= Voulez-vous soigner\n"
+					+ "vos Pokémons ¤";
+		else if(position == 2)
+			text = "Ouverture du PC.";
+		return text;
 	}
 	
 	public static void setMap(Game game, PokemonCenter01 pokemonCenter01, int locationX, int locationY, Direction direction, int mapLocationX, int mapLocationY) {

@@ -614,19 +614,18 @@ public class Road01 extends JPanel {
 	
 	public String getInteractMessage(IntTuple tuple) {
 		 String text = "";
-		 if(IntTuple.getPosition(game.clickableTiles, tuple) == 1) {
+		 int position = IntTuple.getPosition(game.clickableTiles, tuple);
+		 if(position == 1)
 			 text = "Route 01.=\nLe début du cycle.";
-		 }
-		 else if(IntTuple.getPosition(game.clickableTiles, tuple) == 2) {
+		 else if(position == 2)
 			 text = "Vous pouvez passer au dessus de cette barrière.=\nC'est un bon raccourci.";
-		 }
-		 else if(IntTuple.getPosition(game.clickableTiles, tuple) == 3) {
-			 text = "Conseil aux dresseurs := Les PVs de vos pokémons doivent rester\nhauts si vous voulez avoir plus de chance de gagner un combat.=\nN'oubliez pas d'avoir toujours des potions sur vous.";
-		 }
-		 else if(IntTuple.getPosition(game.clickableTiles, tuple) == 4) {
+		 else if(position == 3)
+			 text = "Conseil aux dresseurs := Les PVs de vos pokémons doivent rester\n"
+			 		+ "hauts si vous voulez avoir plus de chance de gagner un combat.=\n"
+			 		+ "N'oubliez pas d'avoir toujours des potions sur vous.";
+		 else if(position == 4)
 			 text = "Vers Villaube.";
-		 }
-		 else if(IntTuple.getPosition(game.clickableTiles, tuple) == 5 && Variables.GROUND_ITEMS_Road1.contains("0")) {
+		 else if(position == 5 && Variables.GROUND_ITEMS_Road1.contains("0")) {
 			 Sounds.playSound(Const.soundItemGet);
 			 Variables.GROUND_ITEMS_Road1.remove("0");
 			 groundPokeBall1.setVisible(false);
@@ -662,7 +661,6 @@ public class Road01 extends JPanel {
 					 		+ "en prendra grand soin.";
 			 }
 		 }
-		 
 		 return text;
 	}
 	

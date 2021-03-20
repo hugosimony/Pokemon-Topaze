@@ -272,40 +272,32 @@ public class MyHouse extends JPanel {
 	
 	public String getInteractMessage(IntTuple tuple) {
 		 String text = "";
+		 int position = IntTuple.getPosition(game.clickableTiles, tuple);
 		 if(up) {
-			 if(IntTuple.getPosition(game.clickableTiles, tuple) == 1) {
+			 if(position == 1)
 				 text = "Note := Appuyer sur " + KeyEvent.getKeyText(Variables.CONTROLS_MenuX) + " pour ouvrir le menu.";
-			 }
-			 else if(IntTuple.getPosition(game.clickableTiles, tuple) == 2) {
+			 else if(position == 2)
 				 text = "C'est la console qui appartenait à Papa.= Elle est plus vielle que moi...=\n"
 						+ "Pfff, il y a que des jeux nuls.";
-			 }
-			 else if(IntTuple.getPosition(game.clickableTiles, tuple) == 3) {
+			 else if(position == 3)
 				 text = "Trop bien ! Touche pas à mon Pokémon != Mais bon... =le Prof Chen\n"
 						 + " m'attend.";
-			 }
-			 else if(IntTuple.getPosition(game.clickableTiles, tuple) == 4) {
+			 else if(position == 4)
 				 text = "Merde j'ai oublié de vider ma poubelle.= Faudra vraiment que je le\n"
 						 + "fasse...= J'ai pas envie d'être puni" + Variables.LANG_Feminin + " pendant un mois.";
-			 }
-			 else if(IntTuple.getPosition(game.clickableTiles, tuple) == 5) {
+			 else if(position == 5)
 				 text = "J'ai pas trop compris pourquoi, mais...= je vais avoir mon premier\n"
 						 + "Pokémon != Par contre, le Prof est un peu bizarre avec ma mère...";
-			 }
-			 else if(IntTuple.getPosition(game.clickableTiles, tuple) == 6) {
+			 else if(position == 6)
 				 text = "Le film d'hier soir était vraiment nul.";
-			 }
 		 }
 		 else {
-			 if(IntTuple.getPosition(game.clickableTiles, tuple) == 1) {
+			 if(position == 1)
 				 text = "Poké-Achat...= Maman c'est vraiment nul sérieux.";
-			 }
-			 else if(IntTuple.getPosition(game.clickableTiles, tuple) == 2) {
+			 else if(position == 2)
 				 text = "C'est vide.";
-			 }
-			 else if(IntTuple.getPosition(game.clickableTiles, tuple) == 3) {
+			 else if(position == 3)
 				 text = "Sah quel plaisir != Un bon Katsu Curry.";
-			 }
 		 }
 		 return text;
 	}

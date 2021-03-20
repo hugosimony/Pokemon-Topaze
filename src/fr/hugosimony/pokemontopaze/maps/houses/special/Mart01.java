@@ -27,6 +27,7 @@ public class Mart01 extends JPanel {
 		this.game = game;
 		game.mart01 = this;
 		
+		setClickableTiles();
 		setWalls();
 		toExit = new IntTuple(6432, 1322);
 		
@@ -42,6 +43,13 @@ public class Mart01 extends JPanel {
 		manager.addKeyEventDispatcher(new MenuXDispatcher(game, this));
 		manager.addKeyEventDispatcher(new TextMenuDispatcher(game, this));
 		
+	}
+	
+	private void setClickableTiles() {
+		game.clickableTiles = new ArrayList<IntTuple>();
+
+		game.clickableTiles.add(new IntTuple(6368, 1066)); // SELLER 1
+		game.clickableTiles.add(new IntTuple(6432, 1002)); // SELLER 2
 	}
 
 	private void setWalls() {
@@ -115,8 +123,15 @@ public class Mart01 extends JPanel {
 	}
 	
 	public String getInteractMessage(IntTuple tuple) {
-		 String text = "";
-		 return text;
+		String text = "";
+		int position = IntTuple.getPosition(game.clickableTiles, tuple);
+		if(position == 1)
+			text = "Bonjour,= bienvenue à la boutique Pokémon.= Que souhaitez\n"
+					+ "vous faire ¤";
+		else if(position == 2)
+			text = "Bonjour,= bienvenue à la boutique Pokémon.= Que souhaitez\n"
+					+ "vous faire ¤";
+		return text;
 	}
 	
 	public static void setMap(Game game, Mart01 mart01, int locationX, int locationY, Direction direction, int mapLocationX, int mapLocationY) {
