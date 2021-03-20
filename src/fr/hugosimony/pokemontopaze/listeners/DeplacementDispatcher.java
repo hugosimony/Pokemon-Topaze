@@ -57,25 +57,25 @@ public class DeplacementDispatcher implements KeyEventDispatcher {
 					}
 					//****************************************************************************************
 				}
-				else if(event.getID() == KeyEvent.KEY_RELEASED) {
-					int keyCode = event.getKeyCode();
-					Direction dir = Deplacement.getDirection(keyCode);
-					if(dir != Direction.NULL) {
-						if(Deplacement.getDirection(keyCode) == game.deplacement.direction)
-							game.deplacement.released = true;
-						game.deplacement.pressed.remove(keyCode + "");
-						if(!game.inAnimation && !game.deplacement.coolDown && game.deplacement.pressed.size() == 1) {
-							game.deplacement.released = false;
-							game.deplacement.direction = Deplacement.getDirection(Integer.parseInt(game.deplacement.pressed.get(0)));
-							game.deplacement.newDirection = game.deplacement.direction;
-							game.deplacement.startMove(game.deplacement.direction, true);
-						}
+			}
+			if(event.getID() == KeyEvent.KEY_RELEASED) {
+				int keyCode = event.getKeyCode();
+				Direction dir = Deplacement.getDirection(keyCode);
+				if(dir != Direction.NULL) {
+					if(Deplacement.getDirection(keyCode) == game.deplacement.direction)
+						game.deplacement.released = true;
+					game.deplacement.pressed.remove(keyCode + "");
+					if(!game.inAnimation && !game.deplacement.coolDown && game.deplacement.pressed.size() == 1) {
+						game.deplacement.released = false;
+						game.deplacement.direction = Deplacement.getDirection(Integer.parseInt(game.deplacement.pressed.get(0)));
+						game.deplacement.newDirection = game.deplacement.direction;
+						game.deplacement.startMove(game.deplacement.direction, true);
 					}
 				}
-			}
-			if(event.getID() == KeyEvent.KEY_RELEASED && event.getKeyCode() == Variables.CONTROLS_B) {
-				if(Variables.SPEED_PERSO == 4)
-					Variables.SPEED_PERSO = 7;
+				else if(event.getKeyCode() == Variables.CONTROLS_B) {
+					if(Variables.SPEED_PERSO == 4)
+						Variables.SPEED_PERSO = 7;
+				}
 			}
 		}
 		return false;
