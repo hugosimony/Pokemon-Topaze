@@ -37,7 +37,7 @@ public class Hero extends JPanel {
 					else if(foot == 2)
 						g.drawImage(Const.boyRunBackLeft.getImage(), 0, 0, null);
 				}
-					else if(direction == Direction.DOWN) {
+				else if(direction == Direction.DOWN) {
 					if(foot == 0)
 						g.drawImage(Const.boyRunFront.getImage(), 0, 0, null);
 					else if(foot == 1)
@@ -72,7 +72,7 @@ public class Hero extends JPanel {
 					else if(foot == 2)
 						g.drawImage(Const.boyBackLeft.getImage(), 0, 0, null);
 				}
-					else if(direction == Direction.DOWN) {
+				else if(direction == Direction.DOWN) {
 					if(foot == 0)
 						g.drawImage(Const.boyFront.getImage(), 0, 0, null);
 					else if(foot == 1)
@@ -108,7 +108,7 @@ public class Hero extends JPanel {
 				else if(foot == 2)
 					g.drawImage(Const.girlBackLeft.getImage(), 0, 0, null);
 			}
-				else if(direction == Direction.DOWN) {
+			else if(direction == Direction.DOWN) {
 				if(foot == 0)
 					g.drawImage(Const.girlFront.getImage(), 0, 0, null);
 				else if(foot == 1)

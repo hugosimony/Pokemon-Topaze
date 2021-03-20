@@ -33,6 +33,7 @@ public class Deplacement {
 	public ArrayList<String> pressed;
 	
 	private int runDirection;
+	private int runMove;
 	
 	public static int pixelMoved = 32;
 	public int locationX = 375;
@@ -57,6 +58,7 @@ public class Deplacement {
 		
 		pressed = new ArrayList<String>();
 		runDirection = 1;
+		runMove = 0;
 		
 		released = true;
 		coolDown = false;
@@ -215,22 +217,19 @@ public class Deplacement {
 										hero.foot = 1;
 									else if(runDirection == -1) 
 										hero.foot = 2;
-									if(x==9)
+									if(x==10)
 										hero.repaint();
 								}
 							}
 							else if(Variables.SPEED_PERSO == 4){
 								hero.speed = 2;
-								if(x < 10) {
+								if(x < 5) {
 									hero.foot = 0;
 									if(x==1)
 										hero.repaint();
 								}else {
-									if(runDirection == 1) 
-										hero.foot = 1;
-									else if(runDirection == -1) 
-										hero.foot = 2;
-									if(x==9)
+									hero.foot = runMove;
+									if(x==5)
 										hero.repaint();
 								}
 							}
@@ -269,8 +268,15 @@ public class Deplacement {
 						}
 						else {
 							checkIANearDone = false;
-							setSprites(dir, new Hero(dir, 0, 1), false);
+							if(pressed.size() == 0)
+								setSprites(dir, new Hero(dir, 0, 1), false);
+							else
+								setSprites(dir, new Hero(dir, 0, hero.speed), false);
 							runDirection *= -1;
+							if(runMove == 2)
+								runMove = 0;
+							else
+								runMove++;
 							this.cancel();
 							if(!checkAnimations() && !checkMapChange() && game.inXMenu) {
 								XMenu.unprintXMenu();
