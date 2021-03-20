@@ -24,6 +24,8 @@ import fr.hugosimony.pokemontopaze.maps.houses.House02;
 import fr.hugosimony.pokemontopaze.maps.houses.House03;
 import fr.hugosimony.pokemontopaze.maps.houses.selenia.MyHouse;
 import fr.hugosimony.pokemontopaze.maps.houses.selenia.RivalHouse;
+import fr.hugosimony.pokemontopaze.maps.houses.special.Mart01;
+import fr.hugosimony.pokemontopaze.maps.houses.special.PokemonCenter01;
 import fr.hugosimony.pokemontopaze.maps.pnj.Pnj;
 import fr.hugosimony.pokemontopaze.maps.roads.Road01;
 import fr.hugosimony.pokemontopaze.maps.towns.Selenia;
@@ -102,6 +104,8 @@ public class Game extends JFrame {
 	public Road01 road01;
 	public Intertown02 intertown02;
 	public Villaube villaube;
+	public PokemonCenter01 pokemonCenter01;
+	public Mart01 mart01;
 	public House03 house03;
 	
 	// Pokemon

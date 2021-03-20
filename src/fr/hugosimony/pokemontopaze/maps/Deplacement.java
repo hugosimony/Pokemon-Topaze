@@ -470,6 +470,10 @@ public class Deplacement {
 		if(!change)
 			change = game.villaube != null && game.villaube.isVisible() &&  game.villaube.checkMapChange();
 		if(!change)
+			change = game.pokemonCenter01 != null && game.pokemonCenter01.isVisible() && game.pokemonCenter01.checkMapChange();
+		if(!change)
+			change = game.mart01 != null && game.mart01.isVisible() && game.mart01.checkMapChange();
+		if(!change)
 			change = game.house03 != null && game.house03.isVisible() && game.house03.checkMapChange();
 		return change;
 	}

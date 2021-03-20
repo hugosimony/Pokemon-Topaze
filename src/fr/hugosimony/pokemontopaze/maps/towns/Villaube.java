@@ -18,6 +18,7 @@ import fr.hugosimony.pokemontopaze.maps.Direction;
 import fr.hugosimony.pokemontopaze.maps.Map;
 import fr.hugosimony.pokemontopaze.maps.Places;
 import fr.hugosimony.pokemontopaze.maps.houses.villaube.VillaubeHouses;
+import fr.hugosimony.pokemontopaze.maps.houses.villaube.VillaubeSpecialHouses;
 import fr.hugosimony.pokemontopaze.maps.items.GroundItem;
 import fr.hugosimony.pokemontopaze.maps.pnj.Pnj;
 import fr.hugosimony.pokemontopaze.maps.towns.intertowns.Intertown02;
@@ -598,9 +599,9 @@ public class Villaube extends JPanel {
 				else if(game.deplacement.getPosition().equals(toLabo))
 					new TransitionSimple(game, game.gamePanel, VillaubeHouses.villaubeHouse01(game, 5504, 1322, Direction.UP, -5131, -1064));
 				else if(game.deplacement.getPosition().equals(toPokemonCenter))
-					new TransitionSimple(game, game.gamePanel, VillaubeHouses.villaubeHouse01(game, 5504, 1322, Direction.UP, -5131, -1064));
+					new TransitionSimple(game, game.gamePanel, VillaubeSpecialHouses.villaubePokemonCenter01(game, 6496, 2218, Direction.UP, -6123, -1960));
 				else if(game.deplacement.getPosition().equals(toMart))
-					new TransitionSimple(game, game.gamePanel, VillaubeHouses.villaubeHouse01(game, 5504, 1322, Direction.UP, -5131, -1064));
+					new TransitionSimple(game, game.gamePanel, VillaubeSpecialHouses.villaubeMart01(game, 6432, 1290, Direction.UP, -6059, -1032));
 				else if(game.deplacement.getPosition().equals(toRadioTower))
 					new TransitionSimple(game, game.gamePanel, VillaubeHouses.villaubeHouse01(game, 5504, 1322, Direction.UP, -5131, -1064));
 				else if(game.deplacement.getPosition().equals(toHouse01))
