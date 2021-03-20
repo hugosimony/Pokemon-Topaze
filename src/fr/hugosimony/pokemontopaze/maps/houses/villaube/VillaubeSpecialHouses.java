@@ -44,13 +44,12 @@ public class VillaubeSpecialHouses {
 	}
 	
 	public static boolean checkMapChangePokemonCenter01() {
-		System.out.println("coucou");
 		if(game.deplacement.getPosition().equals(game.pokemonCenter01.toExit)) {
 			game.deplacement.hero.setVisible(false);
 			game.pokemonCenter01.setVisible(false);
 			Sounds.playSound(Const.soundLeaveHouse);
 			if(game.deplacement.getPosition().equals(game.pokemonCenter01.toExit))
-				new TransitionSimple(game, game.gamePanel, new Villaube(game, 1024, 5425, Direction.DOWN, -622, -5171));
+				new TransitionSimple(game, game.gamePanel, new Villaube(game, 1440, 5169, Direction.DOWN, -1038, -4915));
 			return true;
 		}
 		return false;
@@ -85,7 +84,7 @@ public class VillaubeSpecialHouses {
 			game.mart01.setVisible(false);
 			Sounds.playSound(Const.soundLeaveHouse);
 			if(game.deplacement.getPosition().equals(game.mart01.toExit))
-				new TransitionSimple(game, game.gamePanel, new Villaube(game, 1024, 5425, Direction.DOWN, -622, -5171));
+				new TransitionSimple(game, game.gamePanel, new Villaube(game, 1504, 4913, Direction.DOWN, -1102, -4659));
 			return true;
 		}
 		return false;

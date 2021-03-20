@@ -53,6 +53,10 @@ public class InteractDispatcher implements KeyEventDispatcher {
 							 text = game.intertown02.getInteractMessage(tuple);
 						 else if(game.villaube != null && game.villaube.isVisible())
 							 text = game.villaube.getInteractMessage(tuple);
+						 else if(game.pokemonCenter01 != null && game.pokemonCenter01.isVisible())
+							 text = game.pokemonCenter01.getInteractMessage(tuple);
+						 else if(game.mart01 != null && game.mart01.isVisible())
+							 text = game.mart01.getInteractMessage(tuple);
 					 }
 					 else {
 						 Pnj pnj = IntTuple.containsPnj(game.pnjs, game.deplacement.getLookingTile());

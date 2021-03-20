@@ -116,6 +116,11 @@ public class Mart01 extends JPanel {
 		return false;
 	}
 	
+	public String getInteractMessage(IntTuple tuple) {
+		 String text = "";
+		 return text;
+	}
+	
 	public static void setMap(Game game, Mart01 mart01, int locationX, int locationY, Direction direction, int mapLocationX, int mapLocationY) {
 		game.map.setLocation(mapLocationX, mapLocationY);
 		game.map.setSize(10000,10000);

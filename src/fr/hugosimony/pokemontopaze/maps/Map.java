@@ -11,6 +11,7 @@ import fr.hugosimony.pokemontopaze.maps.houses.selenia.MyHouse;
 import fr.hugosimony.pokemontopaze.maps.houses.selenia.RivalHouse;
 import fr.hugosimony.pokemontopaze.maps.houses.selenia.SeleniaHouses;
 import fr.hugosimony.pokemontopaze.maps.houses.villaube.VillaubeHouses;
+import fr.hugosimony.pokemontopaze.maps.houses.villaube.VillaubeSpecialHouses;
 import fr.hugosimony.pokemontopaze.maps.roads.Road01;
 import fr.hugosimony.pokemontopaze.maps.towns.Selenia;
 import fr.hugosimony.pokemontopaze.maps.towns.Villaube;
@@ -95,14 +96,12 @@ public class Map extends JPanel {
 			//game.add(game.villaube);
 		}
 		else if(FileAdventureReaderWriter.getPrecisePositionPlace(save) == 11) {
-			// centre poké
-			//game.villaube = new Villaube(game, FileAdventureReaderWriter.getLocationX(save), FileAdventureReaderWriter.getLocationY(save), FileAdventureReaderWriter.getDirection(save), FileAdventureReaderWriter.getMapLocationX(save), FileAdventureReaderWriter.getMapLocationY(save));
-			//game.add(game.villaube);
+			game.pokemonCenter01 = VillaubeSpecialHouses.villaubePokemonCenter01(game, FileAdventureReaderWriter.getLocationX(save), FileAdventureReaderWriter.getLocationY(save), FileAdventureReaderWriter.getDirection(save), FileAdventureReaderWriter.getMapLocationX(save), FileAdventureReaderWriter.getMapLocationY(save));
+			game.add(game.pokemonCenter01);
 		}
 		else if(FileAdventureReaderWriter.getPrecisePositionPlace(save) == 12) {
-			// pokemart
-			//game.villaube = new Villaube(game, FileAdventureReaderWriter.getLocationX(save), FileAdventureReaderWriter.getLocationY(save), FileAdventureReaderWriter.getDirection(save), FileAdventureReaderWriter.getMapLocationX(save), FileAdventureReaderWriter.getMapLocationY(save));
-			//game.add(game.villaube);
+			game.mart01 = VillaubeSpecialHouses.villaubeMart01(game, FileAdventureReaderWriter.getLocationX(save), FileAdventureReaderWriter.getLocationY(save), FileAdventureReaderWriter.getDirection(save), FileAdventureReaderWriter.getMapLocationX(save), FileAdventureReaderWriter.getMapLocationY(save));
+			game.add(game.mart01);
 		}
 		else if(FileAdventureReaderWriter.getPrecisePositionPlace(save) == 13) {
 			game.house01 = VillaubeHouses.villaubeHouse01(game, FileAdventureReaderWriter.getLocationX(save), FileAdventureReaderWriter.getLocationY(save), FileAdventureReaderWriter.getDirection(save), FileAdventureReaderWriter.getMapLocationX(save), FileAdventureReaderWriter.getMapLocationY(save));
