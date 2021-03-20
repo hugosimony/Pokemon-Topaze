@@ -72,6 +72,7 @@ public class PnjAnimations {
 	}
 
 	public static void startGoodAnimation(Game game, IntTuple finalAnimation) {
+		game.deplacement.setStoppedSprites();
 		if(Variables.ADVENTURE_Step <= 10)
 			startGoodAnimation0_10(game, finalAnimation);
 		else if(Variables.ADVENTURE_Step > 10 && Variables.ADVENTURE_Step <= 20)

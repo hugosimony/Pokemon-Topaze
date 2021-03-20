@@ -328,6 +328,12 @@ public class Deplacement {
 		setSprites(direction, hero, false);
 	}
 	
+	public void setStoppedSprites() {
+		hero.speed = 1;
+		hero.foot = 0;
+		setSprites(direction, hero, false);
+	}
+	
 	public void setSprites(Direction persoDir, Hero hero_, boolean first) {
 		
 		ArrayList<Pnj> pnjToRedrawUp = new ArrayList<Pnj>();

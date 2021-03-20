@@ -126,7 +126,7 @@ public class Const {
 	public static final ImageIcon girlLeftRight = new ImageIcon(Main.class.getResource("sprites/perso/main/girl/girlLeftRight.gif"));
 	public static final ImageIcon girlLeftLeft = new ImageIcon(Main.class.getResource("sprites/perso/main/girl/girlLeftLeft.gif"));
 	
-	/*/ Girl Running
+	// Girl Running
 	public static final ImageIcon girlRunFront = new ImageIcon(Main.class.getResource("sprites/perso/main/girl/girlRunFront.gif"));
 	public static final ImageIcon girlRunFrontRight = new ImageIcon(Main.class.getResource("sprites/perso/main/girl/girlRunFrontRight.gif"));
 	public static final ImageIcon girlRunFrontLeft = new ImageIcon(Main.class.getResource("sprites/perso/main/girl/girlRunFrontLeft.gif"));
@@ -138,7 +138,7 @@ public class Const {
 	public static final ImageIcon girlRunBackLeft = new ImageIcon(Main.class.getResource("sprites/perso/main/girl/girlRunBackLeft.gif"));
 	public static final ImageIcon girlRunLeft = new ImageIcon(Main.class.getResource("sprites/perso/main/girl/girlRunLeft.gif"));
 	public static final ImageIcon girlRunLeftRight = new ImageIcon(Main.class.getResource("sprites/perso/main/girl/girlRunLeftRight.gif"));
-	public static final ImageIcon girlRunLeftLeft = new ImageIcon(Main.class.getResource("sprites/perso/main/girl/girlRunLeftLeft.gif"));*/
+	public static final ImageIcon girlRunLeftLeft = new ImageIcon(Main.class.getResource("sprites/perso/main/girl/girlRunLeftLeft.gif"));
 	
 	//****************************************************************************************************
 	// Sprites Mom

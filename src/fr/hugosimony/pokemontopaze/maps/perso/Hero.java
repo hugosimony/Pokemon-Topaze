@@ -100,39 +100,76 @@ public class Hero extends JPanel {
 			}
 		}
 		else {
-			if(direction == Direction.UP) {
-				if(foot == 0)
-					g.drawImage(Const.girlBack.getImage(), 0, 0, null);
-				else if(foot == 1)
-					g.drawImage(Const.girlBackRight.getImage(), 0, 0, null);
-				else if(foot == 2)
-					g.drawImage(Const.girlBackLeft.getImage(), 0, 0, null);
+			if(speed == 2) {
+				if(direction == Direction.UP) {
+					if(foot == 0)
+						g.drawImage(Const.girlRunBack.getImage(), 0, 0, null);
+					else if(foot == 1)
+						g.drawImage(Const.girlRunBackRight.getImage(), 0, 0, null);
+					else if(foot == 2)
+						g.drawImage(Const.girlRunBackLeft.getImage(), 0, 0, null);
+				}
+				else if(direction == Direction.DOWN) {
+					if(foot == 0)
+						g.drawImage(Const.girlRunFront.getImage(), 0, 0, null);
+					else if(foot == 1)
+						g.drawImage(Const.girlRunFrontRight.getImage(), 0, 0, null);
+					else if(foot == 2)
+						g.drawImage(Const.girlRunFrontLeft.getImage(), 0, 0, null);
+				}
+				else if(direction == Direction.LEFT) {
+					if(foot == 0)	
+						g.drawImage(Const.girlRunLeft.getImage(), 0, 0, null);
+					else if(foot == 1)	
+						g.drawImage(Const.girlRunLeftRight.getImage(), 0, 0, null);
+					else if(foot == 2)	
+						g.drawImage(Const.girlRunLeftLeft.getImage(), 0, 0, null);
+					
+				}
+				else if(direction == Direction.RIGHT) {
+					if(foot == 0)	
+						g.drawImage(Const.girlRunRight.getImage(), 0, 0, null);
+					else if(foot == 1)	
+						g.drawImage(Const.girlRunRightRight.getImage(), 0, 0, null);
+					else if(foot == 2)	
+						g.drawImage(Const.girlRunRightLeft.getImage(), 0, 0, null);
+				}
 			}
-			else if(direction == Direction.DOWN) {
-				if(foot == 0)
-					g.drawImage(Const.girlFront.getImage(), 0, 0, null);
-				else if(foot == 1)
-					g.drawImage(Const.girlFrontRight.getImage(), 0, 0, null);
-				else if(foot == 2)
-					g.drawImage(Const.girlFrontLeft.getImage(), 0, 0, null);
-			}
-			else if(direction == Direction.LEFT) {
-				if(foot == 0)	
-					g.drawImage(Const.girlLeft.getImage(), 0, 0, null);
-				else if(foot == 1)	
-					g.drawImage(Const.girlLeftRight.getImage(), 0, 0, null);
-				else if(foot == 2)	
-					g.drawImage(Const.girlLeftLeft.getImage(), 0, 0, null);
-				
-			}
-			else if(direction == Direction.RIGHT) {
-				if(foot == 0)	
-					g.drawImage(Const.girlRight.getImage(), 0, 0, null);
-				else if(foot == 1)	
-					g.drawImage(Const.girlRightRight.getImage(), 0, 0, null);
-				else if(foot == 2)	
-					g.drawImage(Const.girlRightLeft.getImage(), 0, 0, null);
-			}
+			else if(speed == 1) {
+				if(direction == Direction.UP) {
+					if(foot == 0)
+						g.drawImage(Const.girlBack.getImage(), 0, 0, null);
+					else if(foot == 1)
+						g.drawImage(Const.girlBackRight.getImage(), 0, 0, null);
+					else if(foot == 2)
+						g.drawImage(Const.girlBackLeft.getImage(), 0, 0, null);
+				}
+				else if(direction == Direction.DOWN) {
+					if(foot == 0)
+						g.drawImage(Const.girlFront.getImage(), 0, 0, null);
+					else if(foot == 1)
+						g.drawImage(Const.girlFrontRight.getImage(), 0, 0, null);
+					else if(foot == 2)
+						g.drawImage(Const.girlFrontLeft.getImage(), 0, 0, null);
+				}
+				else if(direction == Direction.LEFT) {
+					if(foot == 0)	
+						g.drawImage(Const.girlLeft.getImage(), 0, 0, null);
+					else if(foot == 1)	
+						g.drawImage(Const.girlLeftRight.getImage(), 0, 0, null);
+					else if(foot == 2)	
+						g.drawImage(Const.girlLeftLeft.getImage(), 0, 0, null);
+					
+				}
+				else if(direction == Direction.RIGHT) {
+					if(foot == 0)	
+						g.drawImage(Const.girlRight.getImage(), 0, 0, null);
+					else if(foot == 1)	
+						g.drawImage(Const.girlRightRight.getImage(), 0, 0, null);
+					else if(foot == 2)	
+						g.drawImage(Const.girlRightLeft.getImage(), 0, 0, null);
+				}
+			}	
 		}
 		
 	}
