@@ -348,32 +348,23 @@ public class Selenia extends JPanel {
 	public boolean checkMapChange() {
 		
 		if(isVisible()){
-			
 			if(game.deplacement.getPosition().equals(toMyHouse) || game.deplacement.getPosition().equals(toRivalHouse)
 					|| game.deplacement.getPosition().equals(toHouse01) || game.deplacement.getPosition().equals(toHouse02)
 					|| game.deplacement.getPosition().equals(toIntertown01)) {
-				 game.deplacement.hero.setVisible(false);
-				 setVisible(false);
-				 if(game.deplacement.getPosition().equals(toMyHouse) || game.deplacement.getPosition().equals(toRivalHouse)
-						 || game.deplacement.getPosition().equals(toHouse01) || game.deplacement.getPosition().equals(toHouse02)
-						 || game.deplacement.getPosition().equals(toIntertown01))
-					 Sounds.playSound(Const.soundEnterHouse);
-				 if(game.deplacement.getPosition().equals(toMyHouse)){
-					 new TransitionSimple(game, game.gamePanel, new MyHouse(game, false, 2176, 3153, Direction.UP, -1774, -2899));
-				 }
-				 else if(game.deplacement.getPosition().equals(toRivalHouse)){
-					 new TransitionSimple(game, game.gamePanel, new RivalHouse(game, false, 4256, 3153, Direction.UP, -3854, -2899));
-				 }
-				 else if(game.deplacement.getPosition().equals(toHouse01)){
-					 new TransitionSimple(game, game.gamePanel, SeleniaHouses.seleniaHouse01(game, 5504, 1322, Direction.UP, -5131, -1064));
-				 }
-				 else if(game.deplacement.getPosition().equals(toHouse02)){
-					 new TransitionSimple(game, game.gamePanel, SeleniaHouses.seleniaHouse02(game, 6464, 3114, Direction.UP, -6091, -2856));
-				 }
-				 else if(game.deplacement.getPosition().equals(toIntertown01)){
-					 new TransitionSimple(game, game.gamePanel, new Intertown01(game, 3264, 3114, Direction.UP, -2891, -2856));
-				 }
-				 return true;
+				game.deplacement.hero.setVisible(false);
+				setVisible(false);
+				Sounds.playSound(Const.soundEnterHouse);
+				if(game.deplacement.getPosition().equals(toMyHouse))
+					new TransitionSimple(game, game.gamePanel, new MyHouse(game, false, 2176, 3153, Direction.UP, -1774, -2899));
+				else if(game.deplacement.getPosition().equals(toRivalHouse))
+					new TransitionSimple(game, game.gamePanel, new RivalHouse(game, false, 4256, 3153, Direction.UP, -3854, -2899));
+				else if(game.deplacement.getPosition().equals(toHouse01))
+					new TransitionSimple(game, game.gamePanel, SeleniaHouses.seleniaHouse01(game, 5504, 1322, Direction.UP, -5131, -1064));
+				else if(game.deplacement.getPosition().equals(toHouse02))
+					new TransitionSimple(game, game.gamePanel, SeleniaHouses.seleniaHouse02(game, 6464, 3114, Direction.UP, -6091, -2856));
+				else if(game.deplacement.getPosition().equals(toIntertown01))
+					new TransitionSimple(game, game.gamePanel, new Intertown01(game, 3264, 3114, Direction.UP, -2891, -2856));
+				return true;
 			}
 		}
 		return false;

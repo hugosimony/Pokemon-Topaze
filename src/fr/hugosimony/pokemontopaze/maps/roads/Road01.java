@@ -695,19 +695,15 @@ public class Road01 extends JPanel {
 	public boolean checkMapChange() {
 		
 		if(isVisible()){
-			
 			if(game.deplacement.getPosition().equals(toIntertown01) || game.deplacement.getPosition().equals(toIntertown02)) {
-				 game.deplacement.hero.setVisible(false);
-				 setVisible(false);
-				 if(game.deplacement.getPosition().equals(toIntertown01) || game.deplacement.getPosition().equals(toIntertown02))
-					 Sounds.playSound(Const.soundEnterHouse);
-				 if(game.deplacement.getPosition().equals(toIntertown01)){
-					 new TransitionSimple(game, game.gamePanel, new Intertown01(game, 3264, 2858, Direction.DOWN, -2891, -2600));
-				 }
-				 else if(game.deplacement.getPosition().equals(toIntertown02)){
-					 new TransitionSimple(game, game.gamePanel, new Intertown02(game, 3264, 3114, Direction.UP, -2891, -2856));
-				 }
-				 return true;
+				game.deplacement.hero.setVisible(false);
+				setVisible(false);
+				Sounds.playSound(Const.soundEnterHouse);
+				if(game.deplacement.getPosition().equals(toIntertown01))
+					new TransitionSimple(game, game.gamePanel, new Intertown01(game, 3264, 2858, Direction.DOWN, -2891, -2600));
+				else if(game.deplacement.getPosition().equals(toIntertown02))
+					new TransitionSimple(game, game.gamePanel, new Intertown02(game, 3264, 3114, Direction.UP, -2891, -2856));
+				return true;
 			}
 		}
 		return false;

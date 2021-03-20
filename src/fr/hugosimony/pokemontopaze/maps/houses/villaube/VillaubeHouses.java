@@ -46,14 +46,12 @@ public class VillaubeHouses {
 	
 	public static boolean checkMapChangeHouse01() {
 		if(game.deplacement.getPosition().equals(game.house01.toExit)) {
-			 game.deplacement.hero.setVisible(false);
-			 game.house01.setVisible(false);
-			 if(game.deplacement.getPosition().equals(game.house01.toExit))
-				 Sounds.playSound(Const.soundLeaveHouse);
-			 if(game.deplacement.getPosition().equals(game.house01.toExit)){
-				 new TransitionSimple(game, game.gamePanel, new Villaube(game, 1024, 5425, Direction.DOWN, -622, -5171));
-			 }
-			 return true;
+			game.deplacement.hero.setVisible(false);
+			game.house01.setVisible(false);
+			Sounds.playSound(Const.soundLeaveHouse);
+			if(game.deplacement.getPosition().equals(game.house01.toExit))
+				new TransitionSimple(game, game.gamePanel, new Villaube(game, 1024, 5425, Direction.DOWN, -622, -5171));
+			return true;
 		}
 		return false;
 	}
@@ -83,14 +81,12 @@ public class VillaubeHouses {
 	
 	public static boolean checkMapChangeHouse02() {
 		if(game.deplacement.getPosition().equals(game.house02.toExit)) {
-			 game.deplacement.hero.setVisible(false);
-			 game.house02.setVisible(false);
-			 if(game.deplacement.getPosition().equals(game.house02.toExit))
-				 Sounds.playSound(Const.soundLeaveHouse);
-			 if(game.deplacement.getPosition().equals(game.house02.toExit)){
-				 new TransitionSimple(game, game.gamePanel, new Villaube(game, 960, 5201, Direction.DOWN, -558, -4947));
-			 }
-			 return true;
+			game.deplacement.hero.setVisible(false);
+			game.house02.setVisible(false);
+			Sounds.playSound(Const.soundLeaveHouse);
+			if(game.deplacement.getPosition().equals(game.house02.toExit))
+				new TransitionSimple(game, game.gamePanel, new Villaube(game, 960, 5201, Direction.DOWN, -558, -4947));
+			return true;
 		}
 		return false;
 	}
@@ -120,14 +116,12 @@ public class VillaubeHouses {
 	
 	public static boolean checkMapChangeHouse03() {
 		if(game.deplacement.getPosition().equals(game.house03.toExit)) {
-			 game.deplacement.hero.setVisible(false);
-			 game.house03.setVisible(false);
-			 if(game.deplacement.getPosition().equals(game.house03.toExit))
-				 Sounds.playSound(Const.soundLeaveHouse);
-			 if(game.deplacement.getPosition().equals(game.house03.toExit)){
-				 new TransitionSimple(game, game.gamePanel, new Villaube(game, 1792, 4721, Direction.DOWN, -1390, -4467));
-			 }
-			 return true;
+			game.deplacement.hero.setVisible(false);
+			game.house03.setVisible(false);
+			Sounds.playSound(Const.soundLeaveHouse);
+			if(game.deplacement.getPosition().equals(game.house03.toExit))
+				new TransitionSimple(game, game.gamePanel, new Villaube(game, 1792, 4721, Direction.DOWN, -1390, -4467));
+			return true;
 		}
 		return false;
 	}
@@ -157,14 +151,12 @@ public class VillaubeHouses {
 	
 	public static boolean checkMapChangeHouse04() {
 		if(game.deplacement.getPosition().equals(game.house01.toExit)) {
-			 game.deplacement.hero.setVisible(false);
-			 game.house01.setVisible(false);
-			 if(game.deplacement.getPosition().equals(game.house01.toExit))
-				 Sounds.playSound(Const.soundLeaveHouse);
-			 if(game.deplacement.getPosition().equals(game.house01.toExit)){
-				 new TransitionSimple(game, game.gamePanel, new Villaube(game, 1376, 4273, Direction.DOWN, -974, -4019));
-			 }
-			 return true;
+			game.deplacement.hero.setVisible(false);
+			game.house01.setVisible(false);
+			Sounds.playSound(Const.soundLeaveHouse);
+			if(game.deplacement.getPosition().equals(game.house01.toExit))
+				new TransitionSimple(game, game.gamePanel, new Villaube(game, 1376, 4273, Direction.DOWN, -974, -4019));
+			return true;
 		}
 		return false;
 	}

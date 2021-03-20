@@ -251,24 +251,21 @@ public class RivalHouse extends JPanel {
 	public boolean checkMapChange() {
 		
 		if(isVisible()){
-			
-			if((game.deplacement.getPosition().equals(toDownStairs) && up) || (game.deplacement.getPosition().equals(toUpStairs) && !up) || (game.deplacement.getPosition().equals(toExit) && !up)) {
-				 game.deplacement.hero.setVisible(false);
-				 setVisible(false);
-				 if(game.deplacement.getPosition().equals(toDownStairs) || game.deplacement.getPosition().equals(toUpStairs))
-					 Sounds.playSound(Const.soundEnterHouse);
-				 else
-					 Sounds.playSound(Const.soundLeaveHouse);
-				 if(game.deplacement.getPosition().equals(toDownStairs)){
-					 new TransitionSimple(game, game.gamePanel, new RivalHouse(game, false, 4416, 2865, Direction.LEFT, -4014, -2611));
-				 }
-				 else if(game.deplacement.getPosition().equals(toUpStairs)){
-					 new TransitionSimple(game, game.gamePanel, new RivalHouse(game, true, 5280, 2865, Direction.RIGHT, -4878, -2611));
-				 }
-				 else {
-					 new TransitionSimple(game, game.gamePanel, new Selenia(game, 1536, 1226, Direction.DOWN, -1163, -968));
-				 }
-				 return true;
+			if((game.deplacement.getPosition().equals(toDownStairs) && up) || (game.deplacement.getPosition().equals(toUpStairs) && !up)
+					|| (game.deplacement.getPosition().equals(toExit) && !up)) {
+				game.deplacement.hero.setVisible(false);
+				setVisible(false);
+				if(game.deplacement.getPosition().equals(toDownStairs) || game.deplacement.getPosition().equals(toUpStairs))
+					Sounds.playSound(Const.soundEnterHouse);
+				else if(game.deplacement.getPosition().equals(toExit))
+					Sounds.playSound(Const.soundLeaveHouse);
+				if(game.deplacement.getPosition().equals(toDownStairs))
+					new TransitionSimple(game, game.gamePanel, new RivalHouse(game, false, 4416, 2865, Direction.LEFT, -4014, -2611));
+				else if(game.deplacement.getPosition().equals(toUpStairs))
+					new TransitionSimple(game, game.gamePanel, new RivalHouse(game, true, 5280, 2865, Direction.RIGHT, -4878, -2611));
+				else if(game.deplacement.getPosition().equals(toExit))
+					new TransitionSimple(game, game.gamePanel, new Selenia(game, 1536, 1226, Direction.DOWN, -1163, -968));
+				return true;
 			}
 		}
 		return false;

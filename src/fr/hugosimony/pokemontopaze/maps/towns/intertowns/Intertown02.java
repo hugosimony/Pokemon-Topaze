@@ -152,22 +152,15 @@ public class Intertown02 extends JPanel {
 	public boolean checkMapChange() {
 		
 		if(isVisible()){
-			
 			if(game.deplacement.getPosition().equals(toRoad01) || game.deplacement.getPosition().equals(toVillaube)) {
-				 game.deplacement.hero.setVisible(false);
-				 setVisible(false);
-				 if(game.deplacement.getPosition().equals(toRoad01) || game.deplacement.getPosition().equals(toVillaube))
-					 Sounds.playSound(Const.soundLeaveHouse);
-				 if(game.deplacement.getPosition().equals(toVillaube)){
-					 new TransitionSimple(game, game.gamePanel, new Villaube(game, 1280, 5521, Direction.UP, -878, -5267));
-				 }
-				 else if(game.deplacement.getPosition().equals(toRoad01)){
-					 new TransitionSimple(game, game.gamePanel, new Road01(game, 3232, 810, Direction.DOWN, -2859, -552));
-				 }
-				 else {
-					 
-				 }
-				 return true;
+				game.deplacement.hero.setVisible(false);
+				setVisible(false);
+				Sounds.playSound(Const.soundLeaveHouse);
+				if(game.deplacement.getPosition().equals(toVillaube))
+					new TransitionSimple(game, game.gamePanel, new Villaube(game, 1280, 5521, Direction.UP, -878, -5267));
+				else if(game.deplacement.getPosition().equals(toRoad01))
+					new TransitionSimple(game, game.gamePanel, new Road01(game, 3232, 810, Direction.DOWN, -2859, -552));
+				return true;
 			}
 		}
 		return false;

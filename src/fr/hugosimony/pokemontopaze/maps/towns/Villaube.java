@@ -32,13 +32,18 @@ public class Villaube extends JPanel {
 	private Game game;
 
 	private IntTuple toIntertown02;
-	//private IntTuple toLabo;
-	//private IntTuple toPokemonCenter;
-	//private IntTuple toMart;
+	private IntTuple toLabo;
+	private IntTuple toPokemonCenter;
+	private IntTuple toMart;
+	private IntTuple toRadioTower;
 	private IntTuple toHouse01;
 	private IntTuple toHouse02;
 	private IntTuple toHouse03;
 	private IntTuple toHouse04;
+	private IntTuple toBuilding01;
+	private IntTuple toBuilding02;
+	private IntTuple toIntertown03;
+	// private IntTuple toIntertownXX;
 	
 	//private Pnj villaubePnj01;
 	//private Pnj villaubePnj02;
@@ -54,10 +59,17 @@ public class Villaube extends JPanel {
 		setWalls();
 		setPnjs();
 		toIntertown02 = new IntTuple(1280, 5553);
+		toLabo = new IntTuple(1440, 5393);
+		toPokemonCenter = new IntTuple(1440, 5137);
+		toMart = new IntTuple(1504, 4881);
+		toRadioTower = new IntTuple(1024, 4977);
 		toHouse01 = new IntTuple(1024, 5393);
 		toHouse02 = new IntTuple(960, 5169);
 		toHouse03 = new IntTuple(1792, 4689);
 		toHouse04 = new IntTuple(1376, 4241);
+		toBuilding01 = new IntTuple(1632, 5297);
+		toBuilding02 = new IntTuple(1728, 5297);
+		toIntertown03 = new IntTuple(800, 4561);
 		
 		setLayout(null);
 		setBackground(new Color(0, 0, 0));
@@ -572,32 +584,40 @@ public class Villaube extends JPanel {
 	public boolean checkMapChange() {
 		
 		if(isVisible()){
-			
-			if(game.deplacement.getPosition().equals(toIntertown02) 
+			if(game.deplacement.getPosition().equals(toIntertown02) || game.deplacement.getPosition().equals(toIntertown03)
+					|| game.deplacement.getPosition().equals(toLabo) || game.deplacement.getPosition().equals(toPokemonCenter)
+					|| game.deplacement.getPosition().equals(toMart) || game.deplacement.getPosition().equals(toRadioTower)
 					|| game.deplacement.getPosition().equals(toHouse01) || game.deplacement.getPosition().equals(toHouse02)
-					|| game.deplacement.getPosition().equals(toHouse03) || game.deplacement.getPosition().equals(toHouse04)) {
-				 game.deplacement.hero.setVisible(false);
-				 setVisible(false);
-				 if(game.deplacement.getPosition().equals(toIntertown02)
-						 || game.deplacement.getPosition().equals(toHouse01) || game.deplacement.getPosition().equals(toHouse02)
-						 || game.deplacement.getPosition().equals(toHouse03) || game.deplacement.getPosition().equals(toHouse04))
-					 Sounds.playSound(Const.soundEnterHouse);
-				 if(game.deplacement.getPosition().equals(toIntertown02)){
-					 new TransitionSimple(game, game.gamePanel, new Intertown02(game, 3264, 2858, Direction.DOWN, -2891, -2600));
-				 }
-				 else if(game.deplacement.getPosition().equals(toHouse01)){
-					 new TransitionSimple(game, game.gamePanel, VillaubeHouses.villaubeHouse01(game, 5504, 1322, Direction.UP, -5131, -1064));
-				 }
-				 else if(game.deplacement.getPosition().equals(toHouse02)){
-					 new TransitionSimple(game, game.gamePanel, VillaubeHouses.villaubeHouse02(game, 6464, 3114, Direction.UP, -6091, -2856));
-				 }
-				 else if(game.deplacement.getPosition().equals(toHouse03)){
-					 new TransitionSimple(game, game.gamePanel, VillaubeHouses.villaubeHouse03(game, 5472, 2218, Direction.UP, -5099, -1960));
-				 }
-				 else if(game.deplacement.getPosition().equals(toHouse04)){
-					 new TransitionSimple(game, game.gamePanel, VillaubeHouses.villaubeHouse04(game, 5504, 1322, Direction.UP, -5131, -1064));
-				 }
-				 return true;
+					|| game.deplacement.getPosition().equals(toHouse03) || game.deplacement.getPosition().equals(toHouse04)
+					|| game.deplacement.getPosition().equals(toBuilding01) || game.deplacement.getPosition().equals(toBuilding02)) {
+				game.deplacement.hero.setVisible(false);
+				setVisible(false);
+				Sounds.playSound(Const.soundEnterHouse);
+				if(game.deplacement.getPosition().equals(toIntertown02))
+					new TransitionSimple(game, game.gamePanel, new Intertown02(game, 3264, 2858, Direction.DOWN, -2891, -2600));
+				else if(game.deplacement.getPosition().equals(toLabo))
+					new TransitionSimple(game, game.gamePanel, VillaubeHouses.villaubeHouse01(game, 5504, 1322, Direction.UP, -5131, -1064));
+				else if(game.deplacement.getPosition().equals(toPokemonCenter))
+					new TransitionSimple(game, game.gamePanel, VillaubeHouses.villaubeHouse01(game, 5504, 1322, Direction.UP, -5131, -1064));
+				else if(game.deplacement.getPosition().equals(toMart))
+					new TransitionSimple(game, game.gamePanel, VillaubeHouses.villaubeHouse01(game, 5504, 1322, Direction.UP, -5131, -1064));
+				else if(game.deplacement.getPosition().equals(toRadioTower))
+					new TransitionSimple(game, game.gamePanel, VillaubeHouses.villaubeHouse01(game, 5504, 1322, Direction.UP, -5131, -1064));
+				else if(game.deplacement.getPosition().equals(toHouse01))
+					new TransitionSimple(game, game.gamePanel, VillaubeHouses.villaubeHouse01(game, 5504, 1322, Direction.UP, -5131, -1064));
+				else if(game.deplacement.getPosition().equals(toHouse02))
+					new TransitionSimple(game, game.gamePanel, VillaubeHouses.villaubeHouse02(game, 6464, 3114, Direction.UP, -6091, -2856));
+				else if(game.deplacement.getPosition().equals(toHouse03))
+					new TransitionSimple(game, game.gamePanel, VillaubeHouses.villaubeHouse03(game, 5472, 2218, Direction.UP, -5099, -1960));
+				else if(game.deplacement.getPosition().equals(toHouse04))
+					new TransitionSimple(game, game.gamePanel, VillaubeHouses.villaubeHouse04(game, 5504, 1322, Direction.UP, -5131, -1064));
+				else if(game.deplacement.getPosition().equals(toBuilding01))
+					new TransitionSimple(game, game.gamePanel, VillaubeHouses.villaubeHouse01(game, 5504, 1322, Direction.UP, -5131, -1064));
+				else if(game.deplacement.getPosition().equals(toBuilding02))
+					new TransitionSimple(game, game.gamePanel, VillaubeHouses.villaubeHouse01(game, 5504, 1322, Direction.UP, -5131, -1064));
+				else if(game.deplacement.getPosition().equals(toIntertown03))
+					new TransitionSimple(game, game.gamePanel, new Intertown02(game, 3264, 2858, Direction.DOWN, -2891, -2600));
+				return true;
 			}
 		}
 		return false;
