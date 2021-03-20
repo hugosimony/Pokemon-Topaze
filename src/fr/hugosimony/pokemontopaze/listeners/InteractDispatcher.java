@@ -57,11 +57,11 @@ public class InteractDispatcher implements KeyEventDispatcher {
 					 else {
 						 Pnj pnj = IntTuple.containsPnj(game.pnjs, game.deplacement.getLookingTile());
 						 if(pnj != null && !pnj.mooving) {
-							 
 							 text = PnjText.getText(pnj.perso);
 							 if(pnj.paraClick)
 								 pnj.clearIA();
-							 pnj.setSprites(new Pnj(game, pnj.perso, Direction.getOpositeDirection(game.deplacement.direction), 0, pnj.positionX, pnj.positionY, false, false, null, null, pnj.paraClick, pnj.mooving));
+							 pnj.setSprites(new Pnj(game, pnj.perso, Direction.getOpositeDirection(game.deplacement.direction), 0, pnj.positionX, pnj.positionY, pnj.IA, false, pnj.directions, pnj.IAMoving, pnj.paraClick, pnj.mooving));
+							 game.deplacement.setSprites();
 						 }
 					 }
 					

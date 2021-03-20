@@ -89,6 +89,45 @@ public class PnjSprites {
 		}
 		
 		//*********************************************************************************************
+		// Brown Girl
+		
+		if(pnj.contains("browngirl")) {
+			if(direction == Direction.UP) {
+				if(foot == 0)
+					return Const.browngirlBack.getImage();
+				else if(foot == 1)
+					return Const.browngirlBackRight.getImage();
+				else if(foot == 2)
+					return Const.browngirlBackLeft.getImage();
+			}
+			else if(direction == Direction.DOWN) {
+				if(foot == 0)
+					return Const.browngirlFront.getImage();
+				else if(foot == 1)
+					return Const.browngirlFrontRight.getImage();
+				else if(foot == 2)
+					return Const.browngirlFrontLeft.getImage();
+			}
+			else if(direction == Direction.LEFT) {
+				if(foot == 0)	
+					return Const.browngirlLeft.getImage();
+				else if(foot == 1)	
+					return Const.browngirlLeftRight.getImage();
+				else if(foot == 2)	
+					return Const.browngirlLeftLeft.getImage();
+				
+			}
+			else if(direction == Direction.RIGHT) {
+				if(foot == 0)	
+					return Const.browngirlRight.getImage();
+				else if(foot == 1)	
+					return Const.browngirlRightRight.getImage();
+				else if(foot == 2)	
+					return Const.browngirlRightLeft.getImage();
+			}
+		}
+		
+		//*********************************************************************************************
 		// Police
 		
 		if(pnj.contains("police")) {

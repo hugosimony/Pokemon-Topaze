@@ -25,18 +25,18 @@ public class PnjText {
 		//***********************************************************************************************
 		
 		else if(perso.equals("brownboy001")) {
+			return "Tu connais le Prof Chen ¤= C'est un vieux monsieur qui aime bien\n"
+					+ "les femmes.= J'ai entendu dire qu'il avait des Pokémons rares !";
+		}
+	
+		//***********************************************************************************************
+		
+		else if(perso.equals("browngirl001")) {
 			if(Variables.ADVENTURE_Step < 2)
 				return "Coucou " + Variables.PERSO_Name + ",= tu vas enfin choper ton premier Pokémon !=\n"
 						+ "T'en as de la chance...\n";
 			return "Coucou " + Variables.PERSO_Name + ",= il est cool ton Pokémon !=\n"
 			+ "T'en as de la chance...\n";
-		}
-		
-		//***********************************************************************************************
-		
-		else if(perso.equals("brownboy002")) {
-			return "Tu connais le Prof Chen ¤= C'est un vieux monsieur qui aime bien\n"
-					+ "les femmes.= J'ai entendu dire qu'il avait des Pokémons rares !";
 		}
 		
 		//***********************************************************************************************

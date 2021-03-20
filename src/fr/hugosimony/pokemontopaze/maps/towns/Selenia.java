@@ -309,7 +309,7 @@ public class Selenia extends JPanel {
 				{0, 0, 1, 0, 0},
 				{1, 1, 2, 1, 1}
 		};
-		seleniaPnj02 = new Pnj(game, "brownboy002", Direction.UP, 0, 1376, 1546, true, true, directionsPnj02, null, false, false);
+		seleniaPnj02 = new Pnj(game, "browngirl001", Direction.UP, 0, 1376, 1546, true, true, directionsPnj02, null, false, false);
 		seleniaPnj02.setVisible(true);
 		seleniaPnj02.setSize(35, 50);
 		seleniaPnj02.setLocation(1376, 1546);

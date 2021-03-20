@@ -85,7 +85,7 @@ public class PnjAnimations {
 				@Override
 				public void run() {
 					new Timer().schedule(game.myHouse.mom.new Move(Direction.DOWN, true, finalAnimation, "llllllll",
-							Direction.UP, PnjText.getText("mom")), 0, 7);
+							Direction.UP, PnjText.getText("mom")), 0, 8);
 					Variables.ADVENTURE_Step = 1;
 					game.myHouse.setAnimations();
 					this.cancel();
@@ -99,13 +99,13 @@ public class PnjAnimations {
 				@Override
 				public void run() {
 					new Timer().schedule(game.road01.profChen.new Move(Direction.RIGHT, true, new IntTuple(3712, 1738), "rrrrrrr", Direction.RIGHT,
-							PnjText.getText("profChen")), 0, 7);
+							PnjText.getText("profChen")), 0, 8);
 					if(game.deplacement.locationY <= 1738)
 						new Timer().schedule(game.deplacement.new MoveDirection(Direction.LEFT, false, false, true, new IntTuple(3872, 1738), 
-								"dddd", Direction.LEFT, "", false), 0, 7);
+								"dddd", Direction.LEFT, "", false), 0, 8);
 					else
 						new Timer().schedule(game.deplacement.new MoveDirection(Direction.LEFT, false, false, true, new IntTuple(3872, 1738), 
-								"uuu", Direction.LEFT, "", false), 0, 7);
+								"uuu", Direction.LEFT, "", false), 0, 8);
 					Variables.ADVENTURE_Step = 2;
 					game.road01.setAnimations();
 					this.cancel();
@@ -115,32 +115,32 @@ public class PnjAnimations {
 		}
 		else if(Variables.ADVENTURE_Step == 2) {
 			new Timer().schedule(game.road01.profChen.new Move(Direction.UP, true, new IntTuple(3744, 1706), "r", Direction.DOWN,
-					PnjText.getText("profChen")), 300, 7);
+					PnjText.getText("profChen")), 300, 8);
 			Variables.ADVENTURE_Step = 3;
 			return;
 		}
 		else if(Variables.ADVENTURE_Step == 3) {
 			new Timer().schedule(game.road01.profChen.new Move(Direction.RIGHT, true, new IntTuple(3776, 1706), "", Direction.DOWN,
-					PnjText.getText("profChen")), 900, 7);
+					PnjText.getText("profChen")), 900, 8);
 			Variables.ADVENTURE_Step = 4;
 			return;
 		}
 		else if(Variables.ADVENTURE_Step == 4) {
 			new Timer().schedule(game.road01.profChen.new Move(Direction.RIGHT, true, new IntTuple(3808, 1706), "", Direction.DOWN,
-					PnjText.getText("profChen")), 900, 7);
+					PnjText.getText("profChen")), 900, 8);
 			Variables.ADVENTURE_Step = 5;
 			return;
 		}
 		else if(Variables.ADVENTURE_Step == 5) {
 			new Timer().schedule(game.road01.profChen.new Move(Direction.RIGHT, true, new IntTuple(3840, 1738), "d", Direction.RIGHT,
-					PnjText.getText("profChen")), 900, 7);
+					PnjText.getText("profChen")), 900, 8);
 			Variables.ADVENTURE_Step = 6;
 			game.road01.setAnimations();
 			return;
 		}
 		else if(Variables.ADVENTURE_Step == 6) {
 			new Timer().schedule(game.road01.profChen.new Move(Direction.DOWN, true, new IntTuple(3712, 1738), "llllu", Direction.RIGHT,
-					PnjText.getText("profChen")), 300, 7);
+					PnjText.getText("profChen")), 300, 8);
 			Variables.ADVENTURE_Step = 7;
 			game.road01.setAnimations();
 			return;
@@ -149,13 +149,13 @@ public class PnjAnimations {
 			new ExclamationMark(game, game.road01.profChen.getLocation(), false);
 			if(finalAnimation.y == 1738)
 				new Timer().schedule(game.road01.profChen.new Move(Direction.UP, true, new IntTuple(finalAnimation.x - 32, 1738), "rrrd", Direction.RIGHT, 
-							PnjText.getText("profChen")), 1000, 7);
+							PnjText.getText("profChen")), 1000, 8);
 			else if(finalAnimation.y == 1706)
 				new Timer().schedule(game.road01.profChen.new Move(Direction.UP, true, new IntTuple(finalAnimation.x - 32, 1706), "rrrr", Direction.RIGHT, 
-						PnjText.getText("profChen")), 1000, 7);
+						PnjText.getText("profChen")), 1000, 8);
 			else 
 				new Timer().schedule(game.road01.profChen.new Move(Direction.DOWN, true, new IntTuple(finalAnimation.x - 32, 1770), "rrrr", Direction.RIGHT, 
-						PnjText.getText("profChen")), 1000, 7);
+						PnjText.getText("profChen")), 1000, 8);
 			Variables.ADVENTURE_Step = 9;
 			game.road01.setAnimations();
 			return;
@@ -184,7 +184,7 @@ public class PnjAnimations {
 						@Override
 						public void run() {
 							new Timer().schedule(game.road01.rival.new Move(Direction.UP, true, new IntTuple(3936, 1770), "llll", Direction.LEFT, 
-									PnjText.getText("rival")), 1000, 7);
+									PnjText.getText("rival")), 1000, 8);
 							Variables.ADVENTURE_Step = 10;
 							game.road01.setAnimations();
 							this.cancel();
@@ -203,7 +203,7 @@ public class PnjAnimations {
 				finalX = 3776;
 			if(finalAnimation.y == 1770) {
 				new Timer().schedule(game.road01.rival.new Move(Direction.UP, true, new IntTuple(finalX, 1706), "ulllllll", Direction.DOWN, 
-						PnjText.getText("rival")), 1000, 7);	
+						PnjText.getText("rival")), 1000, 8);	
 				new Timer().schedule(new TimerTask() {
 					@Override
 					public void run() {
@@ -216,7 +216,7 @@ public class PnjAnimations {
 			}
 			else if(finalAnimation.y == 1738) {
 				new Timer().schedule(game.road01.rival.new Move(Direction.DOWN, true, new IntTuple(finalX, 1770), "llllllu", Direction.UP, 
-						PnjText.getText("rival")), 1000, 7);
+						PnjText.getText("rival")), 1000, 8);
 				new Timer().schedule(new TimerTask() {
 					@Override
 					public void run() {
@@ -238,7 +238,7 @@ public class PnjAnimations {
 			}
 			else {
 				new Timer().schedule(game.road01.rival.new Move(Direction.LEFT, true, new IntTuple(finalX, 1770), "llllll", Direction.UP, 
-						PnjText.getText("rival")), 1000, 7);
+						PnjText.getText("rival")), 1000, 8);
 				new Timer().schedule(new TimerTask() {
 					@Override
 					public void run() {
@@ -285,10 +285,10 @@ public class PnjAnimations {
 			if(Variables.STARTER == 1) {
 				if(finalAnimation.y == 1770)
 					new Timer().schedule(game.road01.profChen.new Move(Direction.DOWN, true, new IntTuple(3808, 1770), "rrru", Direction.UP, 
-							PnjText.getText("profChen")), 1000, 7);
+							PnjText.getText("profChen")), 1000, 8);
 				else
 					new Timer().schedule(game.road01.profChen.new Move(Direction.DOWN, true, new IntTuple(3808, 1770), "ddrrru", Direction.UP, 
-							PnjText.getText("profChen")), 1000, 7);
+							PnjText.getText("profChen")), 1000, 8);
 			}
 			else {
 				new Timer().schedule(new TimerTask() {
@@ -336,15 +336,15 @@ public class PnjAnimations {
 		else if(Variables.ADVENTURE_Step == 14) {
 			if(Variables.STARTER == 1) {
 				new Timer().schedule(game.road01.profChen.new Move(Direction.DOWN, true, new IntTuple(3328, game.road01.profChen.positionY + 32), 
-						"lllllllllllllll", Direction.LEFT, PnjText.getText("profChen")), 1000, 7);
+						"lllllllllllllll", Direction.LEFT, PnjText.getText("profChen")), 1000, 8);
 			}
 			else {
 				if(game.road01.profChen.positionY == 1738)
 					new Timer().schedule(game.road01.profChen.new Move(Direction.UP, true, new IntTuple(3360, game.road01.profChen.positionY - 32), 
-							"llllllllllllll", Direction.LEFT, PnjText.getText("profChen")), 1000, 7);
+							"llllllllllllll", Direction.LEFT, PnjText.getText("profChen")), 1000, 8);
 				else
 					new Timer().schedule(game.road01.profChen.new Move(Direction.LEFT, true, new IntTuple(3360, game.road01.profChen.positionY), 
-							"llllllllllllll", Direction.LEFT, PnjText.getText("profChen")), 1000, 7);
+							"llllllllllllll", Direction.LEFT, PnjText.getText("profChen")), 1000, 8);
 			}
 			Variables.ADVENTURE_Step = 15;
 			return;
@@ -352,21 +352,21 @@ public class PnjAnimations {
 		else if(Variables.ADVENTURE_Step == 15) {
 			if(game.deplacement.locationY == 1770) {
 				new Timer().schedule(game.road01.rival.new Move(Direction.LEFT, true, new IntTuple(3712, 1738), "dlll", Direction.RIGHT, 
-						PnjText.getText("rival")), 1200, 7);
+						PnjText.getText("rival")), 1200, 8);
 				new Timer().schedule(game.deplacement.new MoveDirection(Direction.RIGHT, false, false, true, new IntTuple(3872, 1738), 
-						"urrr", Direction.LEFT, "", false), 500, 7);
+						"urrr", Direction.LEFT, "", false), 500, 8);
 			}
 			else if(game.deplacement.locationY == 1738) {
 				new Timer().schedule(game.road01.rival.new Move(Direction.LEFT, true, new IntTuple(3712, 1738), "ulll", Direction.RIGHT, 
-						PnjText.getText("rival")), 1200, 7);
+						PnjText.getText("rival")), 1200, 8);
 				new Timer().schedule(game.deplacement.new MoveDirection(Direction.RIGHT, false, false, true, new IntTuple(3872, 1738), 
-						"rr", Direction.LEFT, "", false), 500, 7);
+						"rr", Direction.LEFT, "", false), 500, 8);
 			}
 			else {
 				new Timer().schedule(game.road01.rival.new Move(Direction.LEFT, true, new IntTuple(3712, 1738), "ulll", Direction.RIGHT, 
-						PnjText.getText("rival")), 1200, 7);
+						PnjText.getText("rival")), 1200, 8);
 				new Timer().schedule(game.deplacement.new MoveDirection(Direction.RIGHT, false, false, true, new IntTuple(3872, 1738), 
-						"drrr", Direction.LEFT, "", false), 500, 7);
+						"drrr", Direction.LEFT, "", false), 500, 8);
 			}
 			Variables.ADVENTURE_Step = 16;
 			return;
@@ -386,7 +386,7 @@ public class PnjAnimations {
 		}
 		else if(Variables.ADVENTURE_Step == 17) {
 			new Timer().schedule(game.road01.rival.new Move(Direction.LEFT, true, new IntTuple(3456, 1738), 
-					"lllllll", Direction.LEFT, PnjText.getText("rival")), 1000, 7);
+					"lllllll", Direction.LEFT, PnjText.getText("rival")), 1000, 8);
 			new Timer().schedule(new TimerTask() {
 				@Override
 				public void run() {

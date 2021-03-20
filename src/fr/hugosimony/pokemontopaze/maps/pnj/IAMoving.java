@@ -38,7 +38,7 @@ public class IAMoving extends TimerTask{
 					int random = Utils.randomNumber(possibleDirections.size()-1);
 					
 					if(pnj.isLookingTileFree(possibleDirections.get(random))) {
-						new Timer().schedule(pnj.new Move(possibleDirections.get(random), false, null, null, null, null), 0, 5);
+						new Timer().schedule(pnj.new Move(possibleDirections.get(random), false, null, null, null, null), 0, 8);
 						setPosition(possibleDirections, random);
 					}
 				}
