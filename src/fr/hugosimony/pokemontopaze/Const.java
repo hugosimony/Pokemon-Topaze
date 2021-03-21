@@ -247,8 +247,8 @@ public class Const {
 	//****************************************************************************************************
 	// Musics
 	
-	public static final URL themeMainMenu = Main.class.getResource("musics/mainMenuTheme.wav");
-	public static final URL themeStarting = Main.class.getResource("musics/startingTheme.wav");
+	public static final URL themeMainMenu = Main.class.getResource("musics/menu/mainMenuTheme.wav");
+	public static final URL themeStarting = Main.class.getResource("musics/menu/startingTheme.wav");
 	public static final URL themeSelenia = Main.class.getResource("musics/towns/seleniaTheme.wav");
 	public static final URL themeVillaube = Main.class.getResource("musics/towns/villaubeTheme.wav");
 	public static final URL themeRoad01 = Main.class.getResource("musics/roads/road01Theme.wav");
