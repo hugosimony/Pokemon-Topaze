@@ -678,11 +678,11 @@ public class Road01 extends JPanel {
 					game.inAnimation = true;
 					game.deplacement.released = true;
 					if(game.deplacement.getPosition().x == 3648)
-						new Timer().schedule(game.deplacement.new MoveDirection(Direction.RIGHT, false, false, true, new IntTuple(3680, game.deplacement.getPosition().y), 
-								"r", Direction.RIGHT, "Je devrais aller récupérer un Pokémon.", true), 0, 5);
+						new Timer().schedule(game.deplacement.new MoveDirection(Direction.RIGHT, false, 7, false, true, new IntTuple(3680, game.deplacement.getPosition().y), 
+								"r", Direction.RIGHT, "Je devrais aller récupérer un Pokémon.", true), 0, 8);
 					else 
-						new Timer().schedule(game.deplacement.new MoveDirection(Direction.UP, false, false, true, new IntTuple(game.deplacement.getPosition().x, 1770), 
-							"u", Direction.UP, "Je devrais aller récupérer un Pokémon.", true), 0, 5);
+						new Timer().schedule(game.deplacement.new MoveDirection(Direction.UP, false, 7, false, true, new IntTuple(game.deplacement.getPosition().x, 1770), 
+							"u", Direction.UP, "Je devrais aller récupérer un Pokémon.", true), 0, 8);
 				}
 				return true;
 			}

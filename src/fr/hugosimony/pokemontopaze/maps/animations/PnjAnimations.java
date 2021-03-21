@@ -102,10 +102,10 @@ public class PnjAnimations {
 					new Timer().schedule(game.road01.profChen.new Move(Direction.RIGHT, true, new IntTuple(3712, 1738), "rrrrrrr", Direction.RIGHT,
 							PnjText.getText("profChen")), 0, 8);
 					if(game.deplacement.locationY <= 1738)
-						new Timer().schedule(game.deplacement.new MoveDirection(Direction.LEFT, false, false, true, new IntTuple(3872, 1738), 
+						new Timer().schedule(game.deplacement.new MoveDirection(Direction.LEFT, false, 7, false, true, new IntTuple(3872, 1738), 
 								"dddd", Direction.LEFT, "", false), 0, 8);
 					else
-						new Timer().schedule(game.deplacement.new MoveDirection(Direction.LEFT, false, false, true, new IntTuple(3872, 1738), 
+						new Timer().schedule(game.deplacement.new MoveDirection(Direction.LEFT, false, 7, false, true, new IntTuple(3872, 1738), 
 								"uuu", Direction.LEFT, "", false), 0, 8);
 					Variables.ADVENTURE_Step = 2;
 					game.road01.setAnimations();
@@ -354,19 +354,19 @@ public class PnjAnimations {
 			if(game.deplacement.locationY == 1770) {
 				new Timer().schedule(game.road01.rival.new Move(Direction.LEFT, true, new IntTuple(3712, 1738), "dlll", Direction.RIGHT, 
 						PnjText.getText("rival")), 1200, 8);
-				new Timer().schedule(game.deplacement.new MoveDirection(Direction.RIGHT, false, false, true, new IntTuple(3872, 1738), 
+				new Timer().schedule(game.deplacement.new MoveDirection(Direction.RIGHT, false, 7, false, true, new IntTuple(3872, 1738), 
 						"urrr", Direction.LEFT, "", false), 500, 8);
 			}
 			else if(game.deplacement.locationY == 1738) {
 				new Timer().schedule(game.road01.rival.new Move(Direction.LEFT, true, new IntTuple(3712, 1738), "ulll", Direction.RIGHT, 
 						PnjText.getText("rival")), 1200, 8);
-				new Timer().schedule(game.deplacement.new MoveDirection(Direction.RIGHT, false, false, true, new IntTuple(3872, 1738), 
+				new Timer().schedule(game.deplacement.new MoveDirection(Direction.RIGHT, false, 7, false, true, new IntTuple(3872, 1738), 
 						"rr", Direction.LEFT, "", false), 500, 8);
 			}
 			else {
 				new Timer().schedule(game.road01.rival.new Move(Direction.LEFT, true, new IntTuple(3712, 1738), "ulll", Direction.RIGHT, 
 						PnjText.getText("rival")), 1200, 8);
-				new Timer().schedule(game.deplacement.new MoveDirection(Direction.RIGHT, false, false, true, new IntTuple(3872, 1738), 
+				new Timer().schedule(game.deplacement.new MoveDirection(Direction.RIGHT, false, 7, false, true, new IntTuple(3872, 1738), 
 						"drrr", Direction.LEFT, "", false), 500, 8);
 			}
 			Variables.ADVENTURE_Step = 16;

@@ -122,11 +122,11 @@ public class Deplacement {
 					Sounds.playSound(Const.soundPlayerJump);
 				
 				//**********************************************************
-				timer.schedule(new MoveDirection(direction, false, auto, false, null, null, null, null, false), 0, Variables.SPEED_PERSO);
+				timer.schedule(new MoveDirection(direction, false, Variables.SPEED_PERSO, auto, false, null, null, null, null, false), 0, Variables.SPEED_PERSO);
 			}
 			else {
 				Sounds.playSound(Const.soundPlayerStopped);
-				timer.schedule(new MoveDirection(direction, true, auto, false, null, null, null, null, false), 0, Variables.SPEED_PERSO);
+				timer.schedule(new MoveDirection(direction, true, Variables.SPEED_PERSO, auto, false, null, null, null, null, false), 0, Variables.SPEED_PERSO);
 				if(Sounds.canPlayBumpSound) {
 					timer.schedule(new TimerTask() {
 						@Override
@@ -145,6 +145,7 @@ public class Deplacement {
 
 		private Direction dir;
 		private boolean justChangeDirection;
+		private long speed;
 		private boolean auto;
 		private boolean inAnimation;
 		private IntTuple animationEnd;
@@ -154,10 +155,11 @@ public class Deplacement {
 		private boolean endAnimation;
 		private int x = 0;
 		
-		public MoveDirection(Direction direction, boolean justChangeDirection, boolean auto, boolean inAnimation, 
+		public MoveDirection(Direction direction, boolean justChangeDirection, long speed, boolean auto, boolean inAnimation, 
 				IntTuple animationEnd, String animationMoves, Direction finalLookingDirection, String finalText, boolean endAnimation) {
 			dir = direction;
 			this.justChangeDirection = justChangeDirection;
+			this.speed = speed;
 			this.auto = auto;
 			this.inAnimation = inAnimation;
 			this.animationEnd = animationEnd;
@@ -206,7 +208,7 @@ public class Deplacement {
 						else {
 							game.map.setLocation(mapLocationX, mapLocationY);
 							
-							if(Variables.SPEED_PERSO == 7) {
+							if(speed > 5) {
 								hero.speed = 1;
 								if(x < 10) {
 									hero.foot = 0;
@@ -221,14 +223,19 @@ public class Deplacement {
 										hero.repaint();
 								}
 							}
-							else if(Variables.SPEED_PERSO == 4){
+							else if(speed == 4){
 								hero.speed = 2;
 								if(x < 5) {
 									hero.foot = 0;
 									if(x==1)
 										hero.repaint();
 								}else {
-									hero.foot = runMove;
+									if(runMove == 0 || runMove == 2)
+										hero.foot = 0;
+									else if(runMove == 1)
+										hero.foot = 1;
+									else
+										hero.foot = 2;
 									if(x==5)
 										hero.repaint();
 								}
@@ -273,7 +280,7 @@ public class Deplacement {
 							else
 								setSprites(dir, new Hero(dir, 0, hero.speed), false);
 							runDirection *= -1;
-							if(runMove == 2)
+							if(runMove == 3)
 								runMove = 0;
 							else
 								runMove++;
