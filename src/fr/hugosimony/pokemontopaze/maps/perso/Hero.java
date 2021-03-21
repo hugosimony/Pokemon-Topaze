@@ -28,7 +28,50 @@ public class Hero extends JPanel {
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		if(Variables.PERSO_Sex.equals("boy")) {
-			if(speed == 2) {
+			if(speed == 3) {
+				if(direction == Direction.UP) {
+					if(foot == 0)
+						g.drawImage(Const.boyBikeBack.getImage(), 0, 0, null);
+					else if(foot == 1)
+						g.drawImage(Const.boyBikeBackRight.getImage(), 0, 0, null);
+					else if(foot == 2)
+						g.drawImage(Const.boyBikeBackLeft.getImage(), 0, 0, null);
+					else if(foot == 3)
+						g.drawImage(Const.boyBikeBackStop.getImage(), 0, 0, null);
+				}
+				else if(direction == Direction.DOWN) {
+					if(foot == 0)
+						g.drawImage(Const.boyBikeFront.getImage(), 0, 0, null);
+					else if(foot == 1)
+						g.drawImage(Const.boyBikeFrontRight.getImage(), 0, 0, null);
+					else if(foot == 2)
+						g.drawImage(Const.boyBikeFrontLeft.getImage(), 0, 0, null);
+					else if(foot == 3)
+						g.drawImage(Const.boyBikeFrontStop.getImage(), 0, 0, null);
+				}
+				else if(direction == Direction.LEFT) {
+					if(foot == 0)	
+						g.drawImage(Const.boyBikeLeft.getImage(), 0, 0, null);
+					else if(foot == 1)	
+						g.drawImage(Const.boyBikeLeftRight.getImage(), 0, 0, null);
+					else if(foot == 2)	
+						g.drawImage(Const.boyBikeLeftLeft.getImage(), 0, 0, null);
+					else if(foot == 3)
+						g.drawImage(Const.boyBikeLeftStop.getImage(), 0, 0, null);
+					
+				}
+				else if(direction == Direction.RIGHT) {
+					if(foot == 0)	
+						g.drawImage(Const.boyBikeRight.getImage(), 0, 0, null);
+					else if(foot == 1)	
+						g.drawImage(Const.boyBikeRightRight.getImage(), 0, 0, null);
+					else if(foot == 2)	
+						g.drawImage(Const.boyBikeRightLeft.getImage(), 0, 0, null);
+					else if(foot == 3)
+						g.drawImage(Const.boyBikeRightStop.getImage(), 0, 0, null);
+				}
+			}
+			else if(speed == 2) {
 				if(direction == Direction.UP) {
 					if(foot == 0)
 						g.drawImage(Const.boyRunBack.getImage(), 0, 0, null);
@@ -100,7 +143,50 @@ public class Hero extends JPanel {
 			}
 		}
 		else {
-			if(speed == 2) {
+			if(speed == 3) {
+				if(direction == Direction.UP) {
+					if(foot == 0)
+						g.drawImage(Const.boyBikeBack.getImage(), 0, 0, null);
+					else if(foot == 1)
+						g.drawImage(Const.boyBikeBackRight.getImage(), 0, 0, null);
+					else if(foot == 2)
+						g.drawImage(Const.boyBikeBackLeft.getImage(), 0, 0, null);
+					else if(foot == 3)
+						g.drawImage(Const.boyBikeBackStop.getImage(), 0, 0, null);
+				}
+				else if(direction == Direction.DOWN) {
+					if(foot == 0)
+						g.drawImage(Const.boyBikeFront.getImage(), 0, 0, null);
+					else if(foot == 1)
+						g.drawImage(Const.boyBikeFrontRight.getImage(), 0, 0, null);
+					else if(foot == 2)
+						g.drawImage(Const.boyBikeFrontLeft.getImage(), 0, 0, null);
+					else if(foot == 3)
+						g.drawImage(Const.boyBikeFrontStop.getImage(), 0, 0, null);
+				}
+				else if(direction == Direction.LEFT) {
+					if(foot == 0)	
+						g.drawImage(Const.boyBikeLeft.getImage(), 0, 0, null);
+					else if(foot == 1)	
+						g.drawImage(Const.boyBikeLeftRight.getImage(), 0, 0, null);
+					else if(foot == 2)	
+						g.drawImage(Const.boyBikeLeftLeft.getImage(), 0, 0, null);
+					else if(foot == 3)
+						g.drawImage(Const.boyBikeLeftStop.getImage(), 0, 0, null);
+					
+				}
+				else if(direction == Direction.RIGHT) {
+					if(foot == 0)	
+						g.drawImage(Const.boyBikeRight.getImage(), 0, 0, null);
+					else if(foot == 1)	
+						g.drawImage(Const.boyBikeRightRight.getImage(), 0, 0, null);
+					else if(foot == 2)	
+						g.drawImage(Const.boyBikeRightLeft.getImage(), 0, 0, null);
+					else if(foot == 3)
+						g.drawImage(Const.boyBikeRightStop.getImage(), 0, 0, null);
+				}
+			}
+			else if(speed == 2) {
 				if(direction == Direction.UP) {
 					if(foot == 0)
 						g.drawImage(Const.girlRunBack.getImage(), 0, 0, null);

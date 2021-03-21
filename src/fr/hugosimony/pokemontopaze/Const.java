@@ -112,6 +112,24 @@ public class Const {
 	public static final ImageIcon boyRunLeftRight = new ImageIcon(Main.class.getResource("sprites/perso/main/boy/boyRunLeftRight.gif"));
 	public static final ImageIcon boyRunLeftLeft = new ImageIcon(Main.class.getResource("sprites/perso/main/boy/boyRunLeftLeft.gif"));
 	
+	// Boy Biking
+	public static final ImageIcon boyBikeFront = new ImageIcon(Main.class.getResource("sprites/perso/main/boy/boyBikeFront.gif"));
+	public static final ImageIcon boyBikeFrontRight = new ImageIcon(Main.class.getResource("sprites/perso/main/boy/boyBikeFrontRight.gif"));
+	public static final ImageIcon boyBikeFrontLeft = new ImageIcon(Main.class.getResource("sprites/perso/main/boy/boyBikeFrontLeft.gif"));
+	public static final ImageIcon boyBikeFrontStop = new ImageIcon(Main.class.getResource("sprites/perso/main/boy/boyBikeFrontStop.gif"));
+	public static final ImageIcon boyBikeRight = new ImageIcon(Main.class.getResource("sprites/perso/main/boy/boyBikeRight.gif"));
+	public static final ImageIcon boyBikeRightRight = new ImageIcon(Main.class.getResource("sprites/perso/main/boy/boyBikeRightRight.gif"));
+	public static final ImageIcon boyBikeRightLeft = new ImageIcon(Main.class.getResource("sprites/perso/main/boy/boyBikeRightLeft.gif"));
+	public static final ImageIcon boyBikeRightStop = new ImageIcon(Main.class.getResource("sprites/perso/main/boy/boyBikeRightStop.gif"));
+	public static final ImageIcon boyBikeBack = new ImageIcon(Main.class.getResource("sprites/perso/main/boy/boyBikeBack.gif"));
+	public static final ImageIcon boyBikeBackRight = new ImageIcon(Main.class.getResource("sprites/perso/main/boy/boyBikeBackRight.gif"));
+	public static final ImageIcon boyBikeBackLeft = new ImageIcon(Main.class.getResource("sprites/perso/main/boy/boyBikeBackLeft.gif"));
+	public static final ImageIcon boyBikeBackStop = new ImageIcon(Main.class.getResource("sprites/perso/main/boy/boyBikeBackStop.gif"));
+	public static final ImageIcon boyBikeLeft = new ImageIcon(Main.class.getResource("sprites/perso/main/boy/boyBikeLeft.gif"));
+	public static final ImageIcon boyBikeLeftRight = new ImageIcon(Main.class.getResource("sprites/perso/main/boy/boyBikeLeftRight.gif"));
+	public static final ImageIcon boyBikeLeftLeft = new ImageIcon(Main.class.getResource("sprites/perso/main/boy/boyBikeLeftLeft.gif"));
+	public static final ImageIcon boyBikeLeftStop = new ImageIcon(Main.class.getResource("sprites/perso/main/boy/boyBikeLeftStop.gif"));
+	
 	// Girl Walking
 	public static final ImageIcon girlFront = new ImageIcon(Main.class.getResource("sprites/perso/main/girl/girlFront.gif"));
 	public static final ImageIcon girlFrontRight = new ImageIcon(Main.class.getResource("sprites/perso/main/girl/girlFrontRight.gif"));

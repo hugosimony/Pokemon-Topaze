@@ -240,6 +240,23 @@ public class Deplacement {
 										hero.repaint();
 								}
 							}
+							else if(speed == 2) {
+								hero.speed = 3;
+								if(x < 5) {
+									hero.foot = 0;
+									if(x==1)
+										hero.repaint();
+								}else {
+									if(runMove == 0 || runMove == 2)
+										hero.foot = 0;
+									else if(runMove == 1)
+										hero.foot = 1;
+									else
+										hero.foot = 2;
+									if(x==5)
+										hero.repaint();
+								}
+							}
 						}
 						if(isIANear() && !checkIANearDone) {
 							checkIANearDone = true;
@@ -275,8 +292,12 @@ public class Deplacement {
 						}
 						else {
 							checkIANearDone = false;
-							if(pressed.size() == 0)
-								setSprites(dir, new Hero(dir, 0, 1), false);
+							if(pressed.size() == 0) {
+								if(Variables.SPEED_PERSO == 2)
+									setSprites(dir, new Hero(dir, 3, 3), false);
+								else
+									setSprites(dir, new Hero(dir, 0, 1), false);
+							}
 							else
 								setSprites(dir, new Hero(dir, 0, hero.speed), false);
 							runDirection *= -1;
@@ -320,7 +341,10 @@ public class Deplacement {
 					}
 				}
 				else {
-					setSprites(dir, new Hero(dir, 0, 1), false);
+					if(Variables.SPEED_PERSO == 2)
+						setSprites(dir, new Hero(dir, 3, 3), false);
+					else
+						setSprites(dir, new Hero(dir, 0, 1), false);
 					coolDown = false;
 					checkIANearDone = false;
 					this.cancel();

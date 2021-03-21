@@ -34,7 +34,7 @@ public class Variables {
 	
 	public static long TIMER_Global;
 	
-	// Posision
+	// Position
 	public static Places POSITION_Place;
 	public static int ADVENTURE_Step;
 	
