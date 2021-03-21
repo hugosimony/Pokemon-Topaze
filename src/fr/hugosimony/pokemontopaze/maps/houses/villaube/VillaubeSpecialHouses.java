@@ -26,7 +26,7 @@ public class VillaubeSpecialHouses {
 		PokemonCenter01 pokemonCenter01 = new PokemonCenter01(game, locationX, locationY, direction, mapLocationX, mapLocationY);
 		setPnjsPokemonCenter01();
 		
-		Musics.startMusic(Const.themeVillaube);
+		Musics.startMusic(Const.themePokemonCenter);
 		Variables.POSITION_Place = Places.VILLAUBE;
 		
 		if(game.map != null)
@@ -61,7 +61,7 @@ public class VillaubeSpecialHouses {
 		Mart01 mart01 = new Mart01(game, locationX, locationY, direction, mapLocationX, mapLocationY);
 		setPnjsMart01();
 		
-		Musics.startMusic(Const.themeVillaube);
+		Musics.startMusic(Const.themeMart);
 		Variables.POSITION_Place = Places.VILLAUBE;
 		
 		if(game.map != null)
