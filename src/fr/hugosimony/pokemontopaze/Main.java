@@ -7,6 +7,7 @@ import javax.sound.sampled.Clip;
 import javax.sound.sampled.FloatControl;
 
 import fr.hugosimony.pokemontopaze.files.FileCreator;
+import fr.hugosimony.pokemontopaze.musics.Musics;
 
 public class Main {
 
@@ -51,12 +52,7 @@ public class Main {
 	    if (volume < 0f || volume > 1f)
 	        throw new IllegalArgumentException("Volume not valid: " + volume);
 	    FloatControl gainControl = (FloatControl) actualClip.getControl(FloatControl.Type.MASTER_GAIN);
-	    if(actualClipURL == Const.themeVillaube)
-	    	gainControl.setValue(30f * (float) Math.log10(volume-0.05));
-	    else if(actualClipURL == Const.themeRivalEncounter)
-	    	gainControl.setValue(40f * (float) Math.log10(volume-0.05));
-	    else
-	    	gainControl.setValue(50f * (float) Math.log10(volume-0.05));
+	    gainControl.setValue(Musics.getVolumeModifier(actualClipURL) * (float) Math.log10(volume-0.05));
 	}
 	
 	public static void refreshVolume() {
