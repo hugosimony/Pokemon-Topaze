@@ -223,6 +223,22 @@ public class Const {
 	public static final ImageIcon browngirlRightLeft = new ImageIcon(Main.class.getResource("sprites/perso/browngirl/browngirlRightLeft.gif"));
 	
 	//****************************************************************************************************
+	// Sprites Cap Boy
+	
+	public static final ImageIcon capboyFront = new ImageIcon(Main.class.getResource("sprites/perso/capboy/capboyFront.gif"));
+	public static final ImageIcon capboyFrontRight = new ImageIcon(Main.class.getResource("sprites/perso/capboy/capboyFrontRight.gif"));
+	public static final ImageIcon capboyFrontLeft = new ImageIcon(Main.class.getResource("sprites/perso/capboy/capboyFrontLeft.gif"));
+	public static final ImageIcon capboyBack = new ImageIcon(Main.class.getResource("sprites/perso/capboy/capboyBack.gif"));
+	public static final ImageIcon capboyBackRight = new ImageIcon(Main.class.getResource("sprites/perso/capboy/capboyBackRight.gif"));
+	public static final ImageIcon capboyBackLeft = new ImageIcon(Main.class.getResource("sprites/perso/capboy/capboyBackLeft.gif"));
+	public static final ImageIcon capboyLeft = new ImageIcon(Main.class.getResource("sprites/perso/capboy/capboyLeft.gif"));
+	public static final ImageIcon capboyLeftRight = new ImageIcon(Main.class.getResource("sprites/perso/capboy/capboyLeftRight.gif"));
+	public static final ImageIcon capboyLeftLeft = new ImageIcon(Main.class.getResource("sprites/perso/capboy/capboyLeftLeft.gif"));
+	public static final ImageIcon capboyRight = new ImageIcon(Main.class.getResource("sprites/perso/capboy/capboyRight.gif"));
+	public static final ImageIcon capboyRightRight = new ImageIcon(Main.class.getResource("sprites/perso/capboy/capboyRightRight.gif"));
+	public static final ImageIcon capboyRightLeft = new ImageIcon(Main.class.getResource("sprites/perso/capboy/capboyRightLeft.gif"));
+	
+	//****************************************************************************************************
 	// Sprites Police
 	
 	public static final ImageIcon policeRight = new ImageIcon(Main.class.getResource("sprites/perso/police/policeRight.gif"));
@@ -234,6 +250,22 @@ public class Const {
 	public static final ImageIcon sellerboyBack = new ImageIcon(Main.class.getResource("sprites/perso/sellerboy/sellerboyBack.gif"));
 	public static final ImageIcon sellerboyLeft = new ImageIcon(Main.class.getResource("sprites/perso/sellerboy/sellerboyLeft.gif"));
 	public static final ImageIcon sellerboyRight = new ImageIcon(Main.class.getResource("sprites/perso/sellerboy/sellerboyRight.gif"));
+	
+	//****************************************************************************************************
+	// Sprites Umbrella Girl
+	
+	public static final ImageIcon umbrellagirlFront = new ImageIcon(Main.class.getResource("sprites/perso/umbrellagirl/umbrellagirlFront.gif"));
+	public static final ImageIcon umbrellagirlFrontRight = new ImageIcon(Main.class.getResource("sprites/perso/umbrellagirl/umbrellagirlFrontRight.gif"));
+	public static final ImageIcon umbrellagirlFrontLeft = new ImageIcon(Main.class.getResource("sprites/perso/umbrellagirl/umbrellagirlFrontLeft.gif"));
+	public static final ImageIcon umbrellagirlBack = new ImageIcon(Main.class.getResource("sprites/perso/umbrellagirl/umbrellagirlBack.gif"));
+	public static final ImageIcon umbrellagirlBackRight = new ImageIcon(Main.class.getResource("sprites/perso/umbrellagirl/umbrellagirlBackRight.gif"));
+	public static final ImageIcon umbrellagirlBackLeft = new ImageIcon(Main.class.getResource("sprites/perso/umbrellagirl/umbrellagirlBackLeft.gif"));
+	public static final ImageIcon umbrellagirlLeft = new ImageIcon(Main.class.getResource("sprites/perso/umbrellagirl/umbrellagirlLeft.gif"));
+	public static final ImageIcon umbrellagirlLeftRight = new ImageIcon(Main.class.getResource("sprites/perso/umbrellagirl/umbrellagirlLeftRight.gif"));
+	public static final ImageIcon umbrellagirlLeftLeft = new ImageIcon(Main.class.getResource("sprites/perso/umbrellagirl/umbrellagirlLeftLeft.gif"));
+	public static final ImageIcon umbrellagirlRight = new ImageIcon(Main.class.getResource("sprites/perso/umbrellagirl/umbrellagirlRight.gif"));
+	public static final ImageIcon umbrellagirlRightRight = new ImageIcon(Main.class.getResource("sprites/perso/umbrellagirl/umbrellagirlRightRight.gif"));
+	public static final ImageIcon umbrellagirlRightLeft = new ImageIcon(Main.class.getResource("sprites/perso/umbrellagirl/umbrellagirlRightLeft.gif"));
 	
 	//****************************************************************************************************
 	// Sprites Ground Items

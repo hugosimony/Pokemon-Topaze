@@ -128,6 +128,45 @@ public class PnjSprites {
 		}
 		
 		//*********************************************************************************************
+		// Cap Boy
+		
+		if(pnj.contains("capboy")) {
+			if(direction == Direction.UP) {
+				if(foot == 0)
+					return Const.capboyBack.getImage();
+				else if(foot == 1)
+					return Const.capboyBackRight.getImage();
+				else if(foot == 2)
+					return Const.capboyBackLeft.getImage();
+			}
+			else if(direction == Direction.DOWN) {
+				if(foot == 0)
+					return Const.capboyFront.getImage();
+				else if(foot == 1)
+					return Const.capboyFrontRight.getImage();
+				else if(foot == 2)
+					return Const.capboyFrontLeft.getImage();
+			}
+			else if(direction == Direction.LEFT) {
+				if(foot == 0)	
+					return Const.capboyLeft.getImage();
+				else if(foot == 1)	
+					return Const.capboyLeftRight.getImage();
+				else if(foot == 2)	
+					return Const.capboyLeftLeft.getImage();
+				
+			}
+			else if(direction == Direction.RIGHT) {
+				if(foot == 0)	
+					return Const.capboyRight.getImage();
+				else if(foot == 1)	
+					return Const.capboyRightRight.getImage();
+				else if(foot == 2)	
+					return Const.capboyRightLeft.getImage();
+			}
+		}
+		
+		//*********************************************************************************************
 		// Police
 		
 		if(pnj.contains("police")) {
@@ -158,6 +197,45 @@ public class PnjSprites {
 					return Const.sellerboyRight.getImage();
 			}
 		}		
+		
+		//*********************************************************************************************
+		// Umbrella Girl
+		
+		if(pnj.contains("umbrellagirl")) {
+			if(direction == Direction.UP) {
+				if(foot == 0)
+					return Const.umbrellagirlBack.getImage();
+				else if(foot == 1)
+					return Const.umbrellagirlBackRight.getImage();
+				else if(foot == 2)
+					return Const.umbrellagirlBackLeft.getImage();
+			}
+			else if(direction == Direction.DOWN) {
+				if(foot == 0)
+					return Const.umbrellagirlFront.getImage();
+				else if(foot == 1)
+					return Const.umbrellagirlFrontRight.getImage();
+				else if(foot == 2)
+					return Const.umbrellagirlFrontLeft.getImage();
+			}
+			else if(direction == Direction.LEFT) {
+				if(foot == 0)	
+					return Const.umbrellagirlLeft.getImage();
+				else if(foot == 1)	
+					return Const.umbrellagirlLeftRight.getImage();
+				else if(foot == 2)	
+					return Const.umbrellagirlLeftLeft.getImage();
+				
+			}
+			else if(direction == Direction.RIGHT) {
+				if(foot == 0)	
+					return Const.umbrellagirlRight.getImage();
+				else if(foot == 1)	
+					return Const.umbrellagirlRightRight.getImage();
+				else if(foot == 2)	
+					return Const.umbrellagirlRightLeft.getImage();
+			}
+		}
 		
 		//*********************************************************************************************
 		// Prof Chen
