@@ -18,6 +18,7 @@ import fr.hugosimony.pokemontopaze.maps.Deplacement;
 import fr.hugosimony.pokemontopaze.maps.Direction;
 import fr.hugosimony.pokemontopaze.maps.Map;
 import fr.hugosimony.pokemontopaze.maps.Places;
+import fr.hugosimony.pokemontopaze.maps.animations.BattlerAnimations;
 import fr.hugosimony.pokemontopaze.maps.animations.PnjAnimations;
 import fr.hugosimony.pokemontopaze.maps.items.GroundItem;
 import fr.hugosimony.pokemontopaze.maps.pnj.Pnj;
@@ -44,6 +45,7 @@ public class Road01 extends JPanel {
 	
 	private ArrayList<IntTriple> animationTiles;
 	
+	public Pnj battler01;
 	public Pnj profChen;
 	public Pnj rival;
 	
@@ -401,6 +403,11 @@ public class Road01 extends JPanel {
 			pnj.clearIA();
 		game.pnjs = new ArrayList<Pnj>();
 		
+		battler01 = new Pnj(game, "capboy001", Direction.UP, 0, 3232, 1802, false, false, null, null, false, false);
+		battler01.setLocation(3232, 1802);
+		battler01.setSize(35, 50);
+		game.pnjs.add(battler01);
+		
 		if(Variables.ADVENTURE_Step == 1) {
 			profChen = new Pnj(game, "profChen", Direction.RIGHT, 0, 3456, 1738, false, false, null, null, false, false);
 			profChen.setLocation(3456, 1738);
@@ -610,6 +617,11 @@ public class Road01 extends JPanel {
 			animationTiles.add(new IntTriple(3648, 1802, 1));
 			animationTiles.add(new IntTriple(4064, 1802, 1));
 		}
+		
+		if(true) {
+			animationTiles.add(new IntTriple(3232, 1674, 2));
+			animationTiles.add(new IntTriple(3232, 1706, 2));
+		}
 	}
 	
 	public String getInteractMessage(IntTuple tuple) {
@@ -684,6 +696,8 @@ public class Road01 extends JPanel {
 						new Timer().schedule(game.deplacement.new MoveDirection(Direction.UP, false, 7, false, true, new IntTuple(game.deplacement.getPosition().x, 1770), 
 							"u", Direction.UP, "Je devrais aller récupérer un Pokémon.", true), 0, 8);
 				}
+				if(animation == 2) 
+					BattlerAnimations.startGoodAnimation(game, 1, new IntTuple(game.deplacement.locationX, game.deplacement.locationY + Deplacement.pixelMoved));
 				return true;
 			}
 		}

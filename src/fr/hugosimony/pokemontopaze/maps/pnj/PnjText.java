@@ -1,6 +1,5 @@
 package fr.hugosimony.pokemontopaze.maps.pnj;
 
-import fr.hugosimony.pokemontopaze.Game;
 import fr.hugosimony.pokemontopaze.Variables;
 import fr.hugosimony.pokemontopaze.pokemon.PKM;
 
@@ -89,20 +88,26 @@ public class PnjText {
 						+ "pour le don de Pokémon...= Je vais choisir le mien=, c'est parti !=+";
 			if(Variables.ADVENTURE_Step == 10)
 				return "Je te choisis toi,= " + PKM.getStarterName(PKM.getOppositeStarter(Variables.STARTER)) + " !=+";
-			if(Variables.ADVENTURE_Step == 15) {
-				Game.waitingBattle = "rival01";
-				Game.waitingBattlefield = "Champion";
-				Game.waitingWeather = "Good";
+			if(Variables.ADVENTURE_Step == 15)
 				return Variables.RIVAL_Name + " := Bon " + Variables.PERSO_Name + ",= c'est le moment non ¤= On va enfin\n"
 						+ "pouvoir faire un combat de Pokémon !=\n"
 						+ "Je vais te mettre une raclée != T'es prêt" + Variables.LANG_Feminin + " ¤= C'est parti !=^";
-			}
 			if(Variables.ADVENTURE_Step == 16)
 				return "J'ai soigné ton Pokémon.= Tu peux aller le montrer à ta mère si tu\n"
 						+ "veux.= Bon je vais voir le vieux.= Il nous attend à Villaube.= A plus !=+";
 			if(Variables.ADVENTURE_Step == 17)
 				return "[]";
 		}
+		
+		//***********************************************************************************************
+		
+		else if(perso.equals("capboy001")) {
+			return "Tu as un Pokémon,= moi aussi.= Nos regards se sont croisés !=\n"
+			+ "Quand c'est le cas, on doit s'affronter != On y va !=^";
+		}
+		
+		//***********************************************************************************************
+
 		return "";
 	}
 	

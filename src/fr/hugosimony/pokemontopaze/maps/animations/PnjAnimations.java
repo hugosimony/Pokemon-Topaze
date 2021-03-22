@@ -351,6 +351,9 @@ public class PnjAnimations {
 			return;
 		}
 		else if(Variables.ADVENTURE_Step == 15) {
+			Game.waitingBattle = "rival01";
+			Game.waitingBattlefield = "Champion";
+			Game.waitingWeather = "Good";
 			if(game.deplacement.locationY == 1770) {
 				new Timer().schedule(game.road01.rival.new Move(Direction.LEFT, true, new IntTuple(3712, 1738), "dlll", Direction.RIGHT, 
 						PnjText.getText("rival")), 1200, 8);
