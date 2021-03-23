@@ -21,8 +21,8 @@ public class Const {
 	}
 	private static final String adventureFolder = Paths.get("/Adventure").toString();
 	private static final String bagFolder = Paths.get("/Adventure/Bag").toString();
-	private static final String trainersFolder = Paths.get("/Adventure/Trainers").toString();
 	private static final String groundItems = Paths.get("/Adventure/groundItems.txt").toString();
+	private static final String trainers = Paths.get("/Adventure/trainers.txt").toString();
 	private static final String adventureInfos = Paths.get("/Adventure/infos.txt").toString();
 	private static final String PCFolder = Paths.get("/PC").toString();
 	private static final String teamFolder = Paths.get("/Team").toString();
@@ -32,11 +32,11 @@ public class Const {
 	public static String getBagFolderPath(int save) {
 		return Paths.get(savesFolder + "/" + save + bagFolder).toString();
 	}
-	public static String getTrainersFolderPath(int save) {
-		return Paths.get(savesFolder + "/" + save + trainersFolder).toString();
-	}
 	public static String getGroundItemsPath(int save) {
 		return Paths.get(savesFolder + "/" + save + groundItems).toString();
+	}
+	public static String getTrainersPath(int save) {
+		return Paths.get(savesFolder + "/" + save + trainers).toString();
 	}
 	public static String getAdventureInfosPath(int save) {
 		return Paths.get(savesFolder + "/" + save + adventureInfos).toString();

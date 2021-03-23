@@ -15,6 +15,7 @@ import javax.swing.JPanel;
 import fr.hugosimony.pokemontopaze.files.FileReaderWriter;
 import fr.hugosimony.pokemontopaze.files.adventure.FileAdventureReaderWriter;
 import fr.hugosimony.pokemontopaze.files.adventure.FileGroundItemsReaderWriter;
+import fr.hugosimony.pokemontopaze.files.adventure.FileTrainersReaderWriter;
 import fr.hugosimony.pokemontopaze.intro.PresentationProf;
 import fr.hugosimony.pokemontopaze.maps.Deplacement;
 import fr.hugosimony.pokemontopaze.maps.Map;
@@ -214,6 +215,8 @@ public class Game extends JFrame {
 		Variables.ADVENTURE_Step = 0;
 		Variables.STARTER = 0;
 		
+		FileTrainersReaderWriter.initializeTrainers();
+		
 		FileGroundItemsReaderWriter.initializeGroundItems();
 	}
 	
@@ -230,6 +233,8 @@ public class Game extends JFrame {
 		Variables.RIVAL_Feminin = Variables.PERSO_Sex.equals("boy") ? "e" : "";
 		Variables.ADVENTURE_Step = FileAdventureReaderWriter.getAdventureStep(save);
 		Variables.STARTER = FileAdventureReaderWriter.getStarter(save);
+	
+		FileTrainersReaderWriter.getTrainers(save);
 		
 		FileGroundItemsReaderWriter.loadGroundItems(save);
 	}
@@ -254,6 +259,8 @@ public class Game extends JFrame {
 		FileAdventureReaderWriter.setSex(save);
 		FileAdventureReaderWriter.setAdventureStep(save);
 		FileAdventureReaderWriter.setStarter(save);
+		
+		FileTrainersReaderWriter.setTrainers(save);
 		
 		FileGroundItemsReaderWriter.saveGroundItems(save);
 		

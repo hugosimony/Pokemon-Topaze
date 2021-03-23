@@ -93,20 +93,22 @@ public class Battle extends JPanel {
 	public void endBattle(boolean savage, boolean run) {
 		setVisible(false);
 		game.remove(this);
-		game.inBattle = false;
 		Game.battleWin = true; // TODO
 		game.actualPanel = savedMap;
 		new TransitionSimple(game, game.gamePanel, savedMap);
 		Musics.startMusic(savedMusic);
-		new Timer().schedule(new TimerTask() {
-			@Override
-			public void run() {
-				String text = BattlerText.getText(game, opponent, -1);
-				if(!text.equals("")) {
+		String text = BattlerText.getText(game, opponent, -1);
+		if(!text.equals("")) {
+			new Timer().schedule(new TimerTask() {
+				@Override
+				public void run() {
+					game.inBattle = false;
 					game.textZone = new TextZone(game.actualPanel, text);
 					TextZone.printTextZone(game.textZone, game);	
 				}
-			}
-		}, 1500);
+			}, 1500);
+		}
+		else
+			game.inBattle = false;
 	}
 }

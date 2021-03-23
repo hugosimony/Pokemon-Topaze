@@ -102,8 +102,11 @@ public class PnjText {
 		//***********************************************************************************************
 		
 		else if(perso.equals("capboy001")) {
-			return "Tu as un Pokémon,= moi aussi.= Nos regards se sont croisés !=\n"
-			+ "Quand c'est le cas, on doit s'affronter != On y va !=^";
+			if(Variables.BATTLERS.contains("capboy001"))
+				return "Tu as un Pokémon,= moi aussi.= Nos regards se sont croisés !=\n"
+				+ "Quand c'est le cas, on doit s'affronter != On y va !=^";
+			return "Tu m'as battu.= Dans un combat,= il faut toujours un vainqueur\n"
+					+ "et un perdant.";
 		}
 		
 		//***********************************************************************************************

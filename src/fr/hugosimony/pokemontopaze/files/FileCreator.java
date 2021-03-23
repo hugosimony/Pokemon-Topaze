@@ -62,6 +62,22 @@ public class FileCreator {
 		
 	}
 	
+	public static void createTrainersFile(boolean first, int save) {
+		try {
+			PrintWriter writer = new PrintWriter(Const.getAdventureInfosPath(save), "UTF-8");
+			if(first)
+				writer.print("Trainers :\n"
+						+ "capboy001"
+						+ "campinggirl001");
+			else
+				writer.print("Trainers :");
+			writer.close();
+		} catch (FileNotFoundException | UnsupportedEncodingException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
 	public static void createGroundItemsFile(boolean first, int save) {
 		try {
 			PrintWriter writer = new PrintWriter(Const.getGroundItemsPath(save), "UTF-8");
@@ -71,7 +87,7 @@ public class FileCreator {
 						+ "a\n"
 						+ "ab");
 			else
-				writer.print("Settings :");
+				writer.print("Ground Items :");
 			writer.close();
 		} catch (FileNotFoundException | UnsupportedEncodingException e) {
 			e.printStackTrace();

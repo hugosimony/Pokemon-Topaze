@@ -14,11 +14,11 @@ public class BattlerAnimations {
 	public static void startGoodAnimation(Game game, int battler, IntTuple finalAnimation) {
 		game.deplacement.setStoppedSprites();
 		if(battler <= 10)
-			startGoodAnimation0_10(game, battler, finalAnimation);
+			startGoodAnimation1_10(game, battler, finalAnimation);
 	}
 	
-	public static void startGoodAnimation0_10(Game game, int battler, IntTuple finalAnimation) {
-		if(battler == 0) {
+	public static void startGoodAnimation1_10(Game game, int battler, IntTuple finalAnimation) {
+		if(battler == 1) {
 			new ExclamationMark(game, game.road01.battler01.getLocation(), true);
 			new Timer().schedule(new TimerTask() {
 				@Override
@@ -35,7 +35,7 @@ public class BattlerAnimations {
 			}, 1000);
 			return;
 		}
-		else if (battler == 1) {
+		else if (battler == 2) {
 			return;
 		}
 	}

@@ -49,8 +49,8 @@ public class FileReaderWriter {
 		new File(Const.getSaveFolderPath(save)).mkdir();
 		new File(Const.getAdventureFolderPath(save)).mkdir();
 		new File(Const.getBagFolderPath(save)).mkdir();
-		new File(Const.getTrainersFolderPath(save)).mkdir();
 		FileCreator.createAdventureInfosFile(true, save);
+		FileCreator.createTrainersFile(true, save);
 		FileCreator.createGroundItemsFile(true, save);
 		new File(Const.getPCFolderPath(save)).mkdir();
 		new File(Const.getTeamFolderPath(save)).mkdir();
