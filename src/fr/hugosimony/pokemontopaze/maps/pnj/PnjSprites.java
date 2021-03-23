@@ -167,6 +167,45 @@ public class PnjSprites {
 		}
 		
 		//*********************************************************************************************
+		// Cap Boy
+		
+		if(pnj.contains("bugcatcher")) {
+			if(direction == Direction.UP) {
+				if(foot == 0)
+					return Const.bugcatcherBack.getImage();
+				else if(foot == 1)
+					return Const.bugcatcherBackRight.getImage();
+				else if(foot == 2)
+					return Const.bugcatcherBackLeft.getImage();
+			}
+			else if(direction == Direction.DOWN) {
+				if(foot == 0)
+					return Const.bugcatcherFront.getImage();
+				else if(foot == 1)
+					return Const.bugcatcherFrontRight.getImage();
+				else if(foot == 2)
+					return Const.bugcatcherFrontLeft.getImage();
+			}
+			else if(direction == Direction.LEFT) {
+				if(foot == 0)	
+					return Const.bugcatcherLeft.getImage();
+				else if(foot == 1)	
+					return Const.bugcatcherLeftRight.getImage();
+				else if(foot == 2)	
+					return Const.bugcatcherLeftLeft.getImage();
+				
+			}
+			else if(direction == Direction.RIGHT) {
+				if(foot == 0)	
+					return Const.bugcatcherRight.getImage();
+				else if(foot == 1)	
+					return Const.bugcatcherRightRight.getImage();
+				else if(foot == 2)	
+					return Const.bugcatcherRightLeft.getImage();
+			}
+		}
+		
+		//*********************************************************************************************
 		// Police
 		
 		if(pnj.contains("police")) {

@@ -239,6 +239,22 @@ public class Const {
 	public static final ImageIcon capboyRightLeft = new ImageIcon(Main.class.getResource("sprites/perso/capboy/capboyRightLeft.gif"));
 	
 	//****************************************************************************************************
+	// Sprites Bug Catcher
+	
+	public static final ImageIcon bugcatcherFront = new ImageIcon(Main.class.getResource("sprites/perso/bugcatcher/bugcatcherFront.gif"));
+	public static final ImageIcon bugcatcherFrontRight = new ImageIcon(Main.class.getResource("sprites/perso/bugcatcher/bugcatcherFrontRight.gif"));
+	public static final ImageIcon bugcatcherFrontLeft = new ImageIcon(Main.class.getResource("sprites/perso/bugcatcher/bugcatcherFrontLeft.gif"));
+	public static final ImageIcon bugcatcherBack = new ImageIcon(Main.class.getResource("sprites/perso/bugcatcher/bugcatcherBack.gif"));
+	public static final ImageIcon bugcatcherBackRight = new ImageIcon(Main.class.getResource("sprites/perso/bugcatcher/bugcatcherBackRight.gif"));
+	public static final ImageIcon bugcatcherBackLeft = new ImageIcon(Main.class.getResource("sprites/perso/bugcatcher/bugcatcherBackLeft.gif"));
+	public static final ImageIcon bugcatcherLeft = new ImageIcon(Main.class.getResource("sprites/perso/bugcatcher/bugcatcherLeft.gif"));
+	public static final ImageIcon bugcatcherLeftRight = new ImageIcon(Main.class.getResource("sprites/perso/bugcatcher/bugcatcherLeftRight.gif"));
+	public static final ImageIcon bugcatcherLeftLeft = new ImageIcon(Main.class.getResource("sprites/perso/bugcatcher/bugcatcherLeftLeft.gif"));
+	public static final ImageIcon bugcatcherRight = new ImageIcon(Main.class.getResource("sprites/perso/bugcatcher/bugcatcherRight.gif"));
+	public static final ImageIcon bugcatcherRightRight = new ImageIcon(Main.class.getResource("sprites/perso/bugcatcher/bugcatcherRightRight.gif"));
+	public static final ImageIcon bugcatcherRightLeft = new ImageIcon(Main.class.getResource("sprites/perso/bugcatcher/bugcatcherRightLeft.gif"));
+	
+	//****************************************************************************************************
 	// Sprites Police
 	
 	public static final ImageIcon policeRight = new ImageIcon(Main.class.getResource("sprites/perso/police/policeRight.gif"));
