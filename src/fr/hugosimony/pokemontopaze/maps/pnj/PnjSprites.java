@@ -206,6 +206,84 @@ public class PnjSprites {
 		}
 		
 		//*********************************************************************************************
+		// Camping Boy
+		
+		if(pnj.contains("campingboy")) {
+			if(direction == Direction.UP) {
+				if(foot == 0)
+					return Const.campingboyBack.getImage();
+				else if(foot == 1)
+					return Const.campingboyBackRight.getImage();
+				else if(foot == 2)
+					return Const.campingboyBackLeft.getImage();
+			}
+			else if(direction == Direction.DOWN) {
+				if(foot == 0)
+					return Const.campingboyFront.getImage();
+				else if(foot == 1)
+					return Const.campingboyFrontRight.getImage();
+				else if(foot == 2)
+					return Const.campingboyFrontLeft.getImage();
+			}
+			else if(direction == Direction.LEFT) {
+				if(foot == 0)	
+					return Const.campingboyLeft.getImage();
+				else if(foot == 1)	
+					return Const.campingboyLeftRight.getImage();
+				else if(foot == 2)	
+					return Const.campingboyLeftLeft.getImage();
+				
+			}
+			else if(direction == Direction.RIGHT) {
+				if(foot == 0)	
+					return Const.campingboyRight.getImage();
+				else if(foot == 1)	
+					return Const.campingboyRightRight.getImage();
+				else if(foot == 2)	
+					return Const.campingboyRightLeft.getImage();
+			}
+		}
+		
+		//*********************************************************************************************
+		// Camping Girl
+		
+		if(pnj.contains("campinggirl")) {
+			if(direction == Direction.UP) {
+				if(foot == 0)
+					return Const.campinggirlBack.getImage();
+				else if(foot == 1)
+					return Const.campinggirlBackRight.getImage();
+				else if(foot == 2)
+					return Const.campinggirlBackLeft.getImage();
+			}
+			else if(direction == Direction.DOWN) {
+				if(foot == 0)
+					return Const.campinggirlFront.getImage();
+				else if(foot == 1)
+					return Const.campinggirlFrontRight.getImage();
+				else if(foot == 2)
+					return Const.campinggirlFrontLeft.getImage();
+			}
+			else if(direction == Direction.LEFT) {
+				if(foot == 0)	
+					return Const.campinggirlLeft.getImage();
+				else if(foot == 1)	
+					return Const.campinggirlLeftRight.getImage();
+				else if(foot == 2)	
+					return Const.campinggirlLeftLeft.getImage();
+				
+			}
+			else if(direction == Direction.RIGHT) {
+				if(foot == 0)	
+					return Const.campinggirlRight.getImage();
+				else if(foot == 1)	
+					return Const.campinggirlRightRight.getImage();
+				else if(foot == 2)	
+					return Const.campinggirlRightLeft.getImage();
+			}
+		}
+		
+		//*********************************************************************************************
 		// Police
 		
 		if(pnj.contains("police")) {

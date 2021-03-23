@@ -18,21 +18,26 @@ public class BattlerAnimations {
 	}
 	
 	public static void startGoodAnimation0_10(Game game, int battler, IntTuple finalAnimation) {
-		new ExclamationMark(game, game.road01.battler01.getLocation(), true);
-		new Timer().schedule(new TimerTask() {
-			@Override
-			public void run() {
-				Game.waitingBattle = "capboy001";
-				Game.waitingBattlefield = "GymLeader7";
-				Game.waitingWeather = "Good";
-				new Timer().schedule(game.road01.battler01.new Move(Direction.UP, true, finalAnimation, "uu",
-						Direction.UP, PnjText.getText("capboy001")), 0, 8);
-				game.deplacement.hero.direction = Direction.DOWN;
-				game.deplacement.setStoppedSprites();
-				this.cancel();
-			}
-		}, 1000);
-		return;
+		if(battler == 0) {
+			new ExclamationMark(game, game.road01.battler01.getLocation(), true);
+			new Timer().schedule(new TimerTask() {
+				@Override
+				public void run() {
+					Game.waitingBattle = "capboy001";
+					Game.waitingBattlefield = "GymLeader7";
+					Game.waitingWeather = "Good";
+					new Timer().schedule(game.road01.battler01.new Move(Direction.UP, true, finalAnimation, "uu",
+							Direction.UP, PnjText.getText("capboy001")), 0, 8);
+					game.deplacement.hero.direction = Direction.DOWN;
+					game.deplacement.setStoppedSprites();
+					this.cancel();
+				}
+			}, 1000);
+			return;
+		}
+		else if (battler == 1) {
+			return;
+		}
 	}
 	
 }

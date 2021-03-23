@@ -255,6 +255,38 @@ public class Const {
 	public static final ImageIcon bugcatcherRightLeft = new ImageIcon(Main.class.getResource("sprites/perso/bugcatcher/bugcatcherRightLeft.gif"));
 	
 	//****************************************************************************************************
+	// Sprites Camping Boy
+	
+	public static final ImageIcon campingboyFront = new ImageIcon(Main.class.getResource("sprites/perso/campingboy/campingboyFront.gif"));
+	public static final ImageIcon campingboyFrontRight = new ImageIcon(Main.class.getResource("sprites/perso/campingboy/campingboyFrontRight.gif"));
+	public static final ImageIcon campingboyFrontLeft = new ImageIcon(Main.class.getResource("sprites/perso/campingboy/campingboyFrontLeft.gif"));
+	public static final ImageIcon campingboyBack = new ImageIcon(Main.class.getResource("sprites/perso/campingboy/campingboyBack.gif"));
+	public static final ImageIcon campingboyBackRight = new ImageIcon(Main.class.getResource("sprites/perso/campingboy/campingboyBackRight.gif"));
+	public static final ImageIcon campingboyBackLeft = new ImageIcon(Main.class.getResource("sprites/perso/campingboy/campingboyBackLeft.gif"));
+	public static final ImageIcon campingboyLeft = new ImageIcon(Main.class.getResource("sprites/perso/campingboy/campingboyLeft.gif"));
+	public static final ImageIcon campingboyLeftRight = new ImageIcon(Main.class.getResource("sprites/perso/campingboy/campingboyLeftRight.gif"));
+	public static final ImageIcon campingboyLeftLeft = new ImageIcon(Main.class.getResource("sprites/perso/campingboy/campingboyLeftLeft.gif"));
+	public static final ImageIcon campingboyRight = new ImageIcon(Main.class.getResource("sprites/perso/campingboy/campingboyRight.gif"));
+	public static final ImageIcon campingboyRightRight = new ImageIcon(Main.class.getResource("sprites/perso/campingboy/campingboyRightRight.gif"));
+	public static final ImageIcon campingboyRightLeft = new ImageIcon(Main.class.getResource("sprites/perso/campingboy/campingboyRightLeft.gif"));
+	
+	//****************************************************************************************************
+	// Sprites Camping Girl
+	
+	public static final ImageIcon campinggirlFront = new ImageIcon(Main.class.getResource("sprites/perso/campinggirl/campinggirlFront.gif"));
+	public static final ImageIcon campinggirlFrontRight = new ImageIcon(Main.class.getResource("sprites/perso/campinggirl/campinggirlFrontRight.gif"));
+	public static final ImageIcon campinggirlFrontLeft = new ImageIcon(Main.class.getResource("sprites/perso/campinggirl/campinggirlFrontLeft.gif"));
+	public static final ImageIcon campinggirlBack = new ImageIcon(Main.class.getResource("sprites/perso/campinggirl/campinggirlBack.gif"));
+	public static final ImageIcon campinggirlBackRight = new ImageIcon(Main.class.getResource("sprites/perso/campinggirl/campinggirlBackRight.gif"));
+	public static final ImageIcon campinggirlBackLeft = new ImageIcon(Main.class.getResource("sprites/perso/campinggirl/campinggirlBackLeft.gif"));
+	public static final ImageIcon campinggirlLeft = new ImageIcon(Main.class.getResource("sprites/perso/campinggirl/campinggirlLeft.gif"));
+	public static final ImageIcon campinggirlLeftRight = new ImageIcon(Main.class.getResource("sprites/perso/campinggirl/campinggirlLeftRight.gif"));
+	public static final ImageIcon campinggirlLeftLeft = new ImageIcon(Main.class.getResource("sprites/perso/campinggirl/campinggirlLeftLeft.gif"));
+	public static final ImageIcon campinggirlRight = new ImageIcon(Main.class.getResource("sprites/perso/campinggirl/campinggirlRight.gif"));
+	public static final ImageIcon campinggirlRightRight = new ImageIcon(Main.class.getResource("sprites/perso/campinggirl/campinggirlRightRight.gif"));
+	public static final ImageIcon campinggirlRightLeft = new ImageIcon(Main.class.getResource("sprites/perso/campinggirl/campinggirlRightLeft.gif"));
+	
+	//****************************************************************************************************
 	// Sprites Police
 	
 	public static final ImageIcon policeRight = new ImageIcon(Main.class.getResource("sprites/perso/police/policeRight.gif"));

@@ -101,7 +101,7 @@ public class Battle extends JPanel {
 		new Timer().schedule(new TimerTask() {
 			@Override
 			public void run() {
-				String text = BattlerText.getText(opponent, -1);
+				String text = BattlerText.getText(game, opponent, -1);
 				if(!text.equals("")) {
 					game.textZone = new TextZone(game.actualPanel, text);
 					TextZone.printTextZone(game.textZone, game);	

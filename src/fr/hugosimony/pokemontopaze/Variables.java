@@ -43,6 +43,9 @@ public class Variables {
 	public static int BADGES_NumberOfBadges;
 	public static int STARTER;
 	
+	// Battlers
+	public static ArrayList<String> BATTLERS;
+	
 	// Ground Items
 	
 	public static ArrayList<String> GROUND_ITEMS_Selenia;
