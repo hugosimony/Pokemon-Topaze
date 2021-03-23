@@ -8,6 +8,7 @@ import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.util.ArrayList;
 import java.util.Timer;
+import java.util.TimerTask;
 
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -198,6 +199,31 @@ public class Game extends JFrame {
 		}
 		else
 			Map.setMap(this, save);
+		
+		//**************************************************************************
+		// Check music
+		
+		timer.schedule(new TimerTask() {
+			
+			/*
+			 * Mute the game if it is not the focused program
+			 */
+			
+			@Override
+			public void run() {
+				while(game != null) {
+					try {
+						Thread.sleep(100);
+					} catch (InterruptedException e) {
+						e.printStackTrace();
+					}
+					if(!game.isActive()) {
+						if(Variables.SPEED_PERSO == 4)
+							Variables.SPEED_PERSO = 7;
+					}
+				}
+			}
+		}, 1);
 		
 		//****************************************************************************************************
 	    // Listener

@@ -64,7 +64,7 @@ public class FileCreator {
 	
 	public static void createTrainersFile(boolean first, int save) {
 		try {
-			PrintWriter writer = new PrintWriter(Const.getAdventureInfosPath(save), "UTF-8");
+			PrintWriter writer = new PrintWriter(Const.getTrainersPath(save), "UTF-8");
 			if(first)
 				writer.print("Trainers :\n"
 						+ "capboy001"
