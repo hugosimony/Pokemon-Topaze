@@ -29,6 +29,17 @@ public class BattlerText {
 						+ "et un perdant...";
 			}
 		}
+		else if(battler.equals("campinggirl001")) {
+			if(moment == -1) {
+				if(Game.battleWin) {
+					Variables.BATTLERS.remove("campinggirl001");
+					game.road01.setAnimations();
+					return "Pas grave,= j'ai perdu mais je peux camper.= Du coup\n"
+							+ "ça va.";
+				}
+				return "Trop bien,= j'ai gagné et en plus je peux camper.= C'est génial.";
+			}
+		}
 		return "";
 	}
 	

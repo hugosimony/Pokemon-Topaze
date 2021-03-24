@@ -46,6 +46,9 @@ public class Road01 extends JPanel {
 	private ArrayList<IntTriple> animationTiles;
 	
 	public Pnj battler01;
+	public Pnj battler02;
+	public Pnj battler03;
+	public Pnj battler04;
 	public Pnj profChen;
 	public Pnj rival;
 	
@@ -408,6 +411,11 @@ public class Road01 extends JPanel {
 		battler01.setSize(35, 50);
 		game.pnjs.add(battler01);
 		
+		battler02 = new Pnj(game, "campinggirl001", Direction.UP, 0, 3584, 1418, false, false, null, null, false, false);
+		battler02.setLocation(3584, 1418);
+		battler02.setSize(35, 50);
+		game.pnjs.add(battler02);
+		
 		if(Variables.ADVENTURE_Step == 1) {
 			profChen = new Pnj(game, "profChen", Direction.RIGHT, 0, 3456, 1738, false, false, null, null, false, false);
 			profChen.setLocation(3456, 1738);
@@ -622,6 +630,14 @@ public class Road01 extends JPanel {
 			animationTiles.add(new IntTriple(3232, 1674, 2));
 			animationTiles.add(new IntTriple(3232, 1706, 2));
 		}
+		
+		if(Variables.BATTLERS.contains("campinggirl001")){
+			animationTiles.add(new IntTriple(3584, 1320, 3));
+			animationTiles.add(new IntTriple(3584, 1290, 3));
+			animationTiles.add(new IntTriple(3584, 1258, 3));
+			animationTiles.add(new IntTriple(3584, 1226, 3));
+			animationTiles.add(new IntTriple(3584, 1194, 3));
+		}
 	}
 	
 	public String getInteractMessage(IntTuple tuple) {
@@ -686,7 +702,7 @@ public class Road01 extends JPanel {
 				int animation = IntTriple.getTripleFromTuple(animationTiles, finalAnimation).z;
 				if(animation == 0)
 					PnjAnimations.startGoodAnimation(game, null);
-				if(animation == 1) {
+				else if(animation == 1) {
 					game.inAnimation = true;
 					game.deplacement.released = true;
 					if(game.deplacement.getPosition().x == 3648)
@@ -696,8 +712,10 @@ public class Road01 extends JPanel {
 						new Timer().schedule(game.deplacement.new MoveDirection(Direction.UP, false, 7, false, true, new IntTuple(game.deplacement.getPosition().x, 1770), 
 							"u", Direction.UP, "Je devrais aller récupérer un Pokémon.", true), 0, 8);
 				}
-				if(animation == 2) 
+				else if(animation == 2) 
 					BattlerAnimations.startGoodAnimation(game, 1, new IntTuple(game.deplacement.locationX, game.deplacement.locationY + Deplacement.pixelMoved));
+				else if(animation == 3) 
+					BattlerAnimations.startGoodAnimation(game, 2, new IntTuple(game.deplacement.locationX, game.deplacement.locationY + Deplacement.pixelMoved));
 				return true;
 			}
 		}

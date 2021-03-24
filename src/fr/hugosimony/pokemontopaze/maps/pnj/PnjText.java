@@ -110,6 +110,15 @@ public class PnjText {
 		}
 		
 		//***********************************************************************************************
+		
+		else if(perso.equals("campinggirl001")) {
+			if(Variables.BATTLERS.contains("campinggirl001"))
+				return "Eh toi,= tu sais camper ¤= Moi j'adore ça != Mais t'es un\n"
+						+ "dresseur ¤!= Allez combat !=^";
+			return "J'ai perdu mais je peux camper.= Du coup ça va.";
+		}
+		
+		//***********************************************************************************************
 
 		return "";
 	}

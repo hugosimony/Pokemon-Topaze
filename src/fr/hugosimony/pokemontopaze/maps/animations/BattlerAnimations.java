@@ -36,6 +36,20 @@ public class BattlerAnimations {
 			return;
 		}
 		else if (battler == 2) {
+			new ExclamationMark(game, game.road01.battler02.getLocation(), true);
+			new Timer().schedule(new TimerTask() {
+				@Override
+				public void run() {
+					Game.waitingBattle = "campinggirl001";
+					Game.waitingBattlefield = "GymLeader7";
+					Game.waitingWeather = "Good";
+					new Timer().schedule(game.road01.battler02.new Move(Direction.UP, true, finalAnimation, "uuuuu",
+							Direction.UP, PnjText.getText("campinggirl001")), 0, 8);
+					game.deplacement.hero.direction = Direction.DOWN;
+					game.deplacement.setStoppedSprites();
+					this.cancel();
+				}
+			}, 1000);
 			return;
 		}
 	}
