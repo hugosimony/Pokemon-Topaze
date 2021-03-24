@@ -68,7 +68,9 @@ public class FileCreator {
 			if(first)
 				writer.print("Trainers :\n"
 						+ "capboy002"
-						+ "campinggirl001");
+						+ "campinggirl001"
+						+ "bugcatcher001"
+						+ "campingboy001");
 			else
 				writer.print("Trainers :");
 			writer.close();

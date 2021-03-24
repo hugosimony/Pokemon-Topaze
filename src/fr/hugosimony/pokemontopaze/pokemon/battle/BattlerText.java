@@ -40,6 +40,28 @@ public class BattlerText {
 				return "Trop bien,= j'ai gagné et en plus je peux camper.= C'est génial.";
 			}
 		}
+		else if(battler.equals("bugcatcher001")) {
+			if(moment == -1) {
+				if(Game.battleWin) {
+					Variables.BATTLERS.remove("bugcatcher001");
+					game.road01.setAnimations();
+					return "Les Pokémons Insectes sont trop cools t'as vu != Ils sont trop\n"
+							+ "forts en plus,= donc toi t'es encore plus fort" + Variables.LANG_Feminin + " !";
+				}
+				return "Les Pokémons Insectes sont trop cools t'as vu != C'est vraiment\n"
+						+ "les meilleurs !";
+			}
+		}
+		else if(battler.equals("campingboy001")) {
+			if(moment == -1) {
+				if(Game.battleWin) {
+					Variables.BATTLERS.remove("campingboy001");
+					game.road01.setAnimations();
+					return "C'était un super combat,= mais je préfère quand même camper.";
+				}
+				return "J'ai gagné != C'était super != Mais bon,= je préfère quand même camper.";
+			}
+		}
 		return "";
 	}
 	

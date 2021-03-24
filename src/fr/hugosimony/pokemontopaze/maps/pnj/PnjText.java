@@ -139,11 +139,37 @@ public class PnjText {
 		//***********************************************************************************************
 		
 		else if(perso.contains("campinggirl")) {
+			
 			if(perso.equals("campinggirl001")) {
 				if(Variables.BATTLERS.contains("campinggirl001"))
 					return "Eh toi,= tu sais camper ¤= Moi j'adore ça != Mais t'es un\n"
 							+ "dresseur ¤!= Allez combat !=^";
 				return "J'ai perdu mais je peux camper.= Du coup ça va.";
+			}
+		}
+		
+		//***********************************************************************************************
+		
+		else if(perso.contains("bugcatcher")) {
+			
+			if(perso.equals("bugcatcher001")) {
+				if(Variables.BATTLERS.contains("bugcatcher001"))
+					return "Coucou != Tu connais les Pokémons Insectes ¤= Tu vas\n"
+							+ "voir,= ils sont géniaux !=^";
+				return "Les Pokémons Insectes sont vraiment trop cools !";
+			}
+		}
+		
+		//***********************************************************************************************
+		
+		else if(perso.contains("campingboy")) {
+			
+			if(perso.equals("campingboy001")) {
+				if(Variables.BATTLERS.contains("campingboy001"))
+					return "Je pourrais passer toutes mes journées à camper,= mais si en\n"
+							+ "plus je peux combattre,= je suis aux anges !=^";
+				return "Tu m'as battu,= mais c'est pas grave,= je retourne compter\n"
+						+ "les brins d'herbe.";
 			}
 		}
 		

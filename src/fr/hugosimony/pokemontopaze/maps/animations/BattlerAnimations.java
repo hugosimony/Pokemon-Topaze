@@ -52,6 +52,40 @@ public class BattlerAnimations {
 			}, 1000);
 			return;
 		}
+		else if (battler == 3) {
+			new ExclamationMark(game, game.road01.battler03.getLocation(), true);
+			new Timer().schedule(new TimerTask() {
+				@Override
+				public void run() {
+					Game.waitingBattle = "bugcatcher001";
+					Game.waitingBattlefield = "GymLeader7";
+					Game.waitingWeather = "Good";
+					new Timer().schedule(game.road01.battler03.new Move(Direction.RIGHT, true, finalAnimation, "rrr",
+							Direction.RIGHT, PnjText.getText("bugcatcher001")), 0, 8);
+					game.deplacement.hero.direction = Direction.LEFT;
+					game.deplacement.setStoppedSprites();
+					this.cancel();
+				}
+			}, 1000);
+			return;
+		}
+		else if (battler == 4) {
+			new ExclamationMark(game, game.road01.battler04.getLocation(), true);
+			new Timer().schedule(new TimerTask() {
+				@Override
+				public void run() {
+					Game.waitingBattle = "campingboy001";
+					Game.waitingBattlefield = "GymLeader7";
+					Game.waitingWeather = "Good";
+					new Timer().schedule(game.road01.battler04.new Move(Direction.UP, true, finalAnimation, "uuu",
+							Direction.UP, PnjText.getText("campingboy001")), 0, 8);
+					game.deplacement.hero.direction = Direction.DOWN;
+					game.deplacement.setStoppedSprites();
+					this.cancel();
+				}
+			}, 1000);
+			return;
+		}
 	}
 	
 }

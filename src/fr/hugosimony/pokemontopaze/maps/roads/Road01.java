@@ -421,6 +421,12 @@ public class Road01 extends JPanel {
 		
 		battler02 = new Pnj(game, "campinggirl001", Direction.UP, 0, 3584, 1418, false, false, null, null, false, false);
 		game.pnjs.add(battler02);
+		
+		battler03 = new Pnj(game, "bugcatcher001", Direction.RIGHT, 0, 3712, 1130, false, false, null, null, false, false);
+		game.pnjs.add(battler03);
+		
+		battler04 = new Pnj(game, "campingboy001", Direction.UP, 0, 3648, 1002, false, false, null, null, false, false);
+		game.pnjs.add(battler04);
 	}
 	
 	private void setHerbs() {
@@ -630,6 +636,19 @@ public class Road01 extends JPanel {
 			animationTiles.add(new IntTriple(3584, 1226, 3));
 			animationTiles.add(new IntTriple(3584, 1194, 3));
 		}
+		
+		if(Variables.BATTLERS.contains("bugcatcher001")) {
+			animationTiles.add(new IntTriple(3808, 1130, 4));
+			animationTiles.add(new IntTriple(3840, 1130, 4));
+			animationTiles.add(new IntTriple(3872, 1130, 4));
+		}
+		
+		if(Variables.BATTLERS.contains("campingboy001")) {
+			animationTiles.add(new IntTriple(3648, 938, 5));
+			animationTiles.add(new IntTriple(3648, 906, 5));
+			animationTiles.add(new IntTriple(3648, 874, 5));
+			animationTiles.add(new IntTriple(3648, 842, 5));
+		}
 	}
 	
 	public String getInteractMessage(IntTuple tuple) {
@@ -708,6 +727,10 @@ public class Road01 extends JPanel {
 					BattlerAnimations.startGoodAnimation(game, 1, new IntTuple(game.deplacement.locationX, game.deplacement.locationY + Deplacement.pixelMoved));
 				else if(animation == 3) 
 					BattlerAnimations.startGoodAnimation(game, 2, new IntTuple(game.deplacement.locationX, game.deplacement.locationY + Deplacement.pixelMoved));
+				else if(animation == 4) 
+					BattlerAnimations.startGoodAnimation(game, 3, new IntTuple(game.deplacement.locationX - Deplacement.pixelMoved, game.deplacement.locationY));
+				else if(animation == 5) 
+					BattlerAnimations.startGoodAnimation(game, 4, new IntTuple(game.deplacement.locationX, game.deplacement.locationY + Deplacement.pixelMoved));
 				return true;
 			}
 		}

@@ -28,6 +28,8 @@ public class FileTrainersReaderWriter {
 		Variables.BATTLERS = new ArrayList<String>();
 		Variables.BATTLERS.add("capboy002");
 		Variables.BATTLERS.add("campinggirl001");
+		Variables.BATTLERS.add("bugcatcher001");
+		Variables.BATTLERS.add("campingboy001");
 	}
 	
 }
