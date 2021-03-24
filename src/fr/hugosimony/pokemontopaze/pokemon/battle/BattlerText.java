@@ -17,10 +17,10 @@ public class BattlerText {
 				}
 			}
 		}
-		else if(battler.equals("capboy001")) {
+		else if(battler.equals("capboy002")) {
 			if(moment == -1) {
 				if(Game.battleWin) {
-					Variables.BATTLERS.remove("capboy001");
+					Variables.BATTLERS.remove("capboy002");
 					game.road01.setAnimations();
 					return "T'as gagné.= J'ai perdu.= Il faut toujours un vainqueur\n"
 							+ "et un perdant...";

@@ -23,25 +23,33 @@ public class PnjText {
 		
 		//***********************************************************************************************
 		
-		else if(perso.equals("brownboy001")) {
-			return "Tu connais le Prof Chen ¤= C'est un vieux monsieur qui aime bien\n"
-					+ "les femmes.= J'ai entendu dire qu'il avait des Pokémons rares !";
+		else if(perso.contains("brownboy")) {
+			
+			if(perso.equals("brownboy001")) {
+				return "Tu connais le Prof Chen ¤= C'est un vieux monsieur qui aime bien\n"
+						+ "les femmes.= J'ai entendu dire qu'il avait des Pokémons rares !";
+			}
 		}
 	
 		//***********************************************************************************************
 		
-		else if(perso.equals("browngirl001")) {
-			if(Variables.ADVENTURE_Step < 2)
-				return "Coucou " + Variables.PERSO_Name + ",= tu vas enfin choper ton premier Pokémon !=\n"
-						+ "T'en as de la chance...\n";
-			return "Coucou " + Variables.PERSO_Name + ",= il est cool ton Pokémon !=\n"
-			+ "T'en as de la chance...\n";
+		else if(perso.contains("browngirl")) {
+			
+			if(perso.equals("browngirl001")) {
+				if(Variables.ADVENTURE_Step < 2)
+					return "Coucou " + Variables.PERSO_Name + ",= tu vas enfin choper ton premier Pokémon !=\n"
+							+ "T'en as de la chance...\n";
+				return "Coucou " + Variables.PERSO_Name + ",= il est cool ton Pokémon !=\n"
+				+ "T'en as de la chance...\n";
+			}
 		}
 		
 		//***********************************************************************************************
 		
-		else if(perso.equals("police001")) {
-			return "Désolé,= la forêt est encore trop dangereuse pour toi.";
+		else if(perso.contains("police")) {
+			
+			if(perso.equals("police001"))
+				return "Désolé,= la forêt est encore trop dangereuse pour toi.";
 		}
 		
 		//***********************************************************************************************
@@ -82,6 +90,9 @@ public class PnjText {
 		//***********************************************************************************************
 		
 		else if(perso.equals("rival")) {
+			if(Variables.ADVENTURE_Step == 1)
+				return "Coucou " + Variables.PERSO_Name + " != Tu fais quoi ici ¤= Tu m'avais pas dit que\n"
+						+ "le vieux nous attendait ¤= Vas-y,= je vous rejoindrai.";
 			if(Variables.ADVENTURE_Step == 9)
 				return "Coucou " + Variables.PERSO_Name + " != Coucou Eliot != Je vois que vous m'avez pas attendu" + 
 						(Variables.LANG_Feminin.equals("") ? "e" : "") + "\n"
@@ -101,21 +112,39 @@ public class PnjText {
 		
 		//***********************************************************************************************
 		
-		else if(perso.equals("capboy001")) {
-			if(Variables.BATTLERS.contains("capboy001"))
-				return "Tu as un Pokémon,= moi aussi.= Nos regards se sont croisés !=\n"
-				+ "Quand c'est le cas, on doit s'affronter != On y va !=^";
-			return "Tu m'as battu.= Dans un combat,= il faut toujours un vainqueur\n"
-					+ "et un perdant.";
+		else if(perso.contains("capboy")) {
+			
+			if(perso.equals("capboy001"))
+				return "Selenia c'est cool,= mais il s'y passe pas grand\n"
+						+ "chose...";
+			
+			if(perso.equals("capboy002")) {
+				if(Variables.BATTLERS.contains("capboy002"))
+					return "Tu as un Pokémon,= moi aussi.= Nos regards se sont croisés !=\n"
+					+ "Quand c'est le cas, on doit s'affronter != On y va !=^";
+				return "Tu m'as battu.= Dans un combat,= il faut toujours un vainqueur\n"
+						+ "et un perdant.";
+			}
 		}
 		
 		//***********************************************************************************************
 		
-		else if(perso.equals("campinggirl001")) {
-			if(Variables.BATTLERS.contains("campinggirl001"))
-				return "Eh toi,= tu sais camper ¤= Moi j'adore ça != Mais t'es un\n"
-						+ "dresseur ¤!= Allez combat !=^";
-			return "J'ai perdu mais je peux camper.= Du coup ça va.";
+		else if(perso.contains("umbrellagirl")) {
+			
+			if(perso.equals("umbrellagirl001"))
+				return "Oui j'ai un parapluie à l'intérieur,= et alors ¤= C'est ce\n"
+						+ "calme là,= je sens qu'une tempête arrive...";
+		}
+		
+		//***********************************************************************************************
+		
+		else if(perso.contains("campinggirl")) {
+			if(perso.equals("campinggirl001")) {
+				if(Variables.BATTLERS.contains("campinggirl001"))
+					return "Eh toi,= tu sais camper ¤= Moi j'adore ça != Mais t'es un\n"
+							+ "dresseur ¤!= Allez combat !=^";
+				return "J'ai perdu mais je peux camper.= Du coup ça va.";
+			}
 		}
 		
 		//***********************************************************************************************

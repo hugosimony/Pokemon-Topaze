@@ -26,7 +26,7 @@ public class FileTrainersReaderWriter {
 	
 	public static void initializeTrainers() {
 		Variables.BATTLERS = new ArrayList<String>();
-		Variables.BATTLERS.add("capboy001");
+		Variables.BATTLERS.add("capboy002");
 		Variables.BATTLERS.add("campinggirl001");
 	}
 	

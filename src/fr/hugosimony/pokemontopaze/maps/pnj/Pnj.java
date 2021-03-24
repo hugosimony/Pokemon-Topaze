@@ -62,6 +62,8 @@ public class Pnj extends JPanel {
 		setOpaque(false);
 		setLayout(null);
 		setVisible(true);
+		setLocation(positionX, positionY);
+		setSize(35, 50);
 	}
 	
 	public class Move extends TimerTask {

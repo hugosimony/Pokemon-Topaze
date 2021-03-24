@@ -211,18 +211,13 @@ public class RivalHouse extends JPanel {
 		
 		if(up) {
 			if(Variables.ADVENTURE_Step == 1) {
-				rival = new Pnj(game, "rival", Direction.DOWN, 0, 2368, 3025, false, false, null, null, false, false);
-				rival.setLocation(2368, 3025);
+				rival = new Pnj(game, "rival", Direction.UP, 0, 5504, 2865, false, false, null, null, false, false);
+				game.pnjs.add(rival);
 			}
-			else {
-				rival = new Pnj(game, "mom", Direction.DOWN, 0, 2368, 2897, false, false, null, null, false, false);
-				rival.setLocation(2368, 2897);
-			}
-			rival.setSize(35, 50);
-			game.pnjs.add(rival);
 		}
 		else {
-			
+			rivalMom = new Pnj(game, "mom", Direction.DOWN, 0, 4224, 3025, false, false, null, null, false, false);
+			game.pnjs.add(rivalMom);
 		}
 	}
 	

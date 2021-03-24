@@ -15,6 +15,7 @@ import fr.hugosimony.pokemontopaze.maps.Deplacement;
 import fr.hugosimony.pokemontopaze.maps.Direction;
 import fr.hugosimony.pokemontopaze.maps.houses.selenia.SeleniaHouses;
 import fr.hugosimony.pokemontopaze.maps.houses.villaube.VillaubeHouses;
+import fr.hugosimony.pokemontopaze.maps.pnj.Pnj;
 import fr.hugosimony.pokemontopaze.utils.IntTuple;
 
 public class House02 extends JPanel {
@@ -23,6 +24,16 @@ public class House02 extends JPanel {
 	private Game game;
 
 	public IntTuple toExit;
+	
+	public Pnj pnj01;
+	public Pnj pnj02;
+	public Pnj pnj03;
+	public Pnj pnj04;
+	public Pnj pnj05;
+	public Pnj pnj06;
+	public Pnj pnj07;
+	public Pnj pnj08;
+	public Pnj pnj09;
 	
 	public House02(Game game, int locationX, int locationY, Direction direction, int mapLocationX, int mapLocationY) {
 		this.game = game;

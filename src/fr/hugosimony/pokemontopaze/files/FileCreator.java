@@ -67,7 +67,7 @@ public class FileCreator {
 			PrintWriter writer = new PrintWriter(Const.getTrainersPath(save), "UTF-8");
 			if(first)
 				writer.print("Trainers :\n"
-						+ "capboy001"
+						+ "capboy002"
 						+ "campinggirl001");
 			else
 				writer.print("Trainers :");

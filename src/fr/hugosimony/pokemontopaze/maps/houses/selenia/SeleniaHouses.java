@@ -41,6 +41,10 @@ public class SeleniaHouses {
 		for(Pnj pnj : game.pnjs)
 			pnj.clearIA();
 		game.pnjs = new ArrayList<Pnj>();
+		
+		game.house01.pnj01 = new Pnj(game, "capboy001", Direction.RIGHT, 0, 5344, 1098, false, false, null, null, false, false);
+		game.pnjs.add(game.house01.pnj01);
+		
 	}
 	
 	public static boolean checkMapChangeHouse01() {
@@ -76,6 +80,9 @@ public class SeleniaHouses {
 		for(Pnj pnj : game.pnjs)
 			pnj.clearIA();
 		game.pnjs = new ArrayList<Pnj>();
+		
+		game.house02.pnj01 = new Pnj(game, "umbrellagirl001", Direction.DOWN, 0, 6496, 2890, false, false, null, null, false, false);
+		game.pnjs.add(game.house02.pnj01);
 	}
 	
 	public static boolean checkMapChangeHouse02() {

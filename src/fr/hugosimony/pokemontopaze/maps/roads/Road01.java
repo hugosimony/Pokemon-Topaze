@@ -406,29 +406,21 @@ public class Road01 extends JPanel {
 			pnj.clearIA();
 		game.pnjs = new ArrayList<Pnj>();
 		
-		battler01 = new Pnj(game, "capboy001", Direction.UP, 0, 3232, 1802, false, false, null, null, false, false);
-		battler01.setLocation(3232, 1802);
-		battler01.setSize(35, 50);
-		game.pnjs.add(battler01);
-		
-		battler02 = new Pnj(game, "campinggirl001", Direction.UP, 0, 3584, 1418, false, false, null, null, false, false);
-		battler02.setLocation(3584, 1418);
-		battler02.setSize(35, 50);
-		game.pnjs.add(battler02);
-		
 		if(Variables.ADVENTURE_Step == 1) {
 			profChen = new Pnj(game, "profChen", Direction.RIGHT, 0, 3456, 1738, false, false, null, null, false, false);
-			profChen.setLocation(3456, 1738);
-			profChen.setSize(35, 50);
 			game.pnjs.add(profChen);
 		}
 		
 		if(Variables.ADVENTURE_Step == 7) {
 			profChen = new Pnj(game, "profChen", Direction.RIGHT, 0, 3712, 1738, false, false, null, null, false, false);
-			profChen.setLocation(3712, 1738);
-			profChen.setSize(35, 50);
 			game.pnjs.add(profChen);
 		}
+		
+		battler01 = new Pnj(game, "capboy002", Direction.UP, 0, 3232, 1802, false, false, null, null, false, false);
+		game.pnjs.add(battler01);
+		
+		battler02 = new Pnj(game, "campinggirl001", Direction.UP, 0, 3584, 1418, false, false, null, null, false, false);
+		game.pnjs.add(battler02);
 	}
 	
 	private void setHerbs() {
@@ -626,7 +618,7 @@ public class Road01 extends JPanel {
 			animationTiles.add(new IntTriple(4064, 1802, 1));
 		}
 		
-		if(Variables.BATTLERS.contains("capboy001")) {
+		if(Variables.BATTLERS.contains("capboy002")) {
 			animationTiles.add(new IntTriple(3232, 1674, 2));
 			animationTiles.add(new IntTriple(3232, 1706, 2));
 		}

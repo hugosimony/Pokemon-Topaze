@@ -244,15 +244,10 @@ public class MyHouse extends JPanel {
 		
 		
 		if(!up) {
-			if(Variables.ADVENTURE_Step == 0) {
+			if(Variables.ADVENTURE_Step == 0)
 				mom = new Pnj(game, "mom", Direction.DOWN, 0, 2368, 3025, false, false, null, null, false, false);
-				mom.setLocation(2368, 3025);
-			}
-			else {
+			else
 				mom = new Pnj(game, "mom", Direction.DOWN, 0, 2368, 2897, false, false, null, null, false, false);
-				mom.setLocation(2368, 2897);
-			}
-			mom.setSize(35, 50);
 			game.pnjs.add(mom);
 		}
 	}

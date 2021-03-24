@@ -23,11 +23,11 @@ public class BattlerAnimations {
 			new Timer().schedule(new TimerTask() {
 				@Override
 				public void run() {
-					Game.waitingBattle = "capboy001";
+					Game.waitingBattle = "capboy002";
 					Game.waitingBattlefield = "GymLeader7";
 					Game.waitingWeather = "Good";
 					new Timer().schedule(game.road01.battler01.new Move(Direction.UP, true, finalAnimation, "uu",
-							Direction.UP, PnjText.getText("capboy001")), 0, 8);
+							Direction.UP, PnjText.getText("capboy002")), 0, 8);
 					game.deplacement.hero.direction = Direction.DOWN;
 					game.deplacement.setStoppedSprites();
 					this.cancel();

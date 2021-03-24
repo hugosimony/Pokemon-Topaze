@@ -288,9 +288,6 @@ public class Selenia extends JPanel {
 		game.pnjs = new ArrayList<Pnj>();
 		
 		police001 = new Pnj(game, "police001", Direction.RIGHT, 0, 896, 1546, false, false, null, null, false, false);
-		police001.setVisible(true);
-		police001.setSize(35, 50);
-		police001.setLocation(896, 1546);
 		game.pnjs.add(police001);
 		
 		int[][] directionsPnj01 = {
@@ -299,9 +296,6 @@ public class Selenia extends JPanel {
 				{0, 1, 1}
 		};
 		seleniaPnj01 = new Pnj(game, "brownboy001", Direction.DOWN, 0, 1664, 1386, true, true, directionsPnj01, null, false, false);
-		seleniaPnj01.setVisible(true);
-		seleniaPnj01.setSize(35, 50);
-		seleniaPnj01.setLocation(1664, 1386);
 		game.pnjs.add(seleniaPnj01);
 		
 		int[][] directionsPnj02 = {
@@ -310,9 +304,6 @@ public class Selenia extends JPanel {
 				{1, 1, 2, 1, 1}
 		};
 		seleniaPnj02 = new Pnj(game, "browngirl001", Direction.UP, 0, 1376, 1546, true, true, directionsPnj02, null, false, false);
-		seleniaPnj02.setVisible(true);
-		seleniaPnj02.setSize(35, 50);
-		seleniaPnj02.setLocation(1376, 1546);
 		game.pnjs.add(seleniaPnj02);
 	}
 	

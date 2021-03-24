@@ -200,14 +200,10 @@ public class Game extends JFrame {
 		else
 			Map.setMap(this, save);
 		
-		//**************************************************************************
-		// Check music
+		//****************************************************************************************************
+		// Check running
 		
 		timer.schedule(new TimerTask() {
-			
-			/*
-			 * Mute the game if it is not the focused program
-			 */
 			
 			@Override
 			public void run() {
