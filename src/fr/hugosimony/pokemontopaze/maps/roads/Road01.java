@@ -56,6 +56,7 @@ public class Road01 extends JPanel {
 		
 		this.game = game;
 		game.road01 = this;
+		game.actualPanelString = "road01";
 		
 		setClickableTiles();
 		setWalls();

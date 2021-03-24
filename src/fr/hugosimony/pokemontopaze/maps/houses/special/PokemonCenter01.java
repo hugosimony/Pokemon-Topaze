@@ -26,6 +26,7 @@ public class PokemonCenter01 extends JPanel {
 	public PokemonCenter01(Game game, int locationX, int locationY, Direction direction, int mapLocationX, int mapLocationY) {
 		this.game = game;
 		game.pokemonCenter01 = this;
+		game.actualPanelString = "pokemonCenter01";
 		
 		setClickableTiles();
 		setWalls();

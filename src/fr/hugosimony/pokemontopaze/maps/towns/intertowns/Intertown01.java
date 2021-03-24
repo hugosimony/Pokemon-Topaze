@@ -38,6 +38,7 @@ public class Intertown01 extends JPanel {
 	public Intertown01(Game game, int locationX, int locationY, Direction direction, int mapLocationX, int mapLocationY) {
 		this.game = game;
 		game.intertown01 = this;
+		game.actualPanelString = "intertown01";
 		
 		setClickableTiles();
 		setWalls();

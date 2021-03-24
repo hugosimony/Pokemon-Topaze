@@ -26,6 +26,7 @@ public class Mart01 extends JPanel {
 	public Mart01(Game game, int locationX, int locationY, Direction direction, int mapLocationX, int mapLocationY) {
 		this.game = game;
 		game.mart01 = this;
+		game.actualPanelString = "mart01";
 		
 		setClickableTiles();
 		setWalls();

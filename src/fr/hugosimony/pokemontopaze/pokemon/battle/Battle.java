@@ -12,6 +12,7 @@ import javax.swing.JPanel;
 
 import fr.hugosimony.pokemontopaze.Game;
 import fr.hugosimony.pokemontopaze.Main;
+import fr.hugosimony.pokemontopaze.maps.Map;
 import fr.hugosimony.pokemontopaze.menus.TextZone;
 import fr.hugosimony.pokemontopaze.musics.Musics;
 import fr.hugosimony.pokemontopaze.pokemon.PKM;
@@ -95,6 +96,7 @@ public class Battle extends JPanel {
 		game.remove(this);
 		Game.battleWin = true; // TODO
 		game.actualPanel = savedMap;
+		Map.setVisible(game, true);
 		new TransitionSimple(game, game.gamePanel, savedMap);
 		Musics.startMusic(savedMusic);
 		String text = BattlerText.getText(game, opponent, -1);

@@ -50,6 +50,7 @@ public class Selenia extends JPanel {
 		
 		this.game = game;
 		game.selenia = this;
+		game.actualPanelString = "selenia";
 		
 		setClickableTiles();
 		setWalls();

@@ -55,6 +55,7 @@ public class Villaube extends JPanel {
 		
 		this.game = game;
 		game.villaube = this;
+		game.actualPanelString = "villaube";
 		
 		setClickableTiles();
 		setWalls();

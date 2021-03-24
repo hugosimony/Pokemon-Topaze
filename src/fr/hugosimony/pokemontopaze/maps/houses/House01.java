@@ -38,6 +38,7 @@ public class House01 extends JPanel {
 	public House01(Game game, int locationX, int locationY, Direction direction, int mapLocationX, int mapLocationY) {
 		this.game = game;
 		game.house01 = this;
+		game.actualPanelString = "house01";
 		
 		setWalls();
 		toExit = new IntTuple(5504, 1354);

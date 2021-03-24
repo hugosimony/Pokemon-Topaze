@@ -52,6 +52,7 @@ public class Game extends JFrame {
 	private Game game;
 	public JPanel gamePanel;
 	public JPanel actualPanel;
+	public String actualPanelString;
 	private int save;
 	private boolean newGame;
 	

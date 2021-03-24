@@ -45,6 +45,7 @@ public class MyHouse extends JPanel {
 		
 		this.game = game;
 		game.myHouse = this;
+		game.actualPanelString = "myHouse";
 		this.up = up;
 		
 		setClickableTiles();

@@ -50,6 +50,8 @@ public class Map extends JPanel {
 	 * Change map and place in the .java
 	 * Map (change the spawn location)
 	 * Add the trainers if needed
+	 * Set the String for battles
+	 * Set the visible (Map)
 	 * Music
 	 */
 	
@@ -128,6 +130,34 @@ public class Map extends JPanel {
 			// immeuble
 			//game.villaube = new Villaube(game, FileAdventureReaderWriter.getLocationX(save), FileAdventureReaderWriter.getLocationY(save), FileAdventureReaderWriter.getDirection(save), FileAdventureReaderWriter.getMapLocationX(save), FileAdventureReaderWriter.getMapLocationY(save));
 			//game.add(game.villaube);
+	
 		}
+	}
+	
+	public static void setVisible(Game game, boolean visible) {
+		if(game.actualPanelString.equals("myHouse"))
+			game.myHouse.setVisible(visible);
+		else if(game.actualPanelString.equals("selenia"))
+			game.selenia.setVisible(visible);
+		else if(game.actualPanelString.equals("rivalHouse"))
+			game.rivalHouse.setVisible(visible);
+		else if(game.actualPanelString.equals("house01"))
+			game.house01.setVisible(visible);
+		else if(game.actualPanelString.equals("house02"))
+			game.house02.setVisible(visible);
+		else if(game.actualPanelString.equals("intertown01"))
+			game.intertown01.setVisible(visible);
+		else if(game.actualPanelString.equals("road01"))
+			game.road01.setVisible(visible);
+		else if(game.actualPanelString.equals("intertown02"))
+			game.intertown02.setVisible(visible);
+		else if(game.actualPanelString.equals("villaube"))
+			game.villaube.setVisible(visible);
+		else if(game.actualPanelString.equals("pokemonCenter01"))
+			game.pokemonCenter01.setVisible(visible);
+		else if(game.actualPanelString.equals("mart01"))
+			game.mart01.setVisible(visible);
+		else if(game.actualPanelString.equals("house03"))
+			game.house03.setVisible(visible);
 	}
 }

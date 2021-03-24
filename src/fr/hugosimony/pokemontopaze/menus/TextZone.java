@@ -12,6 +12,7 @@ import javax.swing.JPanel;
 import fr.hugosimony.pokemontopaze.Const;
 import fr.hugosimony.pokemontopaze.Game;
 import fr.hugosimony.pokemontopaze.Variables;
+import fr.hugosimony.pokemontopaze.maps.Map;
 import fr.hugosimony.pokemontopaze.maps.animations.PnjAnimations;
 import fr.hugosimony.pokemontopaze.pokemon.battle.Battle;
 import fr.hugosimony.pokemontopaze.sounds.Sounds;
@@ -138,6 +139,7 @@ public class TextZone extends JPanel {
 	 				game.textDone = false;
 					game.inAnimation = false;
 	 				textZone.setVisible(false);
+	 				Map.setVisible(game, false);
 	 				new TransitionSimple(game, game.gamePanel, new Battle(game, false, Game.waitingBattle, Game.waitingBattlefield, 
 	 						Game.waitingWeather, game.actualPanel));
 	 				this.cancel();
