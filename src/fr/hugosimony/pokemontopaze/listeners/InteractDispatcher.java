@@ -38,7 +38,7 @@ public class InteractDispatcher implements KeyEventDispatcher {
 					 IntTuple tuple = game.deplacement.getLookingTile();
 					 String text = "";
 					 
-					 if(IntTuple.contains(game.clickableTiles, game.deplacement.getLookingTile())) {
+					 if(IntTuple.contains(game.clickableTiles, tuple)) {
 						 if(game.myHouse != null && game.myHouse.isVisible())
 							 text = game.myHouse.getInteractMessage(tuple);
 						 else if(game.selenia != null && game.selenia.isVisible())
@@ -59,7 +59,7 @@ public class InteractDispatcher implements KeyEventDispatcher {
 							 text = game.mart01.getInteractMessage(tuple);
 					 }
 					 else {
-						 Pnj pnj = IntTuple.containsPnj(game.pnjs, game.deplacement.getLookingTile());
+						 Pnj pnj = IntTuple.containsPnj(game.pnjs, tuple);
 						 if(pnj != null && !pnj.mooving) {
 							 text = PnjText.getText(pnj.perso);
 							 if(pnj.paraClick)

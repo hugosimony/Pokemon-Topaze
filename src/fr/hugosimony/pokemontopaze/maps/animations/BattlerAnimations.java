@@ -28,7 +28,7 @@ public class BattlerAnimations {
 					Game.waitingWeather = "Good";
 					new Timer().schedule(game.road01.battler01.new Move(Direction.UP, true, finalAnimation, "uu",
 							Direction.UP, PnjText.getText("capboy002")), 0, 8);
-					game.deplacement.hero.direction = Direction.DOWN;
+					game.deplacement.setDirection(Direction.DOWN);
 					game.deplacement.setStoppedSprites();
 					this.cancel();
 				}
@@ -45,7 +45,8 @@ public class BattlerAnimations {
 					Game.waitingWeather = "Good";
 					new Timer().schedule(game.road01.battler02.new Move(Direction.UP, true, finalAnimation, "uuuuu",
 							Direction.UP, PnjText.getText("campinggirl001")), 0, 8);
-					game.deplacement.hero.direction = Direction.DOWN;
+					
+					game.deplacement.setDirection(Direction.DOWN);
 					game.deplacement.setStoppedSprites();
 					this.cancel();
 				}
@@ -62,7 +63,7 @@ public class BattlerAnimations {
 					Game.waitingWeather = "Good";
 					new Timer().schedule(game.road01.battler03.new Move(Direction.RIGHT, true, finalAnimation, "rrr",
 							Direction.RIGHT, PnjText.getText("bugcatcher001")), 0, 8);
-					game.deplacement.hero.direction = Direction.LEFT;
+					game.deplacement.setDirection(Direction.LEFT);
 					game.deplacement.setStoppedSprites();
 					this.cancel();
 				}
@@ -79,7 +80,7 @@ public class BattlerAnimations {
 					Game.waitingWeather = "Good";
 					new Timer().schedule(game.road01.battler04.new Move(Direction.UP, true, finalAnimation, "uuu",
 							Direction.UP, PnjText.getText("campingboy001")), 0, 8);
-					game.deplacement.hero.direction = Direction.DOWN;
+					game.deplacement.setDirection(Direction.DOWN);
 					game.deplacement.setStoppedSprites();
 					this.cancel();
 				}

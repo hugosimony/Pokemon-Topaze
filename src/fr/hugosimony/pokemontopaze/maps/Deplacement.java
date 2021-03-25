@@ -355,6 +355,11 @@ public class Deplacement {
 		}
 	}
 	
+	public void setDirection(Direction direction) {
+		this.direction = direction;
+		this.newDirection = direction;
+	}
+	
 	public void setSprites() {
 		setSprites(direction, hero, false);
 	}
@@ -405,6 +410,7 @@ public class Deplacement {
 		}
 		
 		hero = hero_;
+		hero.direction = persoDir;
 		hero.setLocation(locationX, locationY);
 		hero.setSize(35,50);
 		hero.setVisible(true);

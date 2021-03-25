@@ -176,8 +176,8 @@ public class PnjAnimations {
 					new Timer().schedule(new TimerTask() {
 						@Override
 						public void run() {
-							game.deplacement.hero.direction = Direction.RIGHT;
-							game.deplacement.setSprites();
+							game.deplacement.setDirection(Direction.RIGHT);
+							game.deplacement.setStoppedSprites();
 							this.cancel();
 						}
 					}, 500);
@@ -209,7 +209,7 @@ public class PnjAnimations {
 					@Override
 					public void run() {
 						game.road01.profChen.direction = Direction.UP;
-						game.deplacement.hero.direction = Direction.UP;
+						game.deplacement.setDirection(Direction.UP);
 						game.road01.profChen.setSprites(game.road01.profChen);
 						this.cancel();
 					}
@@ -222,7 +222,7 @@ public class PnjAnimations {
 					@Override
 					public void run() {
 						game.road01.profChen.direction = Direction.DOWN;
-						game.deplacement.hero.direction = Direction.DOWN;
+						game.deplacement.setDirection(Direction.DOWN);
 						game.road01.profChen.setSprites(game.road01.profChen);
 						this.cancel();
 					}
@@ -231,7 +231,7 @@ public class PnjAnimations {
 					@Override
 					public void run() {
 						game.road01.profChen.direction = Direction.LEFT;
-						game.deplacement.hero.direction = Direction.LEFT;
+						game.deplacement.setDirection(Direction.LEFT);
 						game.road01.profChen.setSprites(game.road01.profChen);
 						this.cancel();
 					}
@@ -244,7 +244,7 @@ public class PnjAnimations {
 					@Override
 					public void run() {
 						game.road01.profChen.direction = Direction.DOWN;
-						game.deplacement.hero.direction = Direction.DOWN;
+						game.deplacement.setDirection(Direction.DOWN);
 						game.road01.profChen.setSprites(game.road01.profChen);
 						this.cancel();
 					}
