@@ -45,6 +45,9 @@ public class SeleniaHouses {
 		game.house01.pnj01 = new Pnj(game, "capboy001", Direction.RIGHT, 0, 5344, 1098, false, false, null, null, false, false);
 		game.pnjs.add(game.house01.pnj01);
 		
+		game.house01.pnj02 = new Pnj(game, "overallsman001", Direction.DOWN, 0, 5664, 1066, false, false, null, null, false, false);
+		game.pnjs.add(game.house01.pnj02);
+		
 	}
 	
 	public static boolean checkMapChangeHouse01() {

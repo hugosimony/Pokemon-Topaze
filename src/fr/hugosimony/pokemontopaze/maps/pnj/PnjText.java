@@ -115,7 +115,7 @@ public class PnjText {
 		else if(perso.contains("capboy")) {
 			
 			if(perso.equals("capboy001"))
-				return "Selenia c'est cool,= mais il s'y passe pas grand\n"
+				return "Sélénia c'est cool,= mais il s'y passe pas grand\n"
 						+ "chose...";
 			
 			if(perso.equals("capboy002")) {
@@ -145,6 +145,16 @@ public class PnjText {
 					return "Eh toi,= tu sais camper ¤= Moi j'adore ça != Mais t'es un\n"
 							+ "dresseur ¤!= Allez combat !=^";
 				return "J'ai perdu mais je peux camper.= Du coup ça va.";
+			}
+		}
+		
+		//***********************************************************************************************
+		
+		else if(perso.contains("overallsman")) {
+			
+			if(perso.equals("overallsman001")) {
+				return "Mon fiston est assez actif.= C'est sur que Sélénia c'est pas\n"
+						+ "le top pour lui...";
 			}
 		}
 		
