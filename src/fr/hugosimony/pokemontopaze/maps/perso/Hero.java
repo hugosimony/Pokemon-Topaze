@@ -4,7 +4,7 @@ import java.awt.Graphics;
 
 import javax.swing.JPanel;
 
-import fr.hugosimony.pokemontopaze.Const;
+import fr.hugosimony.pokemontopaze.sprites.perso.ConstPersoSprites;
 import fr.hugosimony.pokemontopaze.Variables;
 import fr.hugosimony.pokemontopaze.maps.Direction;
 
@@ -31,114 +31,114 @@ public class Hero extends JPanel {
 			if(speed == 3) {
 				if(direction == Direction.UP) {
 					if(foot == 0)
-						g.drawImage(Const.boyBikeBack.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.boyBikeBack.getImage(), 0, 0, null);
 					else if(foot == 1)
-						g.drawImage(Const.boyBikeBackRight.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.boyBikeBackRight.getImage(), 0, 0, null);
 					else if(foot == 2)
-						g.drawImage(Const.boyBikeBackLeft.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.boyBikeBackLeft.getImage(), 0, 0, null);
 					else if(foot == 3)
-						g.drawImage(Const.boyBikeBackStop.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.boyBikeBackStop.getImage(), 0, 0, null);
 				}
 				else if(direction == Direction.DOWN) {
 					if(foot == 0)
-						g.drawImage(Const.boyBikeFront.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.boyBikeFront.getImage(), 0, 0, null);
 					else if(foot == 1)
-						g.drawImage(Const.boyBikeFrontRight.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.boyBikeFrontRight.getImage(), 0, 0, null);
 					else if(foot == 2)
-						g.drawImage(Const.boyBikeFrontLeft.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.boyBikeFrontLeft.getImage(), 0, 0, null);
 					else if(foot == 3)
-						g.drawImage(Const.boyBikeFrontStop.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.boyBikeFrontStop.getImage(), 0, 0, null);
 				}
 				else if(direction == Direction.LEFT) {
 					if(foot == 0)	
-						g.drawImage(Const.boyBikeLeft.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.boyBikeLeft.getImage(), 0, 0, null);
 					else if(foot == 1)	
-						g.drawImage(Const.boyBikeLeftRight.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.boyBikeLeftRight.getImage(), 0, 0, null);
 					else if(foot == 2)	
-						g.drawImage(Const.boyBikeLeftLeft.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.boyBikeLeftLeft.getImage(), 0, 0, null);
 					else if(foot == 3)
-						g.drawImage(Const.boyBikeLeftStop.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.boyBikeLeftStop.getImage(), 0, 0, null);
 					
 				}
 				else if(direction == Direction.RIGHT) {
 					if(foot == 0)	
-						g.drawImage(Const.boyBikeRight.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.boyBikeRight.getImage(), 0, 0, null);
 					else if(foot == 1)	
-						g.drawImage(Const.boyBikeRightRight.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.boyBikeRightRight.getImage(), 0, 0, null);
 					else if(foot == 2)	
-						g.drawImage(Const.boyBikeRightLeft.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.boyBikeRightLeft.getImage(), 0, 0, null);
 					else if(foot == 3)
-						g.drawImage(Const.boyBikeRightStop.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.boyBikeRightStop.getImage(), 0, 0, null);
 				}
 			}
 			else if(speed == 2) {
 				if(direction == Direction.UP) {
 					if(foot == 0)
-						g.drawImage(Const.boyRunBack.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.boyRunBack.getImage(), 0, 0, null);
 					else if(foot == 1)
-						g.drawImage(Const.boyRunBackRight.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.boyRunBackRight.getImage(), 0, 0, null);
 					else if(foot == 2)
-						g.drawImage(Const.boyRunBackLeft.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.boyRunBackLeft.getImage(), 0, 0, null);
 				}
 				else if(direction == Direction.DOWN) {
 					if(foot == 0)
-						g.drawImage(Const.boyRunFront.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.boyRunFront.getImage(), 0, 0, null);
 					else if(foot == 1)
-						g.drawImage(Const.boyRunFrontRight.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.boyRunFrontRight.getImage(), 0, 0, null);
 					else if(foot == 2)
-						g.drawImage(Const.boyRunFrontLeft.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.boyRunFrontLeft.getImage(), 0, 0, null);
 				}
 				else if(direction == Direction.LEFT) {
 					if(foot == 0)	
-						g.drawImage(Const.boyRunLeft.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.boyRunLeft.getImage(), 0, 0, null);
 					else if(foot == 1)	
-						g.drawImage(Const.boyRunLeftRight.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.boyRunLeftRight.getImage(), 0, 0, null);
 					else if(foot == 2)	
-						g.drawImage(Const.boyRunLeftLeft.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.boyRunLeftLeft.getImage(), 0, 0, null);
 					
 				}
 				else if(direction == Direction.RIGHT) {
 					if(foot == 0)	
-						g.drawImage(Const.boyRunRight.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.boyRunRight.getImage(), 0, 0, null);
 					else if(foot == 1)	
-						g.drawImage(Const.boyRunRightRight.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.boyRunRightRight.getImage(), 0, 0, null);
 					else if(foot == 2)	
-						g.drawImage(Const.boyRunRightLeft.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.boyRunRightLeft.getImage(), 0, 0, null);
 				}
 			}
 			else if(speed == 1) {
 				if(direction == Direction.UP) {
 					if(foot == 0)
-						g.drawImage(Const.boyBack.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.boyBack.getImage(), 0, 0, null);
 					else if(foot == 1)
-						g.drawImage(Const.boyBackRight.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.boyBackRight.getImage(), 0, 0, null);
 					else if(foot == 2)
-						g.drawImage(Const.boyBackLeft.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.boyBackLeft.getImage(), 0, 0, null);
 				}
 				else if(direction == Direction.DOWN) {
 					if(foot == 0)
-						g.drawImage(Const.boyFront.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.boyFront.getImage(), 0, 0, null);
 					else if(foot == 1)
-						g.drawImage(Const.boyFrontRight.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.boyFrontRight.getImage(), 0, 0, null);
 					else if(foot == 2)
-						g.drawImage(Const.boyFrontLeft.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.boyFrontLeft.getImage(), 0, 0, null);
 				}
 				else if(direction == Direction.LEFT) {
 					if(foot == 0)	
-						g.drawImage(Const.boyLeft.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.boyLeft.getImage(), 0, 0, null);
 					else if(foot == 1)	
-						g.drawImage(Const.boyLeftRight.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.boyLeftRight.getImage(), 0, 0, null);
 					else if(foot == 2)	
-						g.drawImage(Const.boyLeftLeft.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.boyLeftLeft.getImage(), 0, 0, null);
 					
 				}
 				else if(direction == Direction.RIGHT) {
 					if(foot == 0)	
-						g.drawImage(Const.boyRight.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.boyRight.getImage(), 0, 0, null);
 					else if(foot == 1)	
-						g.drawImage(Const.boyRightRight.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.boyRightRight.getImage(), 0, 0, null);
 					else if(foot == 2)	
-						g.drawImage(Const.boyRightLeft.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.boyRightLeft.getImage(), 0, 0, null);
 				}
 			}
 		}
@@ -146,114 +146,114 @@ public class Hero extends JPanel {
 			if(speed == 3) {
 				if(direction == Direction.UP) {
 					if(foot == 0)
-						g.drawImage(Const.boyBikeBack.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.boyBikeBack.getImage(), 0, 0, null);
 					else if(foot == 1)
-						g.drawImage(Const.boyBikeBackRight.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.boyBikeBackRight.getImage(), 0, 0, null);
 					else if(foot == 2)
-						g.drawImage(Const.boyBikeBackLeft.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.boyBikeBackLeft.getImage(), 0, 0, null);
 					else if(foot == 3)
-						g.drawImage(Const.boyBikeBackStop.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.boyBikeBackStop.getImage(), 0, 0, null);
 				}
 				else if(direction == Direction.DOWN) {
 					if(foot == 0)
-						g.drawImage(Const.boyBikeFront.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.boyBikeFront.getImage(), 0, 0, null);
 					else if(foot == 1)
-						g.drawImage(Const.boyBikeFrontRight.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.boyBikeFrontRight.getImage(), 0, 0, null);
 					else if(foot == 2)
-						g.drawImage(Const.boyBikeFrontLeft.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.boyBikeFrontLeft.getImage(), 0, 0, null);
 					else if(foot == 3)
-						g.drawImage(Const.boyBikeFrontStop.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.boyBikeFrontStop.getImage(), 0, 0, null);
 				}
 				else if(direction == Direction.LEFT) {
 					if(foot == 0)	
-						g.drawImage(Const.boyBikeLeft.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.boyBikeLeft.getImage(), 0, 0, null);
 					else if(foot == 1)	
-						g.drawImage(Const.boyBikeLeftRight.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.boyBikeLeftRight.getImage(), 0, 0, null);
 					else if(foot == 2)	
-						g.drawImage(Const.boyBikeLeftLeft.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.boyBikeLeftLeft.getImage(), 0, 0, null);
 					else if(foot == 3)
-						g.drawImage(Const.boyBikeLeftStop.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.boyBikeLeftStop.getImage(), 0, 0, null);
 					
 				}
 				else if(direction == Direction.RIGHT) {
 					if(foot == 0)	
-						g.drawImage(Const.boyBikeRight.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.boyBikeRight.getImage(), 0, 0, null);
 					else if(foot == 1)	
-						g.drawImage(Const.boyBikeRightRight.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.boyBikeRightRight.getImage(), 0, 0, null);
 					else if(foot == 2)	
-						g.drawImage(Const.boyBikeRightLeft.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.boyBikeRightLeft.getImage(), 0, 0, null);
 					else if(foot == 3)
-						g.drawImage(Const.boyBikeRightStop.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.boyBikeRightStop.getImage(), 0, 0, null);
 				}
 			}
 			else if(speed == 2) {
 				if(direction == Direction.UP) {
 					if(foot == 0)
-						g.drawImage(Const.girlRunBack.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.girlRunBack.getImage(), 0, 0, null);
 					else if(foot == 1)
-						g.drawImage(Const.girlRunBackRight.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.girlRunBackRight.getImage(), 0, 0, null);
 					else if(foot == 2)
-						g.drawImage(Const.girlRunBackLeft.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.girlRunBackLeft.getImage(), 0, 0, null);
 				}
 				else if(direction == Direction.DOWN) {
 					if(foot == 0)
-						g.drawImage(Const.girlRunFront.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.girlRunFront.getImage(), 0, 0, null);
 					else if(foot == 1)
-						g.drawImage(Const.girlRunFrontRight.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.girlRunFrontRight.getImage(), 0, 0, null);
 					else if(foot == 2)
-						g.drawImage(Const.girlRunFrontLeft.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.girlRunFrontLeft.getImage(), 0, 0, null);
 				}
 				else if(direction == Direction.LEFT) {
 					if(foot == 0)	
-						g.drawImage(Const.girlRunLeft.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.girlRunLeft.getImage(), 0, 0, null);
 					else if(foot == 1)	
-						g.drawImage(Const.girlRunLeftRight.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.girlRunLeftRight.getImage(), 0, 0, null);
 					else if(foot == 2)	
-						g.drawImage(Const.girlRunLeftLeft.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.girlRunLeftLeft.getImage(), 0, 0, null);
 					
 				}
 				else if(direction == Direction.RIGHT) {
 					if(foot == 0)	
-						g.drawImage(Const.girlRunRight.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.girlRunRight.getImage(), 0, 0, null);
 					else if(foot == 1)	
-						g.drawImage(Const.girlRunRightRight.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.girlRunRightRight.getImage(), 0, 0, null);
 					else if(foot == 2)	
-						g.drawImage(Const.girlRunRightLeft.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.girlRunRightLeft.getImage(), 0, 0, null);
 				}
 			}
 			else if(speed == 1) {
 				if(direction == Direction.UP) {
 					if(foot == 0)
-						g.drawImage(Const.girlBack.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.girlBack.getImage(), 0, 0, null);
 					else if(foot == 1)
-						g.drawImage(Const.girlBackRight.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.girlBackRight.getImage(), 0, 0, null);
 					else if(foot == 2)
-						g.drawImage(Const.girlBackLeft.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.girlBackLeft.getImage(), 0, 0, null);
 				}
 				else if(direction == Direction.DOWN) {
 					if(foot == 0)
-						g.drawImage(Const.girlFront.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.girlFront.getImage(), 0, 0, null);
 					else if(foot == 1)
-						g.drawImage(Const.girlFrontRight.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.girlFrontRight.getImage(), 0, 0, null);
 					else if(foot == 2)
-						g.drawImage(Const.girlFrontLeft.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.girlFrontLeft.getImage(), 0, 0, null);
 				}
 				else if(direction == Direction.LEFT) {
 					if(foot == 0)	
-						g.drawImage(Const.girlLeft.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.girlLeft.getImage(), 0, 0, null);
 					else if(foot == 1)	
-						g.drawImage(Const.girlLeftRight.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.girlLeftRight.getImage(), 0, 0, null);
 					else if(foot == 2)	
-						g.drawImage(Const.girlLeftLeft.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.girlLeftLeft.getImage(), 0, 0, null);
 					
 				}
 				else if(direction == Direction.RIGHT) {
 					if(foot == 0)	
-						g.drawImage(Const.girlRight.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.girlRight.getImage(), 0, 0, null);
 					else if(foot == 1)	
-						g.drawImage(Const.girlRightRight.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.girlRightRight.getImage(), 0, 0, null);
 					else if(foot == 2)	
-						g.drawImage(Const.girlRightLeft.getImage(), 0, 0, null);
+						g.drawImage(ConstPersoSprites.girlRightLeft.getImage(), 0, 0, null);
 				}
 			}	
 		}

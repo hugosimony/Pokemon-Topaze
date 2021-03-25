@@ -11,6 +11,7 @@ import fr.hugosimony.pokemontopaze.Game;
 import fr.hugosimony.pokemontopaze.Variables;
 import fr.hugosimony.pokemontopaze.maps.Places;
 import fr.hugosimony.pokemontopaze.sounds.Sounds;
+import fr.hugosimony.pokemontopaze.sprites.perso.ConstPersoSprites;
 import fr.hugosimony.pokemontopaze.timer.GlobalTimer;
 
 public class SaveMenu extends JPanel {
@@ -126,9 +127,9 @@ public class SaveMenu extends JPanel {
 		public void paintComponent(Graphics g) {
 			super.paintComponent(g);
 			if(Variables.PERSO_Sex.equals("boy"))
-				g.drawImage(Const.boyFront.getImage(), 0, 0, null);
+				g.drawImage(ConstPersoSprites.boyFront.getImage(), 0, 0, null);
 			else 
-				g.drawImage(Const.girlFront.getImage(), 0, 0, null);
+				g.drawImage(ConstPersoSprites.girlFront.getImage(), 0, 0, null);
 		}
 	}
 	

@@ -2,7 +2,7 @@ package fr.hugosimony.pokemontopaze.maps.pnj;
 
 import java.awt.Image;
 
-import fr.hugosimony.pokemontopaze.Const;
+import fr.hugosimony.pokemontopaze.sprites.perso.ConstPersoSprites;
 import fr.hugosimony.pokemontopaze.Variables;
 import fr.hugosimony.pokemontopaze.maps.Direction;
 
@@ -16,36 +16,36 @@ public class PnjSprites {
 		if(pnj.equals("mom")) {
 			if(direction == Direction.UP) {
 				if(foot == 0)
-					return Const.momBack.getImage();
+					return ConstPersoSprites.momBack.getImage();
 				else if(foot == 1)
-					return Const.momBackRight.getImage();
+					return ConstPersoSprites.momBackRight.getImage();
 				else if(foot == 2)
-					return Const.momBackLeft.getImage();
+					return ConstPersoSprites.momBackLeft.getImage();
 			}
 			else if(direction == Direction.DOWN) {
 				if(foot == 0)
-					return Const.momFront.getImage();
+					return ConstPersoSprites.momFront.getImage();
 				else if(foot == 1)
-					return Const.momFrontRight.getImage();
+					return ConstPersoSprites.momFrontRight.getImage();
 				else if(foot == 2)
-					return Const.momFrontLeft.getImage();
+					return ConstPersoSprites.momFrontLeft.getImage();
 			}
 			else if(direction == Direction.LEFT) {
 				if(foot == 0)	
-					return Const.momLeft.getImage();
+					return ConstPersoSprites.momLeft.getImage();
 				else if(foot == 1)	
-					return Const.momLeftRight.getImage();
+					return ConstPersoSprites.momLeftRight.getImage();
 				else if(foot == 2)	
-					return Const.momLeftLeft.getImage();
+					return ConstPersoSprites.momLeftLeft.getImage();
 				
 			}
 			else if(direction == Direction.RIGHT) {
 				if(foot == 0)	
-					return Const.momRight.getImage();
+					return ConstPersoSprites.momRight.getImage();
 				else if(foot == 1)	
-					return Const.momRightRight.getImage();
+					return ConstPersoSprites.momRightRight.getImage();
 				else if(foot == 2)	
-					return Const.momRightLeft.getImage();
+					return ConstPersoSprites.momRightLeft.getImage();
 			}
 		}
 		
@@ -55,36 +55,36 @@ public class PnjSprites {
 		if(pnj.contains("brownboy")) {
 			if(direction == Direction.UP) {
 				if(foot == 0)
-					return Const.brownboyBack.getImage();
+					return ConstPersoSprites.brownboyBack.getImage();
 				else if(foot == 1)
-					return Const.brownboyBackRight.getImage();
+					return ConstPersoSprites.brownboyBackRight.getImage();
 				else if(foot == 2)
-					return Const.brownboyBackLeft.getImage();
+					return ConstPersoSprites.brownboyBackLeft.getImage();
 			}
 			else if(direction == Direction.DOWN) {
 				if(foot == 0)
-					return Const.brownboyFront.getImage();
+					return ConstPersoSprites.brownboyFront.getImage();
 				else if(foot == 1)
-					return Const.brownboyFrontRight.getImage();
+					return ConstPersoSprites.brownboyFrontRight.getImage();
 				else if(foot == 2)
-					return Const.brownboyFrontLeft.getImage();
+					return ConstPersoSprites.brownboyFrontLeft.getImage();
 			}
 			else if(direction == Direction.LEFT) {
 				if(foot == 0)	
-					return Const.brownboyLeft.getImage();
+					return ConstPersoSprites.brownboyLeft.getImage();
 				else if(foot == 1)	
-					return Const.brownboyLeftRight.getImage();
+					return ConstPersoSprites.brownboyLeftRight.getImage();
 				else if(foot == 2)	
-					return Const.brownboyLeftLeft.getImage();
+					return ConstPersoSprites.brownboyLeftLeft.getImage();
 				
 			}
 			else if(direction == Direction.RIGHT) {
 				if(foot == 0)	
-					return Const.brownboyRight.getImage();
+					return ConstPersoSprites.brownboyRight.getImage();
 				else if(foot == 1)	
-					return Const.brownboyRightRight.getImage();
+					return ConstPersoSprites.brownboyRightRight.getImage();
 				else if(foot == 2)	
-					return Const.brownboyRightLeft.getImage();
+					return ConstPersoSprites.brownboyRightLeft.getImage();
 			}
 		}
 		
@@ -94,36 +94,36 @@ public class PnjSprites {
 		if(pnj.contains("browngirl")) {
 			if(direction == Direction.UP) {
 				if(foot == 0)
-					return Const.browngirlBack.getImage();
+					return ConstPersoSprites.browngirlBack.getImage();
 				else if(foot == 1)
-					return Const.browngirlBackRight.getImage();
+					return ConstPersoSprites.browngirlBackRight.getImage();
 				else if(foot == 2)
-					return Const.browngirlBackLeft.getImage();
+					return ConstPersoSprites.browngirlBackLeft.getImage();
 			}
 			else if(direction == Direction.DOWN) {
 				if(foot == 0)
-					return Const.browngirlFront.getImage();
+					return ConstPersoSprites.browngirlFront.getImage();
 				else if(foot == 1)
-					return Const.browngirlFrontRight.getImage();
+					return ConstPersoSprites.browngirlFrontRight.getImage();
 				else if(foot == 2)
-					return Const.browngirlFrontLeft.getImage();
+					return ConstPersoSprites.browngirlFrontLeft.getImage();
 			}
 			else if(direction == Direction.LEFT) {
 				if(foot == 0)	
-					return Const.browngirlLeft.getImage();
+					return ConstPersoSprites.browngirlLeft.getImage();
 				else if(foot == 1)	
-					return Const.browngirlLeftRight.getImage();
+					return ConstPersoSprites.browngirlLeftRight.getImage();
 				else if(foot == 2)	
-					return Const.browngirlLeftLeft.getImage();
+					return ConstPersoSprites.browngirlLeftLeft.getImage();
 				
 			}
 			else if(direction == Direction.RIGHT) {
 				if(foot == 0)	
-					return Const.browngirlRight.getImage();
+					return ConstPersoSprites.browngirlRight.getImage();
 				else if(foot == 1)	
-					return Const.browngirlRightRight.getImage();
+					return ConstPersoSprites.browngirlRightRight.getImage();
 				else if(foot == 2)	
-					return Const.browngirlRightLeft.getImage();
+					return ConstPersoSprites.browngirlRightLeft.getImage();
 			}
 		}
 		
@@ -133,36 +133,36 @@ public class PnjSprites {
 		if(pnj.contains("capboy")) {
 			if(direction == Direction.UP) {
 				if(foot == 0)
-					return Const.capboyBack.getImage();
+					return ConstPersoSprites.capboyBack.getImage();
 				else if(foot == 1)
-					return Const.capboyBackRight.getImage();
+					return ConstPersoSprites.capboyBackRight.getImage();
 				else if(foot == 2)
-					return Const.capboyBackLeft.getImage();
+					return ConstPersoSprites.capboyBackLeft.getImage();
 			}
 			else if(direction == Direction.DOWN) {
 				if(foot == 0)
-					return Const.capboyFront.getImage();
+					return ConstPersoSprites.capboyFront.getImage();
 				else if(foot == 1)
-					return Const.capboyFrontRight.getImage();
+					return ConstPersoSprites.capboyFrontRight.getImage();
 				else if(foot == 2)
-					return Const.capboyFrontLeft.getImage();
+					return ConstPersoSprites.capboyFrontLeft.getImage();
 			}
 			else if(direction == Direction.LEFT) {
 				if(foot == 0)	
-					return Const.capboyLeft.getImage();
+					return ConstPersoSprites.capboyLeft.getImage();
 				else if(foot == 1)	
-					return Const.capboyLeftRight.getImage();
+					return ConstPersoSprites.capboyLeftRight.getImage();
 				else if(foot == 2)	
-					return Const.capboyLeftLeft.getImage();
+					return ConstPersoSprites.capboyLeftLeft.getImage();
 				
 			}
 			else if(direction == Direction.RIGHT) {
 				if(foot == 0)	
-					return Const.capboyRight.getImage();
+					return ConstPersoSprites.capboyRight.getImage();
 				else if(foot == 1)	
-					return Const.capboyRightRight.getImage();
+					return ConstPersoSprites.capboyRightRight.getImage();
 				else if(foot == 2)	
-					return Const.capboyRightLeft.getImage();
+					return ConstPersoSprites.capboyRightLeft.getImage();
 			}
 		}
 		
@@ -172,36 +172,36 @@ public class PnjSprites {
 		if(pnj.contains("bugcatcher")) {
 			if(direction == Direction.UP) {
 				if(foot == 0)
-					return Const.bugcatcherBack.getImage();
+					return ConstPersoSprites.bugcatcherBack.getImage();
 				else if(foot == 1)
-					return Const.bugcatcherBackRight.getImage();
+					return ConstPersoSprites.bugcatcherBackRight.getImage();
 				else if(foot == 2)
-					return Const.bugcatcherBackLeft.getImage();
+					return ConstPersoSprites.bugcatcherBackLeft.getImage();
 			}
 			else if(direction == Direction.DOWN) {
 				if(foot == 0)
-					return Const.bugcatcherFront.getImage();
+					return ConstPersoSprites.bugcatcherFront.getImage();
 				else if(foot == 1)
-					return Const.bugcatcherFrontRight.getImage();
+					return ConstPersoSprites.bugcatcherFrontRight.getImage();
 				else if(foot == 2)
-					return Const.bugcatcherFrontLeft.getImage();
+					return ConstPersoSprites.bugcatcherFrontLeft.getImage();
 			}
 			else if(direction == Direction.LEFT) {
 				if(foot == 0)	
-					return Const.bugcatcherLeft.getImage();
+					return ConstPersoSprites.bugcatcherLeft.getImage();
 				else if(foot == 1)	
-					return Const.bugcatcherLeftRight.getImage();
+					return ConstPersoSprites.bugcatcherLeftRight.getImage();
 				else if(foot == 2)	
-					return Const.bugcatcherLeftLeft.getImage();
+					return ConstPersoSprites.bugcatcherLeftLeft.getImage();
 				
 			}
 			else if(direction == Direction.RIGHT) {
 				if(foot == 0)	
-					return Const.bugcatcherRight.getImage();
+					return ConstPersoSprites.bugcatcherRight.getImage();
 				else if(foot == 1)	
-					return Const.bugcatcherRightRight.getImage();
+					return ConstPersoSprites.bugcatcherRightRight.getImage();
 				else if(foot == 2)	
-					return Const.bugcatcherRightLeft.getImage();
+					return ConstPersoSprites.bugcatcherRightLeft.getImage();
 			}
 		}
 		
@@ -211,36 +211,36 @@ public class PnjSprites {
 		if(pnj.contains("campingboy")) {
 			if(direction == Direction.UP) {
 				if(foot == 0)
-					return Const.campingboyBack.getImage();
+					return ConstPersoSprites.campingboyBack.getImage();
 				else if(foot == 1)
-					return Const.campingboyBackRight.getImage();
+					return ConstPersoSprites.campingboyBackRight.getImage();
 				else if(foot == 2)
-					return Const.campingboyBackLeft.getImage();
+					return ConstPersoSprites.campingboyBackLeft.getImage();
 			}
 			else if(direction == Direction.DOWN) {
 				if(foot == 0)
-					return Const.campingboyFront.getImage();
+					return ConstPersoSprites.campingboyFront.getImage();
 				else if(foot == 1)
-					return Const.campingboyFrontRight.getImage();
+					return ConstPersoSprites.campingboyFrontRight.getImage();
 				else if(foot == 2)
-					return Const.campingboyFrontLeft.getImage();
+					return ConstPersoSprites.campingboyFrontLeft.getImage();
 			}
 			else if(direction == Direction.LEFT) {
 				if(foot == 0)	
-					return Const.campingboyLeft.getImage();
+					return ConstPersoSprites.campingboyLeft.getImage();
 				else if(foot == 1)	
-					return Const.campingboyLeftRight.getImage();
+					return ConstPersoSprites.campingboyLeftRight.getImage();
 				else if(foot == 2)	
-					return Const.campingboyLeftLeft.getImage();
+					return ConstPersoSprites.campingboyLeftLeft.getImage();
 				
 			}
 			else if(direction == Direction.RIGHT) {
 				if(foot == 0)	
-					return Const.campingboyRight.getImage();
+					return ConstPersoSprites.campingboyRight.getImage();
 				else if(foot == 1)	
-					return Const.campingboyRightRight.getImage();
+					return ConstPersoSprites.campingboyRightRight.getImage();
 				else if(foot == 2)	
-					return Const.campingboyRightLeft.getImage();
+					return ConstPersoSprites.campingboyRightLeft.getImage();
 			}
 		}
 		
@@ -250,36 +250,75 @@ public class PnjSprites {
 		if(pnj.contains("campinggirl")) {
 			if(direction == Direction.UP) {
 				if(foot == 0)
-					return Const.campinggirlBack.getImage();
+					return ConstPersoSprites.campinggirlBack.getImage();
 				else if(foot == 1)
-					return Const.campinggirlBackRight.getImage();
+					return ConstPersoSprites.campinggirlBackRight.getImage();
 				else if(foot == 2)
-					return Const.campinggirlBackLeft.getImage();
+					return ConstPersoSprites.campinggirlBackLeft.getImage();
 			}
 			else if(direction == Direction.DOWN) {
 				if(foot == 0)
-					return Const.campinggirlFront.getImage();
+					return ConstPersoSprites.campinggirlFront.getImage();
 				else if(foot == 1)
-					return Const.campinggirlFrontRight.getImage();
+					return ConstPersoSprites.campinggirlFrontRight.getImage();
 				else if(foot == 2)
-					return Const.campinggirlFrontLeft.getImage();
+					return ConstPersoSprites.campinggirlFrontLeft.getImage();
 			}
 			else if(direction == Direction.LEFT) {
 				if(foot == 0)	
-					return Const.campinggirlLeft.getImage();
+					return ConstPersoSprites.campinggirlLeft.getImage();
 				else if(foot == 1)	
-					return Const.campinggirlLeftRight.getImage();
+					return ConstPersoSprites.campinggirlLeftRight.getImage();
 				else if(foot == 2)	
-					return Const.campinggirlLeftLeft.getImage();
+					return ConstPersoSprites.campinggirlLeftLeft.getImage();
 				
 			}
 			else if(direction == Direction.RIGHT) {
 				if(foot == 0)	
-					return Const.campinggirlRight.getImage();
+					return ConstPersoSprites.campinggirlRight.getImage();
 				else if(foot == 1)	
-					return Const.campinggirlRightRight.getImage();
+					return ConstPersoSprites.campinggirlRightRight.getImage();
 				else if(foot == 2)	
-					return Const.campinggirlRightLeft.getImage();
+					return ConstPersoSprites.campinggirlRightLeft.getImage();
+			}
+		}
+		
+		//*********************************************************************************************
+		// Overalls Man
+		
+		if(pnj.contains("overallsman")) {
+			if(direction == Direction.UP) {
+				if(foot == 0)
+					return ConstPersoSprites.overallsmanBack.getImage();
+				else if(foot == 1)
+					return ConstPersoSprites.overallsmanBackRight.getImage();
+				else if(foot == 2)
+					return ConstPersoSprites.overallsmanBackLeft.getImage();
+			}
+			else if(direction == Direction.DOWN) {
+				if(foot == 0)
+					return ConstPersoSprites.overallsmanFront.getImage();
+				else if(foot == 1)
+					return ConstPersoSprites.overallsmanFrontRight.getImage();
+				else if(foot == 2)
+					return ConstPersoSprites.overallsmanFrontLeft.getImage();
+			}
+			else if(direction == Direction.LEFT) {
+				if(foot == 0)	
+					return ConstPersoSprites.overallsmanLeft.getImage();
+				else if(foot == 1)	
+					return ConstPersoSprites.overallsmanLeftRight.getImage();
+				else if(foot == 2)	
+					return ConstPersoSprites.overallsmanLeftLeft.getImage();
+				
+			}
+			else if(direction == Direction.RIGHT) {
+				if(foot == 0)	
+					return ConstPersoSprites.overallsmanRight.getImage();
+				else if(foot == 1)	
+					return ConstPersoSprites.overallsmanRightRight.getImage();
+				else if(foot == 2)	
+					return ConstPersoSprites.overallsmanRightLeft.getImage();
 			}
 		}
 		
@@ -289,7 +328,7 @@ public class PnjSprites {
 		if(pnj.contains("police")) {
 			if(direction == Direction.RIGHT) {
 				if(foot == 0)	
-					return Const.policeRight.getImage();
+					return ConstPersoSprites.policeRight.getImage();
 			}
 		}
 		
@@ -299,19 +338,19 @@ public class PnjSprites {
 		if(pnj.contains("sellerboy")) {
 			if(direction == Direction.UP) {
 				if(foot == 0)	
-					return Const.sellerboyFront.getImage();
+					return ConstPersoSprites.sellerboyFront.getImage();
 			}
 			else if(direction == Direction.DOWN) {
 				if(foot == 0)	
-					return Const.sellerboyBack.getImage();
+					return ConstPersoSprites.sellerboyBack.getImage();
 			}
 			else if(direction == Direction.LEFT) {
 				if(foot == 0)	
-					return Const.sellerboyLeft.getImage();
+					return ConstPersoSprites.sellerboyLeft.getImage();
 			}
 			else if(direction == Direction.RIGHT) {
 				if(foot == 0)	
-					return Const.sellerboyRight.getImage();
+					return ConstPersoSprites.sellerboyRight.getImage();
 			}
 		}		
 		
@@ -321,36 +360,36 @@ public class PnjSprites {
 		if(pnj.contains("umbrellagirl")) {
 			if(direction == Direction.UP) {
 				if(foot == 0)
-					return Const.umbrellagirlBack.getImage();
+					return ConstPersoSprites.umbrellagirlBack.getImage();
 				else if(foot == 1)
-					return Const.umbrellagirlBackRight.getImage();
+					return ConstPersoSprites.umbrellagirlBackRight.getImage();
 				else if(foot == 2)
-					return Const.umbrellagirlBackLeft.getImage();
+					return ConstPersoSprites.umbrellagirlBackLeft.getImage();
 			}
 			else if(direction == Direction.DOWN) {
 				if(foot == 0)
-					return Const.umbrellagirlFront.getImage();
+					return ConstPersoSprites.umbrellagirlFront.getImage();
 				else if(foot == 1)
-					return Const.umbrellagirlFrontRight.getImage();
+					return ConstPersoSprites.umbrellagirlFrontRight.getImage();
 				else if(foot == 2)
-					return Const.umbrellagirlFrontLeft.getImage();
+					return ConstPersoSprites.umbrellagirlFrontLeft.getImage();
 			}
 			else if(direction == Direction.LEFT) {
 				if(foot == 0)	
-					return Const.umbrellagirlLeft.getImage();
+					return ConstPersoSprites.umbrellagirlLeft.getImage();
 				else if(foot == 1)	
-					return Const.umbrellagirlLeftRight.getImage();
+					return ConstPersoSprites.umbrellagirlLeftRight.getImage();
 				else if(foot == 2)	
-					return Const.umbrellagirlLeftLeft.getImage();
+					return ConstPersoSprites.umbrellagirlLeftLeft.getImage();
 				
 			}
 			else if(direction == Direction.RIGHT) {
 				if(foot == 0)	
-					return Const.umbrellagirlRight.getImage();
+					return ConstPersoSprites.umbrellagirlRight.getImage();
 				else if(foot == 1)	
-					return Const.umbrellagirlRightRight.getImage();
+					return ConstPersoSprites.umbrellagirlRightRight.getImage();
 				else if(foot == 2)	
-					return Const.umbrellagirlRightLeft.getImage();
+					return ConstPersoSprites.umbrellagirlRightLeft.getImage();
 			}
 		}
 		
@@ -360,36 +399,36 @@ public class PnjSprites {
 		if(pnj.equals("profChen")) {
 			if(direction == Direction.UP) {
 				if(foot == 0)
-					return Const.profChenBack.getImage();
+					return ConstPersoSprites.profChenBack.getImage();
 				else if(foot == 1)
-					return Const.profChenBackRight.getImage();
+					return ConstPersoSprites.profChenBackRight.getImage();
 				else if(foot == 2)
-					return Const.profChenBackLeft.getImage();
+					return ConstPersoSprites.profChenBackLeft.getImage();
 			}
 			else if(direction == Direction.DOWN) {
 				if(foot == 0)
-					return Const.profChenFront.getImage();
+					return ConstPersoSprites.profChenFront.getImage();
 				else if(foot == 1)
-					return Const.profChenFrontRight.getImage();
+					return ConstPersoSprites.profChenFrontRight.getImage();
 				else if(foot == 2)
-					return Const.profChenFrontLeft.getImage();
+					return ConstPersoSprites.profChenFrontLeft.getImage();
 			}
 			else if(direction == Direction.LEFT) {
 				if(foot == 0)	
-					return Const.profChenLeft.getImage();
+					return ConstPersoSprites.profChenLeft.getImage();
 				else if(foot == 1)	
-					return Const.profChenLeftRight.getImage();
+					return ConstPersoSprites.profChenLeftRight.getImage();
 				else if(foot == 2)	
-					return Const.profChenLeftLeft.getImage();
+					return ConstPersoSprites.profChenLeftLeft.getImage();
 				
 			}
 			else if(direction == Direction.RIGHT) {
 				if(foot == 0)	
-					return Const.profChenRight.getImage();
+					return ConstPersoSprites.profChenRight.getImage();
 				else if(foot == 1)	
-					return Const.profChenRightRight.getImage();
+					return ConstPersoSprites.profChenRightRight.getImage();
 				else if(foot == 2)	
-					return Const.profChenRightLeft.getImage();
+					return ConstPersoSprites.profChenRightLeft.getImage();
 			}
 		}
 		
@@ -400,71 +439,71 @@ public class PnjSprites {
 			if(Variables.PERSO_Sex.equals("boy")) {
 				if(direction == Direction.UP) {
 					if(foot == 0)
-						return Const.girlBack.getImage();
+						return ConstPersoSprites.girlBack.getImage();
 					else if(foot == 1)
-						return Const.girlBackRight.getImage();
+						return ConstPersoSprites.girlBackRight.getImage();
 					else if(foot == 2)
-						return Const.girlBackLeft.getImage();
+						return ConstPersoSprites.girlBackLeft.getImage();
 				}
 				else if(direction == Direction.DOWN) {
 					if(foot == 0)
-						return Const.girlFront.getImage();
+						return ConstPersoSprites.girlFront.getImage();
 					else if(foot == 1)
-						return Const.girlFrontRight.getImage();
+						return ConstPersoSprites.girlFrontRight.getImage();
 					else if(foot == 2)
-						return Const.girlFrontLeft.getImage();
+						return ConstPersoSprites.girlFrontLeft.getImage();
 				}
 				else if(direction == Direction.LEFT) {
 					if(foot == 0)	
-						return Const.girlLeft.getImage();
+						return ConstPersoSprites.girlLeft.getImage();
 					else if(foot == 1)	
-						return Const.girlLeftRight.getImage();
+						return ConstPersoSprites.girlLeftRight.getImage();
 					else if(foot == 2)	
-						return Const.girlLeftLeft.getImage();
+						return ConstPersoSprites.girlLeftLeft.getImage();
 					
 				}
 				else if(direction == Direction.RIGHT) {
 					if(foot == 0)	
-						return Const.girlRight.getImage();
+						return ConstPersoSprites.girlRight.getImage();
 					else if(foot == 1)	
-						return Const.girlRightRight.getImage();
+						return ConstPersoSprites.girlRightRight.getImage();
 					else if(foot == 2)	
-						return Const.girlRightLeft.getImage();
+						return ConstPersoSprites.girlRightLeft.getImage();
 				}
 			}
 			else {
 				if(direction == Direction.UP) {
 					if(foot == 0)
-						return Const.boyBack.getImage();
+						return ConstPersoSprites.boyBack.getImage();
 					else if(foot == 1)
-						return Const.boyBackRight.getImage();
+						return ConstPersoSprites.boyBackRight.getImage();
 					else if(foot == 2)
-						return Const.boyBackLeft.getImage();
+						return ConstPersoSprites.boyBackLeft.getImage();
 				}
 				else if(direction == Direction.DOWN) {
 					if(foot == 0)
-						return Const.boyFront.getImage();
+						return ConstPersoSprites.boyFront.getImage();
 					else if(foot == 1)
-						return Const.boyFrontRight.getImage();
+						return ConstPersoSprites.boyFrontRight.getImage();
 					else if(foot == 2)
-						return Const.boyFrontLeft.getImage();
+						return ConstPersoSprites.boyFrontLeft.getImage();
 				}
 				else if(direction == Direction.LEFT) {
 					if(foot == 0)	
-						return Const.boyLeft.getImage();
+						return ConstPersoSprites.boyLeft.getImage();
 					else if(foot == 1)	
-						return Const.boyLeftRight.getImage();
+						return ConstPersoSprites.boyLeftRight.getImage();
 					else if(foot == 2)	
-						return Const.boyLeftLeft.getImage();
+						return ConstPersoSprites.boyLeftLeft.getImage();
 					
 				}
 				else if(direction == Direction.RIGHT) {
 					if(foot == 0)	
-						return Const.boyRight.getImage();
+						return ConstPersoSprites.boyRight.getImage();
 					else if(foot == 1)	
-						return Const.boyRightRight.getImage();
+						return ConstPersoSprites.boyRightRight.getImage();
 					else if(foot == 2)	
-						return Const.boyRightLeft.getImage();
+						return ConstPersoSprites.boyRightLeft.getImage();
 				}
 			}
 		}
