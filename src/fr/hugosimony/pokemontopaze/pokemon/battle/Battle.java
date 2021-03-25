@@ -108,7 +108,7 @@ public class Battle extends JPanel {
 					game.textZone = new TextZone(game.actualPanel, text);
 					TextZone.printTextZone(game.textZone, game);	
 				}
-			}, 1500);
+			}, 750);
 		}
 		else
 			game.inBattle = false;

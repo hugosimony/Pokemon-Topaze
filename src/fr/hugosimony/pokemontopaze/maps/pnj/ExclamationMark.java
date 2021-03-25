@@ -30,6 +30,7 @@ public class ExclamationMark extends JPanel{
 		setSize(Const.exclamationMark.getIconWidth(), Const.exclamationMark.getIconHeight());
 		
 		game.map.add(em);
+		game.deplacement.setSprites();
 		game.map.repaint();
 		
 		new Timer().schedule(new TimerTask() {

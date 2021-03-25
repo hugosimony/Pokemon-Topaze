@@ -631,7 +631,7 @@ public class Road01 extends JPanel {
 		}
 		
 		if(Variables.BATTLERS.contains("campinggirl001")){
-			animationTiles.add(new IntTriple(3584, 1320, 3));
+			animationTiles.add(new IntTriple(3584, 1322, 3));
 			animationTiles.add(new IntTriple(3584, 1290, 3));
 			animationTiles.add(new IntTriple(3584, 1258, 3));
 			animationTiles.add(new IntTriple(3584, 1226, 3));
