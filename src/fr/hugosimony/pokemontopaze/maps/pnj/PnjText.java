@@ -1,5 +1,6 @@
 package fr.hugosimony.pokemontopaze.maps.pnj;
 
+import fr.hugosimony.pokemontopaze.Game;
 import fr.hugosimony.pokemontopaze.Variables;
 import fr.hugosimony.pokemontopaze.pokemon.PKM;
 
@@ -119,9 +120,13 @@ public class PnjText {
 						+ "chose...";
 			
 			if(perso.equals("capboy002")) {
-				if(Variables.BATTLERS.contains("capboy002"))
+				if(Variables.BATTLERS.contains("capboy002")) {
+					Game.waitingBattle = "capboy002";
+					Game.waitingBattlefield = "GymLeader7";
+					Game.waitingWeather = "Good";
 					return "Tu as un Pokémon,= moi aussi.= Nos regards se sont croisés !=\n"
 					+ "Quand c'est le cas, on doit s'affronter != On y va !=^";
+				}
 				return "Tu m'as battu.= Dans un combat,= il faut toujours un vainqueur\n"
 						+ "et un perdant.";
 			}
@@ -141,9 +146,13 @@ public class PnjText {
 		else if(perso.contains("campinggirl")) {
 			
 			if(perso.equals("campinggirl001")) {
-				if(Variables.BATTLERS.contains("campinggirl001"))
+				if(Variables.BATTLERS.contains("campinggirl001")) {
+					Game.waitingBattle = "campinggirl001";
+					Game.waitingBattlefield = "GymLeader7";
+					Game.waitingWeather = "Good";
 					return "Eh toi,= tu sais camper ¤= Moi j'adore ça != Mais t'es un\n"
-							+ "dresseur ¤!= Allez combat !=^";
+					+ "dresseur ¤!= Allez combat !=^";
+				}
 				return "J'ai perdu mais je peux camper.= Du coup ça va.";
 			}
 		}
@@ -163,9 +172,13 @@ public class PnjText {
 		else if(perso.contains("bugcatcher")) {
 			
 			if(perso.equals("bugcatcher001")) {
-				if(Variables.BATTLERS.contains("bugcatcher001"))
+				if(Variables.BATTLERS.contains("bugcatcher001")) {
+					Game.waitingBattle = "bugcatcher001";
+					Game.waitingBattlefield = "GymLeader7";
+					Game.waitingWeather = "Good";
 					return "Coucou != Tu connais les Pokémons Insectes ¤= Tu vas\n"
-							+ "voir,= ils sont géniaux !=^";
+					+ "voir,= ils sont géniaux !=^";
+				}
 				return "Les Pokémons Insectes sont vraiment trop cools !";
 			}
 		}
@@ -175,9 +188,13 @@ public class PnjText {
 		else if(perso.contains("campingboy")) {
 			
 			if(perso.equals("campingboy001")) {
-				if(Variables.BATTLERS.contains("campingboy001"))
+				if(Variables.BATTLERS.contains("campingboy001")) {
+					Game.waitingBattle = "campingboy001";
+					Game.waitingBattlefield = "GymLeader7";
+					Game.waitingWeather = "Good";
 					return "Je pourrais passer toutes mes journées à camper,= mais si en\n"
-							+ "plus je peux combattre,= je suis aux anges !=^";
+					+ "plus je peux combattre,= je suis aux anges !=^";
+				}
 				return "Tu m'as battu,= mais c'est pas grave,= je retourne compter\n"
 						+ "les brins d'herbe.";
 			}
