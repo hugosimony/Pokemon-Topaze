@@ -132,9 +132,72 @@ public enum Moves {
 	
 	NULL;
 	
+	public static int getPriority(Moves move) {
+		
+		switch(move) {
+		case COUP_D_MAIN:
+			return 5;
+		case REFLET_MAGIK:
+		case SAISIE :
+		case PICO_DEFENSE :
+		case DETECTION :
+		case BOUCLIER_ROYAL :
+		case ABRI :
+			return 4;
+		case TENACITE :
+		case GARDE_LARGE :
+		case BLUFF :
+		case VIGILANCE:
+			return 3;
+		case VIT_EXTREME:
+		case RUSE:
+		case POUDREFUREUR:
+		case PAR_ICI:
+		case PREVENTION:
+		case INTERVERSION:
+			return 2;
+		case AQUA_JET:
+		case COUP_BAS:
+		case DELUGE_PLASMIQUE:
+		case ECLATS_GLACE:
+		case MACH_PUNCH:
+		case OMBRE_PORTEE:
+		case ONDE_VIDE:
+		case PATIENCE:
+		case PISTO_POING:
+		case VIVE_ATTAQUE:
+		case SHEAURIKEN:
+		case NUEE_DE_POUDRE:
+		case REGARD_TOUCHANT:
+			return 1;
+		case CORPS_PERDU:
+			return -1;
+		case MITRA_POING:
+			return 2;
+		case AVALANCHE:
+		case VENDETTA:
+			return -4;
+		case RIPOSTE:
+		case VOILE_MIROIR:
+			return -5;
+		case CYCLONE:
+		case HURLEMENT:
+		case DRACO_QUEUE:
+		case PROJECTION:
+			return -6;
+		case DISTORSION:
+		case ZONE_ETRANGE:
+		case ZONE_MAGIQUE:
+			return -7;
+		default:
+			return 0;
+		}
+	}
+	
 	public static String[] getMoveData(Moves move) {
 		
 		switch(move) {
+		
 		case A_LA_QUEUE:
 			return new String[] {"À la Queue", "TENEBRES", "Retient la cible de force, l'obligeant à agir en dernier.", "-", "100", "15", "STATUT"};
 		case ABIME:
