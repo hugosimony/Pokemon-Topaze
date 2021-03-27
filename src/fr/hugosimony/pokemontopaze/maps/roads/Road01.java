@@ -49,6 +49,8 @@ public class Road01 extends JPanel {
 	public Pnj battler02;
 	public Pnj battler03;
 	public Pnj battler04;
+	public Pnj road01Pnj01;
+	public Pnj road01Pnj02;
 	public Pnj profChen;
 	public Pnj rival;
 	
@@ -428,6 +430,15 @@ public class Road01 extends JPanel {
 		
 		battler04 = new Pnj(game, "campingboy001", Direction.UP, 0, 3648, 1002, false, false, null, null, false, false);
 		game.pnjs.add(battler04);
+		
+		int[][] directionsPnj01 = {
+				{0, 1, 0},
+				{0, 2, 1},
+				{1, 1, 1}
+		};
+		road01Pnj01 = new Pnj(game, "brownboy003", Direction.DOWN, 0, 3328, 1226, true, true, directionsPnj01, null, false, false);
+		game.pnjs.add(road01Pnj01);
+		
 	}
 	
 	private void setHerbs() {
