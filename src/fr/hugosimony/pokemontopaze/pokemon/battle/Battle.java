@@ -34,6 +34,10 @@ public class Battle extends JPanel {
 	
 	public PokemonSprite sprite1;
 	public PokemonSprite sprite2;
+	
+	public BattlePokemon battlePokemon1;
+	public BattlePokemon battlePokemon2;
+	
 	public int x = 0;
 	
 	public Battle(Game game, boolean savage, String opponent, String background, String weather, JPanel savedMap) {
@@ -81,6 +85,9 @@ public class Battle extends JPanel {
 			sprite2 = new PokemonSprite(pokemon2, true);
 			add(sprite2);
 		} catch (IOException e) {}
+		
+		battlePokemon1 = new BattlePokemon(pokemon1);
+		battlePokemon2 = new BattlePokemon(pokemon2);
 		
 		repaint();
 	}

@@ -19,9 +19,9 @@ public class Move {
 		description = data[2];
 		type = Type.getTypeFromString(data[1]);
 		category = Type.getCategoryFromString(data[6]);
-		power = Integer.parseInt(data[3]);
-		precision = Integer.parseInt(data[4]);
-		pp = Integer.parseInt(data[5]);
+		power = data[3].equals("-") ? -1 :Integer.parseInt(data[3]);
+		precision = data[4].equals("-") ? 1000 : Integer.parseInt(data[4]);
+		pp = data[5].equals("-") ? -1 : Integer.parseInt(data[5]);
 	}
 	
 }

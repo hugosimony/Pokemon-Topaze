@@ -13,7 +13,6 @@ import fr.hugosimony.pokemontopaze.pokemon.items.Item;
 
 public class BattlePokemon {
 
-	private Battle battle;
 	public PKM pkm;
 	public String name;
 	public Nature nature;
@@ -33,22 +32,24 @@ public class BattlePokemon {
 	public int DEF;
 	public int DEF_SPE;
 	public int SPEED;
+	public int stageATK;
+	public int stageATK_SPE;
+	public int stageDEF;
+	public int stageDEF_SPE;
+	public int stageSPEED;
+	public int stagePRECISION;
+	public int stageAVOIDANCE;
+	public boolean onTwoTurnAttack;
 	public double weight;
 	public Move move1;
 	public Move move2;
 	public Move move3;
 	public Move move4;
 	public Item item;
-	
-	private int BOOST_ATK;
-	private int BOOST_ATK_SPE;
-	private int BOOST_DEF;
-	private int BOOST_DEF_SPE;
-	private int BOOST_SPEED;
+
 	private ArrayList<Status> secondaryStatus;
 	
-	public BattlePokemon(Battle battle, Pokemon pokemon) {
-		this.battle = battle;
+	public BattlePokemon(Pokemon pokemon) {
 		this.pkm = pokemon.pokemon;
 		this.name = pokemon.name;
 		this.nature = pokemon.nature;
@@ -68,17 +69,20 @@ public class BattlePokemon {
 		this.DEF = pokemon.DEF;
 		this.DEF_SPE = pokemon.DEF_SPE;
 		this.SPEED = pokemon.SPEED;
+		this.stageATK = 0;
+		this.stageATK_SPE = 0;
+		this.stageDEF = 0;
+		this.stageDEF_SPE = 0;
+		this.stageSPEED = 0;
+		this.stagePRECISION = 0;
+		this.stageAVOIDANCE = 0;
+		this.onTwoTurnAttack = false;
 		this.weight = pokemon.weight;
 		this.move1 = pokemon.move1;
 		this.move2 = pokemon.move2;
 		this.move3 = pokemon.move3;
 		this.move4 = pokemon.move4;
 		this.item = pokemon.item;
-		BOOST_ATK = 0;
-		BOOST_ATK_SPE = 0;
-		BOOST_DEF = 0;
-		BOOST_DEF_SPE = 0;
-		BOOST_SPEED = 0;
-		secondaryStatus = new ArrayList<Status>();
+		this.secondaryStatus = new ArrayList<Status>();
 	}
 }

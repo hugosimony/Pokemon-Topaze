@@ -6,7 +6,7 @@ import fr.hugosimony.pokemontopaze.pokemon.Status;
 
 public class BattleMove {
 	
-	public BattleMove(Battle battle, BattlePokemon sender, BattlePokemon target, Move move, boolean player) {
+	public BattleMove(Battle battle, BattlePokemon sender, BattlePokemon target, Move move, boolean subMove, boolean player) {
 		
 		boolean canceled = false;
 		
@@ -28,6 +28,14 @@ public class BattleMove {
 		move.pp--;
 		if(target.ability.ability == Abilities.PRESSION)
 			move.pp--;
+		
+		
+		
+		// End of the move
+		if(!subMove) {
+			battle.battlePokemon1 = player ? sender : target;
+			battle.battlePokemon2 = player ? target : sender;
+		}
 		
 	}
 
