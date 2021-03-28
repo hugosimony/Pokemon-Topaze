@@ -436,7 +436,7 @@ public class Road01 extends JPanel {
 				{0, 2, 1},
 				{1, 1, 1}
 		};
-		road01Pnj01 = new Pnj(game, "brownboy003", Direction.DOWN, 0, 3328, 1226, true, true, directionsPnj01, null, false, false);
+		road01Pnj01 = new Pnj(game, "brownboy002", Direction.DOWN, 0, 3328, 1226, true, true, directionsPnj01, null, false, false);
 		game.pnjs.add(road01Pnj01);
 		
 	}

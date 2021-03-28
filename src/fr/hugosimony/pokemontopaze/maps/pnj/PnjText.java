@@ -12,7 +12,7 @@ public class PnjText {
 		
 		if(perso.equals("mom")) {
 			if(Variables.ADVENTURE_Step == 0)
-				return "Ah t'es enfin réveillé" + Variables.LANG_Feminin + "...= Bon, t'as pas un truc à faire là ¤\n="
+				return "Ah t'es enfin réveillé" + Variables.LANG_Feminin + "...= Bon, t'as pas un truc à faire là ¤=\n"
 						+ "Le Prof Chen t'attend à Villaube, au nord.";
 			if(Variables.ADVENTURE_Step == 1)
 				return "Bon, t'as pas un truc à faire là ¤= Le Prof Chen t'attend\n"
@@ -29,6 +29,11 @@ public class PnjText {
 			if(perso.equals("brownboy001")) {
 				return "Tu connais le Prof Chen ¤= C'est un vieux monsieur qui aime bien\n"
 						+ "les femmes.= J'ai entendu dire qu'il avait des Pokémons rares !";
+			}
+			
+			if(perso.equals("brownboy002")) {
+				return "Moi ¤= Non, je ne suis pas un dresseur,= mais fais attention != Si\n"
+						+ "un dresseur croise ton regard,= il voudra te combattre.";
 			}
 		}
 	
@@ -64,15 +69,15 @@ public class PnjText {
 			if(Variables.ADVENTURE_Step >= 2 && Variables.ADVENTURE_Step <=4)
 				return "+";
 			if(Variables.ADVENTURE_Step == 5)
-				return "Dans chacune de ces Poké Balls se trouve un Pokémon.\n="
+				return "Dans chacune de ces Poké Balls se trouve un Pokémon.=\n"
 						+ "Ils sont encore jeunes.=\n"
-						+ "Le Pokémon que tu choisiras explorera la région avec toi.\n="
+						+ "Le Pokémon que tu choisiras explorera la région avec toi.=\n"
 						+ "Tu t'amélioreras avec lui.=+";
 			if(Variables.ADVENTURE_Step == 6 || Variables.ADVENTURE_Step == 7)
 				return "C'est le moment.= Choisis bien,= tu ne pourras pas revenir\n"
 						+ "en arrière.";
 			if(Variables.ADVENTURE_Step == 8)
-				return "Tu as donc choisi " + PKM.getStarterName(Variables.STARTER) + " != Très bon choix.\n="
+				return "Tu as donc choisi " + PKM.getStarterName(Variables.STARTER) + " != Très bon choix.=\n"
 						+ "Prends en grand soin.=+";
 			if(Variables.ADVENTURE_Step == 11)
 				return "Prof. Chen := Eh bah " + Variables.RIVAL_Name + ",= toujours aussi poli" + Variables.RIVAL_Feminin + "...=\n"
