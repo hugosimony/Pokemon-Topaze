@@ -29,7 +29,11 @@ public class BattleMove {
 		if(target.ability.ability == Abilities.PRESSION)
 			move.pp--;
 		
+		//TODO 
+		// Check Brise Moule
 		
+		//TODO
+		// Get Damage
 		
 		// End of the move
 		if(!subMove) {
