@@ -11,7 +11,20 @@ public class BattleMove {
 		boolean canceled = false;
 		
 		if(Status.hasPreMoveEffect(sender.status)) {
-			
+			if(sender.status == Status.PARALYSIS) {
+				// TODO
+				// Handle paralysis
+			}
+			else if(sender.status == Status.FREEZE) {
+				// TODO
+				// Handle freeze
+			}
+			else if(sender.status == Status.SLEEP) {
+				// TODO
+				// Handle sleep
+			}
+			// TODO
+			// Handle secondary status
 		}
 		
 		if(canceled)
