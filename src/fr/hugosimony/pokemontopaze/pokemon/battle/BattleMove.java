@@ -11,6 +11,14 @@ public class BattleMove {
 		boolean canceled = false;
 		
 		if(Status.hasPreMoveEffect(sender.status)) {
+			if(sender.secondaryStatus.contains(Status.FLINCH)) {
+				// TODO
+				// Handle flinch
+			}
+			if(sender.secondaryStatus.contains(Status.OVERLEVEL)) {
+				// TODO
+				// Handle overlevel
+			}
 			if(sender.status == Status.PARALYSIS) {
 				// TODO
 				// Handle paralysis
@@ -23,8 +31,14 @@ public class BattleMove {
 				// TODO
 				// Handle sleep
 			}
-			// TODO
-			// Handle secondary status
+			if(sender.secondaryStatus.contains(Status.ATTRACTION)) {
+				// TODO
+				// Handle attraction
+			}
+			if(sender.secondaryStatus.contains(Status.CONFUSION)) {
+				// TODO
+				// Handle confusion
+			}
 		}
 		
 		if(canceled)

@@ -5,7 +5,7 @@ public enum Status {
 	BURN,
 	FREEZE,
 	PARALYSIS,
-	POSION,
+	POISON,
 	SLEEP,
 	
 	ATTRACTION,

@@ -47,7 +47,7 @@ public class BattlePokemon {
 	public Move move4;
 	public Item item;
 
-	private ArrayList<Status> secondaryStatus;
+	public ArrayList<Status> secondaryStatus;
 	
 	public BattlePokemon(Pokemon pokemon) {
 		this.pkm = pokemon.pokemon;
