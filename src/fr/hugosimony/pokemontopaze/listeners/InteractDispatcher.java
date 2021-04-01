@@ -75,25 +75,40 @@ public class InteractDispatcher implements KeyEventDispatcher {
 					 }
 				 }
 			 }
-			 // DEBUG
-			 if(event.getID() == KeyEvent.KEY_PRESSED && game.inBattle) {
-				 int keyCode = event.getKeyCode();
-				 if(keyCode == KeyEvent.VK_A) {
-					 game.battle.x++;
-					 game.battle.remove(game.battle.sprite1);
-					 game.battle.remove(game.battle.sprite2);
-					 game.battle.repaint();
-					 game.battle.sprite1.setVisible(false);
-					 game.battle.sprite2.setVisible(false);
-					 Pokemon pokemon1 = new Pokemon(PKM.values()[game.battle.x], 50, "");
-					 Pokemon pokemon2 = new Pokemon(PKM.values()[game.battle.x], 50, "");
-					 try {
-						 game.battle.sprite1 = new PokemonSprite(pokemon1, false);
-						 game.battle.add(game.battle.sprite1);
-						 game.battle.sprite2 = new PokemonSprite(pokemon2, true);
-						 game.battle.add(game.battle.sprite2);
-					 } catch (IOException e) {}
-				 }
+		 }
+		 if(event.getID() == KeyEvent.KEY_PRESSED && game.inBattle) {
+			 int keyCode = event.getKeyCode();
+			 if(keyCode == KeyEvent.VK_A) {
+				 game.battle.x++;
+				 game.battle.remove(game.battle.sprite1);
+				 game.battle.remove(game.battle.sprite2);
+				 game.battle.repaint();
+				 game.battle.sprite1.setVisible(false);
+				 game.battle.sprite2.setVisible(false);
+				 Pokemon pokemon1 = new Pokemon(PKM.values()[game.battle.x], 50, "");
+				 Pokemon pokemon2 = new Pokemon(PKM.values()[game.battle.x], 50, "");
+				 try {
+					 game.battle.sprite1 = new PokemonSprite(pokemon1, false);
+					 game.battle.add(game.battle.sprite1);
+					 game.battle.sprite2 = new PokemonSprite(pokemon2, true);
+					 game.battle.add(game.battle.sprite2);
+				 } catch (IOException e) {}
+			 }
+			 if(keyCode == KeyEvent.VK_B) {
+				 game.battle.x--;
+				 game.battle.remove(game.battle.sprite1);
+				 game.battle.remove(game.battle.sprite2);
+				 game.battle.repaint();
+				 game.battle.sprite1.setVisible(false);
+				 game.battle.sprite2.setVisible(false);
+				 Pokemon pokemon1 = new Pokemon(PKM.values()[game.battle.x], 50, "");
+				 Pokemon pokemon2 = new Pokemon(PKM.values()[game.battle.x], 50, "");
+				 try {
+					 game.battle.sprite1 = new PokemonSprite(pokemon1, false);
+					 game.battle.add(game.battle.sprite1);
+					 game.battle.sprite2 = new PokemonSprite(pokemon2, true);
+					 game.battle.add(game.battle.sprite2);
+				 } catch (IOException e) {}
 			 }
 		 }
 		 return false;
