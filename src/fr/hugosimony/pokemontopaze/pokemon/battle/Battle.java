@@ -15,8 +15,10 @@ import fr.hugosimony.pokemontopaze.Main;
 import fr.hugosimony.pokemontopaze.maps.Map;
 import fr.hugosimony.pokemontopaze.menus.TextZone;
 import fr.hugosimony.pokemontopaze.musics.Musics;
+import fr.hugosimony.pokemontopaze.pokemon.Move;
 import fr.hugosimony.pokemontopaze.pokemon.PKM;
 import fr.hugosimony.pokemontopaze.pokemon.Pokemon;
+import fr.hugosimony.pokemontopaze.pokemon.items.Items;
 import fr.hugosimony.pokemontopaze.transitions.TransitionSimple;
 
 @SuppressWarnings("unused")
@@ -77,8 +79,8 @@ public class Battle extends JPanel {
 		
 		//Pokemon pokemon1 = new Pokemon(PKM.values()[Utils.randomNumber(150)], 50, "");
 		//Pokemon pokemon2= new Pokemon(PKM.values()[Utils.randomNumber(150)], 50, "");
-		Pokemon pokemon1 = new Pokemon(PKM.values()[x], 50, "");
-		Pokemon pokemon2 = new Pokemon(PKM.values()[x], 50, "");
+		Pokemon pokemon1 = new Pokemon(PKM.values()[x], 50, Items.NONE);
+		Pokemon pokemon2 = new Pokemon(PKM.values()[x], 50, Items.NONE);
 		try {
 			sprite1 = new PokemonSprite(pokemon1, false);
 			add(sprite1);
@@ -96,6 +98,17 @@ public class Battle extends JPanel {
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 		g.drawImage(BattleConst.getBackground(background).getImage(), 0, 0, null);
+	}
+	
+	public void startMoves(Move playerMove) {
+		//TODO
+		// Get the moves in order
+		
+		// https://github.com/smogon/pokemon-showdown/blob/af8b286d2cfcacfef3d1b799fea611b09ab3ea74/sim/pokemon.ts#L478
+		// https://github.com/smogon/pokemon-showdown/blob/af8b286d2cfcacfef3d1b799fea611b09ab3ea74/sim/battle.ts#L2496
+		// https://github.com/smogon/pokemon-showdown/blob/af8b286d2cfcacfef3d1b799fea611b09ab3ea74/sim/pokemon.ts#L560
+		
+		// https://www.pokepedia.fr/Vive_Griffe
 	}
 	
 	public void endBattle(boolean savage, boolean run) {

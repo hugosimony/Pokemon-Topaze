@@ -9,6 +9,7 @@ public class Move {
 	public Type category;
 	public int power;
 	public int precision;
+	public int ppMax;
 	public int pp;
 	
 	public Move(Moves move) {
@@ -21,7 +22,8 @@ public class Move {
 		category = Type.getCategoryFromString(data[6]);
 		power = data[3].equals("-") ? -1 :Integer.parseInt(data[3]);
 		precision = data[4].equals("-") ? 1000 : Integer.parseInt(data[4]);
-		pp = data[5].equals("-") ? -1 : Integer.parseInt(data[5]);
+		ppMax = data[5].equals("-") ? -1 : Integer.parseInt(data[5]);
+		pp = ppMax;
 	}
 	
 }

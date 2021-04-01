@@ -3,7 +3,7 @@ package fr.hugosimony.pokemontopaze.pokemon;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import fr.hugosimony.pokemontopaze.pokemon.items.Item;
+import fr.hugosimony.pokemontopaze.pokemon.items.Items;
 import fr.hugosimony.pokemontopaze.pokemon.items.PokeBalls;
 import fr.hugosimony.pokemontopaze.utils.Utils;
 
@@ -18,8 +18,8 @@ public class Pokemon {
 	public Type type1;
 	public Type type2;
 	public int level;
-	private int xp;
-	public int xpToNextLevel;
+	private int xp; // https://www.pokepedia.fr/Exp%C3%A9rience
+	public int xpToNextLevel; // https://www.pokepedia.fr/Courbe_d%27exp%C3%A9rience
 	private int xpDropped;
 	public int friendship;
 	public boolean isKO;
@@ -49,7 +49,7 @@ public class Pokemon {
 	public Move move2;
 	public Move move3;
 	public Move move4;
-	public Item item;
+	public Items item;
 	public int catchRate;
 	private PokeBalls ball;
 	private String catchDressorName;
@@ -60,7 +60,7 @@ public class Pokemon {
 	
 	private long ID;
 	
-	public Pokemon(PKM pokemon, int level, String item) {
+	public Pokemon(PKM pokemon, int level, Items item) {
 		// Generate a random pokemon
 		this.pokemon = pokemon;
 		this.name = PKM.getGoodName(pokemon);
@@ -81,7 +81,7 @@ public class Pokemon {
 		ID = Utils.randomLongNumber(0, Long.MAX_VALUE);
 	}
 	
-	public Pokemon(PKM pokemon, String name, Nature nature, int gender, Ability ability, int level, int xp, int xpToNextLevel, boolean isKO, int HP, int currentHP, int ATK, int ATK_SPE, int DEF, int DEF_SPE, int SPEED, Move move1, Move move2, Move move3, Move move4, Item item, PokeBalls ball, String catchDressorName, boolean shiny, long ID) {
+	public Pokemon(PKM pokemon, String name, Nature nature, int gender, Ability ability, int level, int xp, int xpToNextLevel, boolean isKO, int HP, int currentHP, int ATK, int ATK_SPE, int DEF, int DEF_SPE, int SPEED, Move move1, Move move2, Move move3, Move move4, Items item, PokeBalls ball, String catchDressorName, boolean shiny, long ID) {
 		
 		this.pokemon = pokemon;
 		this.name = name;

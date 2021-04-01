@@ -16,6 +16,7 @@ import fr.hugosimony.pokemontopaze.menus.TextZone;
 import fr.hugosimony.pokemontopaze.pokemon.PKM;
 import fr.hugosimony.pokemontopaze.pokemon.Pokemon;
 import fr.hugosimony.pokemontopaze.pokemon.battle.PokemonSprite;
+import fr.hugosimony.pokemontopaze.pokemon.items.Items;
 import fr.hugosimony.pokemontopaze.utils.IntTuple;
 
 public class InteractDispatcher implements KeyEventDispatcher {
@@ -85,8 +86,8 @@ public class InteractDispatcher implements KeyEventDispatcher {
 				 game.battle.repaint();
 				 game.battle.sprite1.setVisible(false);
 				 game.battle.sprite2.setVisible(false);
-				 Pokemon pokemon1 = new Pokemon(PKM.values()[game.battle.x], 50, "");
-				 Pokemon pokemon2 = new Pokemon(PKM.values()[game.battle.x], 50, "");
+				 Pokemon pokemon1 = new Pokemon(PKM.values()[game.battle.x], 50, Items.NONE);
+				 Pokemon pokemon2 = new Pokemon(PKM.values()[game.battle.x], 50, Items.NONE);
 				 try {
 					 game.battle.sprite1 = new PokemonSprite(pokemon1, false);
 					 game.battle.add(game.battle.sprite1);
@@ -101,8 +102,8 @@ public class InteractDispatcher implements KeyEventDispatcher {
 				 game.battle.repaint();
 				 game.battle.sprite1.setVisible(false);
 				 game.battle.sprite2.setVisible(false);
-				 Pokemon pokemon1 = new Pokemon(PKM.values()[game.battle.x], 50, "");
-				 Pokemon pokemon2 = new Pokemon(PKM.values()[game.battle.x], 50, "");
+				 Pokemon pokemon1 = new Pokemon(PKM.values()[game.battle.x], 50, Items.NONE);
+				 Pokemon pokemon2 = new Pokemon(PKM.values()[game.battle.x], 50, Items.NONE);
 				 try {
 					 game.battle.sprite1 = new PokemonSprite(pokemon1, false);
 					 game.battle.add(game.battle.sprite1);

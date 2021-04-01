@@ -17,7 +17,7 @@ public class BattlePokemon {
 	public String name;
 	public Nature nature;
 	public int gender;
-	public Ability ability;
+	public Ability ability; // https://www.pokemontrash.com/pokedex/liste-capacites.php
 	public Type type1;
 	public Type type2;
 	public int level;
@@ -32,6 +32,7 @@ public class BattlePokemon {
 	public int DEF;
 	public int DEF_SPE;
 	public int SPEED;
+	// https://www.pokebip.com/page/strategie/swsh/modifications-statistiques#2
 	public int stageATK;
 	public int stageATK_SPE;
 	public int stageDEF;
@@ -40,7 +41,7 @@ public class BattlePokemon {
 	public int stagePRECISION;
 	public int stageAVOIDANCE;
 	public boolean onTwoTurnAttack;
-	public double weight;
+	public double weight; // https://www.pokepedia.fr/Poids
 	public Move move1;
 	public Move move2;
 	public Move move3;
@@ -82,7 +83,7 @@ public class BattlePokemon {
 		this.move2 = pokemon.move2;
 		this.move3 = pokemon.move3;
 		this.move4 = pokemon.move4;
-		this.item = pokemon.item;
+		this.item = new Item(pokemon.item);
 		this.secondaryStatus = new ArrayList<Status>();
 	}
 }
