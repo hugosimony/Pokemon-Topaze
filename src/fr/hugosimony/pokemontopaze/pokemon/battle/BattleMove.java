@@ -124,7 +124,7 @@ public class BattleMove {
 					else if(r == 2) randomMove = sender.move3;
 					else if(r == 3) randomMove = sender.move4;
 					System.out.println(senderName + "utilise plutôt" + randomMove.name);
-					new BattleMove(battle, sender, target, randomMove, subMove, player);
+					new BattleMove(battle, sender, target, randomMove, true, player);
 				}
 				canceled = true;
 			}
