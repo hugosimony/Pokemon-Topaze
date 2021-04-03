@@ -31,4 +31,8 @@ public class Move {
 			|| move == Moves.EBULLITION || move == Moves.FLAMME_CROIX || move == Moves.JET_DE_VAPEUR;
 	}
 	
+	public boolean canMoveInSleep() {
+		return move == Moves.BLABLA_DODO || move == Moves.RONFLEMENT;
+	}
+	
 }

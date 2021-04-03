@@ -26,6 +26,7 @@ public class BattlePokemon {
 	public int currentHP;
 	public boolean isKO;
 	public Status status;
+	public int statusTurn;
 	public int HP;
 	public int ATK;
 	public int ATK_SPE;
@@ -49,6 +50,7 @@ public class BattlePokemon {
 	public Item item;
 
 	public ArrayList<Status> secondaryStatus;
+	public ArrayList<Integer> secondaryStatusTurns;
 	
 	public BattlePokemon(Pokemon pokemon) {
 		this.pkm = pokemon.pokemon;

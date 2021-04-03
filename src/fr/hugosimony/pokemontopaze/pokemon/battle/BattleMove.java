@@ -147,8 +147,15 @@ public class BattleMove {
 				}
 			}
 			else if(!canceled && sender.status == Status.SLEEP) {
-				// TODO
-				// Handle sleep
+				if(sender.statusTurn == 1) {
+					System.out.println(senderName + "se réveille.");
+					sender.status = Status.NULL;
+				}
+				else if(!move.canMoveInSleep()) {
+					System.out.println(senderName + "dort.");
+					sender.statusTurn--;
+					canceled = true;
+				}
 			}
 			if(!canceled && sender.secondaryStatus.contains(Status.ATTRACTION)) {
 				// TODO
