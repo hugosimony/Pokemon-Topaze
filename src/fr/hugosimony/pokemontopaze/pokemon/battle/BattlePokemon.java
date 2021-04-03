@@ -50,7 +50,7 @@ public class BattlePokemon {
 	public Item item;
 
 	public ArrayList<Status> secondaryStatus;
-	public ArrayList<Integer> secondaryStatusTurns;
+	public int confusionTurn;
 	
 	public BattlePokemon(Pokemon pokemon) {
 		this.pkm = pokemon.pokemon;

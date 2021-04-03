@@ -15,7 +15,7 @@ public class BattleMove {
 	private boolean player;
 	
 	private String senderName;
-	private String victimName;
+	private String targetName;
 	
 	public BattleMove(Battle battle, BattlePokemon sender, BattlePokemon target, Move move, boolean subMove, boolean player) {
 		this.battle = battle;
@@ -26,10 +26,10 @@ public class BattleMove {
 		this.player = player;
 	
 		senderName = sender.name + (player ? " ennemi " : " ");
-		victimName = sender.name + (player ? " " : " ennemi ");
+		targetName = sender.name + (player ? " " : " ennemi ");
 		
 		System.out.println("---------------------------------------------------------------------------------");
-		System.out.println("Start of the move " + move.name + " by " + senderName + " against " + victimName);
+		System.out.println("Start of the move " + move.name + " by " + senderName + " against " + targetName);
 		
 		// https://github.com/smogon/pokemon-showdown/blob/master/simulator-doc.txt
 		// https://github.com/smogon/pokemon-showdown/blob/master/sim/battle.ts
@@ -72,12 +72,14 @@ public class BattleMove {
 		// Get Damage
 		// https://www.pokepedia.fr/Calcul_des_d%C3%A9g%C3%A2ts
 		
+		// TODO 
+		// Handle the freeze after an attack
+		
 		// End of the move
-		if(!subMove) {
-			// Update the pokemon data
-			battle.battlePokemon1 = player ? sender : target;
-			battle.battlePokemon2 = player ? target : sender;
-		}
+		
+		// Update the pokemon data
+		battle.battlePokemon1 = player ? sender : target;
+		battle.battlePokemon2 = player ? target : sender;
 		
 		return "0";
 	}
@@ -135,8 +137,6 @@ public class BattleMove {
 				}
 			}
 			else if(!canceled && sender.status == Status.FREEZE) {
-				// TODO 
-				// Handle the freeze after an attack
 				if(Utils.randomNumber(4) == 0 || move.doUnfreeze()) {
 					System.out.println(senderName + "dégèle.");
 					sender.status = Status.NULL;
@@ -147,7 +147,7 @@ public class BattleMove {
 				}
 			}
 			else if(!canceled && sender.status == Status.SLEEP) {
-				if(sender.statusTurn == 1) {
+				if(sender.statusTurn == 0) {
 					System.out.println(senderName + "se réveille.");
 					sender.status = Status.NULL;
 				}
@@ -158,12 +158,27 @@ public class BattleMove {
 				}
 			}
 			if(!canceled && sender.secondaryStatus.contains(Status.ATTRACTION)) {
-				// TODO
-				// Handle attraction
+				System.out.println(senderName + "est amoureux de " + targetName);
+				if(Utils.randomNumber(1) == 0) {
+					System.out.println("L'amour empèche " + senderName + "d'attaquer");
+					canceled = true;
+				}
 			}
 			if(!canceled && sender.secondaryStatus.contains(Status.CONFUSION)) {
-				// TODO
-				// Handle confusion
+				if(sender.confusionTurn == 0) {
+					System.out.println(senderName + "n'est plus confus.");
+					sender.secondaryStatus.remove(Status.CONFUSION);
+				}
+				else {
+					System.out.println(senderName + "est confus.");
+					if(Utils.randomNumber(1) == 0) {
+						System.out.println(senderName + "se blesse dans sa confusion");
+						canceled = true;
+						//TODO
+						// Hurt the pokemon as a confusion
+					}
+					sender.confusionTurn--;
+				}
 			}
 		}
 		return canceled;
