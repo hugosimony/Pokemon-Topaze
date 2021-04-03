@@ -65,6 +65,7 @@ public class Pokemon {
 		this.pokemon = pokemon;
 		this.name = PKM.getGoodName(pokemon);
 		this.level = level;
+		this.item = item;
 		initGlobalDatas();
 		initEVs();
 		initIVs();

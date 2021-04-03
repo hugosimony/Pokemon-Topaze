@@ -15,7 +15,6 @@ public class Fonts {
 		try {
 	        File fontFile = new File(FONT_POKEMON.toURI());
 	        Font font = Font.createFont(Font.TRUETYPE_FONT, fontFile);
-	        System.out.println(font.getFontName());
 	        GraphicsEnvironment ge = GraphicsEnvironment
 	                .getLocalGraphicsEnvironment();
 	        ge.registerFont(font);
