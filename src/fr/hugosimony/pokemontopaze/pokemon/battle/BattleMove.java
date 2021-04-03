@@ -115,8 +115,7 @@ public class BattleMove {
 				}
 				else if(random == 8) {
 					System.out.println(senderName + "ne veut pas obéir et se blesse tout seul.");
-					//TODO
-					// Hurt the pokemon as a confusion
+					doConfusionHurt();
 				}
 				if(random == 0 || random == 3 || random == 4 || random == 5 || random == 6) {
 					Move randomMove = null;
@@ -173,9 +172,8 @@ public class BattleMove {
 					System.out.println(senderName + "est confus.");
 					if(Utils.randomNumber(1) == 0) {
 						System.out.println(senderName + "se blesse dans sa confusion");
+						doConfusionHurt();
 						canceled = true;
-						//TODO
-						// Hurt the pokemon as a confusion
 					}
 					sender.confusionTurn--;
 				}
@@ -184,4 +182,8 @@ public class BattleMove {
 		return canceled;
 	}
 
+	private void doConfusionHurt() {
+		
+	}
+	
 }

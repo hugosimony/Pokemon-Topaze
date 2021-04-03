@@ -8,6 +8,7 @@ import javax.sound.sampled.FloatControl;
 
 import fr.hugosimony.pokemontopaze.files.FileCreator;
 import fr.hugosimony.pokemontopaze.musics.Musics;
+import fr.hugosimony.pokemontopaze.utils.fonts.Fonts;
 
 public class Main {
 
@@ -36,6 +37,10 @@ public class Main {
 			System.out.println("options.txt found.");
 				
 		//*****************************************************************
+		// Fonts
+		System.out.println("Loading fonts ...");
+		Fonts.loadFonts();
+		System.out.println("All fonts found.");
 		
 		settingsOn = false;
 		

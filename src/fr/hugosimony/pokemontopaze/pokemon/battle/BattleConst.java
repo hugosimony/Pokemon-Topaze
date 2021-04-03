@@ -1,7 +1,5 @@
 package fr.hugosimony.pokemontopaze.pokemon.battle;
 
-import java.net.URL;
-
 import javax.swing.ImageIcon;
 
 import fr.hugosimony.pokemontopaze.Main;
@@ -20,14 +18,17 @@ public class BattleConst {
 	//****************************************************************************************************
 	// Buttons
 	
-	private static final URL fightButtonURL = Main.class.getResource("pokemon/battle/menus/fightButton.gif");
-	public static final ImageIcon fightButton = new ImageIcon(fightButtonURL);
-	private static final URL bagButtonURL = Main.class.getResource("pokemon/battle/menus/bagButton.gif");
-	public static final ImageIcon bagButton = new ImageIcon(bagButtonURL);
-	private static final URL pokemonButtonURL = Main.class.getResource("pokemon/battle/menus/pokemonButton.gif");
-	public static final ImageIcon pokemonButton = new ImageIcon(pokemonButtonURL);
-	private static final URL runButtonURL = Main.class.getResource("pokemon/battle/menus/runButton.gif");
-	public static final ImageIcon runButton = new ImageIcon(runButtonURL);
+	public static final ImageIcon fightButton = new ImageIcon(Main.class.getResource("pokemon/battle/menus/fightButton.gif"));
+	public static final ImageIcon bagButton = new ImageIcon(Main.class.getResource("pokemon/battle/menus/bagButton.gif"));
+	public static final ImageIcon pokemonButton = new ImageIcon(Main.class.getResource("pokemon/battle/menus/pokemonButton.gif"));
+	public static final ImageIcon runButton = new ImageIcon(Main.class.getResource("pokemon/battle/menus/runButton.gif"));
+	
+	//****************************************************************************************************
+	// Databoxs
+	
+	public static final ImageIcon databoxHero1 = new ImageIcon(Main.class.getResource("pokemon/battle/menus/databoxHero1.gif"));
+	public static final ImageIcon databoxHero2 = new ImageIcon(Main.class.getResource("pokemon/battle/menus/databoxHero2.gif"));
+	public static final ImageIcon databoxTarget1 = new ImageIcon(Main.class.getResource("pokemon/battle/menus/databoxTarget1.gif"));
 	
 	//****************************************************************************************************
 	// Pokémon Sprites

@@ -133,4 +133,12 @@ public class Battle extends JPanel {
 		else
 			game.inBattle = false;
 	}
+
+	private class Databox {
+		
+		public void Databox(int databox) {
+			//TODO
+			// Print the databox
+		}		
+	}
 }
