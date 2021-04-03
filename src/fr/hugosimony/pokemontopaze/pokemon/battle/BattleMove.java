@@ -129,12 +129,22 @@ public class BattleMove {
 				canceled = true;
 			}
 			if(!canceled && sender.status == Status.PARALYSIS) {
-				// TODO
-				// Handle paralysis
+				if(Utils.randomNumber(3) == 0) {
+					System.out.println(senderName + "est paralysé et ne peut pas attaquer.");
+					canceled = true;
+				}
 			}
 			else if(!canceled && sender.status == Status.FREEZE) {
-				// TODO
-				// Handle freeze
+				// TODO 
+				// Handle the freeze after an attack
+				if(Utils.randomNumber(4) == 0 || move.doUnfreeze()) {
+					System.out.println(senderName + "dégèle.");
+					sender.status = Status.NULL;
+				}
+				else {
+					System.out.println(senderName + "est gelé et ne peut pas attaquer.");
+					canceled = true;
+				}
 			}
 			else if(!canceled && sender.status == Status.SLEEP) {
 				// TODO

@@ -26,4 +26,9 @@ public class Move {
 		pp = ppMax;
 	}
 	
+	public boolean doUnfreeze() {
+		return move == Moves.ROUE_DE_FEU || move == Moves.FEU_SACRE || move == Moves.BOUTEFEU
+			|| move == Moves.EBULLITION || move == Moves.FLAMME_CROIX || move == Moves.JET_DE_VAPEUR;
+	}
+	
 }
