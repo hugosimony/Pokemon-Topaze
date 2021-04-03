@@ -24,7 +24,7 @@ public class TextZone extends JPanel {
 	public static Game game;
 	public static TextZone textZone;
 	
-	private Font textFont = new Font("Comic Sans MS", Font.ITALIC, 20);
+	private Font textFont = new Font("Power Clear", Font.PLAIN, 23);
 	
 	private int labelIndex;
 	private int labelIndex2;
