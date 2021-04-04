@@ -61,6 +61,9 @@ public class Battle extends JPanel {
 		game.actualPanel = this;
 		Musics.startMusic(BattleMusics.getGoodMusic(opponent));
 		
+		Databox databox1 = new Databox(1);
+		Databox databox2 = new Databox(2);
+		
 		JButton fightButton = new BattleButtons.Fight(this);
 		JButton bagButton = new BattleButtons.Bag(this);
 		JButton pokemonButton = new BattleButtons.Pokemon(this);
@@ -134,11 +137,25 @@ public class Battle extends JPanel {
 			game.inBattle = false;
 	}
 
-	private class Databox {
+	private class Databox extends JPanel{
+		private static final long serialVersionUID = 1L;
+
+		int databox;
 		
-		public void Databox(int databox) {
-			//TODO
-			// Print the databox
-		}		
+		public Databox(int databox) {
+			this.databox = databox;
+			setOpaque(false);
+			setLayout(null);
+			setVisible(true);
+		}	
+
+		@Override
+		public void paintComponent(Graphics g) {
+			super.paintComponent(g);
+			if(databox == 1) // TODO set the coordinates
+				g.drawImage(BattleConst.databoxTarget1.getImage(), 0, 0, null);
+			else if(databox == 2) // TODO set the coordinates
+				g.drawImage(BattleConst.databoxHero1.getImage(), 0, 0, null);
+		}
 	}
 }
