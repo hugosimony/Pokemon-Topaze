@@ -20,6 +20,7 @@ import fr.hugosimony.pokemontopaze.pokemon.PKM;
 import fr.hugosimony.pokemontopaze.pokemon.Pokemon;
 import fr.hugosimony.pokemontopaze.pokemon.items.Items;
 import fr.hugosimony.pokemontopaze.transitions.TransitionSimple;
+import fr.hugosimony.pokemontopaze.utils.Utils;
 
 @SuppressWarnings("unused")
 public class Battle extends JPanel {
@@ -80,10 +81,10 @@ public class Battle extends JPanel {
 		add(runButton);
 		
 		
-		//Pokemon pokemon1 = new Pokemon(PKM.values()[Utils.randomNumber(150)], 50, "");
-		//Pokemon pokemon2= new Pokemon(PKM.values()[Utils.randomNumber(150)], 50, "");
-		Pokemon pokemon1 = new Pokemon(PKM.values()[x], 50, Items.NONE);
-		Pokemon pokemon2 = new Pokemon(PKM.values()[x], 50, Items.NONE);
+		Pokemon pokemon1 = new Pokemon(PKM.values()[Utils.randomNumber(150)], 50, Items.NONE);
+		Pokemon pokemon2= new Pokemon(PKM.values()[Utils.randomNumber(150)], 50, Items.NONE);
+		//Pokemon pokemon1 = new Pokemon(PKM.values()[x], 50, Items.NONE);
+		//Pokemon pokemon2 = new Pokemon(PKM.values()[x], 50, Items.NONE);
 		try {
 			sprite1 = new PokemonSprite(pokemon1, false);
 			add(sprite1);
