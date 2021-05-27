@@ -293,7 +293,7 @@ public class PresentationProf extends JPanel {
 					speach = "Tu t'appelles donc bien " + name + " ?";
 					speachLines = speach.split("\n");
 					Timer timer = new Timer();
-				    timer.schedule(new SpeechProf(), 0, (long) Variables.SPEED_TEXT);
+				    timer.scheduleAtFixedRate(new SpeechProf(), 0, (long) Variables.SPEED_TEXT);
 				    nameArea.setVisible(false);
 				    validateName.setVisible(false);
 				    Yes.setVisible(true);
@@ -327,7 +327,7 @@ public class PresentationProf extends JPanel {
 						+	 "*Bien que j'ai une petite préférence...*";
 					speachLines = speach.split("\n");
 					Timer timer = new Timer();
-				    timer.schedule(new SpeechProf(), 0, (long) Variables.SPEED_TEXT);
+				    timer.scheduleAtFixedRate(new SpeechProf(), 0, (long) Variables.SPEED_TEXT);
 			    }
 			    else if(sexQuestion) {
 			    	sexQuestion = false;
@@ -344,7 +344,7 @@ public class PresentationProf extends JPanel {
 					speachLines = speach.split("\n");
 					lastSpech = true;
 					Timer timer = new Timer();
-				    timer.schedule(new SpeechProf(), 0, (long) Variables.SPEED_TEXT);
+				    timer.scheduleAtFixedRate(new SpeechProf(), 0, (long) Variables.SPEED_TEXT);
 			    }
 			   
 			}
@@ -369,7 +369,7 @@ public class PresentationProf extends JPanel {
 					speachLines = speach.split("\n");
 					nameQuestion = false;
 					Timer timer = new Timer();
-				    timer.schedule(new SpeechProf(), 0, (long) Variables.SPEED_TEXT);
+				    timer.scheduleAtFixedRate(new SpeechProf(), 0, (long) Variables.SPEED_TEXT);
 				}
 				else if(sexQuestion) {
 					Yes.setVisible(false);
@@ -380,7 +380,7 @@ public class PresentationProf extends JPanel {
 					speachLines = speach.split("\n");
 					sexQuestion = false;
 					Timer timer = new Timer();
-				    timer.schedule(new SpeechProf(), 0, (long) Variables.SPEED_TEXT);
+				    timer.scheduleAtFixedRate(new SpeechProf(), 0, (long) Variables.SPEED_TEXT);
 				}
 			   
 			}
@@ -414,7 +414,7 @@ public class PresentationProf extends JPanel {
 				speach = "Tu es donc bien un garçon ?";
 				speachLines = speach.split("\n");
 				Timer timer = new Timer();
-			    timer.schedule(new SpeechProf(), 0, (long) Variables.SPEED_TEXT);
+			    timer.scheduleAtFixedRate(new SpeechProf(), 0, (long) Variables.SPEED_TEXT);
 			    boy.setVisible(false);
 			    girl.setVisible(false);
 			    boyButton.setVisible(false);
@@ -440,7 +440,7 @@ public class PresentationProf extends JPanel {
 				speach = "Tu es donc bien une fille ?";
 				speachLines = speach.split("\n");
 				Timer timer = new Timer();
-			    timer.schedule(new SpeechProf(), 0, (long) Variables.SPEED_TEXT);
+			    timer.scheduleAtFixedRate(new SpeechProf(), 0, (long) Variables.SPEED_TEXT);
 			    boy.setVisible(false);
 			    girl.setVisible(false);
 			    boyButton.setVisible(false);
@@ -487,7 +487,7 @@ public class PresentationProf extends JPanel {
 	    // Timer
         
         Timer timer = new Timer();
-	    timer.schedule(new SpeechProf(), 0, (long) Variables.SPEED_TEXT);
+	    timer.scheduleAtFixedRate(new SpeechProf(), 0, (long) Variables.SPEED_TEXT);
 		
 	}
 	
@@ -646,7 +646,7 @@ public class PresentationProf extends JPanel {
         					speach = "Tu t'appelles donc bien " + name + " ?";
         					speachLines = speach.split("\n");
         					Timer timer = new Timer();
-        				    timer.schedule(new SpeechProf(), 0, (long) Variables.SPEED_TEXT);
+        				    timer.scheduleAtFixedRate(new SpeechProf(), 0, (long) Variables.SPEED_TEXT);
         				    nameArea.setVisible(false);
         				    validateName.setVisible(false);
         				    Yes.setVisible(true);
@@ -665,7 +665,7 @@ public class PresentationProf extends JPanel {
                 			else if(introProf && introProfWaiting) {
                 				introProfWaiting = false;
                 				Timer timer = new Timer();
-                				timer.schedule(new SpeechProf(), 0, (long) Variables.SPEED_TEXT);
+                				timer.scheduleAtFixedRate(new SpeechProf(), 0, (long) Variables.SPEED_TEXT);
                 			}
                     	}
         			}

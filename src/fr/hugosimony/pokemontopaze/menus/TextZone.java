@@ -64,7 +64,7 @@ public class TextZone extends JPanel {
 			waitingText = text.replaceFirst(getTwoFirstLines(textLines), "");
 		resetSpeachsLabel(textLines.length);
 		Timer timer = new Timer();
-		timer.schedule(new PrintText(panel), 0, (long) Variables.SPEED_TEXT);
+		timer.scheduleAtFixedRate(new PrintText(panel), 0, (long) Variables.SPEED_TEXT);
 	}
 	
 	@Override
@@ -170,7 +170,7 @@ public class TextZone extends JPanel {
 							TextZone.printTextZone(textZone, game);
 	 					}
 	 					else
-	 						new Timer().schedule(new PrintText(panel), 1000, (long) Variables.SPEED_TEXT);
+	 						new Timer().scheduleAtFixedRate(new PrintText(panel), 1000, (long) Variables.SPEED_TEXT);
 	 				}
 	 				else {
 	 					if(waitingText.equals("")){
@@ -219,7 +219,7 @@ public class TextZone extends JPanel {
 			waitingText = text.replaceFirst(getTwoFirstLines(textLines), "");
 		resetSpeachsLabel(textLines.length);
 		Timer timer = new Timer();
-		timer.schedule(new PrintText(game.gamePanel), 0, (long) Variables.SPEED_TEXT);
+		timer.scheduleAtFixedRate(new PrintText(game.gamePanel), 0, (long) Variables.SPEED_TEXT);
 	}
 	
 	public String getTwoFirstLines(String[] textLines) {

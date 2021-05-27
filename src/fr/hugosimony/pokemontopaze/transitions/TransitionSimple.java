@@ -16,7 +16,7 @@ public class TransitionSimple {
 		
 		game.inTransition = true;
 		
-		new Timer().schedule(new TimerTask() {
+		new Timer().scheduleAtFixedRate(new TimerTask() {
 			
 			private int x = 1;
 			private Transition transition;

@@ -172,7 +172,7 @@ public class Game extends JFrame {
 		//****************************************************************************************************
 		// Start Global Timer
 		timer = new Timer();
-		timer.schedule(new GlobalTimer(), 60000, 60000);
+		timer.scheduleAtFixedRate(new GlobalTimer(), 60000, 60000);
 		
 		//****************************************************************************************************
 		// Frame Settings

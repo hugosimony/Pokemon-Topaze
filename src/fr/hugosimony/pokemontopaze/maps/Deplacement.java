@@ -122,11 +122,11 @@ public class Deplacement {
 					Sounds.playSound(Const.soundPlayerJump);
 				
 				//**********************************************************
-				timer.schedule(new MoveDirection(direction, false, Variables.SPEED_PERSO, auto, false, null, null, null, null, false), 0, Variables.SPEED_PERSO);
+				timer.scheduleAtFixedRate(new MoveDirection(direction, false, Variables.SPEED_PERSO, auto, false, null, null, null, null, false), 0, Variables.SPEED_PERSO);
 			}
 			else {
 				Sounds.playSound(Const.soundPlayerStopped);
-				timer.schedule(new MoveDirection(direction, true, Variables.SPEED_PERSO, auto, false, null, null, null, null, false), 0, Variables.SPEED_PERSO);
+				timer.scheduleAtFixedRate(new MoveDirection(direction, true, Variables.SPEED_PERSO, auto, false, null, null, null, null, false), 0, Variables.SPEED_PERSO);
 				if(Sounds.canPlayBumpSound) {
 					timer.schedule(new TimerTask() {
 						@Override

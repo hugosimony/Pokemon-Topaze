@@ -76,7 +76,7 @@ public class TextMenuDispatcher implements KeyEventDispatcher {
 	 				 else {
 	 					 if((keyCode == Variables.CONTROLS_A || keyCode == Variables.CONTROLS_B) && game.textWaiting) {
 	         				 game.textWaiting = false;
-	         				 new Timer().schedule(game.textZone.new PrintText(game.actualPanel), 0, (long) Variables.SPEED_TEXT);
+	         				 new Timer().scheduleAtFixedRate(game.textZone.new PrintText(game.actualPanel), 0, (long) Variables.SPEED_TEXT);
 	     				 }
 	 				 }
 				 }

@@ -23,7 +23,7 @@ public class BattlerAnimations {
 			new Timer().schedule(new TimerTask() {
 				@Override
 				public void run() {
-					new Timer().schedule(game.road01.battler01.new Move(Direction.UP, true, finalAnimation, "uu",
+					new Timer().scheduleAtFixedRate(game.road01.battler01.new Move(Direction.UP, true, finalAnimation, "uu",
 							Direction.UP, PnjText.getText("capboy002")), 0, 8);
 					game.deplacement.setDirection(Direction.DOWN);
 					game.deplacement.setStoppedSprites();
@@ -37,7 +37,7 @@ public class BattlerAnimations {
 			new Timer().schedule(new TimerTask() {
 				@Override
 				public void run() {
-					new Timer().schedule(game.road01.battler02.new Move(Direction.UP, true, finalAnimation, "uuuuu",
+					new Timer().scheduleAtFixedRate(game.road01.battler02.new Move(Direction.UP, true, finalAnimation, "uuuuu",
 							Direction.UP, PnjText.getText("campinggirl001")), 0, 8);
 					game.deplacement.setDirection(Direction.DOWN);
 					game.deplacement.setStoppedSprites();
@@ -51,7 +51,7 @@ public class BattlerAnimations {
 			new Timer().schedule(new TimerTask() {
 				@Override
 				public void run() {
-					new Timer().schedule(game.road01.battler03.new Move(Direction.RIGHT, true, finalAnimation, "rrr",
+					new Timer().scheduleAtFixedRate(game.road01.battler03.new Move(Direction.RIGHT, true, finalAnimation, "rrr",
 							Direction.RIGHT, PnjText.getText("bugcatcher001")), 0, 8);
 					game.deplacement.setDirection(Direction.LEFT);
 					game.deplacement.setStoppedSprites();
@@ -65,7 +65,7 @@ public class BattlerAnimations {
 			new Timer().schedule(new TimerTask() {
 				@Override
 				public void run() {
-					new Timer().schedule(game.road01.battler04.new Move(Direction.UP, true, finalAnimation, "uuu",
+					new Timer().scheduleAtFixedRate(game.road01.battler04.new Move(Direction.UP, true, finalAnimation, "uuu",
 							Direction.UP, PnjText.getText("campingboy001")), 0, 8);
 					game.deplacement.setDirection(Direction.DOWN);
 					game.deplacement.setStoppedSprites();
