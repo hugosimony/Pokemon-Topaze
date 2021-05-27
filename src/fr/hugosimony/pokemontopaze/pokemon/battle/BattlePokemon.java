@@ -33,13 +33,12 @@ public class BattlePokemon {
 	public int DEF;
 	public int DEF_SPE;
 	public int SPEED;
-	// https://www.pokebip.com/page/strategie/swsh/modifications-statistiques#2
 	public int stageATK;
 	public int stageATK_SPE;
 	public int stageDEF;
 	public int stageDEF_SPE;
 	public int stageSPEED;
-	public int stagePRECISION;
+	public int stageACCURACY;
 	public int stageAVOIDANCE;
 	public boolean onTwoTurnAttack;
 	public double weight; // https://www.pokepedia.fr/Poids
@@ -77,7 +76,7 @@ public class BattlePokemon {
 		this.stageDEF = 0;
 		this.stageDEF_SPE = 0;
 		this.stageSPEED = 0;
-		this.stagePRECISION = 0;
+		this.stageACCURACY = 0;
 		this.stageAVOIDANCE = 0;
 		this.onTwoTurnAttack = false;
 		this.weight = pokemon.weight;
@@ -87,5 +86,93 @@ public class BattlePokemon {
 		this.move4 = pokemon.move4;
 		this.item = new Item(pokemon.item);
 		this.secondaryStatus = new ArrayList<Status>();
+	}
+	
+	public int getGeneralStatMultiplicator(int stat, int stage) {
+		if(stage == -6)
+			return stat * (2/8);
+		if(stage == -5)
+			return stat * (2/7);
+		if(stage == -4)
+			return stat * (2/6);
+		if(stage == -3)
+			return stat * (2/5);
+		if(stage == -2)
+			return stat * (2/4);
+		if(stage == -1)
+			return stat * (2/3);
+		if(stage == 0)
+			return stat;
+		if(stage == 1)
+			return stat * (3/2);
+		if(stage == 2)
+			return stat * 2;
+		if(stage == 3)
+			return stat * (5/2);
+		if(stage == 4)
+			return stat * 3;
+		if(stage == 5)
+			return stat * (7/2);
+		if(stage == 6)
+			return stat * 4;
+		System.err.println("The stat stage is not correct.");
+		return -1;
+	}
+	
+	public int getAccuracyStatMultiplicator(int precision, int stage, boolean accuracy) {
+		if(!accuracy)
+			stage *= -1;
+		if(stage == -6)
+			return precision * (3/9);
+		if(stage == -5)
+			return precision * (3/8);
+		if(stage == -4)
+			return precision * (3/7);
+		if(stage == -3)
+			return precision * (3/6);
+		if(stage == -2)
+			return precision * (3/5);
+		if(stage == -1)
+			return precision * (3/4);
+		if(stage == 0)
+			return precision;
+		if(stage == 1)
+			return precision * (4/3);
+		if(stage == 2)
+			return precision * (5/3);
+		if(stage == 3)
+			return precision * 2;
+		if(stage == 4)
+			return precision * (7/3);
+		if(stage == 5)
+			return precision * (8/3);
+		if(stage == 6)
+			return precision * 3;
+		System.err.println("The stat stage is not correct.");
+		return -1;
+	}
+	
+	public int getStat(String stat) {
+		if(stat.equals("ATK"))
+			return getGeneralStatMultiplicator(ATK, stageATK);
+		if(stat.equals("ATK_SPE"))
+			return getGeneralStatMultiplicator(ATK_SPE, stageATK_SPE);
+		if(stat.equals("DEF"))
+			return getGeneralStatMultiplicator(DEF, stageDEF);
+		if(stat.equals("DEF_SPE"))
+			return getGeneralStatMultiplicator(DEF_SPE, stageDEF_SPE);
+		if(stat.equals("SPEED"))
+			return getGeneralStatMultiplicator(SPEED, stageSPEED);
+		System.err.println("The stat is not correct.");
+		return -1;
+	}
+	
+	public int getAccuracy(String stat, int precision) {
+		if(stat.equals("PRECISION"))
+			return getAccuracyStatMultiplicator(precision, stageACCURACY, true);
+		if(stat.equals("AVOIDANCE"))
+			return getAccuracyStatMultiplicator(precision, stageACCURACY, false);
+		System.err.println("The stat is not correct.");
+		return -1;
 	}
 }

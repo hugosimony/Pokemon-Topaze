@@ -35,4 +35,16 @@ public class Move {
 		return move == Moves.BLABLA_DODO || move == Moves.RONFLEMENT;
 	}
 	
+	public boolean doOHKO() {
+		return move == Moves.ABIME || move == Moves.EMPAL_KORNE || move == Moves.GLACIATION
+			|| move == Moves.GUILLOTINE;
+	}
+	
+	public boolean isVariable() {
+		return move == Moves.VAGUE_PSY || move == Moves.GYROBALLE || move == Moves.BOULE_ELEK
+			|| move == Moves.BALAYAGE || move == Moves.NOEUD_HERBE || move == Moves.TACLE_FEU
+			|| move == Moves.TACLE_LOURD || move == Moves.ERUPTION || move == Moves.GICLEDO
+			|| move == Moves.CROC_FATAL || move == Moves.ESSORAGE || move == Moves.FRUSTRATION
+			|| move == Moves.RETOUR;
+	}
 }

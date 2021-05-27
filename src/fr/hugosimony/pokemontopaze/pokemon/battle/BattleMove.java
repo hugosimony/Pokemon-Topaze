@@ -2,7 +2,9 @@ package fr.hugosimony.pokemontopaze.pokemon.battle;
 
 import fr.hugosimony.pokemontopaze.pokemon.Abilities;
 import fr.hugosimony.pokemontopaze.pokemon.Move;
+import fr.hugosimony.pokemontopaze.pokemon.Moves;
 import fr.hugosimony.pokemontopaze.pokemon.Status;
+import fr.hugosimony.pokemontopaze.pokemon.Type;
 import fr.hugosimony.pokemontopaze.utils.Utils;
 
 public class BattleMove {
@@ -35,6 +37,7 @@ public class BattleMove {
 		// https://github.com/smogon/pokemon-showdown/blob/master/sim/battle.ts
 		// https://www.pokebip.com/page/general/particularites_attaques
 		// https://www.pokepedia.fr/Cible#Rater_et_r.C3.A9ussir_son_attaque_dans_les_jeux_vid.C3.A9o
+		// https://www.pokepedia.fr/Modification_des_statistiques
 		String result = startMove();
 		System.out.println(result);
 	}
@@ -71,6 +74,42 @@ public class BattleMove {
 		//TODO
 		// Get Damage
 		// https://www.pokepedia.fr/Calcul_des_d%C3%A9g%C3%A2ts
+
+		int damage = 0;
+		
+		if(move.doOHKO()) {
+			damage = 10000;
+		}
+		else if(move.move == Moves.SONICBOOM)
+			damage = 20;
+		else if(move.move == Moves.DRACO_RAGE)
+			damage = 40;
+		else if(move.move == Moves.OMBRE_NOCTURNE || move.move == Moves.FRAPPE_ATLAS)
+			damage = sender.level;
+		else {
+			float CM = 1;
+			if(move.isVariable()) {
+				// TODO
+				// Handle each case
+				damage = 100;
+			}
+			if(move.move == Moves.TRICHERIE)
+				damage = (int) (((int) ((((sender.level * 0.4) + 2) * (target.getStat("ATK") * move.power)) / (target.getStat("DEF") * 50)) + 2) * CM);
+			else if(move.move == Moves.CHOC_PSY || move.move == Moves.FRAPPE_PSY || move.move == Moves.LAME_OINTE)
+				damage = (int) (((int) ((((sender.level * 0.4) + 2) * (target.getStat("ATK_SPE") * move.power)) / (target.getStat("DEF") * 50)) + 2) * CM);
+			else {
+				if(move.category == Type.PHYSIQUE)
+					damage = (int) (((int) ((((sender.level * 0.4) + 2) * (sender.getStat("ATK") * move.power)) / (target.getStat("DEF") * 50)) + 2) * CM);
+				else if(move.category == Type.SPECIALE)
+					damage = (int) (((int) ((((sender.level * 0.4) + 2) * (sender.getStat("ATK_SPE") * move.power)) / (target.getStat("DEF_SPE") * 50)) + 2) * CM);
+			}
+		}
+		
+		// TODO
+		// Check items to survive
+		
+		// TODO 
+		// Check kill
 		
 		// TODO 
 		// Handle the freeze after an attack
