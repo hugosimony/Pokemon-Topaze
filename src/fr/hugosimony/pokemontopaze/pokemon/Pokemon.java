@@ -10,6 +10,9 @@ import fr.hugosimony.pokemontopaze.utils.Utils;
 @SuppressWarnings("unused")
 public class Pokemon {
 	
+	// TODO
+	// Fix the move sets (moves at the same level or same moves at different levels)
+	
 	public PKM pokemon;
 	public String name;
 	public Nature nature;
@@ -58,7 +61,7 @@ public class Pokemon {
 	private HashMap<Integer, ArrayList<Moves>> moveSetLvl;
 	private ArrayList<Moves> moveSetCT;
 	
-	private long ID;
+	private int ID;
 	
 	public Pokemon(PKM pokemon, int level, Items item) {
 		// Generate a random pokemon
@@ -72,6 +75,7 @@ public class Pokemon {
 		initNature();
 		setStats();
 		currentHP = HP;
+		status = Status.NULL;
 		isKO = false;
 		
 		initMoveSet();
@@ -79,10 +83,11 @@ public class Pokemon {
 		
 		initShiny();
 		
-		ID = Utils.randomLongNumber(0, Long.MAX_VALUE);
+		ID = Utils.randomNumber(0, Integer.MAX_VALUE);
+		if(ID < 0) ID *= -1;
 	}
 	
-	public Pokemon(PKM pokemon, String name, Nature nature, int gender, Ability ability, int level, int xp, int xpToNextLevel, boolean isKO, int HP, int currentHP, int ATK, int ATK_SPE, int DEF, int DEF_SPE, int SPEED, Move move1, Move move2, Move move3, Move move4, Items item, PokeBalls ball, String catchDressorName, boolean shiny, long ID) {
+	public Pokemon(PKM pokemon, String name, Nature nature, int gender, Ability ability, int level, int xp, int xpToNextLevel, boolean isKO, int HP, int currentHP, int ATK, int ATK_SPE, int DEF, int DEF_SPE, int SPEED, Move move1, Move move2, Move move3, Move move4, Items item, PokeBalls ball, String catchDressorName, boolean shiny, int ID) {
 		
 		this.pokemon = pokemon;
 		this.name = name;
@@ -130,7 +135,7 @@ public class Pokemon {
 	public void gainXp(int xpGain) {
 		if(xpGain >= xpToNextLevel) {
 			levelUp();
-			// Set new xpToNextLevel
+			// TODO Set new xpToNextLevel
 		}
 		else
 			xpToNextLevel -= xpGain;
@@ -159,10 +164,14 @@ public class Pokemon {
 				ability = new Ability(Abilities.getAbility(datas[8]));
 		}
 		if(ability.ability == Abilities.NULL) {
-			random = Utils.randomNumber(1, 2);
-			ability = new Ability(Abilities.getAbility(datas[6]));
-			if(random == 2)
-				ability = new Ability(Abilities.getAbility(datas[7]));
+			if(Abilities.getAbility(datas[7]) != Abilities.NULL) {
+				random = Utils.randomNumber(1, 2);
+				ability = new Ability(Abilities.getAbility(datas[6]));
+				if(random == 2)
+					ability = new Ability(Abilities.getAbility(datas[7]));
+			}
+			else
+				ability = new Ability(Abilities.getAbility(datas[6]));
 		}
 		// Gender
 		gender = 0;
@@ -234,17 +243,17 @@ public class Pokemon {
 		move2 = new Move(Moves.NULL);
 		move3 = new Move(Moves.NULL);
 		move4 = new Move(Moves.NULL);
-		for(int i = level; i > 0 && move4.move != Moves.NULL; i--) {
+		for(int i = level; i > 0 && move4.move == Moves.NULL; i--) {
 			if(moveSetLvl.containsKey(i)) {
 				ArrayList<Moves> moves = moveSetLvl.get(i);
 				for(Moves move : moves) {
-					if(move1.move != Moves.NULL)
+					if(move1.move == Moves.NULL)
 						move1 = new Move(move);
-					else if(move2.move != Moves.NULL)
+					else if(move2.move == Moves.NULL)
 						move2 = new Move(move);
-					else if(move3.move != Moves.NULL)
+					else if(move3.move == Moves.NULL)
 						move3 = new Move(move);
-					else if(move4.move != Moves.NULL)
+					else if(move4.move == Moves.NULL)
 						move4 = new Move(move);
 				}
 			}
@@ -258,7 +267,7 @@ public class Pokemon {
 			shiny = true;
 	}
 	
-	private void setStats() {
+	public void setStats() {
 		if(pokemon == PKM.MUNJA)
 			HP = 1;
 		else
@@ -268,6 +277,46 @@ public class Pokemon {
 		ATK_SPE = (int) ((long) (((((2 * PKM.getBaseStats(pokemon)[3] + IV_ATK_SPE + (long) (EV_ATK_SPE / 4)) * level) / 100) + 5) * Nature.getModifier(nature, "SPE_ATT")));
 		DEF_SPE = (int) ((long) (((((2 * PKM.getBaseStats(pokemon)[4] + IV_DEF_SPE + (long) (EV_DEF_SPE / 4)) * level) / 100) + 5) * Nature.getModifier(nature, "SPE_DEF")));
 		SPEED = (int) ((long) (((((2 * PKM.getBaseStats(pokemon)[5] + IV_SPEED + (long) (EV_SPEED / 4)) * level) / 100) + 5) * Nature.getModifier(nature, "SPEED")));
+	}
+	
+	public void printPokemon() {
+		System.out.println("---------------------------------------");
+		System.out.println("Data of " + name + " : ");
+		System.out.println("ID : " + ID);
+		System.out.println("Pokemon : " + PKM.getGoodName(pokemon));
+		System.out.println("Nature : " + Nature.getGoodNatureName(nature));
+		String gen = "Neutral"; if(gender != 0) gen = gender == 1 ? "Male" : "Female";
+		System.out.println("Gender : " + gen);
+		System.out.println("Ability : " + ability.name);
+		System.out.println("Types : " + type1.name() + " ; " + type2.name());
+		System.out.println("Level : " + level);
+		System.out.println("XP : " + xp);
+		System.out.println("XP to next level : " + xp);
+		//System.out.println("XP dropped : " + xpDropped);
+		System.out.println("Friendship : " + friendship);
+		System.out.println("Is KO ? " + isKO);
+		System.out.println("Status : " + status.name());
+		System.out.println("Current HP : " + currentHP + " / " + HP);
+		System.out.println("HP              : " + HP + " (IV : " + IV_PV + " | EV : " + EV_PV + ")");
+		System.out.println("Attack          : " + ATK + " (IV : " + IV_ATK + " | EV : " + EV_ATK + ")");
+		System.out.println("Defense         : " + DEF + " (IV : " + IV_DEF + " | EV : " + EV_DEF + ")");
+		System.out.println("Special Attack  : " + ATK_SPE + " (IV : " + IV_ATK_SPE + " | EV : " + EV_ATK_SPE + ")");
+		System.out.println("Special Defense : " + DEF_SPE + " (IV : " + IV_DEF_SPE + " | EV : " + EV_DEF_SPE + ")");
+		System.out.println("Speed           : " + SPEED + " (IV : " + IV_SPEED + " | EV : " + EV_SPEED + ")");
+		//if(EV_DROPPED != null) System.out.println("EV dropped : " + EV_DROPPED.toString());
+		System.out.println("Move 1 : " + move1.name);
+		System.out.println("Move 2 : " + move2.name);
+		System.out.println("Move 3 : " + move3.name);
+		System.out.println("Move 4 : " + move4.name);
+		System.out.println("Item : " + item.name());
+		//System.out.println("Catch rate : " + catchRate);
+		if(catchDressorName != null) {
+			System.out.println("Dressor : " + catchDressorName);
+			System.out.println("Ball : " + ball.name());
+		}
+		System.out.println("Shiny ? " + shiny);
+		System.out.println("Weight : " + weight);
+		System.out.println();
 	}
 	
 }

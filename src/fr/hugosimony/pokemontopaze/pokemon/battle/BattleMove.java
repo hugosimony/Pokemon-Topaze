@@ -27,11 +27,11 @@ public class BattleMove {
 		this.subMove = subMove;
 		this.player = player;
 	
-		senderName = sender.name + (player ? " ennemi " : " ");
-		targetName = sender.name + (player ? " " : " ennemi ");
+		senderName = sender.name + (player ? "" : " ennemi");
+		targetName = target.name + (player ? " ennemi" : "");
 		
-		System.out.println("---------------------------------------------------------------------------------");
-		System.out.println("Start of the move " + move.name + " by " + senderName + " against " + targetName);
+		System.out.println("-------------------------------------------------------------");
+		System.out.println(move.name + " par " + senderName + " contre " + targetName);
 		
 		// https://github.com/smogon/pokemon-showdown/blob/master/simulator-doc.txt
 		// https://github.com/smogon/pokemon-showdown/blob/master/sim/battle.ts
@@ -49,7 +49,7 @@ public class BattleMove {
 				return "status";
 		}
 		
-		System.out.println(senderName + "utilise " + move.name);
+		System.out.println(senderName + " utilise " + move.name);
 		
 		// https://www.pokepedia.fr/Brise_Moule
 		
@@ -87,7 +87,30 @@ public class BattleMove {
 		else if(move.move == Moves.OMBRE_NOCTURNE || move.move == Moves.FRAPPE_ATLAS)
 			damage = sender.level;
 		else {
-			float CM = 1;
+			
+			// Random range
+			double CM = 0.85; // Utils.randomNumber(85, 100) / 100d;
+			
+			// STAB
+			if(sender.type1 == move.type || sender.type2 == move.type) CM *= 1.5;
+			
+			// Types
+			
+			double typeTable = Type.getMultiplier(move.type, target.type1, target.type2);
+			if(typeTable == 2)
+				System.out.println("C'est super efficace.");
+			else if(typeTable == 4)
+				System.out.println("C'est extrémement efficace.");
+			else if(typeTable == 0.5)
+				System.out.println("Ce n'est pas très efficace.");
+			else if(typeTable == 0.25)
+				System.out.println("Ce n'est pas du tout efficace.");
+			CM *= typeTable;
+			
+			//TODO Critical Hits
+			
+			//TODO Talents, Items, Field
+			
 			if(move.isVariable()) {
 				// TODO
 				// Handle each case
@@ -103,6 +126,8 @@ public class BattleMove {
 				else if(move.category == Type.SPECIALE)
 					damage = (int) (((int) ((((sender.level * 0.4) + 2) * (sender.getStat("ATK_SPE") * move.power)) / (target.getStat("DEF_SPE") * 50)) + 2) * CM);
 			}
+			
+			return "The attack did " + damage + " HP(s) !";
 		}
 		
 		// TODO

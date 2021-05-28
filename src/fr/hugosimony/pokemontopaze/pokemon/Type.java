@@ -143,7 +143,6 @@ public enum Type {
 	}
 	
 	public static double getMultiplier(Type sender, Type targetType1, Type targetType2) {
-		
 		if(targetType2 == AUCUN)
 			return table[targetType1.getIndex()][sender.getIndex()];
 		return table[targetType1.getIndex()][sender.getIndex()] * table[targetType2.getIndex()][sender.getIndex()];
