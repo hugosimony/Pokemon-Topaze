@@ -44,6 +44,8 @@ public class BattleMove {
 	
 	private String startMove() {
 		
+		// https://www.pokepedia.fr/Cat%C3%A9gorie_de_talent
+		
 		if(!subMove) {
 			if(checkStatus())
 				return "status";

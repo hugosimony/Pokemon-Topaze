@@ -38,12 +38,30 @@ public class Battle extends JPanel {
 	public PokemonSprite sprite1;
 	public PokemonSprite sprite2;
 	
-	public BattlePokemon battlePokemon1;
-	public BattlePokemon battlePokemon2;
+	public BattlePokemon battlePokemon1; // Opponent
+	public BattlePokemon battlePokemon2; // Player
+	
+	public BattleButtons.Fight fightButton;
+	public BattleButtons.Bag bagButton;
+	public BattleButtons.Pokemon pokemonButton;
+	public BattleButtons.Run runButton;
+	
+	public BattleButtons.MovePanel move1;
+	public BattleButtons.MovePanel move2;
+	public BattleButtons.MovePanel move3;
+	public BattleButtons.MovePanel move4;
 	
 	public int x = 0;
 	
 	public Battle(Game game, boolean savage, String opponent, String background, String weather, JPanel savedMap) {
+	
+		Pokemon pokemon1 = new Pokemon(PKM.values()[Utils.randomNumber(150)], 50, Items.NONE);
+		Pokemon pokemon2 = new Pokemon(PKM.values()[Utils.randomNumber(150)], 50, Items.NONE);
+		//Pokemon pokemon1 = new Pokemon(PKM.values()[x], 50, Items.NONE);
+		//Pokemon pokemon2 = new Pokemon(PKM.values()[x], 50, Items.NONE);
+		
+		battlePokemon1 = new BattlePokemon(pokemon1);
+		battlePokemon2 = new BattlePokemon(pokemon2);
 		
 		this.game = game;
 		game.battle = this;
@@ -65,26 +83,41 @@ public class Battle extends JPanel {
 		Databox databox1 = new Databox(1);
 		Databox databox2 = new Databox(2);
 		
-		JButton fightButton = new BattleButtons.Fight(this);
-		JButton bagButton = new BattleButtons.Bag(this);
-		JButton pokemonButton = new BattleButtons.Pokemon(this);
-		JButton runButton = new BattleButtons.Run(this);
+		fightButton = new BattleButtons.Fight(this);
+		bagButton = new BattleButtons.Bag(this);
+		pokemonButton = new BattleButtons.Pokemon(this);
+		runButton = new BattleButtons.Run(this);
 		
-		fightButton.setLocation(2, 447);
-		bagButton.setLocation(195, 447);
-		pokemonButton.setLocation(394, 447);
-		runButton.setLocation(592, 447);
+		fightButton.setLocation(2, 446);
+		bagButton.setLocation(195, 446);
+		pokemonButton.setLocation(394, 446);
+		runButton.setLocation(592, 446);
 		
 		add(fightButton);
 		add(bagButton);
 		add(pokemonButton);
 		add(runButton);
 		
+		move1 = new BattleButtons.MovePanel(this, battlePokemon2.move1, 1);
+		move2 = new BattleButtons.MovePanel(this, battlePokemon2.move2, 2);
+		move3 = new BattleButtons.MovePanel(this, battlePokemon2.move3, 3);
+		move4 = new BattleButtons.MovePanel(this, battlePokemon2.move4, 4);
 		
-		Pokemon pokemon1 = new Pokemon(PKM.values()[Utils.randomNumber(150)], 50, Items.NONE);
-		Pokemon pokemon2= new Pokemon(PKM.values()[Utils.randomNumber(150)], 50, Items.NONE);
-		//Pokemon pokemon1 = new Pokemon(PKM.values()[x], 50, Items.NONE);
-		//Pokemon pokemon2 = new Pokemon(PKM.values()[x], 50, Items.NONE);
+		move1.setVisible(false);
+		move2.setVisible(false);
+		move3.setVisible(false);
+		move4.setVisible(false);
+		
+		move1.setLocation(1, 446);
+		move2.setLocation(197, 446);
+		move3.setLocation(393, 446);
+		move4.setLocation(589, 446);
+		
+		add(move1);
+		add(move2);
+		add(move3);
+		add(move4);
+		
 		try {
 			sprite1 = new PokemonSprite(pokemon1, false);
 			add(sprite1);

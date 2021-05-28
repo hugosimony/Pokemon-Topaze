@@ -22,6 +22,9 @@ public class BattleConst {
 	public static final ImageIcon bagButton = new ImageIcon(Main.class.getResource("pokemon/battle/menus/bagButton.gif"));
 	public static final ImageIcon pokemonButton = new ImageIcon(Main.class.getResource("pokemon/battle/menus/pokemonButton.gif"));
 	public static final ImageIcon runButton = new ImageIcon(Main.class.getResource("pokemon/battle/menus/runButton.gif"));
+	public static ImageIcon getMoveButton(String move) {
+		return new ImageIcon(Main.class.getResource("pokemon/battle/menus/moves/" + move + ".gif"));
+	}
 	
 	//****************************************************************************************************
 	// Databoxs

@@ -8,9 +8,6 @@ import javax.sound.sampled.FloatControl;
 
 import fr.hugosimony.pokemontopaze.files.FileCreator;
 import fr.hugosimony.pokemontopaze.musics.Musics;
-import fr.hugosimony.pokemontopaze.pokemon.PKM;
-import fr.hugosimony.pokemontopaze.pokemon.Pokemon;
-import fr.hugosimony.pokemontopaze.pokemon.items.Items;
 import fr.hugosimony.pokemontopaze.utils.fonts.Fonts;
 
 public class Main {
@@ -45,7 +42,7 @@ public class Main {
 		Fonts.loadFonts();
 		System.out.println("All fonts found.");
 		
-		//****************************************************************
+		/*/****************************************************************
 		// Testing
 		
 		Pokemon pokemon1 = new Pokemon(PKM.ROITIFLAM, 37, Items.NULL);

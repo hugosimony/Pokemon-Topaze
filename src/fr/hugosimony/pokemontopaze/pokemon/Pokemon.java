@@ -3,9 +3,11 @@ package fr.hugosimony.pokemontopaze.pokemon;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+import fr.hugosimony.pokemontopaze.Variables;
 import fr.hugosimony.pokemontopaze.pokemon.items.Items;
 import fr.hugosimony.pokemontopaze.pokemon.items.PokeBalls;
 import fr.hugosimony.pokemontopaze.utils.Utils;
+import sun.management.counter.Variability;
 
 @SuppressWarnings("unused")
 public class Pokemon {
@@ -85,6 +87,12 @@ public class Pokemon {
 		
 		ID = Utils.randomNumber(0, Integer.MAX_VALUE);
 		if(ID < 0) ID *= -1;
+	}
+	
+	public Pokemon(PKM pokemon, int level, Items item, PokeBalls ball) {
+		new Pokemon(pokemon, level, item);
+		this.ball = ball;
+		this.catchDressorName = Variables.PERSO_Name;
 	}
 	
 	public Pokemon(PKM pokemon, String name, Nature nature, int gender, Ability ability, int level, int xp, int xpToNextLevel, boolean isKO, int HP, int currentHP, int ATK, int ATK_SPE, int DEF, int DEF_SPE, int SPEED, Move move1, Move move2, Move move3, Move move4, Items item, PokeBalls ball, String catchDressorName, boolean shiny, int ID) {

@@ -1,10 +1,19 @@
 package fr.hugosimony.pokemontopaze.pokemon.battle;
 
 import java.awt.Color;
+import java.awt.Font;
+import java.awt.Graphics;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 
 import javax.swing.JButton;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+
+import fr.hugosimony.pokemontopaze.pokemon.Move;
+import fr.hugosimony.pokemontopaze.pokemon.Moves;
 
 public class BattleButtons {
 	
@@ -35,8 +44,14 @@ public class BattleButtons {
 			addActionListener(new ActionListener() {
 				@Override
 				public void actionPerformed(ActionEvent e) {
-					//TODO
-					battle.endBattle(false, false);
+					battle.fightButton.setVisible(false);
+					battle.bagButton.setVisible(false);
+					battle.pokemonButton.setVisible(false);
+					battle.runButton.setVisible(false);
+					battle.move1.setVisible(true);
+					battle.move2.setVisible(true);
+					battle.move3.setVisible(true);
+					battle.move4.setVisible(true);
 				}
 			});
 		}
@@ -75,6 +90,84 @@ public class BattleButtons {
 				}
 			});
 		}
+	}
+	
+	public static class MovePanel extends JPanel {
+		private static final long serialVersionUID = 1L;
+
+		private Font little = new Font("Power Clear", Font.BOLD, 15);
+		private Font small = new Font("Power Clear", Font.BOLD, 20);
+		private Font medium = new Font("Power Clear", Font.BOLD, 25);
+		private Font big = new Font("Power Clear", Font.BOLD, 30);
+		
+		private JLabel name;
+		private JLabel PP;
+		private Move move;
+		
+		public MovePanel(Battle battle, Move move, int place) {
+			this.move = move;
+			setSize(195, 200);
+			setBackground(Color.black);
+			setLayout(null);
+			setOpaque(false);
+			addMouseListener(new MouseListener() {
+				@Override public void mouseReleased(MouseEvent e) { /* Do nothing */ }
+				@Override public void mousePressed(MouseEvent e) { /* Do nothing */ }
+				@Override public void mouseExited(MouseEvent e) { /* Do nothing */ }
+				@Override public void mouseEntered(MouseEvent e) { /* Do nothing */ }
+				@Override public void mouseClicked(MouseEvent e) {
+					if(move.move != Moves.NULL) {
+						startMove(battle, move);
+					}
+				}
+			});
+			
+			name = new JLabel();
+			PP = new JLabel();
+			
+			updateData();
+			
+			name.setLocation(0, 10);
+			name.setSize(200, 75);
+			name.setVerticalAlignment(JLabel.CENTER);
+			name.setHorizontalAlignment(JLabel.CENTER);
+
+			PP.setLocation(73, 48);
+			PP.setSize(100, 75);
+			PP.setVerticalAlignment(JLabel.CENTER);
+			PP.setHorizontalAlignment(JLabel.CENTER);
+			PP.setFont(little);
+			
+			add(name);
+			add(PP);
+			
+			repaint();
+		}
+		
+		@Override
+		public void paintComponent(Graphics g) {
+			super.paintComponent(g);
+			g.drawImage(BattleConst.getMoveButton("NORMAL").getImage(), 0, 0, null);
+		}
+		
+		private void updateData() {
+			if(move.move != Moves.NULL) {
+				name.setText(move.name);
+				if(move.name.length() >= 15)
+					name.setFont(little);
+				if(move.name.length() >= 10)
+					name.setFont(small);
+				else if(move.name.length() < 5)
+					name.setFont(big);
+				else
+					name.setFont(medium);
+				PP.setText("PP " + move.pp + "/" + move.ppMax);
+			}
+		}
+	}
+	
+	public static void startMove(Battle battle, Move move) {
+		new BattleMove(battle, battle.battlePokemon2, battle.battlePokemon1, move, false, true);
 	}
 	
 }
