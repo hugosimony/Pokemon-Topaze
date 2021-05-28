@@ -1,5 +1,6 @@
 package fr.hugosimony.pokemontopaze.menus;
 
+import java.awt.Component;
 import java.awt.Graphics;
 
 import javax.swing.JPanel;
@@ -40,6 +41,14 @@ public class YesNo extends JPanel {
 		yesNo.setVisible(false);
 		game.inYesNoMenu = false;
 		yesNo.repaint();
+		for(Component c : game.gamePanel.getComponents()) {
+			if(c instanceof YesNo) {
+				c.setVisible(false);
+				YesNo y = (YesNo) c;
+				y.setVisible(false);
+				y.repaint();
+			}
+		}
 	}
 	
 	public static void changeYesNoMenu() {

@@ -48,8 +48,8 @@ public class Main {
 		//****************************************************************
 		// Testing
 		
-		Pokemon pokemon1 = new Pokemon(PKM.RESHIRAM, 69, Items.NULL);
-		Pokemon pokemon2 = new Pokemon(PKM.ZEKROM, 42, Items.NULL);
+		Pokemon pokemon1 = new Pokemon(PKM.ROITIFLAM, 37, Items.NULL);
+		Pokemon pokemon2 = new Pokemon(PKM.AMPHINOBI, 48, Items.NULL);
 		pokemon1.printPokemon();
 		pokemon2.printPokemon();
 		

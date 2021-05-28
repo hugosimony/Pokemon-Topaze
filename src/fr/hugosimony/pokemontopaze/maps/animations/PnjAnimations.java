@@ -162,6 +162,8 @@ public class PnjAnimations {
 			return;
 		}
 		else if(Variables.ADVENTURE_Step == 9) {
+			game.deplacement.setDirection(Direction.LEFT);
+			game.deplacement.setStoppedSprites();
 			new Timer().schedule(new TimerTask() {
 				@Override
 				public void run() {

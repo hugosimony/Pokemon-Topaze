@@ -89,7 +89,7 @@ public class BattleMove {
 		else {
 			
 			// Random range
-			double CM = 0.85; // Utils.randomNumber(85, 100) / 100d;
+			double CM = Utils.randomNumber(85, 100) / 100d;
 			
 			// STAB
 			if(sender.type1 == move.type || sender.type2 == move.type) CM *= 1.5;

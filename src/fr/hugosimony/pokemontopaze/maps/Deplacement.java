@@ -269,6 +269,7 @@ public class Deplacement {
 							if(locationX == animationEnd.x && locationY == animationEnd.y) {
 								game.deplacement.released = true;
 								game.deplacement.pressed.clear();
+								setDirection(finalLookingDirection);
 								setSprites(finalLookingDirection, new Hero(finalLookingDirection, 0, 1), false);
 								setSprites(finalLookingDirection, new Hero(finalLookingDirection, 0, 1), false);
 								if(endAnimation)
