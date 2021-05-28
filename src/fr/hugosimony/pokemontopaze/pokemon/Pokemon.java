@@ -304,6 +304,8 @@ public class Pokemon {
 		System.out.println("Special Defense : " + DEF_SPE + " (IV : " + IV_DEF_SPE + " | EV : " + EV_DEF_SPE + ")");
 		System.out.println("Speed           : " + SPEED + " (IV : " + IV_SPEED + " | EV : " + EV_SPEED + ")");
 		//if(EV_DROPPED != null) System.out.println("EV dropped : " + EV_DROPPED.toString());
+		//System.out.println("Move set" + moveSetLvl.toString());
+		//System.out.println("Move set CT " + moveSetCT.toString());
 		System.out.println("Move 1 : " + move1.name);
 		System.out.println("Move 2 : " + move2.name);
 		System.out.println("Move 3 : " + move3.name);

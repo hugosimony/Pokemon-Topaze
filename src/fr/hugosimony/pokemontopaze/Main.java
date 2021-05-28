@@ -8,11 +8,8 @@ import javax.sound.sampled.FloatControl;
 
 import fr.hugosimony.pokemontopaze.files.FileCreator;
 import fr.hugosimony.pokemontopaze.musics.Musics;
-import fr.hugosimony.pokemontopaze.pokemon.Nature;
 import fr.hugosimony.pokemontopaze.pokemon.PKM;
 import fr.hugosimony.pokemontopaze.pokemon.Pokemon;
-import fr.hugosimony.pokemontopaze.pokemon.battle.BattleMove;
-import fr.hugosimony.pokemontopaze.pokemon.battle.BattlePokemon;
 import fr.hugosimony.pokemontopaze.pokemon.items.Items;
 import fr.hugosimony.pokemontopaze.utils.fonts.Fonts;
 
@@ -51,10 +48,10 @@ public class Main {
 		//****************************************************************
 		// Testing
 		
-		Pokemon zekrom = new Pokemon(PKM.MUSHANA, 69, Items.NULL);
-		Pokemon reshiram = new Pokemon(PKM.PIKACHU, 42, Items.NULL);
-		zekrom.printPokemon();
-		reshiram.printPokemon();
+		Pokemon pokemon1 = new Pokemon(PKM.RESHIRAM, 69, Items.NULL);
+		Pokemon pokemon2 = new Pokemon(PKM.ZEKROM, 42, Items.NULL);
+		pokemon1.printPokemon();
+		pokemon2.printPokemon();
 		
 		//*****************************************************************/
 		
