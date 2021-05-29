@@ -5,6 +5,7 @@ import fr.hugosimony.pokemontopaze.pokemon.Move;
 import fr.hugosimony.pokemontopaze.pokemon.Moves;
 import fr.hugosimony.pokemontopaze.pokemon.Status;
 import fr.hugosimony.pokemontopaze.pokemon.Type;
+import fr.hugosimony.pokemontopaze.pokemon.items.Items;
 import fr.hugosimony.pokemontopaze.utils.Utils;
 
 public class BattleMove {
@@ -69,6 +70,12 @@ public class BattleMove {
 				move.pp--;
 		}
 		
+		// https://www.pokepedia.fr/Pr%C3%A9cision
+		
+		if(checkPrecision())
+			return "avoided";
+		
+		
 		//TODO 
 		// Check Brise Moule
 		
@@ -82,7 +89,9 @@ public class BattleMove {
 			
 			// Paralysis
 			if(move.move == Moves.CAGE_ECLAIR || move.move == Moves.PARA_SPORE || move.move == Moves.INTIMIDATION) {
-				
+				target.status = Status.PARALYSIS;
+				System.out.println(targetName + " est paralysé.");
+				battle.opponentBox.updateData();
 			}
 			
 		}
@@ -165,7 +174,7 @@ public class BattleMove {
 		battle.opponentBox.updateData();
 		battle.playerBox.updateData();
 		
-		return "0";
+		return "hit";
 	}
 	
 	private boolean checkStatus() {
@@ -266,8 +275,40 @@ public class BattleMove {
 		}
 		return canceled;
 	}
+	
 
 	private void doConfusionHurt() {
+		
+	}
+	
+	
+	private boolean checkPrecision() {
+		
+		// https://www.pokepedia.fr/Pr%C3%A9cision
+		
+		if(move.precision == 1000)
+			return false;
+		
+		boolean canceled = false;
+		
+		int accuracy = sender.getAccuracy("PRECISION", move.precision);
+		accuracy = target.getAccuracy("AVOIDANCE", accuracy);
+		if(sender.ability.ability == Abilities.AGITATION && move.category == Type.PHYSIQUE)
+			accuracy = (int) (accuracy * 0.8);
+		if(sender.ability.ability == Abilities.OEIL_COMPOSE)
+			accuracy = (int) (accuracy * 1.3);
+		if(sender.item.item == Items.LOUPE)
+			accuracy = (int) (accuracy * 1.1);
+		System.out.println(accuracy);
+		if(accuracy < 100) {
+			int random = Utils.randomNumber(1, 100);
+			if(random > accuracy) {
+				canceled = true;
+				System.out.println(targetName + " avoided the attack.");
+			}
+		}
+		
+		return canceled;
 		
 	}
 	

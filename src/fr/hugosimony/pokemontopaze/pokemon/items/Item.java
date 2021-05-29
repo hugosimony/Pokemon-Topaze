@@ -2,12 +2,12 @@ package fr.hugosimony.pokemontopaze.pokemon.items;
 
 public class Item {
 
-	Items item;
-	String name;
-	String category;
-	String description;
-	int price;
-	int sellingPrice;
+	public Items item;
+	public String name;
+	public String category;
+	public String description;
+	public int price;
+	public int sellingPrice;
 	
 	public Item(Items item) {
 		this.item = item;

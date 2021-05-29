@@ -22,8 +22,8 @@ public class BattleConst {
 	public static final ImageIcon bagButton = new ImageIcon(Main.class.getResource("pokemon/battle/menus/bagButton.gif"));
 	public static final ImageIcon pokemonButton = new ImageIcon(Main.class.getResource("pokemon/battle/menus/pokemonButton.gif"));
 	public static final ImageIcon runButton = new ImageIcon(Main.class.getResource("pokemon/battle/menus/runButton.gif"));
-	public static ImageIcon getMoveButton(String move) {
-		return new ImageIcon(Main.class.getResource("pokemon/battle/menus/moves/" + move + ".gif"));
+	public static ImageIcon getMoveButton(String type) {
+		return new ImageIcon(Main.class.getResource("pokemon/battle/menus/moves/" + type + ".gif"));
 	}
 	
 	//****************************************************************************************************
@@ -35,6 +35,9 @@ public class BattleConst {
 	public static final ImageIcon greenLife = new ImageIcon(Main.class.getResource("pokemon/battle/menus/greenLife.gif"));
 	public static final ImageIcon orangeLife = new ImageIcon(Main.class.getResource("pokemon/battle/menus/orangeLife.gif"));
 	public static final ImageIcon redLife = new ImageIcon(Main.class.getResource("pokemon/battle/menus/redLife.gif"));
+	public static ImageIcon getStatusIcon(String status) {
+		return new ImageIcon(Main.class.getResource("pokemon/battle/menus/status/" + status + ".gif"));
+	}
 	
 	//****************************************************************************************************
 	// Pokémon Sprites

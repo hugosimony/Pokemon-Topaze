@@ -141,7 +141,7 @@ public class BattlePokemon {
 		pokemon.setStats();
 	}
 	
-	public int getGeneralStatMultiplicator(int stat, int stage) {
+	private int getGeneralStatMultiplicator(int stat, int stage) {
 		if(stage == -6)
 			return stat * (2/8);
 		if(stage == -5)
@@ -172,7 +172,7 @@ public class BattlePokemon {
 		return -1;
 	}
 	
-	public int getAccuracyStatMultiplicator(int precision, int stage, boolean accuracy) {
+	private int getAccuracyStatMultiplicator(int precision, int stage, boolean accuracy) {
 		if(!accuracy)
 			stage *= -1;
 		if(stage == -6)
@@ -224,7 +224,7 @@ public class BattlePokemon {
 		if(stat.equals("PRECISION"))
 			return getAccuracyStatMultiplicator(precision, stageACCURACY, true);
 		if(stat.equals("AVOIDANCE"))
-			return getAccuracyStatMultiplicator(precision, stageACCURACY, false);
+			return getAccuracyStatMultiplicator(precision, stageAVOIDANCE, false);
 		System.err.println("The stat is not correct.");
 		return -1;
 	}
