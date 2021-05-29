@@ -95,8 +95,8 @@ public class BattleButtons {
 	public static class MovePanel extends JPanel {
 		private static final long serialVersionUID = 1L;
 
-		private Font pp = new Font("Power Clear", Font.BOLD, 18);
-		private Font medium = new Font("Power Clear", Font.BOLD, 20);
+		private Font moveFont = new Font("Power Clear", Font.BOLD, 22);
+		private Font ppFont = new Font("Power Clear", Font.BOLD, 18);
 		
 		private JLabel name;
 		private JLabel PP;
@@ -125,15 +125,16 @@ public class BattleButtons {
 			updateData();
 			
 			name.setLocation(0, 10);
-			name.setSize(200, 75);
+			name.setSize(185, 75);
 			name.setVerticalAlignment(JLabel.CENTER);
 			name.setHorizontalAlignment(JLabel.CENTER);
+			name.setFont(moveFont);
 
-			PP.setLocation(73, 48);
+			PP.setLocation(73, 40);
 			PP.setSize(100, 75);
 			PP.setVerticalAlignment(JLabel.CENTER);
 			PP.setHorizontalAlignment(JLabel.CENTER);
-			PP.setFont(pp);
+			PP.setFont(ppFont);
 			
 			add(name);
 			add(PP);
@@ -144,13 +145,12 @@ public class BattleButtons {
 		@Override
 		public void paintComponent(Graphics g) {
 			super.paintComponent(g);
-			g.drawImage(BattleConst.getMoveButton("NORMAL").getImage(), 0, 0, null);
+			g.drawImage(BattleConst.getMoveButton(move.type.name()).getImage(), 0, 0, null);
 		}
 		
 		private void updateData() {
 			if(move.move != Moves.NULL) {
 				name.setText(move.name);
-				name.setFont(medium);
 				PP.setText("PP " + move.pp + "/" + move.ppMax);
 			}
 		}
