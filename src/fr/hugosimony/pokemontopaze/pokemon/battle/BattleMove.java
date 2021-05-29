@@ -76,6 +76,10 @@ public class BattleMove {
 		//TODO
 		// Get Damage
 		// https://www.pokepedia.fr/Calcul_des_d%C3%A9g%C3%A2ts
+		
+		if(Type.getMultiplier(move.type, target.type1, target.type2) == 0) {
+			System.out.println("Ça n'affecte pas " + target + ".");
+		}
 
 		int damage = 0;
 		

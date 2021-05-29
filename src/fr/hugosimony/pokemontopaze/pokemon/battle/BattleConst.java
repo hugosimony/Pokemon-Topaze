@@ -32,6 +32,9 @@ public class BattleConst {
 	public static final ImageIcon databoxHero1 = new ImageIcon(Main.class.getResource("pokemon/battle/menus/databoxHero1.gif"));
 	public static final ImageIcon databoxHero2 = new ImageIcon(Main.class.getResource("pokemon/battle/menus/databoxHero2.gif"));
 	public static final ImageIcon databoxTarget1 = new ImageIcon(Main.class.getResource("pokemon/battle/menus/databoxTarget1.gif"));
+	public static final ImageIcon greenLife = new ImageIcon(Main.class.getResource("pokemon/battle/menus/greenLife.gif"));
+	public static final ImageIcon orangeLife = new ImageIcon(Main.class.getResource("pokemon/battle/menus/orangeLife.gif"));
+	public static final ImageIcon redLife = new ImageIcon(Main.class.getResource("pokemon/battle/menus/redLife.gif"));
 	
 	//****************************************************************************************************
 	// Pokémon Sprites

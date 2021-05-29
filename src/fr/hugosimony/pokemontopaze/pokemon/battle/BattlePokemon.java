@@ -13,6 +13,7 @@ import fr.hugosimony.pokemontopaze.pokemon.items.Item;
 
 public class BattlePokemon {
 
+	private Pokemon pokemon;
 	public PKM pkm;
 	public String name;
 	public Nature nature;
@@ -52,6 +53,7 @@ public class BattlePokemon {
 	public int confusionTurn;
 	
 	public BattlePokemon(Pokemon pokemon) {
+		this.pokemon = pokemon;
 		this.pkm = pokemon.pokemon;
 		this.name = pokemon.name;
 		this.nature = pokemon.nature;
@@ -86,6 +88,20 @@ public class BattlePokemon {
 		this.move4 = pokemon.move4;
 		this.item = new Item(pokemon.item);
 		this.secondaryStatus = new ArrayList<Status>();
+	}
+	
+	public void updatePokemon() {
+		pokemon.level = level;
+		pokemon.xpToNextLevel = xpToNextLevel;
+		pokemon.friendship = friendship;
+		pokemon.currentHP = currentHP;
+		pokemon.isKO = isKO;
+		pokemon.status = status;
+		pokemon.move1 = move1;
+		pokemon.move2 = move2;
+		pokemon.move3 = move3;
+		pokemon.move4 = move4;
+		pokemon.setStats();
 	}
 	
 	public int getGeneralStatMultiplicator(int stat, int stage) {

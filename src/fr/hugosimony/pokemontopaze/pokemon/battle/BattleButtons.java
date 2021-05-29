@@ -17,20 +17,6 @@ import fr.hugosimony.pokemontopaze.pokemon.Moves;
 
 public class BattleButtons {
 	
-	public static class Bag extends JButton {
-		private static final long serialVersionUID = 1L;
-		
-		public Bag(Battle battle) {
-			setSize(195, 118);
-			setBackground(Color.black);
-			setIcon(BattleConst.bagButton);
-			setBorderPainted(false);
-			setOpaque(false);
-			setFocusable(false);
-		}
-		
-	}
-	
 	public static class Fight extends JButton {
 		private static final long serialVersionUID = 1L;
 		
@@ -54,6 +40,20 @@ public class BattleButtons {
 					battle.move4.setVisible(true);
 				}
 			});
+		}
+		
+	}
+	
+	public static class Bag extends JButton {
+		private static final long serialVersionUID = 1L;
+		
+		public Bag(Battle battle) {
+			setSize(195, 118);
+			setBackground(Color.black);
+			setIcon(BattleConst.bagButton);
+			setBorderPainted(false);
+			setOpaque(false);
+			setFocusable(false);
 		}
 		
 	}
@@ -95,10 +95,8 @@ public class BattleButtons {
 	public static class MovePanel extends JPanel {
 		private static final long serialVersionUID = 1L;
 
-		private Font little = new Font("Power Clear", Font.BOLD, 15);
-		private Font small = new Font("Power Clear", Font.BOLD, 20);
-		private Font medium = new Font("Power Clear", Font.BOLD, 25);
-		private Font big = new Font("Power Clear", Font.BOLD, 30);
+		private Font pp = new Font("Power Clear", Font.BOLD, 18);
+		private Font medium = new Font("Power Clear", Font.BOLD, 20);
 		
 		private JLabel name;
 		private JLabel PP;
@@ -116,9 +114,8 @@ public class BattleButtons {
 				@Override public void mouseExited(MouseEvent e) { /* Do nothing */ }
 				@Override public void mouseEntered(MouseEvent e) { /* Do nothing */ }
 				@Override public void mouseClicked(MouseEvent e) {
-					if(move.move != Moves.NULL) {
+					if(move.move != Moves.NULL)
 						startMove(battle, move);
-					}
 				}
 			});
 			
@@ -136,7 +133,7 @@ public class BattleButtons {
 			PP.setSize(100, 75);
 			PP.setVerticalAlignment(JLabel.CENTER);
 			PP.setHorizontalAlignment(JLabel.CENTER);
-			PP.setFont(little);
+			PP.setFont(pp);
 			
 			add(name);
 			add(PP);
@@ -153,14 +150,7 @@ public class BattleButtons {
 		private void updateData() {
 			if(move.move != Moves.NULL) {
 				name.setText(move.name);
-				if(move.name.length() >= 15)
-					name.setFont(little);
-				if(move.name.length() >= 10)
-					name.setFont(small);
-				else if(move.name.length() < 5)
-					name.setFont(big);
-				else
-					name.setFont(medium);
+				name.setFont(medium);
 				PP.setText("PP " + move.pp + "/" + move.ppMax);
 			}
 		}

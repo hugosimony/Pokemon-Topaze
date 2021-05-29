@@ -3,6 +3,8 @@ package fr.hugosimony.pokemontopaze.listeners;
 import java.awt.KeyEventDispatcher;
 import java.awt.event.KeyEvent;
 import java.io.IOException;
+import java.util.Timer;
+import java.util.TimerTask;
 
 import javax.swing.JPanel;
 
@@ -77,6 +79,8 @@ public class InteractDispatcher implements KeyEventDispatcher {
 				 }
 			 }
 		 }
+		 //********************************************************************************************
+		 // DEBUG
 		 if(event.getID() == KeyEvent.KEY_PRESSED && game.inBattle) {
 			 int keyCode = event.getKeyCode();
 			 if(keyCode == KeyEvent.VK_A) {
@@ -95,7 +99,7 @@ public class InteractDispatcher implements KeyEventDispatcher {
 					 game.battle.add(game.battle.sprite2);
 				 } catch (IOException e) {}
 			 }
-			 if(keyCode == KeyEvent.VK_B) {
+			 else if(keyCode == KeyEvent.VK_B) {
 				 game.battle.x--;
 				 game.battle.remove(game.battle.sprite1);
 				 game.battle.remove(game.battle.sprite2);
@@ -110,6 +114,84 @@ public class InteractDispatcher implements KeyEventDispatcher {
 					 game.battle.sprite2 = new PokemonSprite(pokemon2, true);
 					 game.battle.add(game.battle.sprite2);
 				 } catch (IOException e) {}
+			 }
+			 else if(keyCode == KeyEvent.VK_NUMPAD1) {
+				 new Timer().scheduleAtFixedRate(new TimerTask() {
+					@Override
+					public void run() {
+						if(game.battle.battlePokemon2.currentHP <= 1)
+							this.cancel();
+						else {
+							game.battle.battlePokemon2.currentHP--;
+							game.battle.playerBox.updateHp(game.battle.battlePokemon2);
+						}
+					}
+				}, 0, 30);
+			 }
+			 else if(keyCode == KeyEvent.VK_NUMPAD2) {
+				 new Timer().scheduleAtFixedRate(new TimerTask() {
+					@Override
+					public void run() {
+						if(game.battle.battlePokemon2.currentHP <= (int) (game.battle.battlePokemon2.HP / 3))
+							this.cancel();
+						else {
+							game.battle.battlePokemon2.currentHP--;
+							game.battle.playerBox.updateHp(game.battle.battlePokemon2);
+						}
+					}
+				}, 0, 30);
+			 }
+			 else if(keyCode == KeyEvent.VK_NUMPAD3) {
+				 new Timer().scheduleAtFixedRate(new TimerTask() {
+					@Override
+					public void run() {
+						if(game.battle.battlePokemon2.HP <= game.battle.battlePokemon2.currentHP)
+							this.cancel();
+						else {
+							game.battle.battlePokemon2.currentHP++;
+							game.battle.playerBox.updateHp(game.battle.battlePokemon2);
+						}
+					}
+				}, 0, 30);
+			 }
+			 else if(keyCode == KeyEvent.VK_NUMPAD4) {
+				 new Timer().scheduleAtFixedRate(new TimerTask() {
+					@Override
+					public void run() {
+						if(game.battle.battlePokemon1.currentHP <= 1)
+							this.cancel();
+						else {
+							game.battle.battlePokemon1.currentHP--;
+							game.battle.opponentBox.updateHp(game.battle.battlePokemon1);
+						}
+					}
+				}, 0, 30);
+			 }
+			 else if(keyCode == KeyEvent.VK_NUMPAD5) {
+				 new Timer().scheduleAtFixedRate(new TimerTask() {
+					@Override
+					public void run() {
+						if(game.battle.battlePokemon1.currentHP <= (int) (game.battle.battlePokemon1.HP / 3))
+							this.cancel();
+						else {
+							game.battle.battlePokemon1.currentHP--;
+							game.battle.opponentBox.updateHp(game.battle.battlePokemon1);
+						}
+					}
+				}, 0, 30);
+			 }
+			 else if(keyCode == KeyEvent.VK_NUMPAD6) {
+				 new Timer().scheduleAtFixedRate(new TimerTask() {
+					@Override
+					public void run() {
+						if(game.battle.battlePokemon1.HP <= game.battle.battlePokemon1.currentHP)
+							this.cancel();
+						else {
+							game.battle.battlePokemon1.currentHP++;
+							game.battle.opponentBox.updateHp(game.battle.battlePokemon1);
+						}
+					}
+				}, 0, 30);
 			 }
 		 }
 		 return false;

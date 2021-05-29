@@ -1,6 +1,7 @@
 package fr.hugosimony.pokemontopaze.pokemon.battle;
 
 import java.awt.Color;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.io.IOException;
 import java.net.URL;
@@ -8,6 +9,7 @@ import java.util.Timer;
 import java.util.TimerTask;
 
 import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 import fr.hugosimony.pokemontopaze.Game;
@@ -51,6 +53,9 @@ public class Battle extends JPanel {
 	public BattleButtons.MovePanel move3;
 	public BattleButtons.MovePanel move4;
 	
+	public Databox playerBox;
+	public Databox opponentBox;
+	
 	public int x = 0;
 	
 	public Battle(Game game, boolean savage, String opponent, String background, String weather, JPanel savedMap) {
@@ -79,9 +84,6 @@ public class Battle extends JPanel {
 		game.inBattle = true;
 		game.actualPanel = this;
 		Musics.startMusic(BattleMusics.getGoodMusic(opponent));
-		
-		Databox databox1 = new Databox(1);
-		Databox databox2 = new Databox(2);
 		
 		fightButton = new BattleButtons.Fight(this);
 		bagButton = new BattleButtons.Bag(this);
@@ -117,6 +119,18 @@ public class Battle extends JPanel {
 		add(move2);
 		add(move3);
 		add(move4);
+		
+		playerBox = new Databox(true);
+		opponentBox = new Databox(false);
+		
+		playerBox.setLocation(485, 300);
+		opponentBox.setLocation(0, 30);
+		
+		playerBox.setSize(400, 200);
+		opponentBox.setSize(400, 200);
+		
+		add(playerBox);
+		add(opponentBox);
 		
 		try {
 			sprite1 = new PokemonSprite(pokemon1, false);
@@ -171,25 +185,111 @@ public class Battle extends JPanel {
 			game.inBattle = false;
 	}
 
-	private class Databox extends JPanel{
+	public class Databox extends JPanel{
 		private static final long serialVersionUID = 1L;
 
-		int databox;
+		private Font nameFont = new Font("Power Clear", Font.BOLD, 27);
+		private Font levelFont = new Font("Power Clear", Font.PLAIN, 24);
+		private Font hpFont = new Font("Power Clear", Font.BOLD, 22);
 		
-		public Databox(int databox) {
-			this.databox = databox;
+		boolean player;
+		JLabel name;
+		JLabel gender;
+		JLabel level;
+		JLabel hpBar;
+		JLabel hp;
+		
+		public Databox(boolean player) {
+			this.player = player;
+			
 			setOpaque(false);
 			setLayout(null);
-			setVisible(true);
+			
+			name = new JLabel();
+			name.setFont(nameFont);
+			name.setVerticalAlignment(JLabel.CENTER);
+			name.setSize(150, 50);
+			if(player)
+				name.setLocation(45, 0);
+			else
+				name.setLocation(15, 0);
+			
+			gender = new JLabel();
+			
+			level = new JLabel();
+			level.setFont(levelFont);
+			level.setVerticalAlignment(JLabel.CENTER);
+			level.setSize(200, 50);
+			if(player)
+				level.setLocation(250, 0);
+			else
+				level.setLocation(220, 0);
+			
+			hpBar = new JLabel();
+			if(player)
+				hpBar.setLocation(135, 55);
+			else
+				hpBar.setLocation(104, 55);
+			
+			if(player) {
+				hp = new JLabel();
+				hp.setFont(hpFont);
+				hp.setVerticalAlignment(JLabel.CENTER);
+				hp.setHorizontalAlignment(JLabel.CENTER);
+				hp.setSize(105, 20);
+				hp.setLocation(130, 63);
+			}
+			
+			
+			updateData();
+			
+			add(name);
+			add(gender);
+			add(level);
+			add(hpBar);
+			if(player)
+				add(hp);
+			
+			repaint();
 		}	
 
 		@Override
 		public void paintComponent(Graphics g) {
 			super.paintComponent(g);
-			if(databox == 1) // TODO set the coordinates
-				g.drawImage(BattleConst.databoxTarget1.getImage(), 0, 0, null);
-			else if(databox == 2) // TODO set the coordinates
+			if(player)
 				g.drawImage(BattleConst.databoxHero1.getImage(), 0, 0, null);
+			else 
+				g.drawImage(BattleConst.databoxTarget1.getImage(), 0, 0, null);
 		}
+		
+		public void updateData() {
+			BattlePokemon bp = player ? battlePokemon2 : battlePokemon1;
+			name.setText(bp.name);
+			level.setText("N." + bp.level);
+			updateHp(bp);
+		}
+		
+		public void updateHp(BattlePokemon bp) {
+			if(player)
+				hp.setText(bp.currentHP + "/" + bp.HP);
+			float ladder = (float) ((float) bp.currentHP / (float) bp.HP);
+			hpBar.setSize((int) (154 * ladder), 6);
+			if(bp.currentHP > (int) (bp.HP / 2)) {
+				if(hpBar.getIcon() != BattleConst.greenLife)
+					hpBar.setIcon(BattleConst.greenLife);
+			}
+			else if(bp.currentHP > (int) (bp.HP/5)) {
+				if(hpBar.getIcon() != BattleConst.orangeLife)
+					hpBar.setIcon(BattleConst.orangeLife);
+			}
+			else {
+				if(hpBar.getIcon() != BattleConst.redLife) {
+					hpBar.setIcon(BattleConst.redLife);
+					// TODO Critical life sound
+				}
+			}
+			
+		}
+		
 	}
 }
