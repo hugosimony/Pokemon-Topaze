@@ -24,6 +24,7 @@ public class BattlePokemon {
 	public int level;
 	public int xpToNextLevel;
 	public int friendship;
+	public int oldCurrentHP;
 	public int currentHP;
 	public boolean isKO;
 	public Status status;
@@ -65,6 +66,7 @@ public class BattlePokemon {
 		this.xpToNextLevel = pokemon.xpToNextLevel;
 		this.friendship = pokemon.friendship;
 		this.currentHP = pokemon.currentHP;
+		this.oldCurrentHP = currentHP;
 		this.isKO = pokemon.isKO;
 		this.status = pokemon.status;
 		this.HP = pokemon.HP;
@@ -88,6 +90,41 @@ public class BattlePokemon {
 		this.move4 = pokemon.move4;
 		this.item = new Item(pokemon.item);
 		this.secondaryStatus = new ArrayList<Status>();
+	}
+	
+	public void removeHP(int HP) {
+		oldCurrentHP = currentHP;
+		if(HP >= currentHP) {
+			currentHP = 0;
+			kill();
+		}
+		else 
+			currentHP -= HP;
+	}
+	
+	private void kill() {
+		currentHP = 0;
+		isKO = true;
+	}
+	
+	public void gainXp(int xpGain) {
+		if(xpGain >= xpToNextLevel) {
+			levelUp();
+			// TODO Set new xpToNextLevel
+		}
+		else
+			xpToNextLevel -= xpGain;
+	}
+	
+	private void levelUp() {
+		level++;
+		pokemon.setStats();
+		HP = pokemon.HP;
+		ATK = pokemon.ATK;
+		ATK_SPE = pokemon.ATK_SPE;
+		DEF = pokemon.DEF;
+		DEF_SPE = pokemon.DEF_SPE;
+		SPEED = pokemon.SPEED;
 	}
 	
 	public void updatePokemon() {

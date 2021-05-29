@@ -14,6 +14,7 @@ import fr.hugosimony.pokemontopaze.maps.pnj.PnjText;
 import fr.hugosimony.pokemontopaze.menus.TextZone;
 import fr.hugosimony.pokemontopaze.musics.Musics;
 import fr.hugosimony.pokemontopaze.pokemon.PKM;
+import fr.hugosimony.pokemontopaze.pokemon.battle.Battle;
 import fr.hugosimony.pokemontopaze.sounds.Sounds;
 import fr.hugosimony.pokemontopaze.utils.IntTuple;
 
@@ -353,9 +354,7 @@ public class PnjAnimations {
 			return;
 		}
 		else if(Variables.ADVENTURE_Step == 15) {
-			Game.waitingBattle = "rival01";
-			Game.waitingBattlefield = "Champion";
-			Game.waitingWeather = "Good";
+			Battle.presets = new Battle.BattlePresets("rival01", "Good", "Champion", "Grass");
 			if(game.deplacement.locationY == 1770) {
 				new Timer().scheduleAtFixedRate(game.road01.rival.new Move(Direction.LEFT, true, new IntTuple(3712, 1738), "dlll", Direction.RIGHT, 
 						PnjText.getText("rival")), 1200, 8);

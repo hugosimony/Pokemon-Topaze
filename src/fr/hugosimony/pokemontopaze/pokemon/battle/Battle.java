@@ -30,9 +30,12 @@ public class Battle extends JPanel {
 
 	private Game game;
 	
+	public static BattlePresets presets;
+	
 	private String opponent;
 	private String background;
 	private String weather;
+	private String ground;
 	
 	private JPanel savedMap;
 	private URL savedMusic;
@@ -58,7 +61,7 @@ public class Battle extends JPanel {
 	
 	public int x = 0;
 	
-	public Battle(Game game, boolean savage, String opponent, String background, String weather, JPanel savedMap) {
+	public Battle(Game game, boolean savage, JPanel savedMap) {
 	
 		Pokemon pokemon1 = new Pokemon(PKM.values()[Utils.randomNumber(150)], 50, Items.NONE);
 		Pokemon pokemon2 = new Pokemon(PKM.values()[Utils.randomNumber(150)], 50, Items.NONE);
@@ -72,9 +75,10 @@ public class Battle extends JPanel {
 		game.battle = this;
 		setBackground(new Color(0, 0, 0));
 		
-		this.opponent = opponent;
-		this.background = background;
-		this.weather = weather;
+		this.opponent = presets.opponent;
+		this.weather = presets.weather;
+		this.background = presets.background;
+		this.ground = presets.ground;
 		
 		this.savedMap = savedMap;
 		this.savedMusic = Main.actualClipURL;
@@ -242,6 +246,7 @@ public class Battle extends JPanel {
 			
 			
 			updateData();
+			initHP(player ? battlePokemon2 : battlePokemon1);
 			
 			add(name);
 			add(gender);
@@ -269,7 +274,7 @@ public class Battle extends JPanel {
 			updateHp(bp);
 		}
 		
-		public void updateHp(BattlePokemon bp) {
+		public void initHP(BattlePokemon bp) {
 			if(player)
 				hp.setText(bp.currentHP + "/" + bp.HP);
 			float ladder = (float) ((float) bp.currentHP / (float) bp.HP);
@@ -288,8 +293,56 @@ public class Battle extends JPanel {
 					// TODO Critical life sound
 				}
 			}
-			
 		}
 		
+		public void updateHp(BattlePokemon bp) {
+			 new Timer().scheduleAtFixedRate(new TimerTask() {
+				@Override
+				public void run() {
+					if(bp.oldCurrentHP == bp.currentHP)
+						this.cancel();
+					else {
+						if(bp.oldCurrentHP > bp.currentHP)
+							bp.oldCurrentHP--;
+						else
+							bp.oldCurrentHP++;
+						if(player)
+							hp.setText(bp.oldCurrentHP + "/" + bp.HP);
+						float ladder = (float) ((float) bp.oldCurrentHP / (float) bp.HP);
+						hpBar.setSize((int) (154 * ladder), 6);
+						if(bp.oldCurrentHP > (int) (bp.HP / 2)) {
+							if(hpBar.getIcon() != BattleConst.greenLife)
+								hpBar.setIcon(BattleConst.greenLife);
+						}
+						else if(bp.oldCurrentHP > (int) (bp.HP/5)) {
+							if(hpBar.getIcon() != BattleConst.orangeLife)
+								hpBar.setIcon(BattleConst.orangeLife);
+						}
+						else {
+							if(hpBar.getIcon() != BattleConst.redLife) {
+								hpBar.setIcon(BattleConst.redLife);
+								// TODO Critical life sound
+							}
+						}
+					}
+				}
+			}, 0, 20);
+		}
+		
+	}
+	
+	public static class BattlePresets {
+
+		public String opponent;
+		public String weather;
+		public String background;
+		public String ground;
+		
+		public BattlePresets(String opponent, String weather, String background, String ground) {
+			this.opponent = opponent;
+			this.weather = weather;
+			this.background = background;
+			this.ground = ground;
+		}
 	}
 }

@@ -1,8 +1,8 @@
 package fr.hugosimony.pokemontopaze.maps.pnj;
 
-import fr.hugosimony.pokemontopaze.Game;
 import fr.hugosimony.pokemontopaze.Variables;
 import fr.hugosimony.pokemontopaze.pokemon.PKM;
+import fr.hugosimony.pokemontopaze.pokemon.battle.Battle;
 
 public class PnjText {
 
@@ -126,9 +126,7 @@ public class PnjText {
 			
 			if(perso.equals("capboy002")) {
 				if(Variables.BATTLERS.contains("capboy002")) {
-					Game.waitingBattle = "capboy002";
-					Game.waitingBattlefield = "GymLeader7";
-					Game.waitingWeather = "Good";
+					Battle.presets = new Battle.BattlePresets("capboy002", "Good", "GymLeader7", "Grass");
 					return "Tu as un Pokémon,= moi aussi.= Nos regards se sont croisés !=\n"
 					+ "Quand c'est le cas, on doit s'affronter != On y va !=^";
 				}
@@ -152,9 +150,7 @@ public class PnjText {
 			
 			if(perso.equals("campinggirl001")) {
 				if(Variables.BATTLERS.contains("campinggirl001")) {
-					Game.waitingBattle = "campinggirl001";
-					Game.waitingBattlefield = "GymLeader7";
-					Game.waitingWeather = "Good";
+					Battle.presets = new Battle.BattlePresets("campinggirl001", "Good", "GymLeader7", "Grass");
 					return "Eh toi,= tu sais camper ¤= Moi j'adore ça != Mais t'es un\n"
 					+ "dresseur ¤!= Allez combat !=^";
 				}
@@ -178,9 +174,7 @@ public class PnjText {
 			
 			if(perso.equals("bugcatcher001")) {
 				if(Variables.BATTLERS.contains("bugcatcher001")) {
-					Game.waitingBattle = "bugcatcher001";
-					Game.waitingBattlefield = "GymLeader7";
-					Game.waitingWeather = "Good";
+					Battle.presets = new Battle.BattlePresets("bugcatcher001", "Good", "GymLeader7", "Grass");
 					return "Coucou != Tu connais les Pokémons Insectes ¤= Tu vas\n"
 					+ "voir,= ils sont géniaux !=^";
 				}
@@ -194,9 +188,7 @@ public class PnjText {
 			
 			if(perso.equals("campingboy001")) {
 				if(Variables.BATTLERS.contains("campingboy001")) {
-					Game.waitingBattle = "campingboy001";
-					Game.waitingBattlefield = "GymLeader7";
-					Game.waitingWeather = "Good";
+					Battle.presets = new Battle.BattlePresets("campingboy001", "Good", "GymLeader7", "Grass");
 					return "Je pourrais passer toutes mes journées à camper,= mais si en\n"
 					+ "plus je peux combattre,= je suis aux anges !=^";
 				}

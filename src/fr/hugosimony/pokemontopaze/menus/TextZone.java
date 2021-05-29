@@ -140,8 +140,7 @@ public class TextZone extends JPanel {
 					game.inAnimation = false;
 	 				textZone.setVisible(false);
 	 				Map.setVisible(game, false);
-	 				new TransitionSimple(game, game.gamePanel, new Battle(game, false, Game.waitingBattle, Game.waitingBattlefield, 
-	 						Game.waitingWeather, game.actualPanel));
+	 				new TransitionSimple(game, game.gamePanel, new Battle(game, false, game.actualPanel));
 	 				this.cancel();
 	 			}
 	 			else {

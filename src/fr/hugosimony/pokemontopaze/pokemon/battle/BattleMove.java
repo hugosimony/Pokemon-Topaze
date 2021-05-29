@@ -38,8 +38,7 @@ public class BattleMove {
 		// https://www.pokebip.com/page/general/particularites_attaques
 		// https://www.pokepedia.fr/Cible#Rater_et_r.C3.A9ussir_son_attaque_dans_les_jeux_vid.C3.A9o
 		// https://www.pokepedia.fr/Modification_des_statistiques
-		String result = startMove();
-		System.out.println(result);
+		startMove();
 	}
 	
 	private String startMove() {
@@ -77,63 +76,75 @@ public class BattleMove {
 		// Get Damage
 		// https://www.pokepedia.fr/Calcul_des_d%C3%A9g%C3%A2ts
 		
-		if(Type.getMultiplier(move.type, target.type1, target.type2) == 0) {
-			System.out.println("Ça n'affecte pas " + targetName + ".");
-		}
-
 		int damage = 0;
 		
-		if(move.doOHKO()) {
-			damage = 10000;
+		if(move.category == Type.STATUT) {
+			
+			// Paralysis
+			if(move.move == Moves.CAGE_ECLAIR || move.move == Moves.PARA_SPORE || move.move == Moves.INTIMIDATION) {
+				
+			}
+			
 		}
-		else if(move.move == Moves.SONICBOOM)
-			damage = 20;
-		else if(move.move == Moves.DRACO_RAGE)
-			damage = 40;
-		else if(move.move == Moves.OMBRE_NOCTURNE || move.move == Moves.FRAPPE_ATLAS)
-			damage = sender.level;
 		else {
 			
-			// Random range
-			double CM = Utils.randomNumber(85, 100) / 100d;
-			
-			// STAB
-			if(sender.type1 == move.type || sender.type2 == move.type) CM *= 1.5;
-			
-			// Types
-			
-			double typeTable = Type.getMultiplier(move.type, target.type1, target.type2);
-			if(typeTable == 2)
-				System.out.println("C'est super efficace.");
-			else if(typeTable == 4)
-				System.out.println("C'est extrémement efficace.");
-			else if(typeTable == 0.5)
-				System.out.println("Ce n'est pas très efficace.");
-			else if(typeTable == 0.25)
-				System.out.println("Ce n'est pas du tout efficace.");
-			CM *= typeTable;
-			
-			//TODO Critical Hits
-			
-			//TODO Talents, Items, Field
-			
-			if(move.isVariable()) {
-				// TODO
-				// Handle each case
-				damage = 100;
+			if(Type.getMultiplier(move.type, target.type1, target.type2) == 0) {
+				System.out.println("Ça n'affecte pas " + targetName + ".");
 			}
-			if(move.move == Moves.TRICHERIE)
-				damage = (int) (((int) ((((sender.level * 0.4) + 2) * (target.getStat("ATK") * move.power)) / (target.getStat("DEF") * 50)) + 2) * CM);
-			else if(move.move == Moves.CHOC_PSY || move.move == Moves.FRAPPE_PSY || move.move == Moves.LAME_OINTE)
-				damage = (int) (((int) ((((sender.level * 0.4) + 2) * (target.getStat("ATK_SPE") * move.power)) / (target.getStat("DEF") * 50)) + 2) * CM);
+
+			
+			if(move.doOHKO()) {
+				damage = 10000;
+			}
+			else if(move.move == Moves.SONICBOOM)
+				damage = 20;
+			else if(move.move == Moves.DRACO_RAGE)
+				damage = 40;
+			else if(move.move == Moves.OMBRE_NOCTURNE || move.move == Moves.FRAPPE_ATLAS)
+				damage = sender.level;
 			else {
-				if(move.category == Type.PHYSIQUE)
-					damage = (int) (((int) ((((sender.level * 0.4) + 2) * (sender.getStat("ATK") * move.power)) / (target.getStat("DEF") * 50)) + 2) * CM);
-				else if(move.category == Type.SPECIALE)
-					damage = (int) (((int) ((((sender.level * 0.4) + 2) * (sender.getStat("ATK_SPE") * move.power)) / (target.getStat("DEF_SPE") * 50)) + 2) * CM);
+				
+				// Random range
+				double CM = Utils.randomNumber(85, 100) / 100d;
+				
+				// STAB
+				if(sender.type1 == move.type || sender.type2 == move.type) CM *= 1.5;
+				
+				// Types
+				
+				double typeTable = Type.getMultiplier(move.type, target.type1, target.type2);
+				if(typeTable == 2)
+					System.out.println("C'est super efficace.");
+				else if(typeTable == 4)
+					System.out.println("C'est extrémement efficace.");
+				else if(typeTable == 0.5)
+					System.out.println("Ce n'est pas très efficace.");
+				else if(typeTable == 0.25)
+					System.out.println("Ce n'est pas du tout efficace.");
+				CM *= typeTable;
+				
+				//TODO Critical Hits
+				
+				//TODO Talents, Items, Field
+				
+				if(move.isVariable()) {
+					// TODO
+					// Handle each case
+					damage = 100;
+				}
+				if(move.move == Moves.TRICHERIE)
+					damage = (int) (((int) ((((sender.level * 0.4) + 2) * (target.getStat("ATK") * move.power)) / (target.getStat("DEF") * 50)) + 2) * CM);
+				else if(move.move == Moves.CHOC_PSY || move.move == Moves.FRAPPE_PSY || move.move == Moves.LAME_OINTE)
+					damage = (int) (((int) ((((sender.level * 0.4) + 2) * (target.getStat("ATK_SPE") * move.power)) / (target.getStat("DEF") * 50)) + 2) * CM);
+				else {
+					if(move.category == Type.PHYSIQUE)
+						damage = (int) (((int) ((((sender.level * 0.4) + 2) * (sender.getStat("ATK") * move.power)) / (target.getStat("DEF") * 50)) + 2) * CM);
+					else if(move.category == Type.SPECIALE)
+						damage = (int) (((int) ((((sender.level * 0.4) + 2) * (sender.getStat("ATK_SPE") * move.power)) / (target.getStat("DEF_SPE") * 50)) + 2) * CM);
+				}
 			}
-			
-			return "The attack did " + damage + " HP(s) !";
+			System.out.println("The attack did " + damage + " HP(s) !");
+			target.removeHP(damage);
 		}
 		
 		// TODO
@@ -148,8 +159,11 @@ public class BattleMove {
 		// End of the move
 		
 		// Update the pokemon data
-		battle.battlePokemon1 = player ? sender : target;
-		battle.battlePokemon2 = player ? target : sender;
+		battle.battlePokemon1 = player ? target : sender;
+		battle.battlePokemon2 = player ? sender : target;
+		
+		battle.opponentBox.updateData();
+		battle.playerBox.updateData();
 		
 		return "0";
 	}
@@ -227,6 +241,7 @@ public class BattleMove {
 				}
 			}
 			if(!canceled && sender.secondaryStatus.contains(Status.ATTRACTION)) {
+				// TODO remove attraction if opponent switch
 				System.out.println(senderName + "est amoureux de " + targetName);
 				if(Utils.randomNumber(1) == 0) {
 					System.out.println("L'amour empèche " + senderName + "d'attaquer");
