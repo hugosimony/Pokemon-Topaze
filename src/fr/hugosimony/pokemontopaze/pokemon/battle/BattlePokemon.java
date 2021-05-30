@@ -127,6 +127,10 @@ public class BattlePokemon {
 		SPEED = pokemon.SPEED;
 	}
 	
+	public boolean isType(Type type) {
+		return type1 == type || type2 == type;
+	}
+	
 	public void updatePokemon() {
 		pokemon.level = level;
 		pokemon.xpToNextLevel = xpToNextLevel;

@@ -6,6 +6,7 @@ public enum Status {
 	FREEZE,
 	PARALYSIS,
 	POISON,
+	BIGPOISON,
 	SLEEP,
 	
 	ATTRACTION,

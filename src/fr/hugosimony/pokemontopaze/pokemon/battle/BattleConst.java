@@ -36,6 +36,8 @@ public class BattleConst {
 	public static final ImageIcon orangeLife = new ImageIcon(Main.class.getResource("pokemon/battle/menus/orangeLife.gif"));
 	public static final ImageIcon redLife = new ImageIcon(Main.class.getResource("pokemon/battle/menus/redLife.gif"));
 	public static ImageIcon getStatusIcon(String status) {
+		if(status.equals("BIGPOISON"))
+			return new ImageIcon(Main.class.getResource("pokemon/battle/menus/status/POISON.gif"));
 		return new ImageIcon(Main.class.getResource("pokemon/battle/menus/status/" + status + ".gif"));
 	}
 	

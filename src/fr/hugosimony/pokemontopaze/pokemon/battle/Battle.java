@@ -331,6 +331,10 @@ public class Battle extends JPanel {
 		
 	}
 	
+	public void printAbility(BattlePokemon bp) {
+		
+	}
+	
 	public static class BattlePresets {
 
 		public String opponent;

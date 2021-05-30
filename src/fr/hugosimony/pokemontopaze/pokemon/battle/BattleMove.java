@@ -72,8 +72,10 @@ public class BattleMove {
 		
 		// https://www.pokepedia.fr/Pr%C3%A9cision
 		
-		if(checkPrecision())
-			return "avoided";
+		if(move.move != Moves.TOXIK || !sender.isType(Type.POISON)) {
+			if(checkPrecision())
+				return "avoided";
+		}
 		
 		
 		//TODO 
@@ -85,22 +87,42 @@ public class BattleMove {
 		
 		int damage = 0;
 		
+		if(Type.getMultiplier(move.type, target.type1, target.type2) == 0) {
+			System.out.println("Ça n'affecte pas le " + targetName + "...");
+			return "immune";
+		}
+		
 		if(move.category == Type.STATUT) {
 			
 			// Paralysis
 			if(move.move == Moves.CAGE_ECLAIR || move.move == Moves.PARA_SPORE || move.move == Moves.INTIMIDATION) {
+				if(target.ability.ability == Abilities.ECHAUFFEMENT) {
+					battle.printAbility(target);
+					System.out.println("Ça n'affecte pas le " + targetName + "...");
+					return "immune";
+				}
+				if(target.isType(Type.ELECTRIK)) {
+					System.out.println("Ça n'affecte pas le " + targetName + "...");
+					return "immune";
+				}
 				target.status = Status.PARALYSIS;
 				System.out.println(targetName + " est paralysé.");
 				battle.opponentBox.updateData();
 			}
 			
+			// Poison
+			if(move.move == Moves.GAZ_TOXIK || move.move == Moves.TOXIK) {
+				if(target.ability.ability == Abilities.VACCIN) {
+					battle.printAbility(target);
+					System.out.println("Ça n'affecte pas le " + targetName + "...");
+					return "immune";
+				}
+				target.status = Status.POISON;
+				System.out.println(targetName + " est empoisonné.");
+				battle.opponentBox.updateData();
+			}
 		}
 		else {
-			
-			if(Type.getMultiplier(move.type, target.type1, target.type2) == 0) {
-				System.out.println("Ça n'affecte pas " + targetName + ".");
-			}
-
 			
 			if(move.doOHKO()) {
 				damage = 10000;
