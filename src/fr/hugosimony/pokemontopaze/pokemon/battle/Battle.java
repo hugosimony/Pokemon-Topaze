@@ -164,6 +164,9 @@ public class Battle extends JPanel {
 		// https://github.com/smogon/pokemon-showdown/blob/af8b286d2cfcacfef3d1b799fea611b09ab3ea74/sim/pokemon.ts#L560
 		
 		// https://www.pokepedia.fr/Vive_Griffe
+		
+		// Player move
+		new BattleMove(this, battlePokemon2, battlePokemon1, playerMove, false, true);
 	}
 	
 	public void endBattle(boolean savage, boolean run) {
@@ -187,6 +190,11 @@ public class Battle extends JPanel {
 		}
 		else
 			game.inBattle = false;
+	}
+	
+	public void updateData() {
+		opponentBox.updateData();
+		playerBox.updateData();
 	}
 
 	public class Databox extends JPanel{
@@ -332,7 +340,7 @@ public class Battle extends JPanel {
 	}
 	
 	public void printAbility(BattlePokemon bp) {
-		
+		//TODO
 	}
 	
 	public static class BattlePresets {

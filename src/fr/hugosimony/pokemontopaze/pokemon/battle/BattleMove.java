@@ -77,9 +77,14 @@ public class BattleMove {
 				return "avoided";
 		}
 		
-		
 		//TODO 
 		// Check Brise Moule
+		
+		if(move.isSound() && target.ability.ability == Abilities.ANTI_BRUIT) {
+			battle.printAbility(target);
+			System.out.println("Ça n'affecte pas le " + targetName + "...");
+			return "immune";
+		}
 		
 		//TODO
 		// Get Damage
@@ -94,6 +99,8 @@ public class BattleMove {
 		
 		if(move.category == Type.STATUT) {
 			
+			// TODO Abilities.FEUILLE_GARDE
+			
 			// Paralysis
 			if(move.move == Moves.CAGE_ECLAIR || move.move == Moves.PARA_SPORE || move.move == Moves.INTIMIDATION) {
 				if(target.ability.ability == Abilities.ECHAUFFEMENT) {
@@ -107,25 +114,66 @@ public class BattleMove {
 				}
 				target.status = Status.PARALYSIS;
 				System.out.println(targetName + " est paralysé.");
-				battle.opponentBox.updateData();
+				battle.updateData();
 			}
 			
 			// Poison
-			if(move.move == Moves.GAZ_TOXIK || move.move == Moves.TOXIK) {
+			else if(move.move == Moves.GAZ_TOXIK || move.move == Moves.TOXIK) {
 				if(target.ability.ability == Abilities.VACCIN) {
 					battle.printAbility(target);
 					System.out.println("Ça n'affecte pas le " + targetName + "...");
 					return "immune";
 				}
-				target.status = Status.POISON;
-				System.out.println(targetName + " est empoisonné.");
-				battle.opponentBox.updateData();
+				if(move.move == Moves.GAZ_TOXIK) {
+					target.status = Status.POISON;
+					System.out.println(targetName + " est empoisonné.");
+				}
+				else if(move.move == Moves.TOXIK) {
+					target.status = Status.BIGPOISON;
+					System.out.println(targetName + " est gravement empoisonné.");
+				}
+				target.statusTurn = 1;
+				battle.updateData();
+			}
+		
+			// Burn
+			else if(move.move == Moves.FEU_FOLLET) {
+				if(target.ability.ability == Abilities.IGNIFU_VOILE) {
+					battle.printAbility(target);
+					System.out.println("Ça n'affecte pas le " + targetName + "...");
+					return "immune";
+				}
+				target.status = Status.BURN;
+				System.out.println(targetName + " brûle.");
+				battle.updateData();
+			}
+			
+			// Sleep
+			else if(move.move == Moves.HYPNOSE || move.move == Moves.TROU_NOIR || move.move == Moves.GROBISOU
+			|| move.move == Moves.BERCEUSE || move.move == Moves.POUDRE_DODO || move.move == Moves.SPORE
+			|| move.move == Moves.SIFFL_HERBE) {
+				sender.setSleep(false);
+				System.out.println(targetName + " s'endort.");
+				battle.updateData();
+			}
+			else if(move.move == Moves.BAILLEMENT) {
+				target.baillement = 1;
+				System.out.println(targetName + " somnole.");
+			}
+			else if(move.move == Moves.REPOS) {
+				// Full heal
+				sender.setSleep(true);
+				System.out.println(senderName + " s'endort.");
+				battle.updateData();
+				return "selfheal";
 			}
 		}
 		else {
 			
 			if(move.doOHKO()) {
-				damage = 10000;
+				// TODO handle ohko
+				System.out.println("KO en un coup !");
+				damage = 1000000;
 			}
 			else if(move.move == Moves.SONICBOOM)
 				damage = 20;
@@ -187,14 +235,16 @@ public class BattleMove {
 		// TODO 
 		// Handle the freeze after an attack
 		
+		// TODO
+		// Check overlevel
+		
 		// End of the move
 		
 		// Update the pokemon data
 		battle.battlePokemon1 = player ? target : sender;
 		battle.battlePokemon2 = player ? sender : target;
 		
-		battle.opponentBox.updateData();
-		battle.playerBox.updateData();
+		battle.updateData();
 		
 		return "hit";
 	}
@@ -208,6 +258,7 @@ public class BattleMove {
 		if(Status.hasPreMoveEffect(sender.status)) {
 			if(sender.secondaryStatus.contains(Status.FLINCH)) {
 				System.out.println(senderName + "est appeuré et ne peut pas bouger.");
+				sender.secondaryStatus.remove(Status.FLINCH);
 				canceled = true;
 			}
 			if(!canceled && sender.secondaryStatus.contains(Status.OVERLEVEL)) {
@@ -226,7 +277,8 @@ public class BattleMove {
 					System.out.println(senderName + "se fiche de vous.");
 				else if(random == 7) {
 					System.out.println(senderName + "s'endort.");
-					sender.status = Status.SLEEP;
+					sender.setSleep(false);
+					// TODO set statut
 				}
 				else if(random == 8) {
 					System.out.println(senderName + "ne veut pas obéir et se blesse tout seul.");

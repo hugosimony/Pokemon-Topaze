@@ -47,4 +47,14 @@ public class Move {
 			|| move == Moves.CROC_FATAL || move == Moves.ESSORAGE || move == Moves.FRUSTRATION
 			|| move == Moves.RETOUR;
 	}
+	
+	public boolean isSound() {
+		return move == Moves.ABOIEMENT || move == Moves.BABIL || move == Moves.BANG_SONIQUE
+			|| move == Moves.BERCEUSE || move == Moves.BROUHAHA || move == Moves.CHANTANTIQUE
+			|| move == Moves.CHANT_CANON || move == Moves.CONFIDENCE || move == Moves.DERNIER_MOT
+			|| move == Moves.ECHO || move == Moves.GLAS_DE_SOIN || move == Moves.HURLEMENT
+			|| move == Moves.MEGAPHONE || move == Moves.RALE_MALE || move == Moves.REQUIEM
+			|| move == Moves.RONFLEMENT || move == Moves.RUGISSEMENT || move == Moves.SIFFL_HERBE
+			|| move == Moves.ULTRASON || move == Moves.VOIX_ENJOLEUSE;
+	}
 }

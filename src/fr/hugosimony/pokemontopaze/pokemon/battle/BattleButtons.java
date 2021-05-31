@@ -115,7 +115,7 @@ public class BattleButtons {
 				@Override public void mouseEntered(MouseEvent e) { /* Do nothing */ }
 				@Override public void mouseClicked(MouseEvent e) {
 					if(move.move != Moves.NULL)
-						startMove(battle, move);
+						battle.startMoves(move);
 				}
 			});
 			
@@ -155,9 +155,4 @@ public class BattleButtons {
 			}
 		}
 	}
-	
-	public static void startMove(Battle battle, Move move) {
-		new BattleMove(battle, battle.battlePokemon2, battle.battlePokemon1, move, false, true);
-	}
-	
 }

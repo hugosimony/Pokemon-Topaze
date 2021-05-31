@@ -10,6 +10,7 @@ import fr.hugosimony.pokemontopaze.pokemon.Pokemon;
 import fr.hugosimony.pokemontopaze.pokemon.Status;
 import fr.hugosimony.pokemontopaze.pokemon.Type;
 import fr.hugosimony.pokemontopaze.pokemon.items.Item;
+import fr.hugosimony.pokemontopaze.utils.Utils;
 
 public class BattlePokemon {
 
@@ -28,6 +29,7 @@ public class BattlePokemon {
 	public int currentHP;
 	public boolean isKO;
 	public Status status;
+	public int baillement;
 	public int statusTurn;
 	public int HP;
 	public int ATK;
@@ -69,6 +71,8 @@ public class BattlePokemon {
 		this.oldCurrentHP = currentHP;
 		this.isKO = pokemon.isKO;
 		this.status = pokemon.status;
+		this.baillement = 1;
+		this.statusTurn = 0;
 		this.HP = pokemon.HP;
 		this.ATK = pokemon.ATK;
 		this.ATK_SPE = pokemon.ATK_SPE;
@@ -104,6 +108,7 @@ public class BattlePokemon {
 	
 	private void kill() {
 		currentHP = 0;
+		System.out.println(pokemon.name + " est KO !");
 		isKO = true;
 	}
 	
@@ -125,6 +130,13 @@ public class BattlePokemon {
 		DEF = pokemon.DEF;
 		DEF_SPE = pokemon.DEF_SPE;
 		SPEED = pokemon.SPEED;
+	}
+	
+	public void setSleep(boolean rest) {
+		status = Status.SLEEP;
+		statusTurn = 2;
+		if(!rest)
+			statusTurn = Utils.randomNumber(1, 3);
 	}
 	
 	public boolean isType(Type type) {
