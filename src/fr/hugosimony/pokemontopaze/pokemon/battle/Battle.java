@@ -166,7 +166,7 @@ public class Battle extends JPanel {
 		// https://www.pokepedia.fr/Vive_Griffe
 		
 		// Player move
-		new BattleMove(this, battlePokemon2, battlePokemon1, playerMove, false, true);
+		new BattleMove(this, battlePokemon2, battlePokemon1, playerMove, false, 0, false, true);
 	}
 	
 	public void endBattle(boolean savage, boolean run) {

@@ -15,17 +15,22 @@ public class BattleMove {
 	private BattlePokemon target;
 	private Move move;
 	private boolean subMove;
+	@SuppressWarnings("unused")
+	private int subMoveCount;
+	private boolean overlevel;
 	private boolean player;
 	
 	private String senderName;
 	private String targetName;
 	
-	public BattleMove(Battle battle, BattlePokemon sender, BattlePokemon target, Move move, boolean subMove, boolean player) {
+	public BattleMove(Battle battle, BattlePokemon sender, BattlePokemon target, Move move, boolean subMove, int subMoveCount, boolean overlevel, boolean player) {
 		this.battle = battle;
 		this.sender = sender;
 		this.target = target;
 		this.move = move;
 		this.subMove = subMove;
+		this.subMoveCount = subMoveCount;
+		this.overlevel = overlevel;
 		this.player = player;
 	
 		senderName = sender.name + (player ? "" : " ennemi");
@@ -99,73 +104,88 @@ public class BattleMove {
 		
 		if(move.category == Type.STATUT) {
 			
-			// TODO Abilities.FEUILLE_GARDE
+			if(move.isStatusMove()) {
+				// Status
+				// https://www.pokepedia.fr/Statut
+				
+				// TODO Abilities.FEUILLE_GARDE
+				
+				// Paralysis
+				if(move.move == Moves.CAGE_ECLAIR || move.move == Moves.PARA_SPORE || move.move == Moves.INTIMIDATION) {
+					if(target.ability.ability == Abilities.ECHAUFFEMENT) {
+						battle.printAbility(target);
+						System.out.println("Ça n'affecte pas le " + targetName + "...");
+						return "immune";
+					}
+					if(target.isType(Type.ELECTRIK)) {
+						System.out.println("Ça n'affecte pas le " + targetName + "...");
+						return "immune";
+					}
+					target.status = Status.PARALYSIS;
+					System.out.println(targetName + " est paralysé.");
+					battle.updateData();
+				}
+				
+				// Poison
+				else if(move.move == Moves.GAZ_TOXIK || move.move == Moves.TOXIK) {
+					if(target.ability.ability == Abilities.VACCIN) {
+						battle.printAbility(target);
+						System.out.println("Ça n'affecte pas le " + targetName + "...");
+						return "immune";
+					}
+					if(move.move == Moves.GAZ_TOXIK) {
+						target.status = Status.POISON;
+						System.out.println(targetName + " est empoisonné.");
+					}
+					else if(move.move == Moves.TOXIK) {
+						target.status = Status.BIGPOISON;
+						System.out.println(targetName + " est gravement empoisonné.");
+					}
+					target.statusTurn = 1;
+					battle.updateData();
+				}
 			
-			// Paralysis
-			if(move.move == Moves.CAGE_ECLAIR || move.move == Moves.PARA_SPORE || move.move == Moves.INTIMIDATION) {
-				if(target.ability.ability == Abilities.ECHAUFFEMENT) {
-					battle.printAbility(target);
-					System.out.println("Ça n'affecte pas le " + targetName + "...");
-					return "immune";
+				// Burn
+				else if(move.move == Moves.FEU_FOLLET) {
+					if(target.ability.ability == Abilities.IGNIFU_VOILE) {
+						battle.printAbility(target);
+						System.out.println("Ça n'affecte pas le " + targetName + "...");
+						return "immune";
+					}
+					target.status = Status.BURN;
+					System.out.println(targetName + " brûle.");
+					battle.updateData();
 				}
-				if(target.isType(Type.ELECTRIK)) {
-					System.out.println("Ça n'affecte pas le " + targetName + "...");
-					return "immune";
+				
+				// Sleep
+				else if(move.move == Moves.HYPNOSE || move.move == Moves.TROU_NOIR || move.move == Moves.GROBISOU
+				|| move.move == Moves.BERCEUSE || move.move == Moves.POUDRE_DODO || move.move == Moves.SPORE
+				|| move.move == Moves.SIFFL_HERBE) {
+					sender.setSleep(false);
+					System.out.println(targetName + " s'endort.");
+					battle.updateData();
 				}
-				target.status = Status.PARALYSIS;
-				System.out.println(targetName + " est paralysé.");
-				battle.updateData();
+				else if(move.move == Moves.BAILLEMENT) {
+					target.baillement = 1;
+					System.out.println(targetName + " somnole.");
+				}
+				else if(move.move == Moves.REPOS) {
+					// Full heal
+					sender.setSleep(true);
+					System.out.println(senderName + " s'endort.");
+					battle.updateData();
+					return "selfheal";
+				}
 			}
-			
-			// Poison
-			else if(move.move == Moves.GAZ_TOXIK || move.move == Moves.TOXIK) {
-				if(target.ability.ability == Abilities.VACCIN) {
-					battle.printAbility(target);
-					System.out.println("Ça n'affecte pas le " + targetName + "...");
-					return "immune";
+			else if(move.isBonusNonOffensiceStatMove() || move.isMalusNonOffensiveStatMove()){
+				// Statistics
+				// https://www.pokebip.com/page/jeuxvideo/guide_tactique_strategie_pokemon/attaques
+				if(move.isBonusNonOffensiceStatMove()) {
+					// Bonus
 				}
-				if(move.move == Moves.GAZ_TOXIK) {
-					target.status = Status.POISON;
-					System.out.println(targetName + " est empoisonné.");
+				else {
+					// Malus
 				}
-				else if(move.move == Moves.TOXIK) {
-					target.status = Status.BIGPOISON;
-					System.out.println(targetName + " est gravement empoisonné.");
-				}
-				target.statusTurn = 1;
-				battle.updateData();
-			}
-		
-			// Burn
-			else if(move.move == Moves.FEU_FOLLET) {
-				if(target.ability.ability == Abilities.IGNIFU_VOILE) {
-					battle.printAbility(target);
-					System.out.println("Ça n'affecte pas le " + targetName + "...");
-					return "immune";
-				}
-				target.status = Status.BURN;
-				System.out.println(targetName + " brûle.");
-				battle.updateData();
-			}
-			
-			// Sleep
-			else if(move.move == Moves.HYPNOSE || move.move == Moves.TROU_NOIR || move.move == Moves.GROBISOU
-			|| move.move == Moves.BERCEUSE || move.move == Moves.POUDRE_DODO || move.move == Moves.SPORE
-			|| move.move == Moves.SIFFL_HERBE) {
-				sender.setSleep(false);
-				System.out.println(targetName + " s'endort.");
-				battle.updateData();
-			}
-			else if(move.move == Moves.BAILLEMENT) {
-				target.baillement = 1;
-				System.out.println(targetName + " somnole.");
-			}
-			else if(move.move == Moves.REPOS) {
-				// Full heal
-				sender.setSleep(true);
-				System.out.println(senderName + " s'endort.");
-				battle.updateData();
-				return "selfheal";
 			}
 		}
 		else {
@@ -232,11 +252,17 @@ public class BattleMove {
 		// TODO 
 		// Check kill
 		
+		// TODO
+		// Check Attack secondary effects
+		
 		// TODO 
 		// Handle the freeze after an attack
 		
 		// TODO
 		// Check overlevel
+		
+		// TODO
+		// Check status / abilities
 		
 		// End of the move
 		
@@ -246,7 +272,7 @@ public class BattleMove {
 		
 		battle.updateData();
 		
-		return "hit";
+		return "success";
 	}
 	
 	private boolean checkStatus() {
@@ -261,7 +287,7 @@ public class BattleMove {
 				sender.secondaryStatus.remove(Status.FLINCH);
 				canceled = true;
 			}
-			if(!canceled && sender.secondaryStatus.contains(Status.OVERLEVEL)) {
+			if(!overlevel && !canceled && sender.secondaryStatus.contains(Status.OVERLEVEL)) {
 				int random = Utils.randomNumber(8);
 				if(random == 0 || random == 1)
 					System.out.println(senderName + "ignore les ordres.");
@@ -292,7 +318,7 @@ public class BattleMove {
 					else if(r == 2) randomMove = sender.move3;
 					else if(r == 3) randomMove = sender.move4;
 					System.out.println(senderName + "utilise plutôt" + randomMove.name);
-					new BattleMove(battle, sender, target, randomMove, true, player);
+					new BattleMove(battle, sender, target, randomMove, false, 0, true, player);
 				}
 				canceled = true;
 			}

@@ -26,6 +26,40 @@ public class Move {
 		pp = ppMax;
 	}
 	
+	public boolean isStatusMove() {
+		// TODO do the list
+		return move == Moves.TOXIK;
+	}
+	
+	public boolean isBonusNonOffensiceStatMove() {
+		return move == Moves.ACUPRESSION || move == Moves.DANSE_LAMES || move == Moves.AFFUTAGE
+			|| move == Moves.DANSE_DRACO || move == Moves.GONFLETTE || move == Moves.GRONDEMENT
+			|| move == Moves.MALEDICTION || move == Moves.YOGA || move == Moves.BOUCLIER
+			|| move == Moves.MUR_DE_FER || move == Moves.ACIDARMURE || move == Moves.FORCE_COSMIQUE
+			|| move == Moves.APPEL_DEFENS || move == Moves.BOUL_ARMURE || move == Moves.ARMURE
+			|| move == Moves.STOCKAGE || move == Moves.REPLI || move == Moves.MACHINATION
+			|| move == Moves.LUMIQUEUE || move == Moves.PLENITUDE || move == Moves.CROISSANCE
+			|| move == Moves.FLATTERIE || move == Moves.AMNESIE || move == Moves.CHARGEUR
+			|| move == Moves.GRAVITE || move == Moves.REFLET || move == Moves.LILLIPUT
+			|| move == Moves.ENROULEMENT || move == Moves.TELEKINESIE || move == Moves.JET_DE_SABLE
+			|| move == Moves.BROUILLARD;
+	}
+	
+	public boolean isMalusNonOffensiveStatMove() {
+		// TODO do the list
+		return move == Moves.CHARME;
+	}
+	
+	public boolean isBonusOffensiveStatMove() {
+		// TODO do the list
+		return move == Moves.FRENESIE;
+	}
+	
+	public boolean isMalusOffensiveStatMove() {
+		// TODO do the list
+		return move == Moves.FRENESIE;
+	}
+	
 	public boolean doUnfreeze() {
 		return move == Moves.ROUE_DE_FEU || move == Moves.FEU_SACRE || move == Moves.BOUTEFEU
 			|| move == Moves.EBULLITION || move == Moves.FLAMME_CROIX || move == Moves.JET_DE_VAPEUR;
