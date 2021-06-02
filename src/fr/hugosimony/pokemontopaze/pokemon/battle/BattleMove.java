@@ -1,6 +1,7 @@
 package fr.hugosimony.pokemontopaze.pokemon.battle;
 
 import fr.hugosimony.pokemontopaze.pokemon.Abilities;
+import fr.hugosimony.pokemontopaze.pokemon.Gender;
 import fr.hugosimony.pokemontopaze.pokemon.Move;
 import fr.hugosimony.pokemontopaze.pokemon.Moves;
 import fr.hugosimony.pokemontopaze.pokemon.Status;
@@ -21,7 +22,12 @@ public class BattleMove {
 	private boolean player;
 	
 	private String senderName;
+	private String senderNameMaj;
 	private String targetName;
+	private String targetNameMaj;
+	@SuppressWarnings("unused")
+	private String senderNameClean;
+	private String targetNameClean;
 	
 	public BattleMove(Battle battle, BattlePokemon sender, BattlePokemon target, Move move, boolean subMove, int subMoveCount, boolean overlevel, boolean player) {
 		this.battle = battle;
@@ -33,8 +39,12 @@ public class BattleMove {
 		this.overlevel = overlevel;
 		this.player = player;
 	
-		senderName = sender.name + (player ? "" : " ennemi");
-		targetName = target.name + (player ? " ennemi" : "");
+		senderName = (player ? "" : "le ") + sender.name + (player ? "" : " ennemi");
+		targetName = (player ? "le " : "") + target.name + (player ? " ennemi" : "");
+		senderName = (player ? "" : "le ") + sender.name + (player ? "" : " ennemi");
+		targetName = (player ? "le " : "") + target.name + (player ? " ennemi" : "");
+		senderNameClean = sender.name + (player ? "" : " ennemi");
+		targetNameClean = target.name + (player ? " ennemi" : "");
 		
 		System.out.println("-------------------------------------------------------------");
 		System.out.println(move.name + " par " + senderName + " contre " + targetName);
@@ -56,7 +66,7 @@ public class BattleMove {
 				return "status";
 		}
 		
-		System.out.println(senderName + " utilise " + move.name);
+		System.out.println(senderNameMaj + " utilise " + move.name);
 		
 		// https://www.pokepedia.fr/Brise_Moule
 		
@@ -87,7 +97,7 @@ public class BattleMove {
 		
 		if(move.isSound() && target.ability.ability == Abilities.ANTI_BRUIT) {
 			battle.printAbility(target);
-			System.out.println("Ça n'affecte pas le " + targetName + "...");
+			System.out.println("Ça n'affecte pas" + targetName + "...");
 			return "immune";
 		}
 		
@@ -109,15 +119,15 @@ public class BattleMove {
 				if(move.move == Moves.CAGE_ECLAIR || move.move == Moves.PARA_SPORE || move.move == Moves.INTIMIDATION) {
 					if(target.ability.ability == Abilities.ECHAUFFEMENT) {
 						battle.printAbility(target);
-						System.out.println("Ça n'affecte pas le " + targetName + "...");
+						System.out.println("Ça n'affecte pas " + targetName + "...");
 						return "immune";
 					}
 					if(target.isType(Type.ELECTRIK)) {
-						System.out.println("Ça n'affecte pas le " + targetName + "...");
+						System.out.println("Ça n'affecte pas " + targetName + "...");
 						return "immune";
 					}
 					target.status = Status.PARALYSIS;
-					System.out.println(targetName + " est paralysé.");
+					System.out.println(targetNameMaj + " est paralysé.");
 					battle.updateData();
 				}
 				
@@ -125,16 +135,16 @@ public class BattleMove {
 				else if(move.move == Moves.GAZ_TOXIK || move.move == Moves.TOXIK) {
 					if(target.ability.ability == Abilities.VACCIN) {
 						battle.printAbility(target);
-						System.out.println("Ça n'affecte pas le " + targetName + "...");
+						System.out.println("Ça n'affecte pas " + targetName + "...");
 						return "immune";
 					}
 					if(move.move == Moves.GAZ_TOXIK) {
 						target.status = Status.POISON;
-						System.out.println(targetName + " est empoisonné.");
+						System.out.println(targetNameMaj + " est empoisonné.");
 					}
 					else if(move.move == Moves.TOXIK) {
 						target.status = Status.BIGPOISON;
-						System.out.println(targetName + " est gravement empoisonné.");
+						System.out.println(targetNameMaj + " est gravement empoisonné.");
 					}
 					target.statusTurn = 1;
 					battle.updateData();
@@ -144,11 +154,11 @@ public class BattleMove {
 				else if(move.move == Moves.FEU_FOLLET) {
 					if(target.ability.ability == Abilities.IGNIFU_VOILE) {
 						battle.printAbility(target);
-						System.out.println("Ça n'affecte pas le " + targetName + "...");
+						System.out.println("Ça n'affecte pas " + targetName + "...");
 						return "immune";
 					}
 					target.status = Status.BURN;
-					System.out.println(targetName + " brûle.");
+					System.out.println(targetNameMaj + " brûle.");
 					battle.updateData();
 				}
 				
@@ -157,20 +167,67 @@ public class BattleMove {
 				|| move.move == Moves.BERCEUSE || move.move == Moves.POUDRE_DODO || move.move == Moves.SPORE
 				|| move.move == Moves.SIFFL_HERBE) {
 					sender.setSleep(false);
-					System.out.println(targetName + " s'endort.");
+					System.out.println(targetNameMaj + " s'endort.");
 					battle.updateData();
 				}
 				else if(move.move == Moves.BAILLEMENT) {
 					target.baillement = 1;
-					System.out.println(targetName + " somnole.");
+					System.out.println(targetNameMaj + " somnole.");
 				}
 				else if(move.move == Moves.REPOS) {
-					// Full heal
+					// TODO Full heal
 					sender.setSleep(true);
-					System.out.println(senderName + " s'endort.");
+					System.out.println(senderNameMaj + " s'endort.");
 					battle.updateData();
 					return "selfheal";
 				}
+				
+				// Attraction
+				else if(move.move == Moves.ATTRACTION) {
+					if(target.secondaryStatus.contains(Status.ATTRACTION)) {
+						System.out.println(targetNameMaj + " est déjà amoureux.");
+						return "failed";
+					}
+					if(sender.gender == Gender.NEUTRAL) {
+						System.out.println("Mais cela échoue...");
+						return "failed";
+					}
+					if(target.gender == Gender.NEUTRAL) {
+						System.out.println("Ça n'affecte pas " + targetName + "...");
+						return "immune";
+					}
+					if(target.ability.ability == Abilities.BENET || target.ability.ability == Abilities.AROMA_VOILE) {
+						battle.printAbility(target);
+						System.out.println("Ça n'affecte pas " + targetName + "...");
+						return "immune";
+					}
+					if(target.item.item == Items.HERBE_MENTAL) {
+						battle.printItem(target);
+						System.out.println(targetNameMaj + " est immunisé.");
+						target.useItem(true);
+						return "itemCanceled";
+					}
+					if(sender.gender != target.gender) {
+						target.secondaryStatus.add(Status.ATTRACTION);
+						System.out.println(targetNameMaj + " tombe amoureux.");
+						if(target.item.item == Items.NOEUD_DESTIN && !sender.secondaryStatus.contains(Status.ATTRACTION)
+						&& sender.ability.ability != Abilities.BENET && sender.ability.ability != Abilities.MIROIR_MAGIK
+						&& sender.ability.ability != Abilities.AROMA_VOILE) {
+							battle.printItem(target);
+							System.out.println(targetNameMaj + " lie son destin avec " + senderName + ".");
+							target.useItem(false);
+							if(sender.item.item == Items.HERBE_MENTAL) {
+								battle.printItem(sender);
+								System.out.println(senderNameMaj + " est immunisé.");
+								target.useItem(true);
+								return "itemCanceled";
+							}
+							sender.secondaryStatus.add(Status.ATTRACTION);
+							System.out.println(senderNameMaj + " tombe amoureux.");
+						}
+					}
+				}
+				
 			}
 			else if(move.isBonusNonOffensiceStatMove() || move.isMalusNonOffensiveStatMove()){
 				// Statistics
@@ -187,7 +244,7 @@ public class BattleMove {
 			
 			// Check immunity
 			if(Type.getMultiplier(move.type, target.type1, target.type2) == 0) {
-				System.out.println("Ça n'affecte pas le " + targetName + "...");
+				System.out.println("Ça n'affecte pas " + targetName + "...");
 				return "immune";
 			}
 			
@@ -284,31 +341,31 @@ public class BattleMove {
 		
 		if(Status.hasPreMoveEffect(sender.status)) {
 			if(sender.secondaryStatus.contains(Status.FLINCH)) {
-				System.out.println(senderName + "est appeuré et ne peut pas bouger.");
+				System.out.println(senderNameMaj + "est appeuré et ne peut pas bouger.");
 				sender.secondaryStatus.remove(Status.FLINCH);
 				canceled = true;
 			}
 			if(!overlevel && !canceled && sender.secondaryStatus.contains(Status.OVERLEVEL)) {
 				int random = Utils.randomNumber(8);
 				if(random == 0 || random == 1)
-					System.out.println(senderName + "ignore les ordres.");
+					System.out.println(senderNameMaj + "ignore les ordres.");
 				else if(random == 2)
-					System.out.println(senderName + "s'amuse de son côté.");
+					System.out.println(senderNameMaj + "s'amuse de son côté.");
 				else if(random == 3)
-					System.out.println(senderName + "se retourne et ne vous écoute pas.");
+					System.out.println(senderNameMaj + "se retourne et ne vous écoute pas.");
 				else if(random == 4)
-					System.out.println(senderName + "ne veut pas obéir.");
+					System.out.println(senderNameMaj + "ne veut pas obéir.");
 				else if(random == 5)
-					System.out.println(senderName + "fait comme s'il n'avais pas entendu.");
+					System.out.println(senderNameMaj + "fait comme s'il n'avais pas entendu.");
 				else if(random == 6)
-					System.out.println(senderName + "se fiche de vous.");
+					System.out.println(senderNameMaj + "se fiche de vous.");
 				else if(random == 7) {
-					System.out.println(senderName + "s'endort.");
+					System.out.println(senderNameMaj + "s'endort.");
 					sender.setSleep(false);
 					// TODO set statut
 				}
 				else if(random == 8) {
-					System.out.println(senderName + "ne veut pas obéir et se blesse tout seul.");
+					System.out.println(senderNameMaj + "ne veut pas obéir et se blesse tout seul.");
 					doConfusionHurt();
 				}
 				if(random == 0 || random == 3 || random == 4 || random == 5 || random == 6) {
@@ -318,41 +375,41 @@ public class BattleMove {
 					else if(r == 1) randomMove = sender.move2;
 					else if(r == 2) randomMove = sender.move3;
 					else if(r == 3) randomMove = sender.move4;
-					System.out.println(senderName + "utilise plutôt" + randomMove.name);
+					System.out.println(senderNameMaj + "utilise plutôt" + randomMove.name);
 					new BattleMove(battle, sender, target, randomMove, false, 0, true, player);
 				}
 				canceled = true;
 			}
 			if(!canceled && sender.status == Status.PARALYSIS) {
 				if(Utils.randomNumber(3) == 0) {
-					System.out.println(senderName + "est paralysé et ne peut pas attaquer.");
+					System.out.println(senderNameMaj + "est paralysé et ne peut pas attaquer.");
 					canceled = true;
 				}
 			}
 			else if(!canceled && sender.status == Status.FREEZE) {
 				if(Utils.randomNumber(4) == 0 || move.doUnfreeze()) {
-					System.out.println(senderName + "dégèle.");
+					System.out.println(senderNameMaj + "dégèle.");
 					sender.status = Status.NULL;
 				}
 				else {
-					System.out.println(senderName + "est gelé et ne peut pas attaquer.");
+					System.out.println(senderNameMaj + "est gelé et ne peut pas attaquer.");
 					canceled = true;
 				}
 			}
 			else if(!canceled && sender.status == Status.SLEEP) {
 				if(sender.statusTurn == 0) {
-					System.out.println(senderName + "se réveille.");
+					System.out.println(senderNameMaj + "se réveille.");
 					sender.status = Status.NULL;
 				}
 				else if(!move.canMoveInSleep()) {
-					System.out.println(senderName + "dort.");
+					System.out.println(senderNameMaj + "dort.");
 					sender.statusTurn--;
 					canceled = true;
 				}
 			}
 			if(!canceled && sender.secondaryStatus.contains(Status.ATTRACTION)) {
 				// TODO remove attraction if opponent switch
-				System.out.println(senderName + "est amoureux de " + targetName);
+				System.out.println(senderNameMaj + "est amoureux de " + targetNameClean);
 				if(Utils.randomNumber(1) == 0) {
 					System.out.println("L'amour empèche " + senderName + "d'attaquer");
 					canceled = true;
@@ -360,13 +417,13 @@ public class BattleMove {
 			}
 			if(!canceled && sender.secondaryStatus.contains(Status.CONFUSION)) {
 				if(sender.confusionTurn == 0) {
-					System.out.println(senderName + "n'est plus confus.");
+					System.out.println(senderNameMaj + "n'est plus confus.");
 					sender.secondaryStatus.remove(Status.CONFUSION);
 				}
 				else {
-					System.out.println(senderName + "est confus.");
+					System.out.println(senderNameMaj + "est confus.");
 					if(Utils.randomNumber(1) == 0) {
-						System.out.println(senderName + "se blesse dans sa confusion");
+						System.out.println(senderNameMaj + "se blesse dans sa confusion");
 						doConfusionHurt();
 						canceled = true;
 					}
@@ -386,6 +443,7 @@ public class BattleMove {
 	private boolean checkPrecision() {
 		
 		// https://www.pokepedia.fr/Pr%C3%A9cision
+		// TODO lentille zomm et poudre claire
 		
 		if(move.precision == 1000)
 			return false;
@@ -405,7 +463,7 @@ public class BattleMove {
 			int random = Utils.randomNumber(1, 100);
 			if(random > accuracy) {
 				canceled = true;
-				System.out.println(targetName + " avoided the attack.");
+				System.out.println(targetNameMaj + " avoided the attack.");
 			}
 		}
 		

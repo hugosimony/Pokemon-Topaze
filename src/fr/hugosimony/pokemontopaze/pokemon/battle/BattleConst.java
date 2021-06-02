@@ -3,6 +3,7 @@ package fr.hugosimony.pokemontopaze.pokemon.battle;
 import javax.swing.ImageIcon;
 
 import fr.hugosimony.pokemontopaze.Main;
+import fr.hugosimony.pokemontopaze.pokemon.Gender;
 import fr.hugosimony.pokemontopaze.pokemon.PKM;
 import fr.hugosimony.pokemontopaze.pokemon.Pokemon;
 
@@ -53,7 +54,7 @@ public class BattleConst {
 	public static String getAnimatedSprite(Pokemon pokemon, boolean back) {
 		String side = back ? "2" : "1";
 		String shiny = pokemon.shiny ? "S" : "";
-		if(pokemon.gender == 2 && Main.class.getResource(spritePath + pokemon.pokemon.toString() + side + "F.gif") != null)
+		if(pokemon.gender == Gender.FEMALE && Main.class.getResource(spritePath + pokemon.pokemon.toString() + side + "F.gif") != null)
 			return spritePath + pokemon.pokemon.toString() + side + "F" + shiny + ".gif";
 		return spritePath + pokemon.pokemon.toString() + side + "M" + shiny + ".gif";
 	}

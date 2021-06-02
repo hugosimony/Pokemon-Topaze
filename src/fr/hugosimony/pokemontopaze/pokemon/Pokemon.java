@@ -18,7 +18,7 @@ public class Pokemon {
 	public PKM pokemon;
 	public String name;
 	public Nature nature;
-	public int gender; // 0 = Neutre / 1 = Male / 2 = Femelle
+	public Gender gender;
 	public Ability ability;
 	public Type type1;
 	public Type type2;
@@ -95,7 +95,7 @@ public class Pokemon {
 		this.catchDressorName = Variables.PERSO_Name;
 	}
 	
-	public Pokemon(PKM pokemon, String name, Nature nature, int gender, Ability ability, int level, int xp, int xpToNextLevel, boolean isKO, int HP, int currentHP, int ATK, int ATK_SPE, int DEF, int DEF_SPE, int SPEED, Move move1, Move move2, Move move3, Move move4, Items item, PokeBalls ball, String catchDressorName, boolean shiny, int ID) {
+	public Pokemon(PKM pokemon, String name, Nature nature, Gender gender, Ability ability, int level, int xp, int xpToNextLevel, boolean isKO, int HP, int currentHP, int ATK, int ATK_SPE, int DEF, int DEF_SPE, int SPEED, Move move1, Move move2, Move move3, Move move4, Items item, PokeBalls ball, String catchDressorName, boolean shiny, int ID) {
 		
 		this.pokemon = pokemon;
 		this.name = name;
@@ -182,18 +182,18 @@ public class Pokemon {
 				ability = new Ability(Abilities.getAbility(datas[6]));
 		}
 		// Gender
-		gender = 0;
+		gender = Gender.NEUTRAL;
 		double probaBoy = Double.parseDouble(datas[14]);
 		double probaGirl = Double.parseDouble(datas[15]);
 		if(probaBoy != 0 || probaGirl != 0) {
 			if(probaBoy == 0)
-				gender = 2;
+				gender = Gender.FEMALE;
 			else {
 				random = Utils.randomNumber(1, 1000);
 				if(random <= probaBoy*10)
-					gender = 1;
+					gender = Gender.MALE;
 				else
-					gender = 2;
+					gender = Gender.FEMALE;
 			}
 		}
 		// Catch Rate
@@ -293,7 +293,7 @@ public class Pokemon {
 		System.out.println("ID : " + ID);
 		System.out.println("Pokemon : " + PKM.getGoodName(pokemon));
 		System.out.println("Nature : " + Nature.getGoodNatureName(nature));
-		String gen = "Neutral"; if(gender != 0) gen = gender == 1 ? "Male" : "Female";
+		String gen = "Neutral"; if(gender != Gender.NEUTRAL) gen = gender == Gender.MALE ? "Male" : "Female";
 		System.out.println("Gender : " + gen);
 		System.out.println("Ability : " + ability.name);
 		System.out.println("Types : " + type1.name() + " ; " + type2.name());

@@ -3,6 +3,7 @@ package fr.hugosimony.pokemontopaze.pokemon.battle;
 import java.util.ArrayList;
 
 import fr.hugosimony.pokemontopaze.pokemon.Ability;
+import fr.hugosimony.pokemontopaze.pokemon.Gender;
 import fr.hugosimony.pokemontopaze.pokemon.Move;
 import fr.hugosimony.pokemontopaze.pokemon.Nature;
 import fr.hugosimony.pokemontopaze.pokemon.PKM;
@@ -10,6 +11,7 @@ import fr.hugosimony.pokemontopaze.pokemon.Pokemon;
 import fr.hugosimony.pokemontopaze.pokemon.Status;
 import fr.hugosimony.pokemontopaze.pokemon.Type;
 import fr.hugosimony.pokemontopaze.pokemon.items.Item;
+import fr.hugosimony.pokemontopaze.pokemon.items.Items;
 import fr.hugosimony.pokemontopaze.utils.Utils;
 
 public class BattlePokemon {
@@ -18,7 +20,7 @@ public class BattlePokemon {
 	public PKM pkm;
 	public String name;
 	public Nature nature;
-	public int gender;
+	public Gender gender;
 	public Ability ability; // https://www.pokemontrash.com/pokedex/liste-capacites.php
 	public Type type1;
 	public Type type2;
@@ -137,6 +139,12 @@ public class BattlePokemon {
 		statusTurn = 2;
 		if(!rest)
 			statusTurn = Utils.randomNumber(1, 3);
+	}
+	
+	public void useItem(boolean consumed) {
+		item = new Item(Items.NULL);
+		if(consumed)
+			pokemon.item = Items.NULL;
 	}
 	
 	public boolean isType(Type type) {
