@@ -32,22 +32,32 @@ public class Move {
 	}
 	
 	public boolean isBonusNonOffensiceStatMove() {
-		return move == Moves.ACUPRESSION || move == Moves.DANSE_LAMES || move == Moves.AFFUTAGE
-			|| move == Moves.DANSE_DRACO || move == Moves.GONFLETTE || move == Moves.GRONDEMENT
-			|| move == Moves.MALEDICTION || move == Moves.YOGA || move == Moves.BOUCLIER
-			|| move == Moves.MUR_DE_FER || move == Moves.ACIDARMURE || move == Moves.FORCE_COSMIQUE
-			|| move == Moves.APPEL_DEFENS || move == Moves.BOUL_ARMURE || move == Moves.ARMURE
-			|| move == Moves.STOCKAGE || move == Moves.REPLI || move == Moves.MACHINATION
-			|| move == Moves.LUMIQUEUE || move == Moves.PLENITUDE || move == Moves.CROISSANCE
-			|| move == Moves.FLATTERIE || move == Moves.AMNESIE || move == Moves.CHARGEUR
-			|| move == Moves.GRAVITE || move == Moves.REFLET || move == Moves.LILLIPUT
-			|| move == Moves.ENROULEMENT || move == Moves.TELEKINESIE || move == Moves.JET_DE_SABLE
-			|| move == Moves.BROUILLARD;
+		return move == Moves.ACIDARMURE || move == Moves.ACUPRESSION || move == Moves.AFFUTAGE
+			|| move == Moves.AIGUISAGE || move == Moves.ALLEGEMENT || move == Moves.AMNESIE
+			|| move == Moves.APPEL_DEFENS || move == Moves.ARMURE || move == Moves.BOUCLIER
+			|| move == Moves.BOUL_ARMURE || move == Moves.BRUME_CAPITEUSE || move == Moves.CHARGEUR
+			|| move == Moves.CHGT_VITESSE || move == Moves.COGNOBIDON || move == Moves.COTOGARDE
+			|| move == Moves.COUP_D_MAIN || move == Moves.CROISSANCE || move == Moves.DANSE_DRACO
+			|| move == Moves.DANSE_LAMES || move == Moves.ENROULEMENT || move == Moves.EXUVIATION
+			|| move == Moves.FERTILISATION || move == Moves.FORCE_COSMIQUE || move == Moves.GARDE_FLORALE
+			|| move == Moves.GEO_CONTROLE || move == Moves.GONFLETTE || move == Moves.GRONDEMENT
+			|| move == Moves.HATE || move == Moves.LILLIPUT || move == Moves.LUMIQUEUE
+			|| move == Moves.MACHINATION || move == Moves.MAGNE_CONTROLE || move == Moves.MUR_DE_FER
+			|| move == Moves.PAPILLODANSE || move == Moves.PLENITUDE || move == Moves.POLIROCHE
+			|| move == Moves.RENGORGEMENT || move == Moves.REPLI || move == Moves.STOCKAGE
+			|| move == Moves.YOGA || move == Moves.FLATTERIE || move == Moves.VANTARDISE;
 	}
 	
 	public boolean isMalusNonOffensiveStatMove() {
-		// TODO do the list
-		return move == Moves.CHARME;
+		return move == Moves.ANTI_BRUME || move == Moves.BROUILLARD || move == Moves.CHATOUILLE
+			|| move == Moves.CONFIDENCE || move == Moves.CROCO_LARME || move == Moves.DANSE_PLUMES
+			|| move == Moves.DERNIER_MOT || move == Moves.DOUX_PARFUM || move == Moves.FLASH
+			|| move == Moves.GRIMACE || move == Moves.GRINCEMENT || move == Moves.GROZ_YEUX
+			|| move == Moves.JET_DE_SABLE || move == Moves.MIMI_QUEUE || move == Moves.ONDES_ETRANGES
+			|| move == Moves.PIEGE_VENIN|| move == Moves.RALE_MALE || move == Moves.REGARD_TOUCHANT
+			|| move == Moves.RUGISSEMENT || move == Moves.SECRETION || move == Moves.SEDUCTION
+			|| move == Moves.SOUVENIR || move == Moves.SPORE_COTON || move == Moves.STRIDO_SON
+			|| move == Moves.TELEKINESIE;
 	}
 	
 	public boolean isBonusOffensiveStatMove() {

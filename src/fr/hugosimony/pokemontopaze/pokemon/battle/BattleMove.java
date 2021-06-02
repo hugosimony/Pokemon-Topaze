@@ -97,11 +97,6 @@ public class BattleMove {
 		
 		int damage = 0;
 		
-		if(Type.getMultiplier(move.type, target.type1, target.type2) == 0) {
-			System.out.println("Ça n'affecte pas le " + targetName + "...");
-			return "immune";
-		}
-		
 		if(move.category == Type.STATUT) {
 			
 			if(move.isStatusMove()) {
@@ -189,6 +184,12 @@ public class BattleMove {
 			}
 		}
 		else {
+			
+			// Check immunity
+			if(Type.getMultiplier(move.type, target.type1, target.type2) == 0) {
+				System.out.println("Ça n'affecte pas le " + targetName + "...");
+				return "immune";
+			}
 			
 			if(move.doOHKO()) {
 				// TODO handle ohko

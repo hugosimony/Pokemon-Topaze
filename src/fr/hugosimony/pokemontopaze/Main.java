@@ -50,6 +50,20 @@ public class Main {
 		pokemon1.printPokemon();
 		pokemon2.printPokemon();
 		
+		int u = 0;
+		
+		for(Moves move_ : Moves.values()) {
+			Move move = new Move(move_);
+			if((move.description.contains("augmente") || move.description.contains("Augmente") || move.description.contains("boost") || move.description.contains("Boost") || move.description.contains("améliore") || move.description.contains("Améliore")) && move.category == Type.STATUT) {
+				if(u == 3) {
+					u = 0;
+					System.out.println();
+				}
+				System.out.print("|| move == Moves." + move_ + " ");
+				u++;
+			}
+		}
+		
 		//*****************************************************************/
 		
 		settingsOn = false;
