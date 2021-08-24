@@ -102,11 +102,10 @@ public class BattleMove {
 			return "immune";
 		}
 		
-		//TODO
-		// Get Damage
-		// https://www.pokepedia.fr/Calcul_des_d%C3%A9g%C3%A2ts
-		
 		int damage = 0;
+		
+		// ****************************************************************************************************************
+		// Check status
 		
 		if(move.category == Type.STATUT) {
 			
@@ -155,6 +154,10 @@ public class BattleMove {
 				else if(move.move == Moves.FEU_FOLLET) {
 					if(target.ability.ability == Abilities.IGNIFU_VOILE) {
 						battle.printAbility(target);
+						System.out.println("Ça n'affecte pas " + targetName + "...");
+						return "immune";
+					}
+					if(target.isType(Type.FEU)) {
 						System.out.println("Ça n'affecte pas " + targetName + "...");
 						return "immune";
 					}
@@ -241,6 +244,13 @@ public class BattleMove {
 				}
 			}
 		}
+
+		
+		// ****************************************************************************************************************
+		// Damage
+		// https://www.pokepedia.fr/Calcul_des_d%C3%A9g%C3%A2ts
+		// TODO
+		
 		else {
 			
 			// Check immunity
@@ -248,6 +258,9 @@ public class BattleMove {
 				System.out.println("Ça n'affecte pas " + targetName + "...");
 				return "immune";
 			}
+			
+			// ********************************************************************
+			// Special cases
 			
 			if(move.doOHKO()) {
 				// TODO handle ohko
@@ -260,8 +273,10 @@ public class BattleMove {
 				damage = 40;
 			else if(move.move == Moves.OMBRE_NOCTURNE || move.move == Moves.FRAPPE_ATLAS)
 				damage = sender.level;
+			
 			else {
 				
+				// ********************************************************************
 				// Random range
 				double CM = Utils.randomNumber(85, 100) / 100d;
 				
@@ -271,16 +286,19 @@ public class BattleMove {
 				// Types
 				
 				double typeTable = Type.getMultiplier(move.type, target.type1, target.type2);
-				if(typeTable == 2)
-					System.out.println("C'est super efficace.");
-				else if(typeTable == 4)
-					System.out.println("C'est extrémement efficace.");
-				else if(typeTable == 0.5)
-					System.out.println("Ce n'est pas très efficace.");
-				else if(typeTable == 0.25)
-					System.out.println("Ce n'est pas du tout efficace.");
-				CM *= typeTable;
+				if(move.move != Moves.VAGUE_PSY && move.move != Moves.CROC_FATAL) {
+					if(typeTable == 2)
+						System.out.println("C'est super efficace.");
+					else if(typeTable == 4)
+						System.out.println("C'est extrémement efficace.");
+					else if(typeTable == 0.5)
+						System.out.println("Ce n'est pas très efficace.");
+					else if(typeTable == 0.25)
+						System.out.println("Ce n'est pas du tout efficace.");
+					CM *= typeTable;
+				}
 				
+				// ********************************************************************
 				// Critical Hits
 				
 				critical = false;
@@ -310,18 +328,22 @@ public class BattleMove {
 				
 				//TODO Talents, Items, Field
 				
-				if(move.isNonVariable()) {
-					if(move.move == Moves.SONICBOOM)
-						damage = 20;
-					else if(move.move == Moves.DRACO_RAGE)
-						damage = 40;
-				}
-				else if(move.isVariable()) {
-					// TODO
-					// Handle each case
-					damage = 100;
-				}
+				// ****************************************************************************************************************
+				// Calculate damage
+				
+				if(move.isVariable())
+					damage = getVariableMoveDamage(CM);
+				
+				// ********************************************************************
+				// Critical hit
+				
 				else if(critical) {
+					if(move.move == Moves.TRICHERIE) {
+						if(target.stageDEF > 0 || target.stageATK < 0)
+							damage = (int) (((int) ((((sender.level * 0.4) + 2) * (target.ATK * move.power)) / (target.DEF * 50)) + 2) * CM);
+						else
+							damage = (int) (((int) ((((sender.level * 0.4) + 2) * (target.getPureStat("ATK") * move.power)) / (target.getStat("DEF") * 50)) + 2) * CM);
+					}
 					if(move.category == Type.PHYSIQUE) {
 						if(target.stageDEF > 0 || sender.stageATK < 0)
 							damage = (int) (((int) ((((sender.level * 0.4) + 2) * (sender.ATK * move.power)) / (target.DEF * 50)) + 2) * CM);
@@ -335,9 +357,13 @@ public class BattleMove {
 							damage = (int) (((int) ((((sender.level * 0.4) + 2) * (sender.getStat("ATK_SPE") * move.power)) / (target.getStat("DEF_SPE") * 50)) + 2) * CM);
 					}
 				}
+				
+				// ********************************************************************
+				// Classic
+				
 				else {
 					if(move.move == Moves.TRICHERIE)
-						damage = (int) (((int) ((((sender.level * 0.4) + 2) * (target.getStat("ATK") * move.power)) / (target.getStat("DEF") * 50)) + 2) * CM);
+						damage = (int) (((int) ((((sender.level * 0.4) + 2) * (target.getPureStat("ATK") * move.power)) / (target.getStat("DEF") * 50)) + 2) * CM);
 					else if(move.move == Moves.CHOC_PSY || move.move == Moves.FRAPPE_PSY || move.move == Moves.LAME_OINTE)
 						damage = (int) (((int) ((((sender.level * 0.4) + 2) * (target.getStat("ATK_SPE") * move.power)) / (target.getStat("DEF") * 50)) + 2) * CM);
 					else {
@@ -348,11 +374,19 @@ public class BattleMove {
 					}
 				}
 			}
+			
+			// ********************************************************************
+			// Finish damage
+			
+			if(damage == 0) damage = 1;
 			System.out.println("The attack did " + damage + " HP(s) !");
 			if(critical) System.out.println("C'est un coup critique !");
 			boolean ko = target.removeHP(damage);
 			if(ko) System.out.println(targetNameMaj + " est KO !");
 		}
+		
+		// ****************************************************************************************************************
+		// After move events
 		
 		// TODO
 		// Check items to survive
@@ -463,7 +497,6 @@ public class BattleMove {
 				}
 			}
 			if(!canceled && sender.secondaryStatus.contains(Status.ATTRACTION)) {
-				// TODO remove attraction if opponent switch
 				System.out.println(senderNameMaj + "est amoureux de " + targetNameClean);
 				if(Utils.randomNumber(1) == 0) {
 					System.out.println("L'amour empèche " + senderName + "d'attaquer");
@@ -543,6 +576,83 @@ public class BattleMove {
 			return Utils.randomNumber(1, 2) == 1;
 		
 		return true;
+	}
+	
+	private int getVariableMoveDamage(double CM) {
+		
+		// Return the damage done by the variable move
+		// The list of the variable moves is in the isVariable() function (Move.java)
+		
+		int damage = 1;
+		if(move.move == Moves.VAGUE_PSY)
+			damage = sender.level * ((Utils.randomNumber(10) + 5) / 10);
+		else if(move.move == Moves.GYROBALLE) {
+			int power = 25 * (target.getStat("SPEED") / sender.getStat("SPEED"));
+			if(power > 150) power = 150; if(power < 1) power = 1;
+			damage = (int) (((int) ((((sender.level * 0.4) + 2) * (sender.getStat("ATK") * power)) / (target.getStat("DEF") * 50)) + 2) * CM);
+		}
+		else if(move.move == Moves.BOULE_ELEK) {
+			int power = 150;
+			if(target.getStat("SPEED") / 2 > sender.getStat("SPEED"))
+				power = 40;
+			else if(target.getStat("SPEED") / 1.5 > sender.getStat("SPEED"))
+				power = 60;
+			else if(target.getStat("SPEED") / (double) (4.0/3.0) > sender.getStat("SPEED"))
+				power = 80;
+			else if(target.getStat("SPEED") / 1.25 > sender.getStat("SPEED"))
+				power = 120;
+			damage = (int) (((int) ((((sender.level * 0.4) + 2) * (sender.getStat("ATK_SPE") * power)) / (target.getStat("DEF_SPE") * 50)) + 2) * CM);
+		}
+		else if(move.move == Moves.NOEUD_HERBE || move.move == Moves.BALAYAGE) {
+			int power = 120;
+			if(target.weight < 10)
+				power = 20;
+			else if(target.weight < 25)
+				power = 40;
+			else if(target.weight < 50)
+				power = 60;
+			else if(target.weight < 100)
+				power = 80;
+			else if(target.weight < 200)
+				power = 100;
+			if(move.move == Moves.NOEUD_HERBE)
+				damage = (int) (((int) ((((sender.level * 0.4) + 2) * (sender.getStat("ATK_SPE") * power)) / (target.getStat("DEF_SPE") * 50)) + 2) * CM);
+			if(move.move == Moves.BALAYETTE)
+				damage = (int) (((int) ((((sender.level * 0.4) + 2) * (sender.getStat("ATK") * power)) / (target.getStat("DEF") * 50)) + 2) * CM);
+		}
+		else if(move.move == Moves.TACLE_FEU || move.move == Moves.TACLE_LOURD) {
+			int power = 120;
+			if(target.weight > (sender.weight * 50) / 100)
+				power = 40;
+			else if(target.weight > (sender.weight * 33) / 100)
+				power = 60;
+			else if(target.weight > (sender.weight * 25) / 100)
+				power = 80;
+			else if(target.weight > (sender.weight * 20) / 100)
+				power = 100;
+			damage = (int) (((int) ((((sender.level * 0.4) + 2) * (sender.getStat("ATK") * power)) / (target.getStat("DEF") * 50)) + 2) * CM);
+		}
+		else if(move.move == Moves.ERUPTION || move.move == Moves.GICLEDO) {
+			int power = 150 * (sender.currentHP / sender.HP);
+			damage = (int) (((int) ((((sender.level * 0.4) + 2) * (sender.getStat("ATK_SPE") * power)) / (target.getStat("DEF_SPE") * 50)) + 2) * CM);
+		}
+		else if(move.move == Moves.ESSORAGE) {
+			int power = 110 * (target.currentHP / target.HP);
+			damage = (int) (((int) ((((sender.level * 0.4) + 2) * (sender.getStat("ATK_SPE") * power)) / (target.getStat("DEF_SPE") * 50)) + 2) * CM);
+		}
+		else if(move.move == Moves.CROC_FATAL)
+			damage = target.currentHP / 2;
+		else if(move.move == Moves.RETOUR) {
+			int power = (int) (sender.friendship / 2.5);
+			if(power < 1) power = 1; if(power > 102) power = 102;
+			damage = (int) (((int) ((((sender.level * 0.4) + 2) * (sender.getStat("ATK") * power)) / (target.getStat("DEF") * 50)) + 2) * CM);
+		}
+		else if(move.move == Moves.FRUSTRATION) {
+			int power = (int) ((255 - sender.friendship) / 2.5);
+			if(power < 1) power = 1; if(power > 102) power = 102;
+			damage = (int) (((int) ((((sender.level * 0.4) + 2) * (sender.getStat("ATK") * power)) / (target.getStat("DEF") * 50)) + 2) * CM);
+		}
+		return damage;
 	}
 	
 }

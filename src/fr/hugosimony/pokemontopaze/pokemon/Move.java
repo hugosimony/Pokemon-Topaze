@@ -84,16 +84,12 @@ public class Move {
 			|| move == Moves.GUILLOTINE;
 	}
 	
-	public boolean isNonVariable() {
-		return move == Moves.SONICBOOM || move == Moves.DRACO_RAGE;
-	}
-	
 	public boolean isVariable() {
 		return move == Moves.VAGUE_PSY || move == Moves.GYROBALLE || move == Moves.BOULE_ELEK
 			|| move == Moves.BALAYAGE || move == Moves.NOEUD_HERBE || move == Moves.TACLE_FEU
 			|| move == Moves.TACLE_LOURD || move == Moves.ERUPTION || move == Moves.GICLEDO
 			|| move == Moves.CROC_FATAL || move == Moves.ESSORAGE || move == Moves.FRUSTRATION
-			|| move == Moves.RETOUR || move == Moves.OMBRE_NOCTURNE || move == Moves.FRAPPE_ATLAS;
+			|| move == Moves.RETOUR;
 	}
 	
 	public boolean isSound() {

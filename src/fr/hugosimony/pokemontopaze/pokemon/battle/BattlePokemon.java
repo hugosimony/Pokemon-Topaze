@@ -234,6 +234,27 @@ public class BattlePokemon {
 	}
 	
 	public int getStat(String stat) {
+		if(stat.equals("ATK")) {
+			if(status == Status.BURN)
+				return getGeneralStatMultiplicator(ATK, stageATK) / 2;
+			return getGeneralStatMultiplicator(ATK, stageATK);
+		}
+		if(stat.equals("ATK_SPE"))
+			return getGeneralStatMultiplicator(ATK_SPE, stageATK_SPE);
+		if(stat.equals("DEF"))
+			return getGeneralStatMultiplicator(DEF, stageDEF);
+		if(stat.equals("DEF_SPE"))
+			return getGeneralStatMultiplicator(DEF_SPE, stageDEF_SPE);
+		if(stat.equals("SPEED")) {
+			if(status == Status.PARALYSIS)
+				return getGeneralStatMultiplicator(SPEED, stageSPEED) / 4;
+			return getGeneralStatMultiplicator(SPEED, stageSPEED);
+		}
+		System.err.println("The stat is not correct.");
+		return -1;
+	}
+	
+	public int getPureStat(String stat) {
 		if(stat.equals("ATK"))
 			return getGeneralStatMultiplicator(ATK, stageATK);
 		if(stat.equals("ATK_SPE"))
