@@ -46,6 +46,7 @@ public class BattlePokemon {
 	public int stageSPEED;
 	public int stageACCURACY;
 	public int stageAVOIDANCE;
+	public int stageCritical;
 	public boolean onTwoTurnAttack;
 	public double weight; // https://www.pokepedia.fr/Poids
 	public Move move1;
@@ -88,6 +89,7 @@ public class BattlePokemon {
 		this.stageSPEED = 0;
 		this.stageACCURACY = 0;
 		this.stageAVOIDANCE = 0;
+		this.stageCritical = 1;
 		this.onTwoTurnAttack = false;
 		this.weight = pokemon.weight;
 		this.move1 = pokemon.move1;
@@ -98,19 +100,21 @@ public class BattlePokemon {
 		this.secondaryStatus = new ArrayList<Status>();
 	}
 	
-	public void removeHP(int HP) {
+	public boolean removeHP(int HP) {
+		boolean ko = false;
 		oldCurrentHP = currentHP;
 		if(HP >= currentHP) {
 			currentHP = 0;
+			ko = true;
 			kill();
 		}
 		else 
 			currentHP -= HP;
+		return ko;
 	}
 	
 	private void kill() {
 		currentHP = 0;
-		System.out.println(pokemon.name + " est KO !");
 		isKO = true;
 	}
 	

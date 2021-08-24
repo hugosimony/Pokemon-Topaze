@@ -84,12 +84,16 @@ public class Move {
 			|| move == Moves.GUILLOTINE;
 	}
 	
+	public boolean isNonVariable() {
+		return move == Moves.SONICBOOM || move == Moves.DRACO_RAGE;
+	}
+	
 	public boolean isVariable() {
 		return move == Moves.VAGUE_PSY || move == Moves.GYROBALLE || move == Moves.BOULE_ELEK
 			|| move == Moves.BALAYAGE || move == Moves.NOEUD_HERBE || move == Moves.TACLE_FEU
 			|| move == Moves.TACLE_LOURD || move == Moves.ERUPTION || move == Moves.GICLEDO
 			|| move == Moves.CROC_FATAL || move == Moves.ESSORAGE || move == Moves.FRUSTRATION
-			|| move == Moves.RETOUR;
+			|| move == Moves.RETOUR || move == Moves.OMBRE_NOCTURNE || move == Moves.FRAPPE_ATLAS;
 	}
 	
 	public boolean isSound() {
@@ -100,5 +104,18 @@ public class Move {
 			|| move == Moves.MEGAPHONE || move == Moves.RALE_MALE || move == Moves.REQUIEM
 			|| move == Moves.RONFLEMENT || move == Moves.RUGISSEMENT || move == Moves.SIFFL_HERBE
 			|| move == Moves.ULTRASON || move == Moves.VOIX_ENJOLEUSE;
+	}
+	
+	public boolean isCriticalBoost() {
+		return move == Moves.AEROBLAST || move == Moves.APPEL_ATTAK || move == Moves.COUP_CROIX
+			|| move == Moves.COUPE_PSYCHO || move == Moves.GRIFFE_OMBRE || move == Moves.LAME_DE_ROC
+			|| move == Moves.LAME_FEUILLE || move == Moves.POING_KARATE || move == Moves.PIED_BRULEUR
+			|| move == Moves.PINCE_MASSE || move == Moves.POISON_CROIX || move == Moves.QUEUE_POISON
+			|| move == Moves.SPATIO_RIFT || move == Moves.TRANCH_AIR || move == Moves.TRANCH_HERBE
+			|| move == Moves.TRANCHE || move == Moves.TRANCHE_NUIT || move == Moves.TUNNELIER;
+	}
+	
+	public boolean isAlwaysCritical() {
+		return move == Moves.SOUFFLEGLACE || move == Moves.YAMA_ARASHI;
 	}
 }

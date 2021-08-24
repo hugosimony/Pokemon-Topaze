@@ -19,6 +19,7 @@ public class BattleMove {
 	@SuppressWarnings("unused")
 	private int subMoveCount;
 	private boolean overlevel;
+	private boolean critical;
 	private boolean player;
 	
 	private String senderName;
@@ -41,8 +42,8 @@ public class BattleMove {
 	
 		senderName = (player ? "" : "le ") + sender.name + (player ? "" : " ennemi");
 		targetName = (player ? "le " : "") + target.name + (player ? " ennemi" : "");
-		senderName = (player ? "" : "le ") + sender.name + (player ? "" : " ennemi");
-		targetName = (player ? "le " : "") + target.name + (player ? " ennemi" : "");
+		senderNameMaj = (player ? "" : "Le ") + sender.name + (player ? "" : " ennemi");
+		targetNameMaj = (player ? "Le " : "") + target.name + (player ? " ennemi" : "");
 		senderNameClean = sender.name + (player ? "" : " ennemi");
 		targetNameClean = target.name + (player ? " ennemi" : "");
 		
@@ -280,28 +281,77 @@ public class BattleMove {
 					System.out.println("Ce n'est pas du tout efficace.");
 				CM *= typeTable;
 				
-				//TODO Critical Hits
+				// Critical Hits
+				
+				critical = false;
+				
+				//TODO Air Venard
+				
+				if(target.ability.ability != Abilities.ARMURBASTON && target.ability.ability != Abilities.COQUE_ARMURE) {
+					if(move.isCriticalBoost())
+						sender.stageCritical += 1;
+					
+					else if(sender.ability.ability == Abilities.CHANCEUX)
+						sender.stageCritical *= 2;
+					
+					if(move.isAlwaysCritical())
+						sender.stageCritical = 5;
+
+					critical = checkCriticalHit(sender.stageCritical);
+					
+					if(critical)
+						CM *= 1.5;
+					
+					sender.stageCritical = 1;
+					
+					if(sender.ability.ability == Abilities.SNIPER)
+						CM *= 1.5;
+				}
 				
 				//TODO Talents, Items, Field
 				
-				if(move.isVariable()) {
+				if(move.isNonVariable()) {
+					if(move.move == Moves.SONICBOOM)
+						damage = 20;
+					else if(move.move == Moves.DRACO_RAGE)
+						damage = 40;
+				}
+				else if(move.isVariable()) {
 					// TODO
 					// Handle each case
 					damage = 100;
 				}
-				if(move.move == Moves.TRICHERIE)
-					damage = (int) (((int) ((((sender.level * 0.4) + 2) * (target.getStat("ATK") * move.power)) / (target.getStat("DEF") * 50)) + 2) * CM);
-				else if(move.move == Moves.CHOC_PSY || move.move == Moves.FRAPPE_PSY || move.move == Moves.LAME_OINTE)
-					damage = (int) (((int) ((((sender.level * 0.4) + 2) * (target.getStat("ATK_SPE") * move.power)) / (target.getStat("DEF") * 50)) + 2) * CM);
+				else if(critical) {
+					if(move.category == Type.PHYSIQUE) {
+						if(target.stageDEF > 0 || sender.stageATK < 0)
+							damage = (int) (((int) ((((sender.level * 0.4) + 2) * (sender.ATK * move.power)) / (target.DEF * 50)) + 2) * CM);
+						else
+							damage = (int) (((int) ((((sender.level * 0.4) + 2) * (sender.getStat("ATK") * move.power)) / (target.getStat("DEF") * 50)) + 2) * CM);
+					}
+					else if(move.category == Type.SPECIALE) {
+						if(target.stageDEF_SPE > 0 || sender.stageATK_SPE < 0)
+							damage = (int) (((int) ((((sender.level * 0.4) + 2) * (sender.ATK_SPE * move.power)) / (target.DEF_SPE * 50)) + 2) * CM);
+						else
+							damage = (int) (((int) ((((sender.level * 0.4) + 2) * (sender.getStat("ATK_SPE") * move.power)) / (target.getStat("DEF_SPE") * 50)) + 2) * CM);
+					}
+				}
 				else {
-					if(move.category == Type.PHYSIQUE)
-						damage = (int) (((int) ((((sender.level * 0.4) + 2) * (sender.getStat("ATK") * move.power)) / (target.getStat("DEF") * 50)) + 2) * CM);
-					else if(move.category == Type.SPECIALE)
-						damage = (int) (((int) ((((sender.level * 0.4) + 2) * (sender.getStat("ATK_SPE") * move.power)) / (target.getStat("DEF_SPE") * 50)) + 2) * CM);
+					if(move.move == Moves.TRICHERIE)
+						damage = (int) (((int) ((((sender.level * 0.4) + 2) * (target.getStat("ATK") * move.power)) / (target.getStat("DEF") * 50)) + 2) * CM);
+					else if(move.move == Moves.CHOC_PSY || move.move == Moves.FRAPPE_PSY || move.move == Moves.LAME_OINTE)
+						damage = (int) (((int) ((((sender.level * 0.4) + 2) * (target.getStat("ATK_SPE") * move.power)) / (target.getStat("DEF") * 50)) + 2) * CM);
+					else {
+						if(move.category == Type.PHYSIQUE)
+							damage = (int) (((int) ((((sender.level * 0.4) + 2) * (sender.getStat("ATK") * move.power)) / (target.getStat("DEF") * 50)) + 2) * CM);
+						else if(move.category == Type.SPECIALE)
+							damage = (int) (((int) ((((sender.level * 0.4) + 2) * (sender.getStat("ATK_SPE") * move.power)) / (target.getStat("DEF_SPE") * 50)) + 2) * CM);
+					}
 				}
 			}
 			System.out.println("The attack did " + damage + " HP(s) !");
-			target.removeHP(damage);
+			if(critical) System.out.println("C'est un coup critique !");
+			boolean ko = target.removeHP(damage);
+			if(ko) System.out.println(targetNameMaj + " est KO !");
 		}
 		
 		// TODO
@@ -315,6 +365,9 @@ public class BattleMove {
 		
 		// TODO 
 		// Handle the freeze after an attack
+		
+		// TODO
+		// Handle Colérique after a critical move
 		
 		// TODO
 		// Check overlevel
@@ -334,6 +387,9 @@ public class BattleMove {
 	}
 	
 	private boolean checkStatus() {
+		
+		// Return true if the pokemon can move
+		// Return false otherwise
 		
 		// https://www.pokepedia.fr/Statut
 		
@@ -362,7 +418,6 @@ public class BattleMove {
 				else if(random == 7) {
 					System.out.println(senderNameMaj + "s'endort.");
 					sender.setSleep(false);
-					// TODO set statut
 				}
 				else if(random == 8) {
 					System.out.println(senderNameMaj + "ne veut pas obéir et se blesse tout seul.");
@@ -436,14 +491,17 @@ public class BattleMove {
 	
 
 	private void doConfusionHurt() {
-		
+		// TODO
 	}
 	
 	
 	private boolean checkPrecision() {
 		
+		// Return true if the attack is avoided
+		// Return false otherwise
+		
 		// https://www.pokepedia.fr/Pr%C3%A9cision
-		// TODO lentille zomm et poudre claire
+		// TODO lentille zoom et poudre claire
 		
 		if(move.precision == 1000)
 			return false;
@@ -468,7 +526,23 @@ public class BattleMove {
 		}
 		
 		return canceled;
+	}
+	
+	private boolean checkCriticalHit(int stage) {
 		
+		// Return true if the the hit is critical
+		// Return false otherwise
+		
+		// https://www.pokepedia.fr/Coup_critique
+		
+		if(stage == 1)
+			return Utils.randomNumber(1, 16) == 1;
+		if(stage == 2)
+			return Utils.randomNumber(1, 8) == 1;
+		if(stage == 3)
+			return Utils.randomNumber(1, 2) == 1;
+		
+		return true;
 	}
 	
 }
