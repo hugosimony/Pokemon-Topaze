@@ -394,6 +394,45 @@ public class PnjSprites {
 		}
 		
 		//*********************************************************************************************
+		// Glass Boy
+		
+		if(pnj.contains("glassboy")) {
+			if(direction == Direction.UP) {
+				if(foot == 0)
+					return ConstPersoSprites.glassboyBack.getImage();
+				else if(foot == 1)
+					return ConstPersoSprites.glassboyBackRight.getImage();
+				else if(foot == 2)
+					return ConstPersoSprites.glassboyBackLeft.getImage();
+			}
+			else if(direction == Direction.DOWN) {
+				if(foot == 0)
+					return ConstPersoSprites.glassboyFront.getImage();
+				else if(foot == 1)
+					return ConstPersoSprites.glassboyFrontRight.getImage();
+				else if(foot == 2)
+					return ConstPersoSprites.glassboyFrontLeft.getImage();
+			}
+			else if(direction == Direction.LEFT) {
+				if(foot == 0)	
+					return ConstPersoSprites.glassboyLeft.getImage();
+				else if(foot == 1)	
+					return ConstPersoSprites.glassboyLeftRight.getImage();
+				else if(foot == 2)	
+					return ConstPersoSprites.glassboyLeftLeft.getImage();
+				
+			}
+			else if(direction == Direction.RIGHT) {
+				if(foot == 0)	
+					return ConstPersoSprites.glassboyRight.getImage();
+				else if(foot == 1)	
+					return ConstPersoSprites.glassboyRightRight.getImage();
+				else if(foot == 2)	
+					return ConstPersoSprites.glassboyRightLeft.getImage();
+			}
+		}
+		
+		//*********************************************************************************************
 		// Prof Chen
 		
 		if(pnj.equals("profChen")) {
