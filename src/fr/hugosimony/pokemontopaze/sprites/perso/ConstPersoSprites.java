@@ -213,6 +213,22 @@ public class ConstPersoSprites {
 	public static final ImageIcon campinggirlRightLeft = new ImageIcon(Main.class.getResource("sprites/perso/campinggirl/campinggirlRightLeft.gif"));
 	
 	//****************************************************************************************************
+	// Sprites Glass Boy
+	
+	public static final ImageIcon glassboyFront = new ImageIcon(Main.class.getResource("sprites/perso/glassboy/glassboyFront.gif"));
+	public static final ImageIcon glassboyFrontRight = new ImageIcon(Main.class.getResource("sprites/perso/glassboy/glassboyFrontRight.gif"));
+	public static final ImageIcon glassboyFrontLeft = new ImageIcon(Main.class.getResource("sprites/perso/glassboy/glassboyFrontLeft.gif"));
+	public static final ImageIcon glassboyBack = new ImageIcon(Main.class.getResource("sprites/perso/glassboy/glassboyBack.gif"));
+	public static final ImageIcon glassboyBackRight = new ImageIcon(Main.class.getResource("sprites/perso/glassboy/glassboyBackRight.gif"));
+	public static final ImageIcon glassboyBackLeft = new ImageIcon(Main.class.getResource("sprites/perso/glassboy/glassboyBackLeft.gif"));
+	public static final ImageIcon glassboyLeft = new ImageIcon(Main.class.getResource("sprites/perso/glassboy/glassboyLeft.gif"));
+	public static final ImageIcon glassboyLeftRight = new ImageIcon(Main.class.getResource("sprites/perso/glassboy/glassboyLeftRight.gif"));
+	public static final ImageIcon glassboyLeftLeft = new ImageIcon(Main.class.getResource("sprites/perso/glassboy/glassboyLeftLeft.gif"));
+	public static final ImageIcon glassboyRight = new ImageIcon(Main.class.getResource("sprites/perso/glassboy/glassboyRight.gif"));
+	public static final ImageIcon glassboyRightRight = new ImageIcon(Main.class.getResource("sprites/perso/glassboy/glassboyRightRight.gif"));
+	public static final ImageIcon glassboyRightLeft = new ImageIcon(Main.class.getResource("sprites/perso/glassboy/glassboyRightLeft.gif"));
+	
+	//****************************************************************************************************
 	// Sprites Overalls Man
 	
 	public static final ImageIcon overallsmanFront = new ImageIcon(Main.class.getResource("sprites/perso/overallsman/overallsmanFront.gif"));

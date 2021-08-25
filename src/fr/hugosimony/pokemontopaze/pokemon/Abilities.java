@@ -40,389 +40,389 @@ public enum Abilities {
 	public static String[] getAbilityData(Abilities Abilities) {
 		
 		switch(Abilities) {
-		case ABSENTEISME:
+		case ABSENTEISME: // TODO
 			return new String[] {"Absentéisme", "Le Pokémon n'attaque qu'un tour sur deux.", "-"};
-		case ABSORB_EAU:
+		case ABSORB_EAU: // TODO
 			return new String[] {"Absorb Eau", "Les attaques de type Eau reçues par le Pokémon régénèrent 1/4 de ses PV.", "-"};
-		case ABSORB_VOLT:
+		case ABSORB_VOLT: // TODO
 			return new String[] {"Absorb Volt", "Les attaques de type Électrik reçues par le Pokémon régénèrent 1/4 de ses PV.", "-"};
-		case AGITATION:
+		case AGITATION: // TODO
 			return new String[] {"Agitation", "Augmente l'attaque de 50% mais baisse la précision de 20%.", "Augmente de 50% les chances de rencontrer un Pokémon sauvage de haut niveau."};
-		case AIR_LOCK:
+		case AIR_LOCK: // TODO
 			return new String[] {"Air Lock", "Annule les effets du climat.", "-"};
-		case ANTI_BRUIT:
+		case ANTI_BRUIT: // TODO
 			return new String[] {"Anti-Bruit", "Annule les effets dus à une attaque sonore.", "-"};
-		case ARMUMAGMA:
+		case ARMUMAGMA: // TODO
 			return new String[] {"Armumagma", "Immunise contre le gel.", "Divise par deux le nombre de pas nécessaire à l'éclosion d'un œuf."};
-		case ARMURBASTON:
+		case ARMURBASTON: // TODO
 			return new String[] {"Armurbaston", "Annule les chances de coups critiques du Pokémon ennemi.", "-"};
-		case ATTENTION:
+		case ATTENTION: // TODO
 			return new String[] {"Attention", "Immunise contre la peur.", "-"};
-		case BENET:
+		case BENET: // TODO
 			return new String[] {"Benêt", "Immunise contre l'attraction et la provocation.", "-"};
-		case BRASIER:
+		case BRASIER: // TODO
 			return new String[] {"Brasier", "Augmente la puissance des attaques de type Feu de 50% lorsque le Pokémon a moins d'1/3 de ses PV totaux.", "-"};
-		case CACOPHONIE:
+		case CACOPHONIE: // TODO
 			return new String[] {"Cacophonie", "Annule les effets dus à une attaque sonore.", "-"};
-		case CALQUE:
+		case CALQUE: // TODO
 			return new String[] {"Calque", "Copie le talent du Pokémon adverse.", "-"};
-		case CHLOROPHYLLE:
+		case CHLOROPHYLLE: // TODO
 			return new String[] {"Chlorophylle", "Augmente la vitesse au soleil.", "-"};
-		case CIEL_GRIS:
+		case CIEL_GRIS: // TODO
 			return new String[] {"Ciel Gris", "Annule les effets du climat.", "-"};
-		case COLOFORCE:
+		case COLOFORCE: // TODO
 			return new String[] {"Coloforce", "Double l'attaque du Pokémon.", "-"};
-		case COQUE_ARMURE:
+		case COQUE_ARMURE: // TODO
 			return new String[] {"Coque Armure", "Annule les chances de coups critiques du Pokémon ennemi.", "-"};
-		case CORPS_ARDENT:
+		case CORPS_ARDENT: // TODO
 			return new String[] {"Corps Ardent", "30% de chance de provoquer une brûlure sur le Pokémon adverse ayant attaqué.", "Divise par deux le nombre de pas nécessaire à l'éclosion d'un œuf."};
-		case CORPS_SAIN:
+		case CORPS_SAIN: // TODO
 			return new String[] {"Corps Sain", "Empêche la diminution de statistiques par le Pokémon adverse.", "-"};
-		case CRACHIN:
+		case CRACHIN: // TODO
 			return new String[] {"Crachin", "Fait tomber la pluie tant que le Pokémon est en jeu.", "-"};
-		case CRAN:
+		case CRAN: // TODO
 			return new String[] {"Cran", "Augmente de 50% l'attaque du Pokémon s'il subit un changement de statut.", "-"};
-		case CUVETTE:
+		case CUVETTE: // TODO
 			return new String[] {"Cuvette", "Régénère 1/16ème des PV par temps de pluie.", "-"};
-		case DEGUISEMENT:
+		case DEGUISEMENT: // TODO
 			return new String[] {"Déguisement", "Change le type du Pokémon en celui de la dernière attaque subie.", "-"};
-		case ECAILLE_SPECIALE:
+		case ECAILLE_SPECIALE: // TODO
 			return new String[] {"Écaille Spéciale", "Augmente la défense de 50% lorsque le Pokémon subit un changement de statut.", "-"};
-		case ECHAUFFEMENT:
+		case ECHAUFFEMENT: // TODO
 			return new String[] {"Échauffement", "Immunise contre la paralysie.", "-"};
-		case ECRAN_FUMEE:
+		case ECRAN_FUMEE: // TODO
 			return new String[] {"Écran Fumée", "Empêche la diminution de statistiques par le Pokémon adverse.", "Réduit de 50% les chances d'être attaqué par un Pokémon sauvage."};
-		case ECRAN_POUDRE:
+		case ECRAN_POUDRE: // TODO
 			return new String[] {"Écran Poudre", "Empêche les effets secondaires des attaques subies.", "-"};
-		case ENGRAIS:
+		case ENGRAIS: // TODO
 			return new String[] {"Engrais", "Augmente la puissance des attaques de type Plante de 50% lorsque le Pokémon a moins d'1/3 de ses PV totaux.", "-"};
-		case ESPRIT_VITAL:
+		case ESPRIT_VITAL: // TODO
 			return new String[] {"Esprit Vital", "Empêche le Pokémon d'être endormi.", "Augmente de 50% les chances de rencontrer un Pokémon sauvage de haut niveau."};
-		case ESSAIM:
+		case ESSAIM: // TODO
 			return new String[] {"Essaim", "Augmente la puissance des attaques de type Insecte de 50% lorsque le Pokémon a moins d'1/3 de ses PV totaux.", "Augmente les chances de rencontrer un Pokémon sauvage."};
-		case FERMETE:
+		case FERMETE: // TODO
 			return new String[] {"Fermeté", "Immunise contre les attaques OHKO. Laisse le Pokémon à 1 PV après une attaque qui aurait dû le terrasser, s'il a tous ses PV.", "-"};
-		case FORCE_PURE:
+		case FORCE_PURE: // TODO
 			return new String[] {"Force Pure", "Double l'attaque du Pokémon.", "-"};
-		case FUITE:
+		case FUITE: // TODO
 			return new String[] {"Fuite", "Assure la fuite contre les Pokémon sauvages.", "-"};
-		case GARDE_MYSTIK:
+		case GARDE_MYSTIK: // TODO
 			return new String[] {"Garde Mystik", "Ne subit que les dégâts d'attaques super efficaces.", "-"};
-		case GLISSADE:
+		case GLISSADE: // TODO
 			return new String[] {"Glissade", "Double la vitesse par temps de pluie.", "-"};
-		case GLUE:
+		case GLUE: // TODO
 			return new String[] {"Glue", "Empêche la perte de l'objet tenu.", "Facilite la capture des Pokémon pêchés."};
-		case HYPER_CUTTER:
+		case HYPER_CUTTER: // TODO
 			return new String[] {"Hyper Cutter", "Empêche la diminution d'attaque du Pokémon.", "-"};
-		case IGNIFU_VOILE:
+		case IGNIFU_VOILE: // TODO
 			return new String[] {"Ignifu-Voile", "Immunise contre la brûlure.", "-"};
-		case INSOMNIA:
+		case INSOMNIA: // TODO
 			return new String[] {"Insomnia", "Empêche le Pokémon d'être endormi.", "-"};
-		case INTIMIDATION:
+		case INTIMIDATION: // TODO
 			return new String[] {"Intimidation", "Diminue d'un niveau l'attaque du Pokémon adverse.", "Réduit de 50% les chances d'être attaqué par un Pokémon sauvage de bas niveau."};
-		case ISOGRAISSE:
+		case ISOGRAISSE: // TODO
 			return new String[] {"Isograisse", "Les dégâts provoqués par les attaques des types Feu ou Glace sont divisés par 2.", "-"};
-		case JOLI_SOURIRE:
+		case JOLI_SOURIRE: // TODO
 			return new String[] {"Joli Sourire", "A 30% de chance de provoquer l'attirance du Pokémon adverse ayant attaqué.", "Augmente de 50% les chances d'être attaqué par un Pokémon sauvage du sexe opposé."};
-		case LEVITATION:
+		case LEVITATION: // TODO
 			return new String[] {"Lévitation", "Immunise contre les attaques de type Sol.", "-"};
-		case LUMIATTIRANCE:
+		case LUMIATTIRANCE: // TODO
 			return new String[] {"Lumiattirance", "-", "Augmente les chances de rencontrer des Pokémon sauvages."};
-		case MAGNEPIEGE:
+		case MAGNEPIEGE: // TODO
 			return new String[] {"Magnépiège", "Empêche la fuite et le changement des Pokémon de type Acier.", "Augmente de 50% les chances de rencontrer un Pokémon sauvage de type Acier."};
-		case MARQUE_OMBRE:
+		case MARQUE_OMBRE: // TODO
 			return new String[] {"Marque Ombre", "Empêche la fuite des Pokémon sauvage et le changement du Pokémon adverse.", "-"};
-		case MATINAL:
+		case MATINAL: // TODO
 			return new String[] {"Matinal", "Réduit le nombre de tours de sommeil du Pokémon.", "-"};
-		case MEDIC_NATURE:
+		case MEDIC_NATURE: // TODO
 			return new String[] {"Médic Nature", "Le Pokémon est soigné de toute altération d'état lorsqu'il est changé ou en fin de combat.", "-"};
-		case METEO:
+		case METEO: // TODO
 			return new String[] {"Météo", "Change le type et la forme du Pokémon selon le climat.", "-"};
-		case MINUS:
+		case MINUS: // TODO
 			return new String[] {"Minus", "Augmente l'attaque spéciale de 50% en Match Double, si le partenaire à le talent Plus ou Minus.", "-"};
-		case MOITEUR:
+		case MOITEUR: // TODO
 			return new String[] {"Moiteur", "Émpêche l'utilisation d'attaques auto-destructrices par le Pokémon adverse.", "-"};
-		case MUE:
+		case MUE: // TODO
 			return new String[] {"Mue", "À chaque tour, le Pokémon a 33% de chance d'être soigné d'une altération d'état.", "-"};
-		case OEIL_COMPOSE:
+		case OEIL_COMPOSE: // TODO
 			return new String[] {"Œil Composé", "Double la précision du Pokémon.", "Augmente les chances de rencontrer un Pokémon sauvage tenant un objet."};
-		case PARATONNERRE:
+		case PARATONNERRE: // TODO
 			return new String[] {"Paratonnerre", "Attire toutes les attaques de type Électrik. Augmente aussi l'Attaque Spéciale du Pokémon recevant l'attaque.", "-"};
-		case PEAU_DURE:
+		case PEAU_DURE: // TODO
 			return new String[] {"Peau Dure", "Fait perdre 1/16è des PV du Pokémon adverse ayant lancé une attaque de contact.", "-"};
-		case PIEGE:
+		case PIEGE: // TODO
 			return new String[] {"Piège", "Empêche la fuite et le changement du Pokémon adverse, s'il est au sol.", "Augmente de 50% les chances d'être attaqué par un Pokémon sauvage."};
-		case PLUS:
+		case PLUS: // TODO
 			return new String[] {"Plus", "Augmente l'attaque spéciale de 50% en Match Double, si le partenaire à le talent Minus ou Plus.", "-"};
-		case POINT_POISON:
+		case POINT_POISON: // TODO
 			return new String[] {"Point Poison", "30% de chance de provoquer l'empoisonnement du Pokémon adverse ayant lancé une attaque de contact.", "-"};
-		case POSE_SPORE:
+		case POSE_SPORE: // TODO
 			return new String[] {"Pose Spore", "30% de chance de provoquer l'empoisonnement, le sommeil ou la paralysie du Pokémon adverse ayant lancé une attaque de contact.", "-"};
-		case PRESSION:
+		case PRESSION: // TODO
 			return new String[] {"Pression", "Double l'utilisation de PP des attaques offensives du Pokémon adverse.", "Augmente de 50% les chances d'être attaqué par un Pokémon sauvage."};
-		case PUANTEUR:
+		case PUANTEUR: // TODO
 			return new String[] {"Puanteur", "Les attaques physiques ont 10% d'apeurer la cible.", "Diminue les chances de rencontrer des Pokémon sauvages."};
-		case RAMASSAGE:
+		case RAMASSAGE: // TODO
 			return new String[] {"Ramassage", "Donne une chance au Pokémon de ramasser un objet après un combat.", "-"};
-		case REGARD_VIF:
+		case REGARD_VIF: // TODO
 			return new String[] {"Regard Vif", "Empêche la perte de précision.", "Réduit de 50% les chances d'être attaqué par un Pokémon sauvage de bas niveau."};
-		case SABLE_VOLANT:
+		case SABLE_VOLANT: // TODO
 			return new String[] {"Sable Volant", "Déclenche une tempête de sable tant que le Pokémon est en jeu.", "-"};
-		case SECHERESSE:
+		case SECHERESSE: // TODO
 			return new String[] {"Sécheresse", "Crée un temps ensoleillé tant que le Pokémon est en jeu.", "-"};
-		case SERENITE:
+		case SERENITE: // TODO
 			return new String[] {"Sérénité", "Double les chances de réussite des effets secondaires des attaques.", "-"};
-		case STATIK:
+		case STATIK: // TODO
 			return new String[] {"Statik", "30% de chance de provoquer la paralysie du Pokémon adverse ayant lancé une attaque de contact.", "Augmente de 50% les chances de rencontrer un Pokémon sauvage de type Électrik."};
-		case SUINTEMENT:
+		case SUINTEMENT: // TODO
 			return new String[] {"Suintement", "Les attaques absorbantes du Pokémon adverse lui font perdre des PV.", "-"};
-		case SYNCHRO:
+		case SYNCHRO: // TODO
 			return new String[] {"Synchro", "Toute altération d'état subie est transmise au Pokémon adverse.", "Augmente les chances de rencontrer un Pokémon sauvage ayant la même nature."};
-		case TEMPO_PERSO:
+		case TEMPO_PERSO: // TODO
 			return new String[] {"Tempo Perso", "Immunise contre la confusion.", "-"};
-		case TETE_DE_ROC:
+		case TETE_DE_ROC: // TODO
 			return new String[] {"Tête de Roc", "Le Pokémon ne subit pas de dégâts de contrecoup.", "-"};
-		case TORCHE:
+		case TORCHE: // TODO
 			return new String[] {"Torche", "Annule les dégâts des attaques de type Feu subies et augmente de 50% la puissance des attaques de type Feu lancées.", "-"};
-		case TORRENT:
+		case TORRENT: // TODO
 			return new String[] {"Torrent", "Augmente la puissance des attaques de type Eau de 50% lorsque le Pokémon a moins d'1/3 de ses PV totaux.", "-"};
-		case TURBO:
+		case TURBO: // TODO
 			return new String[] {"Turbo", "La vitesse du Pokémon augmente à chaque tour.", "-"};
-		case VACCIN:
+		case VACCIN: // TODO
 			return new String[] {"Vaccin", "Immunise contre l'empoisonnement.", "-"};
-		case VENTOUSE:
+		case VENTOUSE: // TODO
 			return new String[] {"Ventouse", "Empêche d'être changé de force par une attaque adverse.", "Augmente les chances qu'un Pokémon pêché morde à l'hameçon."};
-		case VOILE_SABLE:
+		case VOILE_SABLE: // TODO
 			return new String[] {"Voile Sable", "Augmente l'esquive de 20% lors d'une tempête de sable et immunise contre ses dégâts.", "Réduit de 50% les chances d'être attaqué par un Pokémon sauvage lors d'une tempête de sable."};
-		case ADAPTABILITE:
+		case ADAPTABILITE: // TODO
 			return new String[] {"Adaptabilité", "Si ce Pokémon utilise une attaque de son type, la puissance de l'attaque est multipliée par 2 au lieu de 1.5.", "-"};
-		case ALERTE_NEIGE:
+		case ALERTE_NEIGE: // TODO
 			return new String[] {"Alerte Neige", "Le Pokémon déclenche une grêle lorsqu'il est envoyé au combat.", "-"};
-		case ANNULE_GARDE:
+		case ANNULE_GARDE: // TODO
 			return new String[] {"Annule Garde", "Toutes les attaques du Pokémon et de son adversaire ont une précision de 100%.", "Augmente les chances de rencontrer un Pokémon sauvage."};
-		case ANTICIPATION:
+		case ANTICIPATION: // TODO
 			return new String[] {"Anticipation", "Alerte et protège lorsque le Pokémon adverse possède certaines attaques.", "-"};
-		case BOOM_FINAL:
+		case BOOM_FINAL: // TODO
 			return new String[] {"Boom Final", "Enlève 1/4 des PV totaux du Pokémon ennemi mettant K.O. par contact.", "-"};
-		case BRISE_MOULE:
+		case BRISE_MOULE: // TODO
 			return new String[] {"Brise Moule", "Peut toucher un Pokémon adverse malgré son talent.", "-"};
-		case CHANCEUX:
+		case CHANCEUX: // TODO
 			return new String[] {"Chanceux", "Double les chance de porter un coup critique.", "-"};
-		case CHERCHE_MIEL:
+		case CHERCHE_MIEL: // TODO
 			return new String[] {"Cherche Miel", "-", "Le Pokémon peut trouver du Miel après un combat."};
-		case COLERIQUE:
+		case COLERIQUE: // TODO
 			return new String[] {"Colérique", "L'attaque du Pokémon est fortement augmentée lorsqu'il subit un coup critique.", "-"};
-		case CORPS_GEL:
+		case CORPS_GEL: // TODO
 			return new String[] {"Corps Gel", "Régénère 1/16ème des PV par temps de grêle. Immunise les Pokémon n'ayant pas le type Glace contre la grêle.", "-"};
-		case DEBUT_CALME:
+		case DEBUT_CALME: // TODO
 			return new String[] {"Début Calme", "Divise par deux l'attaque et la vitesse du Pokémon pendant 5 tours.", "-"};
-		case DELESTAGE:
+		case DELESTAGE: // TODO
 			return new String[] {"Délestage", "Augmente la vitesse lorsqu'un objet tenu est utilisé, lancé ou perdu.", "-"};
-		case DON_FLORAL:
+		case DON_FLORAL: // TODO
 			return new String[] {"Don Floral", "Augmente l'attaque et la défense spéciale de 50% par temps ensoleillé.", "-"};
-		case FEUILLE_GARDE:
+		case FEUILLE_GARDE: // TODO
 			return new String[] {"Feuille Garde", "Soigne les altérations d'état par temps ensoleillé.", "-"};
-		case FILTRE:
+		case FILTRE: // TODO
 			return new String[] {"Filtre", "Retire 1/4 des dégâts subits lors d'une attaque super efficace.", "-"};
-		case FORCE_SOLEIL:
+		case FORCE_SOLEIL: // TODO
 			return new String[] {"Force Soleil", "Augmente l'attaque spéciale de 50% par temps ensoleillé, mais diminue les PV de 1/8ème par tour.", "-"};
-		case FOUILLE:
+		case FOUILLE: // TODO
 			return new String[] {"Fouille", "Permet de connaitre l'objet tenu d'un Pokémon adverse.", "-"};
-		case FREIN:
+		case FREIN: // TODO
 			return new String[] {"Frein", "Le Pokémon attaque toujours en second pour deux attaques de même priorité.", "-"};
-		case GARDE_MAGIK:
+		case GARDE_MAGIK: // TODO
 			return new String[] {"Garde Magik", "Le Pokémon ne subit de dégâts que lors d'attaques directes.", "-"};
-		case GLOUTONNERIE:
+		case GLOUTONNERIE: // TODO
 			return new String[] {"Gloutonnerie", "Le Pokémon utilise la baie portée lorsque les PV descendent en dessous de 50%.", "-"};
-		case HYDRATATION:
+		case HYDRATATION: // TODO
 			return new String[] {"Hydratation", "Soigne les altérations d'état par temps de pluie.", "-"};
-		case IGNIFUGE:
+		case IGNIFUGE: // TODO
 			return new String[] {"Ignifuge", "Divise par 2 les dégâts des attaques de type Feu et les effets de brûlure subis par le Pokémon.", "-"};
-		case IMPASSIBLE:
+		case IMPASSIBLE: // TODO
 			return new String[] {"Impassible", "Augmente d'un niveau la vitesse du Pokémon lorsqu'il est apeuré.", "-"};
-		case INCONSCIENT:
+		case INCONSCIENT: // TODO
 			return new String[] {"Inconscient", "Ignore les améliorations de statistiques du Pokémon adverse, à l'exception de sa Vitesse.", "-"};
-		case LAVABO:
+		case LAVABO: // TODO
 			return new String[] {"Lavabo", "Attire toutes les attaques de type Eau. Augmente aussi l'Attaque Spéciale du Pokémon recevant une attaque de type Eau.", "-"};
-		case LENTITEINTEE:
+		case LENTITEINTEE: // TODO
 			return new String[] {"Lentiteintée", "Double les dégâts des attaques peu efficaces portées au Pokémon adverse.", "-"};
-		case MALADRESSE:
+		case MALADRESSE: // TODO
 			return new String[] {"Maladresse", "Empêche l'utilisation et/ou ignore l'effet des objets tenus en combat.", "-"};
-		case MAUVAIS_REVE:
+		case MAUVAIS_REVE: // TODO
 			return new String[] {"Mauvais Rêve", "Fait perdre 1/8ème de ses PV au Pokémon adverse s'il est endormi.", "-"};
-		case MOTORISE:
+		case MOTORISE: // TODO
 			return new String[] {"Motorisé", "Immunise le Pokémon contre les attaques de type Électrik et augmente la vitesse du Pokémon d'un niveau par attaque Électrik subie.", "-"};
-		case MULTI_COUPS:
+		case MULTI_COUPS: // TODO
 			return new String[] {"Multi-Coups", "Utilise toujours le nombre de coups maximum d'une attaque.", "-"};
-		case MULTITYPE:
+		case MULTITYPE: // TODO
 			return new String[] {"Multitype", "Le type et la forme du Pokémon changent en fonction de la plaque qu'il porte.", "-"};
-		case NORMALISE:
+		case NORMALISE: // TODO
 			return new String[] {"Normalise", "Toutes les attaques du Pokémon sont considérées comme étant de type Normal.", "-"};
-		case PEAU_SECHE:
+		case PEAU_SECHE: // TODO
 			return new String[] {"Peau Sèche", "Les attaques de type Eau soignent le Pokémon, qui regagne 1/4 de ses PV totaux. Par temps de pluie, il gagne 1/8ème de ses PV par tour. Les attaques de type Feu infligent 25% de dégâts en plus. Par temps ensoleillé, il perd 1/8ème de ses PV par tour.", "-"};
-		case PIED_CONFUS:
+		case PIED_CONFUS: // TODO
 			return new String[] {"Pied Confus", "Augmente l'esquive de 20% lorsque le Pokémon est confus.", "-"};
-		case PIED_VELOCE:
+		case PIED_VELOCE: // TODO
 			return new String[] {"Pied Véloce", "Augmente la vitesse de 50% lorsque le Pokémon subit une altération d'état.", "-"};
-		case POING_DE_FER:
+		case POING_DE_FER: // TODO
 			return new String[] {"Poing de Fer", "Augmente de 20% la puissance des attaques de Poing.", "-"};
-		case PREDICTION:
+		case PREDICTION: // TODO
 			return new String[] {"Prédiction", "Alerte le Pokémon de l'attaque la plus puissante du Pokémon adverse.", "-"};
-		case QUERELLEUR:
+		case QUERELLEUR: // TODO
 			return new String[] {"Querelleur", "Permet de toucher les Pokémon de type Spectre avec des attaques de type Normal ou Combat.", "-"};
-		case RIDEAU_NEIGE:
+		case RIDEAU_NEIGE: // TODO
 			return new String[] {"Rideau Neige", "Augmente l'esquive de 20% par temps de grêle. Immunise les Pokémon n'ayant pas le type Glace contre la grêle.", "-"};
-		case RIVALITE:
+		case RIVALITE: // TODO
 			return new String[] {"Rivalité", "Augmente l'attaque et l'attaque spéciale de 25% si le Pokémon adverse est de même sexe. Les diminue s'il est de sexe opposé.", "-"};
-		case SIMPLE:
+		case SIMPLE: // TODO
 			return new String[] {"Simple", "Double les effets des modifications de statistiques, positives ou négatives.", "-"};
-		case SNIPER:
+		case SNIPER: // TODO
 			return new String[] {"Sniper", "Triple la puissance des coups critiques.", "-"};
-		case SOIN_POISON:
+		case SOIN_POISON: // TODO
 			return new String[] {"Soin Poison", "Le Pokémon récupère 1/8è de ses PV par tour lors d'un empoisonnement.", "-"};
-		case SOLIDE_ROC:
+		case SOLIDE_ROC: // TODO
 			return new String[] {"Solide Roc", "Retire 1/4 des dégâts subits si le Pokémon reçoit une attaque super efficace.", "-"};
-		case TECHNICIEN:
+		case TECHNICIEN: // TODO
 			return new String[] {"Technicien", "Augmente de 50% la puissance des attaques dont la puissance est inférieure ou égale à 60.", "-"};
-		case TELECHARGE:
+		case TELECHARGE: // TODO
 			return new String[] {"Télécharge", "Augmente l'attaque ou l'attaque spéciale du Pokémon, selon la statistique de défense la plus faible du Pokémon adverse.", "-"};
-		case TEMERAIRE:
+		case TEMERAIRE: // TODO
 			return new String[] {"Téméraire", "Augmente de 20% la puissance des attaques infligeant un contrecoup.", "-"};
-		case ACHARNE:
+		case ACHARNE: // TODO
 			return new String[] {"Acharné", "Monte l'Attaque du Pokémon de deux niveaux si l'une de ses statistiques est baissée par l'adversaire.", "-"};
-		case ANALYSTE:
+		case ANALYSTE: // TODO
 			return new String[] {"Analyste", "Si le Pokémon frappe en dernier durant le tour, la puissance de son attaque est augmentée de 30%.", "-"};
-		case ARMUROUILLEE:
+		case ARMUROUILLEE: // TODO
 			return new String[] {"Armurouillée", "Le Pokémon touché par une attaque physique voit sa défense diminuée d'un niveau et sa vitesse augmentée d'un niveau.", "-"};
-		case BAIGNE_SABLE:
+		case BAIGNE_SABLE: // TODO
 			return new String[] {"Baigne Sable", "Double la Vitesse du Pokémon lors d'une tempête de sable. Immunise contre les dégâts de la tempête.", "-"};
-		case COEUR_DE_COQ:
+		case COEUR_DE_COQ: // TODO
 			return new String[] {"Cœur de Coq", "Empêche la défense du Pokémon d'être baissée par les attaques adverses.", "-"};
-		case COEUR_NOBLE:
+		case COEUR_NOBLE: // TODO
 			return new String[] {"Cœur Noble", "Si le Pokémon est touché par une attaque de type Ténèbres, son attaque augmente d'un niveau.", "-"};
-		case COEUR_SOIN:
+		case COEUR_SOIN: // TODO
 			return new String[] {"Cœur Soin", "À la fin de chaque tour, le Pokémon a 30% de chance de guérir ses alliés d'une altération d'état en Combat Double ou triple.", "-"};
-		case CONTESTATION:
+		case CONTESTATION: // TODO
 			return new String[] {"Contestation", "Inverse les effets des attaques modifiant les statistiques.", "-"};
-		case CORPS_MAUDIT:
+		case CORPS_MAUDIT: // TODO
 			return new String[] {"Corps Maudit", "Toute attaque portée par l'adversaire a 30% de chance de s'entraver.", "-"};
-		case DEFAITISTE:
+		case DEFAITISTE: // TODO
 			return new String[] {"Défaitiste", "Divise par deux l'attaque et l'attaque spéciale du Pokémon s'il a moins de la moitié de ses PV totaux.", "-"};
-		case ENVELOCAPE:
+		case ENVELOCAPE: // TODO
 			return new String[] {"Envelocape", "Immunise contre les dégâts causés par la grêle et les tempêtes de sable.", "-"};
-		case EPINE_DE_FER:
+		case EPINE_DE_FER: // TODO
 			return new String[] {"Épine de Fer", "Retire 1/8ème de ses PV à l'adversaire lorsque celui-ci porte une attaque physique.", "-"};
-		case FARCEUR:
+		case FARCEUR: // TODO
 			return new String[] {"Farceur", "Augmente la priorité des attaques de statut d'un niveau.", "-"};
-		case FORCE_SABLE:
+		case FORCE_SABLE: // TODO
 			return new String[] {"Force Sable", "Lors d'une tempête de sable, la puissance des attaques de type Acier, Roche et Sol augmente de 30%.", "-"};
-		case GARDE_AMIE:
+		case GARDE_AMIE: // TODO
 			return new String[] {"Garde Amie", "Réduire de 25% les dégâts infligés aux alliés en Combat Double ou triple.", "-"};
-		case HEAVY_METAL:
+		case HEAVY_METAL: // TODO
 			return new String[] {"Heavy Metal", "Double la masse du Pokémon.", "-"};
-		case HERBIVORE:
+		case HERBIVORE: // TODO
 			return new String[] {"Herbivore", "Si le Pokémon est touché par une attaque de type Plante, son attaque augmente d'un niveau.", "-"};
-		case ILLUSION:
+		case ILLUSION: // TODO
 			return new String[] {"Illusion", "Lorsqu'il entre en combat, le Pokémon prend l'apparence du dernier Pokémon de l'équipe.", "-"};
-		case IMPOSTEUR:
+		case IMPOSTEUR: // TODO
 			return new String[] {"Imposteur", "Le Pokémon entrant en combat prend automatiquement l'apparence du Pokémon adverse.", "-"};
-		case IMPUDENCE:
+		case IMPUDENCE: // TODO
 			return new String[] {"Impudence", "Monte l'attaque du Pokémon d'un niveau lorsqu'il met un adversaire K.O.", "-"};
-		case INFILTRATION:
+		case INFILTRATION: // TODO
 			return new String[] {"Infiltration", "Empêche les attaques de protection adverses tels que Protection ou Mur Lumière de fonctionner. N'influe pas sur Détection et Abri.", "-"};
-		case LIGHT_METAL:
+		case LIGHT_METAL: // TODO
 			return new String[] {"Light Metal", "Divise par deux la masse du Pokémon.", "-"};
-		case LUNATIQUE:
+		case LUNATIQUE: // TODO
 			return new String[] {"Lunatique", "Aléatoirement, à la fin de chaque tour, une statistique du Pokémon augmente de deux niveaux, et une autre baisse d'un niveau (précision et esquive comprises).", "-"};
-		case MIROIR_MAGIK:
+		case MIROIR_MAGIK: // TODO
 			return new String[] {"Miroir Magik", "Retourne les attaques de statut contre l'adversaire.", "-"};
-		case MODE_TRANSE:
+		case MODE_TRANSE: // TODO
 			return new String[] {"Mode Transe", "Le Pokémon change de forme et modifie la répartition de ses statistiques lorsque ses PV sont inférieurs à 50%.", "-"};
-		case MOMIE:
+		case MOMIE: // TODO
 			return new String[] {"Momie", "Si le Pokémon subit une attaque de contact, le talent de l'adversaire devient Momie. Ce talent est sans effet en lui-même.", "-"};
-		case MULTIECAILLE:
+		case MULTIECAILLE: // TODO
 			return new String[] {"Multiécaille", "Si le Pokémon possède 100% de ses PV, alors les dégâts infligés par l'adversaire sont divisés par deux.", "-"};
-		case PEAU_MIRACLE:
+		case PEAU_MIRACLE: // TODO
 			return new String[] {"Peau Miracle", "50% de chance de faire échouer les attaques de statut portées par l'adversaire.", "-"};
-		case PHOBIQUE:
+		case PHOBIQUE: // TODO
 			return new String[] {"Phobique", "Si le Pokémon est touché par une attaque de type Insecte, Spectre ou Ténèbres, sa vitesse augmente d'un niveau.", "-"};
-		case PICKPOCKET:
+		case PICKPOCKET: // TODO
 			return new String[] {"Pickpocket", "Si le Pokémon subit une attaque physique, il récupère l'objet tenu par son adversaire.", "-"};
-		case RAGE_BRÛLURE:
+		case RAGE_BRÛLURE: // TODO
 			return new String[] {"Rage Brûlure", "Augmente l'attaque spéciale du Pokémon de 50% en cas de brûlure.", "-"};
-		case RAGE_POISON:
+		case RAGE_POISON: // TODO
 			return new String[] {"Rage Poison", "Augmente l'attaque du Pokémon de 50% en cas d'empoisonnement.", "-"};
-		case RECOLTE:
+		case RECOLTE: // TODO
 			return new String[] {"Récolte", "Une baie consommée par le Pokémon a 50% de chances d'être récupérée à la fin de chaque tour.", "-"};
-		case REGE_FORCE:
+		case REGE_FORCE: // TODO
 			return new String[] {"Régé-Force", "Restaure 1/3 des PV totaux si le Pokémon est retiré du combat.", "-"};
-		case SANS_LIMITE:
+		case SANS_LIMITE: // TODO
 			return new String[] {"Sans Limite", "Augmente de 30% la puissance des attaques pouvant avoir un effet secondaire. L'effet secondaire est annulé.", "-"};
-		case TELEPATHE:
+		case TELEPATHE: // TODO
 			return new String[] {"Télépathe", "Anticipe et évite les attaques des alliés en Combat Double ou triple.", "-"};
-		case TENSION:
+		case TENSION: // TODO
 			return new String[] {"Tension", "Empêche l'adversaire de consommer sa baie.", "-"};
-		case TERA_VOLTAGE:
+		case TERA_VOLTAGE: // TODO
 			return new String[] {"Téra-Voltage", "Peut toucher un Pokémon adverse malgré son talent.", "-"};
-		case TOXITOUCHE:
+		case TOXITOUCHE: // TODO
 			return new String[] {"Toxitouche", "Peut empoisonner l'adversaire après lui avoir porté une attaque physique.", "-"};
-		case TURBOBRASIER:
+		case TURBOBRASIER: // TODO
 			return new String[] {"TurboBrasier", "Peut toucher un Pokémon adverse malgré son talent.", "-"};
-		case VICTORIEUX:
+		case VICTORIEUX: // TODO
 			return new String[] {"Victorieux", "Monte de 10% la précision des alliés en Combat Double ou triple.", "-"};
-		case AILES_BOURRASQUE:
+		case AILES_BOURRASQUE: // TODO
 			return new String[] {"Ailes Bourrasque", "Augmente la priorité des capacités de type Vol.", "-"};
-		case AMOUR_FILIAL:
+		case AMOUR_FILIAL: // TODO
 			return new String[] {"Amour Filial", "Permet au lanceur de porter deux coups par tour au lieu d'un, le deuxième coup fera deux fois moins de dégâts que le premier.", "-"};
-		case AROMA_VOILE:
+		case AROMA_VOILE: // TODO
 			return new String[] {"Aroma-Voile", "Protège les Pokémon alliés des capacités ayant un effet sur l'état mental tels que Attraction ou Tourmente.", "-"};
-		case AURA_FEERIQUE:
+		case AURA_FEERIQUE: // TODO
 			return new String[] {"Aura Féérique", "Augmente la puissance des attaques de type Fée des Pokémon présents sur le terrain.", "-"};
-		case AURA_INVERSEE:
+		case AURA_INVERSEE: // TODO
 			return new String[] {"Aura Inversée", "Inverse les effets des talents Aura.", "-"};
-		case AURA_TENEBREUSE:
+		case AURA_TENEBREUSE: // TODO
 			return new String[] {"Aura Ténébreuse", "Augmente la puissance des attaques de type Ténèbres des Pokémon présents sur le terrain.", "-"};
-		case BAJOUES:
+		case BAJOUES: // TODO
 			return new String[] {"Bajoues", "Lorsque le Pokémon mange une Baie, il obtient ses effets et regagne des PV en plus.", "-"};
-		case BATTANT:
+		case BATTANT: // TODO
 			return new String[] {"Battant", "Augmente l'Attaque Spéciale par deux niveaux lorsque n'importe quelle stat est baissée par un Pokémon adverse.", "-"};
-		case DECLIC_TACTIQUE:
+		case DECLIC_TACTIQUE: // TODO
 			return new String[] {"Déclic Tactique", "Change la forme du Pokémon selon le combat.", "-"};
-		case FLORA_VOILE:
+		case FLORA_VOILE: // TODO
 			return new String[] {"Flora-Voile", "Empêche la diminution des statistiques des alliés de type Plante par les Pokémon adverses.", "-"};
-		case GLUCO_VOILE:
+		case GLUCO_VOILE: // TODO
 			return new String[] {"Gluco-Voile", "Empêche les Pokémon alliés de s'endormir.", "-"};
-		case GRIFFE_DURE:
+		case GRIFFE_DURE: // TODO
 			return new String[] {"Griffe Dure", "Augmente d'un tiers la puissance des attaques directes.", "-"};
-		case MAGICIEN:
+		case MAGICIEN: // TODO
 			return new String[] {"Magicien", "Vole l'objet d'une cible après l'avoir touché avec une attaque directe.", "-"};
-		case MEGA_BLASTER:
+		case MEGA_BLASTER: // TODO
 			return new String[] {"Méga Blaster", "Un Pokémon doté de ce talent verra la puissance de ses capacités d'aura augmentée.", "-"};
-		case MER_PRIMAIRE:
+		case MER_PRIMAIRE: // TODO
 			return new String[] {"Mer Primaire", "Fait tomber une Pluie ne pouvant être annulée par capacité ou talent tant que le Pokémon est en jeu. Annule toutes les capacités de type Feu.", "-"};
-		case PARE_BALLES:
+		case PARE_BALLES: // TODO
 			return new String[] {"Pare-Balles", "Protège contre les capacités balles et bombes, par exemple Balle Graine ou Canon Graine.", "-"};
-		case PEAU_CELESTE:
+		case PEAU_CELESTE: // TODO
 			return new String[] {"Peau Céleste", "Transforme les capacités de type Normal en type Vol et augmente leur puissance de 30%.", "-"};
-		case PEAU_FEERIQUE:
+		case PEAU_FEERIQUE: // TODO
 			return new String[] {"Peau Féérique", "Transforme les capacités de type Normal en type Fée et augmente leur puissance de 30%.", "-"};
-		case PEAU_GELEE:
+		case PEAU_GELEE: // TODO
 			return new String[] {"Peau Gelée", "Transforme les capacités de type Normal en type Glace et augmente leur puissance de 30%.", "-"};
-		case POISSEUX:
+		case POISSEUX: // TODO
 			return new String[] {"Poisseux", "Baisse la Vitesse des Pokémon qui touchent ce Pokémon avec une attaque directe.", "-"};
-		case PROGNATHE:
+		case PROGNATHE: // TODO
 			return new String[] {"Prognathe", "Augmente la puissance des attaques à base de morsures.", "-"};
-		case PROTEEN:
+		case PROTEEN: // TODO
 			return new String[] {"Protéen", "Change le type du Pokémon en celui de toute capacité qu'il utilise.", "-"};
-		case SOUFFLE_DELTA:
+		case SOUFFLE_DELTA: // TODO
 			return new String[] {"Souffle Delta", "Annule tout effet de climat, même Mer Primaire et Terre Finale. Annule les faiblesses du type Vol.", "-"};
-		case SYMBIOSE:
+		case SYMBIOSE: // TODO
 			return new String[] {"Symbiose", "Passe un objet tenu à un Pokémon allié lorsque l'allié utilise son objet.", "-"};
-		case TERRE_FINALE:
+		case TERRE_FINALE: // TODO
 			return new String[] {"Terre Finale", "Crée un temps ensoleillé ne pouvant être annulé par capacité ou talent tant que le Pokémon est en jeu. Annule toutes les capacités de type Eau.", "-"};
-		case TOISON_EPAISSE:
+		case TOISON_EPAISSE: // TODO
 			return new String[] {"Toison Épaisse", "Divise par deux les dégâts reçus lors d'une attaque physique.", "-"};
-		case TOISON_HERBUE:
+		case TOISON_HERBUE: // TODO
 			return new String[] {"Toison Herbue", "Augmente la Défense lorsque Champ Herbu est en vigueur.", "-"};
 		default:
 			return new String[] {"NULL", "NULL", "NULL"};

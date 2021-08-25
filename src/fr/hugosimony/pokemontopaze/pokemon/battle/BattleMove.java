@@ -231,21 +231,21 @@ public class BattleMove {
 						}
 					}
 				}
+			}
+
+			// ********************************************************************
+			// Statistics change
+			// https://www.pokebip.com/page/jeuxvideo/guide_tactique_strategie_pokemon/attaques
+			
+			else if(move.isBonusNonOffensiceStatMove()) {
 				
 			}
-			else if(move.isBonusNonOffensiceStatMove() || move.isMalusNonOffensiveStatMove()){
-				// Statistics
-				// https://www.pokebip.com/page/jeuxvideo/guide_tactique_strategie_pokemon/attaques
-				if(move.isBonusNonOffensiceStatMove()) {
-					// Bonus
-				}
-				else {
-					// Malus
-				}
+			
+			else if(move.isMalusNonOffensiveStatMove()) {
+			
 			}
 		}
 
-		
 		// ****************************************************************************************************************
 		// Damage
 		// https://www.pokepedia.fr/Calcul_des_d%C3%A9g%C3%A2ts
@@ -542,6 +542,8 @@ public class BattleMove {
 		boolean canceled = false;
 		
 		int accuracy = sender.getAccuracy("PRECISION", move.precision);
+		if(move.doOHKO())
+			accuracy = sender.level - target.level + 30;
 		accuracy = target.getAccuracy("AVOIDANCE", accuracy);
 		if(sender.ability.ability == Abilities.AGITATION && move.category == Type.PHYSIQUE)
 			accuracy = (int) (accuracy * 0.8);
