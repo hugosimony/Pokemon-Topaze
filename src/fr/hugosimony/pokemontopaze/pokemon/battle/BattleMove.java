@@ -1,6 +1,7 @@
 package fr.hugosimony.pokemontopaze.pokemon.battle;
 
 import fr.hugosimony.pokemontopaze.pokemon.Abilities;
+import fr.hugosimony.pokemontopaze.pokemon.Ability;
 import fr.hugosimony.pokemontopaze.pokemon.Gender;
 import fr.hugosimony.pokemontopaze.pokemon.Move;
 import fr.hugosimony.pokemontopaze.pokemon.Moves;
@@ -67,6 +68,8 @@ public class BattleMove {
 				return "status";
 		}
 		
+		boolean briseMouleCancel = sender.ability.ability == Abilities.BRISE_MOULE && Ability.doBriseMouleHandle(target.ability.ability);
+		
 		System.out.println(senderNameMaj + " utilise " + move.name);
 		
 		// https://www.pokepedia.fr/Brise_Moule
@@ -93,10 +96,7 @@ public class BattleMove {
 				return "avoided";
 		}
 		
-		//TODO 
-		// Check Brise Moule
-		
-		if(move.isSound() && target.ability.ability == Abilities.ANTI_BRUIT) {
+		if(move.isSound() && !briseMouleCancel && target.ability.ability == Abilities.ANTI_BRUIT) {
 			battle.printAbility(target);
 			System.out.println("Ça n'affecte pas" + targetName + "...");
 			return "immune";
@@ -117,7 +117,7 @@ public class BattleMove {
 				
 				// Paralysis
 				if(move.move == Moves.CAGE_ECLAIR || move.move == Moves.PARA_SPORE || move.move == Moves.INTIMIDATION) {
-					if(target.ability.ability == Abilities.ECHAUFFEMENT) {
+					if(!briseMouleCancel && target.ability.ability == Abilities.ECHAUFFEMENT) {
 						battle.printAbility(target);
 						System.out.println("Ça n'affecte pas " + targetName + "...");
 						return "immune";
@@ -133,7 +133,7 @@ public class BattleMove {
 				
 				// Poison
 				else if(move.move == Moves.GAZ_TOXIK || move.move == Moves.TOXIK) {
-					if(target.ability.ability == Abilities.VACCIN) {
+					if(!briseMouleCancel && target.ability.ability == Abilities.VACCIN) {
 						battle.printAbility(target);
 						System.out.println("Ça n'affecte pas " + targetName + "...");
 						return "immune";
@@ -152,7 +152,7 @@ public class BattleMove {
 			
 				// Burn
 				else if(move.move == Moves.FEU_FOLLET) {
-					if(target.ability.ability == Abilities.IGNIFU_VOILE) {
+					if(!briseMouleCancel && target.ability.ability == Abilities.IGNIFU_VOILE) {
 						battle.printAbility(target);
 						System.out.println("Ça n'affecte pas " + targetName + "...");
 						return "immune";
@@ -200,7 +200,7 @@ public class BattleMove {
 						System.out.println("Ça n'affecte pas " + targetName + "...");
 						return "immune";
 					}
-					if(target.ability.ability == Abilities.BENET || target.ability.ability == Abilities.AROMA_VOILE) {
+					if(!briseMouleCancel && (target.ability.ability == Abilities.BENET || target.ability.ability == Abilities.AROMA_VOILE)) {
 						battle.printAbility(target);
 						System.out.println("Ça n'affecte pas " + targetName + "...");
 						return "immune";
@@ -305,7 +305,7 @@ public class BattleMove {
 				
 				//TODO Air Venard
 				
-				if(target.ability.ability != Abilities.ARMURBASTON && target.ability.ability != Abilities.COQUE_ARMURE) {
+				if(briseMouleCancel || (target.ability.ability != Abilities.ARMURBASTON && target.ability.ability != Abilities.COQUE_ARMURE)) {
 					if(move.isCriticalBoost())
 						sender.stageCritical += 1;
 					
@@ -408,6 +408,7 @@ public class BattleMove {
 		
 		// TODO
 		// Check status / abilities
+		// (si empoisonné avec talent vaccin, soigner)
 		
 		// End of the move
 		
