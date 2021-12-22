@@ -16,8 +16,7 @@ public class Ability {
 		fieldDescription = data[2];
 	}
 	
-	public static boolean doBriseMouleHandle(Abilities ability)
-	{
+	public static boolean doBriseMouleHandle(Abilities ability) {
 		return ability == Abilities.ABSORB_EAU || ability == Abilities.ABSORB_VOLT || ability == Abilities.ANTI_BRUIT
 			|| ability == Abilities.ARMURBASTON || ability == Abilities.ARMUMAGMA || ability == Abilities.AROMA_VOILE
 			|| ability == Abilities.ATTENTION || ability == Abilities.BENET || ability == Abilities.COEUR_DE_COQ

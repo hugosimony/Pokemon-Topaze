@@ -63,6 +63,18 @@ public class BattleMove {
 		
 		// https://www.pokepedia.fr/Cat%C3%A9gorie_de_talent
 		
+		if (sender.ability.ability == Abilities.ABSENTEISME)
+		{
+			if (sender.abilityStatus == 1)
+			{
+				battle.printAbility(sender);
+				System.out.println(senderNameMaj + " paresse...");
+				sender.abilityStatus = 0;
+				return "ability_sender";
+			}
+			sender.abilityStatus = 1;
+		}
+		
 		if(!subMove) {
 			if(checkStatus())
 				return "status";
@@ -71,8 +83,6 @@ public class BattleMove {
 		boolean briseMouleCancel = sender.ability.ability == Abilities.BRISE_MOULE && Ability.doBriseMouleHandle(target.ability.ability);
 		
 		System.out.println(senderNameMaj + " utilise " + move.name);
-		
-		// https://www.pokepedia.fr/Brise_Moule
 		
 		//TODO 
 		// Handle case like solar beam, etc
@@ -183,7 +193,7 @@ public class BattleMove {
 					sender.setSleep(true);
 					System.out.println(senderNameMaj + " s'endort.");
 					battle.updateData();
-					return "selfheal";
+					return "self_heal";
 				}
 				
 				// Attraction
@@ -209,7 +219,7 @@ public class BattleMove {
 						battle.printItem(target);
 						System.out.println(targetNameMaj + " est immunisé.");
 						target.useItem(true);
-						return "itemCanceled";
+						return "item_canceled";
 					}
 					if(sender.gender != target.gender) {
 						target.secondaryStatus.add(Status.ATTRACTION);
@@ -224,7 +234,7 @@ public class BattleMove {
 								battle.printItem(sender);
 								System.out.println(senderNameMaj + " est immunisé.");
 								target.useItem(true);
-								return "itemCanceled";
+								return "item_canceled";
 							}
 							sender.secondaryStatus.add(Status.ATTRACTION);
 							System.out.println(senderNameMaj + " tombe amoureux.");
@@ -254,6 +264,7 @@ public class BattleMove {
 		else {
 			
 			// Check immunity
+			// TODO abilities that allows specifics immunity cancels
 			if(Type.getMultiplier(move.type, target.type1, target.type2) == 0) {
 				System.out.println("Ça n'affecte pas " + targetName + "...");
 				return "immune";
@@ -275,6 +286,15 @@ public class BattleMove {
 				damage = sender.level;
 			
 			else {
+				
+				// Absorb Eau/Volt
+				if (!briseMouleCancel && (move.type == Type.EAU && target.ability.ability == Abilities.ABSORB_EAU)
+										|| (move.type == Type.ELECTRIK && target.ability.ability == Abilities.ABSORB_VOLT)) {
+					battle.printAbility(target);
+					System.out.println(targetNameMaj + " absorbe la capacité.");
+					target.healHP(target.HP / 4);
+					return "ability_target";
+				}
 				
 				// ********************************************************************
 				// Random range

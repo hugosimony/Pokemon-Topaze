@@ -57,6 +57,7 @@ public class BattlePokemon {
 
 	public ArrayList<Status> secondaryStatus;
 	public int confusionTurn;
+	public int abilityStatus;
 	
 	public BattlePokemon(Pokemon pokemon) {
 		this.pokemon = pokemon;
@@ -98,6 +99,17 @@ public class BattlePokemon {
 		this.move4 = pokemon.move4;
 		this.item = new Item(pokemon.item);
 		this.secondaryStatus = new ArrayList<Status>();
+		this.confusionTurn = 0;
+		this.abilityStatus = 0;
+	}
+	
+	public void healHP(int HP) {
+		oldCurrentHP = currentHP;
+		if(HP + currentHP >= this.HP)
+			currentHP = this.HP;
+		else 
+			currentHP += HP;
+		// TODO hp animation
 	}
 	
 	public boolean removeHP(int HP) {
@@ -110,6 +122,7 @@ public class BattlePokemon {
 		}
 		else 
 			currentHP -= HP;
+		// TODO hp animation
 		return ko;
 	}
 	

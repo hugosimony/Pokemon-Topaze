@@ -40,9 +40,9 @@ public enum Abilities {
 	public static String[] getAbilityData(Abilities Abilities) {
 		
 		switch(Abilities) {
-		case ABSENTEISME: // TODO
+		case ABSENTEISME:
 			return new String[] {"Absentéisme", "Le Pokémon n'attaque qu'un tour sur deux.", "-"};
-		case ABSORB_EAU: // TODO
+		case ABSORB_EAU:
 			return new String[] {"Absorb Eau", "Les attaques de type Eau reçues par le Pokémon régénèrent 1/4 de ses PV.", "-"};
 		case ABSORB_VOLT: // TODO
 			return new String[] {"Absorb Volt", "Les attaques de type Électrik reçues par le Pokémon régénèrent 1/4 de ses PV.", "-"};
@@ -429,6 +429,11 @@ public enum Abilities {
 		}
 	}
 	
+	public static Abilities getAbility(String ability) {
+		return Abilities.valueOf(ability);
+	}
+	
+	/*
 	public static Abilities getAbility(String Abilities) {
 		
 		switch(Abilities) {
@@ -819,6 +824,6 @@ public enum Abilities {
 		default:
 			return NULL;
 		}
-	}
+	}*/
 	
 }
