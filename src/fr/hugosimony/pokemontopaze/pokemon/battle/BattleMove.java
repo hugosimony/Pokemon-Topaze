@@ -63,6 +63,7 @@ public class BattleMove {
 		
 		// https://www.pokepedia.fr/Cat%C3%A9gorie_de_talent
 		
+		// Absenteisme
 		if (sender.ability.ability == Abilities.ABSENTEISME)
 		{
 			if (sender.abilityStatus == 1)
@@ -93,6 +94,7 @@ public class BattleMove {
 		//TODO
 		// Start sub moves like metronome or sleep talk, etc (do not check status)
 		
+		// Pression
 		if(!subMove) {
 			if(move.pp != 0) move.pp--;
 			if(move.pp != 0 && target.ability.ability == Abilities.PRESSION)
@@ -101,12 +103,14 @@ public class BattleMove {
 		
 		// https://www.pokepedia.fr/Pr%C3%A9cision
 		
+		// Toxic used by a poison type always hits
 		if(move.move != Moves.TOXIK || !sender.isType(Type.POISON)) {
 			if(checkPrecision())
 				return "avoided";
 		}
 		
-		if(move.isSound() && !briseMouleCancel && target.ability.ability == Abilities.ANTI_BRUIT) {
+		// Anti-Bruit
+		if(move.isSound() && !briseMouleCancel && (target.ability.ability == Abilities.ANTI_BRUIT || target.ability.ability == Abilities.CACOPHONIE)) {
 			battle.printAbility(target);
 			System.out.println("Ça n'affecte pas" + targetName + "...");
 			return "immune";
@@ -325,6 +329,7 @@ public class BattleMove {
 				
 				//TODO Air Venard
 				
+				// Armurbaston / Coque Armure
 				if(briseMouleCancel || (target.ability.ability != Abilities.ARMURBASTON && target.ability.ability != Abilities.COQUE_ARMURE)) {
 					if(move.isCriticalBoost())
 						sender.stageCritical += 1;
@@ -346,7 +351,33 @@ public class BattleMove {
 						CM *= 1.5;
 				}
 				
-				//TODO Talents, Items, Field
+				// ********************************************************************
+				// Status
+				
+				// Cran
+				if (sender.ability.ability == Abilities.CRAN && sender.status != Status.NULL)
+					CM *= 1.5;
+				else if (sender.status == Status.BURN)
+					CM *= 0.5;
+				
+				// ********************************************************************
+				// Abilities
+				//TODO
+				
+				// Agitation
+				if (sender.ability.ability == Abilities.AGITATION && move.category == Type.PHYSIQUE)
+					CM *= 1.5;
+				
+				// Brasier
+				if (sender.ability.ability == Abilities.BRASIER && move.type == Type.FEU && sender.currentHP < sender.HP / 3)
+					CM *= 1.5;
+				
+				// Coloforce
+				if (sender.ability.ability == Abilities.COLOFORCE && move.category == Type.PHYSIQUE)
+					CM *= 2;
+				
+				// ********************************************************************
+				//TODO Items, Field
 				
 				// ****************************************************************************************************************
 				// Calculate damage
@@ -447,6 +478,7 @@ public class BattleMove {
 		// Return false otherwise
 		
 		// https://www.pokepedia.fr/Statut
+		// https://www.pokebip.com/page/jeuxvideo/guide_tactique_strategie_pokemon/statuts
 		
 		boolean canceled = false;
 		
@@ -566,8 +598,10 @@ public class BattleMove {
 		if(move.doOHKO())
 			accuracy = sender.level - target.level + 30;
 		accuracy = target.getAccuracy("AVOIDANCE", accuracy);
+		// Agitation
 		if(sender.ability.ability == Abilities.AGITATION && move.category == Type.PHYSIQUE)
 			accuracy = (int) (accuracy * 0.8);
+		// Oeil Composé
 		if(sender.ability.ability == Abilities.OEIL_COMPOSE)
 			accuracy = (int) (accuracy * 1.3);
 		if(sender.item.item == Items.LOUPE)

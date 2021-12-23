@@ -44,35 +44,35 @@ public enum Abilities {
 			return new String[] {"Absentéisme", "Le Pokémon n'attaque qu'un tour sur deux.", "-"};
 		case ABSORB_EAU:
 			return new String[] {"Absorb Eau", "Les attaques de type Eau reçues par le Pokémon régénèrent 1/4 de ses PV.", "-"};
-		case ABSORB_VOLT: // TODO
+		case ABSORB_VOLT:
 			return new String[] {"Absorb Volt", "Les attaques de type Électrik reçues par le Pokémon régénèrent 1/4 de ses PV.", "-"};
-		case AGITATION: // TODO
+		case AGITATION: // TODO (field only)
 			return new String[] {"Agitation", "Augmente l'attaque de 50% mais baisse la précision de 20%.", "Augmente de 50% les chances de rencontrer un Pokémon sauvage de haut niveau."};
-		case AIR_LOCK: // TODO
+		case AIR_LOCK: // TODO (enter to fight)
 			return new String[] {"Air Lock", "Annule les effets du climat.", "-"};
-		case ANTI_BRUIT: // TODO
+		case ANTI_BRUIT:
 			return new String[] {"Anti-Bruit", "Annule les effets dus à une attaque sonore.", "-"};
 		case ARMUMAGMA: // TODO
 			return new String[] {"Armumagma", "Immunise contre le gel.", "Divise par deux le nombre de pas nécessaire à l'éclosion d'un œuf."};
-		case ARMURBASTON: // TODO
+		case ARMURBASTON:
 			return new String[] {"Armurbaston", "Annule les chances de coups critiques du Pokémon ennemi.", "-"};
 		case ATTENTION: // TODO
 			return new String[] {"Attention", "Immunise contre la peur.", "-"};
 		case BENET: // TODO
 			return new String[] {"Benêt", "Immunise contre l'attraction et la provocation.", "-"};
-		case BRASIER: // TODO
+		case BRASIER:
 			return new String[] {"Brasier", "Augmente la puissance des attaques de type Feu de 50% lorsque le Pokémon a moins d'1/3 de ses PV totaux.", "-"};
-		case CACOPHONIE: // TODO
+		case CACOPHONIE:
 			return new String[] {"Cacophonie", "Annule les effets dus à une attaque sonore.", "-"};
-		case CALQUE: // TODO
+		case CALQUE: // TODO (enter to fight)
 			return new String[] {"Calque", "Copie le talent du Pokémon adverse.", "-"};
 		case CHLOROPHYLLE: // TODO
 			return new String[] {"Chlorophylle", "Augmente la vitesse au soleil.", "-"};
-		case CIEL_GRIS: // TODO
+		case CIEL_GRIS: // TODO (enter to fight)
 			return new String[] {"Ciel Gris", "Annule les effets du climat.", "-"};
-		case COLOFORCE: // TODO
+		case COLOFORCE:
 			return new String[] {"Coloforce", "Double l'attaque du Pokémon.", "-"};
-		case COQUE_ARMURE: // TODO
+		case COQUE_ARMURE:
 			return new String[] {"Coque Armure", "Annule les chances de coups critiques du Pokémon ennemi.", "-"};
 		case CORPS_ARDENT: // TODO
 			return new String[] {"Corps Ardent", "30% de chance de provoquer une brûlure sur le Pokémon adverse ayant attaqué.", "Divise par deux le nombre de pas nécessaire à l'éclosion d'un œuf."};
@@ -80,7 +80,7 @@ public enum Abilities {
 			return new String[] {"Corps Sain", "Empêche la diminution de statistiques par le Pokémon adverse.", "-"};
 		case CRACHIN: // TODO
 			return new String[] {"Crachin", "Fait tomber la pluie tant que le Pokémon est en jeu.", "-"};
-		case CRAN: // TODO
+		case CRAN:
 			return new String[] {"Cran", "Augmente de 50% l'attaque du Pokémon s'il subit un changement de statut.", "-"};
 		case CUVETTE: // TODO
 			return new String[] {"Cuvette", "Régénère 1/16ème des PV par temps de pluie.", "-"};
