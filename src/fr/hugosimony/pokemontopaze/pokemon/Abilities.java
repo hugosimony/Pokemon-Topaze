@@ -76,7 +76,7 @@ public enum Abilities {
 			return new String[] {"Coque Armure", "Annule les chances de coups critiques du Pokémon ennemi.", "-"};
 		case CORPS_ARDENT: // TODO
 			return new String[] {"Corps Ardent", "30% de chance de provoquer une brûlure sur le Pokémon adverse ayant attaqué.", "Divise par deux le nombre de pas nécessaire à l'éclosion d'un œuf."};
-		case CORPS_SAIN: // TODO
+		case CORPS_SAIN:
 			return new String[] {"Corps Sain", "Empêche la diminution de statistiques par le Pokémon adverse.", "-"};
 		case CRACHIN: // TODO
 			return new String[] {"Crachin", "Fait tomber la pluie tant que le Pokémon est en jeu.", "-"};
@@ -86,27 +86,27 @@ public enum Abilities {
 			return new String[] {"Cuvette", "Régénère 1/16ème des PV par temps de pluie.", "-"};
 		case DEGUISEMENT: // TODO
 			return new String[] {"Déguisement", "Change le type du Pokémon en celui de la dernière attaque subie.", "-"};
-		case ECAILLE_SPECIALE: // TODO
+		case ECAILLE_SPECIALE:
 			return new String[] {"Écaille Spéciale", "Augmente la défense de 50% lorsque le Pokémon subit un changement de statut.", "-"};
-		case ECHAUFFEMENT: // TODO
+		case ECHAUFFEMENT:
 			return new String[] {"Échauffement", "Immunise contre la paralysie.", "-"};
-		case ECRAN_FUMEE: // TODO
+		case ECRAN_FUMEE:
 			return new String[] {"Écran Fumée", "Empêche la diminution de statistiques par le Pokémon adverse.", "Réduit de 50% les chances d'être attaqué par un Pokémon sauvage."};
 		case ECRAN_POUDRE: // TODO
 			return new String[] {"Écran Poudre", "Empêche les effets secondaires des attaques subies.", "-"};
-		case ENGRAIS: // TODO
+		case ENGRAIS:
 			return new String[] {"Engrais", "Augmente la puissance des attaques de type Plante de 50% lorsque le Pokémon a moins d'1/3 de ses PV totaux.", "-"};
-		case ESPRIT_VITAL: // TODO
+		case ESPRIT_VITAL:
 			return new String[] {"Esprit Vital", "Empêche le Pokémon d'être endormi.", "Augmente de 50% les chances de rencontrer un Pokémon sauvage de haut niveau."};
-		case ESSAIM: // TODO
+		case ESSAIM:
 			return new String[] {"Essaim", "Augmente la puissance des attaques de type Insecte de 50% lorsque le Pokémon a moins d'1/3 de ses PV totaux.", "Augmente les chances de rencontrer un Pokémon sauvage."};
-		case FERMETE: // TODO
+		case FERMETE:
 			return new String[] {"Fermeté", "Immunise contre les attaques OHKO. Laisse le Pokémon à 1 PV après une attaque qui aurait dû le terrasser, s'il a tous ses PV.", "-"};
-		case FORCE_PURE: // TODO
+		case FORCE_PURE:
 			return new String[] {"Force Pure", "Double l'attaque du Pokémon.", "-"};
 		case FUITE: // TODO
 			return new String[] {"Fuite", "Assure la fuite contre les Pokémon sauvages.", "-"};
-		case GARDE_MYSTIK: // TODO
+		case GARDE_MYSTIK:
 			return new String[] {"Garde Mystik", "Ne subit que les dégâts d'attaques super efficaces.", "-"};
 		case GLISSADE: // TODO
 			return new String[] {"Glissade", "Double la vitesse par temps de pluie.", "-"};

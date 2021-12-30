@@ -113,7 +113,7 @@ public class BattleMove {
 		if(move.isSound() && !briseMouleCancel && (target.ability.ability == Abilities.ANTI_BRUIT || target.ability.ability == Abilities.CACOPHONIE)) {
 			battle.printAbility(target);
 			System.out.println("Ça n'affecte pas" + targetName + "...");
-			return "immune";
+			return "ability_target";
 		}
 		
 		int damage = 0;
@@ -134,7 +134,7 @@ public class BattleMove {
 					if(!briseMouleCancel && target.ability.ability == Abilities.ECHAUFFEMENT) {
 						battle.printAbility(target);
 						System.out.println("Ça n'affecte pas " + targetName + "...");
-						return "immune";
+						return "ability_target";
 					}
 					if(target.isType(Type.ELECTRIK)) {
 						System.out.println("Ça n'affecte pas " + targetName + "...");
@@ -150,7 +150,7 @@ public class BattleMove {
 					if(!briseMouleCancel && target.ability.ability == Abilities.VACCIN) {
 						battle.printAbility(target);
 						System.out.println("Ça n'affecte pas " + targetName + "...");
-						return "immune";
+						return "ability_target";
 					}
 					if(move.move == Moves.GAZ_TOXIK) {
 						target.status = Status.POISON;
@@ -169,7 +169,7 @@ public class BattleMove {
 					if(!briseMouleCancel && target.ability.ability == Abilities.IGNIFU_VOILE) {
 						battle.printAbility(target);
 						System.out.println("Ça n'affecte pas " + targetName + "...");
-						return "immune";
+						return "ability_target";
 					}
 					if(target.isType(Type.FEU)) {
 						System.out.println("Ça n'affecte pas " + targetName + "...");
@@ -184,16 +184,28 @@ public class BattleMove {
 				else if(move.move == Moves.HYPNOSE || move.move == Moves.TROU_NOIR || move.move == Moves.GROBISOU
 				|| move.move == Moves.BERCEUSE || move.move == Moves.POUDRE_DODO || move.move == Moves.SPORE
 				|| move.move == Moves.SIFFL_HERBE) {
+					// Esprit Vital
+					if(!briseMouleCancel && target.ability.ability == Abilities.ESPRIT_VITAL) {
+						battle.printAbility(target);
+						System.out.println("Ça n'affecte pas " + targetName + "...");
+						return "ability_target";
+					}
 					sender.setSleep(false);
 					System.out.println(targetNameMaj + " s'endort.");
 					battle.updateData();
 				}
 				else if(move.move == Moves.BAILLEMENT) {
+					// Esprit Vital
+					if(!briseMouleCancel && target.ability.ability == Abilities.ESPRIT_VITAL) {
+						battle.printAbility(target);
+						System.out.println("Ça n'affecte pas " + targetName + "...");
+						return "ability_target";
+					}
 					target.baillement = 1;
 					System.out.println(targetNameMaj + " somnole.");
 				}
 				else if(move.move == Moves.REPOS) {
-					// TODO Full heal
+					// TODO Full heal (+ empecher esprit vital de repos)
 					sender.setSleep(true);
 					System.out.println(senderNameMaj + " s'endort.");
 					battle.updateData();
@@ -217,7 +229,7 @@ public class BattleMove {
 					if(!briseMouleCancel && (target.ability.ability == Abilities.BENET || target.ability.ability == Abilities.AROMA_VOILE)) {
 						battle.printAbility(target);
 						System.out.println("Ça n'affecte pas " + targetName + "...");
-						return "immune";
+						return "ability_target";
 					}
 					if(target.item.item == Items.HERBE_MENTAL) {
 						battle.printItem(target);
@@ -256,7 +268,14 @@ public class BattleMove {
 			}
 			
 			else if(move.isMalusNonOffensiveStatMove()) {
-			
+				
+				// Corps Sain / Ecran Fumee
+				if (target.ability.ability == Abilities.CORPS_SAIN || target.ability.ability == Abilities.ECRAN_FUMEE)
+				{
+					battle.printAbility(target);
+					System.out.println("Les stats de" + targetName + "ne baissent pas.");
+					return "ability_target";
+				}
 			}
 		}
 
@@ -277,18 +296,34 @@ public class BattleMove {
 			// ********************************************************************
 			// Special cases
 			
-			if(move.doOHKO()) {
-				// TODO handle ohko
-				System.out.println("KO en un coup !");
-				damage = 1000000;
-			}
-			else if(move.move == Moves.SONICBOOM)
-				damage = 20;
-			else if(move.move == Moves.DRACO_RAGE)
-				damage = 40;
-			else if(move.move == Moves.OMBRE_NOCTURNE || move.move == Moves.FRAPPE_ATLAS)
-				damage = sender.level;
+			if (move.doOHKO() || move.move == Moves.SONICBOOM || move.move == Moves.DRACO_RAGE
+					|| move.move== Moves.OMBRE_NOCTURNE || move.move == Moves.FRAPPE_ATLAS) {
+				
+				// Garde Mystik
+				if(!briseMouleCancel && target.ability.ability == Abilities.GARDE_MYSTIK) {
+					battle.printAbility(target);
+					System.out.println("Ça n'affecte pas" + targetName + "...");
+					return "ability_target";
+				}
 			
+				if(move.doOHKO()) {
+					// Fermete
+					if(!briseMouleCancel && target.ability.ability == Abilities.FERMETE) {
+						battle.printAbility(target);
+						System.out.println("Ça n'affecte pas " + targetName + "...");
+						return "ability_target";
+					}
+					System.out.println("KO en un coup !");
+					damage = 1000000;
+				}
+				else if(move.move == Moves.SONICBOOM)
+					damage = 20;
+				else if(move.move == Moves.DRACO_RAGE)
+					damage = 40;
+				else if(move.move == Moves.OMBRE_NOCTURNE || move.move == Moves.FRAPPE_ATLAS)
+					damage = sender.level;
+
+			}
 			else {
 				
 				// Absorb Eau/Volt
@@ -320,6 +355,13 @@ public class BattleMove {
 					else if(typeTable == 0.25)
 						System.out.println("Ce n'est pas du tout efficace.");
 					CM *= typeTable;
+				}
+				
+				// Garde Mystik
+				if(!briseMouleCancel && target.ability.ability == Abilities.GARDE_MYSTIK && typeTable < 2) {
+					battle.printAbility(target);
+					System.out.println("Ça n'affecte pas" + targetName + "...");
+					return "ability_target";
 				}
 				
 				// ********************************************************************
@@ -372,9 +414,17 @@ public class BattleMove {
 				if (sender.ability.ability == Abilities.BRASIER && move.type == Type.FEU && sender.currentHP < sender.HP / 3)
 					CM *= 1.5;
 				
-				// Coloforce
-				if (sender.ability.ability == Abilities.COLOFORCE && move.category == Type.PHYSIQUE)
+				// Coloforce / Force Pure
+				if (move.category == Type.PHYSIQUE && (sender.ability.ability == Abilities.COLOFORCE || sender.ability.ability == Abilities.FORCE_PURE))
 					CM *= 2;
+				
+				// Engrais
+				if (sender.ability.ability == Abilities.ENGRAIS && move.type == Type.PLANTE && sender.currentHP < sender.HP / 3)
+					CM *= 1.5;
+				
+				// Essaim
+				if (sender.ability.ability == Abilities.ESSAIM && move.type == Type.INSECTE && sender.currentHP < sender.HP / 3)
+					CM *= 1.5;
 				
 				// ********************************************************************
 				//TODO Items, Field
@@ -432,7 +482,7 @@ public class BattleMove {
 			if(damage == 0) damage = 1;
 			System.out.println("The attack did " + damage + " HP(s) !");
 			if(critical) System.out.println("C'est un coup critique !");
-			boolean ko = target.removeHP(damage);
+			boolean ko = target.removeHP(damage, briseMouleCancel, targetNameMaj);
 			if(ko) System.out.println(targetNameMaj + " est KO !");
 		}
 		

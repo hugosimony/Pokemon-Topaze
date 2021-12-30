@@ -2,6 +2,7 @@ package fr.hugosimony.pokemontopaze.pokemon.battle;
 
 import java.util.ArrayList;
 
+import fr.hugosimony.pokemontopaze.pokemon.Abilities;
 import fr.hugosimony.pokemontopaze.pokemon.Ability;
 import fr.hugosimony.pokemontopaze.pokemon.Gender;
 import fr.hugosimony.pokemontopaze.pokemon.Move;
@@ -16,6 +17,8 @@ import fr.hugosimony.pokemontopaze.utils.Utils;
 
 public class BattlePokemon {
 
+	private Battle battle;
+	
 	private Pokemon pokemon;
 	public PKM pkm;
 	public String name;
@@ -59,7 +62,7 @@ public class BattlePokemon {
 	public int confusionTurn;
 	public int abilityStatus;
 	
-	public BattlePokemon(Pokemon pokemon) {
+	public BattlePokemon(Battle battle, Pokemon pokemon) {
 		this.pokemon = pokemon;
 		this.pkm = pokemon.pokemon;
 		this.name = pokemon.name;
@@ -112,13 +115,21 @@ public class BattlePokemon {
 		// TODO hp animation
 	}
 	
-	public boolean removeHP(int HP) {
+	public boolean removeHP(int HP, boolean briseMouleCancel, String targetNameMaj) {
 		boolean ko = false;
 		oldCurrentHP = currentHP;
 		if(HP >= currentHP) {
-			currentHP = 0;
-			ko = true;
-			kill();
+			// Fermete
+			if(!briseMouleCancel && oldCurrentHP == HP && ability.ability == Abilities.FERMETE) {
+				currentHP = 1;
+				battle.printAbility(this);
+				System.out.println(targetNameMaj + " encaisse les coups.");
+			}
+			else {
+				currentHP = 0;
+				ko = true;
+				kill();
+			}
 		}
 		else 
 			currentHP -= HP;
@@ -247,15 +258,17 @@ public class BattlePokemon {
 	}
 	
 	public int getStat(String stat) {
-		if(stat.equals("ATK")) {
-			if(status == Status.BURN)
-				return getGeneralStatMultiplicator(ATK, stageATK) / 2;
+		if(stat.equals("ATK"))
 			return getGeneralStatMultiplicator(ATK, stageATK);
-		}
 		if(stat.equals("ATK_SPE"))
 			return getGeneralStatMultiplicator(ATK_SPE, stageATK_SPE);
 		if(stat.equals("DEF"))
+		{
+			// Ecaille Speciale
+			if (ability.ability == Abilities.ECAILLE_SPECIALE && status != Status.NULL)
+				return getGeneralStatMultiplicator((int) (DEF * 1.5d), stageDEF);
 			return getGeneralStatMultiplicator(DEF, stageDEF);
+		}
 		if(stat.equals("DEF_SPE"))
 			return getGeneralStatMultiplicator(DEF_SPE, stageDEF_SPE);
 		if(stat.equals("SPEED")) {

@@ -68,8 +68,8 @@ public class Battle extends JPanel {
 		//Pokemon pokemon1 = new Pokemon(PKM.values()[x], 50, Items.NONE);
 		//Pokemon pokemon2 = new Pokemon(PKM.values()[x], 50, Items.NONE);
 		
-		battlePokemon1 = new BattlePokemon(pokemon1);
-		battlePokemon2 = new BattlePokemon(pokemon2);
+		battlePokemon1 = new BattlePokemon(this, pokemon1);
+		battlePokemon2 = new BattlePokemon(this, pokemon2);
 		
 		this.game = game;
 		game.battle = this;
@@ -143,8 +143,8 @@ public class Battle extends JPanel {
 			add(sprite2);
 		} catch (IOException e) {}
 		
-		battlePokemon1 = new BattlePokemon(pokemon1);
-		battlePokemon2 = new BattlePokemon(pokemon2);
+		battlePokemon1 = new BattlePokemon(this, pokemon1);
+		battlePokemon2 = new BattlePokemon(this, pokemon2);
 		
 		repaint();
 	}
